@@ -15,6 +15,7 @@
 development:
   adapter: postgresql
   encoding: unicode
+  host: localhost
   database: porthos_development
   pool: 5
   username: porthos
@@ -52,4 +53,4 @@ production:
   database: porthos_production
   pool: 5
   username: porthos
-  password:
+  password: Antique1
