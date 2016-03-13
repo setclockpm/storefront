@@ -47,10 +47,3 @@ test:
   username: porthos
   password:
 
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: porthos_production
-  pool: 5
-  username: porthos
-  password: Antique1
