@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.2.4"
+ruby "2.3.0"
 
 gem 'rails', '4.2.5.1'
 gem 'pg', '~> 0.15'
@@ -15,6 +15,8 @@ gem 'sass', '3.2.19'
 gem 'paperclip'
 gem 'shopify_app'
 gem 'rails_admin'
+gem "cancancan"
+gem 'devise'
 gem 'capistrano', '~> 3.1.0'
 gem 'capistrano-bundler', '~> 1.1.2'
 gem 'capistrano-rails', '~> 1.1.1'
