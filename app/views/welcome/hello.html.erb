@@ -1,5 +1,7 @@
 <section id="placeholder">
   <div id="placeholder" class="dynamic-resize">
-    <%= image_tag "logo.png", title: "logo", class: "class" %>
+    <%= link_to rails_admin_path do %>
+      <%= image_tag "logo.png", title: "logo", class: "class" %>
+    <% end %>
   </div>
 </section>
