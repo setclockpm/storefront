@@ -8,8 +8,7 @@
     <%= csrf_meta_tags %>
   </head>
   <body class="container">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"> <%= alert %> </p>
+    <%= render partial: "layouts/flash_messages" %>
     <%= yield %>
   </body>
 </html>

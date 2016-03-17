@@ -1,3 +1,13 @@
+<% if notice.present? %>
+  <aside class="alert alert-info"> <%= notice %> </aside>
+<% end %>
+
+<% if alert.present? %>
+  <aside class="alert alert-danger"> <%= alert %> </aside>
+<% end %>
+
+
+
 <% content_for :javascript do %>
 <script type="text/javascript">
   var eventName = typeof(Turbolinks) !== 'undefined' ? 'page:change' : 'DOMContentLoaded';
