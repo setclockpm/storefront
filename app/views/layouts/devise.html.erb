@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Porthos Home - Coming Soon</title>
+    <title>Porthos</title>
     <%= stylesheet_link_tag "application", media: "all" %>
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat">
     <%= favicon_link_tag 'favicon.png' %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
-  <body class="admin-portal">
+  <body class="container user-auth">
     <%= render partial: "layouts/flash_messages" %>
     <%= yield %>
   </body>
