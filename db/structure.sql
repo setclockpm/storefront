@@ -90,9 +90,7 @@ CREATE TABLE users (
     confirmed_at timestamp without time zone,
     confirmation_sent_at timestamp without time zone,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL,
-    admin boolean DEFAULT false,
-    CONSTRAINT email_must_be_company_email CHECK (((email)::text ~* '^[^@]+@[porthoshome|antiquerevival]+\.com'::text))
+    updated_at timestamp without time zone NOT NULL
 );
 
 
@@ -182,8 +180,4 @@ SET search_path TO "$user",public;
 INSERT INTO schema_migrations (version) VALUES ('20160313063341');
 
 INSERT INTO schema_migrations (version) VALUES ('20160314051040');
-
-INSERT INTO schema_migrations (version) VALUES ('20160318100622');
-
-INSERT INTO schema_migrations (version) VALUES ('20160319032455');
 
