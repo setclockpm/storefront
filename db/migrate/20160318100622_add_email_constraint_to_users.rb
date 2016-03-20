@@ -5,7 +5,7 @@ class AddEmailConstraintToUsers < ActiveRecord::Migration
         users
       ADD CONSTRAINT
         email_must_be_company_email
-      CHECK ( email ~* '^[^@]+@[porthoshome|antiquerevival]+\\.com' AND admin=TRUE )
+      CHECK ( email ~* '^[^@]+@[porthoshome|antiquerevival]+\\.com' )
     }
   end
   def down

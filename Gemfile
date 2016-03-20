@@ -28,6 +28,7 @@ gem 'capistrano-rbenv', github: "capistrano/rbenv"
 group :test, :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'faker'
   gem "rspec-rails", "~> 2.0"
   gem "factory_girl_rails", "~> 4.0"
   gem "capybara"
