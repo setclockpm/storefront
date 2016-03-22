@@ -13,8 +13,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sass', '3.2.19'
 gem 'paperclip'
-gem 'shopify_app'
-gem 'rails_admin'
 gem "cancancan"
 gem 'devise'
 gem 'capistrano', '~> 3.1.0'
