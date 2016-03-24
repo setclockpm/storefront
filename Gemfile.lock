@@ -134,7 +134,7 @@ GEM
     factory_girl_rails (4.6.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
-    ffaker (1.22.0)
+    ffaker (1.22.1)
     ffi (1.9.10)
     font-awesome-rails (4.5.0.1)
       railties (>= 3.2, < 5.1)
@@ -407,7 +407,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   database_cleaner
   factory_girl_rails (~> 4.0)
-  ffaker (= 1.22.0)
+  ffaker (= 1.22.1)
   foreman
   jbuilder (~> 2.0)
   jquery-rails

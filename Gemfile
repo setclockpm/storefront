@@ -27,7 +27,7 @@ gem 'mail', '2.5.4'
 group :test, :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'ffaker', '1.22.0'
+  gem 'ffaker', '1.22.1'
   gem "rspec-rails", "~> 2.0"
   gem "factory_girl_rails", "~> 4.0"
   gem "capybara"
