@@ -2360,12 +2360,12 @@ CREATE TABLE spree_users (
     login character varying,
     ship_address_id integer,
     bill_address_id integer,
-    authentication_token character varying,
-    unlock_token character varying,
-    locked_at timestamp without time zone,
     reset_password_sent_at timestamp without time zone,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
+    authentication_token character varying,
+    unlock_token character varying,
+    locked_at timestamp without time zone,
     remember_created_at timestamp without time zone,
     deleted_at timestamp without time zone,
     confirmation_token character varying,
@@ -2502,12 +2502,6 @@ CREATE SEQUENCE spree_zones_id_seq
 --
 
 ALTER SEQUENCE spree_zones_id_seq OWNED BY spree_zones.id;
-
---
--- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE users_id_seq OWNED BY users.id;
 
 
 --
@@ -2970,13 +2964,6 @@ ALTER TABLE ONLY spree_zone_members ALTER COLUMN id SET DEFAULT nextval('spree_z
 --
 
 ALTER TABLE ONLY spree_zones ALTER COLUMN id SET DEFAULT nextval('spree_zones_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
 
 
 --
@@ -3505,14 +3492,6 @@ ALTER TABLE ONLY spree_zone_members
 
 ALTER TABLE ONLY spree_zones
     ADD CONSTRAINT spree_zones_pkey PRIMARY KEY (id);
-
-
---
--- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
---
-
-ALTER TABLE ONLY users
-    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
 
 
 --
@@ -4640,27 +4619,6 @@ CREATE INDEX index_taxons_on_permalink ON spree_taxons USING btree (permalink);
 --
 
 CREATE INDEX index_taxons_on_taxonomy_id ON spree_taxons USING btree (taxonomy_id);
-
-
---
--- Name: index_users_on_confirmation_token; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE UNIQUE INDEX index_users_on_confirmation_token ON users USING btree (confirmation_token);
-
-
---
--- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE UNIQUE INDEX index_users_on_email ON users USING btree (email);
-
-
---
--- Name: index_users_on_reset_password_token; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE UNIQUE INDEX index_users_on_reset_password_token ON users USING btree (reset_password_token);
 
 
 --
