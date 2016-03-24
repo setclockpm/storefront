@@ -18,8 +18,11 @@ Porthos::Application.configure do
   config.active_support.deprecation = :log
 
   # Expands the lines which load the assets
-  config.assets.debug = true
+  # config.assets.debug = true
+  # Recommended By Spree
+  config.assets.debug = false
   
   # Added when Devise was installed
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  
 end

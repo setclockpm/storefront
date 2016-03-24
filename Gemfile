@@ -11,7 +11,6 @@ gem 'bower-rails'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'sass', '3.2.19'
 gem 'paperclip'
 gem "cancancan"
 gem 'devise'
@@ -21,6 +20,8 @@ gem 'capistrano-rails', '~> 1.1.1'
 
 # Add this if you're using rbenv
 gem 'capistrano-rbenv', github: "capistrano/rbenv"
+
+
 
 
 group :test, :development do
@@ -50,3 +51,7 @@ group :development do
   gem 'web-console', '~> 2.0'
 end
 
+
+gem 'spree', '~> 3.0.8'
+gem 'spree_gateway', '~> 3.0.0'
+gem 'spree_auth_devise', '~> 3.0.0'
