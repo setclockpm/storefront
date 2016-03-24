@@ -406,7 +406,6 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.1.0)
   database_cleaner
-  devise
   factory_girl_rails (~> 4.0)
   ffaker (= 1.22.0)
   foreman

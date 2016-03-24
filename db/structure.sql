@@ -2370,7 +2370,8 @@ CREATE TABLE spree_users (
     deleted_at timestamp without time zone,
     confirmation_token character varying,
     confirmed_at timestamp without time zone,
-    confirmation_sent_at timestamp without time zone
+    confirmation_sent_at timestamp without time zone,
+    spree_api_key character varying(48)
 );
 
 
