@@ -14,3 +14,6 @@
          email: Faker::Internet.user_name + i.to_s +
                 "@#{Faker::Internet.domain_name}")
 end
+
+Spree::Core::Engine.load_seed if defined?(Spree::Core)
+Spree::Auth::Engine.load_seed if defined?(Spree::Auth)
