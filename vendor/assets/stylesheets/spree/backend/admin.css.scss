@@ -1,0 +1,10 @@
+a {
+  &.navbar-brand {
+    img {
+      &#logo { 
+        height: 44px;
+        margin-top: -10px;
+      }
+    }
+  }
+}
