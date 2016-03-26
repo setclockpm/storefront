@@ -1,7 +1,7 @@
-Deface::Override.new(virtual_path:     "spree/layouts/admin", 
-                     name:             "logo", 
-                     replace_contents: "a.navbar-brand", 
-                     text:             "Store")
+Deface::Override.new(virtual_path: 'spree/admin/shared/_head',
+                     name: 'override',
+                     replace_contents: 'title',
+                     text: 'Porthos Portal')
                      
                      
                      
