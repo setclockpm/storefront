@@ -1,8 +1,7 @@
-Deface::Override.new(virtual_path: 'spree/admin/shared/_head',
-                     name: 'override',
+Deface::Override.new(virtual_path:     'spree/admin/shared/_head',
+                     name:             'override',
                      replace_contents: 'title',
-                     text: 'Porthos Portal')
-                     
-                     
-                     
+                     text:             'Porthos Portal - <%= controller.controller_name.titleize %>')
+
+
                      
