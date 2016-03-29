@@ -9,3 +9,120 @@
  *= require_tree .
 */
 
+
+#header {
+	height: 55px;
+	background: black;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 9999999;
+}
+#wrapper {
+	margin-top: 115px;
+}
+
+body nav.alpha.omega.sixteen.columns {
+	top: 55px;
+	height: 31px;
+	background: #CCC;
+	width: 100%;
+	position: fixed;
+	z-index: 999999;
+}
+
+ul#main-nav-bar {
+	float: left;
+	margin-top: 6px;
+	font-weight: bold;
+	font-size: 14px;
+	text-transform: uppercase;
+	color: black;
+	width: 600px;
+}
+
+#taxon {
+	width: 11%;
+	font-size: 11px;
+	border-radius: 4px;
+}
+
+input#keywords {
+	width: 16%;
+	height: 41%;
+	border-radius: 5px;
+}
+
+input#main-search-button {
+	font-size: 12px;
+	width: 6%;
+	padding: 1px;
+}
+
+form#main-search-form {
+	margin-top: 5px;
+}
+
+ul#main-nav-bar {
+	border: none
+}
+
+ul#products li {
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 20px;
+	position: relative;
+	border-radius: 4px;
+	padding: 2px 2px 15px 2px;
+	border: 1px solid #E7E7E7;
+	width: 150px;
+}
+
+ul#products li a.info {
+  height: 35px;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #BBB;
+  overflow: hidden;
+  text-align: center;
+  color: black;
+  border:none;
+  position: relative;
+  z-index: 5;
+}
+
+ul#products li .price {
+color: #58C51A;
+font-size: 16px;
+padding-top: 5px;
+display: block;
+text-align: center;
+}
+
+ul#products li .product-image {
+  border: none;
+  padding: 5px;
+  min-height: 110px;
+  background-color: white;
+  z-index:5;
+  position:relative;
+}
+
+ul#products span.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(1, black));
+	background-image: -webkit-linear-gradient(top, white, black);
+	background-image: -moz-linear-gradient(top, white, black);
+	background-image: -ms-linear-gradient(top, white, black);
+	background-image: -o-linear-gradient(top, white, black);
+	background-image: linear-gradient(top, bottom, white, black);
+	z-index: 0;
+	opacity: .025;
+}
+ul#products li:hover {
+	box-shadow: 0px 1px 3px #bbe8f3;
+}
