@@ -21,6 +21,7 @@ gem 'capistrano-rails', '~> 1.1.1'
 gem 'capistrano-rbenv', github: "capistrano/rbenv"
 # Spree needs this version at the moment
 gem 'mail', '2.5.4'
+gem 'wasabi'
 
 
 
