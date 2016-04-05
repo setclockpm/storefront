@@ -1,0 +1,13 @@
+sellercloud:
+  wsdl:
+    host: 'http://tt.ws.sellercloud.com/'
+    orders:
+      retrieve: scservice.asmx?WSDL
+      create: OrderCreationService.asmx?WSDL
+      update: scservice.asmx?WSDL
+    purchase_orders: POServices.asmx?WSDL
+    inventory: SCInventoryService.asmx?WSDL
+    login: phillip.medrano@gmail.com
+    passw: Antique1
+    timeout: 30000
+    

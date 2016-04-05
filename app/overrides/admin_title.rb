@@ -7,5 +7,5 @@ Deface::Override.new(name:             'override-storefront-title',
                      virtual_path:     'spree/shared/_head',
                      replace_contents: 'title', text: 'Porthos Home: 
                                                       <%= title = (controller.controller_name.titleize == "Home" ? 
-                                                      "Shop Boldy For Your Style" : 
+                                                      "Shop Boldly For Your Style" : 
                                                       controller.controller_name.titleize) %>')

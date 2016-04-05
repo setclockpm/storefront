@@ -1,0 +1,2 @@
+module Sellercloud::InventoryHelper
+end
