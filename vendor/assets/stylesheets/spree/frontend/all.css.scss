@@ -10,6 +10,16 @@
 */
 
 
+
+div {
+  &.under-construction {
+    background-size: cover;
+    background-color: #fff;
+    min-height: 500px;
+    text-align: center;
+  }
+}
+
 #header {
 	height: 55px;
 	background: black;
@@ -125,13 +135,4 @@ ul#products span.overlay {
 }
 ul#products li:hover {
 	box-shadow: 0px 1px 3px #bbe8f3;
-}
-
-
-.full {
-    background: url('http://placehold.it/1920x1080') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
 }
