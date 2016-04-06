@@ -1,2 +1,2 @@
-class SellerCloud::InventoryController < ApplicationController
+class Sellercloud::InventoryController < ApplicationController
 end
