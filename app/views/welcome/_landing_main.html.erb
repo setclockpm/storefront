@@ -1,0 +1,29 @@
+<%= render partial: 'spree/shared/google_analytics.js' %>
+<%= render partial: 'spree/shared/header' %>
+
+
+<section id="landing-page-1">
+  <div class="container">
+    <div id="landing-page" class="row" data-hook>
+      <%= breadcrumbs(@taxon) %>
+    
+      <div class="col-lg-12">
+        <img class="img-responsive" src="img/profile.png" alt="">
+      
+        <div class="intro-text">
+          <span class="name">Porthos Home</span>
+          <hr class="star-light">
+          <span class="skills">Shop Boldly For Your Style</span>
+        </div>
+      
+        <div id="content" class="col-sm-12" data-hook>
+          <%= flash_messages %>
+          <%= yield %>
+        </div>
+      
+        <%= yield :templates %>
+      
+      </div>
+    </div>
+  </div>
+</section>

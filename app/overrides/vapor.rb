@@ -6,7 +6,7 @@ Deface::Override.new(name:         'move-header',
 
 Deface::Override.new(name:              'wrap-header',
                      virtual_path:      'spree/shared/_header',
-                     surround_contents: 'header#header', text: '<div class="container"><%= render_original %></div>', 
+                     surround_contents: 'header#header', text: '<%= render_original %>', 
                      original:          'ae44d1359446708c4148d6bfdf888ad1e68e2db2')
 
 

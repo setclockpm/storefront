@@ -2,26 +2,29 @@ source 'https://rubygems.org'
 ruby "2.3.0"
 
 gem 'rails', '4.2.5.1'
-gem 'pg', '~> 0.15'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
+
 gem 'angular-rails-templates', '0.2.0'
 gem 'bower-rails'
-gem 'jquery-rails'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'paperclip'
 gem "cancancan"
 gem 'capistrano', '~> 3.4.0'
 gem 'capistrano-bundler', '~> 1.1.2'
 gem 'capistrano-rails', '~> 1.1.1'
+gem 'coffee-rails', '~> 4.1.0'
+gem 'font-awesome-rails'
+gem 'jquery-rails'
+gem 'jbuilder', '~> 2.0'
+gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'paperclip'
+gem 'pg', '~> 0.15'
+gem 'sass-rails', '~> 5.0'
+gem 'uglifier', '>= 1.3.0'
+
+
 
 # Add this if you're using rbenv
 gem 'capistrano-rbenv', github: "capistrano/rbenv"
 # Spree needs this version at the moment
 gem 'mail', '2.5.4'
-gem 'wasabi'
 
 
 

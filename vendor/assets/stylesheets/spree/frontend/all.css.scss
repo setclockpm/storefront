@@ -4,7 +4,7 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *
  *= require spree/frontend
-
+ *= require font-awesome
  *= require_self
  *= require_tree .
 */
@@ -32,14 +32,7 @@ div {
 	margin-top: 115px;
 }
 
-body nav.alpha.omega.sixteen.columns {
-	top: 55px;
-	height: 31px;
-	background: #CCC;
-	width: 100%;
-	position: fixed;
-	z-index: 999999;
-}
+
 
 ul#main-nav-bar {
 	float: left;
