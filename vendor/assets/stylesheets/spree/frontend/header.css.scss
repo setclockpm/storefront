@@ -1,38 +1,12 @@
 
-#spree-header {
-  #logo {
-    img {
-      margin-top: -9px;
-     	width: 35%;
-    }
-  }
-}
-
 .img-centered { margin: 0 auto; }
 
 
 
 
 
-body {
-  overflow-x: hidden;
-  
-  nav {
-    &.alpha.omega.sixteen.columns {
-      background: #ccc;
-      height: 31px;
-      position: fixed;
-      top: 55px;
-      width: 100%;
-      z-index: 999999;
-    }
-  }
-}
 
-p { 
-  font-size: 20px;
-  &.small { font-size: 16px; }
-}
+
 
 
 
@@ -48,6 +22,43 @@ a.active {
   color: #18bc9c;
   outline: none;
 }
+
+
+
+
+body {
+  overflow-x: hidden;
+}
+
+
+
+div {
+  &#spree-header {
+    background: 0;
+    margin-bottom: 0px;
+    
+    figure {
+      &#logo { 
+        img { 
+          margin-bottom: 0px;
+          width: 150px;
+        } 
+      }
+    }
+    nav {
+      &.navbar-default { background-color: #2c3e50; }
+      a {
+        &.navbar-brand {
+          height: auto;
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+
+
 h1,
 h2,
 h3,
@@ -58,6 +69,58 @@ h6 {
   text-transform: uppercase;
   font-weight: 700;
 }
+
+
+header {
+  //background: #18bc9c;
+  background: #fff;
+  color: white;
+  //min-height: 800px;
+  text-align: center;
+  
+  
+  div {
+    &.container {
+      padding-top: 240px;
+      padding-bottom: 0px;
+      width: 100%;
+    }
+  }
+  
+  img {
+    /* Set rules to fill background */
+      min-height: 100%;
+      min-width: 1024px;
+      
+      /* Set up proportionate scaling */
+      width: 100%;
+      height: auto;
+      
+      /* Set up positioning */
+      position: fixed;
+      top: 0;
+      left: 0;
+    //display: block;
+//    margin: 0 auto 20px;
+  }
+  
+  .intro-text {
+    .name {
+      display: block;
+      font-family: "Cocomat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 2em;
+    }
+
+    .skills {
+      font-size: 1.25em;
+      font-weight: 300;
+    }
+  }
+}
+
+// background: #18bc9c; cool green color
 
 
 
@@ -110,37 +173,10 @@ hr {
 }
 
 
-section {
-  &.landing-page-1 {
-    background: #18bc9c;
-    color: white;
-    text-align: center;
 
-    img {
-      display: block;
-      margin: 0 auto 20px;
-    }
-
-  //  .container {
-  //    padding-top: 100px;
-  //    padding-bottom: 50px;
-  //  }
-  //
-  //  .intro-text {
-  //    .name {
-  //      display: block;
-  //      font-family: "Cocomat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  //      text-transform: uppercase;
-  //      font-weight: 700;
-  //      font-size: 2em;
-  //    }
-  //
-  //    .skills {
-  //      font-size: 1.25em;
-  //      font-weight: 300;
-  //    }
-  //  }
-  }
+p { 
+  font-size: 20px;
+  &.small { font-size: 16px; }
 }
 
 
@@ -148,18 +184,87 @@ section {
 
 
 
-//@media (min-width: 768px) {
-  section {
-    //  &.landing-page-1 {
-    //    .container {
-    //      padding-top: 200px;
-    //      padding-bottom: 100px;
-    //    }
-    //    .intro-text {
-    //      .name { font-size: 4.75em; }
-    //      .skills { font-size: 1.75em; }
-    //    }
-    //  }
-    //}
-    
+
+
+
+@media (min-width: 768px) {
+  div {
+    &#landing-page-1 {
+      &#container-1 {
+        padding-top: 200px;
+        padding-bottom: 100px;
+      }
+      .intro-text {
+        .name { font-size: 4.75em; }
+        .skills { font-size: 1.75em; }
+      }
+    }
   }
+}
+
+
+@media (min-width: 768px) {
+  .navbar-fixed-top {
+    padding: 25px 0;
+    -webkit-transition: padding 0.3s;
+    -moz-transition: padding 0.3s;
+    transition: padding 0.3s;
+  }
+  .navbar-fixed-top .navbar-brand {
+    font-size: 2em;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .navbar-fixed-top.navbar-shrink {
+    padding: 10px 0;
+  }
+  .navbar-fixed-top.navbar-shrink .navbar-brand {
+    font-size: 1.5em;
+  }
+}
+.navbar {
+  font-family: "Cocomat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.navbar a:focus {
+  outline: none;
+}
+.navbar .navbar-nav {
+  letter-spacing: 1px;
+}
+.navbar .navbar-nav li a:focus {
+  outline: none;
+}
+.navbar-default,
+.navbar-inverse {
+  border: none;
+}
+section {
+  padding: 100px 0;
+}
+section h2 {
+  margin: 0;
+  font-size: 3em;
+}
+section.success {
+  background: #18bc9c;
+  color: white;
+}
+section.success a,
+section.success a:hover,
+section.success a:focus,
+section.success a:active,
+section.success a.active {
+  color: #2c3e50;
+  outline: none;
+}
+@media (max-width: 767px) {
+  section {
+    padding: 75px 0;
+  }
+  section.first {
+    padding-top: 75px;
+  }
+}
