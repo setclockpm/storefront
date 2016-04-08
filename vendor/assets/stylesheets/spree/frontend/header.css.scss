@@ -87,23 +87,6 @@ header {
     }
   }
   
-  img {
-    /* Set rules to fill background */
-      min-height: 100%;
-      min-width: 1024px;
-      
-      /* Set up proportionate scaling */
-      width: 100%;
-      height: auto;
-      
-      /* Set up positioning */
-      position: fixed;
-      top: 0;
-      left: 0;
-    //display: block;
-//    margin: 0 auto 20px;
-  }
-  
   .intro-text {
     .name {
       display: block;
@@ -200,6 +183,25 @@ p {
       }
     }
   }
+  
+  header {
+    img {
+      &#welcome-bg {
+        /* Set rules to fill background */
+        min-height: 100%;
+        //min-width: 1024px;
+      
+        /* Set up proportionate scaling */
+        width: 100%;
+      
+        /* Set up positioning */
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      &#welcome-bg-s { display: none; }
+    }
+  }
 }
 
 
@@ -260,7 +262,11 @@ section.success a.active {
   color: #2c3e50;
   outline: none;
 }
+
+
+
 @media (max-width: 767px) {
+  
   section {
     padding: 75px 0;
   }
