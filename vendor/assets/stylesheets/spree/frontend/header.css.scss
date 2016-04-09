@@ -2,18 +2,6 @@
 .img-centered { margin: 0 auto; }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 a,
 a:hover,
 a:focus,
@@ -26,9 +14,7 @@ a.active {
 
 
 
-body {
-  overflow-x: hidden;
-}
+body { overflow-x: hidden; }
 
 
 
@@ -72,12 +58,16 @@ h6 {
 
 
 header {
-  //background: #18bc9c;
-  background: #fff;
+  background: url(welcome-bg.png) center no-repeat;
   color: white;
-  //min-height: 800px;
+  min-height: 100%;
+  min-width: 1024px;
   text-align: center;
+  width: 100%;
   
+  position: fixed;
+  top: 0;
+  left: 0;
   
   div {
     &.container {
@@ -104,7 +94,21 @@ header {
 }
 
 // background: #18bc9c; cool green color
-
+header {
+  img {
+    &#welcome-bg {
+      /* Set rules to fill background */
+      
+    
+      /* Set up proportionate scaling */
+      
+    
+      /* Set up positioning */
+     
+    }
+    &#welcome-bg-s { display: none; }
+  }
+}
 
 
 hr {
@@ -167,9 +171,9 @@ p {
 
 
 
-
-
-
+/////////////////////////////////
+/* Minimum width 768px section */
+/////////////////////////////////
 @media (min-width: 768px) {
   div {
     &#landing-page-1 {
@@ -184,24 +188,7 @@ p {
     }
   }
   
-  header {
-    img {
-      &#welcome-bg {
-        /* Set rules to fill background */
-        min-height: 100%;
-        //min-width: 1024px;
-      
-        /* Set up proportionate scaling */
-        width: 100%;
-      
-        /* Set up positioning */
-        position: fixed;
-        top: 0;
-        left: 0;
-      }
-      &#welcome-bg-s { display: none; }
-    }
-  }
+  
 }
 
 
