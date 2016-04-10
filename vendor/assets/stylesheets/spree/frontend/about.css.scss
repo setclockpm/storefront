@@ -65,9 +65,9 @@ section {
   }
 }
 .btn-outline {
-  color: white;
+  color: #2c3e50;
   font-size: 20px;
-  border: solid 2px white;
+  border: solid 2px #2c3e50;
   background: transparent;
   transition: all 0.3s ease-in-out;
   margin-top: 15px;
@@ -76,7 +76,7 @@ section {
 .btn-outline:focus,
 .btn-outline:active,
 .btn-outline.active {
-  color: #18bc9c;
+  color: #db5544;
   background: white;
   border: solid 2px white;
 }
@@ -238,3 +238,24 @@ footer .footer-below {
   opacity: 0;
   display: none;
 }
+
+
+
+
+
+/* Callout Life style shot */
+aside {
+  &.callout {
+    display: table;
+    width: 100%;
+    height: 400px;
+    color: #fff;
+    background: url(../img/callout.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
+}
+
+
