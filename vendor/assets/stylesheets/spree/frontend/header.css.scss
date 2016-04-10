@@ -1,5 +1,10 @@
+.topnav { font-size: 14px; }
 
-.img-centered { margin: 0 auto; }
+.lead {
+  font-size: 18px;
+  font-weight: 400;
+}
+
 
 
 a,
@@ -12,6 +17,22 @@ a.active {
 }
 
 
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cocomat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
 
 
 body { overflow-x: hidden; }
@@ -44,71 +65,47 @@ div {
 }
 
 
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Cocomat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-
 header {
-  background: url(welcome-bg.png) center no-repeat;
-  color: white;
-  min-height: 100%;
-  min-width: 1024px;
-  text-align: center;
-  width: 100%;
+  &#intro-splash {
+    background: url(welcome-bg.png) no-repeat center center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    color: white;
+    min-height: 100%;
+    margin-top: 100px;
+    padding-top: 55px; 
+    padding-bottom: 50px;
+    text-align: center;
+    /* If you're making other pages, make sure there is 55px of padding to make sure the navbar doesn't overlap content! */
   
-  position: fixed;
-  top: 0;
-  left: 0;
-  
-  div {
-    &.container {
-      padding-top: 240px;
-      padding-bottom: 0px;
-      width: 100%;
+    div {
+      &.container {
+        padding-top: 300px;
+        padding-bottom: 0px;
+        width: 100%;
+      }
     }
-  }
   
-  .intro-text {
-    .name {
-      display: block;
-      font-family: "Cocomat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      text-transform: uppercase;
-      font-weight: 700;
-      font-size: 2em;
-    }
+    .intro-text {
+      .name {
+        display: block;
+        font-family: "Cocomat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 2em;
+      }
 
-    .skills {
-      font-size: 1.25em;
-      font-weight: 300;
+      .skills {
+        font-size: 1.25em;
+        font-weight: 300;
+      }
     }
   }
 }
 
-// background: #18bc9c; cool green color
-header {
-  img {
-    &#welcome-bg {
-      /* Set rules to fill background */
-      
-    
-      /* Set up proportionate scaling */
-      
-    
-      /* Set up positioning */
-     
-    }
-    &#welcome-bg-s { display: none; }
-  }
-}
+
 
 
 hr {
@@ -187,9 +184,10 @@ p {
       }
     }
   }
-  
-  
 }
+
+
+
 
 
 @media (min-width: 768px) {
@@ -252,12 +250,21 @@ section.success a.active {
 
 
 
+
+
+
+
+
+
+/////////////////////////////////
+/* Maximum width 767px section */
+/////////////////////////////////
 @media (max-width: 767px) {
+  
+  header { &#intro-splash { margin-top: 1px; } }
   
   section {
     padding: 75px 0;
-  }
-  section.first {
-    padding-top: 75px;
+    &.first { padding-top: 75px; }
   }
 }

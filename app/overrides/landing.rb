@@ -1,7 +1,7 @@
 Deface::Override.new(name:           'landing-products',
                      virtual_path:   'spree/home/index',
-                     replace:        '[data-hook="homepage_products"]',
-                     partial:        'welcome/hello')
+                     remove:        '[data-hook="homepage_products"]',
+                     original:       nil)
 
 
 Deface::Override.new(name:             'landing-sidebar',

@@ -1,13 +1,26 @@
-#about-us .about-us-item {
-  margin: 0 0 15px;
-  right: 0;
+
+section {
+  &#about-us {
+    background-color: #fffaf0;
+    
+    &.about-us-item {
+      margin: 0 0 15px;
+      right: 0;
+    }
+    h2 { text-transform: uppercase; }
+  }
 }
+
+
+
 #about-us .about-us-item .about-us-link {
   display: block;
   position: relative;
   max-width: 400px;
   margin: 0 auto;
 }
+
+
 #about-us .about-us-item .about-us-link .caption {
   background: rgba(24, 188, 156, 0.9);
   position: absolute;
@@ -18,6 +31,7 @@
   -webkit-transition: all ease 0.5s;
   -moz-transition: all ease 0.5s;
 }
+
 #about-us .about-us-item .about-us-link .caption:hover {
   opacity: 1;
 }

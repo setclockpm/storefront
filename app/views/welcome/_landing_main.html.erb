@@ -2,19 +2,13 @@
 <%= render partial: 'spree/shared/header' %>
 
 
-
-
 <!-- Header (Front Page) -->
-<header id="main-splash">
-  <%#= image_tag 'welcome-bg.jpg', id: "welcome-bg", class: "img-responsive", alt: "Porthos Home" %>
-  
+<header id="intro-splash">
   <div class="container">
     <div class="row" data-hook>
       <%= breadcrumbs(@taxon) %>
       
         <div class="col-lg-12" data-hook>
-          
-          
           <div class="intro-text">
             <span class="name">Coming Soon</span>
             <hr class="star-light">
@@ -25,80 +19,7 @@
   </div>
 </header>
 
+<%= render partial: 'welcome/about' %>
 
 
-<!-- Portfolio Grid Section -->
-<section id="about-us">
-  <%#= image_tag 'login-bg.jpg', id: "about-us-bg", class: "img-responsive", alt: "Porthos Home" %>
-  
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2>About Us</h2>
-          <hr class="star-primary">
-      </div>
-    </div>
-    <div class="row">
-          <div class="col-sm-4 about-us-item">
-              <a href="#about-usModal1" class="about-us-link" data-toggle="modal">
-                  <div class="caption">
-                      <div class="caption-content">
-                          <i class="fa fa-search-plus fa-3x"></i>
-                      </div>
-                  </div>
-                  <!-- <img src="img/about-us/cabin.png" class="img-responsive" alt=""> -->
-              </a>
-          </div>
-          <div class="col-sm-4 about-us-item">
-              <a href="#about-usModal2" class="about-us-link" data-toggle="modal">
-                  <div class="caption">
-                      <div class="caption-content">
-                          <i class="fa fa-search-plus fa-3x"></i>
-                      </div>
-                  </div>
-                  <!-- <img src="img/about-us/cake.png" class="img-responsive" alt=""> -->
-              </a>
-          </div>
-          <div class="col-sm-4 about-us-item">
-              <a href="#about-usModal3" class="about-us-link" data-toggle="modal">
-                  <div class="caption">
-                      <div class="caption-content">
-                          <i class="fa fa-search-plus fa-3x"></i>
-                      </div>
-                  </div>
-                  <!-- <img src="img/about-us/circus.png" class="img-responsive" alt=""> -->
-              </a>
-          </div>
-          <div class="col-sm-4 about-us-item">
-              <a href="#about-usModal4" class="about-us-link" data-toggle="modal">
-                  <div class="caption">
-                      <div class="caption-content">
-                          <i class="fa fa-search-plus fa-3x"></i>
-                      </div>
-                  </div>
-                  <!-- <img src="img/about-us/game.png" class="img-responsive" alt=""> -->
-              </a>
-          </div>
-          <div class="col-sm-4 about-us-item">
-              <a href="#about-usModal5" class="about-us-link" data-toggle="modal">
-                  <div class="caption">
-                      <div class="caption-content">
-                          <i class="fa fa-search-plus fa-3x"></i>
-                      </div>
-                  </div>
-                  <!-- <img src="img/about-us/safe.png" class="img-responsive" alt=""> -->
-              </a>
-          </div>
-          <div class="col-sm-4 about-us-item">
-              <a href="#about-usModal6" class="about-us-link" data-toggle="modal">
-                  <div class="caption">
-                      <div class="caption-content">
-                          <i class="fa fa-search-plus fa-3x"></i>
-                      </div>
-                  </div>
-                  <!-- <img src="img/about-us/submarine.png" class="img-responsive" alt=""> -->
-              </a>
-          </div>
-      </div>
-  </div>
-</section>
+
