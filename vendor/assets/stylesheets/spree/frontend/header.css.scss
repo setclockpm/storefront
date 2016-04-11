@@ -1,11 +1,5 @@
 .topnav { font-size: 14px; }
 
-.lead {
-  font-size: 18px;
-  font-weight: 400;
-}
-
-
 
 a,
 a:hover,
@@ -131,30 +125,6 @@ hr {
       top: -0.8em;
     }
   }
-  
-  
-  &.star-primary {
-    border: none;
-    border-top: solid 5px;
-    border-color: #2c3e50;
-    margin: 25px auto 30px;
-    max-width: 250px;
-    padding: 0;
-    text-align: center;
-    
-    &:after {
-      background-color: white;
-      color: #2c3e50;
-      content: "\f005";
-      display: inline-block;
-      font-family: FontAwesome;
-      font-size: 2em;
-      padding: 0 0.25em;
-      position: relative;
-      top: -0.8em;
-    }
-    
-  }
 }
 
 
@@ -173,18 +143,7 @@ p {
 /* Minimum width 768px section */
 /////////////////////////////////
 @media (min-width: 768px) {
-  div {
-    &#landing-page-1 {
-      &#container-1 {
-        padding-top: 200px;
-        padding-bottom: 100px;
-      }
-      .intro-text {
-        .name { font-size: 4.75em; }
-        .skills { font-size: 1.75em; }
-      }
-    }
-  }
+  
 }
 
 
