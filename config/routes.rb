@@ -13,6 +13,8 @@ Porthos::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   resources :customers, only: [:index]
   resources :products
+  
+  get "welcome/catalog" => "welcome#catalog", as: :download_catalog
     
 
   # Sample resource route with options:
