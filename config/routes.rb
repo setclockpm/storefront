@@ -1,4 +1,7 @@
 Porthos::Application.routes.draw do
+  get 'contact', to: 'messages#new', as: 'contact'
+  post 'contact', to: 'messages#create'
+
   mount Spree::Core::Engine, at: '/'  # The priority is based upon order of creation:
   # first created -> highest priority.
 

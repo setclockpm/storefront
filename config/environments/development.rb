@@ -11,9 +11,6 @@ Porthos::Application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
-  # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
-
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
@@ -23,6 +20,20 @@ Porthos::Application.configure do
   config.assets.debug = false
   
   # Added when Devise was installed
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_options = { from: 'no-reply@porthoshome.com' }
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.preview_path = "#{Rails.root}/lib/mailer_previews"
+  # Don't care if the mailer can't send
+  config.action_mailer.raise_delivery_errors = true
   
+  
+  config.action_mailer.smtp_settings = {
+    address: "localhost",
+    port: 25,
+    domain: "porthoshome.com",
+    enable_starttls_auto: true
+  }
 end
+
+
