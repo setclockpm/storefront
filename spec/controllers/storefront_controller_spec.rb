@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe WelcomeController do
+describe StorefrontController do
 
   describe "GET 'hello'" do
     it "returns http success" do

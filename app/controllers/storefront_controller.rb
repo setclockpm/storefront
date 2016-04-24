@@ -1,4 +1,4 @@
-class WelcomeController < ApplicationController
+class StorefrontController < ApplicationController
   CATALOG      = "Porthos_Home_New_Items.pdf"
   CATALOG_LINK = "#{Rails.root}/public/#{CATALOG}"
   

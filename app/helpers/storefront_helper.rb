@@ -1,4 +1,4 @@
-module WelcomeHelper  
+module StorefrontHelper  
   
   
   def link_to_catalog(text="Download Catalog")
