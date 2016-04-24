@@ -13,7 +13,7 @@ Deface::Override.new(name:             'landing-sidebar',
 Deface::Override.new(name:             'main-landing-page',
                      virtual_path:     'spree/layouts/spree_application',
                      replace_contents: '[data-hook="body"]',
-                     partial:          'welcome/landing_main',
+                     partial:          'storefront/landing_main',
                      original:         '28aff58816a0675ee013a39f632fa2b61404d0f9')
                      
                      

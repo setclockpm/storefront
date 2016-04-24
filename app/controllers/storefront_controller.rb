@@ -4,7 +4,7 @@ class StorefrontController < ApplicationController
   
   
   
-  def hello
+  def index
     
   end
   
