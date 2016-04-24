@@ -81,7 +81,7 @@ Rails.application.configure do
   
   config.action_mailer.smtp_settings = {
     address: 'localhost',
-    authentication: :login,
+    #authentication: :login,
     port: 25,
     domain: 'porthoshome.com',
     #password: "<password>",
