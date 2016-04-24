@@ -32,9 +32,6 @@ Porthos::Application.configure do
     address: "localhost",
     port: 25,
     domain: "porthoshome.com",
-    authentication: :login,
-    user_name: 'swashbuckler',
-    password: "mah412AJA"
   }
 end
 

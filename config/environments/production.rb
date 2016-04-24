@@ -78,15 +78,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
   config.action_mailer.default_url_options = { host: "porthoshome.com" }
-  
-  config.action_mailer.smtp_settings = {
-    address: 'localhost',
-    #authentication: :login,
-    port: 25,
-    domain: 'porthoshome.com',
-    #password: "<password>",
-    user_name: 'swashbuckler'
-  }
-
+  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.default_options = { from: 'swashbuckler@porthoshome.com' }
   
 end
