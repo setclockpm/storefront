@@ -32,8 +32,20 @@ Porthos::Application.configure do
     address: "localhost",
     port: 25,
     domain: "porthoshome.com",
-    enable_starttls_auto: true
+    authentication: :login,
+    user_name: 'swashbuckler',
+    password: "mah412AJA"
   }
 end
+
+
+# SMTP server (i.e., outgoing mail): smtp.gmail.com
+# SMTP username: Your full Gmail or Google Apps email address (e.g. example@gmail.com or example@yourdomain.com)
+# SMTP password: Your Gmail or Google Apps email password
+# SMTP port: 465
+# SMTP TLS/SSL required: yes
+# In order to store a copy of outgoing emails in your Gmail or Google Apps Sent folder, log into your Gmail or Google Apps email Settings and:
+# Click on the Forwarding/IMAP tab and scroll down to the IMAP Access section: IMAP must be enabled in order for emails to be properly copied to your sent folder.
+#
 
 
