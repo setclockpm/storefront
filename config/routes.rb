@@ -2,8 +2,9 @@ Porthos::Application.routes.draw do
   get 'contact', to: 'messages#new', as: 'contact'
   post 'contact', to: 'messages#create'
 
-  mount Spree::Core::Engine, at: '/storefront'
-  #mount Spree::Core::Engine, at: '/'  # The priority is based upon order of creation:
+  mount Spree::Core::Engine, at: '/store'
+  
+  # mount Spree::Core::Engine, at: '/'  # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
@@ -13,7 +14,8 @@ Porthos::Application.routes.draw do
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
-
+  #get "admin" => "storefront/admin/order#index", as: :admin
+  
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   resources :customers, only: [:index]
   resources :products
@@ -56,7 +58,7 @@ Porthos::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root to: 'storefront#hello'
+  root to: 'storefront#index'
 
   # See how all your routes lay out with "rake routes"
 
