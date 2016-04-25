@@ -6,7 +6,10 @@
 <!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
   <head data-hook="inside_head">
     <meta charset="utf-8">
-    <title><%= title %></title>
+    <title>
+      Porthos Home: <%= yield(:title).blank? ? "Shop Boldly For Your Style" : yield(:title) %>
+      <%# The normal <yield(:title) || "Custom Title"> syntax doesn't work here for some reason. %> 
+    </title>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport">
     
@@ -24,7 +27,6 @@
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
     <%= render partial: 'spree/shared/google_analytics.js' %>
     <%= render partial: 'storefront/header' %>
-    
     <%= yield %>
     
     <%= render partial: 'storefront/footer' %>

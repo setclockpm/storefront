@@ -17,19 +17,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-          <li class="hidden">
-              <a href="#page-top"></a>
-          </li>
-          <li class="page-scroll">
-              <a href="#about-us">About Us</a>
-          </li>
-          <li class="page-scroll">
-              <a href="#about">Foo</a>
-          </li>
-          <li class="page-scroll">
-              <a href="#contact">Contact</a>
-          </li>
-          <li id="link-to-cart" class="page-scroll" data-hook><%= link_to_cart %></li>
+          <li class="hidden">     <%= link_to '#page-top' %></li>
+          <li class="page-scroll"><%= link_to 'About Us', '#about-us' %></li>
+          <li class="page-scroll"><%= link_to 'Contact', '#contact' %></li>
+          <li class="page-scroll"><%= link_to "Login", admin_path %></li>
+          <li id="link-to-cart" class="page-scroll" data-hook><%#= link_to_cart %></li>
           <li id="search-bar" data-hook> <%#= render partial: 'spree/shared/search' %> </li>
           <!-- <i class="fa fa-search-plus fa-3x"></i> -->
       </ul>

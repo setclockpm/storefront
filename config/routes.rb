@@ -1,8 +1,12 @@
 Porthos::Application.routes.draw do
   get 'contact', to: 'messages#new', as: 'contact'
   post 'contact', to: 'messages#create'
+  
 
   mount Spree::Core::Engine, at: '/store'
+  
+  # Disable this when app is finished. Admin route should be obfuscated from general public
+  get '/admin', to: 'spree/admin/orders#index', as: :admin_alternate
   
   # mount Spree::Core::Engine, at: '/'  # The priority is based upon order of creation:
   # first created -> highest priority.
