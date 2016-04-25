@@ -1,0 +1,147 @@
+.lead {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+
+.navbar-static-top { padding: 25px 0; transition: padding 0.3s ease 0s; }
+
+
+
+aside {
+  &.callout { // Callout Lifestyle shot
+    display: table;
+    width: 100%;
+    height: 450px;
+    color: #fff;
+    background: url(callout-bg.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
+}
+
+
+
+div {
+  &.text-vertical-center {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  &.text-vertical-center h1 {
+    font-size: 4.5em;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+  }
+}
+
+
+section {
+  &.spotlight {
+    background-color: #fff;
+    
+    color: #db5544;
+    display: block;
+    line-height: 0.5em;
+    
+    max-width: 1920px;
+    
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    
+    
+    div {
+      &.spotlight-v1 {
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        
+        div {
+          &.tile.full {
+            width: 100%;
+            margin-right: 0; 
+          }
+        }
+      }
+    }
+    
+    h2 { //section-heading
+      margin-bottom: 30px;
+    }
+    hr { //section-heading-spacer
+      border-top: 3px solid #e7e7e7;
+      float: left;
+      width: 450px;
+    }
+  }
+}
+
+
+
+ul#products li {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  position: relative;
+  border-radius: 4px;
+  padding: 2px 2px 15px 2px;
+  border: 1px solid #E7E7E7;
+  width: 150px;
+}
+
+ul#products li a.info {
+  height: 35px;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #BBB;
+  overflow: hidden;
+  text-align: center;
+  color: black;
+  border:none;
+  position: relative;
+  z-index: 5;
+}
+
+ul#products li .price {
+  color: #58C51A;
+  font-size: 16px;
+  padding-top: 5px;
+  display: block;
+  text-align: center;
+}
+
+ul#products li .product-image {
+  border: none;
+  padding: 5px;
+  min-height: 110px;
+  background-color: white;
+  z-index:5;
+  position:relative;
+}
+
+ul#products span.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(1, black));
+  background-image: -webkit-linear-gradient(top, white, black);
+  background-image: -moz-linear-gradient(top, white, black);
+  background-image: -ms-linear-gradient(top, white, black);
+  background-image: -o-linear-gradient(top, white, black);
+  background-image: linear-gradient(top, bottom, white, black);
+  z-index: 0;
+  opacity: .025;
+}
+
+ul#products li:hover {
+  box-shadow: 0px 1px 3px #bbe8f3;
+}

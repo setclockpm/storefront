@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-<%= current_page?(main_app.root_url) ? "fixed" : "static" %>-top">
   <div class="container topnav">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header page-scroll">
@@ -20,8 +20,9 @@
           <li class="hidden">     <%= link_to '#page-top' %></li>
           <li class="page-scroll"><%= link_to 'About Us', '#about-us' %></li>
           <li class="page-scroll"><%= link_to 'Contact', '#contact' %></li>
-          <li class="page-scroll"><%= link_to "Login", admin_path %></li>
+          
           <li id="link-to-cart" class="page-scroll" data-hook><%#= link_to_cart %></li>
+          <%= render partial: 'spree/shared/login_bar' if home_ip? %>
           <li id="search-bar" data-hook> <%#= render partial: 'spree/shared/search' %> </li>
           <!-- <i class="fa fa-search-plus fa-3x"></i> -->
       </ul>
