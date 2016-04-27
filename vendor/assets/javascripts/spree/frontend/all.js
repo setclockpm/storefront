@@ -10,3 +10,4 @@
 //= require jquery-ui/effect
 
 //= require_tree .
+//= require spree/frontend/spree_i18n

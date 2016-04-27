@@ -555,6 +555,40 @@ ALTER SEQUENCE spree_log_entries_id_seq OWNED BY spree_log_entries.id;
 
 
 --
+-- Name: spree_option_type_translations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE spree_option_type_translations (
+    id integer NOT NULL,
+    spree_option_type_id integer,
+    locale character varying,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    name character varying,
+    presentation character varying
+);
+
+
+--
+-- Name: spree_option_type_translations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE spree_option_type_translations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: spree_option_type_translations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE spree_option_type_translations_id_seq OWNED BY spree_option_type_translations.id;
+
+
+--
 -- Name: spree_option_types; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -595,6 +629,40 @@ CREATE TABLE spree_option_types_prototypes (
     prototype_id integer,
     option_type_id integer
 );
+
+
+--
+-- Name: spree_option_value_translations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE spree_option_value_translations (
+    id integer NOT NULL,
+    spree_option_value_id integer,
+    locale character varying,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    name character varying,
+    presentation character varying
+);
+
+
+--
+-- Name: spree_option_value_translations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE spree_option_value_translations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: spree_option_value_translations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE spree_option_value_translations_id_seq OWNED BY spree_option_value_translations.id;
 
 
 --
@@ -957,6 +1025,77 @@ ALTER SEQUENCE spree_product_properties_id_seq OWNED BY spree_product_properties
 
 
 --
+-- Name: spree_product_property_translations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE spree_product_property_translations (
+    id integer NOT NULL,
+    spree_product_property_id integer,
+    locale character varying,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    value character varying
+);
+
+
+--
+-- Name: spree_product_property_translations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE spree_product_property_translations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: spree_product_property_translations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE spree_product_property_translations_id_seq OWNED BY spree_product_property_translations.id;
+
+
+--
+-- Name: spree_product_translations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE spree_product_translations (
+    id integer NOT NULL,
+    spree_product_id integer,
+    locale character varying,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    name character varying,
+    description text,
+    meta_description character varying,
+    meta_keywords character varying,
+    slug character varying,
+    deleted_at timestamp without time zone
+);
+
+
+--
+-- Name: spree_product_translations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE spree_product_translations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: spree_product_translations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE spree_product_translations_id_seq OWNED BY spree_product_translations.id;
+
+
+--
 -- Name: spree_products; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -1180,6 +1319,40 @@ CREATE TABLE spree_promotion_rules_users (
 
 
 --
+-- Name: spree_promotion_translations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE spree_promotion_translations (
+    id integer NOT NULL,
+    spree_promotion_id integer,
+    locale character varying,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    name character varying,
+    description character varying
+);
+
+
+--
+-- Name: spree_promotion_translations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE spree_promotion_translations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: spree_promotion_translations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE spree_promotion_translations_id_seq OWNED BY spree_promotion_translations.id;
+
+
+--
 -- Name: spree_promotions; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -1227,7 +1400,7 @@ ALTER SEQUENCE spree_promotions_id_seq OWNED BY spree_promotions.id;
 CREATE TABLE spree_properties (
     id integer NOT NULL,
     name character varying,
-    presentation character varying NOT NULL,
+    presentation character varying,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );
@@ -1260,6 +1433,40 @@ CREATE TABLE spree_properties_prototypes (
     prototype_id integer,
     property_id integer
 );
+
+
+--
+-- Name: spree_property_translations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE spree_property_translations (
+    id integer NOT NULL,
+    spree_property_id integer,
+    locale character varying,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    name character varying,
+    presentation character varying
+);
+
+
+--
+-- Name: spree_property_translations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE spree_property_translations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: spree_property_translations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE spree_property_translations_id_seq OWNED BY spree_property_translations.id;
 
 
 --
@@ -2168,12 +2375,50 @@ ALTER SEQUENCE spree_tax_rates_id_seq OWNED BY spree_tax_rates.id;
 
 
 --
+-- Name: spree_taxon_translations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE spree_taxon_translations (
+    id integer NOT NULL,
+    spree_taxon_id integer,
+    locale character varying,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    name character varying,
+    description text,
+    meta_title character varying,
+    meta_description character varying,
+    meta_keywords character varying,
+    permalink character varying
+);
+
+
+--
+-- Name: spree_taxon_translations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE spree_taxon_translations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: spree_taxon_translations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE spree_taxon_translations_id_seq OWNED BY spree_taxon_translations.id;
+
+
+--
 -- Name: spree_taxonomies; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE spree_taxonomies (
     id integer NOT NULL,
-    name character varying NOT NULL,
+    name character varying,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
     "position" integer DEFAULT 0
@@ -2200,6 +2445,39 @@ ALTER SEQUENCE spree_taxonomies_id_seq OWNED BY spree_taxonomies.id;
 
 
 --
+-- Name: spree_taxonomy_translations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE spree_taxonomy_translations (
+    id integer NOT NULL,
+    spree_taxonomy_id integer,
+    locale character varying,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    name character varying
+);
+
+
+--
+-- Name: spree_taxonomy_translations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE spree_taxonomy_translations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: spree_taxonomy_translations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE spree_taxonomy_translations_id_seq OWNED BY spree_taxonomy_translations.id;
+
+
+--
 -- Name: spree_taxons; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -2207,7 +2485,7 @@ CREATE TABLE spree_taxons (
     id integer NOT NULL,
     parent_id integer,
     "position" integer DEFAULT 0,
-    name character varying NOT NULL,
+    name character varying,
     permalink character varying,
     taxonomy_id integer,
     lft integer,
@@ -2360,18 +2638,18 @@ CREATE TABLE spree_users (
     login character varying,
     ship_address_id integer,
     bill_address_id integer,
-    authentication_token character varying,
-    unlock_token character varying,
-    locked_at timestamp without time zone,
     reset_password_sent_at timestamp without time zone,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
-    spree_api_key character varying(48),
+    authentication_token character varying,
+    unlock_token character varying,
+    locked_at timestamp without time zone,
     remember_created_at timestamp without time zone,
     deleted_at timestamp without time zone,
     confirmation_token character varying,
     confirmed_at timestamp without time zone,
-    confirmation_sent_at timestamp without time zone
+    confirmation_sent_at timestamp without time zone,
+    spree_api_key character varying(48)
 );
 
 
@@ -2506,51 +2784,6 @@ ALTER SEQUENCE spree_zones_id_seq OWNED BY spree_zones.id;
 
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE TABLE users (
-    id integer NOT NULL,
-    email character varying DEFAULT ''::character varying NOT NULL,
-    encrypted_password character varying DEFAULT ''::character varying NOT NULL,
-    reset_password_token character varying,
-    reset_password_sent_at timestamp without time zone,
-    remember_created_at timestamp without time zone,
-    sign_in_count integer DEFAULT 0 NOT NULL,
-    current_sign_in_at timestamp without time zone,
-    last_sign_in_at timestamp without time zone,
-    current_sign_in_ip inet,
-    last_sign_in_ip inet,
-    confirmation_token character varying,
-    confirmed_at timestamp without time zone,
-    confirmation_sent_at timestamp without time zone,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL,
-    admin boolean DEFAULT false,
-    CONSTRAINT email_must_be_company_email CHECK (((email)::text ~* '^[^@]+@[porthoshome|antiquerevival]+\.com'::text))
-);
-
-
---
--- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE users_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE users_id_seq OWNED BY users.id;
-
-
---
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -2652,7 +2885,21 @@ ALTER TABLE ONLY spree_log_entries ALTER COLUMN id SET DEFAULT nextval('spree_lo
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY spree_option_type_translations ALTER COLUMN id SET DEFAULT nextval('spree_option_type_translations_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY spree_option_types ALTER COLUMN id SET DEFAULT nextval('spree_option_types_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY spree_option_value_translations ALTER COLUMN id SET DEFAULT nextval('spree_option_value_translations_id_seq'::regclass);
 
 
 --
@@ -2722,6 +2969,20 @@ ALTER TABLE ONLY spree_product_properties ALTER COLUMN id SET DEFAULT nextval('s
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY spree_product_property_translations ALTER COLUMN id SET DEFAULT nextval('spree_product_property_translations_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY spree_product_translations ALTER COLUMN id SET DEFAULT nextval('spree_product_translations_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY spree_products ALTER COLUMN id SET DEFAULT nextval('spree_products_id_seq'::regclass);
 
 
@@ -2764,6 +3025,13 @@ ALTER TABLE ONLY spree_promotion_rules ALTER COLUMN id SET DEFAULT nextval('spre
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY spree_promotion_translations ALTER COLUMN id SET DEFAULT nextval('spree_promotion_translations_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY spree_promotions ALTER COLUMN id SET DEFAULT nextval('spree_promotions_id_seq'::regclass);
 
 
@@ -2772,6 +3040,13 @@ ALTER TABLE ONLY spree_promotions ALTER COLUMN id SET DEFAULT nextval('spree_pro
 --
 
 ALTER TABLE ONLY spree_properties ALTER COLUMN id SET DEFAULT nextval('spree_properties_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY spree_property_translations ALTER COLUMN id SET DEFAULT nextval('spree_property_translations_id_seq'::regclass);
 
 
 --
@@ -2953,7 +3228,21 @@ ALTER TABLE ONLY spree_tax_rates ALTER COLUMN id SET DEFAULT nextval('spree_tax_
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY spree_taxon_translations ALTER COLUMN id SET DEFAULT nextval('spree_taxon_translations_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY spree_taxonomies ALTER COLUMN id SET DEFAULT nextval('spree_taxonomies_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY spree_taxonomy_translations ALTER COLUMN id SET DEFAULT nextval('spree_taxonomy_translations_id_seq'::regclass);
 
 
 --
@@ -3010,13 +3299,6 @@ ALTER TABLE ONLY spree_zone_members ALTER COLUMN id SET DEFAULT nextval('spree_z
 --
 
 ALTER TABLE ONLY spree_zones ALTER COLUMN id SET DEFAULT nextval('spree_zones_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
 
 
 --
@@ -3132,11 +3414,27 @@ ALTER TABLE ONLY spree_log_entries
 
 
 --
+-- Name: spree_option_type_translations_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY spree_option_type_translations
+    ADD CONSTRAINT spree_option_type_translations_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: spree_option_types_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY spree_option_types
     ADD CONSTRAINT spree_option_types_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: spree_option_value_translations_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY spree_option_value_translations
+    ADD CONSTRAINT spree_option_value_translations_pkey PRIMARY KEY (id);
 
 
 --
@@ -3212,6 +3510,22 @@ ALTER TABLE ONLY spree_product_properties
 
 
 --
+-- Name: spree_product_property_translations_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY spree_product_property_translations
+    ADD CONSTRAINT spree_product_property_translations_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: spree_product_translations_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY spree_product_translations
+    ADD CONSTRAINT spree_product_translations_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: spree_products_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -3260,6 +3574,14 @@ ALTER TABLE ONLY spree_promotion_rules
 
 
 --
+-- Name: spree_promotion_translations_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY spree_promotion_translations
+    ADD CONSTRAINT spree_promotion_translations_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: spree_promotions_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -3273,6 +3595,14 @@ ALTER TABLE ONLY spree_promotions
 
 ALTER TABLE ONLY spree_properties
     ADD CONSTRAINT spree_properties_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: spree_property_translations_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY spree_property_translations
+    ADD CONSTRAINT spree_property_translations_pkey PRIMARY KEY (id);
 
 
 --
@@ -3476,11 +3806,27 @@ ALTER TABLE ONLY spree_tax_rates
 
 
 --
+-- Name: spree_taxon_translations_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY spree_taxon_translations
+    ADD CONSTRAINT spree_taxon_translations_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: spree_taxonomies_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY spree_taxonomies
     ADD CONSTRAINT spree_taxonomies_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: spree_taxonomy_translations_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY spree_taxonomy_translations
+    ADD CONSTRAINT spree_taxonomy_translations_pkey PRIMARY KEY (id);
 
 
 --
@@ -3548,18 +3894,17 @@ ALTER TABLE ONLY spree_zones
 
 
 --
--- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
---
-
-ALTER TABLE ONLY users
-    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
-
-
---
 -- Name: email_idx_unique; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE UNIQUE INDEX email_idx_unique ON spree_users USING btree (email);
+
+
+--
+-- Name: index_0968f57fbd8fb9f31050820cbb66109a266c516a; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_0968f57fbd8fb9f31050820cbb66109a266c516a ON spree_product_property_translations USING btree (spree_product_property_id);
 
 
 --
@@ -3885,10 +4230,38 @@ CREATE INDEX index_spree_log_entries_on_source_id_and_source_type ON spree_log_e
 
 
 --
+-- Name: index_spree_option_type_translations_on_locale; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_spree_option_type_translations_on_locale ON spree_option_type_translations USING btree (locale);
+
+
+--
+-- Name: index_spree_option_type_translations_on_spree_option_type_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_spree_option_type_translations_on_spree_option_type_id ON spree_option_type_translations USING btree (spree_option_type_id);
+
+
+--
 -- Name: index_spree_option_types_on_position; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX index_spree_option_types_on_position ON spree_option_types USING btree ("position");
+
+
+--
+-- Name: index_spree_option_value_translations_on_locale; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_spree_option_value_translations_on_locale ON spree_option_value_translations USING btree (locale);
+
+
+--
+-- Name: index_spree_option_value_translations_on_spree_option_value_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_spree_option_value_translations_on_spree_option_value_id ON spree_option_value_translations USING btree (spree_option_value_id);
 
 
 --
@@ -4102,6 +4475,34 @@ CREATE INDEX index_spree_product_properties_on_property_id ON spree_product_prop
 
 
 --
+-- Name: index_spree_product_property_translations_on_locale; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_spree_product_property_translations_on_locale ON spree_product_property_translations USING btree (locale);
+
+
+--
+-- Name: index_spree_product_translations_on_deleted_at; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_spree_product_translations_on_deleted_at ON spree_product_translations USING btree (deleted_at);
+
+
+--
+-- Name: index_spree_product_translations_on_locale; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_spree_product_translations_on_locale ON spree_product_translations USING btree (locale);
+
+
+--
+-- Name: index_spree_product_translations_on_spree_product_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_spree_product_translations_on_spree_product_id ON spree_product_translations USING btree (spree_product_id);
+
+
+--
 -- Name: index_spree_products_on_available_on; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -4207,6 +4608,20 @@ CREATE INDEX index_spree_promotion_rules_on_promotion_id ON spree_promotion_rule
 
 
 --
+-- Name: index_spree_promotion_translations_on_locale; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_spree_promotion_translations_on_locale ON spree_promotion_translations USING btree (locale);
+
+
+--
+-- Name: index_spree_promotion_translations_on_spree_promotion_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_spree_promotion_translations_on_spree_promotion_id ON spree_promotion_translations USING btree (spree_promotion_id);
+
+
+--
 -- Name: index_spree_promotions_on_advertise; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -4246,6 +4661,20 @@ CREATE INDEX index_spree_promotions_on_promotion_category_id ON spree_promotions
 --
 
 CREATE INDEX index_spree_promotions_on_starts_at ON spree_promotions USING btree (starts_at);
+
+
+--
+-- Name: index_spree_property_translations_on_locale; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_spree_property_translations_on_locale ON spree_property_translations USING btree (locale);
+
+
+--
+-- Name: index_spree_property_translations_on_spree_property_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_spree_property_translations_on_spree_property_id ON spree_property_translations USING btree (spree_property_id);
 
 
 --
@@ -4529,10 +4958,38 @@ CREATE INDEX index_spree_tax_rates_on_zone_id ON spree_tax_rates USING btree (zo
 
 
 --
+-- Name: index_spree_taxon_translations_on_locale; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_spree_taxon_translations_on_locale ON spree_taxon_translations USING btree (locale);
+
+
+--
+-- Name: index_spree_taxon_translations_on_spree_taxon_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_spree_taxon_translations_on_spree_taxon_id ON spree_taxon_translations USING btree (spree_taxon_id);
+
+
+--
 -- Name: index_spree_taxonomies_on_position; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX index_spree_taxonomies_on_position ON spree_taxonomies USING btree ("position");
+
+
+--
+-- Name: index_spree_taxonomy_translations_on_locale; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_spree_taxonomy_translations_on_locale ON spree_taxonomy_translations USING btree (locale);
+
+
+--
+-- Name: index_spree_taxonomy_translations_on_spree_taxonomy_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_spree_taxonomy_translations_on_spree_taxonomy_id ON spree_taxonomy_translations USING btree (spree_taxonomy_id);
 
 
 --
@@ -4582,13 +5039,6 @@ CREATE INDEX index_spree_trackers_on_active ON spree_trackers USING btree (activ
 --
 
 CREATE INDEX index_spree_users_on_deleted_at ON spree_users USING btree (deleted_at);
-
-
---
--- Name: index_spree_users_on_spree_api_key; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE INDEX index_spree_users_on_spree_api_key ON spree_users USING btree (spree_api_key);
 
 
 --
@@ -4687,27 +5137,6 @@ CREATE INDEX index_taxons_on_permalink ON spree_taxons USING btree (permalink);
 --
 
 CREATE INDEX index_taxons_on_taxonomy_id ON spree_taxons USING btree (taxonomy_id);
-
-
---
--- Name: index_users_on_confirmation_token; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE UNIQUE INDEX index_users_on_confirmation_token ON users USING btree (confirmation_token);
-
-
---
--- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE UNIQUE INDEX index_users_on_email ON users USING btree (email);
-
-
---
--- Name: index_users_on_reset_password_token; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE UNIQUE INDEX index_users_on_reset_password_token ON users USING btree (reset_password_token);
 
 
 --
@@ -5199,4 +5628,20 @@ INSERT INTO schema_migrations (version) VALUES ('20160324070363');
 INSERT INTO schema_migrations (version) VALUES ('20160324070364');
 
 INSERT INTO schema_migrations (version) VALUES ('20160324070365');
+
+INSERT INTO schema_migrations (version) VALUES ('20160427004741');
+
+INSERT INTO schema_migrations (version) VALUES ('20160427004742');
+
+INSERT INTO schema_migrations (version) VALUES ('20160427004743');
+
+INSERT INTO schema_migrations (version) VALUES ('20160427004744');
+
+INSERT INTO schema_migrations (version) VALUES ('20160427004745');
+
+INSERT INTO schema_migrations (version) VALUES ('20160427004746');
+
+INSERT INTO schema_migrations (version) VALUES ('20160427004747');
+
+INSERT INTO schema_migrations (version) VALUES ('20160427004748');
 
