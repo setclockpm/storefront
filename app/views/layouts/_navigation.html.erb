@@ -18,8 +18,12 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
           <li class="hidden">     <%= link_to '#page-top' %></li>
-          <li class="page-scroll"><%= link_to 'About Us', '#about-us' %></li>
-          <li class="page-scroll"><%= link_to 'Contact', '#contact' %></li>
+          <li class="page-scroll">
+            <%= link_to 'About Us', current_page?(main_app.root_url) ? '#about-us' : main_app.root_url(anchor: 'about-us') %>
+          </li>
+          <li class="page-scroll">
+            <%= link_to 'Contact', current_page?(main_app.root_url) ? '#contact' : main_app.root_path(anchor: 'contact') %>
+          </li>
           
           <li id="link-to-cart" class="page-scroll" data-hook><%#= link_to_cart %></li>
           <%= render partial: 'spree/shared/login_bar' if home_ip? %>

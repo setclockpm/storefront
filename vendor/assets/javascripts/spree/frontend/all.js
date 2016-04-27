@@ -7,5 +7,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require spree/frontend
+//= require jquery-ui/effect
 
 //= require_tree .

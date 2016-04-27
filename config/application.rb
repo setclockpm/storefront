@@ -2,12 +2,9 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-if defined?(Bundler)
-  # If you precompile assets before deploying to production, use this line
-  Bundler.require(*Rails.groups(:assets => %w(development test)))
-  # If you want your assets lazily compiled in production, use this line
-  # Bundler.require(:default, :assets, Rails.env)
-end
+# Require the gems listed in Gemfile, including any gems
+# you've limited to :test, :development, or :production.
+Bundler.require(*Rails.groups)
 
 module Porthos
   class Application < Rails::Application
@@ -62,6 +59,16 @@ module Porthos
     # like if you have constraints or database-specific column types
     config.active_record.schema_format = :sql
     config.active_record.raise_in_transactional_callbacks = true
+    
+    # From Angular Postgres book example code
+    if Rails.version =~ /^5/
+    else
+      # Do not swallow errors in after_commit/after_rollback callbacks.
+      config.active_record.raise_in_transactional_callbacks = true
+    end
+    
+    # Uncomment this if you decide to use Bower to manage javascript packages
+    #config.assets.paths << Rails.root.join("vendor","assets","bower_components")
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
