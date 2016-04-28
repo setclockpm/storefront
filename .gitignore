@@ -39,6 +39,7 @@ public/capybara.htm
 /public/system/*
 /coverage/
 /spec/tmp/*
+public/spree/*
 **.orig
 rerun.txt
 pickle-email-*.html
