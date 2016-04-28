@@ -14,7 +14,8 @@
 Deface::Override.new(name:             'add-web-font',
                      virtual_path:     'spree/layouts/spree_application',
                      insert_bottom:    'head',
-                     text:             '<link href="//fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet" type="text/css">')      
+                     text:             '<link href="//fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet" type="text/css">',
+                     original:         '3238a36183f493276bda180ca7b3430fb0cde007')      
 
 
 Deface::Override.new(name:             'landing-sidebar',
