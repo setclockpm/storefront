@@ -28,14 +28,14 @@ h4,
 h5,
 h6 {
   // https://www.google.com/fonts/specimen/Didact+Gothic (a open source webfont alternative)
-  font-family: 'Didact Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", "Futura", sans-serif;
+  font-family: 'Futura', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
   font-weight: 700;
 }
 
 
 body {
   height: 100%;
-  font-family: 'Didact Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", "Futura", sans-serif;
+  font-family: 'Futura', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
   font-weight: 700;
   overflow-x: hidden;
   width: 100%;
@@ -57,7 +57,17 @@ div {
       }
     }
     nav {
-      &.navbar-default { background-color: #2c3e50; }
+      &.navbar-default { 
+        background-color: #2c3e50;
+        
+        ul {
+          &.navbar-nav {
+            li {
+              &.active { a { background: rgba(34, 34, 34, 0.4) none repeat scroll 0 0; } }
+            }
+          }
+        }
+      }
       
       a {
         &.navbar-brand {
@@ -66,6 +76,7 @@ div {
         }
       }
     }
+    
   }
   &.topnav { font-size: 14px; }
 }
@@ -98,7 +109,7 @@ header {
       .name {
         display: block;
         // https://www.google.com/fonts/specimen/Didact+Gothic (a open source webfont alternative)
-        font-family: "Cocomat", 'Didact Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", "Futura", sans-serif;
+        font-family: "Cocomat", 'Futura', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
         text-transform: uppercase;
         font-weight: 700;
         font-size: 2em;
