@@ -34,7 +34,7 @@ group :test, :development do
   gem 'byebug'
   gem 'ffaker'
   gem 'rails-footnotes', '~> 4.0'
-  gem "rspec-rails", "~> 2.0"
+  gem "rspec-rails", '~> 3.0'
   gem "factory_girl_rails", "~> 4.0"
   gem "capybara"
   gem "database_cleaner"
@@ -60,8 +60,8 @@ end
 
 gem 'datashift'
 gem 'datashift_spree'
-#gem 'spree_simple_sales', path: '../spree_simple_sales'
 gem 'spree', '~> 3.0.8'
 gem 'spree_gateway', '~> 3.0.0'
 gem 'spree_auth_devise', '~> 3.0.0'
 gem 'spree_i18n', git: 'git://github.com/spree/spree_i18n.git', branch: '3-0-stable'
+gem 'spree_simple_sales', path: '../spree_simple_sales'

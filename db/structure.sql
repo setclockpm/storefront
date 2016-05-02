@@ -2692,7 +2692,8 @@ CREATE TABLE spree_variants (
     track_inventory boolean DEFAULT true,
     tax_category_id integer,
     updated_at timestamp without time zone,
-    stock_items_count integer DEFAULT 0 NOT NULL
+    stock_items_count integer DEFAULT 0 NOT NULL,
+    sale_price numeric(8,2)
 );
 
 
@@ -5644,4 +5645,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160427004746');
 INSERT INTO schema_migrations (version) VALUES ('20160427004747');
 
 INSERT INTO schema_migrations (version) VALUES ('20160427004748');
+
+INSERT INTO schema_migrations (version) VALUES ('20160502221907');
 
