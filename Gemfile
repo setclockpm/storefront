@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby "2.3.0"
 
-gem 'rails', '4.2.5.1'
+gem 'rails', '~>4.2'
 
 gem 'angular-rails-templates', '0.2.0'
 gem 'bower-rails'
@@ -32,7 +32,7 @@ gem 'mail', '2.5.4'
 group :test, :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'ffaker', '1.22.1'
+  gem 'ffaker'
   gem 'rails-footnotes', '~> 4.0'
   gem "rspec-rails", "~> 2.0"
   gem "factory_girl_rails", "~> 4.0"
@@ -60,6 +60,7 @@ end
 
 gem 'datashift'
 gem 'datashift_spree'
+#gem 'spree_simple_sales', path: '../spree_simple_sales'
 gem 'spree', '~> 3.0.8'
 gem 'spree_gateway', '~> 3.0.0'
 gem 'spree_auth_devise', '~> 3.0.0'
