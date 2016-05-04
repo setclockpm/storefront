@@ -1,5 +1,5 @@
 # config valid only for Capistrano 3.1
-lock '3.4.0'
+lock '3.4.1'
 
 set :application, 'porthos'
 set :repo_url, 'git@github.com:porthoshome/storefront.git'
@@ -55,5 +55,61 @@ namespace :deploy do
       # end
     end
   end
-
+  
 end
+
+
+# Spree extension capistrano tasks
+# --------------------------------
+# by Christopher Maujean
+# 
+# These tasks depend on the existence of the extensions hash.
+#   The key is name of the directory in vendor/extensions.
+#   The value is the git url of the extension.
+#
+set :extensions, {
+  'simple_sales' => 'lib/extensions/'
+}
+#
+# $ cap -T extension
+# cap deploy:install_extensions      # Install all the spree extensions th...
+# cap extension:simple_sales:install # Install ship_notification extension
+# cap extension:simple_sales:remove  # Remove ship_notification extension
+# cap extension:simple_sales:update  # update ship_notification extension
+
+namespace :deploy do
+  desc "Symlink all the spree extensions that this app requires"
+  task :install_extensions, roles: :app do
+    extensions.each do |name, location|
+      puts "Installing #{name} extension from #{location}"
+      run "ln -nfs #{shared_path}/#{location}#{name} #{release_path}/#{location}#{name}"
+    end
+  end
+end
+
+# dynamic set of tasks based on the extension hash above
+namespace :extension do
+  extensions.each do |name, location|
+    namespace name.to_sym do
+      desc "Install #{name} extension"
+      task :install, :roles => :app do
+        run "cd #{current_path} && script/extension install #{location}"
+      end
+      desc "Remove #{name} extension"
+      task :remove, :roles => :app do
+        run "cd #{current_path} && script/extension remove #{name}"
+      end
+      desc "update #{name} extension"
+      task :update, :roles => :app do
+        run "cd #{current_path} && script/extension install #{location} --force"
+      end
+    end
+  end
+end
+
+
+
+
+
+
+
