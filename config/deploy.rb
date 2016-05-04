@@ -34,6 +34,10 @@ set :repo_url, 'git@github.com:porthoshome/storefront.git'
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+set :extensions, {
+  'simple_sales' => '../spree_simple_sales'
+}
+
 namespace :deploy do
 
   desc 'Restart application'
@@ -57,10 +61,15 @@ namespace :deploy do
   end
   
   desc "Symlink all the spree extensions that this app requires"
-  task :install_extensions, roles: :app do
-    extensions.each do |name, location|
-      puts "Installing #{name} extension from #{location}"
-      run "ln -nfs #{shared_path}/#{location}#{name} #{release_path}/#{location}#{name}"
+  task :install_extensions do
+    on roles(:app) do
+      fetch(:extensions).each do |name, location|
+        [:staging, :production].each do |enviro|
+          puts "Installing #{name} extension from #{location}"
+          #execute "scp -r #{location} deploy@porthos:/var/www/porthos/#{enviro.to_s}/shared/extensions/#{name}/"
+          execute "ln -nfs #{shared_path}/extensions/#{name} /var/www/porthos/#{enviro.to_s}/releases/#{name}"
+        end
+      end
     end
   end
   
@@ -68,9 +77,7 @@ end
 
 
 
-set :extensions, {
-  'simple_sales' => 'lib/extensions/'
-}
+
 #
 # $ cap -T extension
 # cap deploy:install_extensions      # Install all the spree extensions.
