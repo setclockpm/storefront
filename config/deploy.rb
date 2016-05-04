@@ -35,7 +35,7 @@ set :repo_url, 'git@github.com:porthoshome/storefront.git'
 # set :keep_releases, 5
 
 set :extensions, {
-  'simple_sales' => '../spree_simple_sales'
+  'spree_simple_sales' => '../spree_simple_sales'
 }
 
 namespace :deploy do
@@ -64,11 +64,10 @@ namespace :deploy do
   task :install_extensions do
     on roles(:app) do
       fetch(:extensions).each do |name, location|
-        [:staging, :production].each do |enviro|
-          puts "Installing #{name} extension from #{location}"
-          #execute "scp -r #{location} deploy@porthos:/var/www/porthos/#{enviro.to_s}/shared/extensions/#{name}/"
-          execute "ln -nfs #{shared_path}/extensions/#{name} /var/www/porthos/#{enviro.to_s}/releases/#{name}"
-        end
+          puts "Copying #{name} extension from #{location} ...\n "
+          execute "scp -r #{location} deploy@porthos:/var/www/porthos/#{enviro.to_s}/shared/extensions/#{name}/"
+          puts "Symlinking /var/www/porthos/#{fetch(:stage)}/releases/#{name} to #{fetch(:stage)}'s shared dir."
+          execute "ln -nfs #{shared_path}/extensions/#{name} /var/www/porthos/#{fetch(:stage)}/releases/#{name}"
       end
     end
   end
