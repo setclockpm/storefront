@@ -1,6 +1,6 @@
 class MessageMailer < ActionMailer::Base
 
-  default to: "Porthos Home <phsia@porthoshome.com>"
+  default to: "Porthos Home <sixpointmavslead@yahoo.com>"
 
   def new_message(message)
     @message = message

@@ -91,7 +91,7 @@ header {
     -o-background-size: cover;
     color: white;
     min-height: 100%;
-    margin-top: 100px;
+    margin-top: 95px;
     padding-top: 55px; 
     padding-bottom: 50px;
     text-align: center;
@@ -167,7 +167,7 @@ p {
 /////////////////////////////////
 @media (min-width: 768px) {
   .navbar-fixed-top {
-    padding: 25px 0;
+    padding: 20px 0;
     -webkit-transition: padding 0.3s;
     -moz-transition: padding 0.3s;
     transition: padding 0.3s;
@@ -187,7 +187,7 @@ p {
   
   
   .navbar-static-top { 
-    padding: 25px 0; 
+    padding: 20px 0; 
     transition: padding 0.3s ease 0s;
   }
 }
