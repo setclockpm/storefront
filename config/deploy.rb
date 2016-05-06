@@ -64,26 +64,25 @@ namespace :deploy do
   task :install_extensions do
     on roles(:app) do
       fetch(:extensions).each do |name, location|
-          puts "Copying #{name} extension from #{location} ...\n "
-          execute "scp -r #{location} deploy@porthos:/var/www/porthos/#{enviro.to_s}/shared/extensions/#{name}/"
-          puts "Symlinking /var/www/porthos/#{fetch(:stage)}/releases/#{name} to #{fetch(:stage)}'s shared dir."
-          execute "ln -nfs #{shared_path}/extensions/#{name} /var/www/porthos/#{fetch(:stage)}/releases/#{name}"
+        puts "Copying #{name} extension from #{location} ...\n "
+        run_locally do
+          execute "scp -r #{location} deploy@porthos:/var/www/porthos/#{fetch(:stage)}/shared/extensions/#{name}/"
+        end
+        puts "Symlinking /var/www/porthos/#{fetch(:stage)}/releases/#{name} to #{fetch(:stage)}'s shared dir."
+        execute "ln -nfs #{shared_path}/spree/extensions/#{name} /var/www/porthos/#{fetch(:stage)}/releases/#{name}"
       end
     end
   end
   
 end
 
-
-
-
-#
-# $ cap -T extension
-# cap deploy:install_extensions      # Install all the spree extensions.
-# cap extension:simple_sales:install # Install simple_sales extension
-# cap extension:simple_sales:remove  # Remove simple_sales extension
-# cap extension:simple_sales:update  # update simple_sales extension
-
+namespace :images do
+  task :symlink, except: { no_release: true } do
+    run "rm -rf #{release_path}/public/spree"
+    run "ln -nfs #{shared_path}/spree #{release_path}/public/spree"
+  end
+end
+after "bundle:install", "images:symlink"
 
 
 
