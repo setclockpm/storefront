@@ -60,27 +60,13 @@ namespace :deploy do
     end
   end
   
-  desc "Symlink all the spree extensions that this app requires"
-  task :install_extensions do
-    on roles(:app) do
-      fetch(:extensions).each do |name, location|
-        puts "Copying #{name} extension from #{location} ...\n "
-        run_locally do
-          execute "scp -r #{location} deploy@porthos:/var/www/porthos/#{fetch(:stage)}/shared/extensions/#{name}/"
-        end
-        puts "Symlinking /var/www/porthos/#{fetch(:stage)}/releases/#{name} to #{fetch(:stage)}'s shared dir."
-        execute "ln -nfs #{shared_path}/spree/extensions/#{name} /var/www/porthos/#{fetch(:stage)}/releases/#{name}"
-      end
-    end
-  end
-  
 end
 
 namespace :images do
   desc "Symlinks and maintains product images."
   after "bundler:install", "images:symlink_images" do
     on roles(:app) do
-      puts "\n========== Symlinking product images/thumbnails] ==========\n "
+      puts "\n========== Symlinking product images/thumbnails ==========\n "
       execute "rm -rf #{release_path}/public/spree"
       execute "ln -nfs #{shared_path}/spree #{release_path}/public/spree"
     end
