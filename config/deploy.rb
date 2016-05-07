@@ -56,7 +56,7 @@ namespace :deploy do
       # Here we can do anything such as:
       # within release_path do
       #   execute :rake, 'cache:clear'
-      # end
+      # endv
     end
   end
   
@@ -77,12 +77,15 @@ namespace :deploy do
 end
 
 namespace :images do
-  task :symlink, except: { no_release: true } do
-    run "rm -rf #{release_path}/public/spree"
-    run "ln -nfs #{shared_path}/spree #{release_path}/public/spree"
+  desc "Symlinks and maintains product images."
+  after "bundler:install", "images:symlink_images" do
+    on roles(:app) do
+      puts "\n========== Symlinking product images/thumbnails] ==========\n "
+      execute "rm -rf #{release_path}/public/spree"
+      execute "ln -nfs #{shared_path}/spree #{release_path}/public/spree"
+    end
   end
 end
-after "bundle:install", "images:symlink"
 
 
 
