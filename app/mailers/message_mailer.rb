@@ -1,11 +1,12 @@
 class MessageMailer < ActionMailer::Base
 
-  default to: "development@porthoshome.com"
+  default to: "Porthos Home Storefront \<development@porthoshome.com\>"
 
   def new_message(message)
-    @message = message
+    @message     = message
+    from_address = "#{message.name} \<#{message.email}\>"
     
-    mail subject: "Message from #{message.name}", from: "#{message.name} \<#{message.email}\>", reply_to: "noreply@porthoshomestorefront.com"
+    mail subject: "Message from #{message.name}", from: from_address, reply_to: from_address, date: Time.zone.now
   end
 
 end
