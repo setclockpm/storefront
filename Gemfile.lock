@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/autotelik/datashift_spree.git
+  revision: 02de5377d0fc24d68ecbefa45a670cace1cf427f
+  branch: master
+  specs:
+    datashift_spree (0.6.0)
+      datashift (~> 0.15, >= 0.15.0)
+      mechanize (~> 2.6, >= 2.6.0)
+
+GIT
   remote: git://github.com/capistrano/rbenv.git
   revision: e056efc0c361cc15b76ff961d6c5f65ed5e2c57e
   specs:
@@ -135,9 +144,6 @@ GEM
     datashift (0.16.0)
       rubyzip
       spreadsheet
-    datashift_spree (0.5.0)
-      datashift (>= 0.12.0)
-      mechanize
     debug_inspector (0.0.2)
     deface (1.0.2)
       colorize (>= 0.5.8)
@@ -472,8 +478,8 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.1.0)
   database_cleaner
-  datashift
-  datashift_spree
+  datashift (~> 0.15)
+  datashift_spree!
   factory_girl_rails (~> 4.0)
   ffaker
   font-awesome-rails

@@ -77,8 +77,18 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   
-  config.action_mailer.default_url_options = { host: "porthoshomestorefront.com" }
-  config.action_mailer.delivery_method = :sendmail
-  config.action_mailer.default_options = { from: 'swashbuckler@porthoshomestorefront.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  :address              => "smtp.gmail.com",
+  :port                 => 587,
+  :domain               => "porthoshome.com",
+  :user_name            => "development@porthoshome.com",
+  :password             => "wYsrd1819",
+  :authentication       => 'plain',
+  :enable_starttls_auto => true  }
   
+  # config.action_mailer.default_url_options = { host: "porthoshome.com" }
+#   config.action_mailer.delivery_method = :sendmail
+#   config.action_mailer.default_options = { from: 'swashbuckler@porthoshome.com' }
+#
 end
