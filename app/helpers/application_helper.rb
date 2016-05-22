@@ -2,6 +2,14 @@ module ApplicationHelper
   INTERNAL_IP = "108.209.219.227"
 
 
+  def color_options(v, options={})
+    text = variant_options(v, options={})
+    puts "\n\n\n#{text}\n\n"
+    text = text.gsub!(/Color:/, "").strip
+    puts "\n\n\n#{text}\n\n"
+    text
+  end
+
   def current_store
     Spree::Store.first
   end

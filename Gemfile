@@ -10,6 +10,7 @@ gem 'capistrano', '~> 3.4.0'
 gem 'capistrano-bundler', '~> 1.1.2'
 gem 'capistrano-rails', '~> 1.1.1'
 gem 'coffee-rails', '~> 4.1.0'
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
@@ -57,7 +58,7 @@ group :development do
   gem 'web-console', '~> 2.0'
 end
 
-
+gem 'aws-sdk'
 gem 'datashift', '~> 0.15'
 gem 'datashift_spree', github: 'autotelik/datashift_spree', branch: 'master'
 gem 'spree', '~> 3.1.0.rc1'

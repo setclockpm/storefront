@@ -1,8 +1,7 @@
-
 Deface::Override.new(name:             'override-admin-product-breadcrumb',
                      virtual_path:     'spree/admin/shared/_product_tabs',
                      replace_contents: "erb[loud]:contains('@product.name')",
-                     text:             'link_to @product.name, edit_admin_product_url(@product)',
+                     text:             'link_to "#{@product.name} (#{@product.sku})", product_url(@product), target: "_blank"',
                      original: "")
 
 Deface::Override.new(name:             'override-admin-title',

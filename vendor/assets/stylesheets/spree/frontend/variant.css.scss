@@ -1,0 +1,44 @@
+.hidden {
+  display: none;
+}
+
+
+
+.color-select-options {
+  display: inline-block;
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.select-color-option .active-select-color-target {
+  
+  border: 1px solid #dbdbdb;
+  border-radius: 11px;
+  cursor: pointer;
+  height: 100%;
+  position: absolute;
+  transition: border-color 0.15s ease 0s, box-shadow 0.15s ease 0s;
+  width: 100%;
+}
+
+.black {
+  background: #000 none repeat scroll 0 0;
+}
+
+.orange {
+  background: orange none repeat scroll 0 0;
+}
+
+.white {
+  background: #fff none repeat scroll 0 0;
+}
+
+li.select-color-container {
+  display: inline-block;
+  height: 22px;
+  margin-right: 0.5em;
+  position: relative;
+  width: 22px;
+}
