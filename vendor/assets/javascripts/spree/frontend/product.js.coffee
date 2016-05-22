@@ -1,6 +1,7 @@
 Spree.ready ($) ->
+  thumbnails = ($ '#product-images ul.thumbnails')
+
   Spree.addImageHandlers = ->
-    thumbnails = ($ '#product-images ul.thumbnails')
     ($ '#main-image').data 'selectedThumb', ($ '#main-image img').attr('src')
     thumbnails.find('li').eq(0).addClass 'selected'
     thumbnails.find('a').on 'click', (event) ->
@@ -17,12 +18,10 @@ Spree.ready ($) ->
       ($ '#main-image img').attr 'src', ($ '#main-image').data('selectedThumb')
 
   Spree.showVariantImages = (variantId) ->
-    alert "Custom override trggered"
-    ($ 'li.vtmb').hide()
-    ($ 'li.tmb-' + variantId).show()
     currentThumb = ($ '#' + ($ '#main-image').data('selectedThumbId'))
     if not currentThumb.hasClass('vtmb-' + variantId)
-      thumb = ($ ($ '#product-images ul.thumbnails li:visible.vtmb').eq(0))
+      console.log "adding selected class to ", 'li.tmb-' + variantId
+      thumb = ($ 'li.tmb-' + variantId)
       thumb = ($ ($ '#product-images ul.thumbnails li:visible').eq(0)) unless thumb.length > 0
       newImg = thumb.find('a').attr('href')
       ($ '#product-images ul.thumbnails li').removeClass 'selected'
@@ -43,11 +42,14 @@ Spree.ready ($) ->
 
   if radios.length > 0
     selectedRadio = ($ '#product-variants input[type="radio"][checked="checked"]')
+    console.log "About to call showVariantImages and displaying all thumbs"
+    ($ 'li.vtmb').show()
     Spree.showVariantImages selectedRadio.attr('value')
     Spree.updateVariantPrice selectedRadio
     Spree.disableCartForm selectedRadio
 
     radios.click (event) ->
+      console.log "About to call showVariantImages " + @value
       Spree.showVariantImages @value
       Spree.updateVariantPrice ($ this)
       Spree.disableCartForm ($ this)
