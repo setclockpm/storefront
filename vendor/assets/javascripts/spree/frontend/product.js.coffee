@@ -35,8 +35,8 @@ Spree.ready ($) ->
     ($ '.price.selling').text(variantPrice) if variantPrice
     
   Spree.updateVariantColorHeading = (variant) ->
-    variantColor = variant.data('color')
-    ($ 'span#color').text(variantColor) if variantColor
+    variantColorSize = variant.data('options')
+    ($ 'span#color-size').text(variantColorSize) if variantColorSize
 
   Spree.disableCartForm = (variant) ->
     inStock = variant.data('in-stock')

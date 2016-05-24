@@ -4,9 +4,9 @@ module ApplicationHelper
 
   def color_options(v, options={})
     text = variant_options(v, options={})
-    puts "\n\n\n#{text}\n\n"
-    text = text.gsub!(/Color:/, "").strip
-    puts "\n\n\n#{text}\n\n"
+    puts "\n\n\n#{text}\n"
+    text = text.split(',')[0].gsub!(/Color:/, "").strip
+    puts "\n\n#{text}\n\n"
     text
   end
 

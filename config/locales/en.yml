@@ -4,5 +4,5 @@
 en:
   all_departments: "All Departments"
   search: "Search"
-  spree:
-     variants: "Color: "
+  # spree:
+#      variants: "Color / Size Options"
