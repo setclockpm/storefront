@@ -33,6 +33,10 @@ Spree.ready ($) ->
   Spree.updateVariantPrice = (variant) ->
     variantPrice = variant.data('price')
     ($ '.price.selling').text(variantPrice) if variantPrice
+    
+  Spree.updateVariantColorHeading = (variant) ->
+    variantColor = variant.data('color')
+    ($ 'span#color').text(variantColor) if variantColor
 
   Spree.disableCartForm = (variant) ->
     inStock = variant.data('in-stock')
@@ -46,12 +50,14 @@ Spree.ready ($) ->
     ($ 'li.vtmb').show()
     Spree.showVariantImages selectedRadio.attr('value')
     Spree.updateVariantPrice selectedRadio
+    Spree.updateVariantColorHeading selectedRadio
     Spree.disableCartForm selectedRadio
 
     radios.click (event) ->
       console.log "About to call showVariantImages " + @value
       Spree.showVariantImages @value
       Spree.updateVariantPrice ($ this)
+      Spree.updateVariantColorHeading ($ this)
       Spree.disableCartForm ($ this)
 
   Spree.addImageHandlers()

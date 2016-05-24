@@ -1,4 +1,8 @@
-<h3 class="product-section-title"><%= Spree.t(:variants) %></h3>
+<!-- <h3 class="product-section-title"><%#= Spree.t(:variants) %></h3> -->
+<h3 class="select-color-label select-color-heading">
+  <%= Spree.t(:variants) %>
+  <span id="color"></span>
+</h3>
 <ul class="list-group color-select-options">
   <% @product.variants_and_option_values(current_currency).each_with_index do |variant, index| %>
     <li class="select-color-container">
@@ -6,10 +10,10 @@
         <%= radio_button_tag "variant_id", variant.id, index == 0,
             'data-price' => variant.price_in(current_currency).money, 
             'data-in-stock' => variant.can_supply?,
-            'data-option' => color_options(variant),
+            'data-color' => color_options(variant),
             class: "active-select-color js-custom-select-color hidden"
         %>
-        <div class="active-select-color-target variant-description <%= color_options(variant).downcase %>">
+        <div class="active-select-color-surface variant-description <%= color_options(variant).downcase %>">
           
         </div>
         <% if variant_price variant %>
