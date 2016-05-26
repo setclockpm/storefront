@@ -5,16 +5,59 @@ namespace :s3 do
     desc "Backup database to Amazon S3"
     
     task :images => :environment do
-      s3          = AWS::S3.new(access_key_id: ENV['AWS_ACCESS_KEY_ID'], secret_access_key: AWS_CONFIG['AWS_SECRET_ACCESS_KEY'])
-      BUCKET      = s3.buckets["porthos"]
+      credentials = Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY'])
+      s3          = Aws::S3::Resource.new(credentials: credentials, region: 'ap-southeast-1')
+      assets_path = '/Users/pmedrano/Dropbox/ARSI Images Backup/ARSI Images' #directory of pics on Dropbox
       
-      @orig_dir    = ActiveRecord::Base.configurations[Rails.env]['database']
+      bucket      = s3.bucket('porthos')
+      # enumerate every object in a bucket
+      bucket.objects.each do |obj|
+        puts "#{obj.key} => #{obj.etag}"
+      end
+      raise bucket.inspect
+      
+      
+      all_object_keys = objects.map(&:key)
+      
+      raise all_object_keys.inspect
+      
+      puts "List of all buckets (project ids): #{BUCKET.objects.map(&:key).inspect}\n\n"
+      puts "Today's date: #{Date.today} \n Preparing to update / backup #{updated_files.size} files"
+
+      updated_files.each do |asset|
+        if asset.data_file_name
+          file_name  = asset.data_file_name
+          asset_path = "#{assets_path}projects/#{asset.project_id}/"
+          key_prefix = "#{asset.project_id}/"
+          
+          puts "Project ID dir: #{key_prefix} :: asset ID: #{asset.id}"
+          backup_file = File.join(asset_path, file_name) #/assets/path/filename
+          puts "File to be written: #{file_name}"
+          
+          if all_object_keys.include?(key_prefix)
+            obj = BUCKET.objects["#{key_prefix}#{file_name}"]
+          else
+            begin
+              obj = BUCKET.objects["#{key_prefix}#{file_name}"]
+              if File.exists?(asset_path)
+                puts "Preparing to write file located at: #{asset_path} to S3 "
+                obj.write(file: backup_file)
+                puts "Wrote file to #{file_name} on s3."
+              else
+                puts "WARNING. File not found at location: #{asset_path}"
+              end
+            rescue Exception => e
+              puts "There was a problem writing file to S3\n: #{e.message}\n"
+              exit
+            end
+          end
+        end
+      end
+      puts "Backup Complete"
+      
       @backup_path = AWS_CONFIG['backup']['backup_path']
       FileUtils.makedirs(@backup_path) #creates path specified just above in case it doesn't exist
     
-      @datestamp    = Time.now.strftime("%Y%m%d%H%M%S") #for appending to the end of filename so not overwriten immediately
-      @day_of_week  = Time.now.strftime("%a")
-      @day_of_month = Time.now.strftime("%d") #IN ## format e.g. 05 for May
       @file_name    = file_name
       @bu_file_path = File.join(@backup_path, @file_name) #/backup/path/filename
       
