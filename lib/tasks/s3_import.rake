@@ -10,7 +10,7 @@ namespace :s3 do
       
       credentials   = Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY'])
       s3            = Aws::S3::Resource.new(credentials: credentials, region: 'ap-southeast-1')
-      assets_path   = '/Users/pmedrano/Dropbox/ARSI Images Backup/ARSI Images' # Directory of pics on Dropbox
+      assets_path   = '/var/www/porthos/production/shared/tmp/images' # Directory of pics on Dropbox
       bucket        = s3.bucket('porthos')
       
       
