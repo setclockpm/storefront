@@ -37,6 +37,18 @@ GIT
       routing-filter (~> 0.5.0)
       spree_core (~> 3.1.0.beta)
 
+GIT
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: c38bb3168a9530514d866fc674c335e05e543a5e
+  ref: c38bb31
+  specs:
+    paperclip (4.3.1)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (~> 0.3.0)
+
 PATH
   remote: ../spree_simple_sales
   specs:
@@ -244,7 +256,8 @@ GEM
       ntlm-http (~> 0.1, >= 0.1.1)
       webrobots (>= 0.0.9, < 0.2)
     mime-types (1.25.1)
-    mimemagic (0.3.0)
+    mimemagic (0.3.1)
+    mini_magick (4.5.1)
     mini_portile2 (2.0.0)
     minitest (5.9.0)
     monetize (1.4.0)
@@ -262,12 +275,6 @@ GEM
       mini_portile2 (~> 2.0.0.rc2)
     ntlm-http (0.1.1)
     orm_adapter (0.5.0)
-    paperclip (4.3.6)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      cocaine (~> 0.5.5)
-      mime-types
-      mimemagic (= 0.3.0)
     paranoia (2.1.5)
       activerecord (~> 4.0)
     pg (0.18.4)
@@ -513,7 +520,8 @@ DEPENDENCIES
   jquery-ui-rails
   launchy
   mail (= 2.5.4)
-  paperclip
+  mini_magick
+  paperclip!
   pg (~> 0.15)
   phantomjs
   rails (~> 4.2)
