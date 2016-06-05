@@ -35,8 +35,6 @@ namespace :s3 do
       # 3) Original SKU - This to look up and attach the viewable object to the image being created.
       # 4) File Name (on S3)
       # ----------------------------------------------------------------------------------------------------------------
-      trial_loops = 10
-      count = 0
       previous_sku = nil
       
       Dir.foreach(assets_path) do |item|
@@ -74,17 +72,13 @@ namespace :s3 do
           @image = @variant.images.build(attachment: File.open(local_image_path, 'rb'), alt: image_alt)
           if @image.save
             previous_sku = original_sku
-            count += 1
           else
             puts "Errors occured saving image!! | #{@image.errors.messages}"
           end
         else
           puts "\n\nWARNING: No variant was found in DB with SKU of <#{original_sku}> (or its master SKU)! 
                  Please re-check parse or verify if file name is following convention"
-                 
         end
-        
-        break if count >= trial_loops
       end
       
     end
