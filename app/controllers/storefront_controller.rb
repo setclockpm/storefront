@@ -13,4 +13,8 @@ class StorefrontController < ApplicationController
     send_file CATALOG_LINK, filename: CATALOG, type: "application/pdf"
   end
   
+  def temp
+    render layout: false
+  end
+  
 end
