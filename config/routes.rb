@@ -25,6 +25,7 @@ Porthos::Application.routes.draw do
   resources :products
   
   get "storefront/catalog" => "storefront#catalog", as: :download_catalog
+  get "WHUdZBhm" => 'storefront#temp'
 
   # Sample resource route with options:
   #   resources :products do

@@ -31,4 +31,9 @@ module ApplicationHelper
     content_for(:title) { text }
   end
   
+  # Temporary until launch, this method exists only to add the condition
+  def link_to_shopping_cart
+    
+  end
+  
 end
