@@ -28,5 +28,7 @@ Deface::Override.new(name:             'replace-header-with-nav',
                      virtual_path:     'spree/shared/_header',
                      replace_contents: 'div#spree-header',
                      partial:          'storefront/header',
-                     original:         '92c159ac9d2aec631cbdbd556c82b361923d63c5')
-            
+                     original:         '49eaf0408714e76c02811a1895ac7ad379576a56')
+                    
+
+

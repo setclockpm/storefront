@@ -16,4 +16,13 @@ Spree::Variant.class_eval do
     # Split on \s join all but first index of array with a hyphen (-)
     self.is_master? ? "ALL" : slug 
   end
+  
+  def primary_image
+    images.find_by(position: 1)
+  end
+  
+  def primary_thumbnail_url
+    primary_image.attachment.url(:mini)
+  end
+  
 end

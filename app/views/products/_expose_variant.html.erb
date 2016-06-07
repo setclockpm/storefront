@@ -13,8 +13,7 @@
             'data-options' => variant_options(variant),
             class: "active-select-color js-custom-select-color hidden"
         %>
-        <%= content_tag :div, nil, class: "active-select-color-surface variant-description #{color_options(variant).downcase}",
-                         data: { color: color_options(variant).downcase } %>
+        <%= active_select_thumbnail_background(variant, index) %>
         
         <% if variant_price variant %>
           <span class="price diff"><%= variant_price variant %></span>

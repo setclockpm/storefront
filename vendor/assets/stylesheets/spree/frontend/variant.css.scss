@@ -5,45 +5,37 @@
 
 
 .color-select-options {
-  display: inline-block;
   list-style: outside none none;
-  margin: 0;
-  padding: 0;
 }
 
 
 .select-color-option .active-select-color-surface {
-  
   border: 1px solid #dbdbdb;
-  border-radius: 9px;
   cursor: pointer;
-  height: 100%;
   position: absolute;
   transition: border-color 0.15s ease 0s, box-shadow 0.15s ease 0s;
-  width: 100%;
+  
+  .thumbnail { margin-bottom: 0px; }
 }
 
 .select-color-container input:checked + .active-select-color-surface {
   border-color: #7d7d7d;
-  box-shadow: 0 0 0 3px #7d7d7d;
+  box-shadow: 0 0 0 1px #7d7d7d;
   overflow: visible;
 }
+
 
 .select-color-heading {
   top: 7px;
 }
-//.select-color-label {
-//    width: 20%;
-//}
+
 .select-color-label {
-//    display: inline-block;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.125em;
   position: relative;
   text-transform: uppercase;
   vertical-align: top;
-//  width: 25%;
 }
 
 .aqua { background: #b2d5b7 none repeat scroll 0 0; }
@@ -72,13 +64,29 @@
 
 
 
+div {
+  &.variant-description {
+    border: 1px solid #ddd;
+    transition: border 0.2s ease-in-out 0s;
+  }
+}
+
+
+h1 {
+  &.product-title {
+    font-size: 32px;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+}
+
+
 li {
   &.select-color-container {
-    display: inline-block;
-    height: 35px;
-    margin-right: 0.2em;
+    height: 49px;
+    margin-right: 1.2em;
     position: relative;
-    width: 35px;
+    width: 49px;
   }
   
   &.selected {
@@ -93,5 +101,14 @@ li {
 span {
   &#color-size {
     text-transform: none;
+  }
+}
+
+
+ul {
+  &.color-select-options > li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }

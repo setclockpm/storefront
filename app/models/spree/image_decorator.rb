@@ -41,7 +41,7 @@ Spree::Image.class_eval do
     end
     
     def image_ordinal
-      viewable.images.size
+      position
     end
   
 end

@@ -26,3 +26,17 @@ defined?(Footnotes) && Footnotes.setup do |f|
   # Allow to open multiple notes :
   # f.multiple_notes = true
 end
+
+
+# Deface::Override.new(name:             'expand-form',
+#                      virtual_path:     'spree/products/show',
+#                      insert_before:    '[data-hook="product_description"]',
+#                      text:             '<%= form_for :order, url: populate_orders_path do |f| %>',
+#                      original:         'c01968edc48742a56f86dfd6415e7038ee7122d9')
+
+
+# Deface::Override.new(name:             'remove-form-tag-for-expansion',
+#                      virtual_path:     'spree/products/_cart_form',
+#                      remove:           "erb[loud]:contains('form_for')",
+#                      # text:             '<% end %>',
+#                      original:         nil)
