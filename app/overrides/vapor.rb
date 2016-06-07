@@ -16,11 +16,11 @@
 #                      original:     '7d953d8fbc78806fc43a08f52d2bb3a52f4a0086')
 
 
-# Deface::Override.new(name:          'add-cart',
-#                      virtual_path:  'spree/shared/_nav_bar',
-#                      insert_bottom: 'ul#nav-bar', text: '<li id="link-to-cart" data-hook><%= link_to_cart %></li>',
-#                      original:      '0edddc156c3563a5a866d9d5ccfbc0bfdbe522c0')
-#
+Deface::Override.new(name:          'add-cart',
+                     virtual_path:  'spree/shared/_nav_bar',
+                     insert_bottom: 'ul#nav-bar', text: '<li id="link-to-cart" data-hook><%= link_to_cart %></li>',
+                     original:      '0edddc156c3563a5a866d9d5ccfbc0bfdbe522c0')
+
 #
 # Deface::Override.new(name:         'remove-home-from-main-nav',
 #                      virtual_path: 'spree/shared/_main_nav_bar',
