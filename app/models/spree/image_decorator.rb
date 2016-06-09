@@ -9,7 +9,7 @@ Spree::Image.class_eval do
                     storage:         :s3,
                     styles:          { mini: '48x48>', small: '100x100>', product: '240x240>', large: '500x500>' },
                     s3_credentials:  { access_key_id: ENV['AWS_ACCESS_KEY_ID'], secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'] },
-                    s3_protocol:     :https,
+                    s3_protocol:     "https",
                     s3_region:       'ap-southeast-1',
                     s3_host_name:    's3-ap-southeast-1.amazonaws.com'
                     
