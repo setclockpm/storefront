@@ -18,11 +18,12 @@ Spree::Variant.class_eval do
   end
   
   def primary_image
+    puts "\n Variant: #{id}-#{name}"
     images.find_by(position: 1)
   end
   
   def primary_thumbnail_url
-    primary_image.attachment.url(:mini)
+    primary_image.attachment.url(:mini) if primary_image
   end
   
 end

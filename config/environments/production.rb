@@ -87,8 +87,5 @@ Rails.application.configure do
   :authentication       => 'plain',
   :enable_starttls_auto => true  }
   
-  # config.action_mailer.default_url_options = { host: "porthoshome.com" }
-#   config.action_mailer.delivery_method = :sendmail
-#   config.action_mailer.default_options = { from: 'swashbuckler@porthoshome.com' }
-#
+
 end
