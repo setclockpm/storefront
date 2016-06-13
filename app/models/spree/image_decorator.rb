@@ -7,7 +7,7 @@ Spree::Image.class_eval do
                     default_style:   :product,
                     path:            'public/inventory/:master_sku/:style-:s3_slug-:image_ordinal.:extension',
                     storage:         :s3,
-                    styles:          { mini: '48x48>', small: '100x100>', product: '240x240>', large: '500x500>' },
+                    styles:          { mini: '48x48#', small: '100x100#', product: '240x240#', large: '500x500#' },
                     s3_credentials:  { access_key_id: ENV['AWS_ACCESS_KEY_ID'], secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'] },
                     s3_protocol:     "https",
                     s3_region:       'ap-southeast-1',

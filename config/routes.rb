@@ -10,6 +10,14 @@ Porthos::Application.routes.draw do
   
   # mount Spree::Core::Engine, at: '/'  # The priority is based upon order of creation:
   # first created -> highest priority.
+  
+  Spree::Core::Engine.routes.draw do
+    namespace :admin do
+      get "products/data_import" => "products#data", as: :data_import
+      post "import/inventory" => "products#bulk_import", as: :import_inventory
+      post "import/variant_photos" => "imports#variant_photos", as: :generate_variant_photos
+    end
+  end
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
@@ -25,7 +33,6 @@ Porthos::Application.routes.draw do
   resources :products
   
   get "storefront/catalog" => "storefront#catalog", as: :download_catalog
-  get "WHUdZBhm" => 'storefront#temp'
 
   # Sample resource route with options:
   #   resources :products do

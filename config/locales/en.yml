@@ -4,5 +4,7 @@
 en:
   all_departments: "All Departments"
   search: "Search"
-  # spree:
-#      variants: "Color / Size Options"
+  spree:
+     # variants: "Color / Size Options"
+     import: "Import"
+     excel_file: "Spreadsheet File"

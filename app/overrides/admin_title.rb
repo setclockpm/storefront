@@ -17,3 +17,18 @@ Deface::Override.new(name:             'override-storefront-title',
                                                                   "Shop Boldly For Your Style" : 
                                                                    controller.controller_name.titleize) %>',
                      original:         '6c51b34d058f87d10add34374293afce2bf817e2')
+                     
+                     
+# Deface::Override.new(name:             'add-import-tabs',
+#                      virtual_path:     'spree/admin/shared/sub_menu/_product',
+#                      insert_after:     "erb[loud]:contains('taxons')",
+#                      text:             '<%= tab :import %>',
+#                      original:         nil)
+
+
+
+Deface::Override.new(name:             'add-import-tab',
+                     virtual_path:     'spree/admin/shared/sub_menu/_product',
+                     insert_bottom:     "[data-hook='admin_product_sub_tabs']", 
+                     text:             '  <%= tab :data_import %>',
+                     original:         nil)
