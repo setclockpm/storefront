@@ -1,3 +1,8 @@
+== Note: for this bug: ==
+#<NoMethodError: undefined method `variant_sku=' for #<Spree::Product:0x007fc98b1d3d08>
+during import, change line 308 in product_loader.rb in datashift_spree so that obect is NEVER reloaded
+
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
