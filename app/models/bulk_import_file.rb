@@ -1,6 +1,4 @@
-# This class behaves like an ActiveRecord object so we can take full
-# advantage of paperclip.  But it ain't a real AR object!  Nice piece
-# of trickery here.
+
 class BulkImportFile
   extend ActiveModel::Callbacks
   include ActiveModel::Model
@@ -17,20 +15,19 @@ class BulkImportFile
                            path: ":rails_root/public/assets/imports/:basename.:extension"
                            
   do_not_validate_attachment_file_type :data
-  #validates_attachment :data, presence: true, content_type: { content_type: %w(application/vnd.ms-excel application/vnd.openxmlformats-officedocument.dataml.sheet text/csv ) } 
-#   form-data; name=\"image[attachment]\   vs   form-data; name=\"data\";
+  #validates_attachment :data, presence: true, content_type: { content_type: %w(application/vnd.ms-excel application/vnd.openxmlformats-officedocument.dataml.sheet text/csv ) }
   
 
   def save
     run_callbacks :save do 
       self.id = 1000 + Random.rand(9000)
     end
-    puts "In save action\n"
     return true
   end
   
   def process
-    system "bundle exec thor datashift_spree:load:products -i #{data.url} -v RAILS_ENV=#{Rails.env}"
+    system "bundle exec thor datashift_spree:load:products -i #{data.url(:default, timestamp: false)} -v" #2>&1
+    #syscall('bundle exec thor datashift_spree:load:products -v -i', data.url)
   end
 
   def destroy
@@ -47,7 +44,19 @@ class BulkImportFile
     def obj.full_messages() [] end
     def obj.any?()       false end
     obj
-  end 
+  end
+  
+  
+  private
+  
+    def syscall(*cmd)
+      begin
+        stdout, stderr, status = Open3.capture3(*cmd)
+        status.success? && stdout.slice!(0..-(1 + $/.size)) # strip trailing eol
+      rescue
+      end
+    end
+  
 end
 
   

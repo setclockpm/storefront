@@ -6,8 +6,10 @@ Spree::Admin::ProductsController.class_eval do
   
   def bulk_import
     @spreadsheet = BulkImportFile.new(params[:bulk_import_file])
-    if @spreadsheet.save && @spreadsheet.data.save
+    if @spreadsheet.save
+      @output = @spreadsheet.process
       flash[:success] = "Import process started!"
+      
       puts "\n\n#{@spreadsheet.data.url}\n\n"
       redirect_to admin_data_import_path
     else

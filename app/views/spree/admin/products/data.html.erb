@@ -3,63 +3,66 @@
 <% end %>
 
 <div class="row">
-  <div class="alert alert-warning no-objects-found">
-    <%= fa_icon("warning", text: 'Image import must be performed after successful import of product data') %>
+  <div id="content" class="col-sm-12" data-hook="">
+    
+    <div class="alert alert-info no-objects-found">
+      <%= fa_icon("info-circle", text: 'Image import must be performed after successful import of product data') %>
+    </div>
+    
+    <div class="row import-spreadsheet-row">
+      <div id="bulk-import-skus-form" class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading"><h1 class="panel-title">Bulk Import SKUs</h1></div>
+          <div class="panel-body">
+            <%= form_for @spreadsheet, url: spree.admin_import_inventory_path(@spreadsheet), method: :post do |f| %>
+              <fieldset data-hook="bulk-inventory-import">
+                <div data-hook="bulk-inventory-import-form-fields" class="row">
+                  <div class="col-md-6">
+                    <div data-hook="file">
+                      <%= f.label :data, Spree.t(:excel_file) %>
+                      <%= f.file_field :data %>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-actions" data-hook="buttons">
+                  <%= button Spree.t(:import), 'download', 'submit', { class: 'btn-success' } %>
+              
+                  <span class="or"><%= Spree.t(:or) %></span>
+                  <%= button_link_to Spree.t('actions.cancel'), spree.admin_products_url, icon: 'delete', id: 'cancel_link' %>
+                </div>
+              </fieldset>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      
+      <div id="generate-inventory-photos-form" class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h1 class="panel-title">Generate Inventory Photos</h1>
+          </div>
+          <div class="panel-body">
+            <%= form_tag spree.admin_generate_variant_photos_path, html: { class: "navbar-form" } do |f| %>
+        
+              <fieldset data-hook="inventory-photo-generator">
+                <div data-hook="inventory-photo-generator-form" class="row">
+                  <div class="col-md-12">
+                    <%= content_tag :span, "Source Amazon S3 Bucket", class: 'fyi' %>
+                  </div>
+                  <div class="col-md-12">
+                    <%= content_tag :span, "#{RAW_ASSET_DIRECTORY}", class: 'fyi-value' %>
+                  </div>
+                </div>
+                <div class="form-actions" data-hook="buttons">
+                  <%= button Spree.t(:process_images), 'picture', 'submit', { class: 'btn btn-success' } %>
+                </div>
+              </fieldset>
+          
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="row import-spreadsheet-row">
-  <div id="bulk-import-skus-form" class="col-md-6">
-    <div class="panel panel-default">
-      <div class="panel-heading"><h1 class="panel-title">Bulk Import SKUs</h1></div>
-      <div class="panel-body">
-        <%= form_for @spreadsheet, url: spree.admin_import_inventory_path(@spreadsheet), method: :post do |f| %>
-        
-          <fieldset data-hook="bulk-inventory-import">
-            <div data-hook="bulk-inventory-import-form-fields" class="row">
-              <div class="col-md-6">
-                <div data-hook="file">
-                  <%= f.label :data, Spree.t(:excel_file) %>
-                  <%= f.file_field :data %>
-                </div>
-              </div>
-            </div>
-            <div class="form-actions" data-hook="buttons">
-              <%= button Spree.t(:import), 'download', 'submit', { class: 'btn-success' } %>
-              
-              <span class="or"><%= Spree.t(:or) %></span>
-              <%= button_link_to Spree.t('actions.cancel'), spree.admin_products_url, icon: 'delete', id: 'cancel_link' %>
-            </div>
-          </fieldset>
-          
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <div id="generate-inventory-photos-form" class="col-md-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h1 class="panel-title">Generate Inventory Photos</h1>
-      </div>
-      <div class="panel-body">
-        <%= form_tag spree.admin_generate_variant_photos_path, html: { class: "navbar-form" } do |f| %>
-        
-          <fieldset data-hook="inventory-photo-generator">
-            <div data-hook="inventory-photo-generator-form" class="row">
-              <div class="col-md-12">
-                <%= content_tag :span, "Source Amazon S3 Bucket", class: 'fyi' %>
-              </div>
-              <div class="col-md-12">
-                <%= content_tag :span, "#{RAW_ASSET_DIRECTORY}", class: 'fyi-value' %>
-              </div>
-            </div>
-            <div class="form-actions" data-hook="buttons">
-              <%= button Spree.t(:process_images), 'picture', 'submit', { class: 'btn btn-success' } %>
-            </div>
-          </fieldset>
-          
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
