@@ -191,6 +191,3 @@ namespace :images do
   end
   
 end
-#rsync -a -e "ssh -p 40000" /var/www/cerp/production/shared/backups/*.bak deploy@50.116.5.75:/var/www/cerp/shared/backups
-#PATH=/usr/bin/pg_dump:$PATH sudo -u postgres pg_dump -t accounts -Fc cerp_production > accounts.out
-#PATH=/usr/bin/pg_dump:$PATH sudo -u postgres pg_dump -Fc cerp_production > backup.out

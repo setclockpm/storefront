@@ -43,25 +43,29 @@
           </div>
           <div class="panel-body">
             <%= form_tag spree.admin_generate_variant_photos_path, html: { class: "navbar-form" } do |f| %>
-        
               <fieldset data-hook="inventory-photo-generator">
                 <div data-hook="inventory-photo-generator-form" class="row">
                   <div class="col-md-12">
-                    <%= content_tag :span, "Source Amazon S3 Bucket", class: 'fyi' %>
-                  </div>
-                  <div class="col-md-12">
-                    <%= content_tag :span, "#{RAW_ASSET_DIRECTORY}", class: 'fyi-value' %>
+                    <%= content_tag :span, "Source:", class: 'fyi' %>
+                    <%= content_tag :span, "#{RAW_ASSET_DIRECTORY}#{BUCKET_PREFIX}", class: 'fyi-value' %>
                   </div>
                 </div>
                 <div class="form-actions" data-hook="buttons">
                   <%= button Spree.t(:process_images), 'picture', 'submit', { class: 'btn btn-success' } %>
                 </div>
+                <div class="mini-legend row">
+                  <div class="col-md-12">
+                    <%= content_tag :span, "Example file names: FT007C RED - 1.jpg or CH055D YEL-2.jpg", class: 'fyi-value' %>
+                  </div>
+                </div>
               </fieldset>
-          
             <% end %>
           </div>
         </div>
       </div>
+    </div>
+    <div id="bulk-import-legend" class="row">
+      
     </div>
   </div>
 </div>
