@@ -8,3 +8,4 @@ en:
      # variants: "Color / Size Options"
      import: "Import"
      excel_file: "Spreadsheet File"
+     process_images: "Generate Product Photos"
