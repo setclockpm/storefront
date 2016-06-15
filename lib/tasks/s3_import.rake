@@ -17,7 +17,7 @@ namespace :s3 do
       
       
       # enumerate every object in a bucket
-      all_object_keys = bucket.objects.map(&:key)
+      all_object_keys = @bucket.objects.map(&:key)
      
       
       puts "\n\n\n================================== Today's date: #{Date.today} =================================="
@@ -118,21 +118,35 @@ namespace :s3 do
       # TODO: Implement import for many images per 1 SKU
       # ------------------------------------------------------------------------------------------------------------------------
       @variant = Spree::Variant.find_by(sku: @original_sku) || Spree::Variant.find_by_master_sku(@master_sku_bucket, @original_sku)
-            
-      puts "Skipping because previous_sku (#{previous_sku}) == @original_sku (#{@original_sku})" if @previous_sku == @original_sku
-      return if @previous_sku == @original_sku
+      
+      puts "\n-Variant found: #{@variant.inspect} "
+      return skipped_because_previous_sku_matches_this_sku if @previous_sku == @original_sku
       
       
       if @variant
-        puts "Skipping because in image already exists for this variant" if @variant.images.any?
-        return if @variant.images.any?
+        return skipped_because_image_exists_for_variant if @variant.images.any?
+        puts "@variant.images.any? #{@variant.images.any?}"
+        puts "About to build image from #{@path_to_raw_image} with alt text of #{image_alt}"
+        @image = @variant.images.build(attachment: File.open(local_image_path, 'rb'), alt: image_alt)
         
-        @image        = @variant.images.build(attachment: open(@path_to_raw_image){|f| f.read }, alt: image_alt)
+        @image = @variant.build_image_from_path(@path_to_raw_image, image_alt)
+        raise @image.inspect
         @previous_sku = @original_sku if @image.save!
       else
-        puts "\n\nWARNING: No variant found w/ SKU: <#{@original_sku}> (or its master SKU)! 
-               Please re-check parse or verify if file name is following convention"
+        puts "\n\nWARNING: No variant found w/ SKU: <#{@original_sku}> (or its master SKU)! Please re-check parse or verify format of file name"
       end
+    end
+    
+    def skipped_because_previous_sku_matches_this_sku
+      puts "Skipping because previous_sku (#{@previous_sku}) == @original_sku (#{@original_sku})"
+    end
+    
+    def skipped_because_image_exists_for_variant
+      puts "Skipping because in image already exists for this variant"
+    end
+    
+    def file_open_method
+      Rails.env == 'production' ? open(@path_to_raw_image){|f| f.read } : File.open(@path_to_raw_image, 'rb')
     end
     
     def file_count

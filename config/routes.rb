@@ -15,7 +15,7 @@ Porthos::Application.routes.draw do
     namespace :admin do
       get "products/data_import" => "products#data", as: :data_import
       post "import/inventory" => "products#bulk_import", as: :import_inventory
-      post "import/variant_photos" => "imports#variant_photos", as: :generate_variant_photos
+      post "import/variant_photos" => "products#import_images", as: :generate_variant_photos
     end
   end
 

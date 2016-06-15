@@ -1,5 +1,4 @@
 Spree::Image.class_eval do
-  before_save :compose_s3_slug
   
   has_attached_file :attachment,
                     bucket:          'porthos',
@@ -34,13 +33,8 @@ Spree::Image.class_eval do
     "unknown viewable"
   end
   
+  
   private
-    def compose_s3_slug
-      return unless new_record?
-      puts "\n\n\nCalled method: speak Paperclip Options: #{Paperclip.options.inspect}"
-      puts "attachment.original_filename: #{attachment.original_filename}"
-    end
-    
     def image_ordinal
       position
     end

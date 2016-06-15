@@ -1,4 +1,5 @@
 Spree::Admin::ProductsController.class_eval do
+  require 'rake'
   
   def data
     @spreadsheet = BulkImportFile.new
@@ -16,6 +17,12 @@ Spree::Admin::ProductsController.class_eval do
   end
   
   def import_images
-    
+    generator = ImageGenerator.new
+    if generator.process
+      flash[:success] = "Image generation process complete!"      
+      redirect_to admin_data_import_path
+    else
+      flash[:error] = "There was a problem importing your images."
+    end
   end
 end

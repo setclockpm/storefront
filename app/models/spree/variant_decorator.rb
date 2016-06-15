@@ -3,10 +3,17 @@ Spree::Variant.class_eval do
   class << self
     def find_by_master_sku(master_sku, sku)
       puts "\n About to try retrieval by sku: #{sku} | sku =~ /ALL|GRP/ -> #{sku =~ /ALL|GRP/i}"
-      return unless sku =~ /ALL|GRP/i
+      return unless sku.match(/ALL|GRP/i)
       # Only retrieving by master SKU if filename contains 'ALL' or 'GRP'
+      puts " /ALL|GRP/ pattern found, attempting to lookup variant by master sku: #{master_sku}."
       @variant = Spree::Variant.find_by(sku: master_sku) 
     end
+  end
+  
+  
+  def build_image_from_path(path, image_alt=nil)
+    self.images.build(attachment: File.open(path, 'rb'), alt: image_alt)
+    # @image        = @variant.images.new(attachment: File.open(@path_to_raw_image, 'rb'), alt: image_alt)
   end
   
   def s3_slug
