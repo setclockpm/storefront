@@ -12,7 +12,7 @@ class ImageGenerator
     s3            = Aws::S3::Resource.new(credentials: credentials, region: 'ap-southeast-1')
     # Directory for inventory pictures ready to be bulk imported.
     # Cna be a local dir to an s3 bucket.
-    @bucket       = s3.bucket('porthos')
+    @bucket       = s3.bucket(ENV['S3_BUCKET_NAME'])
   end
   
   
@@ -27,7 +27,8 @@ class ImageGenerator
     # 3) Original SKU - This to look up and attach the viewable object to the image being created.
     # 4) File Name (on S3)
     # ----------------------------------------------------------------------------------------------------------------
-    Rails.env == 'production' ? pull_images_from_holding_s3_bucket : pull_images_from_local_directory
+    #Rails.env == 'production' ? pull_images_from_holding_s3_bucket : pull_images_from_local_directory
+    pull_images_from_holding_s3_bucket
     true
   end
   
@@ -83,7 +84,7 @@ class ImageGenerator
       @previous_sku = nil
       
       #objex = @bucket.objects.select{|o| o.key =~ /public\/assets/ }
-      # bucket.objects.map(&:key)
+      # puts @bucket.objects.map(&:key)
       @bucket.objects(prefix: 'public/assets/').each do |obj|
         # We don't neet the direcrtory it's in, that's why skipping the first returned object
         next if obj.key == '.' or obj.key == '..' or obj.key == 'public/assets/'
@@ -113,8 +114,8 @@ class ImageGenerator
     end
     
     def file_count
-      return @bucket.objects.size if Rails.env == 'production'
-      Dir[File.join(RAW_ASSET_DIRECTORY, '**', '*')].count{|f| File.file?(f) }
+      return @bucket.objects(prefix: 'public/assets/').count# if Rails.env == 'production'
+      #Dir[File.join(RAW_ASSET_DIRECTORY, '**', '*')].count{|f| File.file?(f) }
     end
     
     def image_alt
