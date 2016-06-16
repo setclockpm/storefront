@@ -5,7 +5,7 @@ BUCKET_PREFIX = 'public/assets/'
 dirs = { 
   'production'  => 'https://s3-ap-southeast-1.amazonaws.com/porthos/',
   'staging'     => '/var/www/porthos/production/shared/tmp/images',
-  'development' => '/Users/pmedrano/Dropbox/porthos-inventory-images/'
+  'development' => 'https://s3-ap-southeast-1.amazonaws.com/porthos/'
 }
 
-RAW_ASSET_DIRECTORY = dirs[Rails.env]
+RAW_ASSET_DIRECTORY ="https://s3-ap-southeast-1.amazonaws.com/porthos/"

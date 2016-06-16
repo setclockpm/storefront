@@ -4,7 +4,7 @@ Spree::Image.class_eval do
                     bucket:          'porthos',
                     convert_options: { all: '-strip -auto-orient -colorspace sRGB' },
                     default_style:   :product,
-                    path:            'public/inventory/:master_sku/:style-:s3_slug-:image_ordinal.:extension',
+                    path:            'public/inventory/:master_sku/:style-:s3_slug-:image_ordinal.:image_file_extension',
                     storage:         :s3,
                     styles:          { mini: '48x48#', small: '100x100#', product: '240x240#', large: '500x500#' },
                     s3_credentials:  { access_key_id: ENV['AWS_ACCESS_KEY_ID'], secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'] },
@@ -16,7 +16,7 @@ Spree::Image.class_eval do
                     
   
   
-  [:image_ordinal, :s3_slug, :master_sku].each do |path_facet|
+  [:image_ordinal, :s3_slug, :master_sku, :image_file_extension].each do |path_facet|
     Paperclip.interpolates path_facet do |attachment, style|
       attachment.instance.send(path_facet)
     end
@@ -35,6 +35,11 @@ Spree::Image.class_eval do
   
   
   private
+    def image_file_extension
+      return 'jpg' if Paperclip::Interpolations.extension(attachment, Paperclip::Interpolations.style(attachment, nil)).blank?
+      Paperclip::Interpolations.extension(attachment, Paperclip::Interpolations.style(attachment, nil))
+    end
+    
     def image_ordinal
       position
     end

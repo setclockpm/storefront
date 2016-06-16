@@ -8,8 +8,8 @@ class ImageGenerator
   
   
   def initialize(path=nil)
-    credentials   = Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY'])
-    s3            = Aws::S3::Resource.new(credentials: credentials, region: 'ap-southeast-1')
+    @credentials = Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY'])
+    s3           = Aws::S3::Resource.new(credentials: @credentials, region: 'ap-southeast-1')
     # Directory for inventory pictures ready to be bulk imported.
     # Cna be a local dir to an s3 bucket.
     @bucket       = s3.bucket(ENV['S3_BUCKET_NAME'])
@@ -56,7 +56,7 @@ class ImageGenerator
       if @variant
         return skipped_because_image_exists_for_variant if @variant.images.any?
         Rails.logger.info "- About to build image from #{@path_to_raw_image} with alt text of #{image_alt} -"
-        @image        = @variant.images.build(attachment: File.open(@path_to_raw_image, 'rb'), alt: image_alt)
+        @image        = @variant.images.build(attachment: s3_raw_file, alt: image_alt)
         @previous_sku = @original_sku if @image.save!
       else
         puts "\nWARNING: No variant found w/ SKU: <#{@original_sku}> (or its master SKU)! Please re-check parse or verify format of file name"
@@ -92,7 +92,8 @@ class ImageGenerator
         
         item.slice!('public/assets/')
         @composite          = item.split("\s").compact
-        @path_to_raw_image  = obj.public_url
+        @object_key         = obj.key
+        @path_to_raw_image  = "#{RAW_ASSET_DIRECTORY}#{obj.key}".gsub("\s", '+')
         @master_sku_bucket  = @composite[0]
         @original_sku       = item.split('-').first.strip
         @s3_file_name       = compose_s3_file_name
@@ -111,8 +112,15 @@ class ImageGenerator
       Rails.logger.info "Skipping because in image already exists for this variant"
     end
     
-    def file_open_method
-      Rails.env == 'production' ? open(@path_to_raw_image){|f| f.read } : File.open(@path_to_raw_image, 'rb')
+    def s3_raw_file
+      #Rails.env == 'production' ? 
+      s3 = Aws::S3::Client.new(credentials: @credentials, region: 'ap-southeast-1')
+      response = s3.get_object(bucket:'porthos', key: @object_key)
+      resp_body = response.body
+      Rails.logger.info "Response body of object just d/l'd and put into memory #{resp_body.inspect}\n\n"
+      #=> #<StringIO ...> 
+      resp_body
+      # For local files ->  File.open(@path_to_raw_image, 'rb')
     end
     
     def file_count
