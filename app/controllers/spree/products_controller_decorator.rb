@@ -19,6 +19,7 @@ Spree::Admin::ProductsController.class_eval do
   def import_images
     generator = ImageGenerator.new
     if generator.process
+      raise params.inspect
       flash[:success] = "Image generation process complete!"
       redirect_to admin_data_import_path
     else

@@ -17,9 +17,9 @@ class ImageGenerator
   
   
   def process
-    puts "\n\n\n================================== Today's date: #{Date.today} =================================="
-    puts "Preparing to possible create image variants for #{file_count} files."
-    puts "==================================_________________________________==================================\n\n\n"
+    Rails.logger.info "================================== Today's date: #{Date.today} =================================="
+    Rails.logger.info "Preparing to possible create image variants for #{file_count} files."
+    Rails.logger.info "==================================_________________________________==================================\n\n\n"
     #### Main loop ###################################################################################################
     # What we require is:
     # 1) The local image path (@path_to_raw_image)
@@ -36,8 +36,8 @@ class ImageGenerator
   private
   
     def do_import
-      puts "\n --- Original SKU: #{@original_sku} --- "
-      puts "image path: #{@path_to_raw_image} | @composite: #{@composite} | #{@master_sku_bucket}/#{@s3_file_name}"
+      Rails.logger.info "\n--- Original SKU: #{@original_sku} --- "
+      Rails.logger.info "--- Image path: #{@path_to_raw_image} | @composite: #{@composite} | #{@master_sku_bucket}/#{@s3_file_name} ---"
       
       # TODO: Improve readability maybe?
       # All that's being done here is retrieving Variant record by master sku if we were unable to do so via original_sku.
@@ -49,18 +49,18 @@ class ImageGenerator
       # ------------------------------------------------------------------------------------------------------------------------
       @variant = Spree::Variant.find_by(sku: @original_sku) || Spree::Variant.find_by_master_sku(@master_sku_bucket, @original_sku)
       
-      puts "\n-Variant found: #{@variant.inspect} "
+      Rails.logger.info "\n-Variant found: #{@variant.inspect} "
       return skipped_because_previous_sku_matches_this_sku if @previous_sku == @original_sku
       
       
       if @variant
         return skipped_because_image_exists_for_variant if @variant.images.any?
-        puts "@variant.images.any? #{@variant.images.any?}"
-        puts "About to build image from #{@path_to_raw_image} with alt text of #{image_alt}"
+        Rails.logger.info "- About to build image from #{@path_to_raw_image} with alt text of #{image_alt} -"
         @image        = @variant.images.build(attachment: File.open(@path_to_raw_image, 'rb'), alt: image_alt)
         @previous_sku = @original_sku if @image.save!
       else
-        puts "\n\nWARNING: No variant found w/ SKU: <#{@original_sku}> (or its master SKU)! Please re-check parse or verify format of file name"
+        puts "\nWARNING: No variant found w/ SKU: <#{@original_sku}> (or its master SKU)! Please re-check parse or verify format of file name"
+        Rails.logger.info "\nWARNING: No variant found w/ SKU: <#{@original_sku}> (or its master SKU)! Please re-check parse or verify format of file name"
       end
     end
   
@@ -68,8 +68,8 @@ class ImageGenerator
       @previous_sku = nil
       
       Dir.foreach(RAW_ASSET_DIRECTORY) do |item|
-        next if item == '.' or item == '..' or item == '.DS_Store'
-    
+        # We're in a local *nix file system for 
+        next if item == '.' or item == '..' or item == '.DS_Store'        
         @composite          = item.split("\s").compact
         @path_to_raw_image  = "#{RAW_ASSET_DIRECTORY}/#{item}"
         @master_sku_bucket  = @composite[0]
@@ -86,27 +86,29 @@ class ImageGenerator
       #objex = @bucket.objects.select{|o| o.key =~ /public\/assets/ }
       # puts @bucket.objects.map(&:key)
       @bucket.objects(prefix: 'public/assets/').each do |obj|
+        item = obj.key.dup
         # We don't neet the direcrtory it's in, that's why skipping the first returned object
-        next if obj.key == '.' or obj.key == '..' or obj.key == 'public/assets/'
+        next if item == '.' or item == '..' or item == 'public/assets/'
         
-        @composite          = obj.key.split("\s").compact
+        item.slice!('public/assets/')
+        @composite          = item.split("\s").compact
         @path_to_raw_image  = obj.public_url
         @master_sku_bucket  = @composite[0]
-        @original_sku       = obj.key.split('-').first.strip
+        @original_sku       = item.split('-').first.strip
         @s3_file_name       = compose_s3_file_name
         
-        puts "About to pull image at location: #{@path_to_raw_image}"
+        Rails.logger.info "About to pull image at location: #{@path_to_raw_image}"
         do_import
       end
       
     end
   
     def skipped_because_previous_sku_matches_this_sku
-      puts "Skipping because previous_sku (#{@previous_sku}) == @original_sku (#{@original_sku})"
+      Rails.logger.info "Skipping because previous_sku (#{@previous_sku}) == @original_sku (#{@original_sku})"
     end
     
     def skipped_because_image_exists_for_variant
-      puts "Skipping because in image already exists for this variant"
+      Rails.logger.info "Skipping because in image already exists for this variant"
     end
     
     def file_open_method
