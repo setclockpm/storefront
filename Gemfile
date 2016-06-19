@@ -19,6 +19,7 @@ gem "mini_magick"
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem "paperclip", github: "thoughtbot/paperclip", ref: "c38bb31"
 gem 'pg', '~> 0.15'
+gem 'rubyntlm', '~> 0.6.0'
 gem 'sass-rails', '~> 5.0'
 gem 'savon'
 gem 'uglifier', '>= 1.3.0'
@@ -62,7 +63,7 @@ end
 
 gem 'aws-sdk'
 gem 'datashift', '~> 0.15'
-gem 'datashift_spree', github: 'autotelik/datashift_spree', branch: 'master'
+gem 'datashift_spree'#, github: 'autotelik/datashift_spree', branch: 'master'
 gem 'spree', '~> 3.1.0.rc1'
 gem 'spree_auth_devise', '~> 3.1.0.rc1'
 gem 'spree_gateway', '~> 3.1.0.rc1'

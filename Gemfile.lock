@@ -1,13 +1,4 @@
 GIT
-  remote: git://github.com/autotelik/datashift_spree.git
-  revision: 02de5377d0fc24d68ecbefa45a670cace1cf427f
-  branch: master
-  specs:
-    datashift_spree (0.6.0)
-      datashift (~> 0.15, >= 0.15.0)
-      mechanize (~> 2.6, >= 2.6.0)
-
-GIT
   remote: git://github.com/capistrano/rbenv.git
   revision: e056efc0c361cc15b76ff961d6c5f65ed5e2c57e
   specs:
@@ -172,6 +163,9 @@ GEM
     datashift (0.16.0)
       rubyzip
       spreadsheet
+    datashift_spree (0.5.0)
+      datashift (>= 0.12.0)
+      mechanize
     debug_inspector (0.0.2)
     deface (1.0.2)
       colorize (>= 0.5.8)
@@ -363,6 +357,7 @@ GEM
       rspec-support (~> 3.4.0)
     rspec-support (3.4.1)
     ruby-ole (1.2.12)
+    rubyntlm (0.6.0)
     rubyzip (1.2.0)
     sass (3.4.22)
     sass-rails (5.0.4)
@@ -530,7 +525,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   database_cleaner
   datashift (~> 0.15)
-  datashift_spree!
+  datashift_spree
   dotenv-rails
   factory_girl_rails (~> 4.0)
   ffaker
@@ -548,6 +543,7 @@ DEPENDENCIES
   rails (~> 4.2)
   rails-footnotes (~> 4.0)
   rspec-rails (~> 3.0)
+  rubyntlm (~> 0.6.0)
   sass-rails (~> 5.0)
   savon
   sdoc (~> 0.4.0)

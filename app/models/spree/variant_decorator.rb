@@ -33,4 +33,18 @@ Spree::Variant.class_eval do
     primary_image.attachment.url(:mini) if primary_image
   end
   
+  def update_stock_count(qty)
+    update_main_location_stock_count(qty)
+  end
+  
+  
+  
+  private
+    
+    def update_main_location_stock_count(qty)
+      main_location_stock_item = self.stock_items.find_by(stock_location_id: 1)
+      puts "^--- Updating variant (#{sku}) count from #{main_location_stock_item.count_on_hand} to #{qty} ---^"
+      main_location_stock_item.update_count(qty)
+    end
+  
 end
