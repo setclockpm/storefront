@@ -35,7 +35,7 @@ namespace :seller_cloud do
   
     def master_sku_hash
       hash = {}
-      Spree::Variant.find_each do |v|
+      Spree::Variant.where(is_master: false).find_each do |v|
         hash[v.sku]=v
       end
       hash
