@@ -9,27 +9,30 @@ namespace :seller_cloud do
     desc "Synchronize quantity of inventory from SellerCloud API to porthos"
     task :sync => :environment do
       
-      @master_sku_hash = master_sku_hash
-      @sc_connection   = InventoryManagement::Connections::SellerCloud.connection
+      @master_sku_hash  = master_sku_hash
+      @sc_connection    = InventoryManagement::Connections::SellerCloud.connection
       @skus_to_research = []
       
       @master_sku_hash.each do |sku, variant|
-        puts "========================= ON SKU #{sku} | #{variant.sku} ======================"
+        puts "========================= ON SKU #{sku} =========================="
         qty = @sc_connection.get_available_qty(sku)
         
-        if qty >= 0
-          variant.update_stock_count(qty)
-        else
-          puts "-        Warning: Quantity received < 0, adding variant (#{variant.sku}) to set of variants needed to researched        -"
-          @skus_to_research << variant
-        end
-        
+        # So far when SellerCloud responds woth a '-1', this indicates SKU was unable to be located or
+        # possibly discontinued. All SOAP related exceptions should be dealt with in SellerCloud class
+        qty >= 0 ? variant.update_stock_count(qty) : add_variant_to_research_list(variant)
       end
+      
+      
     end
   end
   
   
   private
+    def add_variant_to_research_list(v)
+      puts "-     Warning: Quantity received < 0, adding variant (#{v.sku}) to     -"
+      @skus_to_research << v
+    end
+  
     def master_sku_hash
       hash = {}
       Spree::Variant.find_each do |v|

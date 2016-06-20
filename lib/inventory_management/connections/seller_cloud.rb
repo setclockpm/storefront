@@ -34,7 +34,7 @@ module InventoryManagement
         begin
           response = @sc_client.call(:get_inventory_available_qty, message: { 'ProductID' => sku }, soap_header: AUTH_HEADER)
         rescue Exception => e
-          puts "There was a problem getting information for this sku: #{e.messages}"
+          puts "There was a problem getting information for this sku: #{e.message}"
         end
         
         # Life goals
