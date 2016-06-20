@@ -4,8 +4,6 @@ Spree::StockItem.class_eval do
     self.update_column(:count_on_hand, qty)
   end
   
-  
-  
   private
   
 end

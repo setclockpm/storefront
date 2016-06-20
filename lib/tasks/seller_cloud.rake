@@ -22,14 +22,14 @@ namespace :seller_cloud do
         qty >= 0 ? variant.update_stock_count(qty) : add_variant_to_research_list(variant)
       end
       
-      
+      MessageMailer.inventory_sync_report(@skus_to_research).deliver_now
     end
   end
   
   
   private
     def add_variant_to_research_list(v)
-      puts "-     Warning: Quantity received < 0, adding variant (#{v.sku}) to     -"
+      puts "-  Warning: Quantity received < 0, adding variant (#{v.sku}) to list to be researched"
       @skus_to_research << v
     end
   

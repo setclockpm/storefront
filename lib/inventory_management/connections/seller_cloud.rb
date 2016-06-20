@@ -38,7 +38,7 @@ module InventoryManagement
         end
         
         # Life goals
-        if response.successful?
+        if response and response.successful?
           # Actual numeric qty buried in hash
           return response.to_hash[:get_inventory_available_qty_response][:get_inventory_available_qty_result].to_i
         else
