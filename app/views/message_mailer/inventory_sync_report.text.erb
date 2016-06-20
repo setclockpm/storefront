@@ -1,0 +1,9 @@
+<br/>
+Hourly message containing list of SKUs unable to be queried of SellerCloud: <%= Date.today %> - <%= Time.zones.now %>
+
+<br/><br/>
+<% @variants.each do |v| %>
+  <%= link_to "Variant: #{v.sku}", admin_product_variants_url(v.product) %> 
+<%- end -%>
+<br/>
+* This is an auto-generated e-mail, please do not reply to this email.
