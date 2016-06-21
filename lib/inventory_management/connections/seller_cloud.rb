@@ -23,6 +23,7 @@ module InventoryManagement
       
       
       def initialize
+        puts "Creds pulled from env: #{ENV['SELLER_CLOUD_ID']}|#{ENV['SELLER_CLOUD_PW']}"
         @sc_client = Savon.client(env_namespace: :soap, 
                                   namespaces: { "xmlns:api" => "http://api.sellercloud.com/" }, 
                                   pretty_print_xml: true, 
@@ -49,7 +50,7 @@ module InventoryManagement
       
       private
         def report_unsuccessful_response(r, sku)
-          puts "Unsuccessful response given by endpoint: #{r.to_hash} - arg: #{sku}"
+          puts "Unsuccessful response given by endpoint: #{r.inspect} - arg: #{sku}"
         end
       end
   end
