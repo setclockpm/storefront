@@ -85,7 +85,14 @@ Rails.application.configure do
   :user_name            => "development@porthoshome.com",
   :password             => "wYsrd1819",
   :authentication       => 'plain',
-  :enable_starttls_auto => true  }
+  :enable_starttls_auto => true  
+}
+
+#SET URL FOR Mailer
+config.action_mailer.default_url_options = { 
+  host: 'porthoshome.com',
+  protocol: 'https'
+}
   
 
 end
