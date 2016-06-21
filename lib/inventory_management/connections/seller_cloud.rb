@@ -42,14 +42,14 @@ module InventoryManagement
           # Actual numeric qty buried in hash
           return response.to_hash[:get_inventory_available_qty_response][:get_inventory_available_qty_result].to_i
         else
-          report_unsuccessful_response(sku)
+          report_unsuccessful_response(response, sku)
         end
       end
       
       
       private
-        def report_unsuccessful_response(arg)
-          puts "Unsuccessful response given by endpoint: #{response.to_hash} - arg: #{sku}"
+        def report_unsuccessful_response(r, sku)
+          puts "Unsuccessful response given by endpoint: #{r.to_hash} - arg: #{sku}"
         end
       end
   end

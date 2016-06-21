@@ -3,7 +3,7 @@ Hourly message containing list of SKUs unable to be queried of SellerCloud: <%= 
 
 <br/><br/>
 <% @variants.each do |v| %>
-  <%= "Variant: #{v.sku} requires attention or is invalid." %> 
+  <%= "#{v.name} - [#{v.sku}] " %> 
 <%- end -%>
 <br/>
 * This is an auto-generated e-mail, please do not reply to this email.
