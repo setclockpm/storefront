@@ -13,7 +13,7 @@ class MessageMailer < ActionMailer::Base
     @variants = variants_needing_attn
     reply_to_address = "Porthos Server (Do Not Reply) \<donotreply@porthoshome.com\>"
     
-    mail subject: "SKU Possibly Requiring Attention", from: "worker@porthoshomeapplication.com", reply_to: reply_to_address, to: "phsia87@gmail.com"
+    mail subject: "SKU Possibly Requiring Attention", from: "worker@porthoshomeapplication.com", reply_to: reply_to_address, to: "phsia87@gmail.com", cc: "phillip.medrano@gmail.com"
   end
 
 end

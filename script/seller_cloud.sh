@@ -1,4 +1,5 @@
 #!/bin/sh
+source $HOME/.bashrc
 
 echo "Starting google sync rake tasks at" `date` "as" `whoami`
 cd /var/www/porthos/production/current
