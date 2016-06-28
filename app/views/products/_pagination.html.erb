@@ -2,9 +2,6 @@
   <ul class="<%= pagination_class %>">
     <%= first_page_tag unless current_page.first? %>
     <%= prev_page_tag %>
-    <li class="disabled lonely-gap">
-      <a class="gap" onclick="return false;" href="#"><%= raw(t 'views.pagination.truncate') %></a>
-    </li>
     <% each_page do |page| %>
       <% if page.left_outer? || page.right_outer? || page.inside_window? %>
         <%= page_tag page %>
@@ -12,8 +9,10 @@
         <%= gap_tag %>
       <% end %>
     <% end %>
+    <span class="gap"><%= raw(t 'views.pagination.truncate') %></span>
     <%= next_page_tag %>
     <%= last_page_tag unless current_page.last? %>
   </ul>
 </div>
+
 

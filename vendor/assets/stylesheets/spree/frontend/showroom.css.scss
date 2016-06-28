@@ -4,6 +4,13 @@
 }
 
 
+.pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: 0;
+  border-radius: 4px;
+}
+
 
 
 
@@ -27,9 +34,7 @@
   -moz-transition: all ease 0.5s;
 }
 
-#press .spotlight-item .spotlight-link .caption:hover {
-  opacity: 1;
-}
+#press .spotlight-item .spotlight-link .caption:hover { opacity: 1; }
 #press .spotlight-item .spotlight-link .caption .caption-content {
   position: absolute;
   width: 100%;
@@ -61,14 +66,54 @@ div {
     margin-top: 10px;
     position: relative;
     text-align: center;
+    
+    
+    .pg-button, .button {
+      background: rgba(0, 0, 0, 0) linear-gradient(#f4f4f4, #fff) repeat scroll 0 0;
+      border: 1px solid #d1d1d1;
+      border-radius: 3px;
+      box-shadow: 0 1px 0 #e5e5e5;
+      color: #666;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 18px;
+      margin: 0;
+      padding: 4px 30px;
+      text-align: center;
+      text-decoration: none;
+    }
+    .pg-button:hover, .button:hover { background: rgba(0, 0, 0, 0) linear-gradient(#fff, #f4f4f4) repeat scroll 0 0; }
+    .pg-button.disabled, .pg-button.disabled:hover, .pg-button.disabled:active {
+      background: rgba(0, 0, 0, 0) linear-gradient(#ececec, #d9d9d9) repeat scroll 0 0;
+      border-color: #d9d9d9;
+      box-shadow: 0 0 0 #000;
+      color: #fff;
+      cursor: not-allowed;
+      opacity: 0.75;
+      text-shadow: none;
+      top: 0;
+    }
+    
+    
+    a { &.pg-button:hover, &.button:hover { color: #db5544; } }
+    
+    li {
+      .page-step {
+        padding-left: 0;
+        padding-right: 0;
+        position: absolute;
+        top: 0;
+        width: 135px;
+      }
+    }
   }
   
   li {
-    &.gap { a { &.gap { border: 0; } }
-    &.next_page { a { right: 0; } }
-    
-    &.prev { a { left: 0; } }
-    
+    &.gap { a { &.gap { border: 0; } } }
+    &.next_page { .page-step { right: 0; } }
+    &.prev { .page-step { left: 0; } }
     &.lonely-gap {
       color: #888;
       font-size: 14px;
@@ -82,54 +127,75 @@ div {
 }
 
 
-.pg-button.disabled, .pg-button.disabled:hover, .pg-button.disabled:active {
-  background: rgba(0, 0, 0, 0) linear-gradient(#ececec, #d9d9d9) repeat scroll 0 0;
-  border-color: #d9d9d9;
-  box-shadow: 0 0 0 #000;
-  color: #fff;
-  cursor: not-allowed;
-  opacity: 0.75;
-  text-shadow: none;
-  top: 0;
-}
+
 
 
 
 
 @media (min-width: 1024px) {
   
-  li {
-    &.lonely-gap { display: none; }
-    &.gap { display: inline; }
-  }
+  li { &.gap { display: inline; } }
+  span { &.gap { display: none; } }
   
-  #press .spotlight-item {
-    margin: 0 0 30px;
-  }
+  #press .spotlight-item { margin: 0 0 30px; }
 }
+
+
+
+
+
 
 @media (max-width: 1024px) {
   
-  ul {
-    li {
-      &.first, &.last, &.page, &.gap { display: none; }
-      &.lonely-gap {
-        display: inline;
+  div {
+    &.pagination-container {
+      height: 50px;
+      margin-left: 10px;
+      margin-right: 10px;
+      
+      .pg-button, .button {
+        padding-bottom: 8px;
+        padding-top: 8px;
+      }
+    }
+    
+    span {
+      &.gap {
+        color: #888;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 6px 10px;
+        text-decoration: none;
       }
     }
   }
   
-  #press .spotlight-item {
-    margin: 0 0 30px;
+  
+  
+  ul {
+    li {
+      &.first, &.last, &.page, &.gap { display: none; }
+      &.lonely-gap { display: inline; }
+    }
   }
+  
+  #press .spotlight-item { margin: 0 0 30px; }
+  
 }
+
+
+
+
 
 
 @media (min-width: 767px) {
-  #press .spotlight-item {
-    margin: 0 0 30px;
-  }
+  #press .spotlight-item { margin: 0 0 30px; }
 }
+
+
+
+
 
 
 .floating-label-form-group {
@@ -198,9 +264,7 @@ form .row:first-child .floating-label-form-group {
   margin: 0;
   font-size: 3em;
 }
-.press-modal .modal-content img {
-  margin-bottom: 30px;
-}
+.press-modal .modal-content img { margin-bottom: 30px; }
 .press-modal .modal-content .item-details {
   margin: 30px 0;
 }
@@ -393,9 +457,7 @@ ul#products span.overlay {
   z-index: 0;
 }
 
-ul#products li:hover {
-  box-shadow: 0px 1px 3px #bbe8f3;
-}
+ul#products li:hover { box-shadow: 0px 1px 3px #bbe8f3; }
 
 
 
@@ -410,12 +472,12 @@ ul#products li:hover {
   
   div {
     &.pagination-container {
-      height: 60px;
-      margin-left: 5px;
-      margin-right: 5px;
-      
-      
       li {
+        .pg-button, .button {
+          padding-bottom: 8px;
+          padding-top: 8px;
+        }
+        
         a {
           background-color: #fff;
           border: 1px solid #ddd;
@@ -427,7 +489,6 @@ ul#products li:hover {
           position: relative;
           text-decoration: none;
         }
-        
         span {
           background-color: #fff;
           border: 1px solid #ddd;
