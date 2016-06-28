@@ -7,9 +7,6 @@
 
 
 
-
-
-
 // Press | Customer Favorites | Anything an 8-slot Gallery Sectioned area would serve
 #press .spotlight-item .spotlight-link {
   display: block;
@@ -53,6 +50,78 @@
 
 #press * {
   z-index: 2;
+}
+
+
+
+div {
+  &.pagination-container {
+    clear: both;
+    height: 40px;
+    margin-top: 10px;
+    position: relative;
+    text-align: center;
+  }
+  
+  li {
+    &.gap { a { &.gap { border: 0; } }
+    &.next_page { a { right: 0; } }
+    
+    &.prev { a { left: 0; } }
+    
+    &.lonely-gap {
+      color: #888;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 6px 10px;
+      text-decoration: none;
+      
+      a { &.gap { border: 0; } }
+    }
+  }
+}
+
+
+.pg-button.disabled, .pg-button.disabled:hover, .pg-button.disabled:active {
+  background: rgba(0, 0, 0, 0) linear-gradient(#ececec, #d9d9d9) repeat scroll 0 0;
+  border-color: #d9d9d9;
+  box-shadow: 0 0 0 #000;
+  color: #fff;
+  cursor: not-allowed;
+  opacity: 0.75;
+  text-shadow: none;
+  top: 0;
+}
+
+
+
+
+@media (min-width: 1024px) {
+  
+  li {
+    &.lonely-gap { display: none; }
+    &.gap { display: inline; }
+  }
+  
+  #press .spotlight-item {
+    margin: 0 0 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  
+  ul {
+    li {
+      &.first, &.last, &.page, &.gap { display: none; }
+      &.lonely-gap {
+        display: inline;
+      }
+    }
+  }
+  
+  #press .spotlight-item {
+    margin: 0 0 30px;
+  }
 }
 
 
@@ -309,21 +378,73 @@ ul#products li .product-image {
 }
 
 ul#products span.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(1, black));
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(1, black));
   background-image: -webkit-linear-gradient(top, white, black);
   background-image: -moz-linear-gradient(top, white, black);
   background-image: -ms-linear-gradient(top, white, black);
   background-image: -o-linear-gradient(top, white, black);
   background-image: linear-gradient(top, bottom, white, black);
-  z-index: 0;
+  height: 100%;
+  left: 0;
   opacity: .025;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 0;
 }
 
 ul#products li:hover {
   box-shadow: 0px 1px 3px #bbe8f3;
 }
+
+
+
+
+
+
+
+/////////////////////////////////
+/* Maximum width 767px section */
+/////////////////////////////////
+@media (max-width: 767px) {
+  
+  div {
+    &.pagination-container {
+      height: 60px;
+      margin-left: 5px;
+      margin-right: 5px;
+      
+      
+      li {
+        a {
+          background-color: #fff;
+          border: 1px solid #ddd;
+          color: #1c5c92;
+          float: left;
+          line-height: 1.42857;
+          margin-left: -1px;
+          padding: 6px 12px;
+          position: relative;
+          text-decoration: none;
+        }
+        
+        span {
+          background-color: #fff;
+          border: 1px solid #ddd;
+          color: #1c5c92;
+          float: left;
+          line-height: 1.42857;
+          margin-left: -1px;
+          padding: 6px 12px;
+          position: relative;
+          text-decoration: none;
+        }
+      }      
+    }
+  }
+  span { &.pg-button { display: inline-block; } }
+}
+
+
+
+

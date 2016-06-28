@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-<%= current_page?(main_app.root_url) ? "fixed" : "static" %>-top">
+<nav class="navbar navbar-default navbar-<%= current_page?(main_app.root_url) ? "fixed" : "static" %>-top" role="banner">
   <div class="container topnav">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header page-scroll">
@@ -10,7 +10,7 @@
           <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#page-top">
-        <figure id="logo" class="col-md-4 col-sm-3" data-hook> <%= logo %> </figure>
+        <figure id="logo" class="col-md-3 col-sm-3" data-hook> <%= logo %> </figure>
       </a>
     </div>
 

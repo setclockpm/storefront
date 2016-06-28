@@ -45,14 +45,14 @@ body {
 
 div {
   &#spree-header {
-    background: 0;
-    margin-bottom: 0px;
+    background: #2c3e50;
+    margin-bottom: 20px;
     
     figure {
       &#logo { 
         img { 
           margin-bottom: 0px;
-          width: 150px;
+          width: 166px;
         } 
       }
     }
@@ -64,6 +64,12 @@ div {
           &.navbar-nav {
             li {
               &.active { a { background: rgba(34, 34, 34, 0.4) none repeat scroll 0 0; } }
+              a {
+                &.cart-info {
+                  padding-bottom: 5px;
+                  padding-top: 10px;
+                }
+              }
             }
           }
         }
@@ -194,7 +200,7 @@ p {
 
 
 .navbar {
-  font-family: "Cocomat", "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", "Century Gothic", sans-serif;
+  font-family: "Cocomat", "Century Gothic", "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -243,8 +249,65 @@ section.success a.active {
 /* Maximum width 767px section */
 /////////////////////////////////
 @media (max-width: 767px) {
-  
   header { &#intro-splash { margin-top: 1px; } }
+  
+  .navbar-fixed-top {
+    padding: 15px 0;
+    -webkit-transition: padding 0.3s;
+    -moz-transition: padding 0.3s;
+    transition: padding 0.3s;
+  }
+  
+  
+  .nav-main .starburst-badge::before {
+      transform: rotate(30deg);
+  }
+  .nav-main .starburst-badge::before, .nav-main .starburst-badge::after {
+      background: #e41421 none repeat scroll 0 0;
+      content: "";
+      height: 17px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 17px;
+  }
+  .nav-main .starburst-badge::after {
+      transform: rotate(60deg);
+  }
+  .nav-main .starburst-badge::before, .nav-main .starburst-badge::after {
+      background: #e41421 none repeat scroll 0 0;
+      content: "";
+      height: 17px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 17px;
+  }
+  .nav-main .starburst-badge {
+    
+  }
+  
+  .nav-main .starburst-badge {
+    background: #e41421 none repeat scroll 0 0;
+    color: #fff;
+    height: 17px;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    top: 10px;
+    width: 17px;
+    
+    span {
+      display: block;
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 16px;
+      position: relative;
+      text-align: center;
+      width: 100%;
+      z-index: 1;
+    }
+  }
   
   section {
     padding: 75px 0;

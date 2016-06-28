@@ -31,9 +31,11 @@ module ApplicationHelper
     content_for(:title) { text }
   end
   
+ 
+  
   # Temporary until launch, this method exists only to add the condition
   def link_to_shopping_cart
-    link_to_cart unless current_page?(root_url)
+    link_to_cart# unless current_page?(root_url)
   end
   
   def render_search_field

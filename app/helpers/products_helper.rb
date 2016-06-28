@@ -18,6 +18,29 @@ module ProductsHelper
     image_tag(v.primary_thumbnail_url, class: "thumbnail") if v.primary_thumbnail_url
   end
   
+  
+  def next_page_button(on_last_pg, is_remote, url)
+    on_last_pg ? page_decoy("next") : next_page_link(is_remote, url)
+  end
+  def prev_page_button(on_first_pg, is_remote, url)
+    on_first_pg ? page_decoy("previous") : prev_page_link(is_remote, url)
+  end
+  
+  
+  private
+
+    def page_decoy(direction)
+      text = raw(send(:t, "views.pagination.#{direction}"))
+      content_tag :span, text, class: 'pg-button page-step disabled'
+    end
+    
+    def next_page_link(remote, url)
+      link_to raw(t 'views.pagination.next'), url, rel: 'next', remote: remote, class: "pg-button page-step"
+    end
+    def prev_page_link(remote, url)
+      link_to raw(t 'views.pagination.previous'), url, rel: 'prev', remote: remote, class: "pg-button page-step"
+    end
+  
 end
 
 
