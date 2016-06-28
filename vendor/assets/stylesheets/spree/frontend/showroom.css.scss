@@ -8,7 +8,7 @@
   display: inline-block;
   padding-left: 0;
   margin: 0;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 
@@ -76,13 +76,15 @@ div {
       color: #666;
       cursor: pointer;
       display: inline-block;
-      font-size: 13px;
-      font-weight: bold;
+      font-size: 14.5px;
+      font-weight: normal;
+      letter-spacing: 2px;
       line-height: 18px;
       margin: 0;
       padding: 4px 30px;
       text-align: center;
       text-decoration: none;
+      text-transform: uppercase;
     }
     .pg-button:hover, .button:hover { background: rgba(0, 0, 0, 0) linear-gradient(#fff, #f4f4f4) repeat scroll 0 0; }
     .pg-button.disabled, .pg-button.disabled:hover, .pg-button.disabled:active {
@@ -94,6 +96,12 @@ div {
       opacity: 0.75;
       text-shadow: none;
       top: 0;
+    }
+    
+    .pg-button:focus, .button:focus {
+      border-color: rgba(82, 168, 236, 0.8);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+      outline: 0 none;
     }
     
     
