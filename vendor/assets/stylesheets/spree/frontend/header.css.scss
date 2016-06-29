@@ -167,11 +167,15 @@ p {
 
 
 
-
 /////////////////////////////////
 /* Minimum width 768px section */
 /////////////////////////////////
 @media (min-width: 768px) {
+  
+  .navbar-form {
+    .btn { letter-spacing: 1.5px; }
+  }
+  
   .navbar-fixed-top {
     padding: 20px 0;
     -webkit-transition: padding 0.3s;
@@ -196,6 +200,19 @@ p {
     padding: 20px 0; 
     transition: padding 0.3s ease 0s;
   }
+  
+  
+  .navbar-nav {
+    li {
+      &#link-to-cart {
+        a {
+          padding-top: 10.5px;
+          padding-bottom: 10.5px;
+        }
+      }
+    }
+  }
+  
 }
 
 

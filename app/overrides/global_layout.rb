@@ -3,6 +3,17 @@
 #                      remove:           '[data-hook="homepage_products"]',
 #                      original:         '461aae32b5912b8551fcf3a823427507f434a0cc')
 
+# Deface::Override.new(name:             'landing-sidebar',
+#                      virtual_path:     'spree/home/index',
+#                      remove:           '[data-hook="homepage_sidebar_navigation"]',
+#                      original:         'd9a21ccc62b9787b5b2f24d6baf226dba776e4a3')
+
+
+# Deface::Override.new(name:             'search-button',
+#                      virtual_path:     'spree/shared/_search',
+#                      replace_contents: 'input[type="submit"]',
+#                      original:         nil)
+
 Deface::Override.new(name:             'remove-search-type',
                      virtual_path:     'spree/shared/_search',
                      remove:           "erb[loud]:contains('departments')",
@@ -23,12 +34,7 @@ Deface::Override.new(name:             'add-web-font',
                      original:         '3238a36183f493276bda180ca7b3430fb0cde007') 
 
 
-# Deface::Override.new(name:             'landing-sidebar',
-#                      virtual_path:     'spree/home/index',
-#                      remove:           '[data-hook="homepage_sidebar_navigation"]',
-#                      original:         'd9a21ccc62b9787b5b2f24d6baf226dba776e4a3')
-                     
-                     
+
 # Deface::Override.new(name:             'replace-header-with-nav',
 #                      virtual_path:     'spree/shared/_header',
 #                      replace_contents: 'div#spree-header',
