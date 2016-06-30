@@ -15,7 +15,8 @@ module ProductsHelper
   end
   
   def variant_primary_thumbnail_url(v)
-    image_tag(v.primary_thumbnail_url, class: "thumbnail") if v.primary_thumbnail_url
+    return image_tag(v.primary_thumbnail_url, class: "thumbnail") if v.primary_thumbnail_url
+    image_tag 'no-image.png', class: "thumbnail", size: '48x48'
   end
   
   

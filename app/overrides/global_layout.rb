@@ -44,7 +44,17 @@ Deface::Override.new(name:             'remove-product-name-from-index',
                      original:         nil)
                      
                      
-
+                     
+Deface::Override.new(name:             'remove-product-name-from-index',
+                     virtual_path:     'spree/shared/_products',
+                     remove:           'erb[loud]:contains(\'itemprop: "name"\')',
+                     original:         nil)
+                     
+                     
+Deface::Override.new(name:             'remove-br-from-product-index',
+                     virtual_path:     'spree/shared/_products',
+                     remove:           'br',
+                     original:         nil)
 # Deface::Override.new(name:             'replace-header-with-nav',
 #                      virtual_path:     'spree/shared/_header',
 #                      replace_contents: 'div#spree-header',

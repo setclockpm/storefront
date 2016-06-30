@@ -9,6 +9,7 @@ en:
      import: "Import"
      excel_file: "Spreadsheet File"
      process_images: "Generate Product Photos"
+     shop_by_taxonomy: "%{taxonomy}"
   views:
      pagination:
        first: "First"
