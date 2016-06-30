@@ -57,6 +57,7 @@ Deface::Override.new(name:             'remove-br-from-product-index',
 #                      original:         '49eaf0408714e76c02811a1895ac7ad379576a56')
 #
 
+
 Deface::Override.new(name:             'remove-space-in-paginator-class',
                      virtual_path:     'kaminari/twitter-bootstrap-3/_paginator',
                      replace_contents: "erb[silent]:contains('||=')",
