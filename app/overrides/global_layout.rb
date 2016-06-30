@@ -16,7 +16,7 @@ Deface::Override.new(name:             'search-button',
                      virtual_path:     'spree/shared/_search',
                      replace_contents: "erb[loud]:contains('submit_tag')",
                      text:             'search_icon_button_tag',
-                     original:         nil)
+                     original:         '70a5fb5b026445f5abc1d47154f9bf0a2783d6b8')
 
 Deface::Override.new(name:             'remove-search-type',
                      virtual_path:     'spree/shared/_search',
@@ -41,13 +41,15 @@ Deface::Override.new(name:             'add-web-font',
 Deface::Override.new(name:             'remove-product-name-from-index',
                      virtual_path:     'spree/shared/_products',
                      remove:           'erb[loud]:contains(\'itemprop: "name"\')',
-                     original:         nil)
+                     original:         '6b0e20b504a733691837a40ded21582a15b114ab')
                      
                      
 Deface::Override.new(name:             'remove-br-from-product-index',
                      virtual_path:     'spree/shared/_products',
                      remove:           'br',
-                     original:         nil)
+                     original:         '01298c01639d867f841df8043cedc891cf11d8f0')
+                     
+                     
 # Deface::Override.new(name:             'replace-header-with-nav',
 #                      virtual_path:     'spree/shared/_header',
 #                      replace_contents: 'div#spree-header',
@@ -65,7 +67,7 @@ Deface::Override.new(name:             'remove-space-in-paginator-class',
 Deface::Override.new(name:             'remove-ul-pagination',
                      virtual_path:     'kaminari/twitter-bootstrap-3/_paginator',
                      remove:           'ul',
-                     original:         'd9a21ccc62b9787b5b2f24d6baf226dba776e4a3')
+                     original:         '56f01b0cfaa3bf9d7b06ec490c35f5167bc41c1d')
 
 
 Deface::Override.new(name:             'style-paginator',

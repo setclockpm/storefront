@@ -360,11 +360,7 @@ div {
 form {
   &.row:first-child { &.floating-label-form-group { border-top: 1px solid #eee; } } 
 }
-img {
-  &.no-thumbnail {
-    padding: 4.5px;
-  }
-}
+img { &.no-thumbnail { padding: 4.5px; } }
 section {
   &.spotlight {
     background-color: #fff;
