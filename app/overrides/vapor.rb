@@ -64,10 +64,10 @@ Deface::Override.new(name:              'wrap-main-nav',
 #
 #
 # # products renneh08
-# Deface::Override.new(name:          'move-product-title-above-image',
-#                      virtual_path:  'spree/shared/_products',
-#                      insert_before: 'div.product-image',
-#                      cut:           "erb[loud]:contains('link_to truncate(product.name, length: 50)')")
+Deface::Override.new(name:          'move-product-title-above-image',
+                     virtual_path:  'spree/shared/_products',
+                     insert_before: 'div.product-image',
+                     cut:           "erb[loud]:contains('link_to truncate(product.name, length: 50)')")
 #
 #   <%= select_tag :taxon, options_for_select([[t(:all_departments), '']] + @taxons.map {|t| [t.name, t.id]}, @taxon ? @taxon.id : params[:taxon]) %>
 #
