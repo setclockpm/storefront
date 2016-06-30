@@ -7,6 +7,7 @@
   <% @product.variants_and_option_values(current_currency).each_with_index do |variant, index| %>
     <li class="select-color-container">
       <%= label_tag "variant_id_#{variant.id}", class: 'select-color-option' do %>
+        <%#= variant.id %>
         <%= radio_button_tag "variant_id", variant.id, index == 0,
             'data-price' => variant.price_in(current_currency).money, 
             'data-in-stock' => variant.can_supply?,

@@ -44,13 +44,6 @@ Deface::Override.new(name:             'remove-product-name-from-index',
                      original:         nil)
                      
                      
-                     
-Deface::Override.new(name:             'remove-product-name-from-index',
-                     virtual_path:     'spree/shared/_products',
-                     remove:           'erb[loud]:contains(\'itemprop: "name"\')',
-                     original:         nil)
-                     
-                     
 Deface::Override.new(name:             'remove-br-from-product-index',
                      virtual_path:     'spree/shared/_products',
                      remove:           'br',
