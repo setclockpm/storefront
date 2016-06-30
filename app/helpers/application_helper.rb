@@ -27,6 +27,12 @@ module ApplicationHelper
     end
   end
   
+  def search_icon_button_tag
+    button_tag(class: 'btn', id: 'search-btn') do
+      fa_icon 'search'
+    end
+  end
+  
   def title(text)
     content_for(:title) { text }
   end

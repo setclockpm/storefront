@@ -17,7 +17,6 @@
         }
       }
     }
-    a { &:hover { background-color: #ddd; } }
   }
 }
 .pagination > .active > a {
@@ -313,6 +312,13 @@ div {
       &.page.active {
         a {
           color: #111;
+        }
+      }
+    }
+    ul {
+      &.pagination {
+        li {
+          a { &:hover { color: #db5544; } }
         }
       }
     }

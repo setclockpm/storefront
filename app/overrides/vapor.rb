@@ -63,7 +63,7 @@ Deface::Override.new(name:              'wrap-main-nav',
 #
 #
 #
-# # products guicholpzaro
+# # products renneh08
 # Deface::Override.new(name:          'move-product-title-above-image',
 #                      virtual_path:  'spree/shared/_products',
 #                      insert_before: 'div.product-image',

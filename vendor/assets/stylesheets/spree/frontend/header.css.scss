@@ -5,7 +5,9 @@ html {
 
 
 
-
+.fa-search {
+  font-size: 1.85em;
+}
 
 
 
@@ -17,6 +19,11 @@ a {
     color: #18bc9c;
     outline: none;
   }
+}
+
+
+button {
+  &#search-btn { padding: 3px 10px; }
 }
 
 

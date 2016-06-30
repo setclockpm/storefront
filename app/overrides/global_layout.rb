@@ -9,10 +9,14 @@
 #                      original:         'd9a21ccc62b9787b5b2f24d6baf226dba776e4a3')
 
 
-# Deface::Override.new(name:             'search-button',
-#                      virtual_path:     'spree/shared/_search',
-#                      replace_contents: 'input[type="submit"]',
-#                      original:         nil)
+
+
+
+Deface::Override.new(name:             'search-button',
+                     virtual_path:     'spree/shared/_search',
+                     replace_contents: "erb[loud]:contains('submit_tag')",
+                     text:             'search_icon_button_tag',
+                     original:         nil)
 
 Deface::Override.new(name:             'remove-search-type',
                      virtual_path:     'spree/shared/_search',
@@ -34,6 +38,12 @@ Deface::Override.new(name:             'add-web-font',
                      original:         '3238a36183f493276bda180ca7b3430fb0cde007') 
 
 
+Deface::Override.new(name:             'remove-product-name-from-index',
+                     virtual_path:     'spree/shared/_products',
+                     remove:           'erb[loud]:contains(\'itemprop: "name"\')',
+                     original:         nil)
+                     
+                     
 
 # Deface::Override.new(name:             'replace-header-with-nav',
 #                      virtual_path:     'spree/shared/_header',
