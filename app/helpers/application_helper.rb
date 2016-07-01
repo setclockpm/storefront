@@ -28,7 +28,7 @@ module ApplicationHelper
   end
   
   def search_icon_button_tag
-    button_tag(class: 'btn', id: 'search-btn') do
+    button_tag(class: 'btn', id: 'search-btn', data: { hook: 'impostor' }) do
       fa_icon 'search'
     end
   end

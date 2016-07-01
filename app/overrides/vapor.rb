@@ -1,4 +1,6 @@
-# Moves nav below header (lighter colored)
+
+#######################################################################################
+### Moves nav below header (lighter colored) ##########################################
 Deface::Override.new(name:         'move-main-nav',
                      virtual_path: 'spree/shared/_header',
                      insert_after: '#header', partial: 'spree/shared/main_nav_bar',
@@ -8,11 +10,25 @@ Deface::Override.new(name:         'remove-home-from-main-nav',
                      virtual_path: 'spree/shared/_main_nav_bar',
                      remove:       'li#home-link',
                      original:     '79d342a6fd7281d8499d3a5ee5480f416f733e98')
+#######################################################################################
                      
-# Deface::Override.new(name:         'remove-cart-from-main-nav',
-#                      virtual_path: 'spree/shared/_main_nav_bar',
-#                      remove:       'li#link-to-cart',
-#                      original:     'e9241f273349c0f080cef375ce5d2c26546eb870')
+                     
+                     
+
+
+#######################################################################################
+### The next 2 overrides move cart from _main_nav_bar to larger upper header ##########
+Deface::Override.new(name:         'remove-cart-from-main-nav',
+                     virtual_path: 'spree/shared/_main_nav_bar',
+                     remove:       'li#link-to-cart',
+                     original:     'e9241f273349c0f080cef375ce5d2c26546eb870')
+                     
+                     
+Deface::Override.new(name:          'add-cart',
+                     virtual_path:  'spree/shared/_nav_bar',
+                     insert_bottom: 'ul#nav-bar', text: '<li id="link-to-cart" data-hook="impostor"><%= link_to_cart %></li>',
+                     original:      '1170787a8324f3d51ed38d88567888db33a333be')
+#######################################################################################
 # Deface::Override.new(name:         'move-header',
 #                      virtual_path: 'spree/layouts/spree_application',
 #                      insert_before: "div.container", cut: "erb[loud]:contains('spree/shared/header')",
@@ -27,17 +43,28 @@ Deface::Override.new(name:         'remove-home-from-main-nav',
 #
 
 
-Deface::Override.new(name:          'add-cart',
-                     virtual_path:  'spree/shared/_nav_bar',
-                     insert_bottom: 'ul#nav-bar', text: '<li id="link-to-cart" class="not-the-og" data-hook><%= link_to_cart %></li>',
-                     original:      '0edddc156c3563a5a866d9d5ccfbc0bfdbe522c0')
 
 
 
+#######################################################################################
+### The next 2 overrides style search form in header ##################################
+Deface::Override.new(name:             'search-button-uses-fa-icon-instead',
+                     virtual_path:     'spree/shared/_search',
+                     replace_contents: "erb[loud]:contains('submit_tag')",
+                     text:             'search_icon_button_tag',
+                     original:         '70a5fb5b026445f5abc1d47154f9bf0a2783d6b8')
 
+Deface::Override.new(name:             'remove-form-group-divs',
+                     virtual_path:     'spree/shared/_search',
+                     remove:           "div.form-group",
+                     original:         '80ad191fb56f2091f082dae8d8616d8da49c8f77')
 
-
-
+Deface::Override.new(name:             'replace-with-needed-form-group-divs',
+                     virtual_path:     'spree/shared/_search',
+                     insert_before:    "erb[loud]:contains('search_icon_button_tag')",
+                     text:             "<div class='form-group' data-hook='impostor'><%= search_field_tag :keywords, params[:keywords], placeholder: Spree.t(:search), class: 'form-control' %></div>",
+                     original:         '8cc4852db2d795220964cbe19dcc5ee30cbc8c30')
+#######################################################################################
 
 
 
@@ -70,7 +97,7 @@ Deface::Override.new(name:              'wrap-main-nav',
 #
 #
 #
-# # products renneh08
+# # products
 Deface::Override.new(name:          'move-product-title-above-image',
                      virtual_path:  'spree/shared/_products',
                      insert_before: 'div.product-image',

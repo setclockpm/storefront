@@ -13,7 +13,7 @@ Spree::BaseHelper.module_eval do
       text = cart_icon
       css_class = 'empty'
     else
-      text = "#{cart_icon} (#{simple_current_order.item_count})  <span class='amount not-og'>#{simple_current_order.display_total.to_html}</span>"
+      text = "#{cart_icon} (#{simple_current_order.item_count})  <span class='amount' data-impostor>#{simple_current_order.display_total.to_html}</span>"
       css_class = 'full'
     end
 
