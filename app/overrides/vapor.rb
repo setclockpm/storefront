@@ -1,3 +1,18 @@
+# Moves nav below header (lighter colored)
+Deface::Override.new(name:         'move-main-nav',
+                     virtual_path: 'spree/shared/_header',
+                     insert_after: '#header', partial: 'spree/shared/main_nav_bar',
+                     original:     '11e5d2124a8a7d4e098c3188583bd42dc7d39d1e')
+
+Deface::Override.new(name:         'remove-home-from-main-nav',
+                     virtual_path: 'spree/shared/_main_nav_bar',
+                     remove:       'li#home-link',
+                     original:     '79d342a6fd7281d8499d3a5ee5480f416f733e98')
+                     
+# Deface::Override.new(name:         'remove-cart-from-main-nav',
+#                      virtual_path: 'spree/shared/_main_nav_bar',
+#                      remove:       'li#link-to-cart',
+#                      original:     'e9241f273349c0f080cef375ce5d2c26546eb870')
 # Deface::Override.new(name:         'move-header',
 #                      virtual_path: 'spree/layouts/spree_application',
 #                      insert_before: "div.container", cut: "erb[loud]:contains('spree/shared/header')",
@@ -14,26 +29,17 @@
 
 Deface::Override.new(name:          'add-cart',
                      virtual_path:  'spree/shared/_nav_bar',
-                     insert_bottom: 'ul#nav-bar', text: '<li id="link-to-cart" data-hook><%= link_to_cart %></li>',
+                     insert_bottom: 'ul#nav-bar', text: '<li id="link-to-cart" class="not-the-og" data-hook><%= link_to_cart %></li>',
                      original:      '0edddc156c3563a5a866d9d5ccfbc0bfdbe522c0')
 
 
-Deface::Override.new(name:         'remove-home-from-main-nav',
-                     virtual_path: 'spree/shared/_main_nav_bar',
-                     remove:       'li#home-link',
-                     original:     '79d342a6fd7281d8499d3a5ee5480f416f733e98')
 
 
-Deface::Override.new(name:         'remove-cart-from-main-nav',
-                     virtual_path: 'spree/shared/_main_nav_bar',
-                     remove:       'li#link-to-cart',
-                     original:     'e9241f273349c0f080cef375ce5d2c26546eb870')
 
-#
-Deface::Override.new(name:         'move-main-nav',
-                     virtual_path: 'spree/shared/_header',
-                     insert_after: '#header', partial: 'spree/shared/main_nav_bar',
-                     original:     'ca82a13623f1a645e0df4c8eb9c9ecc6df293a0c')
+
+
+
+
 
 
 
@@ -45,7 +51,8 @@ Deface::Override.new(name:         'remove-main-nav-from-tsop',
 
 Deface::Override.new(name:              'wrap-main-nav',
                      virtual_path:      'spree/shared/_main_nav_bar',
-                     surround_contents: 'nav.columns', text: '<div class="container"><%= render_original %></div>')
+                     surround_contents: 'nav.columns', 
+                     text: '<div class="container"><%= render_original %></div>')
 
 
 # Deface::Override.new(name:         'search-main-nav-move',

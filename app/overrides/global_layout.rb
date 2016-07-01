@@ -82,7 +82,7 @@ Deface::Override.new(name:             'style-paginator-outer-window',
                      virtual_path:     'spree/shared/_products',
                      replace_contents: "erb[loud]:contains('twitter-bootstrap-3')",
                      text:             "paginate products, window: 2, theme: 'twitter-bootstrap-3'",
-                     original:         nil)
+                     original:         'dd04b21b55fdc5d89eaddc544554f13508c67bac')
 
 
 Deface::Override.new(name:             'override-storefront-title',

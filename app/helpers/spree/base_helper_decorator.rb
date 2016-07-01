@@ -5,7 +5,7 @@ Spree::BaseHelper.module_eval do
     link_to image_tag(image_path), main_app.root_path
   end
   
-  def link_to_cart(text = nil)
+  def link_to_cart(text=nil)
     text = text ? h(text) : Spree.t('cart')
     css_class = nil
 
@@ -13,7 +13,7 @@ Spree::BaseHelper.module_eval do
       text = cart_icon
       css_class = 'empty'
     else
-      text = "#{cart_icon} (#{simple_current_order.item_count})  <span class='amount'>#{simple_current_order.display_total.to_html}</span>"
+      text = "#{cart_icon} (#{simple_current_order.item_count})  <span class='amount not-og'>#{simple_current_order.display_total.to_html}</span>"
       css_class = 'full'
     end
 
