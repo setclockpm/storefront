@@ -29,6 +29,16 @@ Deface::Override.new(name:          'add-cart',
                      insert_bottom: 'ul#nav-bar', text: '<li id="link-to-cart" data-hook="impostor"><%= link_to_cart %></li>',
                      original:      '1170787a8324f3d51ed38d88567888db33a333be')
 #######################################################################################
+
+
+#######################################################################################
+### The next overrides deal with displaying the taxonomies ############################
+Deface::Override.new(name:             'remove-shop-by-from-sidebar',
+                     virtual_path:     'spree/shared/_taxonomies',
+                     replace_contents: "erb[loud]:contains(':shop_by_taxonomy')",
+                     text:             'taxonomy.name',
+                     original:         '494793b73e32108d498c4db30ba069dd97e2f972')
+#######################################################################################
 # Deface::Override.new(name:         'move-header',
 #                      virtual_path: 'spree/layouts/spree_application',
 #                      insert_before: "div.container", cut: "erb[loud]:contains('spree/shared/header')",
