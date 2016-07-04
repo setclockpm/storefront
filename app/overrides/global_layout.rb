@@ -61,13 +61,13 @@ Deface::Override.new(name:             'remove-product-name-from-index',
 #######################################################################################
 
 
-### This is to make header like the one on the landing page
-# Deface::Override.new(name:             'replace-header-with-nav',
-#                      virtual_path:     'spree/shared/_header',
-#                      replace_contents: 'div#spree-header',
-#                      partial:          'storefront/header',
-#                      original:         '49eaf0408714e76c02811a1895ac7ad379576a56')
-#
+## This is to make header like the one on the landing page
+Deface::Override.new(name:             'replace-header-with-nav',
+                     virtual_path:     'spree/shared/_header',
+                     replace_contents: 'div#spree-header',
+                     partial:          'storefront/header',
+                     original:         '49eaf0408714e76c02811a1895ac7ad379576a56')
+
 
 
 
@@ -128,4 +128,20 @@ Deface::Override.new(name:             'override-storefront-title',
                                                                   "Shop Boldly For Your Style" : 
                                                                    controller.controller_name.titleize) %>',
                      original:         '6c51b34d058f87d10add34374293afce2bf817e2')
+#######################################################################################
+
+
+
+
+
+
+
+
+#######################################################################################
+### The next overrides deal with displaying the taxonomies ############################
+Deface::Override.new(name:             'remove-shop-by-from-sidebar',
+                     virtual_path:     'spree/shared/_taxonomies',
+                     replace_contents: "erb[loud]:contains(':shop_by_taxonomy')",
+                     text:             'taxonomy.name',
+                     original:         '494793b73e32108d498c4db30ba069dd97e2f972')
 #######################################################################################

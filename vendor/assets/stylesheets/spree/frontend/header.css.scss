@@ -3,14 +3,20 @@ html {
   width: 100%;
 }
 
-//div { &.search-form-grp { display: inline-block; } }
-
 
 
 .fa-search {
   color: #fff;
   font-size: 1.85em;
 }
+
+.navbar-menu {
+  text-align: center;
+} 
+
+
+
+
 
 
 .navbar-default {
@@ -23,6 +29,10 @@ html {
 }
 
 .navbar-toggle {
+  border: 0 none;
+  float: none;
+  margin: 8px auto;
+  
   .icon-bar {
     display: block;
     width: 23px;
@@ -33,17 +43,8 @@ html {
 
 
 
-.navbar-toggle {
-  border: 0 none;
-  float: left;
-  margin-left: 10px;
-  margin-right: 5px;
-}
-
-
-
 a {
-  color: #18bc9c;
+  color: #525252;
   outline: none;
   
   &:hover, &:focus, &:active {
@@ -216,6 +217,7 @@ p {
   /////////* Minimum width 768px section *//////
 ///////////////////////////////////////////////////
 @media (min-width: 768px) {
+  .navbar-cart { display: none; }
   
   .navbar-form {
     .btn { letter-spacing: 1.5px; }
