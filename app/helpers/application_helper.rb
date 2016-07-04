@@ -28,8 +28,8 @@ module ApplicationHelper
   end
   
   def search_icon_button_tag
-    button_tag(class: 'btn', id: 'search-btn', data: { hook: 'impostor' }) do
-      fa_icon 'search'
+    content_tag :div, class: 'col-xs-2 form-group', data: { hook: 'impostor-btn'} do
+      button_tag fa_icon('search'), class: 'btn', id: 'search-btn'
     end
   end
   

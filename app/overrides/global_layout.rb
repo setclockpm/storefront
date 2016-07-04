@@ -1,3 +1,15 @@
+# ################################# Deface pseudo doc help ########################################################
+# ----------------------------------------------------------------------------------------------------------------
+# > deface:get_result
+# > rake deface:get_result['spree/products/_cart_form']
+# Will list the original contents of a partial or template, the overrides that have been defined for a that file,
+# and the resulting markup. get_result takes a single argument which is the virtual path of the template / partial:
+# Run it to verify that your override is actually referencing something.
+
+
+
+
+
 # Deface::Override.new(name:             'landing-products',
 #                      virtual_path:     'spree/home/index',
 #                      remove:           '[data-hook="homepage_products"]',
@@ -22,11 +34,11 @@ Deface::Override.new(name:             'user-login-panel',
                      original:         'eb3fa668cd98b6a1c75c36420ef1b238a1fc55ad', disabled: false)
 
 
-Deface::Override.new(name:             'add-web-font',
-                     virtual_path:     'spree/layouts/spree_application',
-                     insert_bottom:    'head',
-                     text:             '<link href="//fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet" type="text/css">',
-                     original:         '3238a36183f493276bda180ca7b3430fb0cde007') 
+# Deface::Override.new(name:             'add-web-font',
+#                      virtual_path:     'spree/layouts/spree_application',
+#                      insert_bottom:    'head',
+#                      text:             '<link href="//fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet" type="text/css">',
+#                      original:         '3238a36183f493276bda180ca7b3430fb0cde007')
 
 
 
@@ -42,10 +54,10 @@ Deface::Override.new(name:             'remove-product-name-from-index',
                      original:         '6b0e20b504a733691837a40ded21582a15b114ab')
                      
                      
-Deface::Override.new(name:             'remove-br-from-product-index',
-                     virtual_path:     'spree/shared/_products',
-                     remove:           'br',
-                     original:         '01298c01639d867f841df8043cedc891cf11d8f0')
+# Deface::Override.new(name:             'remove-br-from-product-index',
+#                      virtual_path:     'spree/shared/_products',
+#                      remove:           'br',
+#                      original:         '01298c01639d867f841df8043cedc891cf11d8f0')
 #######################################################################################
 
 
@@ -95,10 +107,20 @@ Deface::Override.new(name:             'style-paginator-outer-window',
 
 
 
-
-
-
-
+#######################################################################################
+### The next few overrides handle styling of everything in the header/nav #############
+Deface::Override.new(name:             'add-xs-to-figure-logo',
+                     virtual_path:     'spree/shared/_header',
+                     set_attributes:   'figure#logo',
+                     attributes:       { class: 'col-md-4 col-sm-3 col-xs-6' },
+                     original:         nil)
+                     
+Deface::Override.new(name:             'add-xs-col-to-nav',
+                     virtual_path:     'spree/shared/_nav_bar',
+                     set_attributes:   'nav#top-nav-bar',
+                     attributes:       { class: 'navbar col-md-8 col-sm-9 col-xs-3' },
+                     original:         nil)
+                     
 Deface::Override.new(name:             'override-storefront-title',
                      virtual_path:     'spree/shared/_head',
                      replace_contents: 'title', 
@@ -106,4 +128,4 @@ Deface::Override.new(name:             'override-storefront-title',
                                                                   "Shop Boldly For Your Style" : 
                                                                    controller.controller_name.titleize) %>',
                      original:         '6c51b34d058f87d10add34374293afce2bf817e2')
-
+#######################################################################################

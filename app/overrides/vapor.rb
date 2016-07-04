@@ -72,8 +72,10 @@ Deface::Override.new(name:             'remove-form-group-divs',
 Deface::Override.new(name:             'replace-with-needed-form-group-divs',
                      virtual_path:     'spree/shared/_search',
                      insert_before:    "erb[loud]:contains('search_icon_button_tag')",
-                     text:             "<div class='form-group' data-hook='impostor'><%= search_field_tag :keywords, params[:keywords], placeholder: Spree.t(:search), class: 'form-control' %></div>",
+                     text:             "<div class='col-xs-8 form-group' data-hook='impostor-field'><%= search_field_tag :keywords, params[:keywords], placeholder: Spree.t(:search), class: 'form-control' %></div>",
                      original:         '8cc4852db2d795220964cbe19dcc5ee30cbc8c30')
+                     
+
 #######################################################################################
 
 
@@ -89,7 +91,7 @@ Deface::Override.new(name:         'remove-main-nav-from-tsop',
 Deface::Override.new(name:              'wrap-main-nav',
                      virtual_path:      'spree/shared/_main_nav_bar',
                      surround_contents: 'nav.columns', 
-                     text: '<div class="container"><%= render_original %></div>')
+                     text:              '<div class="container"><%= render_original %></div>')
 
 
 # Deface::Override.new(name:         'search-main-nav-move',
@@ -108,10 +110,10 @@ Deface::Override.new(name:              'wrap-main-nav',
 #
 #
 # # products
-Deface::Override.new(name:          'move-product-title-above-image',
-                     virtual_path:  'spree/shared/_products',
-                     insert_before: 'div.product-image',
-                     cut:           "erb[loud]:contains('link_to truncate(product.name, length: 50)')")
+# Deface::Override.new(name:          'move-product-title-above-image',
+#                      virtual_path:  'spree/shared/_products',
+#                      insert_before: 'div.product-image',
+#                      cut:           "erb[loud]:contains('link_to truncate(product.name, length: 50)')")
 #
 #   <%= select_tag :taxon, options_for_select([[t(:all_departments), '']] + @taxons.map {|t| [t.name, t.id]}, @taxon ? @taxon.id : params[:taxon]) %>
 #

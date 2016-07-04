@@ -10,21 +10,26 @@
           <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#page-top">
-        <figure id="logo" class="col-md-3 col-sm-3" data-hook> <%= logo %> </figure>
+        <figure id="logo" class="col-md-3 col-sm-3 col-xs-8" data-hook> <%= logo %> </figure>
       </a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-          <li class="hidden"><%= link_to '#page-top' %></li>
-          <%= relevant_navigation_options %>
+      <div class="navbar-cart">
+        <ul class="nav navbar-nav navbar-right" data-hook="impostor-ul">
           <li id="link-to-cart" class="page-scroll" data-hook><%= link_to_cart %></li>
-          <li id="search-bar" data-hook><%#= render_search_field %></li>
-          <!-- <i class="fa fa-search-plus fa-3x"></i> -->
-      </ul>
+        </ul>
+      </div>
+      
     </div>
-    <!-- /.navbar-collapse -->
+     <!-- /.navbar-header -->
+     <!-- Collect the nav links, forms, and other content for toggling -->
+     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <ul class="nav navbar-nav navbar-right">
+           <li class="hidden"><%= link_to '#page-top' %></li>
+           <%= relevant_navigation_options %>
+           <li id="search-bar" data-hook><%#= render_search_field %></li>
+           <!-- <i class="fa fa-search-plus fa-3x"></i> -->
+       </ul>
+     </div>
+     <!-- /.navbar-collapse -->
   </div>
   <!-- /.container-fluid -->
 </nav>

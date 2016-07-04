@@ -3,10 +3,41 @@ html {
   width: 100%;
 }
 
+//div { &.search-form-grp { display: inline-block; } }
+
 
 
 .fa-search {
+  color: #fff;
   font-size: 1.85em;
+}
+
+
+.navbar-default {
+  .navbar-toggle {
+    background-color: #2c3e50;
+    border-color: #ddd;
+    
+    .icon-bar { background-color: #dd5544; }
+  }
+}
+
+.navbar-toggle {
+  .icon-bar {
+    display: block;
+    width: 23px;
+    height: 2px;
+    border-radius: 2px;
+  }
+} 
+
+
+
+.navbar-toggle {
+  border: 0 none;
+  float: left;
+  margin-left: 15px;
+  margin-right: 5px;
 }
 
 
@@ -174,9 +205,16 @@ p {
 
 
 
-/////////////////////////////////
-/* Minimum width 768px section */
-/////////////////////////////////
+                        ///
+                      ///////
+                    ///////////
+                 ////////////////
+              //////////////////////
+           ////////////////////////////
+        //////////////////////////////////
+     ////////////////////////////////////////
+  /////////* Minimum width 768px section *//////
+///////////////////////////////////////////////////
 @media (min-width: 768px) {
   
   .navbar-form {
@@ -269,12 +307,23 @@ section.success a.active {
 
 
 
-/////////////////////////////////
-/* Maximum width 767px section */
-/////////////////////////////////
+////////////////////////////////////////////////
+////////* Maximum width 767px section */////////
+////////////////////////////////////////////////
 @media (max-width: 767px) {
-  header { &#intro-splash { margin-top: 1px; } }
   
+  #spree-header {
+    #logo { text-align: center; }
+  }
+  
+  
+  .fa-shopping-cart {
+    color: #ddd;
+  }
+  
+  .navbar-cart {
+    display: inline-block;
+  }
   .navbar-fixed-top {
     padding: 15px 0;
     -webkit-transition: padding 0.3s;
@@ -283,33 +332,17 @@ section.success a.active {
   }
   
   
-  .nav-main .starburst-badge::before {
-      transform: rotate(30deg);
-  }
+  .nav-main .starburst-badge::before { transform: rotate(30deg); }
   .nav-main .starburst-badge::before, .nav-main .starburst-badge::after {
-      background: #e41421 none repeat scroll 0 0;
-      content: "";
-      height: 17px;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 17px;
+    background: #e41421 none repeat scroll 0 0;
+    content: "";
+    height: 17px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 17px;
   }
-  .nav-main .starburst-badge::after {
-      transform: rotate(60deg);
-  }
-  .nav-main .starburst-badge::before, .nav-main .starburst-badge::after {
-      background: #e41421 none repeat scroll 0 0;
-      content: "";
-      height: 17px;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 17px;
-  }
-  .nav-main .starburst-badge {
-    
-  }
+  .nav-main .starburst-badge::after { transform: rotate(60deg); }
   
   .nav-main .starburst-badge {
     background: #e41421 none repeat scroll 0 0;
@@ -333,8 +366,52 @@ section.success a.active {
     }
   }
   
+  
+  
+  
+  div {
+    &#spree-header {
+      nav {
+        &.navbar-default {
+          ul {
+            &.navbar-nav {
+              li {
+                a { &.cart-info { padding-top: 0px; } }
+              } 
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  
+  form {
+    &.navbar-form {
+      div[data-hook='impostor-field'] { padding-right: 2px; }
+      div[data-hook='impostor-btn'] { padding-left: 2px; }
+    }
+  }
+  
+  header { &#intro-splash { margin-top: 1px; } }
+  
   section {
     padding: 75px 0;
     &.first { padding-top: 75px; }
   }
+  
+  ul {
+    li { &#search-bar { display: none; } }
+  }
 }
+////////////////////////////////////////////////
+  ////////////////////////////////////////////
+    ///////////////////////////////////////
+      //////////////////////////////////
+         ////////////////////////////
+           ///////////////////////
+             //////////////////
+               //////////////
+                 //////////
+                   //////
+                     ///

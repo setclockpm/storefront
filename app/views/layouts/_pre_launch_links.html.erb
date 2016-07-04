@@ -1,2 +1,5 @@
 <li class="page-scroll"><%= link_to 'About Us', '#about-us' %></li>
 <li class="page-scroll"><%= link_to 'Contact', '#contact' %>  </li>
+
+<!-- <%# This was re-added to header on 7-3-2016 to begin styling on mobile side. %> -->
+<%= render partial: 'spree/shared/login_bar' if home_ip? %>
