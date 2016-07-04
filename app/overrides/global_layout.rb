@@ -65,7 +65,7 @@ Deface::Override.new(name:             'remove-product-name-from-index',
 Deface::Override.new(name:             'replace-header-with-nav',
                      virtual_path:     'spree/shared/_header',
                      replace_contents: 'div#spree-header',
-                     partial:          'storefront/header',
+                     partial:          'layouts/shared/main_header_nav',
                      original:         '49eaf0408714e76c02811a1895ac7ad379576a56')
 
 
@@ -112,7 +112,7 @@ Deface::Override.new(name:             'style-paginator-outer-window',
 Deface::Override.new(name:             'add-xs-to-figure-logo',
                      virtual_path:     'spree/shared/_header',
                      set_attributes:   'figure#logo',
-                     attributes:       { class: 'col-md-4 col-sm-3 col-xs-6' },
+                     attributes:       { class: 'col-md-4 col-sm-3 col-xs-8' },
                      original:         nil)
                      
 Deface::Override.new(name:             'add-xs-col-to-nav',

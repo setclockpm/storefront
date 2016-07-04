@@ -327,7 +327,7 @@ section.success a.active {
     display: inline-block;
     float: right;
   }
-  .navbar-fixed-top {
+  .navbar-fixed-top, .navbar-static-top {
     padding: 15px 0;
     -webkit-transition: padding 0.3s;
     -moz-transition: padding 0.3s;
@@ -397,6 +397,10 @@ section.success a.active {
   }
   
   header { &#intro-splash { margin-top: 1px; } }
+  
+  li {
+    &#link-to-cart { display: none; }
+  }
   
   section {
     padding: 75px 0;
