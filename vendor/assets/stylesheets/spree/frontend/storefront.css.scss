@@ -1,5 +1,18 @@
 
-
+.btn-success {
+  background-color: #fff;
+  border: 2.5px solid #2d6065;
+  
+  color: #2d6065;
+  transition: all 0.3s ease-in-out;
+  
+  &:hover, &:focus {
+    background-color: #53868b;
+    border: 2.5px solid #53868b;
+    
+    color: #fff;
+  }
+}
 
 
 
@@ -59,12 +72,35 @@ hr {
 
 section {
   &#about-us {
-    background-color: #fffaf0;
+//    background-color: #fffaf0;
+    background-color: #fafafa;
     
     &.about-us-item {
       margin: 0 0 15px;
       right: 0;
     }
-    h2 { text-transform: uppercase; }
+    
+    a {
+      &.btn-outline {
+        font-size: 1.22em;
+      }
+    }
+    
+    h2 {
+      font-weight: normal;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    p {
+      font-size: 1.16em;
+      font-weight: normal;
+    }
+  }
+  &#contact {
+    .btn-success {
+      font-size: 1.5em;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
   }
 }

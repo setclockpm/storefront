@@ -79,7 +79,7 @@
 //  padding-left: 14px;
 //  border-left: 1px solid #eeeeee;
 //}
-.floating-label-form-group-with-focus { label { color: #18bc9c; } }
+.floating-label-form-group-with-focus { label { color: #2d6065; } }
 .floating-label-form-group-with-value {
   label {
     opacity: 1;
@@ -399,6 +399,13 @@ section {
       border-top: 3px solid #e7e7e7;
       float: left;
       width: 450px;
+    }
+  }
+  &#contact {
+    h2 {
+      font-size: 2.5em;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
   }
 }

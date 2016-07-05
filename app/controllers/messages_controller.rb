@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
       redirect_to root_path(anchor: "contact"), notice: "Your message has been sent."
     else
       flash[:alert] = "An error occurred while delivering this message."
-      render :new
+      render 'storefront/index'
     end
   end
   

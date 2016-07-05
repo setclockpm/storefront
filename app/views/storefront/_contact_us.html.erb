@@ -8,8 +8,11 @@
       </div>
     </div>
     <div class="row">
+      <br/><div id="success" class="col-lg-8 col-lg-offset-2"><%= render partial: "layouts/flash_messages" %></div>
+    </div>
+    <div class="row">
       <div class="col-lg-8 col-lg-offset-2">
-        <%= form_for Message.new, id: "contact-form", url: main_app.contact_path do |f| %>
+        <%= form_for @message, id: "contact-form", url: main_app.contact_path(@message, anchor: 'contact')  do |f| %>
           <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
               <%= f.label :name %>
@@ -38,7 +41,6 @@
               <p class="help-block text-danger"></p>
             </div>
           </div>
-          <br/><div id="success"><%= render partial: "layouts/flash_messages" %></div>
           <div class="row">
             <div class="form-group col-xs-12"> <%= f.submit "Send", class: "btn btn-success btn-lg" %> </div>
           </div>

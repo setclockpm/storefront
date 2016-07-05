@@ -21,7 +21,7 @@ html {
 
 .navbar-default {
   .navbar-toggle {
-    background-color: #2c3e50;
+    background-color: #53868b;
     border-color: #ddd;
     
     .icon-bar { background-color: #dd5544; }
@@ -44,11 +44,16 @@ html {
 
 
 a {
-  color: #525252;
+  color: #fff;
+  font-weight: normal;
+  
+  letter-spacing: 1px;
   outline: none;
   
   &:hover, &:focus, &:active {
-    color: #18bc9c;
+    color: #fff8dc;
+//    color: #dd5544;
+    text-decoration: none;
     outline: none;
   }
 }
@@ -84,7 +89,7 @@ body {
 
 div {
   &#spree-header {
-    background: #2c3e50;
+    background: #53868b;
     margin-bottom: 20px;
     
     figure {
@@ -97,7 +102,7 @@ div {
     }
     nav {
       &.navbar-default { 
-        background-color: #2c3e50;
+        background-color: #53868b;
         
         ul {
           &.navbar-nav {
@@ -283,11 +288,14 @@ p {
 }
 section {
   padding: 100px 0;
+  
+  h2 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 3em;
+  }
 }
-section h2 {
-  margin: 0;
-  font-size: 3em;
-}
+
 section.success {
   background: #fff;
   color: #db5544;
@@ -297,7 +305,7 @@ section.success a:hover,
 section.success a:focus,
 section.success a:active,
 section.success a.active {
-  color: #2c3e50;
+  color: #53868b;
   outline: none;
 }
 
