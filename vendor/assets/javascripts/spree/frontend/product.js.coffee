@@ -34,6 +34,10 @@ Spree.ready ($) ->
     variantPrice = variant.data('price')
     ($ '.price.selling').text(variantPrice) if variantPrice
     
+  Spree.updateVariantQty = (variant) ->
+    variantPrice = variant.data('price')
+    ($ '.price.selling').text(variantPrice) if variantPrice
+    
   Spree.updateVariantColorHeading = (variant) ->
     variantColorSize = variant.data('options')
     ($ 'span#color-size').text(variantColorSize) if variantColorSize
