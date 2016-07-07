@@ -8,6 +8,7 @@
         <%= radio_button_tag "variant_id", variant.id, index == 0,
             'data-price' => variant.price_in(current_currency).money, 
             'data-in-stock' => variant.can_supply?,
+            'data-on-hand' => variant.total_on_hand,
             'data-options' => variant_options(variant),
             class: "active-select-color js-custom-select-color hidden"
         %>

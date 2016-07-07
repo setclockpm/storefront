@@ -1,4 +1,6 @@
 Spree::Variant.class_eval do
+  MAIN_LOCATION = "Main Location"
+  
   
   class << self
     def find_by_master_sku(master_sku, sku)
@@ -16,13 +18,12 @@ Spree::Variant.class_eval do
     # @image        = @variant.images.new(attachment: File.open(@path_to_raw_image, 'rb'), alt: image_alt)
   end
   
-  def s3_slug
-    x = sku.split("\s")
-    x.shift
-    slug = x.join('-')
-    # Split on \s join all but first index of array with a hyphen (-)
-    self.is_master? ? "ALL" : slug 
-  end
+  # def max_suppliable
+#     return 0 unless can_supply?
+#     @location = Spree::StockLocation.find_by_admin_name(MAIN_LOCATION)
+#     @location.stock_items.find_by(variant_id: id)
+#   end
+  
   
   def primary_image
     puts "\n Variant: #{id}-#{name}"
@@ -33,7 +34,16 @@ Spree::Variant.class_eval do
     primary_image.attachment.url(:mini) if primary_image
   end
   
+  def s3_slug
+    x = sku.split("\s")
+    x.shift
+    slug = x.join('-')
+    # Split on \s join all but first index of array with a hyphen (-)
+    self.is_master? ? "ALL" : slug 
+  end
+  
   def update_stock_count(qty)
+    @location = Spree::StockLocation.find_by_admin_name(MAIN_LOCATION)
     update_main_location_stock_count(qty)
   end
   
@@ -42,7 +52,7 @@ Spree::Variant.class_eval do
   private
     
     def update_main_location_stock_count(qty)
-      main_location_stock_item = self.stock_items.find_by(stock_location_id: 1)
+      main_location_stock_item = self.stock_items.find_by(stock_location_id: @location.id)
       puts "^--- Updating variant (#{sku}) count from #{main_location_stock_item.count_on_hand} to #{qty} ---^"
       main_location_stock_item.update_count(qty)
     end

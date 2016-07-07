@@ -12,12 +12,12 @@ Deface::Override.new(name:             'expose-color-option-radio-buttons',
                      original:         'b39ce20b7c92da45a8f3a6e51f509dbe22ffa5eb')
                      
                      
-# Deface::Override.new(name:             'qty-field-to-select',
-#                      virtual_path:     'spree/products/_cart_form',
-#                      replace_contents: "erb[loud]:contains('number_field_tag')",
-#                      partial:          '<%= select_tag :quantity, *(1..(@variant.count_on_hand)), class: "title form-control" %>',
-#                      original:         nil)
-                     
+Deface::Override.new(name:             'qty-field-to-select',
+                     virtual_path:     'spree/products/_cart_form',
+                     replace_contents: "erb[loud]:contains('number_field_tag')",
+                     text:              "number_field_tag :quantity, 1, class: 'title form-control', min: 1, max: @product.total_on_hand",
+                     original:         nil)
+
               
               
 # Deface::Override.new(name:             'show-sku',

@@ -16,6 +16,9 @@ Porthos::Application.routes.draw do
       get "products/data_import" => "products#data", as: :data_import
       post "import/inventory" => "products#bulk_import", as: :import_inventory
       post "import/variant_photos" => "products#import_images", as: :generate_variant_photos
+      # This adds a method to products called "add_to_cart" to the member (individual resource). If you run 
+      # rake routes in your console you'll see it requires an id #=> /products/:id/add_to_cart
+      #get 'variants/on_hand' => 'products#count_on_hand', as: :count_on_hand
     end
   end
 
@@ -30,7 +33,9 @@ Porthos::Application.routes.draw do
   
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   resources :customers, only: [:index]
-  resources :products
+  resources :products, only: [] do
+    get :count_on_hand, on: :member
+  end
   
   get "storefront/catalog" => "storefront#catalog", as: :download_catalog
 

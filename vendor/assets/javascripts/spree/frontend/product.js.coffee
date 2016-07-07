@@ -34,9 +34,16 @@ Spree.ready ($) ->
     variantPrice = variant.data('price')
     ($ '.price.selling').text(variantPrice) if variantPrice
     
-  Spree.updateVariantQty = (variant) ->
-    variantPrice = variant.data('price')
-    ($ '.price.selling').text(variantPrice) if variantPrice
+    
+  Spree.updateVariantQtySelector = (variant) ->
+    variantQty = variant.data('on-hand')
+    console.log "count on hand: " + variantQty
+    if variantQty
+      ($ 'input#quantity').attr('max', variantQty)
+    else
+      # $.get("/products/count_on_hand/"+variantQty)
+
+    
     
   Spree.updateVariantColorHeading = (variant) ->
     variantColorSize = variant.data('options')
@@ -54,6 +61,7 @@ Spree.ready ($) ->
     ($ 'li.vtmb').show()
     Spree.showVariantImages selectedRadio.attr('value')
     Spree.updateVariantPrice selectedRadio
+    Spree.updateVariantQtySelector selectedRadio
     Spree.updateVariantColorHeading selectedRadio
     Spree.disableCartForm selectedRadio
 
@@ -61,6 +69,7 @@ Spree.ready ($) ->
       console.log "About to call showVariantImages " + @value
       Spree.showVariantImages @value
       Spree.updateVariantPrice ($ this)
+      Spree.updateVariantQtySelector($ this)
       Spree.updateVariantColorHeading ($ this)
       Spree.disableCartForm ($ this)
 

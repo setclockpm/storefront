@@ -1,6 +1,11 @@
 Spree::Admin::ProductsController.class_eval do
   require 'rake'
   
+  
+  def count_on_hand
+     @variant = Spree::Variant.find(params[:id])
+  end
+  
   def data
     @spreadsheet = BulkImportFile.new
   end
