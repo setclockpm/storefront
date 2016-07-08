@@ -19,7 +19,18 @@ Deface::Override.new(name:             'qty-field-to-select',
                      original:         nil)
 
               
-              
+Deface::Override.new(name:             'add-xs-to-product-variants',
+                     virtual_path:     'spree/products/_cart_form',
+                     set_attributes:   'div#product-variants',
+                     attributes:       { class: 'col-md-6 col-sm-9 col-xs-12' },
+                     original:         nil)
+                     
+Deface::Override.new(name:             'add-xs-to-product-price',
+                     virtual_path:     'spree/products/_cart_form',
+                     set_attributes:   'div[data-hook="product_price"]',
+                     attributes:       { class: 'col-md-5 col-sm-9 col-xs-12' },
+                     original:         nil)
+                     
 # Deface::Override.new(name:             'show-sku',
 #                      virtual_path:     'spree/products/_cart_form',
 #                      insert_before:    'div.add-to-cart',

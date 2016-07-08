@@ -1,7 +1,4 @@
-html {
-  height: 100%;
-  width: 100%;
-}
+
 
 
 
@@ -21,7 +18,7 @@ html {
 
 .navbar-default {
   .navbar-toggle {
-    background-color: #53868b;
+    background-color: #66afe9;
     border-color: #ddd;
     
     .icon-bar { background-color: #dd5544; }
@@ -65,31 +62,12 @@ button {
 
 
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  // https://www.google.com/fonts/specimen/Didact+Gothic (a open source webfont alternative)
-  font-family: 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
-  font-weight: 700;
-}
-
-
-body {
-  height: 100%;
-  font-family: 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
-  font-weight: 700;
-  overflow-x: hidden;
-  width: 100%;
-}
 
 
 
 div {
   &#spree-header {
-    background: #53868b;
+    background: #66afe9;
     margin-bottom: 20px;
     
     figure {
@@ -102,7 +80,7 @@ div {
     }
     nav {
       &.navbar-default { 
-        background-color: #53868b;
+        background-color: #66afe9;
         
         ul {
           &.navbar-nav {
@@ -305,7 +283,7 @@ section.success a:hover,
 section.success a:focus,
 section.success a:active,
 section.success a.active {
-  color: #53868b;
+  color: #66afe9;
   outline: none;
 }
 

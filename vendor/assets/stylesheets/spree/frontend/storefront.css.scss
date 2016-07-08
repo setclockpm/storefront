@@ -1,18 +1,34 @@
-
-.btn-success {
-  background-color: #fff;
-  border: 2.5px solid #2d6065;
-  
-  color: #2d6065;
-  transition: all 0.3s ease-in-out;
-  
-  &:hover, &:focus {
-    background-color: #53868b;
-    border: 2.5px solid #53868b;
-    
-    color: #fff;
-  }
+html {
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  // https://www.google.com/fonts/specimen/Didact+Gothic (a open source webfont alternative)
+  font-family: 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
+  font-weight: 700;
+}
+
+
+//h1, h2 {
+//  font-size: 1.5em;
+//}
+
+body {
+  height: 100%;
+  font-family: 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  overflow-x: hidden;
+  width: 100%;
+}
+
 
 
 
