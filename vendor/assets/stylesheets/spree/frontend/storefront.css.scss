@@ -10,19 +10,19 @@ h3,
 h4,
 h5,
 h6 {
-  // https://www.google.com/fonts/specimen/Didact+Gothic (a open source webfont alternative)
-  font-family: 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
-  font-weight: 700;
+//  font-family: 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
+  font-family: 'Federo', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
 }
 
 
-//h1, h2 {
-//  font-size: 1.5em;
-//}
 
 body {
   height: 100%;
-  font-family: 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
+//  font-family: 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
+  font-family: 'Federo', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
   font-weight: 700;
   font-size: 16px;
   overflow-x: hidden;

@@ -18,12 +18,6 @@ Spree::Variant.class_eval do
     # @image        = @variant.images.new(attachment: File.open(@path_to_raw_image, 'rb'), alt: image_alt)
   end
   
-  # def max_suppliable
-#     return 0 unless can_supply?
-#     @location = Spree::StockLocation.find_by_admin_name(MAIN_LOCATION)
-#     @location.stock_items.find_by(variant_id: id)
-#   end
-  
   
   def primary_image
     puts "\n Variant: #{id}-#{name}"

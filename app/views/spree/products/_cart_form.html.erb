@@ -1,0 +1,52 @@
+<%= form_for :order, url: populate_orders_path do |f| %>
+  <div class="row" id="inside-product-cart-form" data-hook="inside_product_cart_form" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+    
+    <% if @product.price_in(current_currency) && !@product.price.nil? %>
+      <div data-hook="product_price" class="col-md-5 col-sm-9 col-xs-12">
+        <div id="product-price">
+          <div>
+            <span class="lead price selling" itemprop="price"><%= display_price(@product) %></span>
+            <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
+          </div>
+
+          <% if @product.master.can_supply? %>
+            <link itemprop="availability" href="https://schema.org/InStock" />
+          <% elsif @product.variants.empty? %>
+            <br />
+            <span class="out-of-stock"><%= Spree.t(:out_of_stock) %></span>
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+      <div id="product-price">
+        <br />
+        <div>
+          <span class="price selling" itemprop="price"><%= Spree.t('product_not_available_in_this_currency') %></span>
+        </div>
+      </div>
+    <% end %>
+    
+    <% if @product.variants_and_option_values(current_currency).any? %>
+      <div id="product-variants" class="col-md-6 col-sm-9 col-xs-12">
+        <%= render partial: "products/expose_variant" %>
+      </div>
+    <% else %>
+      <%= hidden_field_tag "variant_id", @product.master.id %>
+    <% end %>
+    
+    <% if @product.price_in(current_currency) && !@product.price.nil? && @product.can_supply? %>
+      <div id="add-qty-to-cart" class="add-to-cart col-md-6 col-sm-9 col-xs-12">
+        <br />
+        <div class="input-group">
+          <%= select_tag :quantity, options_for_select(Array(1..@product.total_on_hand)), { class: 'title form-control' } %>
+          <span class="input-group-btn">
+            <%= button_tag class: 'btn btn-success', id: 'add-to-cart-button', type: :submit do %>
+              <%= Spree.t(:add_to_cart) %>
+            <% end %>
+          </span>
+        </div>
+      </div>
+    <% end %>
+    
+  </div>
+<% end %>

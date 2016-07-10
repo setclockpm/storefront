@@ -8,12 +8,15 @@ Spree::BaseHelper.module_eval do
   def link_to_cart(text=nil)
     text = text ? h(text) : Spree.t('cart')
     css_class = nil
-
+    
+    puts "\nsimple_current_order.nil?: #{simple_current_order.nil?}"
+    puts "simple_current_order.item_count.zero? #{simple_current_order.item_count.zero?}\n"
+    
     if simple_current_order.nil? or simple_current_order.item_count.zero?
       text = cart_icon
       css_class = 'empty'
     else
-      text = "#{cart_icon} (#{simple_current_order.item_count})  <span class='amount' data-impostor>#{simple_current_order.display_total.to_html}</span>"
+      text = "#{cart_icon} #{simple_current_order.item_count}"
       css_class = 'full'
     end
 
@@ -31,6 +34,14 @@ Spree::BaseHelper.module_eval do
   private
     def cart_icon
       fa_icon "shopping-cart", class: "fa-2x"
+    end
+    
+    def cart_item_count_badge
+      content_tag :span, cart_item_count, id: 'item-count-badge', class: 'badge'
+    end
+    
+    def cart_item_count
+      content_tag :span, simple_current_order.item_count, id: 'item-count', class: 'number', data: { item_count: simple_current_order.item_count }
     end
   
 end

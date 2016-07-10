@@ -34,12 +34,11 @@ Deface::Override.new(name:             'user-login-panel',
                      original:         'eb3fa668cd98b6a1c75c36420ef1b238a1fc55ad', disabled: false)
 
 
-# Deface::Override.new(name:             'add-web-font',
-#                      virtual_path:     'spree/layouts/spree_application',
-#                      insert_bottom:    'head',
-#                      text:             '<link href="//fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet" type="text/css">',
-#                      original:         '3238a36183f493276bda180ca7b3430fb0cde007')
-
+Deface::Override.new(name:             'add-web-font',
+                     virtual_path:     'spree/layouts/spree_application',
+                     insert_bottom:    'head',
+                     text:             '<link href="//fonts.googleapis.com/css?family=Federo" rel="stylesheet" type="text/css">',
+                     original:         '3238a36183f493276bda180ca7b3430fb0cde007')
 
 
 
