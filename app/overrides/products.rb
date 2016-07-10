@@ -4,12 +4,12 @@ Deface::Override.new(name:             'add-thumbnails-for-all-variants',
                      text:             'link_to "#{@product.name} (#{@product.sku})", product_url(@product), target: "_blank"',
                      original: "")
 
-#
-# Deface::Override.new(name:             'expose-color-option-radio-buttons',
-#                      virtual_path:     'spree/products/_cart_form',
-#                      replace_contents: 'div#product-variants',
-#                      partial:          'products/expose_variant',
-#                      original:         'b39ce20b7c92da45a8f3a6e51f509dbe22ffa5eb')
+
+Deface::Override.new(name:             'expose-color-option-radio-buttons',
+                     virtual_path:     'spree/orders/edit',
+                     replace_contents: 'div[data-hook="cart_container"]',
+                     partial:          'orders/cart',
+                     original:         nil)
 #
 #
 # Deface::Override.new(name:             'qty-field-to-select',
@@ -42,8 +42,8 @@ Deface::Override.new(name:             'add-xs-to-product-right-part',
 #######################################################################################
 ### The next few overrides handle re-arranging product attributes in cart-form ########
 # Deface::Override.new(name:             'grab-product-desc',
-#                      virtual_path:     'spree/products/show',
-#                      remove:           'div[data-hook="description"]',
+#                      virtual_path:     'spree/orders/_line_item',
+#                      remove:           'span[data-hook="line_item_description"]',
 #                      original:         nil)
 
 Deface::Override.new(name:             'place-product-desc',

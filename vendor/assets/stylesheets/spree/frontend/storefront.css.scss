@@ -4,6 +4,22 @@ html {
   width: 100%;
 }
 
+
+a {
+  color: #023257;
+  font-weight: normal;
+  letter-spacing: 1px;
+  outline: none;
+  
+  &:hover, &:focus, &:active {
+    color: #fff8dc;
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+
+
 h1,
 h2,
 h3,

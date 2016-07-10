@@ -63,4 +63,59 @@ span {
 }
 
 
+.table {
+  border: 0 none;
+}
+
+
+//////////////////////////////////////////////////
+/////////* Maximum width 767px section *//////////
+@media (max-width: 767px) {
+  
+  .cart-item-description {
+    h4 { font-size: 1em; }
+    a {
+      letter-spacing: 0px;
+    }
+  }
+  
+  div {
+    &.table-responsive {
+      border: 0;
+    }
+  }
+
+  h1 {
+    &.shopping-cart-header {
+      font-size: 1.4rem;
+      line-height: 1.4118;
+      // margin-top: .25em;
+      // margin-bottom: 0.25em;
+      text-align: center;
+    }
+  }
+  
+  table {
+    &#cart-detail {
+      thead { display: none; }
+      tbody {
+        border: 0;
+        
+        td { border: 0; }
+      }
+    }
+  }
+ 
+}
+////////////////////////////////////////////////
+  ////////////////////////////////////////////
+    ///////////////////////////////////////
+      //////////////////////////////////
+         ////////////////////////////
+           ///////////////////////
+             //////////////////
+               //////////////
+                 //////////
+                   //////
+                     ///
 

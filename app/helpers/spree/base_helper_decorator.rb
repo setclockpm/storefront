@@ -16,7 +16,7 @@ Spree::BaseHelper.module_eval do
       text = cart_icon
       css_class = 'empty'
     else
-      text = "#{cart_icon} #{simple_current_order.item_count}"
+      text = "#{cart_icon} #{cart_item_count_badge}"
       css_class = 'full'
     end
 
