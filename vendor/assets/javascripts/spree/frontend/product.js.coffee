@@ -37,12 +37,18 @@ Spree.ready ($) ->
     
   Spree.updateVariantQtySelector = (variant) ->
     variantQty = variant.data('on-hand')
+    selectQty  = ($ 'select#quantity')
+          
     console.log "count on hand: " + variantQty
     if variantQty
-      ($ 'input#quantity').attr('max', variantQty)
+      selectQty.empty()
+      i = 1
+      while i <= variantQty
+        selectQty.append $('<option></option>').attr('value', i).text(i)
+        i++
     else
       # $.get("/products/count_on_hand/"+variantQty)
-
+    
     
     
   Spree.updateVariantColorHeading = (variant) ->

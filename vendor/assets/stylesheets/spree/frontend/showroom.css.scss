@@ -715,7 +715,9 @@ ul {
 /////////* Maximum width 767px section *//////////
 @media (max-width: 767px) {
   
-  
+  .input-group-addon, .input-group-btn {
+    width: 75%;
+  }
 
   .select-color-option .active-select-color-surface {
     background-color: #f2f2f2;
