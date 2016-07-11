@@ -11,7 +11,7 @@
     </div>
     <div class="cart-item-description col-xs-8 col-sm-9 col-lg-10" data-hook="cart_item_description">
       <h4><%= link_to line_item.name, product_path(variant.product) %></h4>
-      <h6><%= variant.options_text %></h6>
+      <h6><%= cart_options_text(variant) %></h6>
       <% if line_item.insufficient_stock? %>
         <span class="out-of-stock">
           <%= Spree.t(:out_of_stock) %>&nbsp;&nbsp;<br />
