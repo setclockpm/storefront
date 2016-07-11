@@ -13,13 +13,15 @@
         <div data-hook="cart_items" class="table-responsive">
           <%= render partial: 'form', locals: { order_form: order_form } %>
         </div>
-        <div class="links row" data-hook="cart_buttons">
-          <div class="col-md-6 col-xs-12 form-group navbar-form pull-right text-right">
+        <div class="links row" data-hook="update_cart_button">
+          <div id="update-cart-submit" class="col-md-6 col-xs-12 text-center">
             <%= button_tag class: 'btn btn-primary', id: 'update-button' do %>
-              <%= Spree.t(:update) %>
+              <%= Spree.t(:update) %> Cart  
             <% end %>
           </div>
-          
+        </div>
+        <hr class="totals">
+        <div class="links row" data-hook="cart_buttons">
           <div class="col-md-6 col-xs-12 form-group text-center">
             <%= button_tag class: 'btn btn-lg btn-success purchase', id: 'checkout-link', name: 'checkout' do %>
               <%= Spree.t(:checkout) %>
