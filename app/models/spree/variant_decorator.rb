@@ -18,6 +18,19 @@ Spree::Variant.class_eval do
     # @image        = @variant.images.new(attachment: File.open(@path_to_raw_image, 'rb'), alt: image_alt)
   end
   
+  def options_text
+    values = self.option_values.sort do |a, b|
+      a.option_type.position <=> b.option_type.position
+    end
+
+    values.to_a.map! do |ov|
+      "#{ov.presentation}"
+    end
+    puts "\nvalues before inspect: #{values.inspect}\n"
+    values.to_sentence({ words_connector: ", ", two_words_connector: ", " })
+    #puts "\nvalues after to_sentence inspect: #{values.inspect}\n"
+  end
+  
   
   def primary_image
     puts "\n Variant: #{id}-#{name}"

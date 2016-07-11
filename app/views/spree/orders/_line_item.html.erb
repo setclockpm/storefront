@@ -2,33 +2,36 @@
 
 <%= order_form.fields_for :line_items, line_item do |item_form| %>
   <div class="line-item row">
-    <div class="cart-item-image col-xs-4 col-sm-3 col-lg-2" data-hook="cart_item_image">
+    <div class="cart-item-image col-xs-4 col-sm-3 col-lg-2 left-column" data-hook="cart_item_image">
       <% if variant.images.length == 0 %>
         <%= link_to small_image(variant.product), variant.product %>
       <% else %>
         <%= link_to image_tag(variant.images.first.attachment.url(:small)), variant.product %>
       <% end %>
     </div>
-    <div class="cart-item-description col-xs-8 col-sm-9 col-lg-10" data-hook="cart_item_description">
-      <h4><%= link_to line_item.name, product_path(variant.product) %></h4>
-      <h6><%= cart_options_text(variant) %></h6>
-      <% if line_item.insufficient_stock? %>
-        <span class="out-of-stock">
-          <%= Spree.t(:out_of_stock) %>&nbsp;&nbsp;<br />
-        </span>
-      <% end %>
-      
-      <div class="lead text-primary cart-item-price" data-hook="cart_item_price">
-        <%= line_item.single_money.to_html %>
+    <div class="cart-item-description col-xs-8 col-sm-9 col-lg-10 right-column" data-hook="cart_item_description">
+      <div class="cart-item-title row">
+        <div class="cart-item-name col-xs-10">
+          <h4><%= link_to line_item.name, product_path(variant.product) %></h4>
+          <h6>In <%= variant.options_text %></h6>
+          <% if line_item.insufficient_stock? %>
+            <span class="out-of-stock">
+              <%= Spree.t(:out_of_stock) %>&nbsp;&nbsp;<br />
+            </span>
+          <% end %>
+        </div>
+        <div class="cart-item-delete col-xs-2" data-hook="cart_item_delete">
+          <%= link_to content_tag(:span, '', class: 'glyphicon glyphicon-minus-sign'), '#', class: 'delete', id: "delete_#{dom_id(line_item)}" %>
+        </div>
       </div>
-      <div class="cart-item-quantity" data-hook="cart_item_quantity" valign="center">
-        <%= item_form.number_field :quantity, min: 0, class: "form-control line_item_quantity", size: 5 %>
-      </div>
-      <div class="lead text-primary cart-item-total" data-hook="cart_item_total">
-        <%= line_item.display_amount.to_html unless line_item.quantity.nil? %>
-      </div>
-      <div class="cart-item-delete" data-hook="cart_item_delete">
-        <%= link_to content_tag(:span, '', class: 'glyphicon glyphicon-minus-sign'), '#', class: 'delete', id: "delete_#{dom_id(line_item)}" %>
+      <div class="cart-item-quantity row" data-hook="cart_item_quantity" valign="center">
+        <div class="adjust-quantity col-lg-3 col-md-3 col-sm-4 col-xs-6">
+          <%= label_tag :quantity, 'Qty:', class: 'adjust-quantity' %>
+          <%= select_tag :quantity, options_for_select(Array(1..variant.product.total_on_hand)), { class: 'title form-control quantity' } %>
+        </div>
+        <div class="text-primary cart-item-total col-lg-9 col-md-9 col-sm-8 col-xs-6 text-right" data-hook="cart_item_total">
+          <%= line_item.display_amount.to_html unless line_item.quantity.nil? %>
+        </div>
       </div>
     </div>
   </tr>

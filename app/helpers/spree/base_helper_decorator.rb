@@ -9,9 +9,6 @@ Spree::BaseHelper.module_eval do
     text = text ? h(text) : Spree.t('cart')
     css_class = nil
     
-    puts "\nsimple_current_order.nil?: #{simple_current_order.nil?}"
-    puts "simple_current_order.item_count.zero? #{simple_current_order.item_count.zero?}\n"
-    
     if simple_current_order.nil? or simple_current_order.item_count.zero?
       text = cart_icon
       css_class = 'empty'

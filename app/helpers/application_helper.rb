@@ -4,10 +4,10 @@ module ApplicationHelper
 
   def color_options(v, options={})
     text = variant_options(v, options={})
-    puts "\n#{text}"
-    text = text.split(',')[0].gsub!(/Color:/, "").strip
-    puts "#{text}\n"
-    text
+    # puts "\ntext: #{text}"
+#     text = text.split(',')[0].gsub!(/Color:/, "").strip
+#     puts "text: #{text}\n"
+#     text
   end
 
   def current_store

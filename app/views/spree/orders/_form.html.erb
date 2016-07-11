@@ -1,13 +1,6 @@
 <%= render partial: 'spree/shared/error_messages', locals: { target: @order } %>
 
-<section id="shopping-cart" class="table">
-  <!-- <div class="row" class="active" data-hook="cart_items_headers">
-    <div class="cart-item-description-header"><%#= Spree.t(:item) %></div>
-    <div class="cart-item-price-header"><%#= Spree.t(:price) %></div>
-    <div class="cart-item-quantity-header"><%#= Spree.t(:qty) %></div>
-    <div class="cart-item-total-header"><%#= Spree.t(:total) %></div>
-    <div class="cart-item-delete-header"></div>
-  </div> -->
+<section id="shopping-cart-contents" class="table">
   <div id="line_items" data-hook>
     <%= render partial: 'spree/orders/line_item', collection: order_form.object.line_items, locals: { order_form: order_form } %>
   </div>
@@ -20,7 +13,10 @@
     </div>
     <%= render "spree/orders/adjustments" %>
   <% end %>
-  <div class="warning cart-tota row">
+  
+  <hr class="totals">
+  
+  <div class="warning cart-total row">
     <div class="align-right col-xs-6 col-md-6 col-lg-9"><h5><%= Spree.t(:total) %></h5></div>
     <div class="lead col-xs-6 col-md-6 col-lg-3"><%= order_form.object.display_total %></div>
   </div>

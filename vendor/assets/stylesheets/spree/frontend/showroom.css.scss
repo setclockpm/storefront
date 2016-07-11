@@ -18,6 +18,19 @@
   }
 }
 
+
+.input-group {
+  select {
+    &.quantity {
+      border: 1px solid #ded6d6;
+      border-radius: 0px;
+      height: 3.85em;
+    }
+  }
+}
+
+
+
 .lead {
   font-size: 18px;
   font-weight: 400;
@@ -240,7 +253,7 @@ aside {
   }
 }
 button {
-  &#add-to-cart-button {
+  &.purchase {
     background-color: #dd5544;
   }
 }
@@ -401,16 +414,9 @@ h1 {
 }
 
 img { &.no-thumbnail { padding: 4.5px; } }
-input, select {
-  &#quantity {
-    border: 1px solid #ded6d6;
-    border-radius: 0px;
-    height: 3.85em;
-   // padding-left: 20px;
-//    padding-right: 11px;
-//    width: 8.5rem;
-  }
-}
+
+
+
 
 
 
