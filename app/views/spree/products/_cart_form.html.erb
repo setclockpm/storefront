@@ -1,5 +1,5 @@
 <%= form_for :order, url: populate_orders_path do |f| %>
-  <div class="row" id="inside-product-cart-form" data-hook="inside_product_cart_form" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+  <div id="inside-product-cart-form" class="row" data-hook="inside_product_cart_form" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
     
     <% if @product.price_in(current_currency) && !@product.price.nil? %>
       <div data-hook="product_price" class="col-md-5 col-sm-9 col-xs-12">
@@ -19,7 +19,6 @@
       </div>
     <% else %>
       <div id="product-price">
-        <br />
         <div>
           <span class="price selling" itemprop="price"><%= Spree.t('product_not_available_in_this_currency') %></span>
         </div>
@@ -33,10 +32,11 @@
     <% else %>
       <%= hidden_field_tag "variant_id", @product.master.id %>
     <% end %>
-    
+  </div>
+  
+  <div class="row">
     <% if @product.price_in(current_currency) && !@product.price.nil? && @product.can_supply? %>
       <div id="add-qty-to-cart" class="add-to-cart col-md-6 col-sm-9 col-xs-12">
-        <br />
         <div class="input-group">
           <%= select_tag :quantity, options_for_select(Array(1..@product.total_on_hand)), { class: 'quantity title form-control' } %>
           <span class="input-group-btn">
@@ -47,6 +47,5 @@
         </div>
       </div>
     <% end %>
-    
   </div>
 <% end %>

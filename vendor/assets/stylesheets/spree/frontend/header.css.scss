@@ -384,25 +384,44 @@ section.success a.active {
     &.first { padding-top: 75px; }
   }
   span {
-    &#item-count {
-      display: none;
-    }
+    &#item-count { display: none; }
     &#item-count-badge {
-      background-color: #cdd639;
-      -webkit-border-radius: 6px;
-      border-radius: 8px;
-      bottom: 1.14rem;
-      height: 17px;
-      padding: 0;
+      background-color: #c6ce4e;
+      -webkit-border-radius: 13px;
+      border-radius: 13px;
+      height: 7px;
       position: absolute;
-      right: 1.45rem;
-      width: 17px;
-      z-index: -5;
+      width: 7px;
+      margin-left: -.3em;
+      margin-top: .1em;
     }
   }
   ul {
     li { &#search-bar { display: none; } }
   }
+}
+////////////////////////////////////////////////
+  ////////////////////////////////////////////
+    ///////////////////////////////////////
+      //////////////////////////////////
+         ////////////////////////////
+           ///////////////////////
+             //////////////////
+               //////////////
+                 //////////
+                   //////
+                     ///
+                     
+                     
+                     
+                     
+                     
+                     
+////////////////////////////////////////////////
+////////* Maximum width 451px section */////////
+////////////////////////////////////////////////
+@media (max-width: 451px) {
+  
 }
 ////////////////////////////////////////////////
   ////////////////////////////////////////////

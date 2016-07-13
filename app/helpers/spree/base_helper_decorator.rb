@@ -13,7 +13,7 @@ Spree::BaseHelper.module_eval do
       text = cart_icon
       css_class = 'empty'
     else
-      text = "#{cart_icon} #{cart_item_count_badge}"
+      text = "#{cart_icon_section} #{cart_item_count_badge}"
       css_class = 'full'
     end
 
@@ -29,12 +29,12 @@ Spree::BaseHelper.module_eval do
   
   
   private
-    def cart_icon
+    def cart_icon_section
       fa_icon "shopping-cart", class: "fa-2x"
     end
     
     def cart_item_count_badge
-      content_tag :span, cart_item_count, id: 'item-count-badge', class: 'badge'
+      content_tag :span, cart_item_count, id: 'item-count-badge', class: 'boop-ur-noes'
     end
     
     def cart_item_count

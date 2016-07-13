@@ -9,7 +9,6 @@
   <div data-hook="outside_cart_form">
     <%= form_for @order, url: update_cart_path, html: { id: 'update-cart' } do |order_form| %>
       <div data-hook="inside_cart_form">
-
         <div data-hook="cart_items" class="table-responsive">
           <%= render partial: 'form', locals: { order_form: order_form } %>
         </div>
