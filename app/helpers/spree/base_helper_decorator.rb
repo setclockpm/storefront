@@ -30,14 +30,17 @@ Spree::BaseHelper.module_eval do
   
   private
     def cart_icon_section
-      fa_icon "shopping-cart", class: "fa-2x"
+      fa_icon "shopping-cart", class: "cart fa-2x"
     end
     
     def cart_item_count_badge
-      content_tag :span, cart_item_count, id: 'item-count-badge', class: 'boop-ur-noes'
+      content_tag :span, cart_item_count, id: 'item-count-badge', class: 'boop-ur-noes quantity-badge'
     end
     
     def cart_item_count
+      # content_tag :span, id: 'item-count', class: 'number', data: { item_count: simple_current_order.item_count } do
+#         fa_icon("flag span", text: simple_current_order.item_count)
+#       end
       content_tag :span, simple_current_order.item_count, id: 'item-count', class: 'number', data: { item_count: simple_current_order.item_count }
     end
   

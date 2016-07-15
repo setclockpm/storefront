@@ -27,7 +27,8 @@
       <div class="cart-item-quantity row" data-hook="cart_item_quantity" valign="center">
         <div class="adjust-quantity col-lg-3 col-md-3 col-sm-4 col-xs-6">
           <%= label_tag :quantity, 'Qty:', class: 'adjust-quantity' %>
-          <%= item_form.select :quantity, options_for_select(Array(1..variant.product.total_on_hand)), html_options: { class: 'title form-control quantity' } %>
+          <%= item_form.select :quantity, options_for_select(Array(0..variant.product.total_on_hand), line_item.quantity), {}, class: 'title quantity form-control line_item_quantity' %>
+          <%#= item_form.number_field :quantity, min: 0, class: "form-control line_item_quantity", size: 5 %>
         </div>
         <div class="text-primary cart-item-total col-lg-9 col-md-9 col-sm-8 col-xs-6 text-right" data-hook="cart_item_total">
           <%= line_item.display_amount.to_html unless line_item.quantity.nil? %>
