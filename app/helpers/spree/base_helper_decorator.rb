@@ -10,7 +10,7 @@ Spree::BaseHelper.module_eval do
     css_class = nil
     
     if simple_current_order.nil? or simple_current_order.item_count.zero?
-      text = cart_icon
+      text = cart_icon_section
       css_class = 'empty'
     else
       text = "#{cart_icon_section} #{cart_item_count_badge}"
