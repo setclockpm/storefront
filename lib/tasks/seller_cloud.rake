@@ -22,7 +22,7 @@ namespace :seller_cloud do
         qty >= 0 ? variant.update_stock_count(qty) : add_variant_to_research_list(variant)
       end
       
-      MessageMailer.inventory_sync_report(@skus_to_research).deliver_now
+      #MessageMailer.inventory_sync_report(@skus_to_research).deliver_now
     end
   end
   
