@@ -14,16 +14,9 @@
 
 
 
+//#42B28D
 
 
-.navbar-default {
-  .navbar-toggle {
-    background-color: #023257;
-    border-color: #ddd;
-    
-    .icon-bar { background-color: #dd5544; }
-  }
-}
 
 .navbar-toggle {
   border: 0 none;
@@ -52,49 +45,7 @@ button {
 
 
 
-div {
-  &#spree-header {
-    background: #66afe9;
-    margin-bottom: 20px;
-    
-    figure {
-      &#logo { 
-        img { 
-          margin-bottom: 0px;
-          width: 166px;
-        } 
-      }
-    }
-    nav {
-      &.navbar-default { 
-        background-color: #023257;
-        
-        ul {
-          &.navbar-nav {
-            li {
-              &.active { a { background: rgba(34, 34, 34, 0.4) none repeat scroll 0 0; } }
-              a {
-                &.cart-info {
-                  padding-bottom: 5px;
-                  padding-top: 10px;
-                }
-              }
-            }
-          }
-        }
-      }
-      
-      a {
-        &.navbar-brand {
-          height: auto;
-          padding: 0;
-        }
-      }
-    }
-    
-  }
-  &.topnav { font-size: 14px; }
-}
+
 
 
 header {

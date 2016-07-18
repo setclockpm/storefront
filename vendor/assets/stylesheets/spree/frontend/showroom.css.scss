@@ -1,22 +1,4 @@
-.btn-success {
-  background-color: #fff;
-  border: 2px solid #d66254;
-  border-radius: 2px;
-  color: #fff;
-  line-height: 1.5;
-  height: auto;
-  padding: 1em 6.5em;
-  transition: all 0.3s ease-in-out;
-  width: 100%;
-  
-  
-  &:hover, &:focus {
-    background-color: #66afe9;
-    border: 2.5px solid #66afe9;
-    
-    color: #fff;
-  }
-}
+
 
 
 .input-group {
@@ -601,6 +583,12 @@ ul {
     overflow: visible;
   }
   
+  #taxonomies {
+    .taxonomy-root {
+      display: none;
+    }
+  }
+  
   #press .spotlight-item { margin: 0 0 30px; }
   
   
@@ -759,6 +747,8 @@ ul {
   }
   
   
+  
+  
   div {
     &#inside-product-cart-form { border: 1px thin #2d1B80; }
     &#product-price {
@@ -814,7 +804,6 @@ ul {
   //    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
       box-shadow: none;
       
-//      img { border-radius: 75px; }
     }
     &.well {
       font-size: 0.9334em;

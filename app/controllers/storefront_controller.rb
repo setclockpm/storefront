@@ -1,4 +1,7 @@
 class StorefrontController < ApplicationController
+  helper 'spree/products'
+  respond_to :html
+  
   CATALOG      = "Porthos_Home_New_Items.pdf"
   CATALOG_LINK = "#{Rails.root}/public/#{CATALOG}"
   
@@ -6,6 +9,7 @@ class StorefrontController < ApplicationController
   
   def index
     logger.debug "\n\n\nIP Address: #{request.remote_ip}\n\n\n"
+    @taxonomies = Spree::Taxonomy.includes(root: :children)
     @message = Message.new
   end
   

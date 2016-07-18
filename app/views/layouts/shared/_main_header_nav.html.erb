@@ -25,11 +25,23 @@
     <!-- /.navbar-header -->
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
+      <% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
+      <ul id="taxonomies" class="nav navbar-nav navbar-right">
         <li class="hidden"><%= link_to '#page-top' %></li>
         <%= relevant_navigation_options %>
+        <% @taxonomies.each do |taxonomy| %>
+          <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
+            <li class="taxonomy-root"><%= link_to Spree.t(:shop_by_taxonomy, taxonomy: taxonomy.name), anchor: taxonomy.name %></li>
+            <%#= taxons_tree(taxonomy.root, @taxon, max_level) %>
+          <% end %>
+        <% end %>
         <li id="link-to-cart" class="page-scroll" data-hook><%= link_to_cart %></li>
-      </ul> 
+      </ul>
+      
+      
+
+        
+      
     </div>
     <!-- /.navbar-collapse -->
   </div>

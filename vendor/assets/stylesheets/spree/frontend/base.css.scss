@@ -40,7 +40,6 @@ h3,
 h4,
 h5,
 h6 {
-//  font-family: 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
   font-family: 'cocomat', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
   font-style: normal;
   font-variant: normal;
@@ -51,7 +50,6 @@ h6 {
 
 body {
   height: 100%;
-//  font-family: 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
   font-family: 'cocomat', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
   font-weight: 700;
   font-size: 16px;
@@ -118,7 +116,6 @@ hr {
 
 section {
   &#about-us {
-//    background-color: #fffaf0;
     background-color: #fafafa;
     
     &.about-us-item {
@@ -150,3 +147,102 @@ section {
     }
   }
 }
+
+
+
+
+
+// This section deals solely with the major background colors. eg header, navbar, footer, any area carrying the dominant color //
+
+.btn-success {
+  background-color: #fff;
+  border: 2px solid #d66254;
+  border-radius: 2px;
+  color: #fff;
+  line-height: 1.5;
+  height: auto;
+  padding: 1em 6.5em;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  
+  
+  &:hover, &:focus {
+    background-color: #66afe9;
+    border: 2.5px solid #66afe9;
+    
+    color: #fff;
+  }
+}
+
+
+.navbar-default {
+  .navbar-toggle {
+    background-color: #42B28D;
+    border-color: #ddd;
+    
+    .icon-bar { background-color: #dd5544; }
+  }
+}
+
+
+div {
+  &#spree-header {
+    background: #66afe9;
+    margin-bottom: 20px;
+    
+    figure {
+      &#logo { 
+        img { 
+          margin-bottom: 0px;
+          width: 166px;
+        } 
+      }
+    }
+    nav {
+      &.navbar-default { 
+        background-color: #42B28D;
+        
+        ul {
+          &.navbar-nav {
+            li {
+              &.active { a { background: rgba(34, 34, 34, 0.4) none repeat scroll 0 0; } }
+              a {
+                &.cart-info {
+                  padding-bottom: 5px;
+                  padding-top: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+      
+      a {
+        &.navbar-brand {
+          height: auto;
+          padding: 0;
+        }
+      }
+    }
+    
+  }
+  &.topnav { font-size: 14px; }
+}
+
+footer {
+  .footer-above {
+    padding-top: 50px;
+    background-color: #42B28D;
+    
+    a { color: #fff; }
+  }
+  .footer-below {
+    background-color: #fff;
+    color: #023257;
+    font-weight: normal;
+    font-size: .9em;
+    padding: 25px 0;
+  }
+}
+
+//#66CDAA
