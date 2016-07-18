@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   helper Spree::BaseHelper
   helper Spree::StoreHelper
   
+  before_action :load_taxonomies
   protect_from_forgery
   
   
@@ -16,5 +17,10 @@ class ApplicationController < ActionController::Base
   end
   
   
+  
+  
+  def load_taxonomies
+    @taxonomies = Spree::Taxonomy.includes(root: :children)
+  end
   
 end

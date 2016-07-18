@@ -9,7 +9,6 @@ class StorefrontController < ApplicationController
   
   def index
     logger.debug "\n\n\nIP Address: #{request.remote_ip}\n\n\n"
-    @taxonomies = Spree::Taxonomy.includes(root: :children)
     @message = Message.new
   end
   
