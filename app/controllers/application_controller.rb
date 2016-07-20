@@ -19,8 +19,9 @@ class ApplicationController < ActionController::Base
   
   
   
-  def load_taxonomies
-    @taxonomies = Spree::Taxonomy.includes(root: :children)
-  end
+  private
+    def load_taxonomies
+      @taxonomies = Spree::Taxonomy.includes(root: :children)
+    end
   
 end

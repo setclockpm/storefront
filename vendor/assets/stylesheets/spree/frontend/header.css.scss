@@ -1,23 +1,9 @@
 
-
-
-
 .fa-search {
   color: #fff;
   font-size: 1.85em;
 }
-
-.navbar-menu {
-  text-align: center;
-} 
-
-
-
-
-//#42B28D
-
-
-
+.navbar-menu { text-align: center; } 
 .navbar-toggle {
   border: 0 none;
   float: none;
@@ -31,7 +17,13 @@
   }
 } 
 
-
+.side-nav {
+  .padded { 
+    padding: 10px 15px;
+    line-height: 20px;
+  }
+  .spacer { height: 2rem; }
+}
 
 
 
@@ -42,7 +34,21 @@ button {
 
 
 
-
+div {
+  &#spree-header {
+    margin-bottom: 20px;
+    
+    figure {
+      &.logo {
+        img {
+          margin-bottom: 0px;
+          max-width: 160px;
+          min-width: 125px;
+        }
+      }
+    }
+  }
+}
 
 
 
@@ -75,7 +81,7 @@ header {
       .name {
         display: block;
         font-family: 'cocomat', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
-//        font-family: 'Federo', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
+//        font-family: 'Federo', 'cocomat', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
         text-transform: uppercase;
         font-weight: 700;
         font-size: 2em;
@@ -179,19 +185,23 @@ p {
     }
   }
   
-  span {
-    &#item-count {
-      
-    }
+  
+  
+  #spree-header #logo img {
+    width: 160px;
   }
+  
+  
 }
 
 
-.navbar {
-  font-family: 'Federo', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
-}
+
+
+
+
+
+
+
 .navbar a:focus {
   outline: none;
 }
@@ -201,15 +211,10 @@ p {
 .navbar .navbar-nav li a:focus {
   outline: none;
 }
-.navbar-default,
-.navbar-inverse {
-  border: none;
-}
+.navbar-default, .navbar-inverse { border: none; }
 
 
-.quantity-badge {
-  position: absolute;
-}
+.quantity-badge { position: absolute; }
 
 
 
@@ -273,7 +278,16 @@ section.success a.active {
   #press .spotlight-item { margin: 0 0 30px; }
   
   
-  
+  .nav {
+    li {
+      &.pre-launch { 
+        a { 
+          font-family: 'Federo', 'cocomat', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
   
   
   
@@ -290,13 +304,6 @@ section.success a.active {
     }
   }
   
-  h1 {
-    &.product-title {
-      font-size: 2.2rem;
-      letter-spacing: 1px;
-      line-height: 20px;
-    }
-  }
   li {
     &.select-color-container {
       height: 55px;
@@ -323,12 +330,8 @@ section.success a.active {
       right: 9px;
       width: 17px;
       
-      
-      
-      
       &::before, &::after {
         background: #a2a064;
-//        border-radius: 3px;
         content: "";
         height: 17px;
         left: 0;
@@ -336,22 +339,15 @@ section.success a.active {
         top: 0;
         width: 17px;
       }
-      
-      
-      
       &::before {
         -webkit-transform: rotate(45deg);
         transform: rotate(45deg);
       }
-        
-     // &::after {
-//        -webkit-transform: rotate(60deg);
-//        transform: rotate(60deg);
-//      }
-       
+
 
       span {
         display: block;
+        font-family: 'Federo', 'cocomat', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
         font-size: 0.95em;
         font-weight: bold;
         line-height: 16px;
@@ -390,18 +386,41 @@ section.success a.active {
 @media (max-width: 767px) {
   
   #spree-header {
-    #logo { text-align: center; }
+    #logo { 
+      text-align: center;
+      img { width: 55%; }
+    }
+    .navbar-collapse {
+      font-size: .8em;
+      color: #fff;
+      
+      li {
+        &.side-nav-item {
+          a {
+            &:hover {
+              color: #dd5544;
+            }
+          }
+        }
+      }
+    }
   }
   
   
-  .fa-shopping-cart {
-    color: #ddd;
-  }
+  .fa-shopping-cart { color: #ddd; }
   
   .navbar-cart {
     display: inline-block;
     float: right;
+    text-align: center;
   }
+  .navbar-collapse {
+    background: rgba(34, 34, 34, 0.4) none repeat scroll 0 0;
+    li.active a {
+      background: rgba(34, 34, 34, 0.4) none repeat scroll 0 0;
+    }
+  }
+  
   .navbar-fixed-top, .navbar-static-top {
     padding: 15px 0;
     -webkit-transition: padding 0.3s;
@@ -410,62 +429,23 @@ section.success a.active {
   }
   
   
-  .nav-main .starburst-badge::before { transform: rotate(30deg); }
-  .nav-main .starburst-badge::before, .nav-main .starburst-badge::after {
-    background: #e41421 none repeat scroll 0 0;
-    content: "";
-    height: 17px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 17px;
-  }
-  .nav-main .starburst-badge::after { transform: rotate(60deg); }
   
-  .nav-main .starburst-badge {
-    background: #e41421 none repeat scroll 0 0;
-    color: #fff;
-    height: 17px;
-    position: absolute;
-    right: 10px;
-    text-align: center;
-    top: 10px;
-    width: 17px;
-    
-    span {
-      display: block;
-      font-size: 13px;
-      font-weight: bold;
-      line-height: 16px;
-      position: relative;
-      text-align: center;
-      width: 100%;
-      z-index: 1;
-    }
-  }
-  
-  
-  
-  a {
-    &.full { .fa-shopping-cart { color: #fff; } }
-  }
-  
-  
-  
-  div {
-    &#spree-header {
-      nav {
-        &.navbar-default {
-          ul {
-            &.navbar-nav {
-              li {
-                a { &.cart-info { padding-top: 0px; } }
-              } 
-            }
-          }
+  .nav {
+    li {
+      &.pre-launch {
+        display: none;
+        a { font-family: 'Federo', 'cocomat', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif; }
+      }
+      a { 
+        &.cart-info { padding-top: 0px; }
+        &.full { 
+          padding-left: 1px;
+          padding-right: 1px;
+          
+          .fa-shopping-cart { color: #fff; }
         }
       }
-    }
+    } 
   }
   
   
@@ -496,16 +476,6 @@ section.success a.active {
       width: 7px;
       margin-left: -.3em;
       margin-top: .1em;
-      // Below is css for gold in cart ///
-      //background-color: rgba(232, 245, 22, 0.85);
-//      -webkit-border-radius: 13px;
-//      /* border-radius: 13px; */
-//      height: 13px;
-//      position: absolute;
-//      width: 19px;
-//      margin-left: -1.45em;
-//      margin-top: -0.0em;
-//      z-index: -1;
     }
   }
   ul {
@@ -525,24 +495,3 @@ section.success a.active {
                      ///
                      
                      
-                     
-                     
-                     
-                     
-////////////////////////////////////////////////
-////////* Maximum width 451px section */////////
-////////////////////////////////////////////////
-@media (max-width: 451px) {
-  
-}
-////////////////////////////////////////////////
-  ////////////////////////////////////////////
-    ///////////////////////////////////////
-      //////////////////////////////////
-         ////////////////////////////
-           ///////////////////////
-             //////////////////
-               //////////////
-                 //////////
-                   //////
-                     ///

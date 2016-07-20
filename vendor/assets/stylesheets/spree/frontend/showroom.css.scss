@@ -234,11 +234,7 @@ aside {
     -o-background-size: cover;
   }
 }
-button {
-  &.purchase {
-    background-color: #dd5544;
-  }
-}
+
 div {
   &.pagination-container {
     clear: both;
@@ -451,7 +447,7 @@ section {
   }
   &#contact {
     h2 {
-      font-size: 2.5em;
+      font-size: 2em;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
@@ -551,6 +547,13 @@ ul {
   
   #press .spotlight-item { margin: 0 0 30px; }
   
+  .wo-qty {
+    display: none;
+  }
+  .with-qty {
+    display: inline-block;
+  }
+  
 }
 ///////////////////////////////////////////////////
 
@@ -592,7 +595,10 @@ ul {
   #press .spotlight-item { margin: 0 0 30px; }
   
   
+  
+  
   div {
+    &#thumbnails { display: none; }
     &.panel {
       background-color: #fff;
       border-radius: 43px;
@@ -602,7 +608,7 @@ ul {
   
   h1 {
     &.product-title {
-      font-size: 2.2rem;
+      font-size: 1.6rem;
       letter-spacing: 1px;
       line-height: 20px;
     }
@@ -654,6 +660,14 @@ ul {
 /////////////////////////////////////////////////
 ////////* Maximum width 1024px section */////////
 @media (max-width: 1024px) {
+  
+  .wo-qty {
+    display: block;
+  }
+  .with-qty {
+    display: none;
+  }
+  
  
   div {
     &.add-to-cart {
@@ -745,8 +759,6 @@ ul {
       z-index: 3;
     }
   }
-  
-  
   
   
   div {
@@ -865,9 +877,6 @@ ul {
                  //////////
                    //////
                      ///
-
-
-
 
 
 

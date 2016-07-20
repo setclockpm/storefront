@@ -111,8 +111,8 @@ Deface::Override.new(name:             'style-paginator-outer-window',
 Deface::Override.new(name:             'add-xs-to-figure-logo',
                      virtual_path:     'spree/shared/_header',
                      set_attributes:   'figure#logo',
-                     attributes:       { class: 'col-md-4 col-sm-3 col-xs-8' },
-                     original:         nil)
+                     attributes:       { class: 'logo' },
+                     original:         'dc8363cba7a94682be7f3a2b970c6512b4745d26')
                      
 Deface::Override.new(name:             'add-xs-col-to-nav',
                      virtual_path:     'spree/shared/_nav_bar',

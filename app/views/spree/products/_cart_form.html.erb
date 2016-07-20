@@ -36,8 +36,14 @@
   
   <div class="row">
     <% if @product.price_in(current_currency) && !@product.price.nil? && @product.can_supply? %>
-      <div id="add-qty-to-cart" class="add-to-cart col-md-6 col-sm-9 col-xs-12">
-        <div class="input-group">
+      <div id="add-qty-to-cart" class="add-to-cart col-md-6 col-sm-12 col-xs-12">
+        <div class="wo-qty">
+          <%= button_tag class: 'btn btn-success purchase', id: 'add-to-cart-button', type: :submit do %>
+            <%= Spree.t(:add_to_cart) %>
+          <% end %>
+        </div>
+        
+        <div class="input-group with-qty">
           <%= select_tag :quantity, options_for_select(Array(1..@product.total_on_hand)), { class: 'quantity title form-control' } %>
           <span class="input-group-btn">
             <%= button_tag class: 'btn btn-success purchase', id: 'add-to-cart-button', type: :submit do %>

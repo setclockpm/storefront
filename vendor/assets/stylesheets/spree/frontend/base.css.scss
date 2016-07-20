@@ -130,6 +130,7 @@ section {
     }
     
     h2 {
+      font-size: 2em;
       font-weight: normal;
       letter-spacing: 1px;
       text-transform: uppercase;
@@ -155,7 +156,7 @@ section {
 // This section deals solely with the major background colors. eg header, navbar, footer, any area carrying the dominant color //
 
 .btn-success {
-  background-color: #fff;
+  background-color: #dd5544;
   border: 2px solid #d66254;
   border-radius: 2px;
   color: #fff;
@@ -175,9 +176,11 @@ section {
 }
 
 
+
+
 .navbar-default {
   .navbar-toggle {
-    background-color: #42B28D;
+    background-color: #3CA3A3;
     border-color: #ddd;
     
     .icon-bar { background-color: #dd5544; }
@@ -185,54 +188,15 @@ section {
 }
 
 
-div {
-  &#spree-header {
-    background: #66afe9;
-    margin-bottom: 20px;
-    
-    figure {
-      &#logo { 
-        img { 
-          margin-bottom: 0px;
-          width: 166px;
-        } 
-      }
-    }
-    nav {
-      &.navbar-default { 
-        background-color: #42B28D;
-        
-        ul {
-          &.navbar-nav {
-            li {
-              &.active { a { background: rgba(34, 34, 34, 0.4) none repeat scroll 0 0; } }
-              a {
-                &.cart-info {
-                  padding-bottom: 5px;
-                  padding-top: 10px;
-                }
-              }
-            }
-          }
-        }
-      }
-      
-      a {
-        &.navbar-brand {
-          height: auto;
-          padding: 0;
-        }
-      }
-    }
-    
-  }
-  &.topnav { font-size: 14px; }
-}
+
+
+
+
 
 footer {
   .footer-above {
     padding-top: 50px;
-    background-color: #42B28D;
+    background-color: #3CA3A3;
     
     a { color: #fff; }
   }
@@ -242,5 +206,23 @@ footer {
     font-weight: normal;
     font-size: .9em;
     padding: 25px 0;
+  }
+}
+
+nav {
+  &.navbar {
+    font-family: 'cocomat', 'Federo', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
+    font-weight: 700;
+  }
+  &.navbar-default {
+    background-color: #3CA3A3;
+
+    ul {
+      &.navbar-nav {
+        li {
+          &.active { a { background: rgba(34, 34, 34, 0.4) none repeat scroll 0 0; } }
+        }
+      }
+    }
   }
 }
