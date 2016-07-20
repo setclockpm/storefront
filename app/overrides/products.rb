@@ -10,14 +10,7 @@ Deface::Override.new(name:             'expose-color-option-radio-buttons',
                      replace_contents: 'div[data-hook="cart_container"]',
                      partial:          'orders/cart',
                      original:         nil)
-#
-#
-# Deface::Override.new(name:             'qty-field-to-select',
-#                      virtual_path:     'spree/products/_cart_form',
-#                      replace_contents: "erb[loud]:contains('number_field_tag')",
-#                      text:              "number_field_tag :quantity, 1, class: 'title form-control', min: 1, max: @product.total_on_hand",
-#                      original:         nil)
-#
+
 
 Deface::Override.new(name:             'add-flex-to-product-page',
                      virtual_path:     'spree/products/show',
@@ -46,9 +39,15 @@ Deface::Override.new(name:             'format-product-desc',
                      text:             '<p class="description-block"><%= product_description(@product) %></p>',
                      original:         nil)
 
-
 Deface::Override.new(name:             'add-centered-to-product-desc',
                      virtual_path:     'spree/products/show',
                      set_attributes:   'div[data-hook="description"]',
                      attributes:       { class: 'well text-center' },
                      original:         nil)
+                     
+Deface::Override.new(name:             'place-taxon-options',
+                     virtual_path:     'spree/products/show',
+                     insert_after:     'div[data-hook="description"]',
+                     cut:              'div[data-hook="product_taxons"]',
+                     original:         nil, disabled: false)
+

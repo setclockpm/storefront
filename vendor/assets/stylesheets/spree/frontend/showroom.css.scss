@@ -354,11 +354,14 @@ div {
     }
   }
   &.well {
-    background-color: #f2f2f2;
+    background-color: #fffffe;
     border: 0;
     font-weight: normal;
     margin: 1.6em 0;
     padding: 1.6em;
+    
+    
+    
   }
   
   
@@ -743,6 +746,7 @@ ul {
 /////////* Maximum width 767px section *//////////
 @media (max-width: 767px) {
   
+  
   .input-group-addon, .input-group-btn { width: 75%; }
 
   .select-color-option .active-select-color-surface {
@@ -780,11 +784,14 @@ ul {
   
   div {
     &#inside-product-cart-form { border: 1px thin #2d1B80; }
+    &#product-description {
+      border-top: 1px solid #f2f2f2;
+    }
     &#product-price {
       span {
         &.price {
           display: inline-block;
-          font-size: 1.4rem;
+          font-size: 1.25rem;
           letter-spacing: .03rem;
           margin: 1.2rem 0rem 0rem 0rem;
         }
@@ -794,6 +801,10 @@ ul {
       margin-top: 20px;
       h3 { display: none; }
       ul { text-align: center; }
+    }
+    &#taxon-crumbs {
+      border-top: 1px solid #f2f2f2;
+      padding: 20px;
     }
     &#thumbnails { display: none; }
     &.pagination-container {
@@ -835,21 +846,32 @@ ul {
       
     }
     &.well {
-      font-size: 0.9334em;
-      line-height: 1.7142;
+      background-color: #fff;
+      p {
+        color: #333;
+        background-color: #fff;
+        font-size: 0.9334em;
+        line-height: 1.7142;
+      }
     }
   }
   h1 {
     &.product-title {
-      font-size: 1.4rem;
+      font-size: 1.25rem;
       font-weight: normal;
       line-height: 1.4118;
-      margin-top: .25em;
+      margin-top: 1em;
       margin-bottom: 0.25em;
     }
   }
-  h3 {
+  h3 { 
     margin-top: 10px;
+    
+    &.product-section-title {
+      display: none;
+      font-size: .9em;
+      text-align: center;
+    }
   }
   img {
     &.thumbnail {
@@ -866,8 +888,22 @@ ul {
       width: 55px;
     }
   }
+  nav {
+    &#breadcrumbs {
+      display: none;
+      font-size: .85em; 
+    }
+  }
   span { &.pg-button { display: inline-block; } }
   ul {
+    &#similar_items_by_taxon {
+      li {
+        text-align: center;
+        a {
+          width: 100%;
+        }
+      }
+    }
     &.color-select-options {
       background-color: #f2f2f2;
       
@@ -876,7 +912,6 @@ ul {
         padding-right: 3px;
       }
     }
-    
     &.list-group {
       margin-bottom: 0px;
       margin-left: 1px;
