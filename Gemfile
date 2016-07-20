@@ -14,6 +14,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem "jquery-slick-rails"
 gem 'jbuilder', '~> 2.0'
 gem "mini_magick"
 gem 'sdoc', '~> 0.4.0', group: :doc

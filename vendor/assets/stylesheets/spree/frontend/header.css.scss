@@ -280,6 +280,9 @@ section.success a.active {
   
   .nav {
     li {
+      &.secondary {
+        display: none;
+      }
       &.pre-launch { 
         a { 
           font-family: 'Federo', 'cocomat', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;

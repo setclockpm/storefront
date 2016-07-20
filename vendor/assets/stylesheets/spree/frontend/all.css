@@ -5,6 +5,7 @@
  *
  *= require spree/frontend
  *= require font-awesome
+ *= require slick
  *= require_self
  *= require_tree .
  *= require spree/frontend/spree_simple_sales
