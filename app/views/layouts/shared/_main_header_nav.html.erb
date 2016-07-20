@@ -40,12 +40,18 @@
         <li class="spacer" role="menuitem"></li>
         <li class="item padded taxonomy-root side-nav-item" role="menuitem"> Location </li>
         <li class="spacer" role="menuitem"></li>
-        <li class="item secondary" role="menuitem">
-          <a href="/account/login" id="customer_login_link">Log In</a>
-        </li>
-        <li class="item secondary" role="menuitem">
-          <a href="/account/register" id="customer_register_link">Create Account</a>
-        </li>
+          <% if spree_current_user %>
+            <li id="account-settings" class="item secondary" role="menuitem">
+              <%= link_to Spree.t(:my_account), spree.account_path %>
+            </li>
+            <li id="link-to-login" class="item secondary" role="menuitem">
+              <%= link_to Spree.t(:logout), spree.logout_path %>
+            </li>
+          <% else %>
+            <li id="link-to-login" class="item secondary" role="menuitem">
+              <%= link_to Spree.t(:login), spree.login_path %>
+            </li>
+          <% end %>
         <li id="link-to-cart" class="page-scroll" data-hook><%= link_to_cart %></li>
       </ul>
     </div>
