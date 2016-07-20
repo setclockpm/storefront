@@ -398,10 +398,27 @@ img { &.no-thumbnail { padding: 4.5px; } }
 
 
 
-//.styled-select select {
-//    cursor: pointer;
-//    font-size: 1rem;
-//}
+.footer-lifestyle {
+ // padding-left: .625rem;
+//  padding-right: .625rem;
+  padding-left: 15px;
+  padding-right: 15px;
+  
+  div {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    position: relative;
+    padding-top: 66.66667%;
+    
+    &.lazy {
+      opacity: 1;
+      -webkit-transition: opacity .14s;
+      transition: opacity .14s;
+    }
+  }
+}
 
 
 
