@@ -184,10 +184,10 @@ section {
   -o-background-size: cover;
   z-index: 1;
   
-
+  
   .image {
-    height: 28rem;
-    height: 74vw;
+   // height: 28rem;
+//    height: 74vw;
     min-height: 20rem;
     background-position: center center;
     background-size: cover;
@@ -195,9 +195,11 @@ section {
   
   
   .slick-slide {
-    img {
-      max-width: 1440px;
-    }
+    img { max-width: 100%; }
+  }
+  
+  button {
+    display: none;
   }
  // .slick-next, .slick-prev {
 //    top: 40%;

@@ -32,7 +32,9 @@ $('.navbar-collapse ul li a:not(.dropdown-toggle)').click(function() {
 $(document).ready(function(){
   $('.look-at-me').slick({
     autoplay: true,
-    dots: true,
-    mobileFirst: true
+    dots: false,
+    mobileFirst: true,
+    prevArrow: false,
+    nextArrow: false
   });
 });

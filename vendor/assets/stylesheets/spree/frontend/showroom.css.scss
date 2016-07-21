@@ -101,6 +101,14 @@
     top: 0;
   }
 } 
+
+.footer-lifestyle {
+  display: none;
+}
+
+
+
+
 .press-modal {
   .close-modal {
     position: absolute;
@@ -589,6 +597,8 @@ ul {
   /////////* Minimum width 767px section *//////
 ///////////////////////////////////////////////////
 @media (min-width: 767px) {
+  
+  
   .select-color-option .active-select-color-surface {
     background-color: #f2f2f2;
     border: 0;
@@ -746,6 +756,9 @@ ul {
 /////////* Maximum width 767px section *//////////
 @media (max-width: 767px) {
   
+  .footer-lifestyle.CB138A {
+    display: block;
+  }
   
   .input-group-addon, .input-group-btn { width: 75%; }
 
