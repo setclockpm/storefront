@@ -56,23 +56,23 @@ div {
 
 header {
   &#intro-splash {
-    background: url(welcome-bg.png) no-repeat center center;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+   // background: url(welcome-bg.png) no-repeat center center;
+  //  background-size: cover;
+//    -webkit-background-size: cover;
+//    -moz-background-size: cover;
+//    -o-background-size: cover;
     color: white;
-    min-height: 100%;
-    margin-top: 95px;
-    padding-top: 55px; 
-    padding-bottom: 50px;
-    text-align: center;
+  //  min-height: 100%;
+//    margin-top: 95px;
+//    padding-top: 45px;
+//    padding-bottom: 30px;
+//    text-align: center;
     /* If you're making other pages, make sure there is 55px of padding to make sure the navbar doesn't overlap content! */
   
     div {
       &.container {
-        padding-top: 300px;
-        padding-bottom: 0px;
+        padding-top: 50px;
+        padding-bottom: 45px;
         width: 100%;
       }
     }

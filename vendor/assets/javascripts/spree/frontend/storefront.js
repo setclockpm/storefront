@@ -27,3 +27,12 @@ $('body').scrollspy({ target: '.navbar-fixed-top' })
 $('.navbar-collapse ul li a:not(.dropdown-toggle)').click(function() {
     $('.navbar-toggle:visible').click();
 });
+
+
+$(document).ready(function(){
+  $('.look-at-me').slick({
+    autoplay: true,
+    dots: true,
+    mobileFirst: true
+  });
+});

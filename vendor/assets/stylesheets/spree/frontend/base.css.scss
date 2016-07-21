@@ -177,6 +177,68 @@ section {
 
 
 
+.look-at-me {
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  z-index: 1;
+  
+
+  .image {
+    height: 28rem;
+    height: 74vw;
+    min-height: 20rem;
+    background-position: center center;
+    background-size: cover;
+  }
+  
+  
+  .slick-slide {
+    img {
+      max-width: 1440px;
+    }
+  }
+ // .slick-next, .slick-prev {
+//    top: 40%;
+//    top: 37vw;
+//  }
+}
+
+//.slick-dots, .slick-next, .slick-prev {
+//  display: block;
+//  position: absolute;
+//  padding: 0;
+//}
+
+//.slick-slider:hover .slick-arrow {
+//  opacity: 1;
+//}
+//.slick-next {
+//  right: 10px;
+//}
+//.slick-prev {
+//  left: 10px;
+//}
+//.slick-arrow {
+//    width: 42px;
+//    height: 42px;
+//    opacity: 0;
+//    -webkit-transition: opacity .14s;
+//    transition: opacity .14s;
+//}
+//.slick-next, .slick-prev {
+//  cursor: pointer;
+//  top: 50%;
+//  margin-top: -10px\9;
+//  -webkit-transform: translate(0,-50%);
+//  -ms-transform: translate(0,-50%);
+//  transform: translate(0,-50%);
+//  border: none;
+//  z-index: 90;
+//}
+
+
 
 .navbar-default {
   .navbar-toggle {
