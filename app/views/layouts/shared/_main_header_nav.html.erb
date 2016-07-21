@@ -17,7 +17,7 @@
         <!-- Container for cart, stays outside of toggle -->
       <div id="xs-cart" class="col-xs-3 navbar-cart">
         <ul class="nav navbar-nav navbar-right" data-hook="impostor-ul">
-          <li id="xs-link-to-cart" class="xs" data-hook><%= link_to_cart %></li>
+          <li id="xs-link-to-cart" class="xs" data-hook><%#= link_to_cart %></li>
         </ul>
       </div>
       <!-- /.navbar-cart -->
@@ -52,7 +52,7 @@
               <%= link_to Spree.t(:login), spree.login_path %>
             </li>
           <% end %>
-        <li id="link-to-cart" class="page-scroll" data-hook><%= link_to_cart %></li>
+        <li id="link-to-cart" class="page-scroll" data-hook><%#= link_to_cart %></li>
       </ul>
     </div>
     <!-- /.navbar-collapse -->
