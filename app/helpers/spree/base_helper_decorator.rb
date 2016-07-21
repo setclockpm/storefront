@@ -20,6 +20,17 @@ Spree::BaseHelper.module_eval do
     link_to text.html_safe, spree.cart_path, class: "cart-info #{css_class}"
   end
   
+  def taxons_accordion
+    return '' if max_level < 1 || root_taxon.leaf?
+    content_tag :li, class: 'list-group' do
+      taxons = root_taxon.children.map do |taxon|
+        css_class = (current_taxon && current_taxon.self_and_ancestors.include?(taxon)) ? 'list-group-item active' : 'list-group-item'
+        link_to(taxon.name, seo_url(taxon), class: css_class) + taxons_tree(taxon, current_taxon, max_level - 1)
+      end
+      safe_join(taxons, "\n")
+    end
+  end
+  
   # helper to determine if its appropriate to show the store menu
   def store_menu?
     puts "\n%w{thank_you}.exclude? params[:action]: #{%w{thank_you}.exclude? params[:action]}"
