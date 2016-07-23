@@ -1,0 +1,17 @@
+<div id="specs" class="pp-container col-md-6 col-sm-9 col-xs-12" data-hook="product_properties">
+  <% unless @product_properties.empty? %>
+    <h3 class="product-section-title"><%= Spree.t('properties')%></h3>
+    <table id="product-properties" class="table table-striped" data-hook>
+      <tbody>
+        <% specifications.each do |product_property| %>
+          <% css_class = cycle('even', 'odd', name: "properties") %>
+          <tr class="<%= css_class %>">
+            <th><%= product_property.property.presentation %></th>
+            <td><%= product_property.value %></td>
+          </tr>
+        <% end %>
+        <% reset_cycle('properties') %>
+      </tbody>
+    </table>
+  <% end %>
+</div>

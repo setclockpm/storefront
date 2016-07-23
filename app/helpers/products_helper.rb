@@ -14,14 +14,6 @@ module ProductsHelper
     color_options(v).downcase unless v.images.any?
   end
   
-  def variant_primary_thumbnail_url(v)
-    if v.primary_thumbnail_url
-      image_tag(v.primary_thumbnail_url, class: "thumbnail") 
-    else
-      image_tag 'no-image.png', class: "no-thumbnail thumbnail", size: '56x56'
-    end
-  end
-  
   def lifestyle_background_image(product)
     product.lifestyle_shot? ? image_tag(variant.images.first.attachment.url(:product)) : "ls-placeholder.jpg"
   end
@@ -31,6 +23,23 @@ module ProductsHelper
   end
   def prev_page_button(on_first_pg, is_remote, url)
     on_first_pg ? page_decoy("previous") : prev_page_link(is_remote, url)
+  end
+  
+  
+  def specifications
+    # Remove properties that are ambiguous 'Features' (to be used in another section)
+    @features           = @product_properties.select{|pp| pp.property.name =~ /features/i }
+    @product_properties = @product_properties - @features
+    # Remove properties with blank values
+    @product_properties.reject{|s| s.value.blank? }
+  end
+  
+  def variant_primary_thumbnail_url(v)
+    if v.primary_thumbnail_url
+      image_tag(v.primary_thumbnail_url, class: "thumbnail") 
+    else
+      image_tag 'no-image.png', class: "no-thumbnail thumbnail", size: '56x56'
+    end
   end
   
   
