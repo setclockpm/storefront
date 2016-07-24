@@ -3,8 +3,8 @@
   <div class="container topnav">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header page-scroll">
-      <div class="col-xs-3 navbar-menu">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsing-menu">
+      <div class="col-xs-3 navbar-menu dl-trigger-container">
+        <button type="button" class="collapsed dl-trigger navbar-toggle" data-toggle="collapse" data-target="#collapsing-menu">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -27,11 +27,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="collapsing-menu">
       <% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
-      <ul id="taxonomies" class="dl-menu nav navbar-nav navbar-right menu side-nav vertical" role="tablist" aria-multiselectable="true">
+      <ul id="taxonomies" class="dl-menu nav navbar-nav navbar-right menu vertical">
         <%= relevant_navigation_options %>
         <% @taxonomies.each_with_index do |taxonomy, tab_index| %>
           <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
-            <li class="taxonomy-root dl-nav-item submenu-parent" role="tab" aria-label="<%= taxonomy.name %>">
+            <li class="dl-nav-item submenu-parent taxonomy-root " role="tab" aria-label="<%= taxonomy.name %>">
               <%= link_to Spree.t(:shop_by_taxonomy, taxonomy: taxonomy.name), anchor: taxonomy.name, tab_index: tab_index %>
             </li>
             <%#= taxons_accordion(taxonomy.root, @taxon, max_level) %>

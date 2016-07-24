@@ -17,7 +17,7 @@
   }
 } 
 
-.side-nav {
+.dl-menu {
   .padded { 
     padding: 10px 15px;
     line-height: 20px;
@@ -56,18 +56,7 @@ div {
 
 header {
   &#intro-splash {
-   // background: url(welcome-bg.png) no-repeat center center;
-  //  background-size: cover;
-//    -webkit-background-size: cover;
-//    -moz-background-size: cover;
-//    -o-background-size: cover;
     color: white;
-  //  min-height: 100%;
-//    margin-top: 95px;
-//    padding-top: 45px;
-//    padding-bottom: 30px;
-//    text-align: center;
-    /* If you're making other pages, make sure there is 55px of padding to make sure the navbar doesn't overlap content! */
   
     div {
       &.container {
@@ -81,7 +70,6 @@ header {
       .name {
         display: block;
         font-family: 'cocomat', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
-//        font-family: 'Federo', 'cocomat', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
         text-transform: uppercase;
         font-weight: 700;
         font-size: 2em;
@@ -128,6 +116,19 @@ p {
   font-size: 20px;
   &.small { font-size: 16px; }
 }
+
+
+
+
+///////////////////////////////////////////////////////////////////
+///// This next section deals with the collapsable dropdown menu //
+///////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+
+
+
 
 
 
