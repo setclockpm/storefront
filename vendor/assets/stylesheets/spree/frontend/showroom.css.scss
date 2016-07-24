@@ -753,13 +753,12 @@ ul {
   .input-group-addon, .input-group-btn { width: 75%; }
   .pp-container { background-color: #feffff; }
   .select-color-option .active-select-color-surface {
-    background-color: #f2f2f2;
     border: 0;
     border-radius: 4px;
     cursor: pointer;
     min-height: 54px;
     min-width: 54px;
-    padding: 1px;
+    padding: 4px;
     transition: border-color 0.15s ease 0s, box-shadow 0.15s ease 0s;
     text-align: center;
   
@@ -922,7 +921,7 @@ ul {
       }
     }
     &.color-select-options {
-      background-color: #f2f2f2;
+      background-color: rgba(242, 242, 242, 0.4);;
       
       & > li {
         padding-left: 3px;

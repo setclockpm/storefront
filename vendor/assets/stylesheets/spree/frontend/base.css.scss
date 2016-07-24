@@ -169,7 +169,7 @@ section {
   
   &:hover, &:focus {
     background-color: #66afe9;
-    border: 2.5px solid #66afe9;
+    border: 2px solid #66afe9;
     
     color: #fff;
   }
@@ -282,7 +282,13 @@ nav {
     font-weight: 700;
   }
   &.navbar-default {
-
+    &.transparent { 
+      background: rgba(60, 163, 163, 0.01);
+      &:hover, &:focus {
+        background: rgba(60, 163, 163, 0.9);
+      }
+    }
+    
     ul {
       &.navbar-nav {
         li {
@@ -310,7 +316,9 @@ nav {
   }
   nav {
     &.navbar-default {
-      background: rgba(60, 163, 163, 0.7);
+      &.opaque {
+        background: rgba(60, 163, 163, 0.9);
+      }
     }
   }
 }
@@ -328,7 +336,7 @@ nav {
   
   div {
     &.look-at-me {
-    margin-top: 8px;
+    margin-top: 0px;
     }
   }
   
@@ -339,7 +347,15 @@ nav {
   
   nav {
     &.navbar-default {
-      background: rgba(60, 163, 163, 0.95);
+      .navbar-toggle {
+        .icon-bar { background-color: #dd5544; }
+      }
+      .navbar-toggle.collapsed {
+        .icon-bar { background-color: #fefefe; }
+      }
+      &.opaque {
+        background: rgba(60, 163, 163, 0.95);
+      }
     }
   }
 }

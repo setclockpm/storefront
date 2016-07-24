@@ -19,6 +19,14 @@ module ApplicationHelper
     request.remote_ip == INTERNAL_IP
   end
   
+  def navbar_behavior
+    "navbar-#{current_page?(main_app.root_url) ? "fixed" : "static"}-top"
+  end
+  
+  def navbar_page
+    current_page?(main_app.root_url) ? "transparent" : "opaque"
+  end
+  
   def relevant_navigation_options
     if current_page?(main_app.root_url)
       render partial: 'layouts/pre_launch_links'

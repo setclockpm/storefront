@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-<%= current_page?(main_app.root_url) ? "fixed" : "static" %>-top" role="banner">
+<nav class="navbar navbar-default <%= navbar_behavior %> <%= navbar_page %>" role="banner">
   <div class="container topnav">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header page-scroll">
@@ -23,22 +23,22 @@
       <!-- /.navbar-cart -->
     </div>
     <!-- /.navbar-header -->
+    
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="collapsing-menu">
       <% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
-      <ul id="taxonomies" class="nav navbar-nav navbar-right menu side-nav vertical" role="tablist" aria-multiselectable="true">
-        <li class="hidden"><%= link_to '#page-top' %></li>
+      <ul id="taxonomies" class="dl-menu nav navbar-nav navbar-right menu side-nav vertical" role="tablist" aria-multiselectable="true">
         <%= relevant_navigation_options %>
         <% @taxonomies.each_with_index do |taxonomy, tab_index| %>
           <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
-            <li class="taxonomy-root side-nav-item submenu-parent" role="tab" aria-label="<%= taxonomy.name %>">
+            <li class="taxonomy-root dl-nav-item submenu-parent" role="tab" aria-label="<%= taxonomy.name %>">
               <%= link_to Spree.t(:shop_by_taxonomy, taxonomy: taxonomy.name), anchor: taxonomy.name, tab_index: tab_index %>
             </li>
             <%#= taxons_accordion(taxonomy.root, @taxon, max_level) %>
           <% end %>
         <% end %>
         <li class="spacer" role="menuitem"></li>
-        <li class="item padded taxonomy-root side-nav-item" role="menuitem"> Location </li>
+        <li class="item padded taxonomy-root dl-nav-item" role="menuitem"> Location </li>
         <li class="spacer" role="menuitem"></li>
           <% if spree_current_user %>
             <li id="account-settings" class="item secondary" role="menuitem">

@@ -36,7 +36,7 @@ button {
 
 div {
   &#spree-header {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     
     figure {
       &.logo {
@@ -71,7 +71,7 @@ header {
   
     div {
       &.container {
-        padding-top: 50px;
+        padding-top: 0px;
         padding-bottom: 0px;
         width: 100%;
       }
@@ -396,7 +396,7 @@ section.success a.active {
       color: #fff;
       
       li {
-        &.side-nav-item {
+        &.dl-nav-item {
           a {
             &:hover {
               color: #dd5544;
@@ -450,12 +450,7 @@ section.success a.active {
       div[data-hook='impostor-btn'] { padding-left: 2px; }
     }
   }
-  
-  header { &#intro-splash { margin-top: 1px; } }
-  
-  li {
-    &#link-to-cart { display: none; }
-  }
+  li { &#link-to-cart { display: none; } }
   
   section {
     padding: 75px 0;
