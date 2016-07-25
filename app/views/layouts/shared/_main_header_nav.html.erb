@@ -4,19 +4,19 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header page-scroll">
       <div class="col-xs-3 navbar-menu dl-trigger-container">
-        <button type="button" class="collapsed dl-trigger navbar-toggle" data-toggle="collapse" data-target="#collapsing-menu">
+        <!-- <button type="button" class="collapsed dl-trigger navbar-toggle" data-toggle="collapse" data-target="#dl-menu">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-        </button>
+        </button> -->
       </div>
       <div class="text-center col-md-3 col-sm-3 col-xs-6">
         <figure id="logo" class="logo"> <%= logo %> </figure>
       </div>
         <!-- Container for cart, stays outside of toggle -->
       <div id="xs-cart" class="col-xs-3 navbar-cart">
-        <ul class="nav navbar-nav navbar-right" data-hook="impostor-ul">
+        <ul class="nav navbar-nav navbar-right" dat a-hook="impostor-ul">
           <li id="xs-link-to-cart" class="xs" data-hook><%#= link_to_cart %></li>
         </ul>
       </div>
@@ -25,9 +25,15 @@
     <!-- /.navbar-header -->
     
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="collapsing-menu">
+    <div id="dl-menu" class="dl-menuwrapper">
+      <button type="button" class="collapsed dl-trigger navbar-toggle" data-toggle="collapse" data-target="#collapsing-menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
       <% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
-      <ul id="taxonomies" class="dl-menu nav navbar-nav navbar-right menu vertical">
+      <ul id="#collapsing-menu" class="collapse dl-menu nav navbar-collapse navbar-nav navbar-right menu">
         <%= relevant_navigation_options %>
         <% @taxonomies.each_with_index do |taxonomy, tab_index| %>
           <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
@@ -59,3 +65,11 @@
   </div>
   <!-- /.container-fluid -->
 </nav>
+
+<script>
+	$(function() {
+		$( '#dl-menu' ).dlmenu({
+			animationClasses : { classin : 'dl-animate-in-3', classout : 'dl-animate-out-3' }
+		});
+	});
+</script>

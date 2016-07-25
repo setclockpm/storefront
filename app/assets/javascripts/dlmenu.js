@@ -17,6 +17,7 @@
 
 	$.DLMenu = function( options, element ) {
 		this.$el = $( element );
+    console.log(this);
 		this._init( options );
 	};
 
@@ -66,6 +67,7 @@
 		},
 		_config : function() {
 			this.open = false;
+      console.log(this.$el);
 			this.$trigger = this.$el.children( '.dl-trigger' );
 			this.$menu = this.$el.children( 'ul.dl-menu' );
 			this.$menuitems = this.$menu.find( 'li:not(.dl-back)' );
