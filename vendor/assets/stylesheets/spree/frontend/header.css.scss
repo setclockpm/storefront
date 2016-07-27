@@ -18,6 +18,8 @@
 } 
 
 .dl-menu {
+  margin: 7.5px -15px;
+  
   .padded { 
     padding: 10px 15px;
     line-height: 20px;
@@ -25,7 +27,13 @@
   .spacer { height: 2rem; }
 }
 
+.dl-menuwrapper {
+  li { .dl-submenu { display: none; } }
+}
 
+.navbar-fixed-top .navbar-collapse {
+  max-height: 390px;
+}
 
 
 button {
@@ -200,18 +208,37 @@ p {
 
 
 
-
-
-
-.navbar a:focus {
-  outline: none;
+.navbar {
+  max-height: 90px;
+  
+  a {
+    &:focus { outline: none; }
+  }
 }
-.navbar .navbar-nav {
+
+
+.navbar .dl-menu {
+  backface-visibility: hidden;
+  display: none;
   letter-spacing: 1px;
+  opacity: 0;
+  pointer-events: none;
+  
+  &.dl-menuopen {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  
+  li a:focus {
+    outline: none;
+  }
 }
-.navbar .navbar-nav li a:focus {
-  outline: none;
-}
+
+
+
 .navbar-default, .navbar-inverse { border: none; }
 
 
@@ -393,21 +420,29 @@ section.success a.active {
       img { width: 55%; }
     }
     .navbar-collapse {
-      font-size: .8em;
+      font-size: .8rem;
       color: #fff;
       
       li {
         &.dl-nav-item {
           a {
-            &:hover {
-              color: #dd5544;
-            }
+            &:hover { color: #dd5544; }
           }
         }
       }
     }
   }
   
+  
+  .dl-submenu {
+    li {
+      a {
+        display: block;
+        position: relative;
+        padding: 10px 15px;
+      }
+    }
+  }
   
   .fa-shopping-cart { color: #ddd; }
   

@@ -186,8 +186,6 @@ section {
   
   
   .image {
-   // height: 28rem;
-//    height: 74vw;
     min-height: 20rem;
     background-position: center center;
     background-size: cover;
@@ -284,6 +282,7 @@ nav {
   &.navbar-default {
     &.transparent { 
       background: rgba(60, 163, 163, 0.01);
+      
       &:hover, &:focus {
         background: rgba(60, 163, 163, 0.9);
       }
@@ -336,13 +335,13 @@ nav {
   
   div {
     &.look-at-me {
-    margin-top: 0px;
+      margin-top: 0px;
     }
   }
   
   
   .navbar-collapse {
-    background: rgba(34, 34, 34, 0.6) none repeat scroll 0 0;
+    background: rgba(34, 34, 34, 0.8) none repeat scroll 0 0;
   }
   
   nav {

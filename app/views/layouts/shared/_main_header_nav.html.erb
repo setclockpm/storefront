@@ -2,14 +2,14 @@
 <nav class="navbar navbar-default <%= navbar_behavior %> <%= navbar_page %>" role="banner">
   <div class="container topnav">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header page-scroll">
-      <div class="col-xs-3 navbar-menu dl-trigger-container">
-        <!-- <button type="button" class="collapsed dl-trigger navbar-toggle" data-toggle="collapse" data-target="#dl-menu">
+    <div id="dl-nav-header" class="navbar-header page-scroll">
+      <div class="col-xs-3 navbar-menu">
+        <button type="button" class="collapsed dl-trigger navbar-toggle">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-        </button> -->
+        </button>
       </div>
       <div class="text-center col-md-3 col-sm-3 col-xs-6">
         <figure id="logo" class="logo"> <%= logo %> </figure>
@@ -23,24 +23,17 @@
       <!-- /.navbar-cart -->
     </div>
     <!-- /.navbar-header -->
-    
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div id="dl-menu" class="dl-menuwrapper">
-      <button type="button" class="collapsed dl-trigger navbar-toggle" data-toggle="collapse" data-target="#collapsing-menu">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+		<div id="dl-menu" class="dl-menuwrapper">
       <% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
-      <ul id="#collapsing-menu" class="collapse dl-menu nav navbar-collapse navbar-nav navbar-right menu">
-        <%= relevant_navigation_options %>
+			<ul id="collapsing-menu" class="collapsed dl-menu nav navbar-collapse navbar-right">
         <% @taxonomies.each_with_index do |taxonomy, tab_index| %>
           <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
-            <li class="dl-nav-item submenu-parent taxonomy-root " role="tab" aria-label="<%= taxonomy.name %>">
+            <li class="dl-nav-item submenu-parent taxonomy-root" role="tab" aria-label="<%= taxonomy.name %>">
               <%= link_to Spree.t(:shop_by_taxonomy, taxonomy: taxonomy.name), anchor: taxonomy.name, tab_index: tab_index %>
+							<ul class="dl-submenu navbar-collapse">
+								<%= taxons_accordion(taxonomy.root, @taxon, max_level) %>
+							</ul>
             </li>
-            <%#= taxons_accordion(taxonomy.root, @taxon, max_level) %>
           <% end %>
         <% end %>
         <li class="spacer" role="menuitem"></li>
@@ -58,17 +51,18 @@
               <%= link_to Spree.t(:login), spree.login_path %>
             </li>
           <% end %>
+        <%= relevant_navigation_options %>
         <li id="link-to-cart" class="page-scroll" data-hook><%#= link_to_cart %></li>
-      </ul>
-    </div>
-    <!-- /.navbar-collapse -->
+			</ul>
+		</div><!-- /dl-menuwrapper -->
+    
   </div>
   <!-- /.container-fluid -->
 </nav>
 
 <script>
 	$(function() {
-		$( '#dl-menu' ).dlmenu({
+		$('#dl-nav-header').dlmenu({
 			animationClasses : { classin : 'dl-animate-in-3', classout : 'dl-animate-out-3' }
 		});
 	});

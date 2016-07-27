@@ -16,8 +16,8 @@
 	var Modernizr = window.Modernizr, $body = $( 'body' );
 
 	$.DLMenu = function( options, element ) {
-		this.$el = $( element );
-    console.log(this);
+    this.$oe = $(element);
+		this.$el = $(element).next();
 		this._init( options );
 	};
 
@@ -40,7 +40,8 @@
 			this.options = $.extend( true, {}, $.DLMenu.defaults, options );
 			// cache some elements and initialize some variables
 			this._config();
-			
+      
+      
 			var animEndEventNames = {
 					'WebkitAnimation' : 'webkitAnimationEnd',
 					'OAnimation' : 'oAnimationEnd',
@@ -67,10 +68,13 @@
 		},
 		_config : function() {
 			this.open = false;
-      console.log(this.$el);
-			this.$trigger = this.$el.children( '.dl-trigger' );
-			this.$menu = this.$el.children( 'ul.dl-menu' );
-			this.$menuitems = this.$menu.find( 'li:not(.dl-back)' );
+			this.$trigger = this.$oe.find('.dl-trigger');
+			this.$menu = this.$el.children('ul.dl-menu');
+      console.log("$oe", this.$oe);
+      console.log("$el", this.$el);
+      console.log("$menu", this.$menu);
+			this.$menuitems = this.$menu.find('li:not(.dl-back)');
+      console.log("$menuitems", this.$menuitems);
 			this.$el.find('ul.dl-submenu').prepend('<li class="dl-back"><a href="#"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>back</a></li>');
 			this.$back = this.$menu.find( 'li.dl-back' );
 		},
@@ -96,20 +100,35 @@
 
 				var $item = $(this),
 					$submenu = $item.children( 'ul.dl-submenu' );
+          
+        console.log("$item", $item);
+        console.log("$submenu", $submenu);
+        
 
 				if( $submenu.length > 0 ) {
-
-					var $flyin = $submenu.clone().css( 'opacity', 0 ).insertAfter( self.$menu ),
+          console.log("$submenu length > 0");
+					var $flyin = $submenu.clone().css('opacity', 0).insertAfter( self.$menu ),
 						onAnimationEndFn = function() {
+              console.log("animEndEventName", self.animEndEventName); //animEndEventName: animationend.dlmenu
 							self.$menu.off( self.animEndEventName ).removeClass( self.options.animationClasses.classout ).addClass( 'dl-subview' );
 							$item.addClass( 'dl-subviewopen' ).parents( '.dl-subviewopen:first' ).removeClass( 'dl-subviewopen' ).addClass( 'dl-subview' );
 							$flyin.remove();
 						};
-
+  
+         
+          
 					setTimeout( function() {
 						$flyin.addClass( self.options.animationClasses.classin );
 						self.$menu.addClass( self.options.animationClasses.classout );
+            
+            console.log("$flyin", $flyin);
+            console.log("self.options.animationClasses.classin", self.options.animationClasses.classin);
+            console.log("self.options.animationClasses.classout", self.options.animationClasses.classout);
+          
+            
 						if( self.supportAnimations ) {
+              console.log("self.supportAnimations?", self.supportAnimations);
+              // self.$menu.on(animationend.dlmenu, onAnimationEndFn)
 							self.$menu.on( self.animEndEventName, onAnimationEndFn );
 						}
 						else {
@@ -180,6 +199,7 @@
 			this.$menu.removeClass( 'dl-menuopen' );
 			this.$menu.addClass( 'dl-menu-toggle' );
 			this.$trigger.removeClass( 'dl-active' );
+      this.$menu.addClass('collapsed');
 			
 			if( this.supportTransitions ) {
 				this.$menu.on( this.transEndEventName, onTransitionEndFn );
@@ -202,8 +222,9 @@
 				self._closeMenu() ;
 			} );
 			this.$menu.addClass( 'dl-menuopen dl-menu-toggle' ).on( this.transEndEventName, function() {
-				$( this ).removeClass( 'dl-menu-toggle' );
+				$(this).removeClass('dl-menu-toggle');
 			} );
+      this.$menu.removeClass('collapsed')
 			this.$trigger.addClass( 'dl-active' );
 			this.open = true;
 		},
