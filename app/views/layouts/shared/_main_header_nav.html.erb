@@ -2,7 +2,7 @@
 <nav class="navbar navbar-default <%= navbar_behavior %> <%= navbar_page %>" role="banner">
   <div class="container topnav">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div id="dl-nav-header" class="page-scroll">
+    <div id="dl-nav-header" class="navbar-header page-scroll" data-target="page-top">
       <div id="toggle-nav-button-wrapper" class="col-xs-3 text-center">
         <button type="button" class="collapsed dl-trigger navbar-toggle">
           <span class="sr-only">Toggle navigation</span>
@@ -11,13 +11,13 @@
           <span class="icon-bar"></span>
         </button>
       </div>
-      <div class="col-md-12 col-sm-4 col-xs-6">
+      <div class="col-sm-3 col-xs-6">
         <figure id="logo" class="logo"> <%= logo %> </figure>
       </div>
         <!-- Container for cart, stays outside of toggle -->
-      <div id="nav-menu" class="col-md-9 col-sm-8 col-xs-3 navbar-cart">
-        <ul class="nav navbar-nav navbar-right" dat a-hook="impostor-ul">
-          <li id="xs-link-to-cart" class="xs" data-hook><%= link_to_cart %></li>
+      <div id="nav-menu" class="col-sm-9 col-xs-3 navbar-cart">
+        <ul class="nav navbar-right" dat a-hook="impostor-ul">
+          <li id="xs-link-to-cart" class="xs" data-hook><%#= link_to_cart %></li>
         </ul>
       </div>
       <!-- /.navbar-cart -->

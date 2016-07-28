@@ -311,6 +311,18 @@ nav {
 ////////////////////////////////////////////////
 @media (max-width: 767px) {
   
+  #spree-header {
+    .navbar-collapse {
+      color: #fff;
+      
+      li {
+        &.dl-nav-item {
+          a { &:hover { color: #dd5544; } }
+        }
+      }
+    }
+  }
+  
   div {
     &.look-at-me {
       margin-top: 0px;

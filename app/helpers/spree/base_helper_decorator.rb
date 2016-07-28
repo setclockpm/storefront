@@ -21,7 +21,6 @@ Spree::BaseHelper.module_eval do
   end
   
   def taxons_accordion(root_taxon, current_taxon, max_level=1)
-    puts "root_taxon: #{root_taxon.name}\ncurrent_taxon: #{current_taxon.name if current_taxon}\nmax_level: #{max_level}"
     return '' if max_level < 1 || root_taxon.leaf?
     taxons = root_taxon.children.map do |taxon|
       content_tag :li, class: 'dl-nav-item' do

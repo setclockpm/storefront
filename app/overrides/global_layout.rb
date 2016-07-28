@@ -41,7 +41,18 @@ Deface::Override.new(name:             'add-web-font',
                      original:         '3238a36183f493276bda180ca7b3430fb0cde007')
 
 
+Deface::Override.new(name:             'include-modernizr',
+                     virtual_path:     'spree/layouts/spree_application',
+                     insert_bottom:    'head',
+                     text:             '<%= javascript_include_tag "modernizr.custom" %>',
+                     original:         nil)
 
+
+Deface::Override.new(name:             'include-dl-menu',
+                     virtual_path:     'spree/layouts/spree_application',
+                     insert_bottom:    'head',
+                     text:             '<%= javascript_include_tag "dlmenu" %>',
+                     original:         nil)
 
 
 

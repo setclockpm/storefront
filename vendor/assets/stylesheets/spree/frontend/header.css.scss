@@ -61,11 +61,6 @@ li { .dl-submenu { display: none; } }
   .slick-slide {
     img { max-width: 100%; }
   }
-  
- // .slick-next, .slick-prev {
-//    top: 40%;
-//    top: 37vw;
-//  }
 }
 
 .navbar-fixed-top .navbar-collapse {
@@ -141,7 +136,7 @@ div {
       &.logo {
         img {
           margin-bottom: 0px;
-          max-width: 160px;
+          max-width: 140px;
           min-width: 125px;
         }
       }
@@ -252,12 +247,10 @@ p {
   }
   
   
-  
-  
-//  .navbar-cart { display: none; }
+  .navbar-header { float: none; }
   .navbar-form { .btn { letter-spacing: 1.5px; } }
   .navbar-fixed-top {
-    padding: 20px 0;
+    padding: 15px 0;
     -webkit-transition: padding 0.3s;
     -moz-transition: padding 0.3s;
     transition: padding 0.3s;
@@ -273,18 +266,11 @@ p {
     font-size: 1.5em;
   }
   .navbar-static-top { 
-    padding: 20px 0; 
+    padding: 15px 0; 
     transition: padding 0.3s ease 0s;
   }
-  .navbar-nav {
-    li {
-      &#link-to-cart {
-        a {
-          padding-top: 10.5px;
-          padding-bottom: 10.5px;
-        }
-      }
-    }
+  .nav > li > a {
+    padding: 5px 15px;
   }
   
     
@@ -428,23 +414,12 @@ p {
     }
     .navbar-collapse {
       font-size: .8rem;
-      color: #fff;
-      
-      li {
-        &.dl-nav-item {
-          a {
-            &:hover { color: #dd5544; }
-          }
-        }
-      }
     }
   }
   
   
   .dl-submenu {
     list-style: none;
-//    padding-right: 0px;
-//    padding-left: 0px;
     
     li {
       a {
@@ -455,7 +430,7 @@ p {
     }
   }
   
-  .fa-shopping-cart { color: #ddd; }
+//  .fa-shopping-cart { color: #ddd; }
   
   
   .navbar .dl-menu.dl-menuopen {
@@ -483,12 +458,8 @@ p {
   
   .nav {
     li {
-      &.pre-launch {
-       // display: none;
-//        a { font-family: 'Federo', 'cocomat', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif; }
-      }
+      &.pre-launch {  }
       a { 
-        &.cart-info { padding-top: 0px; }
         &.full { 
           padding-left: 1px;
           padding-right: 1px;
@@ -498,6 +469,7 @@ p {
       }
     } 
   }
+  
   
   
   form {

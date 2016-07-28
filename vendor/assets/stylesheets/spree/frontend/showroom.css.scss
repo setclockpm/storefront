@@ -782,6 +782,9 @@ ul {
     }
   }
   
+  aside {
+    &#sidebar { display: none; }
+  }
   
   div {
     &#inside-product-cart-form { border: 1px thin #2d1B80; }
