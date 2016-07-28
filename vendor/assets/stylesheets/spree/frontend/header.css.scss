@@ -3,7 +3,6 @@
   color: #fff;
   font-size: 1.85em;
 }
-.navbar-menu { text-align: center; } 
 .navbar-toggle {
   border: 0 none;
   float: none;
@@ -245,6 +244,7 @@ p {
   /////////* Minimum width 768px section *//////
 ///////////////////////////////////////////////////
 @media (min-width: 768px) {
+  
   .look-at-me {
     .image {
       height: calc(100vh - 11rem);
@@ -254,12 +254,8 @@ p {
   
   
   
-  .navbar-cart { display: none; }
-  
-  .navbar-form {
-    .btn { letter-spacing: 1.5px; }
-  }
-  
+//  .navbar-cart { display: none; }
+  .navbar-form { .btn { letter-spacing: 1.5px; } }
   .navbar-fixed-top {
     padding: 20px 0;
     -webkit-transition: padding 0.3s;
@@ -276,14 +272,10 @@ p {
   .navbar-fixed-top.navbar-shrink .navbar-brand {
     font-size: 1.5em;
   }
-  
-  
   .navbar-static-top { 
     padding: 20px 0; 
     transition: padding 0.3s ease 0s;
   }
-  
-  
   .navbar-nav {
     li {
       &#link-to-cart {
@@ -322,10 +314,8 @@ p {
   
   .nav {
     li {
-      &.secondary { display: none; }
       &.pre-launch { 
         a { 
-//          font-family: 'Federo', 'cocomat', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
           text-transform: uppercase;
         }
       }
@@ -340,6 +330,9 @@ p {
   
   
   div {
+    &#toggle-nav-button-wrapper {
+      display: none;
+    }
     &.panel {
       background-color: #fff;
       border-radius: 43px;
