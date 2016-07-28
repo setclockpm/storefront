@@ -19,6 +19,7 @@
 
 .dl-menu {
   margin: 7.5px -15px;
+  padding: 15px;
   
   .padded { 
     padding: 10px 15px;
@@ -27,8 +28,17 @@
   .spacer { height: 2rem; }
 }
 
-.dl-menuwrapper {
-  li { .dl-submenu { display: none; } }
+
+li { .dl-submenu { display: none; } }
+
+
+.dl-submenu {
+  font-size: .8rem;
+  letter-spacing: 1px;
+  margin: 0px -15px;
+  max-height: 390px;
+  overflow-x: visible;
+  padding: 15px;
 }
 
 
@@ -440,8 +450,8 @@ p {
   
   .dl-submenu {
     list-style: none;
-    padding-right: 0px;
-    padding-left: 0px;
+//    padding-right: 0px;
+//    padding-left: 0px;
     
     li {
       a {
