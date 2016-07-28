@@ -70,11 +70,7 @@
 			this.open = false;
 			this.$trigger = this.$oe.find('.dl-trigger');
 			this.$menu = this.$el.children('ul.dl-menu');
-      console.log("$oe", this.$oe);
-      console.log("$el", this.$el);
-      console.log("$menu", this.$menu);
 			this.$menuitems = this.$menu.find('li:not(.dl-back)');
-      console.log("$menuitems", this.$menuitems);
 			this.$el.find('ul.dl-submenu').prepend('<li class="dl-back"><a href="#"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>back</a></li>');
 			this.$back = this.$menu.find( 'li.dl-back' );
 		},
@@ -101,10 +97,6 @@
 				var $item = $(this),
 					$submenu = $item.children( 'ul.dl-submenu' );
           
-        console.log("$item", $item);
-        console.log("$submenu", $submenu);
-        
-
 				if( $submenu.length > 0 ) {
           console.log("$submenu length > 0");
 					var $flyin = $submenu.clone().css('opacity', 0).insertAfter( self.$menu ),
@@ -121,14 +113,7 @@
 						$flyin.addClass( self.options.animationClasses.classin );
 						self.$menu.addClass( self.options.animationClasses.classout );
             
-            console.log("$flyin", $flyin);
-            console.log("self.options.animationClasses.classin", self.options.animationClasses.classin);
-            console.log("self.options.animationClasses.classout", self.options.animationClasses.classout);
-          
-            
 						if( self.supportAnimations ) {
-              console.log("self.supportAnimations?", self.supportAnimations);
-              // self.$menu.on(animationend.dlmenu, onAnimationEndFn)
 							self.$menu.on( self.animEndEventName, onAnimationEndFn );
 						}
 						else {
@@ -183,6 +168,11 @@
 
 			} );
 			
+      $('li.page-scroll a').on('click', function (event) {
+        self._closeMenu();
+      });
+      
+      
 		},
 		closeMenu : function() {
 			if( this.open ) {

@@ -31,8 +31,90 @@
   li { .dl-submenu { display: none; } }
 }
 
+
+
+.look-at-me {
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  z-index: 1;
+  
+  
+  .image {
+    background-position: center center;
+    background-size: cover;
+    height: 51vw;
+    min-height: 20rem;
+  }
+  
+  
+  .slick-slide {
+    img { max-width: 100%; }
+  }
+  
+ // .slick-next, .slick-prev {
+//    top: 40%;
+//    top: 37vw;
+//  }
+}
+
 .navbar-fixed-top .navbar-collapse {
   max-height: 390px;
+}
+
+
+.navbar {
+  max-height: 90px;
+  
+  a {
+    &:focus { outline: none; }
+  }
+}
+.navbar .dl-menu {
+  backface-visibility: hidden;
+  display: none;
+  letter-spacing: 1px;
+  opacity: 0;
+  pointer-events: none;
+  
+  &.dl-menuopen {
+    display: none;
+    opacity: 1;
+    pointer-events: auto;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  
+  li a:focus {
+    outline: none;
+  }
+}
+.navbar-default, .navbar-inverse { border: none; }
+.quantity-badge { position: absolute; }
+
+
+
+section {
+  padding: 100px 0;
+  
+  h2 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 3em;
+  }
+}
+section.success {
+  background: #fff;
+  color: #db5544;
+}
+section.success a,
+section.success a:hover,
+section.success a:focus,
+section.success a:active,
+section.success a.active {
+  color: #66afe9;
+  outline: none;
 }
 
 
@@ -138,7 +220,7 @@ p {
 
 
 
-
+//40em = 640px
 
 
 
@@ -153,6 +235,15 @@ p {
   /////////* Minimum width 768px section *//////
 ///////////////////////////////////////////////////
 @media (min-width: 768px) {
+  .look-at-me {
+    .image {
+      height: calc(100vh - 12rem);
+    }
+  }
+  
+  
+  
+  
   .navbar-cart { display: none; }
   
   .navbar-form {
@@ -194,98 +285,11 @@ p {
     }
   }
   
-  
-  
+    
   #spree-header #logo img {
     width: 160px;
   }
-  
-  
-}
 
-
-
-
-
-
-.navbar {
-  max-height: 90px;
-  
-  a {
-    &:focus { outline: none; }
-  }
-}
-
-
-.navbar .dl-menu {
-  backface-visibility: hidden;
-  display: none;
-  letter-spacing: 1px;
-  opacity: 0;
-  pointer-events: none;
-  
-  &.dl-menuopen {
-    display: block;
-    opacity: 1;
-    pointer-events: auto;
-    -webkit-transform: translateY(0px);
-    transform: translateY(0px);
-  }
-  
-  li a:focus {
-    outline: none;
-  }
-}
-
-
-
-.navbar-default, .navbar-inverse { border: none; }
-
-
-.quantity-badge { position: absolute; }
-
-
-
-section {
-  padding: 100px 0;
-  
-  h2 {
-    margin: 0;
-    font-weight: normal;
-    font-size: 3em;
-  }
-}
-
-section.success {
-  background: #fff;
-  color: #db5544;
-}
-section.success a,
-section.success a:hover,
-section.success a:focus,
-section.success a:active,
-section.success a.active {
-  color: #66afe9;
-  outline: none;
-}
-
-
-
-
-
-
-
-                        ///
-                      ///////
-                    ///////////
-                 ////////////////
-              //////////////////////
-           ////////////////////////////
-        //////////////////////////////////
-     ////////////////////////////////////////
-  /////////* Minimum width 767px section *//////
-///////////////////////////////////////////////////
-@media (min-width: 767px) {
   .select-color-option .active-select-color-surface {
     background-color: #f2f2f2;
     border: 0;
@@ -435,6 +439,10 @@ section.success a.active {
   
   
   .dl-submenu {
+    list-style: none;
+    padding-right: 0px;
+    padding-left: 0px;
+    
     li {
       a {
         display: block;
@@ -445,6 +453,15 @@ section.success a.active {
   }
   
   .fa-shopping-cart { color: #ddd; }
+  
+  
+  .navbar .dl-menu.dl-menuopen {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
   
   .navbar-cart {
     display: inline-block;
@@ -464,8 +481,8 @@ section.success a.active {
   .nav {
     li {
       &.pre-launch {
-        display: none;
-        a { font-family: 'Federo', 'cocomat', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif; }
+       // display: none;
+//        a { font-family: 'Federo', 'cocomat', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif; }
       }
       a { 
         &.cart-info { padding-top: 0px; }

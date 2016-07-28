@@ -177,33 +177,6 @@ section {
 
 
 
-.look-at-me {
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  z-index: 1;
-  
-  
-  .image {
-    min-height: 20rem;
-    background-position: center center;
-    background-size: cover;
-  }
-  
-  
-  .slick-slide {
-    img { max-width: 100%; }
-  }
-  
-  button {
-    display: none;
-  }
- // .slick-next, .slick-prev {
-//    top: 40%;
-//    top: 37vw;
-//  }
-}
 
 //.slick-dots, .slick-next, .slick-prev {
 //  display: block;
@@ -253,7 +226,22 @@ section {
 }
 
 
-
+.dl-submenu {
+  background: rgba(34, 34, 34, 0.99) none repeat scroll 0;
+  border-color: #e7e7e7;
+  color: #fff;
+  font-size: .8rem;
+  letter-spacing: 1px;
+  margin: 7.5px -15px;
+  max-height: 390px;
+  
+  overflow-x: visible;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-top: 1px solid transparent;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  a { color: #fff; }
+}
 
 
 
@@ -341,7 +329,7 @@ nav {
   
   
   .navbar-collapse {
-    background: rgba(34, 34, 34, 0.8) none repeat scroll 0 0;
+    background: rgba(34, 34, 34, 0.99) none repeat scroll 0 0;
   }
   
   nav {
