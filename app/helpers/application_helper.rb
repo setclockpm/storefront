@@ -14,6 +14,10 @@ module ApplicationHelper
     Spree::Store.first
   end
   
+  def featured_in_images
+    ["houzz.png", "bhg.png", "redbook.png", "hgtv.png", "nbc.png", "wayfair.png"]
+  end
+  
   def home_ip?
     return true if Rails.env.development?
     request.remote_ip == INTERNAL_IP

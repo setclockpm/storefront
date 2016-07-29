@@ -151,6 +151,7 @@ div {
 header {
   &#intro-splash {
     color: white;
+    margin-top: 80px;
   
     div {
       &.container {
@@ -295,7 +296,7 @@ p {
     overflow: visible;
   }
   
-  #press .spotlight-item { margin: 0 0 30px; }
+  #press .grid-item { margin: 0 0 30px; }
   
   
   .nav {

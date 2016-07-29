@@ -176,7 +176,7 @@
 
 // Press | Customer Favorites | Anything an 8-slot Gallery Sectioned area would serve
 #press * { z-index: 2; }
-#press .spotlight-item .spotlight-link {
+#press .grid-item .spotlight-link {
   display: block;
   max-width: 400px;
   margin: 0 auto;
@@ -426,54 +426,7 @@ img { &.no-thumbnail { padding: 4.5px; } }
 
 
 
-section {
-  &.spotlight {
-    background-color: #fff;
-    
-    color: #db5544;
-    display: block;
-    line-height: 0.5em;
-    
-    max-width: 1920px;
-    
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    
-    
-    div {
-      &.spotlight-v1 {
-        display: block;
-        overflow: hidden;
-        width: 100%;
-        position: relative;
-        
-        div {
-          &.tile.full {
-            width: 100%;
-            margin-right: 0; 
-          }
-        }
-      }
-    }
-    
-    h2 { //section-heading
-      margin-bottom: 30px;
-    }
-    hr { //section-heading-spacer
-      border-top: 3px solid #e7e7e7;
-      float: left;
-      width: 450px;
-    }
-  }
-  &#contact {
-    h2 {
-      font-size: 2em;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-  }
-}
+
 ul {
   &#products {
     li {
@@ -566,7 +519,7 @@ ul {
   li { &.gap { display: inline; } }
   span { &.gap { display: none; } }
   
-  #press .spotlight-item { margin: 0 0 30px; }
+  #press .grid-item { margin: 0 0 30px; }
   
   .wo-qty {
     display: none;
@@ -615,7 +568,7 @@ ul {
     }
   }
   
-  #press .spotlight-item { margin: 0 0 30px; }
+  #press .grid-item { margin: 0 0 30px; }
   
   
   
@@ -726,7 +679,7 @@ ul {
     }
   }
   
-  #press .spotlight-item { margin: 0 0 30px; }
+  #press .grid-item { margin: 0 0 30px; }
   
 }
 ////////////////////////////////////////////////

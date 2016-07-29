@@ -20,21 +20,30 @@
     </div>
   </div>
 </section>
-
-
-<!-- Callout -->
-<aside class="callout">
-  <div class="text-vertical-center"> </div>
-</aside>
-
-
 <section class="spotlight">
   <div class="spotlight-v1">
     <div class="tile full">
-      <%= image_tag("spotlight.png", class: "img-responsive large-tile", alt: 'Think Outside The box') %>
+      <%= image_tag("spotlight.jpg", class: "img-responsive large-tile", alt: 'assortment of color') %>
     </div>
   </div>
 </section>
+
+<!-- Callout -->
+<!-- <aside class="callout">
+  <div class="text-vertical-center"> </div>
+</aside> -->
+
+<%= render partial: 'storefront/press' %>
+
+<section class="spotlight">
+  <div class="spotlight-v2">
+    <div class="tile full">
+      <%= image_tag("spotlight2.jpg", class: "img-responsive", alt: 'peer inside') %>
+    </div>
+  </div>
+</section>
+
+
 
 <%= render partial: 'storefront/contact_us' %>
 

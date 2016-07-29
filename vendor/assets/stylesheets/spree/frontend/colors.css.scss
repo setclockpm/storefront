@@ -116,7 +116,8 @@ hr {
 
 section {
   &#about-us {
-    background-color: #fafafa;
+    background-color: #f4f4f4;
+//    background-color: #fafafa;
     
     &.about-us-item {
       margin: 0 0 15px;
@@ -259,10 +260,10 @@ nav {
   }
   &.navbar-default {
     &.transparent { 
-      background: rgba(60, 163, 163, 0.01);
+      background: rgba(60, 163, 163, 0.9);
       
       &:hover, &:focus {
-        background: rgba(60, 163, 163, 0.9);
+        background: rgba(60, 163, 163, 0.99);
       }
     }
     
