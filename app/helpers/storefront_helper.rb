@@ -6,7 +6,7 @@ module StorefrontHelper
   end
   
   def social_media_icons
-    ['facebook', 'google-plus', 'twitter', 'linkedin', 'dribbble']
+    ['facebook', 'google-plus', 'twitter', 'linkedin']
   end
   
   

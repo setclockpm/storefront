@@ -60,23 +60,6 @@ body {
 
 
 
-a { 
-  &.btn-outline {
-    color: #2c3e50;
-    font-size: 20px;
-    border: solid 2px #2c3e50;
-    background: transparent;
-    transition: all 0.3s ease-in-out;
-    margin-top: 15px;
-    
-    
-    &:hover, &:focus, &:active, &.active {
-      color: #db5544;
-      background: white;
-      border: solid 2px white;
-    }
-  }
-}
 
 
 
@@ -116,7 +99,7 @@ hr {
 
 section {
   &#about-us {
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
 //    background-color: #fafafa;
     
     &.about-us-item {
@@ -238,19 +221,39 @@ section {
 
 
 footer {
+  color: #333;
+  
   .footer-above {
     padding-top: 50px;
-    background-color: #3CA3A3;
+    background-color: #71BEBE;
     
-    a { color: #fff; }
+    a { color: #333; }
   }
   .footer-below {
-    background-color: #fff;
-    color: #023257;
+    background-color: #f9f9f9;
+    color: #333;
     font-weight: normal;
     font-size: .9em;
     padding: 25px 0;
   }
+  
+  a { 
+    &.btn-outline {
+      font-size: 20px;
+      border: solid 2px #444;
+      background: transparent;
+      transition: all 0.3s ease-in-out;
+      margin-top: 15px;
+    
+    
+      &:hover, &:focus, &:active, &.active {
+        color: #db5544;
+        background: white;
+        border: solid 2px white;
+      }
+    }
+  }
+  
 }
 
 nav {
@@ -260,10 +263,10 @@ nav {
   }
   &.navbar-default {
     &.transparent { 
-      background: rgba(60, 163, 163, 0.9);
+      background: rgba(113, 190, 190, 0.95);
       
       &:hover, &:focus {
-        background: rgba(60, 163, 163, 0.99);
+        background: rgba(113, 190, 190, 1.0);
       }
     }
     
@@ -295,7 +298,7 @@ nav {
   nav {
     &.navbar-default {
       &.opaque {
-        background: rgba(60, 163, 163, 0.9);
+        background: rgba(113, 190, 190, 0.9);
       }
     }
   }
@@ -344,7 +347,7 @@ nav {
         .icon-bar { background-color: #fefefe; }
       }
       &.opaque {
-        background: rgba(60, 163, 163, 0.95);
+        background: rgba(113, 190, 190, 0.95);
       }
     }
   }
