@@ -1,12 +1,11 @@
-<div class="col-md-4 col-sm-6 col-xs-12 grid-item">
+<div class="col-lg-2 col-sm-4 col-xs-6 grid-item">
   <a href="#spotlightModal<%= position %>" class="spotlight-link" data-toggle="modal">
-    <figcaption class="caption">
-      <h2 class="caption-title"></h2>
-      <h3 class="caption-content"></h3>
-    </figcaption>
-    <figure>
-	    <%= image_tag image, class: "img-responsive", alt: "spotlight-#{position}" %>
-      
+    <figure> 
+      <%= image_tag image, class: "press-logo", alt: "spotlight-#{position}" %>
+      <figcaption class="caption">
+        <h2 class="caption-title"></h2>
+        <h3 class="caption-content">Content goes here</h3>
+      </figcaption>
     </figure>
   </a>
 </div>

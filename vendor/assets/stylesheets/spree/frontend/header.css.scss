@@ -1,7 +1,45 @@
-
+.dl-menu {
+  margin: 7.5px -15px;
+  padding: 15px;
+  
+  .padded { 
+    padding: 10px 15px;
+    line-height: 20px;
+  }
+  .spacer { height: 2rem; }
+}
+.dl-submenu {
+  font-size: .8rem;
+  letter-spacing: 1px;
+  margin: 0px -15px;
+  max-height: 390px;
+  overflow-x: visible;
+  padding: 15px;
+}
 .fa-search {
   color: #fff;
   font-size: 1.85em;
+}
+.look-at-me {
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  z-index: 1;
+  
+  
+  .image {
+    background-position: center center;
+    background-size: cover;
+//    height: 51vw;
+    height: calc(100vh - 20rem);
+    min-height: 20rem;
+  }
+  
+  
+  .slick-slide {
+    img { max-width: 100%; }
+  }
 }
 .navbar-toggle {
   border: 0 none;
@@ -16,52 +54,17 @@
   }
 } 
 
-.dl-menu {
-  margin: 7.5px -15px;
-  padding: 15px;
-  
-  .padded { 
-    padding: 10px 15px;
-    line-height: 20px;
-  }
-  .spacer { height: 2rem; }
-}
+
 
 
 li { .dl-submenu { display: none; } }
 
 
-.dl-submenu {
-  font-size: .8rem;
-  letter-spacing: 1px;
-  margin: 0px -15px;
-  max-height: 390px;
-  overflow-x: visible;
-  padding: 15px;
-}
 
 
 
-.look-at-me {
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  z-index: 1;
-  
-  
-  .image {
-    background-position: center center;
-    background-size: cover;
-    height: 51vw;
-    min-height: 20rem;
-  }
-  
-  
-  .slick-slide {
-    img { max-width: 100%; }
-  }
-}
+
+
 
 .navbar-fixed-top .navbar-collapse {
   max-height: 390px;
@@ -99,15 +102,7 @@ li { .dl-submenu { display: none; } }
 
 
 
-section {
-  padding: 100px 0;
-  
-  h2 {
-    margin: 0;
-    font-weight: normal;
-    font-size: 3em;
-  }
-}
+
 section.success {
   background: #fff;
   color: #db5544;
@@ -181,51 +176,56 @@ header {
 
 
 
-hr {
-  &.star-light {
-    border: none;
-    border-top: solid 5px;
-    border-color: white;
-    margin: 25px auto 30px;
-    max-width: 250px;
-    padding: 0;
-    text-align: center;
-    
-    &:after {
-      background-color: #18bc9c;
-      color: white;
-      content: "\f005";
-      display: inline-block;
-      font-family: FontAwesome;
-      font-size: 2em;
-      padding: 0 0.25em;
-      position: relative;
-      top: -0.8em;
-    }
-  }
-}
 
 
 
 p { 
-  font-size: 20px;
   &.small { font-size: 16px; }
 }
 
 
 
 
-///////////////////////////////////////////////////////////////////
-///// This next section deals with the collapsable dropdown menu //
-///////////////////////////////////////////////////////////////////
-
-///////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////
 
 
+                        ///
+                      ///////
+                    ///////////
+                 ////////////////
+              //////////////////////
+           ////////////////////////////
+        //////////////////////////////////
+     ////////////////////////////////////////
+  /////////* Minimum width 1024px section *////
+/////////////////////////////////////////////////
+@media (min-width: 1024px) {}
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
 
 
-//40em = 640px
+///////////////////////////////////////////////////
+////////* Maximum width 1024px section *///////////
+@media (max-width: 1024px) {
+  
+  .look-at-me {
+    .image { height: calc(100vh - 20rem); }
+  }
+  
+}
+////////////////////////////////////////////////
+  ////////////////////////////////////////////
+    ///////////////////////////////////////
+      //////////////////////////////////
+         ////////////////////////////
+           ///////////////////////
+             //////////////////
+               //////////////
+                 //////////
+                   //////
+                     ///
+                     
+
+
 
 
 
@@ -240,13 +240,6 @@ p {
   /////////* Minimum width 768px section *//////
 ///////////////////////////////////////////////////
 @media (min-width: 768px) {
-  
-  .look-at-me {
-    .image {
-      height: calc(100vh - 11rem);
-    }
-  }
-  
   
   .navbar-header { float: none; }
   .navbar-form { .btn { letter-spacing: 1.5px; } }
@@ -408,17 +401,6 @@ p {
 ////////////////////////////////////////////////
 @media (max-width: 767px) {
   
-  #spree-header {
-    #logo { 
-      text-align: center;
-      img { width: 55%; }
-    }
-    .navbar-collapse {
-      font-size: .8rem;
-    }
-  }
-  
-  
   .dl-submenu {
     list-style: none;
     
@@ -430,10 +412,8 @@ p {
       }
     }
   }
-  
 //  .fa-shopping-cart { color: #ddd; }
-  
-  
+  .look-at-me { .image { height: 70vw; } }
   .navbar .dl-menu.dl-menuopen {
     display: block;
     opacity: 1;
@@ -441,22 +421,17 @@ p {
     -webkit-transform: translateY(0px);
     transform: translateY(0px);
   }
-  
   .navbar-cart {
     display: inline-block;
     float: right;
     text-align: center;
   }
-  
   .navbar-fixed-top, .navbar-static-top {
     padding: 15px 0;
     -webkit-transition: padding 0.3s;
     -moz-transition: padding 0.3s;
     transition: padding 0.3s;
   }
-  
-  
-  
   .nav {
     li {
       &.pre-launch {  }
@@ -470,8 +445,7 @@ p {
       }
     } 
   }
-  
-  
+
   
   form {
     &.navbar-form {
@@ -480,7 +454,6 @@ p {
     }
   }
   li { &#link-to-cart { display: none; } }
-  
   section {
     padding: 75px 0;
     &.first { padding-top: 75px; }

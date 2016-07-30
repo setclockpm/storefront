@@ -5,37 +5,37 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2>About Us</h2>
-        <hr class="star-primary">
+        <hr class="ribbon stacked">
+        <!-- <h2>About Us</h2> -->
       </div>
     </div>
-    <div class="row">
+    <div class="abouter row">
       <div class="col-lg-4 col-lg-offset-2">
         <p>Envision products curated and culled regularly, demanding nothing but the sharpest designs, at the market's sharpest pricing.</p>
       </div>
       <div class="col-lg-4">
         <p>With an eye for modern styles, combined with an appreciation for intricacy and workmanship. Envision, Porthos Home.</p>
       </div>
-      <div class="col-lg-8 col-lg-offset-2 text-center"> <%= link_to_catalog %> </div>
-    </div>
-  </div>
-</section>
-<section class="spotlight">
-  <div class="spotlight-v1">
-    <div class="tile full">
-      <%= image_tag("spotlight.jpg", class: "img-responsive large-tile", alt: 'assortment of color') %>
+      <div class="col-lg-8 col-lg-offset-2 text-center"> <%= link_to_catalog "catalogue" %> </div>
     </div>
   </div>
 </section>
 
+<section class="featured">
+  <%= render partial: 'storefront/press' %>
+</section>
 
-<%= render partial: 'storefront/press' %>
+<section class="spotlight spotlight-major">
+  <div>
+    <div class="tile full"></div>
+  </div>
+</section>
 
-<section class="spotlight">
+
+
+<section class="spotlight spotlight-minor">
   <div class="container spotlight-v2">
-    <div class="row tile full">
-      <%= image_tag("spotlight2.jpg", class: "img-responsive", alt: 'peer inside') %>
-    </div>
+    <div class="row tile full"> </div>
   </div>
 </section>
 

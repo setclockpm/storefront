@@ -1,14 +1,12 @@
-<section class="featured">  
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h3 class="featured-in"></h3>
-      </div>
-    </div>
-    <div class="row standard-grid grid">
-      <% featured_in_images.each_with_index do |image, i| %>
-        <%= render partial: "layouts/grid_item", locals: { image: image, position: i } %>
-      <% end %> 
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <hr class="shouts stacked">
     </div>
   </div>
-</section>
+  <div class="row standard-grid grid">
+    <% featured_in_images.each_with_index do |image, i| %>
+      <%= render partial: "layouts/grid_item", locals: { image: image, position: i } %>
+    <% end %> 
+  </div>
+</div>
