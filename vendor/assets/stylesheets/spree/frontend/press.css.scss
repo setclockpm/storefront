@@ -8,6 +8,13 @@
   padding-right: 0px;
 }
 
+.floating-label-form-group-with-value {
+  label {
+    opacity: 1;
+    top: 0;
+  }
+} 
+
 .spotlight-link {
   display: block;
   min-height: 100px;
@@ -161,7 +168,7 @@ section {
     h2 {
       font-size: 1.4em;
       font-weight: normal;
-      letter-spacing: 1px;
+      line-height: 2px;
       text-transform: uppercase;
     }
     p {
@@ -206,17 +213,7 @@ section {
 @media (max-width: 767px) {
   
   section {
-    &.spotlight {
-      div {
-        &.spotlight-v2 {
-          background-color: #f0f0f0;
-        }
-      }
-    }
-    
-    &#about-us {
-      padding-top: 0px;
-    }
+    &#about-us { padding-top: 0px; }
   }
 }
 ////////////////////////////////////////////////

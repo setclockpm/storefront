@@ -13,12 +13,11 @@
 }
 
 
-a {
-  &.btn-outline {
-    &:hover { background-color: #eee; }
-    border: 2px dotted #444;
-  }
+.btn-outline {
+  &:hover { background-color: #eee; }
+  border: 2px dotted #444;
 }
+
 
 
 
@@ -74,7 +73,6 @@ section {
   &:hover, &:focus {
     background-color: #66afe9;
     border: 2px solid #66afe9;
-    
     color: #fff;
   }
 }
@@ -139,41 +137,31 @@ section {
 
 
 
+.floating-label-form-group-with-value {
+  &.floating-label-form-group-with-focus { label { color: #d66254; } }
+  label { color: #979797; }
+}
+
+
 
 footer {
-  color: #333;
+  color: #fff;
   
-  .footer-above {
-    padding-top: 50px;
-    background-color: #71BEBE;
+  .btn-social {
+//    border: 2px solid white;
     
-    a { color: #333; }
+    &:hover, &:focus, &:active, &.active {
+      color: #db5544;
+    }
+  }
+  .footer-above {
+    background-color: #71BEBE;
+    a { color: #fff; }
   }
   .footer-below {
     background-color: #fdfdfd;
     color: #333;
-    font-weight: normal;
-    font-size: .9em;
-    padding: 25px 0;
   }
-  
-  a { 
-    &.btn-outline {
-      font-size: 20px;
-      border: solid 2px #444;
-      background: transparent;
-      transition: all 0.3s ease-in-out;
-      margin-top: 15px;
-    
-    
-      &:hover, &:focus, &:active, &.active {
-        color: #db5544;
-        background: white;
-        border: solid 2px white;
-      }
-    }
-  }
-  
 }
 
 nav {
@@ -184,10 +172,7 @@ nav {
   &.navbar-default {
     &.transparent { 
       background: rgba(113, 190, 190, 0.95);
-      
-      &:hover, &:focus {
-        background: rgba(113, 190, 190, 1.0);
-      }
+      &:hover, &:focus { background: rgba(113, 190, 190, 1.0); }
     }
     
     ul {

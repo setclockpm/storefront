@@ -37,7 +37,10 @@
           <% end %>
         <% end %>
         <li class="spacer" role="menuitem"></li>
-        <%= relevant_navigation_options %>
+        <!-- <li class="item padded taxonomy-root dl-nav-item" role="menuitem"> Location </li> -->
+        
+        <li class="page-scroll pre-launch dl-nav-item"><%= link_to 'About Us', about_path %></li>
+        <li class="page-scroll pre-launch dl-nav-item"><%= link_to 'Contact', '#contact' %>  </li>
         <li class="spacer" role="menuitem"></li>
         <% if spree_current_user %>
           <li id="account-settings" class="dl-nav-item" role="menuitem">

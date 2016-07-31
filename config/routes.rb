@@ -7,6 +7,7 @@ Porthos::Application.routes.draw do
   
   # Disable this when app is finished. Admin route should be obfuscated from general public
   get '/admin', to: 'spree/admin/orders#index', as: :admin
+  get "/about_us", to: "storefront#about", as: :about
   
   # mount Spree::Core::Engine, at: '/'  # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -38,7 +39,6 @@ Porthos::Application.routes.draw do
   end
   
   get "storefront/catalog" => "storefront#catalog", as: :download_catalog
-  get "storefront/about_us" => "storefront#about", as: :about
 
   # Sample resource route with options:
   #   resources :products do
