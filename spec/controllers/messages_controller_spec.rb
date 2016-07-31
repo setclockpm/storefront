@@ -2,17 +2,10 @@ require 'rails_helper'
 
 describe MessagesController do
 
-  describe "GET 'new'" do
-    it "returns http success" do
-      get 'new'
-      response.should be_success
-    end
-  end
-
   describe "GET 'create'" do
-    it "returns http success" do
-      get 'create'
-      response.should be_success
+    it "redirects to the home page upon message sent." do
+      post :create, message: FactoryGirl.attributes_for(:message)
+      expect(response).to redirect_to root_url(anchor: 'contact')
     end
   end
 

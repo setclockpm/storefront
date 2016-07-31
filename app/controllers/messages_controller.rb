@@ -1,9 +1,7 @@
 class MessagesController < ApplicationController
+  include Spree::Core::ControllerHelpers::Auth
+  skip_before_action :authenticate_user!
   
-  def new
-    @message = Message.new
-  end
-
   def create
     @message = Message.new(message_params)
     

@@ -38,6 +38,7 @@ Porthos::Application.routes.draw do
   end
   
   get "storefront/catalog" => "storefront#catalog", as: :download_catalog
+  get "storefront/about_us" => "storefront#about", as: :about
 
   # Sample resource route with options:
   #   resources :products do
