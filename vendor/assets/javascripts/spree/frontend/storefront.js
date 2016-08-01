@@ -36,8 +36,14 @@ $(document).ready(function(){
     speed: 1000,
     fade: true,
     dots: true,
-    mobileFirst: true,
-    prevArrow: false,
-    nextArrow: false
+    mobileFirst: true
+    
+    // responsive: [
+//     {
+//       breakpoint: 768,
+//       settings: {
+//         dots: false
+//       }
+//     }]
   });
 });

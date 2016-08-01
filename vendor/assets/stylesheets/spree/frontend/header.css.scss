@@ -18,9 +18,6 @@
 }
 .look-at-me {
   background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   z-index: 1;
   
   
@@ -31,46 +28,17 @@
     min-height: 20rem;
   }
   
-  .slick-list {
-    margin-bottom: 1.5rem;
+  .slick-list { margin-bottom: 1.5rem; }
+  .slick-next, .slick-prev {
+    top: 40%;
+    top: 37vw;
   }
-  .slick-slide {
-    img { max-width: 100%; }
-  }
+  .slick-slide { img { max-width: 100%; } }
 }
-.logo-wrapper {
-  text-align: center;
-}
-.navbar-toggle {
-  border: 0 none;
-  float: none;
-  margin: 8px auto;
-  
-  .icon-bar {
-    display: block;
-    width: 23px;
-    height: 2px;
-    border-radius: 2px;
-  }
-} 
-
-
-
-
-li { .dl-submenu { display: none; } }
-
-
-
-
-
-
-
-
+.logo-wrapper { text-align: center; }
 .navbar-fixed-top .navbar-collapse {
   max-height: 390px;
 }
-
-
 .navbar {
   max-height: 90px;
   
@@ -95,30 +63,128 @@ li { .dl-submenu { display: none; } }
 }
 .navbar-default, .navbar-inverse { border: none; }
 .quantity-badge { position: absolute; }
-
-
-
-
-section.success {
-  background: #fff;
-  color: #db5544;
+.navbar-toggle {
+  border: 0 none;
+  float: none;
+  margin: 8px auto;
+  
+  .icon-bar {
+    display: block;
+    width: 23px;
+    height: 2px;
+    border-radius: 2px;
+  }
 }
-section.success a,
-section.success a:hover,
-section.success a:focus,
-section.success a:active,
-section.success a.active {
-  color: #66afe9;
-  outline: none;
+.slick-arrow {
+  height: 42px;
+  opacity: 0;
+  transition: opacity .14s;
+  width: 18px;
 }
+.slick-dots {
+  bottom: -25px;
+  color: #000;
+  line-height: 1.5;
+  list-style: none;
+  margin: 0;
+  position: absolute;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+
+  li {
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    margin: 0 8px;
+    padding: 0;
+    position: relative;
+    width: 16px;
+    
+    &.slick-active {
+      button {
+        &::before {
+          color: #000;
+          opacity: .75;
+        }
+      }
+    }
+    
+    button {
+      border: 0;
+      background: 0 0;
+      color: transparent;
+      cursor: pointer;
+      display: block;
+      font-size: 0;
+      height: 16px;
+      line-height: 0;
+      outline: 0;
+      padding: 5px;
+      width: 16px;
+      
+      &::before {
+        color: #000;
+        content: "•";
+        font-family: Futura;
+        font-size: 16px;
+        height: 16px;
+        left: 0;
+        line-height: 16px;
+        opacity: .3;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 16px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    }
+  }
+}
+.slick-next, .slick-prev {
+  background: 0 0;
+  border: none;
+  color: transparent;
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  padding: 0;
+  outline: 0;
+  transform: translate(0,-50%);
+  z-index: 90;
+  
+  &:before {
+    color: #fff;
+    font-size: 3em;
+  }
+}
+.slick-next {
+  right: 30px;
+  &:before { content: ">"; }
+}
+.slick-prev {
+  left: 30px;
+  &:before { content: "<"; }
+}
+.slick-slider { 
+  margin-bottom: 30px;
+  
+  &:hover {
+    .slick-arrow {
+      opacity: 1;
+    }
+  }
+}
+
+
+
+
 
 
 button {
   &#search-btn { padding: 3px 10px; }
 }
-
-
-
 div {
   &#spree-header {
     margin-bottom: 0px;
@@ -134,11 +200,6 @@ div {
     }
   }
 }
-
-
-
-
-
 header {
   &#intro-splash {
     color: white;
@@ -168,17 +229,22 @@ header {
     }
   }
 }
-
-
-
-
-
-
-
+li { .dl-submenu { display: none; } }
 p { 
   &.small { font-size: 16px; }
 }
-
+section.success {
+  background: #fff;
+  color: #db5544;
+}
+section.success a,
+section.success a:hover,
+section.success a:focus,
+section.success a:active,
+section.success a.active {
+  color: #66afe9;
+  outline: none;
+}
 
 
 
@@ -206,6 +272,11 @@ p {
   
   .look-at-me {
     .slick-list { padding-bottom: 0.5rem; }
+    .slick-prev, .slick-next {
+      display: block;
+      opacity: 1;
+      top: calc(50% - 4rem);
+    }
   }
   .nav {
     li {
@@ -256,7 +327,9 @@ p {
     box-shadow: 0 0 0 1px #7d7d7d;
     overflow: visible;
   }
-  
+  .slick-arrow::before {
+      background-size: 32px auto;
+  }
 
 
   
@@ -348,6 +421,9 @@ p {
 @media (min-width: 1024px) {
   .look-at-me {
     .slick-list { padding-bottom: 2.5rem; }
+  }
+  .slick-arrow::before {
+      background-size: 34px auto;
   }
 }
 ///////////////////////////////////////////////////
