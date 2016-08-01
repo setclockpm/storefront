@@ -66,8 +66,6 @@ hr {
     max-width: 150px;
   }
 }
-
-
 section {
   padding: 30px 0;
 }
@@ -123,4 +121,14 @@ section {
     opacity: 1;
     top: 0;
   }
-} 
+}
+
+
+
+
+@media (min-width: 1408px) {
+  .container.topnav {
+    width: 1370px;
+  }
+}
+
