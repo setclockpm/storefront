@@ -31,7 +31,6 @@
   .image {
     background-position: center center;
     background-size: cover;
-//    height: 51vw;
     height: calc(100vh - 20rem);
     min-height: 20rem;
   }
@@ -40,6 +39,9 @@
   .slick-slide {
     img { max-width: 100%; }
   }
+}
+.logo-wrapper {
+  text-align: center;
 }
 .navbar-toggle {
   border: 0 none;
