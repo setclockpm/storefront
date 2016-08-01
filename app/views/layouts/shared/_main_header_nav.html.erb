@@ -23,25 +23,16 @@
       <!-- /.navbar-cart -->
     </div>
     <!-- /.navbar-header -->
-		<div id="dl-menu" class="dl-menuwrapper">
-      <% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
-			<ul id="collapsing-menu" class="collapsed dl-menu nav navbar-collapse">
-        <% @taxonomies.each_with_index do |taxonomy, tab_index| %>
-          <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
-            <li class="dl-nav-item" role="menuitem" data-taxonomy-id="<%= taxonomy.id %>">
-              <%= link_to Spree.t(:shop_by_taxonomy, taxonomy: taxonomy.name), anchor: taxonomy.name, tab_index: tab_index %>
-							<ul class="dl-submenu">
-								<%= taxons_accordion(taxonomy.root, @taxon, max_level) %>
-							</ul>
-            </li>
-          <% end %>
-        <% end %>
+    <div id="dl-menu" class="dl-menuwrapper">
+      <ul id="collapsing-menu" class="collapsed dl-menu nav navbar-collapse">
+        <li class="page-scroll pre-launch dl-nav-item"><%= link_to 'Our Story', main_app.about_path %></li>
         <li class="spacer" role="menuitem"></li>
-        <!-- <li class="item padded taxonomy-root dl-nav-item" role="menuitem"> Location </li> -->
-        
-        <li class="page-scroll pre-launch dl-nav-item"><%= link_to 'About Us', main_app.about_path %></li>
-        <li class="page-scroll pre-launch dl-nav-item"><%= link_to 'Contact', '#contact' %>  </li>
+        <li class="dl-nav-item"><%= link_to 'Collection', spree.products_path %></li>
         <li class="spacer" role="menuitem"></li>
+        <li class="page-scroll pre-launch dl-nav-item"><%= link_to 'Contact', main_app.root_path(anchor: 'contact') %></li>
+        <li class="disabled dl-nav-item item padded" style="color:#555; font-weight:normal;">Wholesale</li>
+        <!-- <li class="dl-nav-item"><%#= link_to 'Wholesale','#' %></li> -->
+        <%#= render partial: "layouts/shared/taxonomy_links", locals: { max_level: Spree::Config[:max_level_in_taxons_menu] || 1 } %>
         <% if spree_current_user %>
           <li id="account-settings" class="dl-nav-item" role="menuitem">
             <%= link_to Spree.t(:my_account), spree.account_path %>
@@ -54,8 +45,7 @@
             <%= link_to Spree.t(:login), spree.login_path %>
           </li>
         <% end %>
-        
-        <li id="link-to-cart" class="page-scroll" data-hook><%= link_to_cart %></li>
+        <!-- <li id="link-to-cart" class="page-scroll" data-hook><%#= link_to_cart %></li> -->
 			</ul>
 		</div><!-- /dl-menuwrapper -->
     
