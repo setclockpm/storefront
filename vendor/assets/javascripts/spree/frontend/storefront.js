@@ -32,9 +32,10 @@ $('.navbar-collapse ul li a:not(.dropdown-toggle)').click(function() {
 $(document).ready(function(){
   $('.look-at-me').slick({
     autoplay: true,
-    speed: 4000,
+    autoplaySpeed: 3500,
+    speed: 1000,
     fade: true,
-    dots: false,
+    dots: true,
     mobileFirst: true,
     prevArrow: false,
     nextArrow: false

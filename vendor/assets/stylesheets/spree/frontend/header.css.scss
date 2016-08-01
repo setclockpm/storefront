@@ -16,10 +16,6 @@
   overflow-x: visible;
   padding: 15px;
 }
-.fa-search {
-  color: #fff;
-  font-size: 1.85em;
-}
 .look-at-me {
   background-size: cover;
   -webkit-background-size: cover;
@@ -35,7 +31,9 @@
     min-height: 20rem;
   }
   
-  
+  .slick-list {
+    margin-bottom: 1.5rem;
+  }
   .slick-slide {
     img { max-width: 100%; }
   }
@@ -76,9 +74,7 @@ li { .dl-submenu { display: none; } }
 .navbar {
   max-height: 90px;
   
-  a {
-    &:focus { outline: none; }
-  }
+  a { &:focus { outline: none; } }
 }
 .navbar .dl-menu {
   backface-visibility: hidden;
@@ -95,9 +91,7 @@ li { .dl-submenu { display: none; } }
     transform: translateY(0px);
   }
   
-  li a:focus {
-    outline: none;
-  }
+  li a:focus { outline: none; }
 }
 .navbar-default, .navbar-inverse { border: none; }
 .quantity-badge { position: absolute; }
@@ -190,19 +184,6 @@ p {
 
 
 
-                        ///
-                      ///////
-                    ///////////
-                 ////////////////
-              //////////////////////
-           ////////////////////////////
-        //////////////////////////////////
-     ////////////////////////////////////////
-  /////////* Minimum width 1024px section *////
-/////////////////////////////////////////////////
-@media (min-width: 1024px) {}
-///////////////////////////////////////////////////
-///////////////////////////////////////////////////
 
 
 ///////////////////////////////////////////////////
@@ -243,6 +224,23 @@ p {
 ///////////////////////////////////////////////////
 @media (min-width: 768px) {
   
+  #press .grid-item { margin: 0 0 30px; }
+  #spree-header #logo img {
+    width: 160px;
+  }
+  
+  .look-at-me {
+    .slick-list { padding-bottom: 0.5rem; }
+  }
+  .nav {
+    li {
+      &.pre-launch { 
+        a { 
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
   .navbar-header { float: none; }
   .navbar-form { .btn { letter-spacing: 1.5px; } }
   .navbar-fixed-top {
@@ -268,12 +266,6 @@ p {
   .nav > li > a {
     padding: 5px 15px;
   }
-  
-    
-  #spree-header #logo img {
-    width: 160px;
-  }
-
   .select-color-option .active-select-color-surface {
     background-color: #f2f2f2;
     border: 0;
@@ -284,32 +276,14 @@ p {
   
     .thumbnail { margin-bottom: 0px; }
   }
-  
   .select-color-container input:checked + .active-select-color-surface {
     border-color: #7d7d7d;
     box-shadow: 0 0 0 1px #7d7d7d;
     overflow: visible;
   }
   
-  #press .grid-item { margin: 0 0 30px; }
-  
-  
-  .nav {
-    li {
-      &.pre-launch { 
-        a { 
-          text-transform: uppercase;
-        }
-      }
-    }
-  }
-  
-  
-  
-  
-  
-  
-  
+
+
   
   div {
     &#toggle-nav-button-wrapper {
@@ -321,7 +295,6 @@ p {
       box-shadow: none;
     }
   }
-  
   li {
     &.select-color-container {
       height: 55px;
@@ -387,6 +360,23 @@ p {
 ///////////////////////////////////////////////////
 
 
+                        ///
+                      ///////
+                    ///////////
+                 ////////////////
+              //////////////////////
+           ////////////////////////////
+        //////////////////////////////////
+     ////////////////////////////////////////
+  /////////* Minimum width 1024px section *////
+/////////////////////////////////////////////////
+@media (min-width: 1024px) {
+  .look-at-me {
+    .slick-list { padding-bottom: 2.5rem; }
+  }
+}
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
 
 
 
@@ -414,8 +404,12 @@ p {
       }
     }
   }
-//  .fa-shopping-cart { color: #ddd; }
-  .look-at-me { .image { height: 70vw; } }
+  .look-at-me { 
+    .image { height: 70vw; }
+    .slick-dots {
+      display: none !important;
+    }
+  }
   .navbar .dl-menu.dl-menuopen {
     display: block;
     opacity: 1;
