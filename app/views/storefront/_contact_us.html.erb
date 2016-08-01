@@ -1,4 +1,6 @@
 <!-- Contact Section -->
+<%= javascript_include_tag 'contact' %>
+
 <section id="contact" class="contact">
   <div class="container">
     <div class="row">
@@ -12,37 +14,39 @@
     </div>
     <div class="row">
       <div class="col-lg-6 col-lg-offset-3">
-        <%= form_for @message, id: "contact-form", url: main_app.contact_path(@message)  do |f| %>
+        <%= form_for @message, id: "contact-form", url: main_app.contact_path(@message) do |f| %>
           <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
-              <%= f.label :name %>
-              <%= f.text_field :name, placeholder: "Name", id: "name", class: "form-control", data: { required: true, 'validation-required-message': "Please enter your name." } %>
+              <%= f.label :name, "Name" %>
+              <%= f.text_field :name, placeholder: "Name*", id: "name", class: "form-control", data: { required: true, 'validation-required-message': "Please enter a name." } %>
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
               <%= f.label :email, "Email Address" %>
-              <%= f.email_field :email, placeholder: "Email Address", id: "name", class: "form-control", data: { required: true, 'validation-required-message': "Please enter your email address." } %>
+              <%= f.email_field :email, placeholder: "Email Address*", id: "name", class: "form-control", data: { required: true, 'validation-required-message': "Please enter an email address." } %>
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
               <%= f.label :phone, "Phone Number" %>
-              <%= f.phone_field :phone, placeholder: "Phone Number", id: "phone", class: "form-control", data: { required: true, 'validation-required-message': "Please enter your phone number." } %>
+              <%= f.phone_field :phone, placeholder: "Phone Number", id: "phone", class: "form-control" %>
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
               <%= f.label :content, "Message" %>
-              <%= f.text_area :content, placeholder: "Message", id: "content", class: "form-control", rows: 5, data: { required: true, 'validation-required-message': "Please enter your phone number." } %>
+              <%= f.text_area :content, placeholder: "Message*", id: "content", class: "form-control", rows: 5, data: { required: true, 'validation-required-message': "You haven't typed your message." } %>
               <p class="help-block text-danger"></p>
             </div>
           </div>
-          <div class="row">
-            <div class="form-group col-xs-12"> <%= f.submit "Send", class: "btn btn-success btn-lg" %> </div>
+          <div class="row submit-group">
+            <div class="form-group col-xs-12">
+              <%= f.submit "submit", class: "btn-send btn btn-outline btn-lg" %>
+            </div>
           </div>
         <% end %>
       </div>

@@ -50,57 +50,7 @@
 
 
 
-.floating-label-form-group {
-  position: relative;
-  margin-bottom: 0;
-//  padding-bottom: 0.5em;
-  border-bottom: 1px solid #eee;
-  
-  input, textarea {
-    background: none;
-    box-shadow: none !important;
-    border: none;
-    border-radius: 0;
-    font-size: 1.31em;
-    padding-right: 0;
-    padding-left: 0;
-    position: relative;
-    resize: none;
-    z-index: 1;
-  }
-  
-  label {
-    display: block;
-    font-size: 0.85em;
-    line-height: 1.764705882em;
-    margin: 0;
-    opacity: 0;
-    position: relative;
-    top: 2em;
-    vertical-align: baseline;
-    transition: top 0.3s ease,opacity 0.3s ease;
-    -webkit-transition: top 0.3s ease,opacity 0.3s ease;
-    -moz-transition: top 0.3s ease,opacity 0.3s ease;
-    -ms-transition: top 0.3s ease,opacity 0.3s ease;
-    z-index: 0;
-  }
-  
-  &:not(:first-child) {
-    border-left: 1px solid #eee;
-    padding-left: 14px;
-  }
-}
-.floating-label-form-group:not(:first-child) {
-  padding-left: 14px;
-  border-left: 1px solid #eeeeee;
-}
 
-.floating-label-form-group-with-value {
-  label {
-    opacity: 1;
-    top: 0;
-  }
-} 
 
 .footer-lifestyle {
   display: none;

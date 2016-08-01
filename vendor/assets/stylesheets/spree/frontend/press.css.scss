@@ -69,6 +69,13 @@
     }
   }
 }
+.submit-group {
+  .form-group {
+    margin-top: 30px;
+    text-align: center;
+  }
+}
+
 
 a {
   &.btn-outline { padding: 8px 12px; }
@@ -116,9 +123,23 @@ hr {
   }
 }
 
+
 section {
   background-color: #fdfdfd;
   &.contact {
+    .btn-send {
+      border-width: 1px;
+      &:after {
+        //content: "\f1d9";
+//        display: inline-block;
+//        font-family: FontAwesome;
+//        font-size: 1.1em;
+//        padding: 0 0.25em;
+//        position: relative;
+//        top: -0.8em;
+      }
+    }
+    &.container { margin: 0px 30px; }
     h2 {
       font-size: 2em;
       letter-spacing: 1px;
@@ -174,15 +195,6 @@ section {
     p {
       font-weight: normal;
     }
-  }
-  &#contact {
-    .btn-success {
-      font-size: 1.5em;
-      padding-left: 24px;
-      padding-right: 24px;
-    }
-    
-    &.container { margin: 0px 30px; }
   }
 }
 

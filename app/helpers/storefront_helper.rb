@@ -9,6 +9,10 @@ module StorefrontHelper
     ['facebook', 'google-plus', 'twitter', 'linkedin']
   end
   
+  def send_icon
+     fa_icon("paper-plane-o", text: "Submit").html_safe
+  end
+  
   
   private
   
