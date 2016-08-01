@@ -477,9 +477,8 @@ section.success a.active {
   }
   .look-at-me { 
     .image { height: 70vw; }
-    .slick-dots {
-      display: none !important;
-    }
+    .slick-arrow { display: none !important; }
+    .slick-dots { display: none !important; }
   }
   .navbar .dl-menu.dl-menuopen {
     display: block;
