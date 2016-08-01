@@ -2,23 +2,20 @@
   margin-top: 15px;
   a { margin-top: 15px; }
 }
-
-.grid-item {
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
 .floating-label-form-group-with-value {
   label {
     opacity: 1;
     top: 0;
   }
 } 
+.grid-item {
+  padding-left: 0px;
+  padding-right: 0px;
+}
 .spotlight-link {
   display: block;
   min-height: 100px;
   padding: 10px;
-  
   
   &:hover { figcaption { opacity: 1; } }
   
@@ -79,9 +76,6 @@
 a {
   &.btn-outline { padding: 8px 12px; }
 }
-
-
-
 h3 {
   &.featured-in {
     color: rgba(219, 86, 68, 0.7);
@@ -92,13 +86,19 @@ h3 {
   }
 }
 hr {
-  &.ribbon, &.shouts, &.contact {
+  &.ribbon, &.shouts, &.contact, &.cheers {
     &:after {
       display: inline-block;
       font-family: FontAwesome;
       font-size: 1.1em;
       padding: 0 0.25em;
       position: relative;
+    }
+  }
+  &.cheers {
+    &:after {
+      content: "\f0fc";
+      top: -0.8em;
     }
   }
   &.contact {

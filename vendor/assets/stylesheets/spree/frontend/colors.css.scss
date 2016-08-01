@@ -42,12 +42,11 @@ hr {
     }
   }
   &.shouts, &.contact {
+    &:after { color: #2c3e50; }
+  }
+  &.cheers, &.contact, &.shouts {
     border-color: white;
-    
-    &:after {
-      background-color: white;
-      color: #2c3e50;
-    }
+    &:after { background-color: white; }
   }
 }
 
