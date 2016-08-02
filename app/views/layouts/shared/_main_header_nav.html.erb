@@ -55,8 +55,9 @@
 
 <script>
 	$(function() {
-		$('#dl-nav-header').dlmenu({
-			animationClasses : { classin : 'dl-animate-in-5', classout : 'dl-animate-out-5' }
-		});
-	});
+    $( '.js-toggle-left-slidebar' ).on( 'click', function ( event ) {
+      event.stopPropagation();
+      controller.toggle( 'slidebar-1' );
+    } );
+  });
 </script>
