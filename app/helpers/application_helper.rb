@@ -15,8 +15,8 @@ module ApplicationHelper
   end
   
   def featured_in_images
-    # ["houzz.png", "bhg.png", "redbook.png", "hgtv.png", "nbc.png", "wayfair.png"]
-    ["houzz-p.png", "bhg-p.png", "redbook-p.png", "hgtv-p.png", "nbc-p.png", "wayfair-p.png"]
+    ["houzz.png", "bhg.png", "redbook.png", "hgtv.png", "nbc.png", "wayfair.png"]
+    # ["houzz-p.png", "bhg-p.png", "redbook-p.png", "hgtv-p.png", "nbc-p.png", "wayfair-p.png"]
     
   end
   
