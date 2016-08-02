@@ -16,7 +16,7 @@
   overflow-x: visible;
   padding: 15px;
 }
-.look-at-me {
+.herro {
   background-size: cover;
   z-index: 1;
   
@@ -270,7 +270,7 @@ section.success a.active {
     width: 160px;
   }
   
-  .look-at-me {
+  .herro {
     .slick-list { padding-bottom: 0.5rem; }
     .slick-prev, .slick-next {
       display: block;
@@ -419,7 +419,7 @@ section.success a.active {
   /////////* Minimum width 1024px section *////
 /////////////////////////////////////////////////
 @media (min-width: 1024px) {
-  .look-at-me {
+  .herro {
     .slick-list { padding-bottom: 2.5rem; }
   }
   .slick-arrow::before {
@@ -439,7 +439,7 @@ section.success a.active {
 ////////* Maximum width 1024px section *///////////
 @media (max-width: 1024px) {
   
-  .look-at-me {
+  .herro {
     .image { height: calc(100vh - 20rem); }
   }
   
@@ -475,7 +475,7 @@ section.success a.active {
       }
     }
   }
-  .look-at-me { 
+  .herro { 
     .image { height: 70vw; }
     .slick-arrow { display: none !important; }
     .slick-dots { display: none !important; }

@@ -30,20 +30,18 @@ $('.navbar-collapse ul li a:not(.dropdown-toggle)').click(function() {
 
 
 $(document).ready(function(){
-  $('.look-at-me').slick({
+  $('.herro').slick({
     autoplay: true,
     autoplaySpeed: 3500,
-    speed: 1000,
     fade: true,
-    dots: true,
-    mobileFirst: true
+    lazyLoad: 'progressive',
+    mobileFirst: true,
+    speed: 1000,
     
-    // responsive: [
-//     {
-//       breakpoint: 768,
-//       settings: {
-//         dots: false
-//       }
-//     }]
+    responsive: 
+    [{
+      breakpoint: 768,
+      settings: { dots: true }
+    }]
   });
 });
