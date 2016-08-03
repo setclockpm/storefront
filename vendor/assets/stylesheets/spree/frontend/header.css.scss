@@ -63,18 +63,7 @@
 }
 .navbar-default, .navbar-inverse { border: none; }
 .quantity-badge { position: absolute; }
-.navbar-toggle {
-  border: 0 none;
-  float: none;
-  margin: 8px auto;
-  
-  .icon-bar {
-    display: block;
-    width: 23px;
-    height: 2px;
-    border-radius: 2px;
-  }
-}
+
 .slick-arrow {
   height: 42px;
   opacity: 0;
