@@ -9,6 +9,7 @@
 //= require spree/frontend
 //= require jquery-ui/effect
 //= require jquery.slick
+//= require slidebars/dist/slidebars
 
 //= require_tree .
 //= require spree/frontend/spree_i18n
