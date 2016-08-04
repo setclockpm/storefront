@@ -1,10 +1,10 @@
-<div class="col-lg-2 col-sm-4 col-xs-6 grid-item">
-  <a href="#spotlightModal<%= position %>" class="spotlight-link" data-toggle="modal">
+<div class="<%= featured_item_offset_class(position) %>">
+  <a href="#spotlightModal<%= position %>" class="spotlight-link <%= image.blank? ? 'feat-intro' : 'caption' %>" data-toggle="modal">
     <figure> 
-      <%= image_tag image, class: "press-logo", alt: "spotlight-#{position}" %>
+      <%= image_tag image, alt: "spotlight-#{position}" %>
       <figcaption class="caption">
-        <h2 class="caption-title"></h2>
-        <h3 class="caption-content">Content goes here</h3>
+        <h2 class="caption-title">featured in</h2>
+        <h3 class="caption-content"></h3>
       </figcaption>
     </figure>
   </a>

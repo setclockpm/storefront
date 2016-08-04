@@ -43,7 +43,10 @@
     transition: opacity 0.3s ease-out;
     width: 100.3%;
     
-    
+    &.feat-intro { opacity: 1; }
+    &.caption {
+      .caption-title { display: none; }
+    }
     h2 {
       font-size: 12px;
       text-transform: uppercase;
@@ -72,7 +75,7 @@
   }
 }
 
-
+//rgba(194,216,216,0.95)
 a {
   &.btn-outline { padding: 8px 12px; }
 }
@@ -270,7 +273,6 @@ section {
     }
     figcaption {
       font-size: 1em;
-      margin-top: 20px 15px 0px 15px;
     }
   }
   
