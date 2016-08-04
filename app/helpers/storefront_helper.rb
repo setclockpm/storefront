@@ -27,7 +27,8 @@ module StorefrontHelper
   end
   
   def social_media_icons
-    ['facebook', 'google-plus', 'twitter', 'linkedin']
+    { facebook: 'facebook.com/porthoshome', pinterest: 'pinterest.com', twitter: 'twitter.com', instagram: "instagram.com" }
+    ['facebook', 'pinterest', 'twitter', 'instagram']
   end
   
   def send_icon

@@ -400,11 +400,9 @@ section.success a.active {
 /////////////////////////////////////////////////
 @media (min-width: 1024px) {
   .herro {
-    .slick-list { padding-bottom: 2.5rem; }
+    .slick-list { padding-bottom: 9.5rem; }
   }
-  .slick-arrow::before {
-      background-size: 34px auto;
-  }
+  .slick-arrow::before { background-size: 34px auto; }
 }
 ///////////////////////////////////////////////////
 ///////////////////////////////////////////////////
