@@ -1,3 +1,21 @@
+[off-canvas] {
+  margin: 7.5px -15px;
+  padding: 15px 0px;
+  
+  .padded { 
+    padding: 10px 15px;
+    line-height: 20px;
+  }
+  .spacer {
+    border: 0;
+    height: 2rem;
+  }
+}
+
+.logo-slidebar {
+  margin: 8px -5px;
+  max-width: 16px
+}
 .mv-menu {
   img {
     margin: 20px;
@@ -6,9 +24,16 @@
 }
 .toggle-mv-menu {
   background: none;
-  border: 0 none;
+  background-color: transparent;
+  background-image: none;
+  border-radius: 4px;
   float: none;
   margin: 8px auto;
+  padding: 9px 10px;
+  position: relative;
+  
+  
+  &:focus { outline: 0; }
   
   .icon-bar {
     display: block;

@@ -1,0 +1,27 @@
+<div off-canvas="mv-menu left shift" class="mv-menu-wrapper text-center">
+  <ul id="collapsing-menu" class="collapsed dl-menu nav">
+    <li class="spacer" role="menuitem">
+      <div class="spacer-wrap text-center">
+        <%= image_tag "feather.png", class: 'logo-slidebar' %>
+        <%= image_tag "feather.png", class: 'hor-flip logo-slidebar' %>
+      </div>
+    </li>
+    <li class="page-scroll dl-nav-item"><%= link_to 'Our Story', main_app.about_path %></li>
+    <li class="dl-nav-item"><%= link_to 'Collection', spree.products_path %></li>
+    <li class="page-scroll dl-nav-item"><%= link_to 'Contact', main_app.root_path(anchor: 'contact') %></li>
+    <li class="dl-nav-item"><%= link_to 'Wholesale', main_app.root_path(anchor: 'contact') %></li>
+    <%#= render partial: "layouts/shared/taxonomy_links", locals: { max_level: Spree::Config[:max_level_in_taxons_menu] || 1 } %>
+    <%= render partial: "layouts/shared/mv_menu_login" if home_ip? %>
+  </ul>
+</div><!-- /mv-menu-wrapper -->
+
+<script>
+	$(function() {
+    var controller = new slidebars();
+    controller.init();
+    $( '.toggle-mv-menu' ).on( 'click', function ( event ) {
+      event.stopPropagation();
+      controller.toggle( 'mv-menu' );
+    } );
+  });
+</script>

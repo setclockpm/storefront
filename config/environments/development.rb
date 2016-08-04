@@ -15,9 +15,9 @@ Porthos::Application.configure do
   config.active_support.deprecation = :log
 
   # Expands the lines which load the assets
-  # config.assets.debug = true
+  config.assets.debug = true
   # Recommended By Spree
-  config.assets.debug = false
+  # config.assets.debug = false
   
   # Added when Devise was installed
   config.action_mailer.default_options = { from: 'no-reply@porthoshome.com' }

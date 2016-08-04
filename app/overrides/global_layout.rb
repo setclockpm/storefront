@@ -40,18 +40,33 @@ Deface::Override.new(name:             'add-web-font',
                      text:             '<link href="//fonts.googleapis.com/css?family=Federo" rel="stylesheet" type="text/css">',
                      original:         '3238a36183f493276bda180ca7b3430fb0cde007')
 
+Deface::Override.new(name:              'surround-with-canvas-div-1',
+                     virtual_path:      'spree/layouts/spree_application',
+                     surround_contents: "body",
+                     text:              '<div canvas="container" style="margin:0;padding:0;"><%= render_original %></div>')
 
-Deface::Override.new(name:             'include-modernizr',
-                     virtual_path:     'spree/layouts/spree_application',
-                     insert_bottom:    'head',
-                     text:             '<%= javascript_include_tag "modernizr.custom" %>',
+Deface::Override.new(name:             'hide-sidebar',
+                     virtual_path:     'spree/products/index',
+                     set_attributes:   'div[data-hook="homepage_sidebar_navigation"]',
+                     attributes:       { class: 'hidden' },
                      original:         nil)
 
-
-Deface::Override.new(name:             'include-dl-menu',
+Deface::Override.new(name:             'set-content-div-dom-class',
                      virtual_path:     'spree/layouts/spree_application',
-                     insert_bottom:    'head',
-                     text:             '<%= javascript_include_tag "dlmenu" %>',
+                     set_attributes:   'div#content',
+                     attributes:       { class: 'col-xs-12' },
+                     original:         nil)
+
+# Deface::Override.new(name:             'add-canvas-to-container',
+#                      virtual_path:     'spree/layouts/spree_application',
+#                      set_attributes:   'div.container',
+#                      attributes:       { class: 'container', canvas: 'container' },
+#                      original:         nil)
+                     
+Deface::Override.new(name:             'include-slidebar-partial',
+                     virtual_path:     'spree/layouts/spree_application',
+                     insert_bottom:    'body',
+                     partial:         'layouts/shared/slidebar_menu',
                      original:         nil)
 
 

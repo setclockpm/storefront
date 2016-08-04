@@ -32,17 +32,17 @@
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
     <%= render partial: 'spree/shared/google_analytics.js' %>
     
-    <div id="spree-header">
-      <%= render partial: "layouts/shared/main_header_nav" %>
+    <div canvas="container" style="margin:0;padding:0;">
+      <div id="spree-header">
+        <%= render partial: "layouts/shared/main_header_nav" %>
+      </div>
+      <%= yield %>
+      <%= render partial: 'layouts/shared/footer' %>
+      <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+      <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+        <%= link_to fa_icon("chevron-up"), "#page-top", class: "btn btn-primary" %>
+      </div>
     </div>
-    
-    <%= yield %>
-    
-    <%= render partial: 'layouts/shared/footer' %>
-    
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
-      <%= link_to fa_icon("chevron-up"), "#page-top", class: "btn btn-primary" %>
-    </div>
+    <%= render partial: "layouts/shared/slidebar_menu" %>
   </body>
 </html>

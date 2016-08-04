@@ -1,4 +1,16 @@
-
+[off-canvas] {
+  background-color: #fdfdfd;
+  
+  span { color: #023257; }
+  ul {
+    li {
+      border-bottom: 1px solid rgba(0,0,0,0.15);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: left;
+    }
+  }
+  border-right: 1px solid rgba(0,0,0,0.15);;
+}
 
 .grid {
 //  background-color: #f0f0f0;
@@ -13,6 +25,9 @@
 .spotlight-link {
   background-color: #DFDFDF;
   color: #2b2b2b;
+}
+.toggle-mv-menu {
+  border: 1px solid #ddd;
 }
 
 
@@ -55,36 +70,20 @@ hr {
 
 
 
-
-
-
-
-
-section {
-  &#about-us { background-color: #fdfdfd; }
+.nav > li > a {
+  font-size: 12px;
 }
+
+
+
+
+section {}
 
 
 
 
 
 // This section deals solely with the major background colors. eg header, navbar, footer, any area carrying the dominant color //
-
-
-
-.navbar-default {
-  .navbar-toggle {
-    background-color: #ddd;
-    border-color: #ddd;
-    
-    .icon-bar { background-color: #dd5544; }
-  }
-  .navbar-toggle.collapsed {
-    background: none;
-  }
-}
-
-
 .dl-submenu {
   background: rgba(34, 34, 34, 0.99) none repeat scroll 0;
   color: #fff;

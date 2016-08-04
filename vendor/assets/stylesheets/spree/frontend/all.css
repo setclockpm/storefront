@@ -6,9 +6,10 @@
  *= require spree/frontend
  *= require font-awesome
  *= require slick
+ *= require slidebars/dist/slidebars
  *= require_self
  *= require_tree .
  *= require spree/frontend/spree_simple_sales
 */
 
-@import 'slidebars/dist/slidebars';
+//@import 'slidebars/dist/slidebars';

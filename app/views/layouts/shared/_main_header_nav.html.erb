@@ -24,43 +24,6 @@
       <!-- /.navbar-cart -->
     </div>
     <!-- /.navbar-header -->
-    <div off-canvas="mv-menu" class="mv-menu-wrapper">
-    <!-- <div id="dl-menu" class="dl-menuwrapper"> -->
-      <%= image_tag "feather.png", class: 'logo-slidebar' %>
-      <ul id="collapsing-menu" class="collapsed dl-menu nav navbar-collapse">
-        <li class="page-scroll pre-launch dl-nav-item"><%= link_to 'Our Story', main_app.about_path %></li>
-        <li class="spacer" role="menuitem"></li>
-        <li class="dl-nav-item"><%= link_to 'Collection', spree.products_path %></li>
-        <li class="spacer" role="menuitem"></li>
-        <li class="page-scroll pre-launch dl-nav-item"><%= link_to 'Contact', main_app.root_path(anchor: 'contact') %></li>
-        <li class="disabled dl-nav-item item padded" style="color:#555; font-weight:normal;">Wholesale</li>
-        <!-- <li class="dl-nav-item"><%#= link_to 'Wholesale','#' %></li> -->
-        <%#= render partial: "layouts/shared/taxonomy_links", locals: { max_level: Spree::Config[:max_level_in_taxons_menu] || 1 } %>
-        <% if spree_current_user %>
-          <li id="account-settings" class="dl-nav-item" role="menuitem">
-            <%= link_to Spree.t(:my_account), spree.account_path %>
-          </li>
-          <li id="link-to-login" class="dl-nav-item" role="menuitem">
-            <%= link_to Spree.t(:logout), spree.logout_path %>
-          </li>
-        <% else %>
-          <li id="link-to-login" class="dl-nav-item" role="menuitem">
-            <%= link_to Spree.t(:login), spree.login_path %>
-          </li>
-        <% end %>
-        <!-- <li id="link-to-cart" class="page-scroll" data-hook><%#= link_to_cart %></li> -->
-			</ul>
-		</div><!-- /dl-menuwrapper -->
-    
   </div>
   <!-- /.container-fluid -->
 </nav>
-
-<script>
-	$(function() {
-    $( '.toggle-mv-menu' ).on( 'click', function ( event ) {
-      event.stopPropagation();
-      controller.toggle( 'mv-menu' );
-    } );
-  });
-</script>

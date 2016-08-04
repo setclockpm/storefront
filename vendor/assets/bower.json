@@ -2,5 +2,10 @@
   "name": "dsl-generated dependencies",
   "dependencies": {
     "slidebars": "latest"
-  }
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "test"
+  ]
 }
