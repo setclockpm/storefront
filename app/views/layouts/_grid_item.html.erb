@@ -1,7 +1,7 @@
 <div class="<%= featured_item_offset_class(position) %>">
   <a href="#spotlightModal<%= position %>" class="spotlight-link <%= image.blank? ? 'feat-intro' : 'caption' %>" data-toggle="modal">
     <figure> 
-      <%= image_tag image, alt: "spotlight-#{position}" %>
+      <%= image_tag image, alt: "featured in" #alt: "spotlight-#{position}" %>
       <figcaption class="caption">
         <h2 class="caption-title">featured in</h2>
         <h3 class="caption-content"></h3>
