@@ -118,6 +118,10 @@ section { padding: 30px 0; }
     top: 0;
   }
 }
+.grid-item {
+  padding-left: 0px;
+  padding-right: 0px;
+}
 .hor-flip {
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);

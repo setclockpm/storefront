@@ -12,7 +12,10 @@ module StorefrontHelper
   
   
   def featured_in_images
-    [nil, "houzz.png", "bhg.png", "redbook.png", "hgtv.png", "nbc.png", "wayfair.png", "overstock.png"]
+    ["desert-trip.png", "houzz.png", "bhg.png", "redbook.png", "hgtv.png", "nbc.png", "wayfair.png", "overstock.png"]
+    # { "Deseret Trip Music Festival" => "",
+ #      "Houzz" => { image: '', url: 'http://houzz.com' }, twitter: 'https://twitter.com/porthoshome', instagram: "https://instagram.com" }
+ #
   end
   
   def featured_item_offset_class(pos)
@@ -28,7 +31,6 @@ module StorefrontHelper
   
   def social_media_icons
     { facebook: 'https://facebook.com/porthoshome', pinterest: 'https://pinterest.com', twitter: 'https://twitter.com/porthoshome', instagram: "https://instagram.com" }
-    # ['facebook', 'pinterest', 'twitter', 'instagram']
   end
   
   def send_icon
