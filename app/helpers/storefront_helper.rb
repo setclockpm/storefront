@@ -12,7 +12,7 @@ module StorefrontHelper
   
   
   def featured_in_images
-    ["desert-trip.png", "houzz.png", "bhg.png", "redbook.png", "hgtv.png", "nbc.png", "wayfair.png", "overstock.png"]
+    ["bhg.png", "nbc.png", "wayfair.png", "overstock.png", "houzz.png", "redbook.png", "hgtv.png", "desert-trip.png"]
     # { "Deseret Trip Music Festival" => "",
  #      "Houzz" => { image: '', url: 'http://houzz.com' }, twitter: 'https://twitter.com/porthoshome', instagram: "https://instagram.com" }
  #
