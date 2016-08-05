@@ -1,16 +1,7 @@
 
-.dl-submenu {
-  font-size: .8rem;
-  letter-spacing: 1px;
-  margin: 0px -15px;
-  max-height: 390px;
-  overflow-x: visible;
-  padding: 15px;
-}
 .herro {
   background-size: cover;
   z-index: 1;
-  
   
   .image {
     background-position: center center;
@@ -27,34 +18,13 @@
   .slick-slide { img { max-width: 100%; } }
 }
 .logo-wrapper { text-align: center; }
-.navbar-fixed-top .navbar-collapse {
-  max-height: 390px;
-}
+.navbar-fixed-top { .navbar-collapse { max-height: 390px; } } 
 .navbar {
   max-height: 90px;
-  
   a { &:focus { outline: none; } }
-}
-.navbar .dl-menu {
-  backface-visibility: hidden;
-  display: none;
-  letter-spacing: 1px;
-  opacity: 0;
-  pointer-events: none;
-  
-  &.dl-menuopen {
-    display: none;
-    opacity: 1;
-    pointer-events: auto;
-    -webkit-transform: translateY(0px);
-    transform: translateY(0px);
-  }
-  
-  li a:focus { outline: none; }
 }
 .navbar-default, .navbar-inverse { border: none; }
 .quantity-badge { position: absolute; }
-
 .slick-arrow {
   height: 42px;
   opacity: 0;
@@ -150,10 +120,12 @@
 .slick-slider { 
   margin-bottom: 30px;
   
-  &:hover {
-    .slick-arrow {
-      opacity: 1;
-    }
+  &:hover { .slick-arrow { opacity: 1; } }
+}
+.transparent { 
+  &:hover, &:focus {
+    transition: all .3s ease-in-out;
+    transition-delay: 0s;
   }
 }
 
@@ -183,7 +155,7 @@ div {
 header {
   &#intro-splash {
     color: white;
-    margin-top: 80px;
+//    margin-top: 80px;
   
     div {
       &.container {
@@ -209,22 +181,8 @@ header {
     }
   }
 }
-li { .dl-submenu { display: none; } }
-p { 
-  &.small { font-size: 16px; }
-}
-section.success {
-  background: #fff;
-  color: #db5544;
-}
-section.success a,
-section.success a:hover,
-section.success a:focus,
-section.success a:active,
-section.success a.active {
-  color: #66afe9;
-  outline: none;
-}
+p { &.small { font-size: 16px; } }
+
 
 
 
@@ -260,38 +218,31 @@ section.success a.active {
   }
   .nav {
     li {
-      &.pre-launch { 
-        a { 
-          text-transform: uppercase;
-        }
-      }
+      &.pre-launch { a { text-transform: uppercase; } }
     }
   }
+  .nav > li > a { padding: 5px 15px; }
   .navbar-header { float: none; }
   .navbar-form { .btn { letter-spacing: 1.5px; } }
   .navbar-fixed-top {
     padding: 15px 0;
-    -webkit-transition: padding 0.3s;
-    -moz-transition: padding 0.3s;
     transition: padding 0.3s;
-  }
-  .navbar-fixed-top .navbar-brand {
-    font-size: 2em;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
-  }
-  .navbar-fixed-top.navbar-shrink { padding: 10px 0; }
-  .navbar-fixed-top.navbar-shrink .navbar-brand {
-    font-size: 1.5em;
+    
+    .navbar-brand {
+      font-size: 2em;
+      transition: all 0.3s;
+    }
+    
+    &.navbar-shrink {
+      padding: 10px 0;
+      .navbar-brand { font-size: 1.5em; }
+    }
   }
   .navbar-static-top { 
     padding: 15px 0; 
     transition: padding 0.3s ease 0s;
   }
-  .nav > li > a {
-    padding: 5px 15px;
-  }
+  
   .select-color-option .active-select-color-surface {
     background-color: #f2f2f2;
     border: 0;
@@ -308,7 +259,7 @@ section.success a.active {
     overflow: visible;
   }
   .slick-arrow::before {
-      background-size: 32px auto;
+    background-size: 32px auto;
   }
 
 
@@ -442,28 +393,10 @@ section.success a.active {
 ////////////////////////////////////////////////
 @media (max-width: 767px) {
   
-  .dl-submenu {
-    list-style: none;
-    
-    li {
-      a {
-        display: block;
-        position: relative;
-        padding: 10px 15px;
-      }
-    }
-  }
   .herro { 
     .image { height: 70vw; }
     .slick-arrow { display: none !important; }
     .slick-dots { display: none !important; }
-  }
-  .navbar .dl-menu.dl-menuopen {
-    display: block;
-    opacity: 1;
-    pointer-events: auto;
-    -webkit-transform: translateY(0px);
-    transform: translateY(0px);
   }
   .navbar-cart {
     display: inline-block;
@@ -472,8 +405,6 @@ section.success a.active {
   }
   .navbar-fixed-top, .navbar-static-top {
     padding: 15px 0;
-    -webkit-transition: padding 0.3s;
-    -moz-transition: padding 0.3s;
     transition: padding 0.3s;
   }
   .nav {

@@ -12,6 +12,24 @@
   }
 }
 
+.navbar {
+  //.dl-menu {
+//    backface-visibility: hidden;
+//    display: none;
+//    letter-spacing: 1px;
+//    opacity: 0;
+//    pointer-events: none;
+//
+//    &.dl-menuopen {
+//      display: none;
+//      opacity: 1;
+//      pointer-events: auto;
+//      transform: translateY(0px);
+//    }
+//
+//    li a:focus { outline: none; }
+//  }
+} 
 .logo-slidebar {
   margin: 8px -5px;
   max-width: 16px
@@ -45,3 +63,48 @@
 .toggle-mv-menu .icon-bar + .icon-bar {
   margin-top: 4px;
 }
+li { .dl-submenu { display: none; } }
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////
+////////* Maximum width 767px section */////////
+////////////////////////////////////////////////
+@media (max-width: 767px) {
+  
+  .dl-submenu {
+    list-style: none;
+    
+    li {
+      a {
+        display: block;
+        position: relative;
+        padding: 10px 15px;
+      }
+    }
+  }
+  .navbar .dl-menu.dl-menuopen {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0px);
+  }
+}
+////////////////////////////////////////////////
+  ////////////////////////////////////////////
+    ///////////////////////////////////////
+      //////////////////////////////////
+         ////////////////////////////
+           ///////////////////////
+             //////////////////
+               //////////////
+                 //////////
+                   //////
+                     ///
+

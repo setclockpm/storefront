@@ -20,7 +20,6 @@ html {
 body {
   height: 100%;
   font-family: 'cocomat', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
-//  font-weight: 700;
   font-size: 16px;
   overflow-x: hidden;
   width: 100%;
@@ -29,12 +28,10 @@ body {
 
 
 a {
-  color: #023257;
   font-weight: normal;
   outline: none;
   
   &:hover, &:focus, &:active {
-//    color: #fff8dc;
     text-decoration: none;
     outline: none;
   }
@@ -48,7 +45,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'cocomat', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
+  font-family: 'cocomat', 'Federo', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
   font-style: normal;
   font-variant: normal;
   font-weight: 500;
@@ -60,26 +57,16 @@ hr {
   text-align: center;
   
   &.stacked {
-    //border: none;
     border-top: solid 2.5px;
     margin: 20px auto 20px;
     max-width: 150px;
   }
 }
-section {
-  padding: 30px 0;
+nav {
+  font-family: 'cocomat', 'Federo', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
+  font-weight: 700;
 }
-
-
-
-.hor-flip {
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
-}
+section { padding: 30px 0; }
 
 
 .floating-label-form-group {
@@ -131,6 +118,17 @@ section {
     top: 0;
   }
 }
+.hor-flip {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+
+
 
 
 
