@@ -67,7 +67,21 @@ nav {
   font-weight: 700;
 }
 section { padding: 30px 0; }
+ul {
+  list-style: none;
+}
 
+
+
+#spree-header .nav a:hover, #spree-header .nav a:focus {
+  background: 0 none;
+  text-decoration: underline;
+  //&:after {
+//    content: "\f107";
+//    font-family: FontAwesome;
+//    right: -0.8em;
+//  }
+}
 
 .floating-label-form-group {
   position: relative;
@@ -129,6 +143,9 @@ section { padding: 30px 0; }
   transform: scaleX(-1);
   filter: FlipH;
   -ms-filter: "FlipH";
+}
+.nav {
+  white-space: nowrap;
 }
 
 

@@ -4,18 +4,13 @@ module StorefrontHelper
     options = { type: 'button', class: 'toggle-mv-menu' }
     options.merge!(html_options) if !html_options.blank?
     button_tag(options) do
-      content_tag(:span, 'Toggle navigation', class: 'sr-only').concat(
-        three_icon_bars
-      )
+      content_tag(:span, 'Toggle navigation', class: 'sr-only').concat(three_icon_bars)
     end
   end
   
   
   def featured_in_images
     ["bhg.png", "nbc.png", "wayfair.png", "overstock.png", "houzz.png", "redbook.png", "hgtv.png", "desert-trip.png"]
-    # { "Deseret Trip Music Festival" => "",
- #      "Houzz" => { image: '', url: 'http://houzz.com' }, twitter: 'https://twitter.com/porthoshome', instagram: "https://instagram.com" }
- #
   end
   
   def featured_item_offset_class(pos)

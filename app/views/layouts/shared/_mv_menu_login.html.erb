@@ -1,12 +1,12 @@
 <% if spree_current_user %>
-  <li id="account-settings" class="dl-nav-item" role="menuitem">
+  <li id="account-settings" class="nav-item">
     <%= link_to Spree.t(:my_account), spree.account_path %>
   </li>
-  <li id="link-to-login" class="dl-nav-item" role="menuitem">
+  <li id="link-to-login" class="nav-item">
     <%= link_to Spree.t(:logout), spree.logout_path %>
   </li>
 <% else %>
-  <li id="link-to-login" class="dl-nav-item" role="menuitem">
+  <li id="link-to-login" class="nav-item">
     <%= link_to Spree.t(:login), spree.login_path %>
   </li>
 <% end %>

@@ -62,16 +62,10 @@ hr {
   &.shouts, &.contact {
     &:after { color: #2c3e50; }
   }
-  &.cheers, &.contact, &.shouts {
+  &.cheers, &.contact, &.museum, &.shouts {
     border-color: white;
     &:after { background-color: white; }
   }
-}
-
-
-
-.nav > li > a {
-  font-size: 12px;
 }
 
 
@@ -206,7 +200,7 @@ section {
       color: #fff;
       
       li {
-        &.dl-nav-item {
+        &.mv-nav-item {
           a { &:hover { color: #dd5544; } }
         }
       }
@@ -229,9 +223,6 @@ section {
       .navbar-toggle {
         .icon-bar { background-color: #dd5544; }
       }
-      //.navbar-toggle.collapsed {
-//        .icon-bar { background-color: #fefefe; }
-//      }
       &.opaque {
         background: rgba(113, 190, 190, 0.95);
       }

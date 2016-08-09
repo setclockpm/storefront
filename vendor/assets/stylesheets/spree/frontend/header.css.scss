@@ -1,13 +1,12 @@
 
 .herro {
-  background-size: cover;
   z-index: 1;
   
   .image {
-    background-position: center center;
+    background-position: no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 20rem);
-    min-height: 20rem;
+    -moz-background-size: cover;
+    height: calc(100vh - 10rem);
   }
   
   .slick-list { margin-bottom: 1.5rem; }
@@ -17,7 +16,24 @@
   }
   .slick-slide { img { max-width: 100%; } }
 }
+.logo {
+  img {
+    display: inline-block;
+    margin-bottom: 0px;
+    max-width: 140px;
+    min-width: 125px;
+  }
+}
 .logo-wrapper { text-align: center; }
+.nav { 
+  line-height: 3;
+  
+  li {
+    display: block;
+    vertical-align: bottom;
+  }
+}
+.nav > li > a { padding: 0px 15px; }
 .navbar-fixed-top { .navbar-collapse { max-height: 390px; } } 
 .navbar {
   max-height: 90px;
@@ -140,14 +156,11 @@ button {
 div {
   &#spree-header {
     margin-bottom: 0px;
-    
-    figure {
-      &.logo {
-        img {
-          margin-bottom: 0px;
-          max-width: 140px;
-          min-width: 125px;
-        }
+    nav { 
+      a {
+        font-size: .7em;
+        letter-spacing: 1px;
+        text-transform: uppercase;
       }
     }
   }
@@ -155,8 +168,7 @@ div {
 header {
   &#intro-splash {
     color: white;
-//    margin-top: 80px;
-  
+
     div {
       &.container {
         padding-top: 0px;
@@ -204,11 +216,11 @@ p { &.small { font-size: 16px; } }
 @media (min-width: 768px) {
   
   #press .grid-item { margin: 0 0 30px; }
-  #spree-header #logo img {
-    width: 160px;
-  }
   
+  
+  .logo { img { width: 160px; } }
   .herro {
+    .image { min-height: 52rem; }
     .slick-list { padding-bottom: 0.5rem; }
     .slick-prev, .slick-next {
       display: block;
@@ -218,10 +230,12 @@ p { &.small { font-size: 16px; } }
   }
   .nav {
     li {
-      &.pre-launch { a { text-transform: uppercase; } }
+      &.nav-item {
+        display: inline-block;
+        a { min-width: 8em;}
+      }
     }
   }
-  .nav > li > a { padding: 5px 15px; }
   .navbar-header { float: none; }
   .navbar-form { .btn { letter-spacing: 1.5px; } }
   .navbar-fixed-top {
@@ -351,7 +365,7 @@ p { &.small { font-size: 16px; } }
 /////////////////////////////////////////////////
 @media (min-width: 1024px) {
   .herro {
-    .slick-list { padding-bottom: 15rem; }
+    .slick-list { padding-bottom: 3rem; }
   }
   .slick-arrow::before { background-size: 34px auto; }
 }
@@ -398,18 +412,13 @@ p { &.small { font-size: 16px; } }
     .slick-arrow { display: none !important; }
     .slick-dots { display: none !important; }
   }
-  .navbar-cart {
-    display: inline-block;
-    float: right;
-    text-align: center;
-  }
   .navbar-fixed-top, .navbar-static-top {
     padding: 15px 0;
     transition: padding 0.3s;
   }
   .nav {
     li {
-      &.pre-launch {  }
+      &.nav-link { display: none; }
       a { 
         &.full { 
           padding-left: 1px;
@@ -420,7 +429,11 @@ p { &.small { font-size: 16px; } }
       }
     } 
   }
-
+  
+  #nav-menu {
+    display: none;
+  }
+  
   
   form {
     &.navbar-form {

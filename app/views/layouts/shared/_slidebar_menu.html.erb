@@ -11,7 +11,18 @@
     <li class="page-scroll dl-nav-item"><%= link_to 'Contact', main_app.root_path(anchor: 'contact') %></li>
     <li class="dl-nav-item"><%= link_to 'Wholesale', main_app.root_path(anchor: 'contact') %></li>
     <%#= render partial: "layouts/shared/taxonomy_links", locals: { max_level: Spree::Config[:max_level_in_taxons_menu] || 1 } %>
-    <%= render partial: "layouts/shared/mv_menu_login" if home_ip? %>
+    <% if spree_current_user %>
+      <li id="account-settings" class="mv-nav-item" role="menuitem">
+        <%= link_to Spree.t(:my_account), spree.account_path %>
+      </li>
+      <li id="link-to-login" class="mv-nav-item" role="menuitem">
+        <%= link_to Spree.t(:logout), spree.logout_path %>
+      </li>
+    <% else %>
+      <li id="link-to-login" class="mv-nav-item" role="menuitem">
+        <%= link_to Spree.t(:login), spree.login_path %>
+      </li>
+    <% end %>
   </ul>
 </div><!-- /mv-menu-wrapper -->
 

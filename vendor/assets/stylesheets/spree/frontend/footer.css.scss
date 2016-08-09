@@ -3,23 +3,18 @@
 
 
 footer {
-  .address {
-     margin-top: 20px;
-  }
+  font-size: .7em;
+  .address { margin-top: 20px; }
+  .copyright { margin: 125px 0 10px; }
   .footer-above { padding-top: 50px; }
-  .footer-below {
-    font-weight: normal;
-    font-size: .9em;
-    padding: 25px 0;
-  }
-  .footer-col { margin-bottom: 50px; }
+  .footer-col { margin-bottom: 10px; }
   
   a {
     font-size: .8em;
     letter-spacing: .5px;
   }
   h3 {
-    margin: 10px 0px 20px 0px;
+    margin: 10px 0px 10px 0px;
   }
 }
 
@@ -29,12 +24,8 @@ footer {
 
 .btn-social {
   background: transparent;
-//  border-radius: 100%;
   display: inline-block;
   font-size: 20px;
-//  height: 50px;
-//  line-height: 45px;
-//  margin-top: 15px;
   transition: all 0.3s ease-in-out;
   text-align: center;
   width: 40px;

@@ -85,7 +85,7 @@ h3 {
   }
 }
 hr {
-  &.ribbon, &.shouts, &.contact, &.cheers {
+  &.ribbon, &.shouts, &.contact, &.cheers, &.museum {
     &:after {
       display: inline-block;
       font-family: FontAwesome;
@@ -104,6 +104,12 @@ hr {
     &:after {
       content: "\f044";
       top: -0.8em;
+    }
+  }
+  &.museum {
+    &:after {
+      content: "\f19c";
+      top: -0.7em;
     }
   }
   &.ribbon {
@@ -126,26 +132,23 @@ section {
   &.contact {
     .btn-send {
       border-width: 1px;
-      &::after {
-        //content: "\f1d9";
-//        display: inline-block;
-//        font-family: FontAwesome;
-//        font-size: 1.1em;
-//        padding: 0 0.25em;
-//        position: relative;
-//        top: -0.8em;
-      }
+      &::after { }
+    }
+    .stacked {
+      border-top: solid 2.5px;
+      margin: 12px auto 20px;
+      max-width: 150px;
     }
     &.container { margin: 0px 30px; }
-    h2 {
-      font-size: 2em;
-      letter-spacing: 1px;
+    h5 {
+      letter-spacing: 2px;
+      margin: 0;
       text-transform: uppercase;
     }
   }
   &.featured {
     .container {
-      margin-top: 60px;
+      margin: 10em 0px;
       width: 100%;
     }
   }
@@ -167,11 +170,11 @@ section {
     
     
     h2 { margin-bottom: 30px; }
-    hr { //section-heading-spacer
-      border-top: 3px solid #e7e7e7;
-      float: left;
-      width: 450px;
-    }
+    //hr { //section-heading-spacer
+//      border-top: 3px solid #e7e7e7;
+//      float: left;
+//      width: 450px;
+//    }
   }
   
   &#about-us {
