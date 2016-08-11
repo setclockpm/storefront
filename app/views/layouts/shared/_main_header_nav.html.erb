@@ -19,16 +19,16 @@
       <div id="nav-menu" class="col-sm-9 col-xs-3">
         <ul class="nav navbar-right" data-hook="impostor-ul">
           <li class="nav-item" data-hook="beer-icon">
-            <%= link_to "Our Story", main_app.about_path, class: 'beer-icon' %>
+            <%= link_to "Our Story", main_app.about_path %>
           </li>
           <li class="nav-item" data-hook>
-            <%= link_to 'Collection', spree_path %>
+            <%= link_to 'Collection', '#' %>
           </li>
+          <!-- <li class="nav-item" data-hook>
+            <%= link_to 'Wholesale', '#' %>
+          </li> -->
           <li class="nav-item" data-hook>
-            <%= link_to 'Wholesale', spree_path %>
-          </li>
-          <li class="nav-item" data-hook>
-            <%= link_to 'Contact Us', spree_path %>
+            <%= link_to 'Contact Us', '#' %>
           </li>
           <%= render partial: "layouts/shared/mv_menu_login" if home_ip? %>
         </ul>
