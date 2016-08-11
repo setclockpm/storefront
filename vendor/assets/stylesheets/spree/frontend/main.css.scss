@@ -67,21 +67,32 @@ nav {
   font-weight: 700;
 }
 section { padding: 30px 0; }
-ul {
+ul { 
   list-style: none;
 }
 
 
 
-#spree-header .nav a:hover, #spree-header .nav a:focus {
-  background: 0 none;
-  text-decoration: underline;
-  //&:after {
-//    content: "\f107";
-//    font-family: FontAwesome;
-//    right: -0.8em;
-//  }
+#spree-header {
+  .nav {
+    a {
+      color: #444;
+      font-weight: bold;
+    }
+    a:hover, #spree-header .nav a:focus {
+      background: 0 none;
+      text-decoration: underline;
+      //&:after {
+    //    content: "\f107";
+    //    font-family: FontAwesome;
+    //    right: -0.8em;
+    //  }
+    }
+  } 
 }
+
+
+
 
 .floating-label-form-group {
   position: relative;

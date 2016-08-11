@@ -74,6 +74,10 @@
 //rgba(194,216,216,0.95)
 a {
   &.btn-outline { padding: 8px 12px; }
+  &.btn-lg { 
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
 }
 h3 {
   &.featured-in {

@@ -32,8 +32,8 @@
 
 
 .btn-outline {
-  &:hover { background-color: #eee; }
   border: 2px dotted #444;
+  &:hover { border: 2px solid #444; }
 }
 
 .help-block {
