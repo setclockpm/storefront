@@ -19,10 +19,10 @@
       <div id="nav-menu" class="col-sm-9 col-xs-3">
         <ul class="nav navbar-right" data-hook="impostor-ul">
           <li class="nav-item" data-hook>
-            <%= link_to 'Our Story', main_app.about_path %>
+            <%= link_to fa_icon('beer', class: 'fa-2x'), main_app.about_path %>
           </li>
-          <li class="nav-item" data-hook style="display:none;">
-            <%#= link_to 'Contact', main_app.root_path(anchor: 'contact') %>
+          <li class="nav-item" data-hook>
+            <%= link_to 'Collection', spree_path %>
           </li>
           <%= render partial: "layouts/shared/mv_menu_login" if home_ip? %>
         </ul>
