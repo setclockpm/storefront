@@ -49,7 +49,7 @@
 
 
 
-a { color: #023257; }
+a { color: #444; }
 hr {
   &.ribbon {
     border-color: #2c3e50;
@@ -93,18 +93,14 @@ section {}
 }
 
 .submit-group {
-  .btn {
-    background-color: transparent;
-  }
+  .btn { background-color: transparent; }
+  
   .btn-outline {
-    color: #023257;
-    &:hover {
-      background-color: #eee;
-      box-shadow: 0px 0px 2px #d1d1d1;
-    }
+    color: #444;
+    
+    &:hover { border: 2px solid #444; }
   }
 }
-
 
 
 footer {
@@ -120,10 +116,6 @@ footer {
   .footer-above {
     background-color: #71BEBE;
     a { color: #fff; }
-  }
-  .footer-below {
-    background-color: #fdfdfd;
-    color: #333;
   }
 }
 

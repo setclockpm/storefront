@@ -68,10 +68,17 @@
   .form-group {
     margin-top: 30px;
     text-align: center;
+    
+    input[type="submit"] {
+      font-size: 16px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      
+      &:hover { border: 2px solid #444; }
+    }
   }
 }
 
-//rgba(194,216,216,0.95)
 a {
   &.btn-outline { padding: 8px 12px; }
   &.btn-lg { 
@@ -96,65 +103,51 @@ hr {
       font-size: 1.1em;
       padding: 0 0.25em;
       position: relative;
+      top: -0.8em;
     }
   }
   &.cheers {
-    &:after {
-      content: "\f0fc";
-      top: -0.8em;
-    }
+    &:after { content: "\f0fc"; }
   }
   &.contact {
-    &:after {
-      content: "\f044";
-      top: -0.8em;
-    }
+    &:after { content: "\f044"; }
   }
   &.museum {
     &:after {
-      content: "\f19c";
-      top: -0.7em;
+      background: "\f19c";
     }
   }
   &.ribbon {
-    &:after {
-      content: "\f097";
-      top: -0.7em;
-    }
+    &:after { content: "\f097"; }
   }
   &.shouts {
-    &:after {
-      content: "\f0a1";
-      top: -0.8em;
-    }
+    &:after { content: "\f0a1"; }
   }
 }
 
 
 section {
   background-color: #fdfdfd;
+  h5 {
+    letter-spacing: 2px;
+    margin: 0;
+    text-transform: uppercase;
+  }
   &.contact {
-    .btn-send {
-      border-width: 1px;
-      &::after { }
-    }
+    .btn-send { border-width: 2px; }
     .stacked {
       border-top: solid 2.5px;
       margin: 12px auto 20px;
       max-width: 150px;
     }
     &.container { margin: 0px 30px; }
-    h5 {
-      letter-spacing: 2px;
-      margin: 0;
-      text-transform: uppercase;
-    }
   }
   &.featured {
     .container {
-      margin: 10em 0px;
+      margin: 3em 0em 2em 0em;
       width: 100%;
     }
+    .stacked { margin: 12px auto 20px; }
   }
   &.spotlight {
     display: block;
@@ -162,23 +155,20 @@ section {
     min-height: 40vw;
   }
   &.spotlight-minor {
-    background: url(spotlight2.jpg) no-repeat center center scroll;
-    background-size: cover;
-    margin-bottom: 30px;
-    margin-top: 30px;
-    
+    .container {
+      background: url(spotlight2.jpg) no-repeat center center scroll;
+      background-size: cover;
+      margin-bottom: 30px;
+      margin-top: 30px;
+    }
   }
   &.spotlight-major {
-    background: url(spotlight.jpg) no-repeat center center scroll;
-    background-size: cover;
-    
+    .container {
+      background: url(spotlight.jpg) no-repeat center center scroll;
+      background-size: cover;
+    }
     
     h2 { margin-bottom: 30px; }
-    //hr { //section-heading-spacer
-//      border-top: 3px solid #e7e7e7;
-//      float: left;
-//      width: 450px;
-//    }
   }
   
   &#about-us {
@@ -275,12 +265,18 @@ section {
   
   section { 
     &.spotlight-major {
-      background: url(spotlight.jpg) no-repeat center;
-      background-size: cover;
-      min-height: 40vw; 
+      .container {
+        min-height: 40vw; 
+      }
+    }
+    &.spotlight-minor {
+      .container {
+        background: url(spotlight2.jpg) no-repeat center center scroll;
+        background-size: cover;
+        min-height: 40vw;
+      }
     }
   }
-  
 }
 ///////////////////////////////////////////////////
 
@@ -296,18 +292,12 @@ section {
 ///////////////////////////////////////////////////
 @media (min-width: 1024px) {
   
-  .spotlight-link {
-//    min-height: 200px;
-  }
-  
-  
   section { 
     &.spotlight-major {
-      background: url(spotlight.jpg) no-repeat center;
-      background-size: cover;
-      min-height: 45vw; 
+      .container {
+        min-height: 45vw; 
+      }
     }
   }
-  
 }
 ///////////////////////////////////////////////////

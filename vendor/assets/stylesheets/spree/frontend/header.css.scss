@@ -149,9 +149,7 @@
 
 #collapsing-menu {
   li {
-    a {
-      font-size: 18px;
-    }
+    a { font-size: 18px; }
   }
 }
 
@@ -228,7 +226,7 @@ p { &.small { font-size: 16px; } }
   
   .logo { img { width: 160px; } }
   .herro {
-    .image { min-height: 53rem; }
+    .image { min-height: 40rem; }
     .slick-list { padding-bottom: 0.5rem; }
     .slick-prev, .slick-next {
       display: block;
@@ -373,7 +371,7 @@ p { &.small { font-size: 16px; } }
 /////////////////////////////////////////////////
 @media (min-width: 1024px) {
   .herro {
-    .slick-list { padding-bottom: 3rem; }
+    .slick-list { padding-bottom: 2rem; }
   }
   .slick-arrow::before { background-size: 34px auto; }
 }
@@ -438,9 +436,7 @@ p { &.small { font-size: 16px; } }
     } 
   }
   
-  #nav-menu {
-    display: none;
-  }
+  #nav-menu { display: none; }
   
   
   form {
