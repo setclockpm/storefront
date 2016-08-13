@@ -114,7 +114,8 @@ hr {
   }
   &.museum {
     &:after {
-      background: "\f19c";
+      background: url(feathers/dark.jpg) no-repeat center center scroll;
+      content: "";
     }
   }
   &.ribbon {
@@ -264,17 +265,8 @@ section {
   }
   
   section { 
-    &.spotlight-major {
-      .container {
-        min-height: 40vw; 
-      }
-    }
-    &.spotlight-minor {
-      .container {
-        background: url(spotlight2.jpg) no-repeat center center scroll;
-        background-size: cover;
-        min-height: 40vw;
-      }
+    &.spotlight-major, &.spotlight-minor {
+      .container { min-height: 40vw; }
     }
   }
 }
@@ -293,10 +285,8 @@ section {
 @media (min-width: 1024px) {
   
   section { 
-    &.spotlight-major {
-      .container {
-        min-height: 45vw; 
-      }
+    &.spotlight-major, &.spotlight-minor {
+      .container { min-height: 45vw; }
     }
   }
 }
