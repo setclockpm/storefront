@@ -66,20 +66,7 @@
     }
   }
 }
-.submit-group {
-  .form-group {
-    margin-top: 30px;
-    text-align: center;
-    
-    input[type="submit"] {
-      font-size: 16px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      
-      &:hover { border: 2px solid #444; }
-    }
-  }
-}
+
 
 
 
@@ -131,13 +118,12 @@ hr {
 }
 section {
   &.contact {
-    .btn-send { border-width: 2px; }
+//    .btn-send { border-width: 2px; }
     .stacked {
       border-top: solid 2.5px;
       margin: 12px auto 20px;
       max-width: 150px;
     }
-    &.container { margin: 0px 30px; }
   }
   &.featured {
     background: url(featured_bg_bnw.jpg) no-repeat center;

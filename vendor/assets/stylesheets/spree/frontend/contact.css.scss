@@ -1,3 +1,28 @@
 .help-block {
   li { list-style: none; }
 }
+.submit-group {
+  .form-group {
+    margin-top: 30px;
+    text-align: center;
+    
+    input[type="submit"] {
+      font-size: 16px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+
+
+.contact {
+  /* INQUIRIES: */
+  h1 {
+    color: #444;
+    font-size: 2em;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+}

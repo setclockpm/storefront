@@ -13,29 +13,36 @@
 }
 
 
+.btn-outline {
+  border: 2px dotted #444;
+  &:hover { border: 2px solid #444; }
+}
+.help-block {
+  &.text-danger { color: #a94442; }
+}
 .icon-bar {
   background-color: #fefefe;
 }
 .spotlight-link {
   color: #2b2b2b;
 }
+.submit-group {
+  .form-group {
+    input[type="submit"] {
+      &:hover { border: 2px solid #da5544; }
+    }
+  }
+}
 .toggle-mv-menu {
   border: 1px solid #444;
   
-  .icon-bar {
-    background-color: #444;
-  }
+  .icon-bar { background-color: #444; }
 }
 
 
-.btn-outline {
-  border: 2px dotted #444;
-  &:hover { border: 2px solid #444; }
-}
 
-.help-block {
-  &.text-danger { color: #a94442; }
-}
+
+
 
 
 
@@ -99,9 +106,10 @@ section {
   .btn { background-color: transparent; }
   
   .btn-outline {
-    color: #444;
+    border-color: #da5544;
+    color: #da5544;
     
-    &:hover { border: 2px solid #444; }
+    &:hover { border: 2px solid #da5544; }
   }
 }
 
