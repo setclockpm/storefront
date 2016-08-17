@@ -4,19 +4,18 @@
   <% brand_page = 'http://www.wayfair.com/Porthos-Home-B40284.html' %>
 <% end %>
 
-<div class="<%= featured_item_offset_class(position) %>">
-  <a href="<%= brand_page %>" class="spotlight-link <%= image.blank? ? 'feat-intro' : 'caption' %>" data-toggle="modal">
-    <figure> 
-      <%= image_tag image, alt: "featured in" %>
-      <figcaption class="caption">
-        <h2 class="caption-title">featured in</h2>
-        <h3 class="caption-content">
-          <% if image == 'overstock.png' %>
-            our collection on: overstock.com
-          <% elsif image == 'wayfair.png' %>
-            our collection on: wayfair
+<div class="col-xs-6 col-sm-6 col-md-3 grid-item">
+  <a href="<%= brand_page %>" class="thumbnail">
+    <figure>
+      <%= image_tag image, alt: "featured in", class: 'img img-responsive full-width' %>
+      
+      <figcaption>
+        <h2 class="caption-title">
+          <% if image == 'overstock.png' || image == 'wayfair.png' %>
+            view collection
           <% end %>
-        </h3>
+        </h2>
+        <h3 class="caption-content"></h3>
       </figcaption>
     </figure>
   </a>

@@ -29,7 +29,7 @@
 	$(function() {
     var controller = new slidebars();
     controller.init();
-    $( '.toggle-mv-menu' ).on( 'click', function ( event ) {
+    $( '.toggle-mv-menu' ).on( 'click', function (event) {
       event.stopPropagation();
       controller.toggle( 'mv-menu' );
     } );

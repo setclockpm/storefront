@@ -2,12 +2,19 @@ class MessagesController < ApplicationController
   include Spree::Core::ControllerHelpers::Auth
   skip_before_action :authenticate_user!
   
+  
+  
+  def new
+    logger.debug "\n\nIP Address: #{request.remote_ip}\n\n"
+    @message = Message.new
+  end
+  
+  
   def create
     @message = Message.new(message_params)
     
     if @message.valid?
       MessageMailer.new_message(@message).deliver_now
-      #redirect_to root_path(anchor: "contact"), notice: "Your message has been sent."
       redirect_to root_path(anchor: 'contact'), notice: "Your message has been sent."
       
     else
@@ -18,7 +25,6 @@ class MessagesController < ApplicationController
   
   
   private
-
     def message_params
       params.require(:message).permit(:name, :email, :phone, :content)
     end

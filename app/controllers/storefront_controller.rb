@@ -8,8 +8,7 @@ class StorefrontController < ApplicationController
   
   
   def index
-    logger.debug "\n\n\nIP Address: #{request.remote_ip}\n\n\n"
-    @message = Message.new
+   
   end
   
   def catalog
