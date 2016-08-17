@@ -1,3 +1,4 @@
+/* DOM classes's not asociated with an element */
 .herro {
   margin-top: 0px;
   z-index: 1;
@@ -138,21 +139,22 @@
   
   &:hover { .slick-arrow { opacity: 1; } }
 }
-.transparent { 
+.transparent {
   &:hover, &:focus {
     transition: all .3s ease-in-out;
     transition-delay: 0s;
   }
 }
+/*------------------------------------------------*/
 
 
 
+/* DOM ID's not asociated with an element */
 #collapsing-menu {
   li {
     a { font-size: 18px; }
   }
 }
-
 
 
 
@@ -220,9 +222,6 @@ p { &.small { font-size: 16px; } }
   /////////* Minimum width 768px section *//////
 ///////////////////////////////////////////////////
 @media (min-width: 768px) {
-  
-  #press .grid-item { margin: 0 0 30px; }
-  
   
   .logo { img { width: 160px; } }
   .herro {
@@ -387,11 +386,9 @@ p { &.small { font-size: 16px; } }
 ///////////////////////////////////////////////////
 ////////* Maximum width 1024px section *///////////
 @media (max-width: 1024px) {
-  
   .herro {
     .image { height: calc(100vh - 20rem); }
   }
-  
 }
 ////////////////////////////////////////////////
   ////////////////////////////////////////////
