@@ -27,6 +27,11 @@
   color: #2b2b2b;
 }
 .submit-group {
+  .btn { background-color: transparent; }
+  .btn-outline {
+    border-color: #da5544;
+    color: #da5544;
+  }
   .form-group {
     input[type="submit"] {
       &:hover { border: 2px solid #da5544; }
@@ -102,16 +107,7 @@ section {
   label { color: #979797; }
 }
 
-.submit-group {
-  .btn { background-color: transparent; }
-  
-  .btn-outline {
-    border-color: #da5544;
-    color: #da5544;
-    
-    &:hover { border: 2px solid #da5544; }
-  }
-}
+
 
 
 footer {
