@@ -3,11 +3,7 @@
   <div class="footer-above">
     <div class="container">
       <div class="row">
-        <div class="social footer-col col-md-4">
-         
-        </div>
-        
-        <div class="footer-col col-md-4">
+        <div class="footer-col col-md-offset-4 col-md-4">
           <h3><%= mail_to "info@porthoshome.com" %></h3>
           <ul class="list-inline">
             <% social_media_icons.each do |icon, url| %>
@@ -15,9 +11,6 @@
             <% end %>
           </ul>
           <p class="copyright">Copyright &copy; Porthos Home <%= Time.now.year %></p>
-        </div>
-        <div class="footer-col col-md-4">
-         
         </div>
       </div>
     </div>
