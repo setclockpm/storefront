@@ -1,0 +1,15 @@
+<div id="contact-card" class="card col-md-6">
+  <div class="col-md-12">
+    <h1>contact</h1>
+  </div>
+  
+  <div class="col-md-12">
+    <h3><%= mail_to "info@porthoshome.com" %></h3>
+    <ul class="social-row list-inline">
+      <% social_media_icons.each do |icon, url| %>
+        <li><%= link_to fa_icon("#{icon.to_s} fw"), url, class: "btn-social", target: '_blank' %></li>
+      <% end %>
+    </ul>
+    <p class="copyright">Copyright &copy; Porthos Home <%= Time.now.year %></p>
+  </div>
+</div>

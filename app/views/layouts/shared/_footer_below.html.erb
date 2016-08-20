@@ -1,0 +1,17 @@
+<footer class="text-center">
+  <div class="footer-below">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col col-md-offset-4 col-md-4">
+          <h3><%= mail_to "info@porthoshome.com" %></h3>
+          <ul class="list-inline">
+            <% social_media_icons.each do |icon, url| %>
+              <li><%= link_to fa_icon("#{icon.to_s} fw"), url, class: "btn-social", target: '_blank' %></li>
+            <% end %>
+          </ul>
+          <p class="copyright">Copyright &copy; Porthos Home <%= Time.now.year %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

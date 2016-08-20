@@ -1,13 +1,32 @@
-
+.card {
+  padding-top: 6em;
+  padding-right: 3.5em;
+  padding-left: 5em;
+  
+  
+  h3 {
+    a {
+      font-size: .8em;
+      letter-spacing: .5px;
+    }
+  }
+}
 .contact {
   /* INQUIRIES: */
   padding-top: 0em;
+  
+  .copyright {
+    font-size: .9em;
+    position: absolute;
+    top: 20rem;
+  }
   
   h1 {
     color: #444;
     font-size: 2em;
     letter-spacing: 1px;
     margin-bottom: 10px;
+    text-align: left;
     text-transform: uppercase;
   }
 }
@@ -32,4 +51,47 @@
 #contact-card {
   background-color: #de5844;
   color: #fff;
+  padding-bottom: 33%;
+  position: relative;
+  
+  
+  .social-row {
+    margin-left: -20px;
+  }
+  
+  a, h1 {
+    color: #fff;
+  }
 }
+
+#inquiries-card {
+  padding-left: 6em;
+}
+
+
+
+
+////////////////////////////////////////////////
+////////* Maximum width 767px section */////////
+////////////////////////////////////////////////
+@media (max-width: 992px) {
+  
+  .contact {
+    .copyright { top: 10rem; }
+  }
+  
+  #inquiries-card {
+    margin-bottom: 5em;
+  }
+}
+////////////////////////////////////////////////
+  ////////////////////////////////////////////
+    ///////////////////////////////////////
+      //////////////////////////////////
+         ////////////////////////////
+           ///////////////////////
+             //////////////////
+               //////////////
+                 //////////
+                   //////
+                     ///

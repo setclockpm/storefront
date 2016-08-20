@@ -1,13 +1,18 @@
-
+.footer-below {
+  padding-top: 50px;
+  
+  .copyright { margin: 125px 0 10px; }
+  .footer-col { margin-bottom: 10px; }
+}
 
 
 
 footer {
   font-size: .7em;
-  .address { margin-top: 20px; }
-  .copyright { margin: 125px 0 10px; }
-  .footer-above { padding-top: 50px; }
-  .footer-col { margin-bottom: 10px; }
+  
+  .container {
+    width: 100%;
+  }
   
   a {
     font-size: .8em;

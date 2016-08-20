@@ -8,7 +8,7 @@ class StorefrontController < ApplicationController
   
   
   def index
-   
+   @message = Message.new
   end
   
   def catalog
