@@ -26,7 +26,7 @@
   }
 }
 .logo-wrapper { text-align: center; }
-.nav { 
+.nav {
   line-height: 2.5;
   
   li {
@@ -134,8 +134,9 @@
   left: 30px;
   &:before { content: "<"; }
 }
-.slick-slider { 
-  margin-bottom: 30px;
+.slick-slider {
+//  margin-bottom: 30px;
+  margin-bottom: 5em;
   
   &:hover { .slick-arrow { opacity: 1; } }
 }
@@ -175,7 +176,7 @@ div {
 }
 header {
   &#intro-splash {
-    color: white;
+          color: white;
 
     div {
       &.container {
@@ -225,7 +226,7 @@ p { &.small { font-size: 16px; } }
   
   .logo { img { width: 160px; } }
   .herro {
-    .image { min-height: 40rem; }
+    .image { min-height: 41rem; }
     .slick-list { padding-bottom: 0.5rem; }
     .slick-prev, .slick-next {
       display: block;
