@@ -37,6 +37,9 @@ RSpec.configure do |config|
   #config.include Devise::Test::ControllerHelpers, type: :controller
   #config.include Spree::Core::ControllerHelpers::Auth
   
+  # Include custom login macros
+  # config.include LoginMacros
+  
   
   # Configure DatabaseCleaner to reset data between tests
   config.before(:suite) do
