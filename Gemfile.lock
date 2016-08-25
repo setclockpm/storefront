@@ -199,8 +199,6 @@ GEM
     ffi (1.9.10)
     font-awesome-rails (4.6.3.1)
       railties (>= 3.2, < 5.1)
-    foreman (0.82.0)
-      thor (~> 0.19.1)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
     friendly_id-globalize (1.0.0.alpha2)
@@ -317,8 +315,6 @@ GEM
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
-    rails-footnotes (4.1.8)
-      rails (>= 3.2)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
     rails-i18n (4.0.8)
@@ -534,7 +530,6 @@ DEPENDENCIES
   factory_girl_rails (~> 4.0)
   ffaker
   font-awesome-rails
-  foreman
   jbuilder (~> 2.0)
   jquery-rails
   jquery-slick-rails
@@ -546,7 +541,6 @@ DEPENDENCIES
   pg (~> 0.15)
   phantomjs
   rails (~> 4.2)
-  rails-footnotes (~> 4.0)
   rspec-rails (~> 3.0)
   rubyntlm (~> 0.6.0)
   sass-rails (~> 5.0)

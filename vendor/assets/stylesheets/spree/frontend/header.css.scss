@@ -135,7 +135,6 @@
   &:before { content: "<"; }
 }
 .slick-slider {
-//  margin-bottom: 30px;
   margin-bottom: 5em;
   
   &:hover { .slick-arrow { opacity: 1; } }
@@ -176,7 +175,7 @@ div {
 }
 header {
   &#intro-splash {
-          color: white;
+    color: white;
 
     div {
       &.container {

@@ -37,22 +37,19 @@ gem 'mail', '2.5.4'
 group :test, :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'ffaker'
-  gem 'rails-footnotes', '~> 4.0'
   gem "rspec-rails", '~> 3.0'
   gem "factory_girl_rails", "~> 4.0"
-  gem "capybara"
-  gem "database_cleaner"
-  gem 'launchy'
-  gem "selenium-webdriver"
   gem 'teaspoon-jasmine'
   gem 'phantomjs'
 end
 
-# Heroku specific
-gem "foreman"
-group :production, :staging do
-  
+
+group :test do
+  gem "capybara"
+  gem "database_cleaner"
+  gem 'ffaker'
+  gem 'launchy'
+  gem "selenium-webdriver"
 end
 
 

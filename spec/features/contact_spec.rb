@@ -2,9 +2,6 @@ require 'rails_helper'
 
 feature 'Contact us page interactions' do
   
-  background do
-  end
-  
   scenario "loads successfully." do
     visit main_app.contact_path
     expect(find('form#contact-form')).to have_select('message[subject]')
@@ -13,12 +10,10 @@ feature 'Contact us page interactions' do
   
   
   feature "Selecting Wholesale option" do
-    background do
-    end
     
     scenario "sumbits successfully." do
       visit main_app.contact_path(subject: 'Wholesale')
-      expect(SeoResult.count).to eq(2)
+      expect(Messages.count).to eq(2)
     end
   end
   
@@ -28,7 +23,7 @@ feature 'Contact us page interactions' do
     
     scenario "sumbits successfully." do 
       visit main_app.contact_path
-      click_link "Add SEO Record"
+      click_link "Send"
       select('http://igotzdatseo.center', from: 'message[subject]')
       
     end
