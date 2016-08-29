@@ -13,9 +13,37 @@
 }
 
 
+#contact-card {
+  background-color: #de5844;
+  color: #fff;
+  
+  .submit-group .btn-outline[disabled] {
+    border-color: #E9C2BC;
+    color: #E9C2BC;
+  }
+  .btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+    border-color: #E9C2BC;
+    color: #E9C2BC;
+  }
+  
+  a, h1 { color: #fff; }
+}
+#inquiries-card {
+  h6 { 
+    color: #999;
+    &.required-legend:before { color: red; }
+  }
+}
+
+
+
+
 .btn-outline {
   border: 2px dotted #444;
   &:hover { border: 2px solid #444; }
+}
+.contact {
+  h1 { color: #444; }
 }
 .help-block {
   &.text-danger { color: #a94442; }
@@ -51,7 +79,6 @@
 
 
 
-
 a { color: #444; }
 hr {
   &.ribbon {
@@ -68,6 +95,7 @@ hr {
       color: #fff;
     }
   }
+  &.tiny { border: 1px solid #fff; }
   &.contact {
     &:after { color: #2c3e50; }
   }
@@ -76,15 +104,20 @@ hr {
     &:after { background-color: white; }
   }
 }
+input:-moz-placeholder           { color: #999 !important; } /* Firefox 18- */
+input::-moz-placeholder          { color: #999 !important; } /* Firefox 19+ */
+input:-ms-input-placeholder      { color: #999 !important; }
+input::-webkit-input-placeholder { color: #999 !important; }
 
 
+
+//input[type=tel]:-moz-placeholder { color: #999 !important; }    /* Firefox 18- */
+//input[type=tel]::-moz-placeholder { color: #999 !important; }  /* Firefox 19+ */
+//input[type=tel]:-ms-input-placeholder { color: #999 !important; }
+//input[type=tel]::-webkit-input-placeholder { color: #999 !important; }
 
 
 section {
-  &.featured {
-    .stacked {  }
-  }
-  
   h5 { color: #fff; }
 }
 
@@ -102,11 +135,19 @@ section {
 
 
 
-.floating-label-form-group-with-value {
-  &.floating-label-form-group-with-focus { label { color: #d66254; } }
-  label { color: #979797; }
+.floating-label-form-group {
+  border-bottom: 1px solid #999;
+  
+  &:not(:first-child) { border-left: 1px solid #eee; }
 }
 
+
+
+.floating-label-form-group-with-value {
+  &.floating-label-form-group-with-focus { label { color: rgba(113, 190, 190, 1.0); } }
+  label { color: #333; }
+}
+.floating-label-form-group:not(:first-child) { border-left: 1px solid #eee; }
 
 
 

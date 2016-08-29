@@ -27,6 +27,10 @@ module ApplicationHelper
     current_page?(main_app.root_url) ? "transparent" : "opaque"
   end
   
+  def required_field
+    content_tag :span, '*', class: 'foo'
+  end
+  
   def search_icon_button_tag
     content_tag :div, class: 'col-xs-2 form-group', data: { hook: 'impostor-btn'} do
       button_tag fa_icon('search'), class: 'btn', id: 'search-btn'

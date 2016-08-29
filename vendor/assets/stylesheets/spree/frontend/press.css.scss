@@ -1,10 +1,5 @@
 
-.floating-label-form-group-with-value {
-  label {
-    opacity: 1;
-    top: 0;
-  }
-} 
+
 .grid-item {
   overflow: hidden;
   
@@ -255,17 +250,6 @@ section {
   /////////* Minimum width 767px section *//////
 ///////////////////////////////////////////////////
 @media (min-width: 768px) {
-  
-  //.spotlight-link {
-//    min-height: 130px;
-//
-//    figure {
-//      margin-left: 8px;
-//      margin-right: 8px;
-//      img { height: 64px; }
-//    }
-//    figcaption { font-size: 1em; }
-//  }
   
   section { 
     &.spotlight-major, &.spotlight-minor {

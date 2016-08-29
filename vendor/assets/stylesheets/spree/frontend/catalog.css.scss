@@ -7,7 +7,7 @@
 }
 .catalog {
   background-color: #e8e8e8;
-  
+  padding-top: 0em;
   
   .container { width: 100%; }
   h2 {  
@@ -17,7 +17,6 @@
 }
 .catalog-outer {
   margin-top: 3em;
-  margin-bottom: 4em;
 }
 
 .dl-catalog {
@@ -26,16 +25,13 @@
 
 /* Catalog: */
 .open-catalog {
-  background: url(catalog.png) no-repeat center;
-  background-size: cover;
   margin-left: -8em;
   margin-right: 8em;
-  min-height: 35em;
-  -webkit-transform: rotate(-10deg); /* Safari and Chrome */
-  -moz-transform: rotate(-10deg);   /* Firefox */
-  -ms-transform: rotate(-10deg);   /* IE 9 */
-  -o-transform: rotate(-10deg);   /* Opera */
-  transform: rotate(-10deg);
+
+  img {
+    vertical-align: top;
+    width: 100%; /* max width */
+  }
 }
 
 
@@ -47,9 +43,7 @@
 @media (max-width: 992px) {
   
   .catalog {
-    h2 {
-      margin-top: 5em;
-    }
+    h2 { margin-top: 5em; }
   }
   
  .open-catalog {
@@ -109,12 +103,24 @@
            ////////////////////////////
         //////////////////////////////////
      ////////////////////////////////////////
-  /////////* Minimum width 1700px section *////
+  /////////* Minimum width 1170px section *////
 ///////////////////////////////////////////////////
-@media (min-width: 1700px) {
-  
-  .open-catalog {
-    min-height: 42em;
-   }
+@media (min-width: 1170px) {
+  .catalog { h2 { margin-top: 15%; } }
+}
+///////////////////////////////////////////////////
+
+                        ///
+                      ///////
+                    ///////////
+                 ////////////////
+              //////////////////////
+           ////////////////////////////
+        //////////////////////////////////
+     ////////////////////////////////////////
+  /////////* Minimum width 1370px section *////
+///////////////////////////////////////////////////
+@media (min-width: 1370px) {
+  .catalog { h2 { margin-top: 25%; } }
 }
 ///////////////////////////////////////////////////

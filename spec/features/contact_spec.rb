@@ -2,6 +2,12 @@ require 'rails_helper'
 
 feature 'Contact us page interactions' do
   
+  background do
+    unless Spree::Store.exists?
+      FactoryGirl.create(:store)
+    end
+  end
+  
   scenario "loads successfully." do
     visit main_app.contact_path
     expect(find('form#contact-form')).to have_select('message[subject]')
