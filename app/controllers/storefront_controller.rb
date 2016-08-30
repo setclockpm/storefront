@@ -17,11 +17,11 @@ class StorefrontController < ApplicationController
   end
   
   def about
-    
+    render layout: "porthos"
   end
   
-  def temp
-    render layout: false
-  end
+  # def temp
+ #    
+ #  end
   
 end
