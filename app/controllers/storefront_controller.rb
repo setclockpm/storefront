@@ -1,5 +1,6 @@
 class StorefrontController < ApplicationController
   helper 'spree/products'
+  layout 'porthos'
   respond_to :html
   
   CATALOG      = "Porthos_Home_New_Items.pdf"
@@ -7,8 +8,13 @@ class StorefrontController < ApplicationController
   
   
   
+  def collection
+    
+  end
+  
   def index
    @message = Message.new
+   render layout: "application"
   end
   
   def catalog
@@ -17,7 +23,7 @@ class StorefrontController < ApplicationController
   end
   
   def about
-    render layout: "porthos"
+    
   end
   
 end

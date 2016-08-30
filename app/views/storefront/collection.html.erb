@@ -1,0 +1,17 @@
+<section class="collection">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1>COLLECTION</h1>
+      </div>
+    </div>
+    <div class="row standard-grid grid">
+      <div class="col-sm-12">
+        <% variants_shown_in_collection.each_with_index do |image, i| %>
+          <%= render partial: "layouts/collection_item", locals: { image: image, position: i } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  
+</section>

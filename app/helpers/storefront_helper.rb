@@ -42,6 +42,10 @@ module StorefrontHelper
     end
   end
   
+  def variants_shown_in_collection
+    
+  end
+  
 
   private
     def three_icon_bars

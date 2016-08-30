@@ -9,7 +9,6 @@ Porthos::Application.routes.draw do
   get '/admin', to: 'spree/admin/orders#index', as: :admin
   get "/about_us", to: "storefront#about", as: :about
   get "/collection", to: "storefront#collection", as: :collection
-  #get '/contact', to: 'storefront#contact', as: :contact
   
   # mount Spree::Core::Engine, at: '/'  # The priority is based upon order of creation:
   # first created -> highest priority.
