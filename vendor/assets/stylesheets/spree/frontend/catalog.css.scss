@@ -19,10 +19,10 @@
   margin-top: 3em;
 }
 
-.dl-catalog {
-  margin: 2em 0em;
+.dl-catalog { margin: 2em 0em; }
+.featured {
+  h1 { color: #fff; }
 }
-
 /* Catalog: */
 .open-catalog {
   margin-left: -8em;
@@ -74,6 +74,10 @@
     h2 {
       margin-top: 2em;
     }
+  }
+  .dl-catalog {
+    margin: 1em 0em;
+    text-align: center;
   }
  .open-catalog {
    margin-top: 0em;
