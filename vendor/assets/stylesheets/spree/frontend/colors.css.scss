@@ -17,24 +17,23 @@
   background-color: #de5844;
   color: #fff;
   
-  .submit-group .btn-outline[disabled] {
-    border-color: #E9C2BC;
-    color: #E9C2BC;
-  }
-  .btn.disabled, .btn[disabled], fieldset[disabled] .btn {
-    border-color: #E9C2BC;
-    color: #E9C2BC;
-  }
-  
   a, h1 { color: #fff; }
 }
 #inquiries-card {
   h6 { 
     color: #999;
+    font-family: "LatoWeb";
     &.required-legend:before { color: red; }
   }
 }
 
+
+.submit-group {
+  .btn[disabled] {
+    border-color: #E9C2BC;
+    color: #E9C2BC;
+  }
+}
 
 
 
@@ -109,7 +108,14 @@ input::-moz-placeholder          { color: #999 !important; } /* Firefox 19+ */
 input:-ms-input-placeholder      { color: #999 !important; }
 input::-webkit-input-placeholder { color: #999 !important; }
 
-
+input:-moz-placeholder           { opacity: .7; } /* Firefox 18- */
+input::-moz-placeholder          { opacity: .7; } /* Firefox 19+ */
+input:-ms-input-placeholder      { opacity: .7; }
+input::-webkit-input-placeholder { opacity: .7; }
+textarea:-moz-placeholder           { opacity: .7; } /* Firefox 18- */
+textarea::-moz-placeholder          { opacity: .7; } /* Firefox 19+ */
+textarea:-ms-input-placeholder      { opacity: .7; }
+textarea::-webkit-input-placeholder { opacity: .7; }
 
 //input[type=tel]:-moz-placeholder { color: #999 !important; }    /* Firefox 18- */
 //input[type=tel]::-moz-placeholder { color: #999 !important; }  /* Firefox 19+ */

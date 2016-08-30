@@ -39,6 +39,9 @@
 }
 .help-block {
   li { list-style: none; }
+  margin: 0;
+  
+  ul { margin: 0; }
   
   &.text-danger {
     font-family: "LatoWeb";
@@ -60,7 +63,6 @@
 hr {
   &.tiny {
     border: 1px solid #fff;
-    margin-left: 0%;
     width: 2%;
   }
 }
@@ -95,48 +97,6 @@ hr {
 
 
 
-////////////////////////////////////////////////
-////////* Maximum width 767px section */////////
-////////////////////////////////////////////////
-@media (max-width: 768px) {
-  
-  .card {
-    .submit-group .form-group {
-      text-align: center;
-    }
-  }
-  
-  #contact-card {
-    padding-bottom: 10%;
-    text-align: center;
-    div { text-align: center; }
-  }
-  
-  .contact {
-    .copyright { position: unset; }
-    #contact-card {
-      h1 {
-        margin-bottom: 30px;
-        margin-top: 0px;
-      }
-    }
-    
-    h1, h3 { text-align: center; }
-  }
-
-}
-////////////////////////////////////////////////
-  ////////////////////////////////////////////
-    ///////////////////////////////////////
-      //////////////////////////////////
-         ////////////////////////////
-           ///////////////////////
-             //////////////////
-               //////////////
-                 //////////
-                   //////
-                     ///
-
 
 ////////////////////////////////////////////////
 ////////* Maximum width 992px section */////////
@@ -160,10 +120,65 @@ hr {
                  //////////
                    //////
                      ///
-                     
-                     
-                     
-                     
+
+////////////////////////////////////////////////
+////////* Maximum width 767px section */////////
+////////////////////////////////////////////////
+@media (max-width: 768px) {
+  
+  .card {
+    padding-left: 0em;
+    padding-right: 0em;
+    
+    .submit-group .form-group {
+      text-align: center;
+    }
+  }
+  
+  #contact-card {
+    padding-bottom: 10%;
+    text-align: center;
+    div { text-align: center; }
+  }
+  #inquiries-card {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  
+  .contact {
+    .copyright {
+      font-size: 1em;
+      position: unset;
+      margin-top: 3em;
+    }
+    #contact-card {
+      h1 {
+        margin-bottom: 30px;
+        margin-top: 0px;
+      }
+    }
+    
+    h1, h3 { text-align: center; }
+    hr {
+      &.tiny {
+        border: 1px solid #fff;
+        width: 33%;
+      }
+    }
+  }
+
+}
+////////////////////////////////////////////////
+  ////////////////////////////////////////////
+    ///////////////////////////////////////
+      //////////////////////////////////
+         ////////////////////////////
+           ///////////////////////
+             //////////////////
+               //////////////
+                 //////////
+                   //////
+                     ///
 
 
                      //
@@ -181,6 +196,11 @@ hr {
 @media (min-width: 768px) {
   
   #contact-card { padding-bottom: 20%; }
+  hr {
+    &.tiny {
+      margin-left: 0%;
+    }
+  }
   
 }
 ////////////////////////////////////////////////
@@ -201,8 +221,6 @@ hr {
   section {
     &.catalog { padding-bottom: 0em; }
   }
-  
-  
   #contact-card { padding-bottom: 30%; }
   
 }
