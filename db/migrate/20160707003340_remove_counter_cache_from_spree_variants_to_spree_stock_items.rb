@@ -10,5 +10,10 @@ class RemoveCounterCacheFromSpreeVariantsToSpreeStockItems < ActiveRecord::Migra
   end
 
   def down
+    add_column :spree_variants, :stock_items_count, :integer, default: 0, null: false
+
+    Spree::Variant.find_each do |variant|
+      Spree::Variant.reset_counters(variant.id, :stock_items)
+    end
   end
 end
