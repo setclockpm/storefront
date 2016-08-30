@@ -124,7 +124,7 @@ hr {
 ////////////////////////////////////////////////
 ////////* Maximum width 767px section */////////
 ////////////////////////////////////////////////
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   
   .card {
     padding-left: 0em;
@@ -141,8 +141,8 @@ hr {
     div { text-align: center; }
   }
   #inquiries-card {
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 4em;
+    padding-right: 4em;
   }
   
   .contact {
@@ -162,7 +162,7 @@ hr {
     hr {
       &.tiny {
         border: 1px solid #fff;
-        width: 33%;
+        width: 20%;
       }
     }
   }
