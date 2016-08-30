@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
   def new
     logger.debug "\n\nIP Address: #{request.remote_ip}\n\n"
     @message = Message.new
-    render layout: 'contact_us'
+    render layout: 'porthos'
   end
   
   

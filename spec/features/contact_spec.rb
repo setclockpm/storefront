@@ -10,8 +10,8 @@ feature 'Contact us page interactions' do
   
   scenario "loads successfully." do
     visit main_app.contact_path
-    expect(find('form#contact-form')).to have_select('message[subject]')
-    expect(find('select#subject').all('option').size).to eq(3)
+    expect(find('form#new_message')).to have_select('message[subject]')
+    expect(find('select#message_subject').all('option').size).to eq(4)
   end
   
    #

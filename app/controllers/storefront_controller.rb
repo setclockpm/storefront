@@ -20,8 +20,4 @@ class StorefrontController < ApplicationController
     render layout: "porthos"
   end
   
-  # def temp
- #    
- #  end
-  
 end
