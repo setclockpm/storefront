@@ -3073,6 +3073,7 @@ CREATE TABLE spree_variants (
     updated_at timestamp without time zone,
     sale_price numeric(8,2),
     discontinue_on timestamp without time zone,
+    shown_in_collection boolean DEFAULT false,
     stock_items_count integer DEFAULT 0 NOT NULL
 );
 
@@ -6463,4 +6464,8 @@ INSERT INTO schema_migrations (version) VALUES ('20160520085976');
 INSERT INTO schema_migrations (version) VALUES ('20160520085977');
 
 INSERT INTO schema_migrations (version) VALUES ('20160520085978');
+
+INSERT INTO schema_migrations (version) VALUES ('20160707003340');
+
+INSERT INTO schema_migrations (version) VALUES ('20160830195015');
 

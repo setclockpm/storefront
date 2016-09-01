@@ -81,7 +81,13 @@ hr {
 nav {
   font-family: 'cocomat', 'Federo', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
   font-weight: 700;
+  
+  &.navbar {
+    font-family: 'cocomat', 'Federo', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
+    font-weight: 700;
+  }
 }
+
 section { padding: 4em 0; }
 ul { 
   list-style: none;
@@ -109,7 +115,7 @@ ul {
   position: relative;
   margin-bottom: 0;
   
-  input, textarea {
+  input, textarea, select {
     background: none;
     box-shadow: none !important;
     border: none;
@@ -140,6 +146,8 @@ ul {
     z-index: 0;
   }
   
+  select option:first-child { font-size: 14px; }
+  
   &:not(:first-child) { padding-left: 14px; }
 }
 .floating-label-form-group:not(:first-child) { padding-left: 14px; }
@@ -167,10 +175,22 @@ ul {
 
 
 
-input:-moz-placeholder           { font-family: "LatoWeb"; } /* Firefox 18- */
-input::-moz-placeholder          { font-family: "LatoWeb"; } /* Firefox 19+ */
-input:-ms-input-placeholder      { font-family: "LatoWeb"; }
-input::-webkit-input-placeholder { font-family: "LatoWeb"; }
+input:-moz-placeholder { 
+  font-family: "LatoWeb";
+  font-size: 14px;
+} /* Firefox 18- */
+input::-moz-placeholder {
+  font-family: "LatoWeb";
+  font-size: 14px;
+} /* Firefox 19+ */
+input:-ms-input-placeholder { 
+  font-family: "LatoWeb";
+  font-size: 14px;
+}
+input::-webkit-input-placeholder { 
+  font-family: "LatoWeb";
+  font-size: 14px;
+}
 
 
 /* Firefox 18- */

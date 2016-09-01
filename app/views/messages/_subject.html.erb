@@ -2,7 +2,8 @@
   <div class="form-group floating-label-form-group controls">
     <%#= f.label :subject, "Subject", class: 'required' %>
     <%= f.select :subject, ["Product Availability", "Product Inquiries: description, pricing, etc ...", "Wholesale Inquiries", "Other"], 
-    html_options: { id: "subject", class: "form-control" }, data: { required: true, 'validation-required-message': "Please select one." } %>
+                { prompt: "Regarding (Choose One)*" }, id: "subject", class: "form-control selectpicker", 
+                data: { required: true, 'validation-required-message': "Please select one." } %>
     <p class="help-block text-danger"></p>
   </div>
 </div>
