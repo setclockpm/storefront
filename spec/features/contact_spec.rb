@@ -14,14 +14,14 @@ feature 'Contact us page interactions' do
     expect(find('select#message_subject').all('option').size).to eq(4)
   end
   
-   #
-  # feature "Selecting Wholesale option" do
-  #
-  #   scenario "sumbits successfully." do
-  #     visit main_app.contact_path(subject: 'Wholesale')
-  #     expect(Messages.count).to eq(2)
-  #   end
-  # end
+ 
+  feature "Selecting Wholesale option" do
+
+    scenario "sumbits successfully." do
+      visit main_app.contact_path(subject: 'Wholesale')
+      # expect(Messages.count).to eq(2)
+    end
+  end
   #
   # feature "selecting 'Other' option", js: true do
   #   background do

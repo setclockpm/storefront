@@ -32,7 +32,29 @@
 
 
 
-
+.bootstrap-select {
+  .dropdown-toggle {
+    span {
+      &:focus {
+        outline: 0 none;
+        outline-color: transparent;
+      }
+    }
+  }
+  
+  
+  button { 
+    border-top: 0 none;
+    border-left: 0 none;
+    color: #999;
+  }
+}
+.btn-group.open {
+  .dropdown-toggle {
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.025);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.025);
+  }
+}
 .btn-outline {
   border: 2px dotted #444;
   &:hover { border: 2px solid #444; }
@@ -45,9 +67,9 @@
   a { color: #fff; }
 }
 .floating-label-form-group {
-  border-bottom: 1px solid #999;
+  border-bottom: 1px solid rgba(153, 153, 153, 0.7);
   
-  &:not(:first-child) { border-left: 1px solid #eee; }
+  &:not(:first-child) { border-left: 1px solid #999; }
   select { color: #999; }
 }
 .floating-label-form-group-with-value {
@@ -57,6 +79,32 @@
 .help-block { &.text-danger { color: #a94442; } }
 .icon-bar { background-color: #fefefe; }
 .required:after { color: red; }
+.select {
+  .bootstrap-select {
+    .dropdown-toggle {
+      &:focus {
+        outline: 0 none;
+        outline: -webkit-focus-ring-color auto 0px !important;
+        outline-color: transparent !important;
+        outline-style: auto;
+        outline-width: 5px;
+        -webkit-box-shadow: none;
+      }
+    }
+  }
+  .btn-default {
+    &:hover, &:focus, &.focus {
+      background-color: #fff;
+      border-top: 0 none;
+      border-left: 0 none;
+    }
+  }
+  .open > .btn-default.dropdown-toggle {
+    background-color: #fff;
+    border-top: 0 none;
+    border-left: 0 none;
+  }
+}
 .spotlight-link { color: #2b2b2b; }
 .submit-group {
   .btn { background-color: transparent; }
@@ -164,10 +212,19 @@ textarea::-webkit-input-placeholder { opacity: 0.7; }
   /////////* Minimum width 767px section *//////
 ///////////////////////////////////////////////////
 @media (min-width: 767px) {
-  #spree-header { background: none 0; }
+  #spree-header { 
+    background: none 0;
+    .navbar {
+      border-bottom: 1px solid rgba(153, 153, 153, 0.85);
+    }
+  }
   
   nav {
-    &.navbar-default { &.opaque { background: rgba(244, 244, 244, 100.0); } }
+    &.navbar-default { 
+      &.opaque { 
+        background: rgba(255, 255, 255, 100.0);
+      }
+    }
   }
 }
 
@@ -195,7 +252,7 @@ textarea::-webkit-input-placeholder { opacity: 0.7; }
   nav {
     &.navbar-default {
       .navbar-toggle { .icon-bar { background-color: #dd5544; } }
-      &.opaque { background: rgba(244, 244, 244, 100.0); }
+      &.opaque { background: rgba(255, 255, 255, 100.0); }
     }
   }
 }

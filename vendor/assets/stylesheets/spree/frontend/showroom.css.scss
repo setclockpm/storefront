@@ -430,7 +430,7 @@ ul {
           background-image: -moz-linear-gradient(top, white, black);
           background-image: -ms-linear-gradient(top, white, black);
           background-image: -o-linear-gradient(top, white, black);
-          background-image: linear-gradient(top, bottom, white, black);
+          background-image: linear-gradient(top, white, black);
           height: 100%;
           left: 0;
           opacity: .025;
@@ -689,7 +689,7 @@ ul {
   }
   
   div {
-    &#inside-product-cart-form { border: 1px thin #2d1B80; }
+    &#inside-product-cart-form { border: 1px solid #2d1b80; }
     &#product-description { border-top: 1px solid #f2f2f2; }
     &#product-price {
       span {

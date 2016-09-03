@@ -1,9 +1,39 @@
-<div class="control-group">
+<link rel="stylesheet" href="http://formvalidation.io/vendor/formvalidation/css/formValidation.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>
+<script src="http://formvalidation.io/vendor/formvalidation/js/formValidation.min.js"></script>
+<script src="http://formvalidation.io/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+<script>
+  $(document).ready(function() {
+    
+    $('#new_message').find('[name="message[subject]"]').selectpicker().change(function(e) {
+      /* Revalidate the color when it is changed */
+      $('#new_message').formValidation('revalidateField', 'message[subject]');
+    }).end()
+        
+    .formValidation({
+      framework: 'bootstrap',
+      excluded: ':disabled',
+        icon: {
+          valid: 'glyphicon glyphicon-ok',
+          invalid: 'glyphicon glyphicon-remove',
+          validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+          'message[subject]': {
+            validators: {
+              notEmpty: { message: "You haven't chosen the reason for your inquiry." }
+            }
+          }
+        }
+    });
+  });
+</script>
+
+<div class="control-group select">
   <div class="form-group floating-label-form-group controls">
-    <%#= f.label :subject, "Subject", class: 'required' %>
     <%= f.select :subject, ["Product Availability", "Product Inquiries: description, pricing, etc ...", "Wholesale Inquiries", "Other"], 
-                { prompt: "Regarding (Choose One)*" }, id: "subject", class: "form-control selectpicker", 
-                data: { required: true, 'validation-required-message': "Please select one." } %>
-    <p class="help-block text-danger"></p>
+                { prompt: "Regarding (Choose One)*" }, id: "subject", class: "form-control selectpicker", required: true %>
   </div>
 </div>

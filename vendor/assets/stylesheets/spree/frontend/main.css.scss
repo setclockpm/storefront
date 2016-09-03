@@ -10,7 +10,8 @@
 
 }
 
-/* Webfont: Lato-Regular */@font-face {
+/* Webfont: Lato-Regular */
+@font-face {
     font-family: 'LatoWeb';
     src: url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/lato/fonts/Lato-Regular.eot'); /* IE9 Compat Modes */
     src: url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/lato/fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -87,12 +88,11 @@ nav {
     font-weight: 700;
   }
 }
-
 section { padding: 4em 0; }
 ul { 
   list-style: none;
+  padding: 0;
 }
-
 
 
 #spree-header {
@@ -110,7 +110,12 @@ ul {
 
 
 
-
+.bootstrap-select {
+  button { font-family: "LatoWeb"; }
+}
+.dropdown-menu {
+  span { font-family: "LatoWeb"; }
+}
 .floating-label-form-group {
   position: relative;
   margin-bottom: 0;
@@ -120,7 +125,6 @@ ul {
     box-shadow: none !important;
     border: none;
     border-radius: 0;
-    font-size: 1.15em;
     font-family: "LatoWeb";
     padding-right: 0;
     padding-left: 0;
@@ -128,6 +132,8 @@ ul {
     resize: none;
     z-index: 1;
   }
+  
+  input, textarea { font-size: 1.15em; }
   
   label {
     display: block;
@@ -145,8 +151,12 @@ ul {
     transition: top 0.3s ease,opacity 0.3s ease;
     z-index: 0;
   }
-  
-  select option:first-child { font-size: 14px; }
+  select {
+    margin-left: -.6em;
+    
+    option:first-child { font-size: 14px; }
+    option:not(:first-child) { font-size: 1.15em; }
+  }
   
   &:not(:first-child) { padding-left: 14px; }
 }
@@ -156,7 +166,12 @@ ul {
     opacity: 1;
     top: 4px;
   }
-} 
+}
+.help-block {
+  font-family: "LatoWeb";
+  font-size: 14px;
+  margin: 0;
+}
 .hor-flip {
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
@@ -166,10 +181,11 @@ ul {
   filter: FlipH;
 }
 .nav { white-space: nowrap; }
-
-.section-separator {
-  margin-top: 5em;
-  margin-bottom: 5em;
+.required {
+  &:after {
+    content: ' *';
+    display: inline;
+  }
 }
 
 
@@ -215,11 +231,7 @@ textarea::-webkit-input-placeholder {
 
 
 
-.required:after {
-  color: red;
-  content: ' *';
-  display: inline;
-}
+
 
  
 
