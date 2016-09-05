@@ -46,35 +46,3 @@ $(document).ready(function(){
     }]
   });
 });
-
-
-// Old validation method for select box opn contact page. 
-// $(document).ready(function() {
-//   $.validator.setDefaults({
-//     /*OBSERVATION: note how the ignore option is placed in here*/
-//     ignore: ':not(select:hidden, input:visible, textarea:visible)',
-//
-//     /*...other options omitted to focus on the OP...*/
-//
-//     errorPlacement: function (error, element) {
-//       if (element.hasClass('bs-select')) {
-//           error.insertAfter('.bootstrap-select');
-//       } else {
-//         console.log("element", element);
-//         console.log("error", error);
-//         element.parent().find(".help-block").first().html(error);
-//       }
-//       /*Add other (if...else...) conditions depending on your
-//       * validation styling requirements*/
-//     }
-//   });
-//   $('#new_message').validate({
-//     debug: true,
-//     rules: {
-//       'message[subject]': { required: true }
-//     },
-//     messages: {
-//       'message[subject]': { required: 'Please tell us what this is regarding' }
-//     }
-//   });
-// });

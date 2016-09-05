@@ -25,6 +25,21 @@
             validators: {
               notEmpty: { message: "You haven't chosen the reason for your inquiry." }
             }
+          },
+          'message[name]': {
+            validators: {
+              notEmpty: { message: "Please enter a name." }
+            }
+          },
+          'message[email]': {
+            validators: {
+              notEmpty: { message: "Please enter an email address.." }
+            }
+          },
+          'message[content]': {
+            validators: {
+              notEmpty: { message: "You haven't typed your message." }
+            }
           }
         }
     });
