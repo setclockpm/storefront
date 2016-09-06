@@ -34,7 +34,7 @@
 // });
 
 // When clicking on Full hide fail/success boxes
-$('#name').focus(function() {
-  alert("hiding success boxes");
-  $('#success').html('');
-});
+// $('#name').focus(function() {
+//   alert("hiding success boxes");
+//   $('#success').html('');
+// });

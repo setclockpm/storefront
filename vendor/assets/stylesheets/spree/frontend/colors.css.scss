@@ -117,7 +117,7 @@
     color: #da5544;
   }
   .form-group {
-    input[type="submit"] { &:hover { border: 2px solid #da5544; } }
+    input[type="submit"] { &:hover, &:focus { border: 2px solid #da5544; } }
   }
 }
 .toggle-mv-menu {

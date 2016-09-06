@@ -4,6 +4,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>
 <script src="http://formvalidation.io/vendor/formvalidation/js/formValidation.min.js"></script>
 <script src="http://formvalidation.io/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+
 <script>
   $(document).ready(function() {
     
@@ -11,6 +12,28 @@
       /* Revalidate the color when it is changed */
       $('#new_message').formValidation('revalidateField', 'message[subject]');
     }).end()
+    .on('init.field.fv', function(e, data) {
+      // data.fv      --> The FormValidation instance
+      // data.field   --> The field name
+      // data.element --> The field element
+
+      var $parent = data.element.parents('.form-group'),
+      $icon = $parent.find('.form-control-feedback[data-fv-icon-for="' + data.field + '"]');
+
+      // You can retrieve the icon element by
+      // $icon = data.element.data('fv.icon');
+      
+      data.element.on('click', function() {
+      // Check if the field is valid or not via the icon class
+        if ($icon.hasClass('glyphicon-remove')) {
+          // Clear the error message
+          data.fv.resetField(data.element);
+        }
+      });
+    })
+    .on("focus", ".form-control", function() {
+      $("input.btn").removeAttr("disabled");
+    })
         
     .formValidation({
       framework: 'bootstrap',
