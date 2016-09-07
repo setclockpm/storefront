@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
   
   
   def new
-    logger.debug "\n\nIP Address: #{request.remote_ip}\n\n"
+    @subject = params[:subject]
     @message = Message.new
     render layout: 'porthos'
   end
@@ -16,7 +16,7 @@ class MessagesController < ApplicationController
     
     if @message.valid?
       MessageMailer.new_message(@message).deliver_now
-      redirect_to root_path(anchor: 'contact'), notice: "Your message has been sent."
+      redirect_to redirect_location, notice: "Your message has been sent."
       
     else
       flash[:alert] = "An error occurred while delivering this message."
@@ -27,7 +27,15 @@ class MessagesController < ApplicationController
   
   private
     def message_params
-      params.require(:message).permit(:name, :email, :phone, :content)
+      params.require(:message).permit(:name, :email, :phone, :content, :subject)
+    end
+    
+    def redirect_location
+      if message_params[:subject].present?
+        contact_path
+      else
+        root_path(anchor: 'contact')
+      end
     end
   
 end

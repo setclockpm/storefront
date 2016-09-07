@@ -1,4 +1,4 @@
-<%= javascript_include_tag 'contact' %>
+<%= javascript_include_tag 'inquiryFormValidator' %>
 
 
 <div id="inquiries-card" class="card col-md-6">
@@ -14,14 +14,14 @@
       <div class="control-group">
         <div class="form-group floating-label-form-group controls">
           <%= f.label :name, "Name", class: 'required' %>
-          <%= f.text_field :name, placeholder: "Name*", id: "name", class: "form-control", data: { required: true, 'validation-required-message': "Please enter a name." } %>
+          <%= f.text_field :name, placeholder: "Name*", id: "name", class: "form-control", data: { required: true } %>
           <p class="help-block text-danger"></p>
         </div>
       </div>
       <div class="control-group">
         <div class="form-group floating-label-form-group controls">
           <%= f.label :email, "Email Address", class: 'required' %>
-          <%= f.email_field :email, placeholder: "Email Address*", id: "email", class: "form-control", data: { required: true, 'validation-required-message': "Please enter an email address." } %>
+          <%= f.email_field :email, placeholder: "Email Address*", id: "email", class: "form-control", data: { required: true } %>
           <p class="help-block text-danger"></p>
         </div>
       </div>
@@ -35,7 +35,7 @@
       <div class="control-group">
         <div class="form-group floating-label-form-group controls">
           <%= f.label :content, "Message", class: 'required' %>
-          <%= f.text_area :content, placeholder: "Message*", id: "content", class: "form-control", rows: 5, data: { required: true, 'validation-required-message': "You haven't typed your message." } %>
+          <%= f.text_area :content, placeholder: "Message*", id: "content", class: "form-control", rows: 5, data: { required: true } %>
           <p class="help-block text-danger"></p>
         </div>
       </div>

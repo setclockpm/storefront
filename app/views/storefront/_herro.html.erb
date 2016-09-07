@@ -4,12 +4,16 @@
     <div class="row herro slick-main" data-hook="slideshow">
       <div class="image lazyloaded" style="background-image:url(assets/slideshow-2.jpg);">
         <picture style="display:none;">
-          <source srcset="'assets/slideshow-2.jpg'" type="image/jpeg">
+          <source srcset="assets/slideshow-2.jpg" type="image/jpeg">
           <%= image_tag nil, class: 'lazyloaded slick' %>
         </picture>
       </div>
-      <div class="image lazyloaded" style="background-image:url(assets/slideshow-1.jpg)"> <%#= image_tag  nil, class: 'lazy slick', data: { lazy: 'assets/slideshow-1.jpg' } %> </div>
-      <div class="image lazyloaded" style="background-image:url(assets/slideshow-3.jpg)"> <%#= image_tag  nil, class: 'lazy slick', data: { lazy: 'assets/slideshow-3.jpg' } %> </div>
+      <div class="image lazyloaded" style="background-image:url(assets/slideshow-1.jpg)">
+        <%#= image_tag  nil, class: 'lazy slick', data: { lazy: 'assets/slideshow-1.jpg' } %>
+      </div>
+      <div class="image lazyloaded" style="background-image:url(assets/slideshow-3.jpg)">
+        <%#= image_tag  nil, class: 'lazy slick', data: { lazy: 'assets/slideshow-3.jpg' } %>
+      </div>
     </div>
   </div>
 </header>

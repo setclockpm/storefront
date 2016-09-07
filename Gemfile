@@ -48,6 +48,7 @@ group :test do
   gem "capybara"
   gem "database_cleaner"
   gem 'ffaker'
+  gem "guard-rspec", require: false
   gem 'launchy'
   gem "selenium-webdriver"
 end
