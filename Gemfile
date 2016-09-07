@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.3.0"
+ruby "2.3.1"
 
 gem 'rails', '~>4.2'
 
@@ -48,6 +48,7 @@ group :test do
   gem "capybara"
   gem "database_cleaner"
   gem 'ffaker'
+  gem "guard-rspec", require: false
   gem 'launchy'
   gem "selenium-webdriver"
 end

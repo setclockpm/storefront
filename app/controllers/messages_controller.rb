@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
   
   
   def new
-    logger.debug "\n\nIP Address: #{request.remote_ip}\n\n"
+    @subject = params[:subject]
     @message = Message.new
     render layout: 'porthos'
   end

@@ -9,6 +9,15 @@ require 'capybara/rails'
 require 'capybara/rspec'
 
 
+Capybara.register_driver :selenium_chrome do |app|
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
+end
+Capybara.javascript_driver = :selenium_chrome
+
+Capybara.asset_host = "http://localhost:3000"
+Capybara.default_max_wait_time = 4
+
+
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'support/factory_girl'
@@ -39,6 +48,8 @@ RSpec.configure do |config|
   # config.fixture_path = "#{::Rails.root}/spec/fixtures"
   
   config.include Devise::TestHelpers, type: :controller
+  config.include Features::FormHelpers, type: :feature
+  
   #config.include Devise::Test::ControllerHelpers, type: :controller
   #config.include Spree::Core::ControllerHelpers::Auth
   
