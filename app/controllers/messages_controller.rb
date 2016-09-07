@@ -31,8 +31,6 @@ class MessagesController < ApplicationController
     end
     
     def redirect_location
-      puts "message_params: #{message_params}"
-      puts "message_params[:subject]: #{message_params[:subject]}"
       if message_params[:subject].present?
         contact_path
       else

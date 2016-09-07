@@ -21,11 +21,18 @@ feature 'Contact us page interactions' do
     expect(find('select#subject').all('option').size).to eq(5)
   end
   
-  scenario "Loads successfully with subject parameter being passed in query string." do
-    subject = 'Wholesale Inquiries'
-    visit main_app.contact_path(subject: subject)
-    expect(find('form select', visible: false).value).to eq(subject)
+  scenario "Loads successfully with subject parameter being passed in query string.", js: true do
+    visit main_app.root_path
+    expect(page.has_selector?('div#contact-card')).to be true
+    expect(find('div#contact-card')).to have_link('Wholesale')
+    
+    find('ul.contact-links').click_link('Wholesale')
+    save_and_open_page
+    
+    expect(find('form select', visible: false).value).to eq('Wholesale Inquiries')
   end
+  
+  
   
   feature "Form submission with valid data" do
     background do
@@ -37,30 +44,15 @@ feature 'Contact us page interactions' do
     
       visit main_app.contact_path
       expect(page.has_selector?('form select', visible: false)).to be true
-      save_and_open_page
-      fill_inquiry_form_text_fields(@field_entries)
+      fill_inquiries_form_with_valid_data(@field_entries)
       click_button 'send'
     end
     
   end
   
-  
-  
- 
-  feature "Selecting Wholesale option" do
+  feature "Form submission with invalid or missing data" do
 
     
   end
-  #
-  # feature "selecting 'Other' option", js: true do
-  #   background do
-  #   end
-  #
-  #   scenario "sumbits successfully." do
-  #     visit main_app.contact_path
-  #     click_link "Send"
-  #     select('http://igotzdatseo.center', from: 'message[subject]')
-  #
-  #   end
-  # end
+ 
 end
