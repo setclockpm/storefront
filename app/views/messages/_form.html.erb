@@ -8,9 +8,11 @@
     <%= render partial: "layouts/flash_messages" %>
   </div>
   
+  <%= render partial: inquiries_form_validation %>
+  
   <div class="col-md-12">
     <%= form_for @message, id: "contact-form", url: main_app.contact_path(@message) do |f| %>
-      <%= render partial: "subject", locals: { f: f } unless current_page?(root_url)  %>
+      <%= render partial: "subject", locals: { f: f } unless current_page?(root_url) %>
       <div class="control-group">
         <div class="form-group floating-label-form-group controls">
           <%= f.label :name, "Name", class: 'required' %>

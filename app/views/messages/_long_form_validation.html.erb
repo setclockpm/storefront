@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="http://formvalidation.io/vendor/formvalidation/css/formValidation.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>
+<script src="http://formvalidation.io/vendor/formvalidation/js/formValidation.min.js"></script>
+<script src="http://formvalidation.io/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    
+    $('#new_message').find('[name="message[subject]"]').selectpicker().change(function(e) {
+      /* Revalidate the color when it is changed */
+      $('#new_message').formValidation('revalidateField', 'message[subject]');
+    }).end()
+    .on('init.field.fv', function(e, data) {
+      // data.fv      --> The FormValidation instance
+      // data.field   --> The field name
+      // data.element --> The field element
+
+      var $parent = data.element.parents('.form-group'),
+      $icon = $parent.find('.form-control-feedback[data-fv-icon-for="' + data.field + '"]');
+
+      // You can retrieve the icon element by
+      // $icon = data.element.data('fv.icon');
+      
+      data.element.on('click', function() {
+      // Check if the field is valid or not via the icon class
+        if ($icon.hasClass('glyphicon-remove')) {
+          // Clear the error message
+          data.fv.resetField(data.element);
+        }
+      });
+    })
+    .on("focus", ".form-control", function() {
+      $("input.btn").removeAttr("disabled");
+    })
+        
+    .formValidation({
+      framework: 'bootstrap',
+      excluded: ':disabled',
+        icon: {
+          valid: 'glyphicon glyphicon-ok',
+          invalid: 'glyphicon glyphicon-remove',
+          validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+          'message[subject]': {
+            validators: {
+              notEmpty: { message: "You haven't chosen the reason for your inquiry." }
+            }
+          },
+          'message[name]': {
+            validators: {
+              notEmpty: { message: "Please enter a name." }
+            }
+          },
+          'message[email]': {
+            validators: {
+              notEmpty: { message: "Please enter an email address." }
+            }
+          },
+          'message[content]': {
+            validators: {
+              notEmpty: { message: "You haven't typed your message." }
+            }
+          }
+        }
+    });
+  });
+</script>

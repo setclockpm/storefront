@@ -19,7 +19,6 @@ feature 'Contact us page interactions: ' do
   feature "Initial page load / reload: " do
     # Only 2 ways possible: With an argument in query string intended for subject and the normal way.
     # The only argument that is accepted as an argument is the subject.
-    
     scenario "Successful w/o subject in query string." do
       visit main_app.contact_path
       expect(find('form#new_message')).to have_select('message[subject]')
@@ -33,27 +32,32 @@ feature 'Contact us page interactions: ' do
       find('ul.contact-links').click_link('Wholesale')
       expect(find('form select', visible: false).value).to eq('Wholesale Inquiries')
     end
-    
   end
-  
-  
-  
   
   feature "Form submission with valid data" do
     background do
       @field_entries = {}
     end
     
-    
     feature "with valid data." do
       background do
-        @field_entries[:subject] = "Product Availability"
+        
       end
       
       scenario "Long form should submit successfully.", js: true do
+        @field_entries[:subject] = "Product Availability"
         visit main_app.contact_path
         expect(page.has_selector?('form select', visible: false)).to be true
         fill_inquiries_form_with_valid_data(@field_entries)
+        click_button 'send'
+      end
+      
+      scenario "Short form should submit successfully.", js: true do
+        visit main_app.root_path
+        expect(page.has_selector?('form select', visible: false)).to be false
+        find('input[type=email]').click
+        fill_inquiries_form_with_valid_data
+        save_and_open_page
         click_button 'send'
       end
     end

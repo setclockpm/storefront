@@ -15,6 +15,10 @@ module ApplicationHelper
     request.remote_ip == INTERNAL_IP
   end
   
+  def inquiries_form_validation
+    current_page?(root_url) ? 'short_form_validation' : 'long_form_validation'
+  end
+  
   def navbar_behavior
     "navbar-#{current_page?(main_app.root_url) ? "fixed" : "static"}-top"
   end
