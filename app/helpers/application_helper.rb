@@ -16,7 +16,7 @@ module ApplicationHelper
   end
   
   def inquiries_form_validation
-    current_page?(root_url) ? 'short_form_validation' : 'long_form_validation'
+    current_page?(root_url) ? 'messages/short_form_validation' : 'long_form_validation'
   end
   
   def navbar_behavior
