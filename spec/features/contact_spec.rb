@@ -75,6 +75,16 @@ feature 'Contact us page interactions: ' do
         expect(page).to have_content("Please enter an email address.")
         expect(page).to have_content("You haven't chosen the reason for your inquiry.")
       end
+      
+      scenario "Short form submision should be prevented.", js: true do
+        @field_entries[:email] = 'forgetfulfrank@example.com'
+        @field_entries[:name]  = nil
+        
+        visit main_app.root_path
+        fill_text_fields(@field_entries)
+        click_button 'send'
+        expect(page).to have_content("Please enter a name.")
+      end
     end
     
   end
