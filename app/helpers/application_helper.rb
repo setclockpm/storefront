@@ -20,7 +20,16 @@ module ApplicationHelper
   end
   
   def navbar_page
-    current_page?(main_app.root_url) ? "transparent" : "opaque"
+    unless request
+      raise "View context has not provided a Request object! #navbar_page"
+    end
+    
+    if request.get?
+      puts "current_page?(main_app.root_url): #{current_page?(main_app.root_url)}\n"
+      current_page?(main_app.root_url) ? "transparent" : "opaque"
+    else
+      request.original_url.end_with?(main_app.root_url) ? "transparent" : "opaque"
+    end
   end
   
   def required_field

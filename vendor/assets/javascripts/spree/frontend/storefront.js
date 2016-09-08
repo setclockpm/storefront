@@ -29,6 +29,7 @@ $('.navbar-collapse ul li a:not(.dropdown-toggle)').click(function() {
 });
 
 
+
 $(document).ready(function(){
   $('.herro').slick({
     autoplay: true,
@@ -43,5 +44,12 @@ $(document).ready(function(){
       breakpoint: 768,
       settings: { dots: true }
     }]
+  });
+  
+  // This may have been part of the startbootstrap teemplate and may not be needed
+  // TODO: Check if this is even used.
+  $("a[data-toggle=\"tab\"]").click(function(e) {
+    e.preventDefault();
+    $(this).tab("show");
   });
 });
