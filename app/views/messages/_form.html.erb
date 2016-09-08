@@ -1,6 +1,3 @@
-<%= javascript_include_tag 'inquiryFormValidator' %>
-
-
 <div id="inquiries-card" class="card col-md-6">
   <div class="col-md-12">
     <h1>inquiries</h1>
@@ -12,18 +9,19 @@
   
   <div class="col-md-12">
     <%= form_for @message, id: "contact-form", url: main_app.contact_path(@message) do |f| %>
-      <%= render partial: "subject", locals: { f: f } unless current_page?(root_url) %>
+    
+      <%= render_subject_dropdown(f) %>
       <div class="control-group">
         <div class="form-group floating-label-form-group controls">
           <%= f.label :name, "Name", class: 'required' %>
-          <%= f.text_field :name, placeholder: "Name*", id: "name", class: "form-control", data: { required: true } %>
+          <%= f.text_field :name, placeholder: "Name*", id: "name", class: "form-control", data: { required: true, 'validation-required-message': "Please enter a name." } %>
           <p class="help-block text-danger"></p>
         </div>
       </div>
       <div class="control-group">
         <div class="form-group floating-label-form-group controls">
           <%= f.label :email, "Email Address", class: 'required' %>
-          <%= f.email_field :email, placeholder: "Email Address*", id: "email", class: "form-control", data: { required: true } %>
+          <%= f.email_field :email, placeholder: "Email Address*", id: "email", class: "form-control", data: { required: true, 'validation-required-message': "Please enter an email address." } %>
           <p class="help-block text-danger"></p>
         </div>
       </div>
@@ -37,7 +35,7 @@
       <div class="control-group">
         <div class="form-group floating-label-form-group controls">
           <%= f.label :content, "Message", class: 'required' %>
-          <%= f.text_area :content, placeholder: "Message*", id: "content", class: "form-control", rows: 5, data: { required: true } %>
+          <%= f.text_area :content, placeholder: "Message*", id: "content", class: "form-control", rows: 5, data: { required: true, 'validation-required-message': "You haven't typed your message." } %>
           <p class="help-block text-danger"></p>
         </div>
       </div>

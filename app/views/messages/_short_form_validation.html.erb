@@ -3,10 +3,6 @@
 <script>
   // Now currently only used for the inquiries form on the front page.
   $(function() {
-    $("body").on("focus", ".floating-label-form-group", function() {
-      $("input.btn").removeAttr("disabled");
-    });
-    
     $("#new_message input, #new_message textarea").jqBootstrapValidation({
       // preventSubmit: true,
       submitError: function($form, event, errors) {
@@ -31,6 +27,10 @@
       filter: function() {
         return $(this).is(":visible");
       },
+    });
+    
+    $("body").on("focus", ".floating-label-form-group", function() {
+      $("input.btn").removeAttr("disabled");
     });
   });
   

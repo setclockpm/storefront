@@ -57,7 +57,6 @@ feature 'Contact us page interactions: ' do
         expect(page.has_selector?('form select', visible: false)).to be false
         find('input[type=email]').click
         fill_inquiries_form_with_valid_data
-        save_and_open_page
         click_button 'send'
       end
     end
