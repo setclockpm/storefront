@@ -34,18 +34,17 @@ feature 'Contact us page interactions: ' do
     end
   end
   
-  feature "Form submission with valid data" do
+  feature "Form submission" do
     background do
       @field_entries = {}
     end
     
     feature "with valid data." do
       background do
-        
+        @field_entries[:subject] = "Product Availability"
       end
       
       scenario "Long form should submit successfully.", js: true do
-        @field_entries[:subject] = "Product Availability"
         visit main_app.contact_path
         expect(page.has_selector?('form select', visible: false)).to be true
         fill_inquiries_form_with_valid_data(@field_entries)
