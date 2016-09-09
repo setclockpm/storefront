@@ -1,74 +1,20 @@
-@font-face {
-    font-family: 'cocomat';
-    src: url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/cocomat_light/cocomat_light.eot');
-    src: url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/cocomat_light/cocomat_light.woff2') format('woff2'),
-         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/cocomat_light/cocomat_light.woff') format('woff'),
-         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/cocomat_light/cocomat_light.ttf') format('truetype'),
-         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/cocomat_light/cocomat_light.svg#cocomatlight') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-/* Webfont: Lato-Regular */
-@font-face {
-    font-family: 'LatoWeb';
-    src: url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/lato/fonts/Lato-Regular.eot'); /* IE9 Compat Modes */
-    src: url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/lato/fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/lato/fonts/Lato-Regular.woff2') format('woff2'), /* Modern Browsers */
-         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/lato/fonts/Lato-Regular.woff') format('woff'), /* Modern Browsers */
-         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/lato/fonts/Lato-Regular.ttf') format('truetype');
-    font-style: normal;
-    font-weight: normal;
-    text-rendering: optimizeLegibility;
-}
-
-
-
-
-
 html {
-  font-size: 16px;
   height: 100%;
   width: 100%;
 }
 
-
 body {
   height: 100%;
-  font-family: 'cocomat', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
-  font-size: 16px;
   overflow-x: hidden;
   width: 100%;
 }
 
-
+// ------------------------------------------------------------------------------------------
 
 a {
-  font-weight: normal;
   outline: none;
-  
-  &:hover, &:focus, &:active {
-    text-decoration: none;
-    outline: none;
-  }
+  &:hover, &:focus, &:active { outline: none; }
 }
-
-
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'cocomat', 'Federo', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 500;
-}
-
-
 hr {
   padding: 0;
   text-align: center;
@@ -79,33 +25,10 @@ hr {
     max-width: 150px;
   }
 }
-nav {
-  font-family: 'cocomat', 'Federo', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
-  font-weight: 700;
-  
-  &.navbar {
-    font-family: 'cocomat', 'Federo', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
-    font-weight: 700;
-  }
-}
 section { padding: 4em 0; }
 ul { 
   list-style: none;
   padding: 0;
-}
-
-
-#spree-header {
-  .nav {
-    a {
-      color: #444;
-      font-weight: bold;
-    }
-    a:hover, #spree-header .nav a:focus {
-      background: 0 none;
-      text-decoration: underline;
-    }
-  } 
 }
 
 
@@ -180,7 +103,10 @@ ul {
   -ms-filter: "FlipH";
   filter: FlipH;
 }
-.nav { white-space: nowrap; }
+.nav {
+  white-space: nowrap;
+  a { &:focus, &:hover { background: 0 none; } }
+} 
 .required {
   &:after {
     content: ' *';
