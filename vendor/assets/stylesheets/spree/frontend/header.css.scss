@@ -123,16 +123,18 @@
   
   &:before {
     color: #fff;
-    font-size: 3em;
+    font-size: 1.5em;
   }
 }
 .slick-next {
-  right: 30px;
-  &:before { content: ">"; }
+  right: 40px;
+  font-family: 'Glyphicons Halflings'; 
+  &:before { content:"\e258"; }
 }
 .slick-prev {
-  left: 30px;
-  &:before { content: "<"; }
+  left: 34px;
+  font-family: 'Glyphicons Halflings'; 
+  &:before { content:"\e257"; }
 }
 .slick-slider {
   margin-bottom: 7em;
@@ -225,7 +227,7 @@ p { &.small { font-size: 16px; } }
   
   .logo { img { width: 160px; } }
   .herro {
-    .image { min-height: 51rem; }
+    .image { min-height: 52rem; }
     .slick-list { padding-bottom: 0.5rem; }
     .slick-prev, .slick-next {
       display: block;

@@ -37,6 +37,8 @@ $(document).ready(function(){
     fade: true,
     lazyLoad: 'progressive',
     mobileFirst: true,
+    // nextArrow: '<i class="fa fa-arrow-right"></i>',
+//     prevArrow: '<i class="fa fa-arrow-left"></i>',
     speed: 1000,
     
     responsive: 
