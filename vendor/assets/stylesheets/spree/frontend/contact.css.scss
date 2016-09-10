@@ -27,7 +27,6 @@
   .container { width: 100%; }
   .copyright {
     font-size: 1.25em;
-//    font-family: "LatoWeb";
     letter-spacing: 1px;
     position: absolute;
     top: 20rem;
@@ -160,7 +159,7 @@ section {
   }
   
   #contact-card {
-    padding-bottom: 10%;
+    padding-bottom: 4%;
     text-align: center;
     div { text-align: center; }
   }
@@ -171,7 +170,7 @@ section {
   
   .contact {
     .copyright {
-      font-size: 1em;
+      font-size: 0.81em;
       position: unset;
       margin-top: 3em;
     }
