@@ -6,8 +6,8 @@
   </div>
   <div class="row standard-grid grid">
     <div class="col-sm-12">
-      <% featured_in_images.each_with_index do |image, i| %>
-        <%= render partial: "layouts/grid_item", locals: { image: image, position: i } %>
+      <% featured_in_images.each do |image, uri| %>
+        <%= render partial: "layouts/grid_item", locals: { image: image, url: uri } %>
       <% end %>
     </div>
   </div>
