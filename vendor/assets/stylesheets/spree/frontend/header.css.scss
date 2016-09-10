@@ -135,7 +135,7 @@
   &:before { content: "<"; }
 }
 .slick-slider {
-  margin-bottom: 5em;
+  margin-bottom: 7em;
   
   &:hover { .slick-arrow { opacity: 1; } }
 }
@@ -225,7 +225,7 @@ p { &.small { font-size: 16px; } }
   
   .logo { img { width: 160px; } }
   .herro {
-    .image { min-height: 41rem; }
+    .image { min-height: 51rem; }
     .slick-list { padding-bottom: 0.5rem; }
     .slick-prev, .slick-next {
       display: block;
@@ -282,7 +282,7 @@ p { &.small { font-size: 16px; } }
   }
 
 
-  
+
   div {
     &#toggle-nav-button-wrapper {
       display: none;
