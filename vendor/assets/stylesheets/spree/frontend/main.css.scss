@@ -13,7 +13,10 @@ body {
 
 a {
   outline: none;
-  &:hover, &:focus, &:active { outline: none; }
+  &:hover, &:focus, &:active {
+    outline: none;
+    text-decoration: none;
+  }
 }
 hr {
   padding: 0;
@@ -50,7 +53,6 @@ ul {
   }
   label {
     display: block;
-    font-size: 0.85em;
     line-height: 1.764705882em;
     margin: 0;
     opacity: 0;

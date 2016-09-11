@@ -2,19 +2,37 @@
 @import "brand";
 /* END:import */
 
-
-
 body {
   font-family: $main-font;
   font-size: 16px;
 }
+[off-canvas] { span { color: #023257; } }
+
+
+
+
+
+
 
 a {
+  color: $near-black;
   font-weight: normal;
-  &:hover, &:focus, &:active { text-decoration: none; }
+  
+  &.btn-lg { 
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
 }
-
-
+footer {
+  color: #fff;
+  font-size: .7em;
+  
+  .btn-social { &:hover, &:focus, &:active, &.active { color: #db5544; } }
+  a {
+    font-size: .8em;
+    letter-spacing: .5px;
+  }
+}
 h1,
 h2,
 h3,
@@ -26,27 +44,42 @@ h6 {
   font-variant: normal;
   font-weight: 500;
 }
+h3 {
+  &.featured-in {
+    color: rgba(219, 86, 68, 0.7);
+    font-size: 22px;
+    letter-spacing: .5px;
+  }
+}
+header { &#intro-splash { color: white; } }
 hr {
-  &.ribbon, &.shouts, &.contact, &.cheers, &.museum {
+  &.contact { &:after { color: #2c3e50; } }
+  &.contact, &.cheers {
     &:after {
-      font-family: FontAwesome;
+      font-family: $icon-font;
       font-size: 1.1em;
     }
   }
 }
-input:-moz-placeholder { 
-  font-family: $forms-font;
-  font-size: 14px;
-} /* Firefox 18- */
-input::-moz-placeholder {
-  font-family: $forms-font;
-  font-size: 14px;
-} /* Firefox 19+ */
-input:-ms-input-placeholder { 
+/* Firefox 18- */
+input:-moz-placeholder {
+  color: #999 !important;
   font-family: $forms-font;
   font-size: 14px;
 }
-input::-webkit-input-placeholder { 
+ /* Firefox 19+ */
+input::-moz-placeholder {
+  color: #999 !important;
+  font-family: $forms-font;
+  font-size: 14px;
+}
+input:-ms-input-placeholder {
+  color: #999 !important;
+  font-family: $forms-font;
+  font-size: 14px;
+}
+input::-webkit-input-placeholder {
+  color: #999 !important;
   font-family: $forms-font;
   font-size: 14px;
 }
@@ -57,6 +90,31 @@ nav {
   &.navbar {
     font-family: $main-font;
     font-weight: 700;
+  }
+}
+p { &.small { font-size: 16px; } }
+section {
+  &.success {
+    color: #db5544;
+    a {
+      color: #66afe9;
+      &:hover, &:focus, &:active { color: #66afe9; }
+    }
+  }
+  
+  &#about-us {
+    h2 {
+      font-size: 1.4em;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+    p { font-weight: normal; }
+  }
+  
+  h5 {
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
 }
 /* Firefox 18- */
@@ -82,11 +140,38 @@ textarea::-webkit-input-placeholder {
 
 
 .bootstrap-select {
-  button { font-family: $forms-font; }
+  button { 
+    color: #999;
+    font-family: $forms-font;
+  }
 }
-.dropdown-menu {
-  span { font-family: $forms-font; }
+.btn-social { font-size: 2.2em; }
+.card {
+  h3 {
+    a {
+      font-size: .8em;
+      letter-spacing: .5px;
+    }
+  }
 }
+.contact {
+  .copyright {
+    font-size: 1em;
+    letter-spacing: 1px;
+  }
+  
+  h1 {
+    color: $near-black;
+    font-size: 3em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+}
+.dl-submenu {
+  color: #fff;
+  a { color: #fff; }
+}
+.dropdown-menu { span { font-family: $forms-font; } }
 .floating-label-form-group {
   input, textarea {
     font-family: $forms-font;
@@ -97,6 +182,7 @@ textarea::-webkit-input-placeholder {
     font-size: 0.85em;
   }
   select {
+    color: #999;
     font-family: $forms-font;
     
     option {
@@ -105,20 +191,39 @@ textarea::-webkit-input-placeholder {
     }
   }
 }
+.floating-label-form-group-with-value {
+  &.floating-label-form-group-with-focus { label { color: rgba(113, 190, 190, 1.0); } }
+  label { color: #333; }
+}
 .footer-below {
   .copyright {
     font-family: $main-font;
     font-size: 14px;
   }
 }
+.grid-item {
+  figcaption {
+    h2 {
+      font-size: .65em;
+      color: $near-black;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+    h3 {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #2b2b2b;
+      font-weight: 300;
+    }
+  }
+}
 .help-block {
   font-family: $forms-font;
   font-size: 14px;
+  &.text-danger { color: #a94442; }
 }
-
-
-
-
+.required:after { color: red; }
+.scroll-top { .btn { font-size: 20px; } }
 .slick-dots {
   li {
     button {
@@ -131,9 +236,45 @@ textarea::-webkit-input-placeholder {
     }
   }
 }
+.slick-next, .slick-prev {
+  color: transparent;
+
+  &:before {
+    color: #fff;
+    font-size: 3em;
+  }
+}
+.spotlight-link { color: #2b2b2b; }
+.submit-group {
+  .form-group {
+    input[type="submit"] {
+      font-size: 16px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  }
+}
+.submit-group {
+  .btn[disabled] { color: #e9c2bc; }
+  .btn-outline { color: $bright-orange; }
+}
 
 
 
+
+#collapsing-menu {
+  li { a { font-size: 18px; } }
+}
+#contact-card {
+  color: #fff;
+  a, h1 { color: #fff; }
+}
+#inquiries-card {
+  h6 { 
+    color: #999;
+    &.required-legend:before { color: red; }
+  }
+}
 #inquiries-card {
   h6 { font-family: $forms-font; }
 }
@@ -141,7 +282,11 @@ textarea::-webkit-input-placeholder {
   .nav {
     a {
       color: $near-black;
+//      font: normal bold .9em $main-font;
+      font-size: .9em;
       font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
       
       &:focus, &:hover { text-decoration: underline; }
     }
@@ -158,11 +303,139 @@ textarea::-webkit-input-placeholder {
 
 
 
-
-
-// E-commerce items 
-.quantity-badge {
-  span { font: normal bold 0.95em $main-font; }
+// E-commerce items
+h1 {
+  &.shopping-cart-header { font-size: 1.4rem; }
+}
+label {
+  &.adjust-quantity {
+    font-size: .85em;
+    color: #545454;
+  }
 }
 
 
+.cart-item-description {
+  h4 {
+    font-size: 1em;
+    a { color: #545454; }
+  }
+  h6 { color: #b3b3b3; }
+  a { letter-spacing: 0px; }
+}
+.quantity-badge {
+  span { font: normal bold 0.95em $main-font; }
+}
+.select-color-label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+}
+.text-primary { color: #545454; }
+.well {
+  p {
+    color: $near-black;
+    font-size: 0.9334em;
+  }
+}
+// End E-Commerce styles
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        ///
+                      ///////
+                    ///////////
+                 ////////////////
+              //////////////////////
+           ////////////////////////////
+        //////////////////////////////////
+     ////////////////////////////////////////
+  /////////* Minimum width 768px section *//////
+///////////////////////////////////////////////////
+@media (min-width: 768px) {
+  
+  .navbar-form { .btn { letter-spacing: 1.5px; } }
+  .navbar-fixed-top {
+    .navbar-brand { font-size: 2em; }
+    &.navbar-shrink { .navbar-brand { font-size: 1.5em; } }
+  }
+
+}
+///////////////////////////////////////////////////
+
+
+                        ///
+                      ///////
+                    ///////////
+                 ////////////////
+              //////////////////////
+           ////////////////////////////
+        //////////////////////////////////
+     ////////////////////////////////////////
+  /////////* Minimum width 1024px section *////
+/////////////////////////////////////////////////
+@media (min-width: 1024px) {
+ 
+}
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+
+
+
+
+
+
+
+////////////////////////////////////////////////
+////////* Maximum width 992px section */////////
+////////////////////////////////////////////////
+@media (max-width: 992px) {
+  
+}
+////////////////////////////////////////////////
+  ////////////////////////////////////////////
+    ///////////////////////////////////////
+      //////////////////////////////////
+         ////////////////////////////
+           ///////////////////////
+             //////////////////
+               //////////////
+                 //////////
+                   //////
+                     ///
+
+//////////////////////////////////////////////////
+/////////* Maximum width 767px section *//////////
+@media (max-width: 767px) {
+  .contact { .copyright { font-size: 0.81em; } }
+  
+  #spree-header {
+    .navbar-collapse {
+      color: #fff;
+      
+      li {
+        &.mv-nav-item {
+          a { &:hover { color: #dd5544; } }
+        }
+      }
+    }
+  }
+}

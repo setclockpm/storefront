@@ -10,7 +10,12 @@
   <div class="col-md-12">
     <%= form_for @message, id: "contact-form", url: main_app.contact_path(@message) do |f| %>
     
-      <%= render partial: "subject", locals: { f: f } %>
+      <div class="control-group select">
+        <div class="form-group floating-label-form-group controls">
+          <%= f.select :subject, ["Product Availability", "Product Inquiries: description, pricing, etc ...", "Wholesale Inquiries", "Other"], 
+                      { prompt: "Regarding (Choose One)*", selected: @subject }, id: "subject", class: "form-control selectpicker", required: true %>
+        </div>
+      </div>
       <div class="control-group">
         <div class="form-group floating-label-form-group controls">
           <%= f.label :name, "Name", class: 'required' %>
