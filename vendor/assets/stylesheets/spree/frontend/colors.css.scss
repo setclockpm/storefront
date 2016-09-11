@@ -103,7 +103,9 @@
 
 
 
-
+button {
+  &.purchase { background-color: $bright-orange; }
+}
 hr {
   &.tiny { border: 1px solid #fff; }
   &.cheers {

@@ -51,13 +51,8 @@
 
 
 button {
-  &.purchase {
-    background-color: $bright-orange;
-    padding: 10px 16px;
-  }
+  &.purchase { padding: 10px 16px; }
 }
-
-
 span {
   &#color-size {
     text-transform: none;

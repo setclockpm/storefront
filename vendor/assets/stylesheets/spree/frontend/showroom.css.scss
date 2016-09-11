@@ -26,10 +26,7 @@
   li {
     &.first, &.last {
       a {
-        &:hover { 
-          background-color: #fff;
-          color: #db5544;
-        }
+        &:hover { background-color: #fff; }
       }
     }
   }
@@ -194,9 +191,8 @@ aside {
 }
 
 div {
-  &#product-price-container {
-    padding-top: 4px;
-  }
+  &#product-price-container { padding-top: 4px; }
+  
   &.pagination-container {
     clear: both;
     height: 40px;
@@ -204,18 +200,11 @@ div {
     position: relative;
     text-align: center;
     
-    
-    
     .first, .last {
       a {
         border: none;
-        color: #888;
-        font-size: 14.5px;
-        font-weight: normal;
-        letter-spacing: 2px;
         line-height: 14px;
         padding: 7px 30px;
-        text-transform: uppercase;
       }
     }
     .page {
@@ -224,33 +213,22 @@ div {
         border-left: 1px solid #f0f0f0;
         border-right: 1px solid #f0f0f0;
         border-top: 0;
-        color: #5b5b5b;
         display: inline-block;
-        font-size: 14px;
-        font-weight: normal;
         margin-left: -1px;
         min-width: 22px;
         text-align: center;
-        text-decoration: none;
       }
     }
     .pg-button, .button {
       border: 2px solid #d1d1d1;
       border-radius: 3px;
       box-shadow: 0 1px 0 #e5e5e5;
-      color: #666;
       cursor: pointer;
       display: inline-block;
-      font-size: 14.5px;
-      font-weight: normal;
-      letter-spacing: 2px;
       line-height: 18px;
       margin: 0;
       padding: 4px 30px;
       text-align: center;
-      text-decoration: none;
-      text-transform: uppercase;
-      
       
       &:focus {
         border-color: rgba(82, 168, 236, 0.8);
@@ -261,10 +239,7 @@ div {
       
       
       &.disabled, &.disabled:hover, &.disabled:active {
-//        background: rgba(0, 0, 0, 0) linear-gradient(#ececec, #d9d9d9) repeat scroll 0 0;
         border-color: #d9d9d9;
-//        box-shadow: 0 0 0 #000;
-        color: #d1d1d1;
         cursor: not-allowed;
         opacity: 0.75;
         text-shadow: none;
@@ -273,7 +248,6 @@ div {
     }
     
     
-    a { &.pg-button:hover, &.button:hover { color: #db5544; } }
     li {
       .page-step {
         padding-left: 0;
@@ -281,20 +255,6 @@ div {
         position: absolute;
         top: 0;
         width: 135px;
-      }
-      
-      
-      &.page.active {
-        a {
-          color: #111;
-        }
-      }
-    }
-    ul {
-      &.pagination {
-        li {
-          a { &:hover { color: #db5544; } }
-        }
       }
     }
   }
@@ -470,12 +430,8 @@ ul {
   
   #press .grid-item { margin: 0 0 30px; }
   
-  .wo-qty {
-    display: none;
-  }
-  .with-qty {
-    display: inline-block;
-  }
+  .wo-qty { display: none; }
+  .with-qty { display: inline-block; }
   
 }
 ///////////////////////////////////////////////////

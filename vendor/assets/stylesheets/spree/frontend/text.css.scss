@@ -26,7 +26,7 @@ footer {
   color: #fff;
   font-size: .7em;
   
-  .btn-social { &:hover, &:focus, &:active, &.active { color: #db5544; } }
+  .btn-social { &:hover, &:focus, &:active, &.active { color: $bright-orange; } }
   a {
     font-size: .8em;
     letter-spacing: .5px;
@@ -265,9 +265,9 @@ textarea::-webkit-input-placeholder {
   .nav {
     a {
       color: $near-black;
-//      font: normal bold .9em $main-font;
-      font-size: .9em;
-      font-weight: bold;
+      font: normal bold .9em $main-font;
+    //  font-size: .9em;
+//      font-weight: bold;
       letter-spacing: 1px;
       text-transform: uppercase;
       
@@ -283,11 +283,10 @@ textarea::-webkit-input-placeholder {
 
 
 
-
-
 /////////////////////////////////// Begin unused E-commerce items //////////////////////////////////////////
 ///////////////////////////////////
 /* Begin primitive DOM objects */
+a { &.pg-button:hover, &.button:hover { color: $bright-orange; } }
 h1 {
   &.shopping-cart-header { font-size: 1.4rem; }
 }
@@ -297,11 +296,60 @@ label {
     color: #545454;
   }
 }
-
+/* End primitive DOM objects   */
 /////////////////////////////////
 /* Begin DOM class selectors */
+.pagination {
+  li {
+    &.first, &.last {
+      a { &:hover { color: $bright-orange; } }
+    }
+  }
+}
 .quantity-badge {
   span { font: normal bold 0.95em $main-font; }
+}
+.pagination-container {
+  .first, .last {
+    a {
+      color: #888;
+      font-size: 14.5px;
+      font-weight: normal;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+  }
+  .page {
+    a, span {
+      color: #5b5b5b;
+      font-size: 14px;
+      font-weight: normal;
+      text-decoration: none;
+    }
+  }
+  .pg-button, .button {
+    color: #666;
+    font-size: 14.5px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+      
+      
+    &.disabled, &.disabled:hover, &.disabled:active { color: #d1d1d1; }
+  }
+    
+    
+  li {
+    &.page.active { a { color: #111; } }
+  }
+  ul {
+    &.pagination {
+      li {
+        a { &:hover { color: $bright-orange; } }
+      }
+    }
+  }
 }
 .select-color-label {
   font-size: 13px;
@@ -318,6 +366,12 @@ label {
 }
 /* End DOM class selectors */
 /////////////////////////////////// End unused E-commerce items //////////////////////////////////////////
+
+
+
+
+
+
 
 
 
