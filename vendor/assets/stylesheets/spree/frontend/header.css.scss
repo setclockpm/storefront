@@ -83,7 +83,6 @@
       color: transparent;
       cursor: pointer;
       display: block;
-      font-size: 0;
       height: 16px;
       line-height: 0;
       outline: 0;
@@ -93,8 +92,6 @@
       &::before {
         color: #000;
         content: "•";
-        font-family: Futura;
-        font-size: 16px;
         height: 16px;
         left: 0;
         line-height: 16px;
@@ -184,21 +181,6 @@ header {
         width: 100%;
       }
     }
-  
-    .intro-text {
-      .name {
-        display: block;
-        font-family: 'cocomat', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 2em;
-      }
-
-      .skills {
-        font-size: 1.25em;
-        font-weight: 300;
-      }
-    }
   }
 }
 p { &.small { font-size: 16px; } }
@@ -261,7 +243,6 @@ p { &.small { font-size: 16px; } }
     padding: 15px 0; 
     transition: padding 0.3s ease 0s;
   }
-  
   .select-color-option .active-select-color-surface {
     background-color: #f2f2f2;
     border: 0;
@@ -282,11 +263,10 @@ p { &.small { font-size: 16px; } }
   }
 
 
-
+  // primitime DOM objects //
   div {
-    &#toggle-nav-button-wrapper {
-      display: none;
-    }
+    &#toggle-nav-button-wrapper { display: none; }
+    
     &.panel {
       background-color: #fff;
       border-radius: 43px;
@@ -318,7 +298,7 @@ p { &.small { font-size: 16px; } }
       top: 5px;
       right: 9px;
       width: 17px;
-      
+
       &::before, &::after {
         background: #a2a064;
         content: "";
@@ -333,12 +313,8 @@ p { &.small { font-size: 16px; } }
         transform: rotate(45deg);
       }
 
-
       span {
         display: block;
-        font-family: $main-font;
-        font-size: 0.95em;
-        font-weight: bold;
         line-height: 16px;
         position: relative;
         right: -1px;

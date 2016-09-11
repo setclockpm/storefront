@@ -81,8 +81,6 @@ hr {
   &.ribbon, &.shouts, &.contact, &.cheers, &.museum {
     &:after {
       display: inline-block;
-      font-family: FontAwesome;
-      font-size: 1.1em;
       padding: 0 0.25em;
       position: relative;
       top: -0.8em;

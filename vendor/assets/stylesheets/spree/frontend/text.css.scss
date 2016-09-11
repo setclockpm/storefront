@@ -1,46 +1,6 @@
-@font-face {
-    font-family: 'cocomat';
-    src: url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/cocomat_light/cocomat_light.eot');
-    src: url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/cocomat_light/cocomat_light.woff2') format('woff2'),
-         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/cocomat_light/cocomat_light.woff') format('woff'),
-         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/cocomat_light/cocomat_light.ttf') format('truetype'),
-         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/cocomat_light/cocomat_light.svg#cocomatlight') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-/* Webfont: Lato-Regular */
-@font-face {
-    font-family: 'LatoWeb';
-    src: url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/lato/fonts/Lato-Regular.eot'); /* IE9 Compat Modes */
-    src: url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/lato/fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/lato/fonts/Lato-Regular.woff2') format('woff2'), /* Modern Browsers */
-         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/lato/fonts/Lato-Regular.woff') format('woff'), /* Modern Browsers */
-         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/lato/fonts/Lato-Regular.ttf') format('truetype');
-    font-style: normal;
-    font-weight: normal;
-    text-rendering: optimizeLegibility;
-}
-
-
-
-/* START:variables */
-
-// stacks
-$main-font: 'cocomat', 'Century Gothic', 'Apple Gothic', 'AppleGothic,' 'URW Gothic L', 'Avant Garde', sans-serif !default;
-$form_field-font: 'LatoWeb', sans-serif !default;
-//---------------
-// colors
-$near-black: #444;
-//$light-blue: #d4f2ff;
-//$dark-blue: #436ca7;
-//$highlight: #ffc;
-//----------------
-/* END:variables */
-
-
-
+/* START:import */
+@import "brand";
+/* END:import */
 
 
 
@@ -66,6 +26,30 @@ h6 {
   font-variant: normal;
   font-weight: 500;
 }
+hr {
+  &.ribbon, &.shouts, &.contact, &.cheers, &.museum {
+    &:after {
+      font-family: FontAwesome;
+      font-size: 1.1em;
+    }
+  }
+}
+input:-moz-placeholder { 
+  font-family: $forms-font;
+  font-size: 14px;
+} /* Firefox 18- */
+input::-moz-placeholder {
+  font-family: $forms-font;
+  font-size: 14px;
+} /* Firefox 19+ */
+input:-ms-input-placeholder { 
+  font-family: $forms-font;
+  font-size: 14px;
+}
+input::-webkit-input-placeholder { 
+  font-family: $forms-font;
+  font-size: 14px;
+}
 nav {
   font-family: $main-font;
   font-weight: 700;
@@ -75,13 +59,84 @@ nav {
     font-weight: 700;
   }
 }
+/* Firefox 18- */
+textarea:-moz-placeholder {
+  font-family: $forms-font;
+  font-size: 14px;
+}
+ /* Firefox 19+ */
+textarea::-moz-placeholder {
+  font-family: $forms-font;
+  font-size: 14px;
+}
+textarea:-ms-input-placeholder {
+  font-family: $forms-font;
+  font-size: 14px;
+}
+textarea::-webkit-input-placeholder {
+  font-family: $forms-font;
+  font-size: 14px;
+}
 
 
 
 
+.bootstrap-select {
+  button { font-family: $forms-font; }
+}
+.dropdown-menu {
+  span { font-family: $forms-font; }
+}
+.floating-label-form-group {
+  input, textarea {
+    font-family: $forms-font;
+    font-size: 1.15em;
+  }
+  label {
+    font-family: $forms-font;
+    font-size: 0.85em;
+  }
+  select {
+    font-family: $forms-font;
+    
+    option {
+      &:first-child { font-size: 14px; }
+      &:not(:first-child) { font-size: 1.15em; }
+    }
+  }
+}
+.footer-below {
+  .copyright {
+    font-family: $main-font;
+    font-size: 14px;
+  }
+}
+.help-block {
+  font-family: $forms-font;
+  font-size: 14px;
+}
 
 
 
+
+.slick-dots {
+  li {
+    button {
+      font-size: 0;
+      
+      &::before {
+        font-family: Futura;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+
+
+#inquiries-card {
+  h6 { font-family: $forms-font; }
+}
 #spree-header {
   .nav {
     a {
@@ -92,4 +147,22 @@ nav {
     }
   } 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// E-commerce items 
+.quantity-badge {
+  span { font: normal bold 0.95em $main-font; }
+}
+
 

@@ -42,8 +42,6 @@
 }
 
 .help-block {
-  font-family: "LatoWeb";
-  font-size: 14px;
   margin: 0;
   
   li { list-style: none; }
@@ -82,7 +80,6 @@
   padding-left: 6em;
   
   h6 {
-    font-family: "LatoWeb";
     text-align: right;
     
     &.required-legend:before {

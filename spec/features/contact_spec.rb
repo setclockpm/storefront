@@ -29,7 +29,7 @@ feature 'Contact us page interactions: ' do
       visit main_app.root_path
       expect(page.has_selector?('div#contact-card')).to be true
       # expect(find('div#contact-card')).to have_link('Wholesale')
- #      find('ul.desktop-contact-links').click_link('Wholesale')
+      # find('ul.desktop-contact-links').click_link('Wholesale')
  #      expect(find('form select', visible: false).value).to eq('Wholesale Inquiries')
     end
   end
@@ -63,7 +63,7 @@ feature 'Contact us page interactions: ' do
     feature "with invalid or missing data" do
       background do
         @field_entries[:content] = 'I intentionally left some fields blank! SMH.'
-        @field_entries[:name]    = 'Forgetful Frank'
+        @field_entries[:name]    = 'Forgetful Frankie'
         @field_entries[:phone]   = '213-555-1212'
       end
       

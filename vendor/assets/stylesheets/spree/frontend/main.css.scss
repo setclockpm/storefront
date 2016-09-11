@@ -33,12 +33,6 @@ ul {
 
 
 
-.bootstrap-select {
-  button { font-family: "LatoWeb"; }
-}
-.dropdown-menu {
-  span { font-family: "LatoWeb"; }
-}
 .floating-label-form-group {
   position: relative;
   margin-bottom: 0;
@@ -48,20 +42,15 @@ ul {
     box-shadow: none !important;
     border: none;
     border-radius: 0;
-    font-family: "LatoWeb";
     padding-right: 0;
     padding-left: 0;
     position: relative;
     resize: none;
     z-index: 1;
   }
-  
-  input, textarea { font-size: 1.15em; }
-  
   label {
     display: block;
     font-size: 0.85em;
-    font-family: "LatoWeb";
     line-height: 1.764705882em;
     margin: 0;
     opacity: 0;
@@ -74,12 +63,7 @@ ul {
     transition: top 0.3s ease,opacity 0.3s ease;
     z-index: 0;
   }
-  select {
-    margin-left: -.6em;
-    
-    option:first-child { font-size: 14px; }
-    option:not(:first-child) { font-size: 1.15em; }
-  }
+  select { margin-left: -.6em; }
   
   &:not(:first-child) { padding-left: 14px; }
 }
@@ -90,11 +74,7 @@ ul {
     top: 4px;
   }
 }
-.help-block {
-  font-family: "LatoWeb";
-  font-size: 14px;
-  margin: 0;
-}
+.help-block { margin: 0; }
 .hor-flip {
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
@@ -113,47 +93,6 @@ ul {
     display: inline;
   }
 }
-
-
-
-
-input:-moz-placeholder { 
-  font-family: "LatoWeb";
-  font-size: 14px;
-} /* Firefox 18- */
-input::-moz-placeholder {
-  font-family: "LatoWeb";
-  font-size: 14px;
-} /* Firefox 19+ */
-input:-ms-input-placeholder { 
-  font-family: "LatoWeb";
-  font-size: 14px;
-}
-input::-webkit-input-placeholder { 
-  font-family: "LatoWeb";
-  font-size: 14px;
-}
-
-
-/* Firefox 18- */
-textarea:-moz-placeholder {
-  font-family: "LatoWeb";
-  font-size: 14px;
-}
- /* Firefox 19+ */
-textarea::-moz-placeholder {
-  font-family: "LatoWeb";
-  font-size: 14px;
-}
-textarea:-ms-input-placeholder {
-  font-family: "LatoWeb";
-  font-size: 14px;
-}
-textarea::-webkit-input-placeholder {
-  font-family: "LatoWeb";
-  font-size: 14px;
-}
-
 
 
 
