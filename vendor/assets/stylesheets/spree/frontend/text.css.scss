@@ -23,13 +23,15 @@ body {
   font-size: 16px;
 }
 footer {
-  color: #fff;
+  color: white;
   font-size: .7em;
   
   .btn-social { &:hover, &:focus, &:active, &.active { color: $bright-orange; } }
   a {
-    font-size: .8em;
-    letter-spacing: .5px;
+    font-family: $forms-font;
+    font-size: 1em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
 }
 h1,
@@ -145,17 +147,18 @@ textarea::-webkit-input-placeholder {
   }
 }
 .contact {
-  .copyright {
-    font-size: 1em;
-    letter-spacing: 1px;
-  }
-  
   h1 {
     color: $near-black;
     font-size: 3em;
     letter-spacing: 1px;
     text-transform: uppercase;
   }
+}
+.copyright {
+  color: $near-black;
+  font-family: $main-font;
+  font-size: 1em; #font-size: 14px;
+  letter-spacing: 1px;
 }
 .dropdown-menu { span { font-family: $forms-font; } }
 .floating-label-form-group {
@@ -180,12 +183,6 @@ textarea::-webkit-input-placeholder {
 .floating-label-form-group-with-value {
   &.floating-label-form-group-with-focus { label { color: rgba(113, 190, 190, 1.0); } }
   label { color: #333; }
-}
-.footer-below {
-  .copyright {
-    font-family: $main-font;
-    font-size: 14px;
-  }
 }
 .grid-item {
   figcaption {
@@ -266,8 +263,6 @@ textarea::-webkit-input-placeholder {
     a {
       color: $near-black;
       font: normal bold .9em $main-font;
-    //  font-size: .9em;
-//      font-weight: bold;
       letter-spacing: 1px;
       text-transform: uppercase;
       

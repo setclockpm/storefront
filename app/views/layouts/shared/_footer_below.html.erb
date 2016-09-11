@@ -1,16 +1,33 @@
-<footer class="text-center">
-  <div class="footer-below">
-    <div class="container">
-      <div class="row">
-        <div class="footer-col col-md-offset-4 col-md-4">
-          <h3><%= mail_to "info@porthoshome.com" %></h3>
-          <ul class="list-inline">
-            <% social_media_icons.each do |icon, url| %>
-              <li><%= link_to fa_icon("#{icon.to_s} fw"), url, class: "btn-social", target: '_blank' %></li>
-            <% end %>
-          </ul>
+<footer class="below text-center">
+  <div class="container footer-below">
+    <div class="row">
+      <div class="col-md-4">
+        <ul class="nav navbar-right" data-hook="impostor-ul">
+          <li class="nav-item">
+            <%= link_to "Our Story", main_app.about_path, class: "utility" %>
+          </li>
+          <li class="nav-item" data-hook>
+            <%= link_to 'Collection', '#', class: "utility" %>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="col-xs-12">
+          <%= image_tag "feathers/original.png", title: "feather", class: "accent" %>
+        </div>
+        <div class="col-xs-12">
           <p class="copyright">Copyright &copy; Porthos Home <%= Time.now.year %></p>
         </div>
+      </div>
+      <div class="col-md-4">
+        <ul class="nav navbar-left" data-hook="impostor-ul">
+          <li class="nav-item" data-hook="wholesale-inquiries">
+            <%= link_to 'Wholesale', main_app.contact_path(subject: 'Wholesale Inquiries'), class: "utility" %>
+          </li>
+          <li class="nav-item" data-hook="other">
+            <%= link_to 'Contact Us', main_app.contact_path(subject: 'Other'), class: "utility" %>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

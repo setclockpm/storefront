@@ -52,11 +52,14 @@
   border: 2px dotted $near-black;
   &:hover { border: 2px solid $near-black; }
 }
+.catalog { background-color: $bg-lite-gray; }
 .floating-label-form-group {
   border-bottom: 1px solid $trspt-mid-gray;
   &:not(:first-child) { border-left: 1px solid $mid-gray; }
 }
-.icon-bar { background-color: #fefefe; }
+.footer-below {
+  border-top: 1px solid $bebe-gray;
+}
 .select {
   .bootstrap-select {
     .dropdown-toggle {
@@ -72,7 +75,7 @@
   }
   .btn-default {
     &:active, &:hover, &:focus {
-      background-color: #fff;
+      background-color: white;
       border-top: 0 none;
       border-left: 0 none;
     }
@@ -96,18 +99,17 @@
   .icon-bar { background-color: $near-black; }
 }
 .well {
-  background-color: #fff;
-  p { background-color: #fff; }
+  background-color: white;
+  p { background-color: white; }
 }
 
 
 
 
-button {
-  &.purchase { background-color: $bright-orange; }
-}
+button { &.purchase { background-color: $bright-orange; } }
+footer { &.below    { background-color: $bg-lite-gray; } }
 hr {
-  &.tiny { border: 1px solid #fff; }
+  &.tiny { border: 1px solid white; }
   &.cheers {
     border-color: white;
     &:after { background-color: white; }
@@ -135,7 +137,7 @@ nav {
 }
 section {
   &.success {
-    background: #fff;
+    background: white;
     a, a:hover, a:focus, a:active { outline: none; }
   }
 }
@@ -176,7 +178,7 @@ textarea::-webkit-input-placeholder { opacity: 0.7; }
   nav {
     &.navbar-default {
       .navbar-toggle { .icon-bar { background-color: $bright-orange; } }
-      &.opaque { background: rgba(255, 255, 255, 100.0); }
+      &.opaque { background: white; }
     }
   }
 }

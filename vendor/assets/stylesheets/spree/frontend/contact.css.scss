@@ -14,10 +14,6 @@
   padding-top: 0em;
   
   .container { width: 100%; }
-  .copyright {
-    position: absolute;
-    top: 20rem;
-  }
   
   h1 {
     margin-bottom: 10px;
@@ -70,10 +66,7 @@
 
 
 hr {
-  &.tiny {
-    border: 1px solid #fff;
-    width: 2%;
-  }
+  &.tiny { width: 2%; }
 }
 section {
   &.contact {
@@ -98,9 +91,6 @@ section {
 ////////* Maximum width 992px section */////////
 ////////////////////////////////////////////////
 @media (max-width: 992px) {
-  
-  .contact { .copyright { top: 11rem; } }
-  
   #contact-card { padding-bottom: 30%; }
   #inquiries-card { margin-bottom: 5em; }
 }
@@ -142,16 +132,9 @@ section {
     }
     
     h1, h3 { text-align: center; }
-    hr {
-      &.tiny {
-        border: 1px solid #fff;
-        width: 20%;
-      }
-    }
+    hr { &.tiny { width: 20%; } }
   }
-  .desktop-contact-links {
-    display: none;
-  }
+  .desktop-contact-links { display: none; }
   
   
   #contact-card {

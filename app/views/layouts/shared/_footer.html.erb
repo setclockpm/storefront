@@ -3,7 +3,11 @@
   <div class="container">
     <div class="row">
       <%= render partial: "layouts/shared/inquiries" %>
-      <%= render partial: "messages/card" %>
+      <div id="spotlight-card" class="card col-md-6">
+        <%= image_tag "footer-right.jpg", title: "kch002", class: "spotlight" %>
+      </div>
     </div>
   </div>
 </footer>
+
+<%= render partial: "layouts/shared/footer_below" %>

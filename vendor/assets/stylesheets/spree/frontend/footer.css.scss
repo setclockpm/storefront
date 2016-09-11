@@ -1,6 +1,11 @@
+a {
+  &.utility { margin-top: 1em; }
+}
 footer {
   .container { width: 100%; }
+  #inquiries-card { padding-bottom: 4%; }
   h3 { margin: 10px 0px 10px 0px; }
+  
 }
 
 
@@ -13,10 +18,12 @@ footer {
 }
 .btn:focus, .btn:active, .btn.active { outline: none; }
 .footer-below {
-  padding-top: 50px;
+  padding-top: 40px;
   
-  .copyright { margin: 125px 0 10px; }
+  .copyright { margin: 2em 0 2.5em; }
   .footer-col { margin-bottom: 10px; }
+  
+  img { max-width: 3%; }
 }
 
 .scroll-top {
@@ -35,4 +42,13 @@ footer {
     
     &:focus { outline: none; }
   }
+}
+
+
+#spotlight-card {
+  padding-top: 0em;
+  padding-right: 0em;
+  padding-left: 5em;
+  
+  img { width: 100%; }
 }
