@@ -2,18 +2,13 @@
 @import "brand";
 /* END:import */
 
-body {
-  font-family: $main-font;
-  font-size: 16px;
-}
+/////////////////////////////////
+/* Begin type selectors */
 [off-canvas] { span { color: #023257; } }
+/* End type selectors */
 
-
-
-
-
-
-
+/////////////////////////////////
+/* Begin primitive DOM objects */
 a {
   color: $near-black;
   font-weight: normal;
@@ -22,6 +17,10 @@ a {
     font-size: 14px;
     letter-spacing: 1px;
   }
+}
+body {
+  font-family: $main-font;
+  font-size: 16px;
 }
 footer {
   color: #fff;
@@ -53,8 +52,7 @@ h3 {
 }
 header { &#intro-splash { color: white; } }
 hr {
-  &.contact { &:after { color: #2c3e50; } }
-  &.contact, &.cheers {
+  &.cheers {
     &:after {
       font-family: $icon-font;
       font-size: 1.1em;
@@ -94,14 +92,6 @@ nav {
 }
 p { &.small { font-size: 16px; } }
 section {
-  &.success {
-    color: #db5544;
-    a {
-      color: #66afe9;
-      &:hover, &:focus, &:active { color: #66afe9; }
-    }
-  }
-  
   &#about-us {
     h2 {
       font-size: 1.4em;
@@ -135,10 +125,10 @@ textarea::-webkit-input-placeholder {
   font-family: $forms-font;
   font-size: 14px;
 }
+/* End primitive DOM objects */
 
-
-
-
+/////////////////////////////////
+/* Begin class selectors */
 .bootstrap-select {
   button { 
     color: #999;
@@ -246,6 +236,8 @@ textarea::-webkit-input-placeholder {
 }
 .spotlight-link { color: #2b2b2b; }
 .submit-group {
+  .btn[disabled] { color: #e9c2bc; }
+  .btn-outline { color: $bright-orange; }
   .form-group {
     input[type="submit"] {
       font-size: 16px;
@@ -254,14 +246,10 @@ textarea::-webkit-input-placeholder {
     }
   }
 }
-.submit-group {
-  .btn[disabled] { color: #e9c2bc; }
-  .btn-outline { color: $bright-orange; }
-}
+/* End DOM class selectors */
 
-
-
-
+/////////////////////////////////
+/* Begin DOM ID selectors */
 #collapsing-menu {
   li { a { font-size: 18px; } }
 }
@@ -272,11 +260,10 @@ textarea::-webkit-input-placeholder {
 #inquiries-card {
   h6 { 
     color: #999;
+    font-family: $forms-font;
+    
     &.required-legend:before { color: red; }
   }
-}
-#inquiries-card {
-  h6 { font-family: $forms-font; }
 }
 #spree-header {
   .nav {
@@ -292,6 +279,8 @@ textarea::-webkit-input-placeholder {
     }
   } 
 }
+/* End DOM ID selectors */
+/////////////////////////////////// End active/in use DOM items //////////////////////////////////////////
 
 
 
@@ -300,10 +289,9 @@ textarea::-webkit-input-placeholder {
 
 
 
-
-
-
-// E-commerce items
+/////////////////////////////////// Begin unused E-commerce items //////////////////////////////////////////
+///////////////////////////////////
+/* Begin primitive DOM objects */
 h1 {
   &.shopping-cart-header { font-size: 1.4rem; }
 }
@@ -314,7 +302,8 @@ label {
   }
 }
 
-
+/////////////////////////////////
+/* Begin DOM class selectors */
 .cart-item-description {
   h4 {
     font-size: 1em;
@@ -339,7 +328,8 @@ label {
     font-size: 0.9334em;
   }
 }
-// End E-Commerce styles
+/* End DOM class selectors */
+/////////////////////////////////// End unused E-commerce items //////////////////////////////////////////
 
 
 
@@ -392,24 +382,14 @@ label {
      ////////////////////////////////////////
   /////////* Minimum width 1024px section *////
 /////////////////////////////////////////////////
-@media (min-width: 1024px) {
- 
-}
+@media (min-width: 1024px) {}
 ///////////////////////////////////////////////////
 ///////////////////////////////////////////////////
-
-
-
-
-
-
 
 ////////////////////////////////////////////////
 ////////* Maximum width 992px section */////////
 ////////////////////////////////////////////////
-@media (max-width: 992px) {
-  
-}
+@media (max-width: 992px) {}
 ////////////////////////////////////////////////
   ////////////////////////////////////////////
     ///////////////////////////////////////
