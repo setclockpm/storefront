@@ -746,15 +746,7 @@ ul {
       border-radius: 0px;
       box-shadow: none;
     }
-    &.well {
-      background-color: #fff;
-      p {
-        color: #333;
-        background-color: #fff;
-        font-size: 0.9334em;
-        line-height: 1.7142;
-      }
-    }
+    &.well { p { line-height: 1.7142; } }
   }
   h1 {
     &.product-title {

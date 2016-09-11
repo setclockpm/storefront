@@ -71,7 +71,7 @@
     }
   }
   .btn-default {
-    &:hover, &:focus, &.focus {
+    &:active, &:hover, &:focus {
       background-color: #fff;
       border-top: 0 none;
       border-left: 0 none;
@@ -97,10 +97,7 @@
 }
 .well {
   background-color: #fff;
-  p {
-    background-color: #fff;
-    line-height: 1.7142;
-  }
+  p { background-color: #fff; }
 }
 
 
@@ -160,18 +157,11 @@ textarea::-webkit-input-placeholder { opacity: 0.7; }
   /////////* Minimum width 767px section *//////
 ///////////////////////////////////////////////////
 @media (min-width: 767px) {
-  #support-header { 
-    background: none 0;
-    .navbar { border-bottom: 1px solid rgba(153, 153, 153, 0.85); }
-  }
   
   nav {
-    &.navbar-default { 
-      &.opaque { 
-        background: rgba(255, 255, 255, 100.0);
-      }
-    }
+    &.navbar-default { &.opaque { background: white; } }
   }
+  
 }
 
 
@@ -183,7 +173,7 @@ textarea::-webkit-input-placeholder { opacity: 0.7; }
   
   nav {
     &.navbar-default {
-      .navbar-toggle { .icon-bar { background-color: #dd5544; } }
+      .navbar-toggle { .icon-bar { background-color: $bright-orange; } }
       &.opaque { background: rgba(255, 255, 255, 100.0); }
     }
   }
