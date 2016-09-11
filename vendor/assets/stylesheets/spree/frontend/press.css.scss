@@ -3,7 +3,6 @@
 .grid-item {
   overflow: hidden;
   
-  
   &:hover { figcaption { opacity: 0.9; } }
   &:hover { img { opacity: 1; } }
 
@@ -33,28 +32,16 @@
     transition: opacity 0.3s ease-out;
     width: 100.3%;
 
-
     &.feat-intro { opacity: 1; }
     
-    
     h2 {
-      font-size: .65em;
-      color: #444;
       margin: 0 auto;
       margin-top: 12%;
-      letter-spacing: .5px;
       line-height: 1.6;
-      text-transform: uppercase;
       white-space: nowrap;
       width: 90%;
     }
-    h3 {
-      font-size: 11px;
-      letter-spacing: 2px;
-      color: #2b2b2b;
-      font-weight: 300;
-      margin-top: 10px;
-    }
+    h3 { margin-top: 10px; }
   }
 }
 
@@ -63,48 +50,22 @@
 
 a {
   &.btn-outline { padding: 8px 12px; }
-  &.btn-lg { 
-    font-size: 14px;
-    letter-spacing: 1px;
-  }
 }
 h3 {
   &.featured-in {
-    color: rgba(219, 86, 68, 0.7);
-    font-size: 22px;
-    letter-spacing: .5px;
     line-height: 3px;
     text-align: left;
   }
 }
 hr {
-  &.ribbon, &.shouts, &.contact, &.cheers, &.museum {
+  &.cheers {
     &:after {
+      content: "\f0fc";
       display: inline-block;
-      font-family: FontAwesome;
-      font-size: 1.1em;
       padding: 0 0.25em;
       position: relative;
       top: -0.8em;
     }
-  }
-  &.cheers {
-    &:after { content: "\f0fc"; }
-  }
-  &.contact {
-    &:after { content: "\f044"; }
-  }
-  &.museum {
-    &:after {
-      background: url(feathers/dark.jpg) no-repeat center center scroll;
-      content: "";
-    }
-  }
-  &.ribbon {
-    &:after { content: "\f097"; }
-  }
-  &.shouts {
-    &:after { content: "\f0a1"; }
   }
 }
 section {
@@ -137,14 +98,6 @@ section {
     line-height: 0.5em;
     min-height: 40vw;
   }
-  &.spotlight-minor {
-    .container {
-      background: url(spotlight2.jpg) no-repeat center;
-      background-size: cover;
-      margin-bottom: 30px;
-      margin-top: 30px;
-    }
-  }
   &.spotlight-major {
     .container {
       background: url(spotlight.jpg) no-repeat center;
@@ -157,21 +110,18 @@ section {
   
   &#about-us {
     margin-top: 20px;
-
-    h2 {
-      font-size: 1.4em;
-      font-weight: normal;
-      line-height: 2px;
-      text-transform: uppercase;
-    }
-    p { font-weight: normal; }
-  }
-  
-  h5 {
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    h2 { line-height: 2px; }
   }
 }
+
+
+
+
+
+
+
+
+
 
 ////////////////////////////////////////////////
 ////////* Maximum width 1200px section */////////
@@ -200,7 +150,7 @@ section {
 @media (max-width: 767px) {
   
   section {
-    &.spotlight-major, &.spotlight-minor {
+    &.spotlight-major {
       .container { min-height: 40vw; }
     }
     &#about-us { padding-top: 0px; }
@@ -244,10 +194,8 @@ section {
 ///////////////////////////////////////////////////
 @media (min-width: 768px) {
   
-  section { 
-    &.spotlight-major, &.spotlight-minor {
-      .container { min-height: 40vw; }
-    }
+  section {
+    &.spotlight-major { .container { min-height: 40vw; } }
   }
 }
 ///////////////////////////////////////////////////
@@ -264,10 +212,8 @@ section {
 ///////////////////////////////////////////////////
 @media (min-width: 1024px) {
   
-  section { 
-    &.spotlight-major, &.spotlight-minor {
-      .container { min-height: 45vw; }
-    }
+  section {
+    &.spotlight-major { .container { min-height: 45vw; } }
   }
 }
 ///////////////////////////////////////////////////

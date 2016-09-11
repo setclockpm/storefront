@@ -1,28 +1,428 @@
-//@font-face {
-//    font-family: 'cocomat';
-//    src: url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/cocomat_light/cocomat_light.eot');
-//    src: url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/cocomat_light/cocomat_light.woff2') format('woff2'),
-//         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/cocomat_light/cocomat_light.woff') format('woff'),
-//         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/cocomat_light/cocomat_light.ttf') format('truetype'),
-//         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/cocomat_light/cocomat_light.svg#cocomatlight') format('svg');
-//    font-weight: normal;
-//    font-style: normal;
-//
-//}
-//
-///* Webfont: Lato-Regular */
-//@font-face {
-//    font-family: 'LatoWeb';
-//    src: url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/lato/fonts/Lato-Regular.eot'); /* IE9 Compat Modes */
-//    src: url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/lato/fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-//         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/lato/fonts/Lato-Regular.woff2') format('woff2'), /* Modern Browsers */
-//         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/lato/fonts/Lato-Regular.woff') format('woff'), /* Modern Browsers */
-//         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/lato/fonts/Lato-Regular.ttf') format('truetype');
-//    font-style: normal;
-//    font-weight: normal;
-//    text-rendering: optimizeLegibility;
-//}
-//
-//
-//$main-font: 'cocomat', 'Century Gothic', 'Apple Gothic', 'AppleGothic,' 'URW Gothic L', 'Avant Garde', sans-serif !default;
-//$form_field-font: 'LatoWeb', sans-serif !default;
+/* START:import */
+@import "brand";
+/* END:import */
+
+/////////////////////////////////
+/* Begin type selectors */
+[off-canvas] { span { color: #023257; } }
+/* End type selectors */
+
+/////////////////////////////////
+/* Begin primitive DOM objects */
+a {
+  color: $near-black;
+  font-weight: normal;
+  
+  &.btn-lg { 
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+}
+body {
+  font-family: $main-font;
+  font-size: 16px;
+}
+footer {
+  color: #fff;
+  font-size: .7em;
+  
+  .btn-social { &:hover, &:focus, &:active, &.active { color: #db5544; } }
+  a {
+    font-size: .8em;
+    letter-spacing: .5px;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $main-font;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+}
+h3 {
+  &.featured-in {
+    color: rgba(219, 86, 68, 0.7);
+    font-size: 22px;
+    letter-spacing: .5px;
+  }
+}
+header { &#intro-splash { color: white; } }
+hr {
+  &.cheers {
+    &:after {
+      font-family: $icon-font;
+      font-size: 1.1em;
+    }
+  }
+}
+/* Firefox 18- */
+input:-moz-placeholder {
+  color: #999 !important;
+  font-family: $forms-font;
+  font-size: 14px;
+}
+ /* Firefox 19+ */
+input::-moz-placeholder {
+  color: #999 !important;
+  font-family: $forms-font;
+  font-size: 14px;
+}
+input:-ms-input-placeholder {
+  color: #999 !important;
+  font-family: $forms-font;
+  font-size: 14px;
+}
+input::-webkit-input-placeholder {
+  color: #999 !important;
+  font-family: $forms-font;
+  font-size: 14px;
+}
+nav {
+  font-family: $main-font;
+  font-weight: 700;
+  
+  &.navbar {
+    font-family: $main-font;
+    font-weight: 700;
+  }
+}
+p { &.small { font-size: 16px; } }
+section {
+  &#about-us {
+    h2 {
+      font-size: 1.4em;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+    p { font-weight: normal; }
+  }
+  
+  h5 {
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+}
+/* Firefox 18- */
+textarea:-moz-placeholder {
+  font-family: $forms-font;
+  font-size: 14px;
+}
+ /* Firefox 19+ */
+textarea::-moz-placeholder {
+  font-family: $forms-font;
+  font-size: 14px;
+}
+textarea:-ms-input-placeholder {
+  font-family: $forms-font;
+  font-size: 14px;
+}
+textarea::-webkit-input-placeholder {
+  font-family: $forms-font;
+  font-size: 14px;
+}
+/* End primitive DOM objects */
+
+/////////////////////////////////
+/* Begin class selectors */
+.bootstrap-select {
+  button { 
+    color: #999;
+    font-family: $forms-font;
+  }
+}
+.btn-social { font-size: 2.2em; }
+.card {
+  h3 {
+    a {
+      font-size: .8em;
+      letter-spacing: .5px;
+    }
+  }
+}
+.contact {
+  .copyright {
+    font-size: 1em;
+    letter-spacing: 1px;
+  }
+  
+  h1 {
+    color: $near-black;
+    font-size: 3em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+}
+.dl-submenu {
+  color: #fff;
+  a { color: #fff; }
+}
+.dropdown-menu { span { font-family: $forms-font; } }
+.floating-label-form-group {
+  input, textarea {
+    font-family: $forms-font;
+    font-size: 1.15em;
+  }
+  label {
+    font-family: $forms-font;
+    font-size: 0.85em;
+  }
+  select {
+    color: #999;
+    font-family: $forms-font;
+    
+    option {
+      &:first-child { font-size: 14px; }
+      &:not(:first-child) { font-size: 1.15em; }
+    }
+  }
+}
+.floating-label-form-group-with-value {
+  &.floating-label-form-group-with-focus { label { color: rgba(113, 190, 190, 1.0); } }
+  label { color: #333; }
+}
+.footer-below {
+  .copyright {
+    font-family: $main-font;
+    font-size: 14px;
+  }
+}
+.grid-item {
+  figcaption {
+    h2 {
+      font-size: .65em;
+      color: $near-black;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+    h3 {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #2b2b2b;
+      font-weight: 300;
+    }
+  }
+}
+.help-block {
+  font-family: $forms-font;
+  font-size: 14px;
+  &.text-danger { color: #a94442; }
+}
+.required:after { color: red; }
+.scroll-top { .btn { font-size: 20px; } }
+.slick-dots {
+  li {
+    button {
+      font-size: 0;
+      
+      &::before {
+        font-family: Futura;
+        font-size: 16px;
+      }
+    }
+  }
+}
+.slick-next, .slick-prev {
+  color: transparent;
+
+  &:before {
+    color: #fff;
+    font-size: 1.5em;
+  }
+}
+.spotlight-link { color: #2b2b2b; }
+.submit-group {
+  .btn[disabled] { color: #e9c2bc; }
+  .btn-outline { color: $bright-orange; }
+  .form-group {
+    input[type="submit"] {
+      font-size: 16px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  }
+}
+/* End DOM class selectors */
+
+/////////////////////////////////
+/* Begin DOM ID selectors */
+#collapsing-menu {
+  li { a { font-size: 18px; } }
+}
+#contact-card {
+  color: #fff;
+  a, h1 { color: #fff; }
+}
+#inquiries-card {
+  h6 { 
+    color: #999;
+    font-family: $forms-font;
+    
+    &.required-legend:before { color: red; }
+  }
+}
+#spree-header {
+  .nav {
+    a {
+      color: $near-black;
+//      font: normal bold .9em $main-font;
+      font-size: .9em;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      
+      &:focus, &:hover { text-decoration: underline; }
+    }
+  } 
+}
+/* End DOM ID selectors */
+/////////////////////////////////// End active/in use DOM items //////////////////////////////////////////
+
+
+
+
+
+
+
+
+/////////////////////////////////// Begin unused E-commerce items //////////////////////////////////////////
+///////////////////////////////////
+/* Begin primitive DOM objects */
+h1 {
+  &.shopping-cart-header { font-size: 1.4rem; }
+}
+label {
+  &.adjust-quantity {
+    font-size: .85em;
+    color: #545454;
+  }
+}
+
+/////////////////////////////////
+/* Begin DOM class selectors */
+.cart-item-description {
+  h4 {
+    font-size: 1em;
+    a { color: #545454; }
+  }
+  h6 { color: #b3b3b3; }
+  a { letter-spacing: 0px; }
+}
+.quantity-badge {
+  span { font: normal bold 0.95em $main-font; }
+}
+.select-color-label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+}
+.text-primary { color: #545454; }
+.well {
+  p {
+    color: $near-black;
+    font-size: 0.9334em;
+  }
+}
+/* End DOM class selectors */
+/////////////////////////////////// End unused E-commerce items //////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        ///
+                      ///////
+                    ///////////
+                 ////////////////
+              //////////////////////
+           ////////////////////////////
+        //////////////////////////////////
+     ////////////////////////////////////////
+  /////////* Minimum width 768px section *//////
+///////////////////////////////////////////////////
+@media (min-width: 768px) {
+  /////////////////////////////////
+  /* Begin DOM class selectors */
+  .navbar-form { .btn { letter-spacing: 1.5px; } }
+  .navbar-fixed-top {
+    .navbar-brand { font-size: 2em; }
+    &.navbar-shrink { .navbar-brand { font-size: 1.5em; } }
+  }
+  /* End DOM class selectors */
+}
+///////////////////////////////////////////////////
+
+
+                        ///
+                      ///////
+                    ///////////
+                 ////////////////
+              //////////////////////
+           ////////////////////////////
+        //////////////////////////////////
+     ////////////////////////////////////////
+  /////////* Minimum width 1024px section *////
+/////////////////////////////////////////////////
+@media (min-width: 1024px) {}
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+
+///////////////////////////////////////////////////
+////////* Maximum width 992px section *////////////
+///////////////////////////////////////////////////
+@media (max-width: 992px) {}
+///////////////////////////////////////////////////
+  ///////////////////////////////////////////////
+    //////////////////////////////////////////
+      //////////////////////////////////////
+         ////////////////////////////////
+           ///////////////////////////
+             ///////////////////////
+               //////////////////
+                 //////////////
+                   //////////
+                     //////
+                      ///
+
+//////////////////////////////////////////////////
+/////////* Maximum width 767px section *//////////
+@media (max-width: 767px) {
+  /* Begin DOM class selectors */
+  .contact { .copyright { font-size: 0.81em; } }
+  /* End DOM class selectors */
+  
+  /* Begin DOM ID selectors */
+  #spree-header {
+    .navbar-collapse {
+      color: #fff;
+      
+      li {
+        &.mv-nav-item {
+          a { &:hover { color: #dd5544; } }
+        }
+      }
+    }
+  }
+  /* End DOM class selectors */
+  
+}

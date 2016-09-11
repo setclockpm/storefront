@@ -7,43 +7,25 @@
   padding-right: 3.5em;
   padding-left: 5em;
   
-  
-  h3 {
-    a {
-      font-size: .8em;
-      letter-spacing: .5px;
-    }
-  }
-  
-  .submit-group .form-group {
-    text-align: left;
-  }
+  .submit-group .form-group { text-align: left; }
 }
 .contact {
   /* INQUIRIES: */
   padding-top: 0em;
   
-  
   .container { width: 100%; }
   .copyright {
-    font-size: 1em;
-    letter-spacing: 1px;
     position: absolute;
     top: 20rem;
   }
   
   h1 {
-    font-size: 3em;
-    letter-spacing: 1px;
     margin-bottom: 10px;
     text-align: left;
-    text-transform: uppercase;
   }
 }
 
 .help-block {
-  font-family: "LatoWeb";
-  font-size: 14px;
   margin: 0;
   
   li { list-style: none; }
@@ -53,25 +35,16 @@
   .form-group {
     margin-top: 30px;
     text-align: center;
-    
-    input[type="submit"] {
-      font-size: 16px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
   }
 }
 .select {
-  .form-group {
-    border-bottom: 0 none;
-  }
+  .form-group { border-bottom: 0 none; }
 }
 
 
 
 #contact-card {
   position: relative;
-  
   
   .social-row {
     margin-left: -2%;
@@ -82,7 +55,6 @@
   padding-left: 6em;
   
   h6 {
-    font-family: "LatoWeb";
     text-align: right;
     
     &.required-legend:before {
@@ -128,7 +100,6 @@ section {
   
   .contact { .copyright { top: 11rem; } }
   
-  
   #contact-card { padding-bottom: 30%; }
   #inquiries-card { margin-bottom: 5em; }
 }
@@ -157,24 +128,8 @@ section {
       text-align: center;
     }
   }
-  
-  .desktop-contact-links {
-    display: none;
-  }
-  
-  #contact-card {
-    padding-bottom: 4%;
-    text-align: center;
-    div { text-align: center; }
-  }
-  #inquiries-card {
-    padding-left: 4em;
-    padding-right: 4em;
-  }
-  
   .contact {
     .copyright {
-      font-size: 0.81em;
       position: unset;
       margin-top: 3em;
     }
@@ -192,6 +147,20 @@ section {
         width: 20%;
       }
     }
+  }
+  .desktop-contact-links {
+    display: none;
+  }
+  
+  
+  #contact-card {
+    padding-bottom: 4%;
+    text-align: center;
+    div { text-align: center; }
+  }
+  #inquiries-card {
+    padding-left: 4em;
+    padding-right: 4em;
   }
 
 }

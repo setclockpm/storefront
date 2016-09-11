@@ -83,7 +83,6 @@
       color: transparent;
       cursor: pointer;
       display: block;
-      font-size: 0;
       height: 16px;
       line-height: 0;
       outline: 0;
@@ -93,8 +92,6 @@
       &::before {
         color: #000;
         content: "•";
-        font-family: Futura;
-        font-size: 16px;
         height: 16px;
         left: 0;
         line-height: 16px;
@@ -112,7 +109,6 @@
 .slick-next, .slick-prev {
   background: 0 0;
   border: none;
-  color: transparent;
   cursor: pointer;
   display: block;
   position: absolute;
@@ -120,11 +116,6 @@
   outline: 0;
   transform: translate(0,-50%);
   z-index: 90;
-  
-  &:before {
-    color: #fff;
-    font-size: 1.5em;
-  }
 }
 .slick-next {
   right: 40px;
@@ -147,16 +138,8 @@
     transition-delay: 0s;
   }
 }
-/*------------------------------------------------*/
 
 
-
-/* DOM ID's not asociated with an element */
-#collapsing-menu {
-  li {
-    a { font-size: 18px; }
-  }
-}
 
 
 
@@ -164,21 +147,10 @@ button {
   &#search-btn { padding: 3px 10px; }
 }
 div {
-  &#spree-header {
-    margin-bottom: 0px;
-    nav { 
-      a {
-        font-size: .9em;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-      }
-    }
-  }
+  &#spree-header { margin-bottom: 0px; }
 }
 header {
   &#intro-splash {
-    color: white;
-
     div {
       &.container {
         padding-top: 0px;
@@ -186,25 +158,8 @@ header {
         width: 100%;
       }
     }
-  
-    .intro-text {
-      .name {
-        display: block;
-        font-family: 'cocomat', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 2em;
-      }
-
-      .skills {
-        font-size: 1.25em;
-        font-weight: 300;
-      }
-    }
   }
 }
-p { &.small { font-size: 16px; } }
-
 
 
 
@@ -244,26 +199,17 @@ p { &.small { font-size: 16px; } }
     }
   }
   .navbar-header { float: none; }
-  .navbar-form { .btn { letter-spacing: 1.5px; } }
   .navbar-fixed-top {
     padding: 15px 0;
     transition: padding 0.3s;
     
-    .navbar-brand {
-      font-size: 2em;
-      transition: all 0.3s;
-    }
-    
-    &.navbar-shrink {
-      padding: 10px 0;
-      .navbar-brand { font-size: 1.5em; }
-    }
+    .navbar-brand { transition: all 0.3s; }
+    &.navbar-shrink { padding: 10px 0; }
   }
-  .navbar-static-top { 
+  .navbar-static-top {
     padding: 15px 0; 
     transition: padding 0.3s ease 0s;
   }
-  
   .select-color-option .active-select-color-surface {
     background-color: #f2f2f2;
     border: 0;
@@ -279,16 +225,13 @@ p { &.small { font-size: 16px; } }
     box-shadow: 0 0 0 1px #7d7d7d;
     overflow: visible;
   }
-  .slick-arrow::before {
-    background-size: 32px auto;
-  }
+  .slick-arrow::before { background-size: 32px auto; }
 
 
-
+  // primitime DOM objects //
   div {
-    &#toggle-nav-button-wrapper {
-      display: none;
-    }
+    &#toggle-nav-button-wrapper { display: none; }
+    
     &.panel {
       background-color: #fff;
       border-radius: 43px;
@@ -320,7 +263,7 @@ p { &.small { font-size: 16px; } }
       top: 5px;
       right: 9px;
       width: 17px;
-      
+
       &::before, &::after {
         background: #a2a064;
         content: "";
@@ -335,12 +278,8 @@ p { &.small { font-size: 16px; } }
         transform: rotate(45deg);
       }
 
-
       span {
         display: block;
-        font-family: 'Federo', 'cocomat', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
-        font-size: 0.95em;
-        font-weight: bold;
         line-height: 16px;
         position: relative;
         right: -1px;

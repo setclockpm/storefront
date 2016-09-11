@@ -19,17 +19,8 @@
 }
 
 .select-color-label {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.125em;
   position: relative;
-  text-transform: uppercase;
   vertical-align: top;
-}
-
-
-.text-primary {
-  color: #545454;
 }
 
 
@@ -83,20 +74,12 @@ span {
 /////////* Maximum width 767px section *//////////
 @media (max-width: 767px) {
   
-  
   .cart-item-description {
     h4 {
-      font-size: 1em;
       margin-bottom: 5px;
       margin-top: 5px;
-      
-      a { color: #545454; }
     }
-    h6 {
-      color: #b3b3b3;
-      margin-top: 5px;
-    }
-    a { letter-spacing: 0px; }
+    h6 { margin-top: 5px; }
   }
   .cart-item-title {
     div {
@@ -104,20 +87,16 @@ span {
         padding-left: 0px;
         text-align: right;
       }
-      &.cart-item-name {
-        padding-right: 0px;
-      }
+      &.cart-item-name { padding-right: 0px; }
     }
   }
   .cart-item-quantity {
     margin-bottom: 10px;
     margin-top: 10px;
     
-    
     select {
       &.quantity {
         display: inline-block;
-//        height: 2.4em;
         width: 40%;
       }
     }
@@ -141,28 +120,16 @@ span {
       margin-bottom: 0px;
     }
   }
-
   h1 {
     &.shopping-cart-header {
-      font-size: 1.4rem;
       line-height: 1.4118;
       text-align: center;
     }
   }
-  
   hr {
     border-bottom: 1px solid #023257;
     width: 30%;
   }
-  
-  
-  label {
-    &.adjust-quantity {
-      font-size: .85em;
-      color: #545454;
-    }
-  }
-  
   section {
     &#shopping-cart-contents {
       padding: 10px 0px;
@@ -174,7 +141,6 @@ span {
       thead { display: none; }
       tbody {
         border: 0;
-        
         td { border: 0; }
       }
     }
