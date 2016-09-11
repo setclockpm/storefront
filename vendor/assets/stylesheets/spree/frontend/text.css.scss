@@ -61,23 +61,23 @@ hr {
 }
 /* Firefox 18- */
 input:-moz-placeholder {
-  color: #999 !important;
+  color: $mid-gray !important;
   font-family: $forms-font;
   font-size: 14px;
 }
  /* Firefox 19+ */
 input::-moz-placeholder {
-  color: #999 !important;
+  color: $mid-gray !important;
   font-family: $forms-font;
   font-size: 14px;
 }
 input:-ms-input-placeholder {
-  color: #999 !important;
+  color: $mid-gray !important;
   font-family: $forms-font;
   font-size: 14px;
 }
 input::-webkit-input-placeholder {
-  color: #999 !important;
+  color: $mid-gray !important;
   font-family: $forms-font;
   font-size: 14px;
 }
@@ -131,7 +131,7 @@ textarea::-webkit-input-placeholder {
 /* Begin class selectors */
 .bootstrap-select {
   button { 
-    color: #999;
+    color: $mid-gray;
     font-family: $forms-font;
   }
 }
@@ -157,10 +157,6 @@ textarea::-webkit-input-placeholder {
     text-transform: uppercase;
   }
 }
-.dl-submenu {
-  color: #fff;
-  a { color: #fff; }
-}
 .dropdown-menu { span { font-family: $forms-font; } }
 .floating-label-form-group {
   input, textarea {
@@ -172,7 +168,7 @@ textarea::-webkit-input-placeholder {
     font-size: 0.85em;
   }
   select {
-    color: #999;
+    color: $mid-gray;
     font-family: $forms-font;
     
     option {
@@ -236,7 +232,7 @@ textarea::-webkit-input-placeholder {
 }
 .spotlight-link { color: #2b2b2b; }
 .submit-group {
-  .btn[disabled] { color: #e9c2bc; }
+  .btn[disabled] { color: $gray-orange; }
   .btn-outline { color: $bright-orange; }
   .form-group {
     input[type="submit"] {
@@ -259,7 +255,7 @@ textarea::-webkit-input-placeholder {
 }
 #inquiries-card {
   h6 { 
-    color: #999;
+    color: $mid-gray;
     font-family: $forms-font;
     
     &.required-legend:before { color: red; }
@@ -304,14 +300,6 @@ label {
 
 /////////////////////////////////
 /* Begin DOM class selectors */
-.cart-item-description {
-  h4 {
-    font-size: 1em;
-    a { color: #545454; }
-  }
-  h6 { color: #b3b3b3; }
-  a { letter-spacing: 0px; }
-}
 .quantity-badge {
   span { font: normal bold 0.95em $main-font; }
 }
@@ -423,6 +411,35 @@ label {
       }
     }
   }
+  /* End DOM ID selectors */
+  
+  
+  
+  ///////////////////////////////////
+  // Begin unused E-commerce items //
+  ///////////////////////////////////
+  /* Begin primitive DOM objects */
+  h1 { &.shopping-cart-header { font-size: 1.4rem; } }
+  label {
+    &.adjust-quantity {
+      font-size: .85em;
+      color: #545454;
+    }
+  }
+  /* End primitive DOM objects   */
+  /* Begin DOM class selectors */
+  .cart-item-description {
+    h4 {
+      font-size: 1em;
+      a { color: #545454; }
+    }
+    h6 { color: #b3b3b3; }
+    a { letter-spacing: 0px; }
+  }
   /* End DOM class selectors */
+  
+  //////////////////////////////////// 
+  // End unused E-commerce items /////
+  ////////////////////////////////////
   
 }

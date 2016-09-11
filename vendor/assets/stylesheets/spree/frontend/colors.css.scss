@@ -5,13 +5,13 @@
 
 
 [off-canvas] {
-  background-color: #fdfdfd;
-  border-right: 1px solid rgba(0,0,0,0.15);
+  background-color: $off-white;
+  border-right: 1px solid $transparent-black;
   
   ul {
     li {
-      border-bottom: 1px solid rgba(0,0,0,0.15);
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid $transparent-black;
+      border-top: 1px solid $transparent-white;
     }
   }
 }
@@ -19,6 +19,11 @@
 
 
 #contact-card { background-color: $bright-orange; }
+#spree-header {
+  .nav {
+    a { &:hover, &:focus { background: 0; } }
+  } 
+}
 
 
 
@@ -47,13 +52,9 @@
   border: 2px dotted $near-black;
   &:hover { border: 2px solid $near-black; }
 }
-.dl-submenu {
-  background: rgba(34, 34, 34, 0.99) none repeat scroll 0;
-  border-top: 1px solid transparent;
-}
 .floating-label-form-group {
   border-bottom: 1px solid rgba(153,153,153,0.7);
-  &:not(:first-child) { border-left: 1px solid #999; }
+  &:not(:first-child) { border-left: 1px solid $mid-gray; }
 }
 .icon-bar { background-color: #fefefe; }
 .select {
@@ -84,7 +85,7 @@
 }
 .submit-group {
   .btn { background-color: transparent; }
-  .btn[disabled] { border-color: #E9C2BC; }
+  .btn[disabled] { border-color: $gray-orange; }
   .btn-outline { border-color: $bright-orange; }
   .form-group {
     input[type="submit"] { &:hover, &:focus { border: 2px solid $bright-orange; } }
