@@ -52,6 +52,7 @@
   border-top: 1px solid transparent;
 }
 .floating-label-form-group {
+  border-bottom: 1px solid rgba(153,153,153,0.7);
   &:not(:first-child) { border-left: 1px solid #999; }
 }
 .icon-bar { background-color: #fefefe; }
