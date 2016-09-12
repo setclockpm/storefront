@@ -2,14 +2,17 @@
 .herro {
   margin-top: 0px;
   z-index: 1;
-  
+
+  .brand-logo {
+    background: url('http://static.pexels.com/wp-content/uploads/2015/02/apple-hand-iphone-6-4322-525x350.jpg') no-repeat center center;
+    
+  }
   .image {
     background-position: no-repeat center center fixed;
     background-size: cover;
     -moz-background-size: cover;
     height: calc(100vh - 10rem);
   }
-  
   .slick-list { margin-bottom: 1.5rem; }
   .slick-next, .slick-prev {
     top: 40%;
