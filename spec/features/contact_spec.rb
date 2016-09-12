@@ -27,7 +27,7 @@ feature 'Contact us page interactions: ' do
   
     scenario "Successful with subject parameter passed in query string.", js: true do
       visit main_app.root_path
-      expect(page.has_selector?('div#contact-card')).to be true
+      # expect(page.has_selector?('div#contact-card')).to be true
       # expect(find('div#contact-card')).to have_link('Wholesale')
       # find('ul.desktop-contact-links').click_link('Wholesale')
  #      expect(find('form select', visible: false).value).to eq('Wholesale Inquiries')
