@@ -4,8 +4,23 @@
   z-index: 1;
 
   .brand-logo {
-    background: url('http://static.pexels.com/wp-content/uploads/2015/02/apple-hand-iphone-6-4322-525x350.jpg') no-repeat center center;
+//    background: url(logo_white.png) no-repeat center center;
+  //  min-height: 6em;
+//    width: 21%;
+    display: block;
+    margin: 0 auto;
+  }
+  .intro {
+    height: 100%;
+    padding: 3rem;
+    position: relative;
+    top: 50%;
+    transform: translateY(-15%);
     
+    img {
+      margin: auto;
+      width: 20%;
+    }
   }
   .image {
     background-position: no-repeat center center fixed;
