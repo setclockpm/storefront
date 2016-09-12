@@ -50,7 +50,6 @@
 }
 .slick-dots {
   bottom: -25px;
-  color: #000;
   line-height: 1.5;
   list-style: none;
   margin: 0;
@@ -67,20 +66,14 @@
     padding: 0;
     position: relative;
     width: 16px;
-    
+   
     &.slick-active {
-      button {
-        &::before {
-          color: #000;
-          opacity: .75;
-        }
-      }
+      button { &::before { opacity: .99 } }
     }
     
     button {
       border: 0;
       background: 0 0;
-      color: transparent;
       cursor: pointer;
       display: block;
       height: 16px;
@@ -90,8 +83,6 @@
       width: 16px;
       
       &::before {
-        color: #000;
-        content: "•";
         height: 16px;
         left: 0;
         line-height: 16px;

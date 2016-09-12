@@ -1,4 +1,6 @@
-
+.featured-in {
+  padding-left: 6em;
+}
 
 .grid-item {
   overflow: hidden;
@@ -73,23 +75,22 @@ section {
     padding: 3em 0;
     position: relative;
     
-    
-    &:before {
-      background: url(featured_bg_bnw.jpg) no-repeat center;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-      content : "";
-      display: block;
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      opacity : 0.6;
-      z-index: -1;
-    }
+    //&:before {
+//      background: url(featured_bg_bnw.jpg) no-repeat center;
+//      -webkit-background-size: cover;
+//      -moz-background-size: cover;
+//      -o-background-size: cover;
+//      background-size: cover;
+//      content : "";
+//      display: block;
+//      height: 100%;
+//      left: 0;
+//      position: absolute;
+//      top: 0;
+//      width: 100%;
+//      opacity : 0.6;
+//      z-index: -1;
+//    }
 
     .stacked { margin: 10px auto 40px; }
   }

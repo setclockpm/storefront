@@ -53,6 +53,10 @@
   &:hover { border: 2px solid $near-black; }
 }
 .catalog { background-color: $bg-lite-gray; }
+.featured { 
+  background-color: $off-white;
+  border-top: 1px solid $bebe-gray;
+}
 .floating-label-form-group {
   border-bottom: 1px solid $trspt-mid-gray;
   &:not(:first-child) { border-left: 1px solid $mid-gray; }
@@ -107,7 +111,10 @@
 
 
 button { &.purchase { background-color: $bright-orange; } }
-footer { &.below    { background-color: $bg-lite-gray; } }
+footer { 
+  &.below { background-color: $bg-lite-gray; }
+  &.contact { border-top: 1px solid $bg-lite-gray; }
+}
 hr {
   &.tiny { border: 1px solid white; }
   &.cheers {

@@ -161,6 +161,9 @@ textarea::-webkit-input-placeholder {
   letter-spacing: 1px;
 }
 .dropdown-menu { span { font-family: $forms-font; } }
+.featured {
+  h1 { color: $near-black; }
+}
 .floating-label-form-group {
   input, textarea {
     font-family: $forms-font;
@@ -208,14 +211,23 @@ textarea::-webkit-input-placeholder {
 .required:after { color: red; }
 .scroll-top { .btn { font-size: 20px; } }
 .slick-dots {
+  color: #000;
+  
   li {
     button {
+      color: transparent;
       font-size: 0;
       
       &::before {
+        color: black;
+        content: "•";
         font-family: Futura;
-        font-size: 16px;
+        font-size: 32px;
       }
+    }
+    
+    &.slick-active {
+      button { &::before { color: $bright-orange; } }
     }
   }
 }
@@ -262,8 +274,8 @@ textarea::-webkit-input-placeholder {
   .nav {
     a {
       color: $near-black;
-      font: normal bold .9em $main-font;
-      letter-spacing: 1px;
+      font: normal bold .75em $forms-font;
+      letter-spacing: 2px;
       text-transform: uppercase;
       
       &:focus, &:hover { text-decoration: underline; }
