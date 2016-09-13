@@ -3,20 +3,23 @@
   margin-top: 0px;
   z-index: 1;
 
-  .brand-logo {
+  .hero-shadow {
     display: block;
+    height: inherit;
     margin: 0 auto;
+    position: relative;
+    top: -12%;
   }
   .intro {
-    height: 100%;
-    padding: 3rem;
-    position: relative;
-    top: 50%;
-    transform: translateY(-15%);
+    height: inherit;
     
     img {
       margin: auto;
+      position: relative;
       width: 20%;
+      top: 50%;
+      transform: translateY(-69%);
+      z-index: 100;
     }
   }
   .image {
@@ -201,7 +204,7 @@ header {
   
   .logo { img { width: 160px; } }
   .herro {
-    .image { min-height: 52rem; }
+//    .image { min-height: 52rem; }
     .slick-list { padding-bottom: 0.5rem; }
     .slick-prev, .slick-next {
       display: block;

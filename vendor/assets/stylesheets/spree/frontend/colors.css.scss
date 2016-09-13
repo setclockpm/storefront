@@ -64,6 +64,12 @@
 .footer-below {
   border-top: 1px solid $bebe-gray;
 }
+.herro {
+  .hero-shadow {
+    background-color: $mid-gray;
+    opacity: 0.4;
+  }
+}
 .select {
   .bootstrap-select {
     .dropdown-toggle {

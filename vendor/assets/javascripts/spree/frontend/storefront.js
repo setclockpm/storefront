@@ -32,7 +32,7 @@ $('.navbar-collapse ul li a:not(.dropdown-toggle)').click(function() {
 
 $(document).ready(function(){
   $('.herro').slick({
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 4500,
     fade: true,
     lazyLoad: 'progressive',
