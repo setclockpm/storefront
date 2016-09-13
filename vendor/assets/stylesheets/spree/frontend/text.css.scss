@@ -219,10 +219,10 @@ textarea::-webkit-input-placeholder {
       font-size: 0;
       
       &::before {
-        color: black;
+        color: $bg-lite-gray;
         content: "•";
         font-family: Futura;
-        font-size: 32px;
+        font-size: 39px;
       }
     }
     
