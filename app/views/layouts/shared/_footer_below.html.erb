@@ -11,8 +11,15 @@
           </li>
         </ul>
       </div>
-      
-      <div class="col-sm-4 col-sm-offset-4 col-xs-12">
+      <div class="col-sm-4 col-xs-12 cc text-center">
+        <div class="col-xs-12">
+          <%= image_tag "feathers/original.png", title: "feather", class: "accent" %>
+        </div>
+        <div class="col-xs-12">
+          <p class="copyright">Copyright &copy; Porthos Home <%= Time.now.year %></p>
+        </div>
+      </div>
+      <div class="col-sm-4 col-xs-12">
         <ul class="nav navbar-left" data-hook="impostor-ul">
           <li class="nav-item" data-hook="wholesale-inquiries">
             <%= link_to 'Wholesale', main_app.contact_path(subject: 'Wholesale Inquiries'), class: "utility" %>
@@ -22,16 +29,6 @@
           </li>
         </ul>
       </div>
-      
-      <div class="col-xs-12 text-center">
-        <div class="col-xs-12">
-          <%= image_tag "feathers/original.png", title: "feather", class: "accent" %>
-        </div>
-        <div class="col-xs-12">
-          <p class="copyright">Copyright &copy; Porthos Home <%= Time.now.year %></p>
-        </div>
-      </div>
-      
     </div>
   </div>
 </footer>

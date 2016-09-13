@@ -467,7 +467,11 @@ label {
 /////////* Maximum width 767px section *//////////
 @media (max-width: 767px) {
   /* Begin DOM class selectors */
-  .contact { .copyright { font-size: 0.81em; } }
+  
+  .copyright { font-size: 0.81em; }
+  .footer-below {
+    .copyright { color: $mid-gray; }
+  }
   /* End DOM class selectors */
   
   /* Begin DOM ID selectors */

@@ -192,7 +192,7 @@ section {
   section {
     &.catalog { padding-bottom: 0em; }
   }
-  #contact-card { padding-bottom: 30%; }
+  #contact-card { height: calc(100vh - 9rem); }
   
 }
 ///////////////////////////////////////////////////
