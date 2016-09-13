@@ -4,9 +4,6 @@
   z-index: 1;
 
   .brand-logo {
-//    background: url(logo_white.png) no-repeat center center;
-  //  min-height: 6em;
-//    width: 21%;
     display: block;
     margin: 0 auto;
   }
@@ -24,9 +21,9 @@
   }
   .image {
     background-position: no-repeat center center fixed;
-    background-size: cover;
     -moz-background-size: cover;
-    height: calc(100vh - 10rem);
+    background-size: cover;
+    height: 100vh;
   }
   .slick-list { margin-bottom: 1.5rem; }
   .slick-next, .slick-prev {
@@ -67,8 +64,8 @@
   width: 18px;
 }
 .slick-dots {
-  bottom: -25px;
-  line-height: 1.5;
+  bottom: 4.5em;
+  line-height: 3.5;
   list-style: none;
   margin: 0;
   position: absolute;
@@ -137,7 +134,7 @@
   &:before { content:"\e257"; }
 }
 .slick-slider {
-  margin-bottom: 7em;
+  margin-bottom: 0em;
   
   &:hover { .slick-arrow { opacity: 1; } }
 }
@@ -156,24 +153,10 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    
-    //&:before {
-//      background: url(featured_bg_bnw.jpg) no-repeat center;
-//      -webkit-background-size: cover;
-//      -moz-background-size: cover;
-//      -o-background-size: cover;
-
-//      content : "";
-//      display: block;
-//      
-//      left: 0;
-//      position: absolute;
-//      top: 0;
-//      width: 100%;
-//      opacity : 0.6;
-//      z-index: -1;
-//    }
+    min-height: 5.5em;
   }
+  
+  .logo-wrapper { margin-top: .5em; }
 }
 
 

@@ -3,22 +3,18 @@
 }
   
 .card {
-  padding-top: 6em;
-  padding-right: 3.5em;
-  padding-left: 5em;
-  
+  padding: 6em;
   .submit-group .form-group { text-align: left; }
 }
 .contact {
-  /* INQUIRIES: */
-  padding-top: 0em;
-  
-  .container { width: 100%; }
+  padding: 0;
   
   h1 {
     margin-bottom: 10px;
     text-align: left;
   }
+  
+  .container { width: 100%; }
 }
 
 .help-block {
@@ -48,9 +44,7 @@
     margin-top: 40px;
   }
 }
-#inquiries-card {
-  padding-left: 6em;
-  
+#inquiries-card {  
   h6 {
     text-align: right;
     
@@ -70,11 +64,8 @@ hr {
 }
 section {
   &.contact {
-    .stacked {
-      border-top: solid 2.5px;
-      margin: 12px auto 20px;
-      max-width: 150px;
-    }
+    /* INQUIRIES: */
+    padding-top: 0em;
   }
 }
 
