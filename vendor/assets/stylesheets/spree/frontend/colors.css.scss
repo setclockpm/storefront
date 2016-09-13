@@ -1,142 +1,142 @@
+/* START:import */
+@import "brand";
+/* END:import */
+
+
+
 [off-canvas] {
-  background-color: #fdfdfd;
+  background-color: $off-white;
+  border-right: 1px solid $transparent-black;
   
-  span { color: #023257; }
   ul {
     li {
-      border-bottom: 1px solid rgba(0,0,0,0.15);
-      border-top: 1px solid rgba(255,255,255,0.1);
-      text-align: left;
+      border-bottom: 1px solid $transparent-black;
+      border-top: 1px solid $transparent-white;
     }
   }
-  border-right: 1px solid rgba(0,0,0,0.15);;
 }
 
 
+
+#contact-card { background-color: $bright-orange; }
+#spree-header {
+  .nav {
+    a { &:hover, &:focus { background: 0; } }
+  } 
+}
+
+
+
+.bootstrap-select {
+  .dropdown-toggle {
+    span {
+      &:focus {
+        outline: 0 none;
+        outline-color: transparent;
+      }
+    }
+  }
+  
+  button {
+    border-top: 0 none;
+    border-left: 0 none;
+  }
+}
+.btn-group.open {
+  .dropdown-toggle {
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.025);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.025);
+  }
+}
 .btn-outline {
-  border: 2px dotted #444;
-  &:hover { border: 2px solid #444; }
+  border: 2px dotted $near-black;
+  &:hover { border: 2px solid $near-black; }
 }
-.help-block {
-  &.text-danger { color: #a94442; }
+.catalog { background-color: $bg-lite-gray; }
+.featured { 
+  background-color: $off-white;
+  border-top: 1px solid $bebe-gray;
 }
-.icon-bar {
-  background-color: #fefefe;
+.floating-label-form-group {
+  border-bottom: 1px solid $trspt-mid-gray;
+  &:not(:first-child) { border-left: 1px solid $mid-gray; }
 }
-.spotlight-link {
-  color: #2b2b2b;
+.footer-below {
+  border-top: 1px solid $bebe-gray;
+}
+.herro {
+  .hero-shadow {
+    background-color: $mid-gray;
+    opacity: 0.4;
+  }
+}
+.select {
+  .bootstrap-select {
+    .dropdown-toggle {
+      &:focus {
+        outline: 0 none;
+        outline: -webkit-focus-ring-color auto 0px !important;
+        outline-color: transparent !important;
+        outline-style: auto;
+        outline-width: 5px;
+        -webkit-box-shadow: none;
+      }
+    }
+  }
+  .btn-default {
+    &:active, &:hover, &:focus {
+      background-color: white;
+      border-top: 0 none;
+      border-left: 0 none;
+    }
+  }
+  .open > .btn-default.dropdown-toggle {
+    background-color: #fff;
+    border-top: 0 none;
+    border-left: 0 none;
+  }
 }
 .submit-group {
+  .btn { background-color: transparent; }
+  .btn[disabled] { border-color: $gray-orange; }
+  .btn-outline { border-color: $bright-orange; }
   .form-group {
-    input[type="submit"] {
-      &:hover { border: 2px solid #da5544; }
-    }
+    input[type="submit"] { &:hover, &:focus { border: 2px solid $bright-orange; } }
   }
 }
 .toggle-mv-menu {
-  border: 1px solid #444;
-  
-  .icon-bar { background-color: #444; }
+  border: 1px solid $near-black;
+  .icon-bar { background-color: $near-black; }
+}
+.well {
+  background-color: white;
+  p { background-color: white; }
 }
 
 
 
 
-
-
-
-
-
-a { color: #444; }
+button { &.purchase { background-color: $bright-orange; } }
+footer { 
+  &.below { background-color: $bg-lite-gray; }
+  &.contact { border-top: 1px solid $bg-lite-gray; }
+}
 hr {
-  &.ribbon {
-    border-color: #2c3e50;
-    
-    &:after {
-      background-color: white;
-      color: #2c3e50;
-    }
-  }
-  &.shouts {
-    &:after {
-      background-color: transparent;
-      color: #fff;
-    }
-  }
-  &.contact {
-    &:after { color: #2c3e50; }
-  }
-  &.cheers, &.contact, &.museum {
+  &.tiny { border: 1px solid white; }
+  &.cheers {
     border-color: white;
     &:after { background-color: white; }
   }
 }
-
-
-
-
-section {
-  &.featured {
-    .stacked {  }
-  }
-  
-  h5 { color: #fff; }
-}
-
-
-
-
-
-// This section deals solely with the major background colors. eg header, navbar, footer, any area carrying the dominant color //
-.dl-submenu {
-  background: rgba(34, 34, 34, 0.99) none repeat scroll 0;
-  color: #fff;
-  border-top: 1px solid transparent;
-  a { color: #fff; }
-}
-
-
-
-.floating-label-form-group-with-value {
-  &.floating-label-form-group-with-focus { label { color: #d66254; } }
-  label { color: #979797; }
-}
-
-.submit-group {
-  .btn { background-color: transparent; }
-  
-  .btn-outline {
-    border-color: #da5544;
-    color: #da5544;
-    
-    &:hover { border: 2px solid #da5544; }
-  }
-}
-
-
-footer {
-  color: #fff;
-  
-  .btn-social {    
-    &:hover, &:focus, &:active, &.active {
-      color: #db5544;
-    }
-  }
-  .footer-above {
-    background-color: #71BEBE;
-    a { color: #fff; }
-  }
-}
-
+input:-moz-placeholder           { opacity: 0.7; } /* Firefox 18- */
+input::-moz-placeholder          { opacity: 0.7; } /* Firefox 19+ */
+input:-ms-input-placeholder      { opacity: 0.7; }
+input::-webkit-input-placeholder { opacity: 0.7; }
 nav {
-  &.navbar {
-    font-family: 'cocomat', 'Federo', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
-    font-weight: 700;
-  }
   &.navbar-default {
     &.transparent { 
       background: rgba(113, 190, 190, 0.0);
-      &:hover, &:focus { background: rgba(113, 190, 190, .95); }
+      &:hover, &:focus { background: rgba(113, 190, 190, .05); }
     }
     
     ul {
@@ -150,15 +150,16 @@ nav {
 }
 section {
   &.success {
-    background: #fff;
-    color: #db5544;
-    
-    a, a:hover, a:focus, a:active {
-      color: #66afe9;
-      outline: none;
-    }
+    background: white;
+    a, a:hover, a:focus, a:active { outline: none; }
   }
 }
+textarea:-moz-placeholder           { opacity: 0.7; } /* Firefox 18- */
+textarea::-moz-placeholder          { opacity: 0.7; } /* Firefox 19+ */
+textarea:-ms-input-placeholder      { opacity: 0.7; }
+textarea::-webkit-input-placeholder { opacity: 0.7; }
+
+
 
 
 
@@ -173,53 +174,20 @@ section {
   /////////* Minimum width 767px section *//////
 ///////////////////////////////////////////////////
 @media (min-width: 767px) {
-  #spree-header {
-    background: none 0;
-  }
-  nav {
-    &.navbar-default {
-      &.opaque {
-        background: rgba(113, 190, 190, 0.9);
-      }
-    }
-  }
+  
 }
-
-
-
-
-
 
 
 ////////////////////////////////////////////////
 ////////* Maximum width 767px section */////////
 ////////////////////////////////////////////////
 @media (max-width: 767px) {
+  .navbar-collapse { background: rgba(34, 34, 34, 0.99) none repeat scroll 0 0; }
   
-  #spree-header {
-    .navbar-collapse {
-      color: #fff;
-      
-      li {
-        &.mv-nav-item {
-          a { &:hover { color: #dd5544; } }
-        }
-      }
-    }
-  }  
-  
-  .navbar-collapse {
-    background: rgba(34, 34, 34, 0.99) none repeat scroll 0 0;
-  }
-  
-  nav {
-    &.navbar-default {
-      .navbar-toggle {
-        .icon-bar { background-color: #dd5544; }
-      }
-      &.opaque {
-        background: rgba(113, 190, 190, 0.95);
-      }
+  #porthos-header {
+    .toggle-mv-menu {
+      border: 1px solid $off-white;
+      .icon-bar { background-color: $off-white; }
     }
   }
 }

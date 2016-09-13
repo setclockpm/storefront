@@ -10,7 +10,16 @@ module StorefrontHelper
   
   
   def featured_in_images
-    ["bhg.png", "nbc.png", "wayfair.png", "overstock.png", "houzz.png", "redbook.png", "hgtv.png", "desert-trip.png"]
+    {
+      "bhg.png" => 'http://www.bhg.com/', 
+      "nbc.png" => 'http://www.nbc.com/shows/current', 
+      "wayfair.png" => 'http://www.wayfair.com/Porthos-Home-B40284.html',
+      "overstock.png" => 'http://www.overstock.com/Porthos-Home,/brand,/results.html', 
+      "houzz.png" => 'http://www.houzz.com/', 
+      "redbook.png" => 'http://www.redbookmag.com/', 
+      "hgtv.png" => 'http://www.hgtv.com/', 
+      "desert-trip.png" => 'http://deserttrip.com/'
+    }
   end
   
   def featured_item_offset_class(pos)
@@ -40,6 +49,10 @@ module StorefrontHelper
         three_icon_bars
       )
     end
+  end
+  
+  def variants_shown_in_collection
+    
   end
   
 

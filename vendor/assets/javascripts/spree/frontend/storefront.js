@@ -25,17 +25,20 @@ $('body').scrollspy({ target: '.navbar-fixed-top' })
 
 // Closes the Responsive Menu on Menu Item Click
 $('.navbar-collapse ul li a:not(.dropdown-toggle)').click(function() {
-    $('.navbar-toggle:visible').click();
+  $('.navbar-toggle:visible').click();
 });
+
 
 
 $(document).ready(function(){
   $('.herro').slick({
-    autoplay: true,
-    autoplaySpeed: 3500,
+    autoplay: false,
+    autoplaySpeed: 4500,
     fade: true,
     lazyLoad: 'progressive',
     mobileFirst: true,
+    // nextArrow: '<i class="fa fa-arrow-right"></i>',
+//     prevArrow: '<i class="fa fa-arrow-left"></i>',
     speed: 1000,
     
     responsive: 
@@ -43,5 +46,12 @@ $(document).ready(function(){
       breakpoint: 768,
       settings: { dots: true }
     }]
+  });
+  
+  // This may have been part of the startbootstrap teemplate and may not be needed
+  // TODO: Check if this is even used.
+  $("a[data-toggle=\"tab\"]").click(function(e) {
+    e.preventDefault();
+    $(this).tab("show");
   });
 });

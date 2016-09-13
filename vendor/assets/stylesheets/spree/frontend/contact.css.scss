@@ -1,28 +1,216 @@
+.bootstrap-select > .dropdown-toggle {
+  padding-left: 3px;
+}
+  
+.card {
+  padding: 6em;
+  .submit-group .form-group { text-align: left; }
+}
+.contact {
+  padding: 0;
+  
+  h1 {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .container { width: 100%; }
+}
+
 .help-block {
+  margin: 0;
+  
   li { list-style: none; }
+  ul { margin: 0; }
 }
 .submit-group {
   .form-group {
     margin-top: 30px;
     text-align: center;
+  }
+}
+.select {
+  .form-group { border-bottom: 0 none; }
+  .glyphicon-ok { right: 1.3em; }
+}
+
+
+
+#contact-card {
+  position: relative;
+  
+  .social-row {
+    margin-left: -2%;
+    margin-top: 40px;
+  }
+}
+#inquiries-card {  
+  h6 {
+    text-align: right;
     
-    input[type="submit"] {
-      font-size: 16px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+    &.required-legend:before {
+      content: "* ";
+      position: relative;
+      bottom: 2px;
     }
   }
 }
 
 
 
-.contact {
-  /* INQUIRIES: */
-  h1 {
-    color: #444;
-    font-size: 2em;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
+
+hr {
+  &.tiny { width: 2%; }
+}
+section {
+  &.contact {
+    /* INQUIRIES: */
+    padding-top: 0em;
   }
 }
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////
+////////* Maximum width 992px section */////////
+////////////////////////////////////////////////
+@media (max-width: 992px) {
+  #contact-card { padding-bottom: 30%; }
+  #inquiries-card { margin-bottom: 5em; }
+}
+////////////////////////////////////////////////
+  ////////////////////////////////////////////
+    ///////////////////////////////////////
+      //////////////////////////////////
+         ////////////////////////////
+           ///////////////////////
+             //////////////////
+               //////////////
+                 //////////
+                   //////
+                     ///
+
+////////////////////////////////////////////////
+////////* Maximum width 767px section */////////
+////////////////////////////////////////////////
+@media (max-width: 767px) {
+  
+  .card {
+    padding-left: 0em;
+    padding-right: 0em;
+    
+    .submit-group .form-group {
+      text-align: center;
+    }
+  }
+  .contact {
+    .copyright {
+      position: unset;
+      margin-top: 3em;
+    }
+    #contact-card {
+      h1 {
+        margin-bottom: 30px;
+        margin-top: 0px;
+      }
+    }
+    
+    h1, h3 { text-align: center; }
+    hr { &.tiny { width: 20%; } }
+  }
+  .desktop-contact-links { display: none; }
+  
+  
+  #contact-card {
+    padding-bottom: 4%;
+    text-align: center;
+    div { text-align: center; }
+  }
+  #inquiries-card {
+    padding-left: 4em;
+    padding-right: 4em;
+  }
+
+}
+////////////////////////////////////////////////
+  ////////////////////////////////////////////
+    ///////////////////////////////////////
+      //////////////////////////////////
+         ////////////////////////////
+           ///////////////////////
+             //////////////////
+               //////////////
+                 //////////
+                   //////
+                     ///
+
+
+                     //
+                    ////
+                  ////////
+                ////////////
+              ////////////////
+            ////////////////////
+          /////////////////////////
+        /////////////////////////////
+      //////////////////////////////////
+    //////////////////////////////////////
+  ////* Minimum width 768px section *//////
+//////////////////////////////////////////////
+@media (min-width: 768px) {
+  
+  #contact-card { padding-bottom: 20%; }
+  hr {
+    &.tiny {
+      margin-left: 0%;
+    }
+  }
+  
+}
+////////////////////////////////////////////////
+                     //
+                    ////
+                  ////////
+                ////////////
+              ////////////////
+            ////////////////////
+          /////////////////////////
+        /////////////////////////////
+      //////////////////////////////////
+    //////////////////////////////////////
+  ////* Minimum width 992px section *//////
+//////////////////////////////////////////////
+@media (min-width: 992px) {
+  
+  section {
+    &.catalog { padding-bottom: 0em; }
+  }
+  #contact-card { height: calc(100vh - 9rem); }
+  
+}
+///////////////////////////////////////////////////
+                     //
+                    ////
+                  ////////
+                ////////////
+              ////////////////
+            ////////////////////
+          /////////////////////////
+        /////////////////////////////
+      //////////////////////////////////
+    //////////////////////////////////////
+  ////* Minimum width 1170px section *//////
+//////////////////////////////////////////////
+@media (min-width: 1170px) {
+  
+  #contact-card { padding-bottom: 25%; }
+  
+}
+////////////////////////////////////////////////

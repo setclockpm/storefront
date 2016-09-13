@@ -8,7 +8,6 @@
   }
   .spacer {
     border: 0;
-    height: 3rem;
   }
 }
 
@@ -45,7 +44,6 @@
 .toggle-mv-menu .icon-bar + .icon-bar {
   margin-top: 4px;
 }
-li { .dl-submenu { display: none; } }
 
 
 
@@ -60,17 +58,6 @@ li { .dl-submenu { display: none; } }
 ////////////////////////////////////////////////
 @media (max-width: 767px) {
   
-  .dl-submenu {
-    list-style: none;
-    
-    li {
-      a {
-        display: block;
-        position: relative;
-        padding: 10px 15px;
-      }
-    }
-  }
   .navbar .dl-menu.dl-menuopen {
     display: block;
     opacity: 1;

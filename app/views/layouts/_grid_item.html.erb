@@ -1,11 +1,5 @@
-<% if image == 'overstock.png' %>
-  <% brand_page = 'http://www.overstock.com/Porthos-Home,/brand,/results.html' %>
-<% elsif image == 'wayfair.png' %>
-  <% brand_page = 'http://www.wayfair.com/Porthos-Home-B40284.html' %>
-<% end %>
-
 <div class="col-xs-6 col-sm-6 col-md-3 grid-item">
-  <a href="<%= brand_page %>" class="thumbnail">
+  <a href="<%= url %>" class="thumbnail-wannabe">
     <figure>
       <%= image_tag image, alt: "featured in", class: 'img img-responsive full-width' %>
       

@@ -1,0 +1,34 @@
+<footer class="below text-center">
+  <div class="container footer-below">
+    <div class="row">
+      <div class="col-sm-4 col-xs-12">
+        <ul class="nav navbar-right" data-hook="impostor-ul">
+          <li class="nav-item">
+            <%= link_to "Our Story", main_app.about_path, class: "utility" %>
+          </li>
+          <li class="nav-item" data-hook>
+            <%= link_to 'Collection', '#', class: "utility" %>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-4 col-xs-12 cc text-center">
+        <div class="col-xs-12">
+          <%= image_tag "feathers/original.png", title: "feather", class: "accent" %>
+        </div>
+        <div class="col-xs-12">
+          <p class="copyright">Copyright &copy; Porthos Home <%= Time.now.year %></p>
+        </div>
+      </div>
+      <div class="col-sm-4 col-xs-12">
+        <ul class="nav navbar-left" data-hook="impostor-ul">
+          <li class="nav-item" data-hook="wholesale-inquiries">
+            <%= link_to 'Wholesale', main_app.contact_path(subject: 'Wholesale Inquiries'), class: "utility" %>
+          </li>
+          <li class="nav-item" data-hook="other">
+            <%= link_to 'Contact Us', main_app.contact_path(subject: 'Other'), class: "utility" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

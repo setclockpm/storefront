@@ -1,5 +1,5 @@
 class Message
-  attr_accessor :content, :email, :name, :phone
+  attr_accessor :content, :email, :name, :phone, :subject
   
   include ActiveModel::Model
   include ActiveModel::Conversion

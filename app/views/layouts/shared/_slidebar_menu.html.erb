@@ -8,7 +8,7 @@
     <li class="page-scroll dl-nav-item"><%= link_to 'Our Story', main_app.about_path %></li>
     <li class="dl-nav-item"><%= link_to 'Collection', spree.products_path %></li>
     <li class="page-scroll dl-nav-item"><%= link_to 'Contact', main_app.root_path(anchor: 'contact') %></li>
-    <li class="dl-nav-item"><%= link_to 'Wholesale', main_app.root_path(anchor: 'contact') %></li>
+    <li class="dl-nav-item"><%= link_to 'Wholesale', main_app.contact_path(subject: 'Wholesale Inquiries') %></li>
     <%#= render partial: "layouts/shared/taxonomy_links", locals: { max_level: Spree::Config[:max_level_in_taxons_menu] || 1 } %>
     <% if spree_current_user %>
       <li id="account-settings" class="mv-nav-item" role="menuitem">

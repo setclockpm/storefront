@@ -17,4 +17,11 @@ Deface::Override.new(name:             'add-import-tab',
                      virtual_path:     'spree/admin/shared/sub_menu/_product',
                      insert_bottom:     "[data-hook='admin_product_sub_tabs']", 
                      text:             '  <%= tab :data_import %>',
-                     original:         nil)
+                     original:         '5c6807c2920b4280184cbdf867b7ba98e41b576f')
+                     
+                     
+# Deface::Override.new(name:             'add-import-tab',
+#                      virtual_path:     'spree/admin/shared/sub_menu/_product',
+#                      insert_bottom:     "[data-hook='admin_product_sub_tabs']",
+#                      text:             '  <%= tab :data_import %>',
+#                      original:         '5c6807c2920b4280184cbdf867b7ba98e41b576f')

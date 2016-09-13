@@ -2,14 +2,32 @@
 .herro {
   margin-top: 0px;
   z-index: 1;
-  
+
+  .hero-shadow {
+    display: block;
+    height: inherit;
+    margin: 0 auto;
+    position: relative;
+    top: -12%;
+  }
+  .intro {
+    height: inherit;
+    
+    img {
+      margin: auto;
+      position: relative;
+      width: 20%;
+      top: 50%;
+      transform: translateY(-69%);
+      z-index: 100;
+    }
+  }
   .image {
     background-position: no-repeat center center fixed;
-    background-size: cover;
     -moz-background-size: cover;
-    height: calc(100vh - 10rem);
+    background-size: cover;
+    height: 100vh;
   }
-  
   .slick-list { margin-bottom: 1.5rem; }
   .slick-next, .slick-prev {
     top: 40%;
@@ -26,7 +44,7 @@
   }
 }
 .logo-wrapper { text-align: center; }
-.nav { 
+.nav {
   line-height: 2.5;
   
   li {
@@ -49,9 +67,8 @@
   width: 18px;
 }
 .slick-dots {
-  bottom: -25px;
-  color: #000;
-  line-height: 1.5;
+  bottom: 4.5em;
+  line-height: 3.5;
   list-style: none;
   margin: 0;
   position: absolute;
@@ -67,23 +84,16 @@
     padding: 0;
     position: relative;
     width: 16px;
-    
+   
     &.slick-active {
-      button {
-        &::before {
-          color: #000;
-          opacity: .75;
-        }
-      }
+      button { &::before { opacity: .99 } }
     }
     
     button {
       border: 0;
       background: 0 0;
-      color: transparent;
       cursor: pointer;
       display: block;
-      font-size: 0;
       height: 16px;
       line-height: 0;
       outline: 0;
@@ -91,10 +101,6 @@
       width: 16px;
       
       &::before {
-        color: #000;
-        content: "•";
-        font-family: Futura;
-        font-size: 16px;
         height: 16px;
         left: 0;
         line-height: 16px;
@@ -112,7 +118,6 @@
 .slick-next, .slick-prev {
   background: 0 0;
   border: none;
-  color: transparent;
   cursor: pointer;
   display: block;
   position: absolute;
@@ -120,22 +125,19 @@
   outline: 0;
   transform: translate(0,-50%);
   z-index: 90;
-  
-  &:before {
-    color: #fff;
-    font-size: 3em;
-  }
 }
 .slick-next {
-  right: 30px;
-  &:before { content: ">"; }
+  right: 40px;
+  font-family: 'Glyphicons Halflings'; 
+  &:before { content:"\e258"; }
 }
 .slick-prev {
-  left: 30px;
-  &:before { content: "<"; }
+  left: 34px;
+  font-family: 'Glyphicons Halflings'; 
+  &:before { content:"\e257"; }
 }
-.slick-slider { 
-  margin-bottom: 30px;
+.slick-slider {
+  margin-bottom: 0em;
   
   &:hover { .slick-arrow { opacity: 1; } }
 }
@@ -145,16 +147,21 @@
     transition-delay: 0s;
   }
 }
-/*------------------------------------------------*/
 
 
-
-/* DOM ID's not asociated with an element */
-#collapsing-menu {
-  li {
-    a { font-size: 18px; }
+#porthos-header {
+  nav {
+    background: url(featured_bg_bnw.jpg) no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 5.5em;
   }
+  
+  .logo-wrapper { margin-top: .5em; }
 }
+
 
 
 
@@ -162,21 +169,10 @@ button {
   &#search-btn { padding: 3px 10px; }
 }
 div {
-  &#spree-header {
-    margin-bottom: 0px;
-    nav { 
-      a {
-        font-size: 1em;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-      }
-    }
-  }
+  &#spree-header { margin-bottom: 0px; }
 }
 header {
   &#intro-splash {
-    color: white;
-
     div {
       &.container {
         padding-top: 0px;
@@ -184,25 +180,8 @@ header {
         width: 100%;
       }
     }
-  
-    .intro-text {
-      .name {
-        display: block;
-        font-family: 'cocomat', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 2em;
-      }
-
-      .skills {
-        font-size: 1.25em;
-        font-weight: 300;
-      }
-    }
   }
 }
-p { &.small { font-size: 16px; } }
-
 
 
 
@@ -225,7 +204,7 @@ p { &.small { font-size: 16px; } }
   
   .logo { img { width: 160px; } }
   .herro {
-    .image { min-height: 40rem; }
+//    .image { min-height: 52rem; }
     .slick-list { padding-bottom: 0.5rem; }
     .slick-prev, .slick-next {
       display: block;
@@ -242,26 +221,17 @@ p { &.small { font-size: 16px; } }
     }
   }
   .navbar-header { float: none; }
-  .navbar-form { .btn { letter-spacing: 1.5px; } }
   .navbar-fixed-top {
     padding: 15px 0;
     transition: padding 0.3s;
     
-    .navbar-brand {
-      font-size: 2em;
-      transition: all 0.3s;
-    }
-    
-    &.navbar-shrink {
-      padding: 10px 0;
-      .navbar-brand { font-size: 1.5em; }
-    }
+    .navbar-brand { transition: all 0.3s; }
+    &.navbar-shrink { padding: 10px 0; }
   }
-  .navbar-static-top { 
+  .navbar-static-top {
     padding: 15px 0; 
     transition: padding 0.3s ease 0s;
   }
-  
   .select-color-option .active-select-color-surface {
     background-color: #f2f2f2;
     border: 0;
@@ -277,16 +247,13 @@ p { &.small { font-size: 16px; } }
     box-shadow: 0 0 0 1px #7d7d7d;
     overflow: visible;
   }
-  .slick-arrow::before {
-    background-size: 32px auto;
-  }
+  .slick-arrow::before { background-size: 32px auto; }
 
 
-  
+  // primitime DOM objects //
   div {
-    &#toggle-nav-button-wrapper {
-      display: none;
-    }
+    &#toggle-nav-button-wrapper { display: none; }
+    
     &.panel {
       background-color: #fff;
       border-radius: 43px;
@@ -318,7 +285,7 @@ p { &.small { font-size: 16px; } }
       top: 5px;
       right: 9px;
       width: 17px;
-      
+
       &::before, &::after {
         background: #a2a064;
         content: "";
@@ -333,12 +300,8 @@ p { &.small { font-size: 16px; } }
         transform: rotate(45deg);
       }
 
-
       span {
         display: block;
-        font-family: 'Federo', 'cocomat', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
-        font-size: 0.95em;
-        font-weight: bold;
         line-height: 16px;
         position: relative;
         right: -1px;

@@ -1,57 +1,23 @@
-@font-face {
-    font-family: 'cocomat';
-    src: url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/cocomat_light/cocomat_light.eot');
-    src: url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/cocomat_light/cocomat_light.woff2') format('woff2'),
-         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/cocomat_light/cocomat_light.woff') format('woff'),
-         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/cocomat_light/cocomat_light.ttf') format('truetype'),
-         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/cocomat_light/cocomat_light.svg#cocomatlight') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
 html {
-  font-size: 16px;
   height: 100%;
   width: 100%;
 }
 
-
 body {
   height: 100%;
-  font-family: 'cocomat', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
-  font-size: 16px;
   overflow-x: hidden;
   width: 100%;
 }
 
-
+// ------------------------------------------------------------------------------------------
 
 a {
-  font-weight: normal;
   outline: none;
-  
   &:hover, &:focus, &:active {
-    text-decoration: none;
     outline: none;
+    text-decoration: none;
   }
 }
-
-
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'cocomat', 'Federo', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 500;
-}
-
-
 hr {
   padding: 0;
   text-align: center;
@@ -62,103 +28,80 @@ hr {
     max-width: 150px;
   }
 }
-nav {
-  font-family: 'cocomat', 'Federo', 'Century Gothic', "Apple Gothic", "AppleGothic", "URW Gothic L", "Avant Garde", sans-serif;
-  font-weight: 700;
-}
 section { padding: 4em 0; }
 ul { 
   list-style: none;
+  padding: 0;
 }
-
-
-
-#spree-header {
-  .nav {
-    a {
-      color: #444;
-      font-weight: bold;
-    }
-    a:hover, #spree-header .nav a:focus {
-      background: 0 none;
-      text-decoration: underline;
-      //&:after {
-    //    content: "\f107";
-    //    font-family: FontAwesome;
-    //    right: -0.8em;
-    //  }
-    }
-  } 
-}
-
 
 
 
 .floating-label-form-group {
   position: relative;
   margin-bottom: 0;
-  border-bottom: 1px solid #eee;
   
-  input, textarea {
+  input, textarea, select {
     background: none;
     box-shadow: none !important;
     border: none;
     border-radius: 0;
-    font-size: 1.1em;
     padding-right: 0;
     padding-left: 0;
     position: relative;
     resize: none;
     z-index: 1;
   }
-  
   label {
     display: block;
-    font-size: 0.85em;
     line-height: 1.764705882em;
     margin: 0;
     opacity: 0;
     position: relative;
     top: 2em;
     vertical-align: baseline;
-    transition: top 0.3s ease,opacity 0.3s ease;
     -webkit-transition: top 0.3s ease,opacity 0.3s ease;
     -moz-transition: top 0.3s ease,opacity 0.3s ease;
     -ms-transition: top 0.3s ease,opacity 0.3s ease;
+    transition: top 0.3s ease,opacity 0.3s ease;
     z-index: 0;
   }
+  select { margin-left: -.6em; }
   
-  &:not(:first-child) {
-    border-left: 1px solid #eee;
-    padding-left: 14px;
-  }
+  &:not(:first-child) { padding-left: 14px; }
 }
-.floating-label-form-group:not(:first-child) {
-  padding-left: 14px;
-  border-left: 1px solid #eee;
-}
+.floating-label-form-group:not(:first-child) { padding-left: 14px; }
 .floating-label-form-group-with-value {
   label {
     opacity: 1;
-    top: 0;
+    top: 4px;
   }
 }
+.help-block { margin: 0; }
 .hor-flip {
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
-  filter: FlipH;
   -ms-filter: "FlipH";
+  filter: FlipH;
 }
 .nav {
   white-space: nowrap;
+  a { &:focus, &:hover { background: 0 none; } }
+} 
+.required {
+  &:after {
+    content: ' *';
+    display: inline;
+  }
 }
 
-.section-separator {
-  margin-top: 5em;
-  margin-bottom: 5em;
-}
+
+
+
+
+ 
+
 
 
 

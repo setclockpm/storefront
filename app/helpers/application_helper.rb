@@ -4,10 +4,6 @@ module ApplicationHelper
 
   def color_options(v, options={})
     text = variant_options(v, options={})
-    # puts "\ntext: #{text}"
-#     text = text.split(',')[0].gsub!(/Color:/, "").strip
-#     puts "text: #{text}\n"
-#     text
   end
 
   def current_store
@@ -24,7 +20,20 @@ module ApplicationHelper
   end
   
   def navbar_page
-    current_page?(main_app.root_url) ? "transparent" : "opaque"
+    unless request
+      raise "View context has not provided a Request object! #navbar_page"
+    end
+    
+    if request.get?
+      puts "current_page?(main_app.root_url): #{current_page?(main_app.root_url)}\n"
+      current_page?(main_app.root_url) ? "transparent" : "opaque"
+    else
+      request.original_url.end_with?(main_app.root_url) ? "transparent" : "opaque"
+    end
+  end
+  
+  def required_field
+    content_tag :span, '*', class: 'foo'
   end
   
   def search_icon_button_tag
