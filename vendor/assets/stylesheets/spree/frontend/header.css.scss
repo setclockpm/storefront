@@ -149,6 +149,33 @@
 }
 
 
+#porthos-header {
+  nav {
+    background: url(featured_bg_bnw.jpg) no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+    //&:before {
+//      background: url(featured_bg_bnw.jpg) no-repeat center;
+//      -webkit-background-size: cover;
+//      -moz-background-size: cover;
+//      -o-background-size: cover;
+
+//      content : "";
+//      display: block;
+//      
+//      left: 0;
+//      position: absolute;
+//      top: 0;
+//      width: 100%;
+//      opacity : 0.6;
+//      z-index: -1;
+//    }
+  }
+}
+
 
 
 
@@ -218,30 +245,6 @@ header {
   .navbar-static-top {
     padding: 15px 0; 
     transition: padding 0.3s ease 0s;
-  }
-  #porthos-header {
-    nav {
-      background: url(featured_bg_bnw.jpg) no-repeat center;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      //&:before {
-  //      background: url(featured_bg_bnw.jpg) no-repeat center;
-  //      -webkit-background-size: cover;
-  //      -moz-background-size: cover;
-  //      -o-background-size: cover;
-  //      background-size: cover;
-  //      content : "";
-  //      display: block;
-  //      height: 100%;
-  //      left: 0;
-  //      position: absolute;
-  //      top: 0;
-  //      width: 100%;
-  //      opacity : 0.6;
-  //      z-index: -1;
-  //    }
-    }
   }
   .select-color-option .active-select-color-surface {
     background-color: #f2f2f2;
