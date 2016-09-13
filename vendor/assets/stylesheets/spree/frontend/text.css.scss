@@ -270,6 +270,16 @@ textarea::-webkit-input-placeholder {
     &.required-legend:before { color: red; }
   }
 }
+#porthos-header {
+  nav {
+    a {
+      color: white;
+      font: normal bold .75em $forms-font;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+  }
+}
 #spree-header {
   .nav {
     a {
