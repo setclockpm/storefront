@@ -44,7 +44,7 @@
     margin-top: 40px;
   }
 }
-#inquiries-card {  
+#inquiries-card {
   h6 {
     text-align: right;
     
@@ -83,7 +83,9 @@ section {
 ////////////////////////////////////////////////
 @media (max-width: 992px) {
   #contact-card { padding-bottom: 30%; }
-  #inquiries-card { margin-bottom: 5em; }
+  #inquiries-card {
+    margin-bottom: 5em;
+  }
 }
 ////////////////////////////////////////////////
   ////////////////////////////////////////////
@@ -193,7 +195,10 @@ section {
     &.catalog { padding-bottom: 0em; }
   }
   #contact-card { height: calc(100vh - 9rem); }
-  
+  #inquiries-card {
+    padding-left: 10em;
+    padding-right: 4em;
+  }
 }
 ///////////////////////////////////////////////////
                      //

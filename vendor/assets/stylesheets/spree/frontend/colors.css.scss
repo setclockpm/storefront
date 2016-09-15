@@ -53,6 +53,9 @@
   &:hover { border: 2px solid $near-black; }
 }
 .catalog { background-color: $bg-lite-gray; }
+.collection-preview {
+  background-color: $collection-gray;
+}
 .featured { 
   background-color: $off-white;
   border-top: 1px solid $bebe-gray;
