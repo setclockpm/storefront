@@ -33,7 +33,7 @@ $('.navbar-collapse ul li a:not(.dropdown-toggle)').click(function() {
 $(document).ready(function(){
   $('.herro').slick({
     autoplay: true,
-    autoplaySpeed: 4500,
+    autoplaySpeed: 8000,
     fade: true,
     lazyLoad: 'progressive',
     mobileFirst: true,
