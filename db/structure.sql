@@ -139,6 +139,37 @@ CREATE TABLE schema_migrations (
 
 
 --
+-- Name: showcase_items; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE showcase_items (
+    id integer NOT NULL,
+    front_page boolean,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: showcase_items_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE showcase_items_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: showcase_items_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE showcase_items_id_seq OWNED BY showcase_items.id;
+
+
+--
 -- Name: spree_addresses; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -3073,8 +3104,8 @@ CREATE TABLE spree_variants (
     updated_at timestamp without time zone,
     sale_price numeric(8,2),
     discontinue_on timestamp without time zone,
-    shown_in_collection boolean DEFAULT false,
-    stock_items_count integer DEFAULT 0 NOT NULL
+    stock_items_count integer DEFAULT 0 NOT NULL,
+    shown_in_collection boolean DEFAULT false
 );
 
 
@@ -3184,6 +3215,13 @@ ALTER TABLE ONLY friendly_id_slugs ALTER COLUMN id SET DEFAULT nextval('friendly
 --
 
 ALTER TABLE ONLY products ALTER COLUMN id SET DEFAULT nextval('products_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY showcase_items ALTER COLUMN id SET DEFAULT nextval('showcase_items_id_seq'::regclass);
 
 
 --
@@ -3803,6 +3841,14 @@ ALTER TABLE ONLY friendly_id_slugs
 
 ALTER TABLE ONLY products
     ADD CONSTRAINT products_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: showcase_items_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY showcase_items
+    ADD CONSTRAINT showcase_items_pkey PRIMARY KEY (id);
 
 
 --
@@ -6465,7 +6511,7 @@ INSERT INTO schema_migrations (version) VALUES ('20160520085977');
 
 INSERT INTO schema_migrations (version) VALUES ('20160520085978');
 
-INSERT INTO schema_migrations (version) VALUES ('20160707003340');
-
 INSERT INTO schema_migrations (version) VALUES ('20160830195015');
+
+INSERT INTO schema_migrations (version) VALUES ('20160916011142');
 
