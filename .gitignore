@@ -44,5 +44,11 @@ public/spree/*
 rerun.txt
 pickle-email-*.html
 .powrc
+
+
+# Environment files that may contain sensitive data
+.env
 .powenv
+
+
 logfile
