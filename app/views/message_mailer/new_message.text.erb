@@ -1,5 +1,5 @@
 <%= @message.name %> <<%= @message.email %>> wrote:
 
-Subject: <%= @message.subject %>
+Subject: <%= @message.subject || "General Inquiry" %>
 
 <%= @message.content %>
