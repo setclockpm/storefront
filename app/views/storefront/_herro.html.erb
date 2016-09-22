@@ -2,9 +2,9 @@
 <header id="intro-splash">
   <div class="container">
     <div class="row herro slick-main" data-hook="slideshow">
-      <div class="image lazyloaded" style="background-image:url(assets/slideshow-2.jpg);">
+      <div class="image lazyloaded" style="background-image:url(assets/hero/slideshow-2.jpg);">
         <picture style="display:none;">
-          <source srcset="assets/slideshow-2.jpg" type="image/jpeg">
+          <source srcset="assets/hero/slideshow-2.jpg" type="image/jpeg">
           <%= image_tag nil, class: 'lazyloaded slick' %>
         </picture>
         <div class="intro">
@@ -12,27 +12,31 @@
           <div class="hero-shadow"></div>
         </div>
       </div>
-      <div class="image lazyloaded" style="background-image:url(assets/slideshow-1.jpg);">
+      <div class="image lazyloaded" style="background-image:url(assets/hero/slideshow-1.jpg);">
         <picture style="display:none;">
-          <source srcset="assets/slideshow-1.jpg" type="image/jpeg">
+          <source srcset="assets/hero/slideshow-1.jpg" type="image/jpeg">
           <%= image_tag nil, class: 'lazyloaded slick' %>
         </picture>
       </div>
-      <div class="image lazyloaded" style="background-image:url(assets/slideshow-3.jpg);">
+      <div class="image lazyloaded" style="background-image:url(assets/hero/slideshow-3.jpg);">
         <picture style="display:none;">
-          <source srcset="assets/slideshow-3.jpg" type="image/jpeg">
+          <source srcset="assets/hero/slideshow-3.jpg" type="image/jpeg">
           <%= image_tag nil, class: 'lazyloaded slick' %>
         </picture>
       </div>
-      <div class="image lazyloaded" style="background-image:url(assets/slideshow-4.jpg);">
+      <div class="image lazyloaded" style="background-image:url(assets/hero/slideshow-4.jpg);">
         <picture style="display:none;">
-          <source srcset="assets/slideshow-4.jpg" type="image/jpeg">
+          <source srcset="assets/hero/slideshow-4.jpg" type="image/jpeg">
           <%= image_tag nil, class: 'lazyloaded slick' %>
         </picture>
+        <div class="promo">
+          <span class="fall-2016">fall forward 2016</span><br>
+          <%= link_to "view collection".upcase, main_app.collection_path, class: "btn btn-lg btn-outline fall-2016" %>
+        </div>
       </div>
-      <div class="image lazyloaded" style="background-image:url(assets/slideshow-5.jpg);">
+      <div class="image lazyloaded" style="background-image:url(assets/hero/slideshow-5.jpg);">
         <picture style="display:none;">
-          <source srcset="assets/slideshow-5.jpg" type="image/jpeg">
+          <source srcset="assets/hero/slideshow-5.jpg" type="image/jpeg">
           <%= image_tag nil, class: 'lazyloaded slick' %>
         </picture>
       </div>

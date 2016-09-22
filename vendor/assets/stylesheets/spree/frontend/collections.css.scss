@@ -1,19 +1,58 @@
 
 .collection-preview {
-  h1 {
-    margin-top: 0;
-  }
+  h1 { margin-top: 0; }
+  
   .container {
     padding-left: 127px;
     padding-right: 127px;
     width: 100%;
   }
-  .preview-item {
+  .grid-item {
     border: 4px solid #fbfbfb;
     float: left;
-    position: relative;
-    text-align: center;
-    width: 33.33%;
+    padding-left: 0px;
+    padding-right: 0px;
+    
+    a {
+      background: transparent;
+      text-decoration: underline;
+    }
+    figcaption {
+      position: absolute;
+      left: 0%;
+      top: 0%;
+      transform: translate(0%, 0%);
+      width: 100.3%;
+      height: 100%;
+      text-align: center;
+      background-color: #ebebeb;
+      opacity: 0;
+      -webkit-transition: opacity 0.3s ease-out;
+      -moz-transition: opacity 0.3s ease-out;
+      -ms-transition: opacity 0.3s ease-out;
+      -o-transition: opacity 0.3s ease-out;
+      transition: opacity 0.3s ease-out;
+      
+      h3 {
+        color: #2b2b2b;
+        font-size: 11px;
+        font-weight: 300;
+        letter-spacing: 2px;
+      }
+      
+    }
+    figure {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      
+      &:hover { figcaption { opacity: 1; } }
+      
+      img {
+        display: block;
+        max-width: 100%;
+      }
+    }
   }
 }
 
@@ -157,7 +196,10 @@
   /////////* Minimum width 1440px section *////
 ///////////////////////////////////////////////////
 @media (min-width: 1440px) {
-  
+  .grid-uniform, .main-row {
+    max-width: 1672px;
+    margin: 10px auto;
+  }
 }
 ///////////////////////////////////////////////////
                         ///

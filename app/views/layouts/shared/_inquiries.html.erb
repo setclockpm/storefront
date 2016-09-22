@@ -10,14 +10,14 @@
       },
       submitSuccess: function($form, event) {
         // Prevent spam click and default submit behaviour
-        $("#btnSubmit").attr("disabled", true);
+        $("#button-submit").attr("disabled", true);
         // event.preventDefault();
   
         // get values from FORM
         var name = $("input#name").val();
         var email = $("input#email").val();
         var phone = $("input#phone").val();
-        var message = $("textarea#message").val();
+        var message = $("textarea#content").val();
         var firstName = name; // For Success/Failure Message
   
         // Check for white space in name for Success/Fail message
@@ -83,7 +83,7 @@
       <div><h6 class="required-legend"> Indicates required field</h6></div>
       <div class="row submit-group">
         <div class="form-group col-xs-12">
-          <%= f.submit "send", class: "btn-send btn btn-outline btn-lg", disabled: true %>
+          <%= f.submit "send", id: 'button-submit', class: "btn-send btn btn-outline btn-lg", disabled: true %>
         </div>
       </div>
     <% end %>

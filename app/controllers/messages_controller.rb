@@ -37,5 +37,9 @@ class MessagesController < ApplicationController
         root_path(anchor: 'contact')
       end
     end
+    
+    def render_location
+      message_params[:subject].present? ? :new : 'storefront/index'
+    end
   
 end
