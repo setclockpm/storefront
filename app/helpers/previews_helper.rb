@@ -1,6 +1,6 @@
 module PreviewsHelper
   
-  def preview_items
+  def collection_preview_items
     ["preview1.png", "preview2.png", "preview3.png"]
   end
   
@@ -12,7 +12,8 @@ module PreviewsHelper
 #     end
   end
   
-  def preview_reference(creation)
+  def preview_reference(image, index)
+    
     # padded_revision = 'r%04d' % creation.revision
   #   link = link_to(creation_thumbnail(creation),
   #                  creation,

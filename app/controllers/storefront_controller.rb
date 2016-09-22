@@ -3,7 +3,7 @@ class StorefrontController < ApplicationController
   layout 'porthos'
   respond_to :html
   
-  CATALOG      = "Porthos_Home_New_Items.pdf"
+  CATALOG      = "Catalog-2016.pdf"
   CATALOG_LINK = "#{Rails.root}/public/#{CATALOG}"
   
   

@@ -16,10 +16,6 @@ module StorefrontHelper
     fa_icon("paper-plane-o", text: "Submit").html_safe
   end
   
-  def variants_shown_in_collection
-    
-  end
-  
 
   private
     def three_icon_bars

@@ -33,14 +33,12 @@
         <h1 id="collection-preview">COLLECTIONS</h1>
       </div>
       <div class="col-xs-6 see-more text-right">
-        <%= link_to "see more".upcase, main_app.download_catalog_url, class: "btn btn-lg btn-outline" %>
+        <%= link_to "see more".upcase, main_app.collection_path, class: "btn btn-lg btn-outline" %>
       </div>
     </div>
     <div class="row">
-      <div class="gallery col-xs-12">
-        <% preview_items.each do |item| %>
-          <li><%= preview_reference(item) %></li>
-        <% end %>
+      <div class="gallery grid-uniform grid-home col-xs-12">
+        <%= render partial: "storefront/collection_preview" %>
       </div>
     </div>
   </div>
