@@ -12,10 +12,6 @@ module StorefrontHelper
     link_to text.upcase, "https://s3-ap-southeast-1.amazonaws.com/porthos/public/media/Catalog-2016.pdf", class: "btn btn-lg btn-outline"
   end
   
-  def send_icon
-    fa_icon("paper-plane-o", text: "Submit").html_safe
-  end
-  
 
   private
     def three_icon_bars

@@ -1,9 +1,9 @@
-<link rel="stylesheet" href="http://formvalidation.io/vendor/formvalidation/css/formValidation.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>
-<script src="http://formvalidation.io/vendor/formvalidation/js/formValidation.min.js"></script>
-<script src="http://formvalidation.io/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+
+<%= stylesheet_link_tag    'formValidation.min', media: 'screen' %>
+<%= javascript_include_tag 'form_validation/base.min' %>
+<%= javascript_include_tag 'form_validation/bootstrap.min' %>
 
 <script>
   $(document).ready(function() {
