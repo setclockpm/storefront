@@ -152,12 +152,6 @@ section {
     padding-left: 3em;
     padding-right: 3em;
   }
-  .grid-item figure {
-    margin: -8px .5em;
-    overflow: hidden;
-    padding-bottom: 100%;
-    position: relative;
-  }
   
   section {
     &#about-us { padding-top: 0px; }
@@ -167,6 +161,12 @@ section {
       .container {
         padding-left: 4em;
         padding-right: 4em;
+      }
+      .grid-item figure {
+        margin: -8px .5em;
+        overflow: hidden;
+        padding-bottom: 100%;
+        position: relative;
       }
     }
   }
@@ -188,7 +188,6 @@ section {
 @media (max-width: 480px) {
   
   .grid-item figure {
-    margin: 10px -.3em;
     padding-bottom: 100%;
   }
 }
