@@ -1,5 +1,20 @@
-<% collection_preview_items.each_with_index do |image, i| %>
-  <%= render partial: "collection_item", locals: { image: image, i: i } %>
-<% end %>
-
+<section class="collection-preview">
+  <div class="container">
+    <div class="row">
+      <div class="title col-xs-6">
+        <h1 id="collection-preview">COLLECTIONS</h1>
+      </div>
+      <div class="col-xs-6 see-more text-right">
+        <%= link_to "see more".upcase, main_app.collection_path, class: "btn btn-lg btn-outline" %>
+      </div>
+    </div>
+    <div class="main-row">
+      <div class="gallery grid-uniform grid-home row">
+        <% collection_preview_items.each do |image, uri| %>
+          <%= render partial: "collection_preview_item", locals: { image: image, uri: uri } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
   

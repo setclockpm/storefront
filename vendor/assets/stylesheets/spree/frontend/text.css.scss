@@ -208,6 +208,10 @@ textarea::-webkit-input-placeholder {
   font-size: 14px;
   &.text-danger { color: #a94442; }
 }
+.promo {
+  span { font-size: 4em; }
+  .fall-2016 { color: white; }
+}
 .required:after { color: red; }
 .scroll-top { .btn { font-size: 20px; } }
 .slick-dots {
@@ -449,7 +453,11 @@ label {
 ///////////////////////////////////////////////////
 ////////* Maximum width 992px section *////////////
 ///////////////////////////////////////////////////
-@media (max-width: 992px) {}
+@media (max-width: 992px) {
+  .promo {
+    span { font-size: 2.5em; }
+  }
+}
 ///////////////////////////////////////////////////
   ///////////////////////////////////////////////
     //////////////////////////////////////////
@@ -472,6 +480,9 @@ label {
   .featured h1 { font-size: 2em; }
   .footer-below {
     .copyright { color: $mid-gray; }
+  }
+  .promo {
+    span { font-size: 2em; }
   }
   /* End DOM class selectors */
   

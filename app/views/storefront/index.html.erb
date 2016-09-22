@@ -1,6 +1,9 @@
 <%= render partial: 'storefront/herro' %>
+<!-- Collections Preview Section -->
+<%= render partial: "storefront/collection_preview" %>
 
-<!-- About Us Section -->
+
+<!-- Catalog Section -->
 <section class="catalog">
   <div class="container">
     <div class="row">
@@ -26,23 +29,6 @@
 </section>
 
 
-<section class="collection-preview">
-  <div class="container">
-    <div class="row">
-      <div class="title col-xs-6">
-        <h1 id="collection-preview">COLLECTIONS</h1>
-      </div>
-      <div class="col-xs-6 see-more text-right">
-        <%= link_to "see more".upcase, main_app.collection_path, class: "btn btn-lg btn-outline" %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="gallery grid-uniform grid-home col-xs-12">
-        <%= render partial: "storefront/collection_preview" %>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 <section class="featured">

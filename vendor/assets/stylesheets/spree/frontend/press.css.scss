@@ -147,6 +147,7 @@ section {
 ////////////////////////////////////////////////
 @media (max-width: 767px) {
   
+  
   .featured-in {
     padding-left: 3em;
     padding-right: 3em;
@@ -227,7 +228,7 @@ section {
   /////////* Minimum width 767px section *//////
 ///////////////////////////////////////////////////
 @media (min-width: 768px) {
-  
+    
   section {
     &.spotlight-major { .container { min-height: 40vw; } }
   }
@@ -299,9 +300,9 @@ section {
            ////////////////////////////
         //////////////////////////////////
      ////////////////////////////////////////
-  /////////* Minimum width 1800px section *////
+  /////////* Minimum width 1680px section *////
 ///////////////////////////////////////////////////
-@media (min-width: 1800px) {
+@media (min-width: 1680px) {
 
   .featured {
     .grid-item {
