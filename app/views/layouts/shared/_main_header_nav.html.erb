@@ -15,22 +15,8 @@
       <div class="col-sm-3 col-xs-6 logo-wrapper">
         <figure id="logo" class="logo"> <%= logo %> </figure>
       </div>
-        <!-- Container for cart, stays outside of toggle -->
-      <div id="nav-menu" class="col-sm-9 col-xs-3">
-        <ul class="nav navbar-right" data-hook="impostor-ul">
-          <li class="nav-item" data-hook>
-            <%= link_to "Our Story", main_app.about_path %>
-          </li>
-          <li class="nav-item" data-hook>
-            <%= link_to 'Collection', main_app.collection_path %>
-          </li>
-
-          <li class="nav-item" data-hook>
-            <%= link_to 'Contact Us', main_app.contact_path %>
-          </li>
-          <%#= render partial: "layouts/shared/mv_menu_login" if home_ip? %>
-        </ul>
-      </div>
+      
+      <%= yield :main_navigation %>
       <!-- /.navbar-cart -->
     </div>
     <!-- /.navbar-header -->

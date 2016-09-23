@@ -1,0 +1,9 @@
+<% content_for :main_navigation do %>
+  <div id="nav-menu" class="col-sm-9 col-xs-3">
+    <ul class="nav navbar-right" data-hook="impostor-ul">
+      <%= nav_tab 'Our Story',    main_app.about_path,      current: current_tab %>
+      <%= nav_tab 'Collection',   main_app.collection_path, current: current_tab %>
+      <%= nav_tab 'Contact Us',   main_app.contact_path,    current: current_tab %>
+    </ul>
+  </div>
+<% end %>
