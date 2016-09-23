@@ -56,6 +56,39 @@
   }
 }
 
+.collection {
+   h1 { text-align: center; }
+   
+  .container {
+//    padding-left: 127px;
+//    padding-right: 127px;
+    width: 80%;
+  }
+  .grid-item {
+    border: 4px solid #fbfbfb;
+    float: left;
+    padding-left: 0px;
+    padding-right: 0px;
+    
+    a {
+      background: transparent;
+      text-decoration: underline;
+    }
+    
+    figure {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      
+      &:hover { figcaption { opacity: 1; } }
+    }
+    img {
+      display: block;
+      max-width: 100%;
+    }
+  }
+}
+
 
 ////////////////////////////////////////////////
 ////////* Maximum width 1200px section */////////
@@ -203,8 +236,7 @@
     margin: 10px auto;
   }
   .heading-row {
-    max-width: 1672px;
-    margin: 0px auto;
+    max-width: 1702px;
   }
 }
 ///////////////////////////////////////////////////
@@ -216,9 +248,9 @@
            ////////////////////////////
         //////////////////////////////////
      ////////////////////////////////////////
-  /////////* Minimum width 1800px section *////
+  /////////* Minimum width 1700px section *////
 ///////////////////////////////////////////////////
-@media (min-width: 1800px) {
-  
+@media (min-width: 1700px) {
+
 }
 ///////////////////////////////////////////////////

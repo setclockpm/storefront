@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
   def new
     @subject = params[:subject]
     @message = Message.new
-    render layout: 'porthos'
+    render layout: 'utility'
   end
   
   

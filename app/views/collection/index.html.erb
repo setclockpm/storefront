@@ -1,0 +1,16 @@
+<section class="collection">
+  <div class="container">
+    <div class="row">
+      <div class="title col-sm-offset-3 col-sm-6 col-xs-12">
+        <h1 id="collection">COLLECTION</h1>
+      </div>
+    </div>
+    <div class="main-row">
+      <div class="portfolio grid-uniform grid-home row">
+        <% collection_items.each do |image| %>
+          <%= render partial: "collection_item", locals: { image: image } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

@@ -16,12 +16,57 @@
   
   .container { width: 100%; }
 }
-
+.floating-label-form-group {
+  position: relative;
+  margin-bottom: 0;
+  
+  input, textarea, select {
+    background: none;
+    box-shadow: none !important;
+    border: none;
+    border-radius: 0;
+    padding-right: 0;
+    padding-left: 0;
+    position: relative;
+    resize: none;
+    z-index: 1;
+  }
+  label {
+    display: block;
+    line-height: 1.764705882em;
+    margin: 0;
+    opacity: 0;
+    position: relative;
+    top: 2em;
+    vertical-align: baseline;
+    -webkit-transition: top 0.3s ease,opacity 0.3s ease;
+    -moz-transition: top 0.3s ease,opacity 0.3s ease;
+    -ms-transition: top 0.3s ease,opacity 0.3s ease;
+    transition: top 0.3s ease,opacity 0.3s ease;
+    z-index: 0;
+  }
+  select { margin-left: -.6em; }
+  
+  &:not(:first-child) { padding-left: 14px; }
+}
+.floating-label-form-group:not(:first-child) { padding-left: 14px; }
+.floating-label-form-group-with-value {
+  label {
+    opacity: 1;
+    top: 4px;
+  }
+}
 .help-block {
   margin: 0;
   
   li { list-style: none; }
   ul { margin: 0; }
+}
+.required {
+  &:after {
+    content: ' *';
+    display: inline;
+  }
 }
 .submit-group {
   .form-group {
@@ -33,7 +78,6 @@
   .form-group { border-bottom: 0 none; }
   .glyphicon-ok { right: 1.3em; }
 }
-
 
 
 #contact-card {

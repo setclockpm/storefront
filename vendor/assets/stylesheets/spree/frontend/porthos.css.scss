@@ -1,0 +1,29 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+// ------------------------------------------------------------------------------------------
+
+a {
+  outline: none;
+  &:hover, &:focus, &:active {
+    outline: none;
+    text-decoration: none;
+  }
+}
+hr {
+  padding: 0;
+  text-align: center;
+}
+section { padding: 4em 0; }
+ul { 
+  list-style: none;
+  padding: 0;
+}

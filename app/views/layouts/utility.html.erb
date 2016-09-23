@@ -1,0 +1,41 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
+  <head data-hook="inside_head">
+    <meta charset="utf-8">
+    <title>
+      Porthos Home: <%= yield(:title).blank? ? "Shop Boldly For Your Style" : yield(:title) %>
+      <%# The normal <yield(:title) || "Custom Title"> syntax doesn't work here for some reason. %> 
+    </title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport">
+    
+    <%== meta_data_tags %>
+    <%= canonical_tag(current_store.url) %>
+    <%= favicon_link_tag 'favicon.ico' %>
+    
+    <%= stylesheet_link_tag 'spree/frontend/all', media: 'screen' %>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag 'spree/frontend/all' %>
+    <%= javascript_include_tag 'classie' %>
+    
+    
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+    <%= render partial: 'spree/shared/google_analytics.js' %>
+    
+    <div canvas="container" style="margin:0;padding:0;">
+      <div id="porthos-header">
+        <%= render partial: "layouts/shared/utility_header_nav" %>
+      </div>
+      <%= yield %>
+    </div>
+    <%= render partial: "layouts/shared/slidebar_menu" %>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+
+header {
+  &#intro-splash {
+    div {
+      &.container {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+.logo {
+  img {
+    display: inline-block;
+    margin-bottom: 0px;
+    max-width: 140px;
+    min-width: 125px;
+  }
+}
+.logo-wrapper { text-align: center; }
+.nav {
+  white-space: nowrap;
+  a { &:focus, &:hover { background: 0 none; } }
+} 
+//.quantity-badge { position: absolute; }
+.transparent {
+  &:hover, &:focus {
+    transition: all .3s ease-in-out;
+    transition-delay: 0s;
+  }
+}
+
+
+#porthos-header {
+  nav {
+    background: url(featured_bg_bnw.jpg) no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 5.5em;
+  }
+  
+  .logo-wrapper { margin-top: .5em; }
+}
+#spree-header { margin-bottom: 0px; }
+
+
+
+
+ 
+
+
+
+
+
+                        ///
+                      ///////
+                    ///////////
+                 ////////////////
+              //////////////////////
+           ////////////////////////////
+        //////////////////////////////////
+     ////////////////////////////////////////
+  /////////* Minimum width 768px section *//////
+///////////////////////////////////////////////////
+@media (min-width: 768px) {
+  
+  .logo { img { width: 160px; } }
+  .nav {
+    li {
+      &.nav-item {
+        display: inline-block;
+        a { min-width: 8em;}
+      }
+    }
+  }
+  .navbar-header { float: none; }
+  .navbar-fixed-top {
+    padding: 15px 0;
+    transition: padding 0.3s;
+    
+    .navbar-brand { transition: all 0.3s; }
+    &.navbar-shrink { padding: 10px 0; }
+  }
+  .navbar-static-top {
+    padding: 15px 0; 
+    transition: padding 0.3s ease 0s;
+  }
+
+  // primitime DOM objects //
+  div {
+    &#toggle-nav-button-wrapper { display: none; }
+    
+    &.panel {
+      background-color: #fff;
+      border-radius: 43px;
+      box-shadow: none;
+    }
+  }
+}
+///////////////////////////////////////////////////
+
+                        ///
+                      ///////
+                    ///////////
+                 ////////////////
+              //////////////////////
+           ////////////////////////////
+        //////////////////////////////////
+     ////////////////////////////////////////
+  /////////* Minimum width 1408px section *//////
+///////////////////////////////////////////////////
+@media (min-width: 1408px) {
+  nav { .container { width: 1370px; } }
+}
+
+///////////////////////////////////////////////////
+

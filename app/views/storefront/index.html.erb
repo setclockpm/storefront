@@ -1,7 +1,12 @@
-<%= render partial: 'storefront/herro' %>
+<!-- Header (Front Page) -->
+<header id="intro-splash">
+  <%= render partial: 'storefront/herro' %>
+</header>
+  
 <!-- Collections Preview Section -->
-<%= render partial: "storefront/collection_preview" %>
-
+<section class="collection-preview">
+  <%= render partial: "storefront/collection_preview" %>
+</section>
 
 <!-- Catalog Section -->
 <section class="catalog">
@@ -24,7 +29,6 @@
         </div>
       </div>
     </div>
-    
   </div>
 </section>
 
@@ -34,6 +38,10 @@
 <section class="featured">
   <%= render partial: 'storefront/press' %>
 </section>
+<!-- Footer -->
+<footer class="contact">
+  <%= render partial: 'layouts/shared/footer' %>
+</footer>
 
 
 <script type="text/javascript" charset="utf-8">

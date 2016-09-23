@@ -15,7 +15,7 @@ module ProductsHelper
   end
   
   def lifestyle_background_image(product)
-    product.lifestyle_shot? ? image_tag(variant.images.first.attachment.url(:product)) : "ls-placeholder.jpg"
+    product.lifestyle_shot? ? image_tag(variant.images.first.attachment.url(:product)) : "logos/logo.png"
   end
   
   def next_page_button(on_last_pg, is_remote, url)
