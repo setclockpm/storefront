@@ -79,9 +79,7 @@
 ////////////////////////////////////////////////
 @media (max-width: 992px) {
   
-  .collection-preview {
-    .container { padding-left: 92px; }
-  }
+  
 }
 ////////////////////////////////////////////////
   ////////////////////////////////////////////
@@ -98,6 +96,15 @@
 ////////* Maximum width 767px section */////////
 ////////////////////////////////////////////////
 @media (max-width: 767px) {
+  .collection-preview {
+    .container { 
+      padding-left: 4em;
+      padding-right: 4em;
+    }
+    .heading-row {
+      text-align: center;
+    }
+  }
   .see-more {
     display: none;
   }
