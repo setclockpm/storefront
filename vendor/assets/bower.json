@@ -2,6 +2,7 @@
   "name": "dsl-generated dependencies",
   "dependencies": {
     "slidebars": "latest",
-    "photoswipe": "latest"
+    "photoswipe": "latest",
+    "fullpage.js": "latest"
   }
 }

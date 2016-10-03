@@ -35,7 +35,9 @@
       <div id="spree-header">
         <%= render partial: "layouts/shared/main_header_nav" %>
       </div>
-      <%= yield %>
+      <div id="full-page-wrapper" class="section">
+        <%= yield %>
+      </div>
       <%= render partial: "layouts/shared/footer_below" %>
       <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
       <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">

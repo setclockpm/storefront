@@ -1,17 +1,17 @@
 <%= currently_at "Home" %>
 
 <!-- Header (Front Page) -->
-<header id="intro-splash">
+<header id="intro-splash" class="section">
   <%= render partial: 'storefront/herro' %>
 </header>
   
 <!-- Collections Preview Section -->
-<section class="collection-preview">
+<section class="collection-preview section">
   <%= render partial: "storefront/collection_preview" %>
 </section>
 
 <!-- Catalog Section -->
-<section class="catalog">
+<section class="catalog section">
   <div class="container">
     <div class="row">
       <div class="catalog-outer col-lg-12">
@@ -37,11 +37,11 @@
 
 
 
-<section class="featured">
+<section class="featured section">
   <%= render partial: 'storefront/press' %>
 </section>
 <!-- Footer -->
-<footer class="contact">
+<footer class="contact section">
   <%= render partial: 'layouts/shared/footer' %>
 </footer>
 

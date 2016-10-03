@@ -7,6 +7,7 @@
  *= require font-awesome
  *= require slick
  *= require slidebars/dist/slidebars
+ *= require fullpage.js/dist/jquery.fullpage
  *= require magnific-popup
  *= require_self
  *= require_tree .
