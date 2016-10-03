@@ -26,6 +26,28 @@ header {
   a { &:focus, &:hover { background: 0 none; } }
 } 
 //.quantity-badge { position: absolute; }
+.toggle-mv-menu {
+  background: none;
+  background-color: transparent;
+  background-image: none;
+  border-radius: 4px;
+  float: none;
+  padding: 9px 10px;
+  position: relative;
+  
+  
+  &:focus { outline: 0; }
+  
+  .icon-bar {
+    display: block;
+    width: 23px;
+    height: 2px;
+    border-radius: 2px;
+  }
+}
+.toggle-mv-menu .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
 .transparent {
   &:hover, &:focus {
     transition: all .3s ease-in-out;
@@ -45,6 +67,10 @@ header {
   }
   
   .logo-wrapper { margin-top: .5em; }
+  .toggle-mv-menu {
+    border-color: white;
+    span { background-color: white; }
+  }
 }
 #spree-header { margin-bottom: 0px; }
 
@@ -100,14 +126,20 @@ header {
     padding: 15px 0; 
     transition: padding 0.3s ease 0s;
   }
-
-  // primitime DOM objects //
+  .toggle-mv-menu { margin: 0px auto; }
+  // primitive DOM objects //
   div {
     &.panel {
       background-color: #fff;
       border-radius: 43px;
       box-shadow: none;
     }
+    &#toggle-nav-button-wrapper {
+//      text-align: left;
+    }
+  }
+  span {
+    &.menu { display: block; }
   }
 }
 ///////////////////////////////////////////////////
@@ -138,9 +170,8 @@ header {
 ////////* Maximum width 767px section */////////
 ////////////////////////////////////////////////
 @media (max-width: 767px) {
-  span {
-    &.menu { display: none; }
-  }
+  .toggle-mv-menu { margin: 8px auto; }
+  span { &.menu { display: none; } }
 }
 ////////////////////////////////////////////////
   ////////////////////////////////////////////

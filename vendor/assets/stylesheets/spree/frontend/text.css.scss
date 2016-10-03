@@ -91,6 +91,10 @@ nav {
     font-family: $main-font;
     font-weight: 700;
   }
+  
+  span {
+    &.menu { font-size: 0.9em; }
+  }
 }
 p { &.small { font-size: 16px; } }
 section {
@@ -275,6 +279,11 @@ textarea::-webkit-input-placeholder {
   }
 }
 #porthos-header {
+  div {
+    &#dl-nav-header {
+      color: white;
+    }
+  }
   nav {
     a {
       color: white;
