@@ -53,8 +53,6 @@ html, body {
  * Off-Canavs
  */
 
-
-
 [off-canvas] {
 	display: none;
 	position: fixed;
@@ -63,9 +61,6 @@ html, body {
 	background-color: black; /* Basic background color, overwrite this in your own css. */
 	color: white; /* Basic colors, overwrite this in your own css. */
 	-webkit-overflow-scrolling: touch; /* Enables momentum scrolling on iOS devices, may be removed by setting to 'auto' in your own CSS. */
-  
-  /* Added by setclockpm, not native to slidebars lib */
-  ul { li { text-align: left; } }
 }
 
 [off-canvas*=top] {
