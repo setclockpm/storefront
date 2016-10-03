@@ -1,13 +1,21 @@
 module ApplicationHelper
   INTERNAL_IP = "108.209.219.227"
 
-
+  
+  def collection_thumbnail(img_path)
+    image_tag img_path, title: "furniture collection pull-sku-from-record", class: "collection-image"
+  end
+  
   def color_options(v, options={})
     text = variant_options(v, options={})
   end
 
   def current_store
     Spree::Store.first
+  end
+  
+  def currently_at(tab)
+    render partial: 'layouts/shared/main_nav', locals: { current_tab: tab }
   end
   
   def home_ip?
@@ -38,10 +46,6 @@ module ApplicationHelper
     content_tag(:li, link_to(title, url), options)
   end
 
-  def currently_at(tab)
-    render partial: 'layouts/shared/main_nav', locals: { current_tab: tab }
-  end
-  
   def required_field
     content_tag :span, '*', class: 'foo'
   end
@@ -55,11 +59,6 @@ module ApplicationHelper
   def title(text)
     content_for(:title) { text }
   end
-  
- 
-  
-  def render_search_field
-    render partial: 'spree/shared/search' unless current_page?(root_url)
-  end
+
   
 end
