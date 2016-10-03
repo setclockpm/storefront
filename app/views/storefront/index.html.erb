@@ -1,17 +1,17 @@
 <%= currently_at "Home" %>
 
 <!-- Header (Front Page) -->
-<header id="intro-splash" class="section">
+<header id="intro-splash" class="section" data-anchor="snap-home">
   <%= render partial: 'storefront/herro' %>
 </header>
-  
+
 <!-- Collections Preview Section -->
-<section class="collection-preview section">
+<section class="collection-preview fp-auto-height section" data-anchor="snap-collection">
   <%= render partial: "storefront/collection_preview" %>
 </section>
 
 <!-- Catalog Section -->
-<section class="catalog section">
+<section class="catalog fp-auto-height section" data-anchor="snap-catalog">
   <div class="container">
     <div class="row">
       <div class="catalog-outer col-lg-12">
@@ -37,11 +37,11 @@
 
 
 
-<section class="featured section">
+<section class="featured fp-auto-height section" data-anchor="snap-featured">
   <%= render partial: 'storefront/press' %>
 </section>
 <!-- Footer -->
-<footer class="contact section">
+<footer class="contact section" data-anchor="snap-inquiries">
   <%= render partial: 'layouts/shared/footer' %>
 </footer>
 

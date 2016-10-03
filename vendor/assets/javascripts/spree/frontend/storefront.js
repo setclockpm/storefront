@@ -48,6 +48,8 @@ $(document).ready(function(){
     }]
   });
   
+  
+  // Magnific-Gallery initializer
   $('.gallery-popup').magnificPopup({
     callbacks: {
       elementParse: function(item) {
@@ -83,6 +85,16 @@ $(document).ready(function(){
       }
     }
   });
+  
+  
+  
+  $('#fullpage').fullpage({
+    anchors: ['snap-home', 'snap-collection', 'snap-catalog', 'snap-featured', 'snap-inquiries'],
+    fitToSection: false // because the sections ren't yet all full scree sized.
+  });
+  
+  
+  
   
   // This may have been part of the startbootstrap teemplate and may not be needed
   // TODO: Check if this is even used.
