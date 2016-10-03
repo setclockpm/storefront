@@ -1,0 +1,40 @@
+{
+  "name": "strip",
+  "description": "A Less Intrusive Responsive Lightbox",
+  "version": "1.6.3",
+  "homepage": "http://stripjs.com",
+  "keywords": [
+    "lightbox",
+    "modal",
+    "window",
+    "responsive",
+    "jquery",
+    "jquery-plugin"
+  ],
+  "main": [
+    "dist/js/strip.pkgd.js",
+    "dist/css/strip.css"
+  ],
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "src",
+    "/.*",
+    "bower.json",
+    "Gruntfile.js",
+    "package.json",
+    "README.md"
+  ],
+  "dependencies": {
+    "jquery": "^1.11.3"
+  },
+  "_release": "1.6.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.6.3",
+    "commit": "145e4e11e944eaafde2b068c7c73be8d13622ba1"
+  },
+  "_source": "https://github.com/staaky/strip.git",
+  "_target": "*",
+  "_originalSource": "strip"
+}

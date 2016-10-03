@@ -16,7 +16,6 @@
     "commit": "dd6f21d3459afea6291f274b50e3b602a698689c"
   },
   "_source": "https://github.com/adchsm/Slidebars.git",
-  "_target": "^2.0.2",
-  "_originalSource": "slidebars",
-  "_direct": true
+  "_target": "*",
+  "_originalSource": "slidebars"
 }
