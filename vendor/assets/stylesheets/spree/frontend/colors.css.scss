@@ -49,8 +49,8 @@
   }
 }
 .btn-outline {
-  border: 2px dotted $near-black;
-  &:hover { border: 2px solid $near-black; }
+  border: 1px dotted $near-black;
+  &:hover { border: 1px solid $near-black; }
 }
 .catalog { background-color: $bg-lite-gray; }
 .collection-preview {
@@ -109,7 +109,7 @@
   .btn[disabled] { border-color: $gray-orange; }
   .btn-outline { border-color: $bright-orange; }
   .form-group {
-    input[type="submit"] { &:hover, &:focus { border: 2px solid $bright-orange; } }
+    input[type="submit"] { &:hover, &:focus { border: 1px solid $bright-orange; } }
   }
 }
 .toggle-mv-menu {
