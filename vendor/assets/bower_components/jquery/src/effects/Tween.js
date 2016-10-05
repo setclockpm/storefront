@@ -3,6 +3,8 @@ define( [
 	"../css"
 ], function( jQuery ) {
 
+"use strict";
+
 function Tween( elem, options, prop, end, easing ) {
 	return new Tween.prototype.init( elem, options, prop, end, easing );
 }
@@ -92,7 +94,7 @@ Tween.propHooks = {
 	}
 };
 
-// Support: IE <=9
+// Support: IE <=9 only
 // Panic based approach to setting things on disconnected nodes
 
 Tween.propHooks.scrollTop = Tween.propHooks.scrollLeft = {
@@ -115,7 +117,7 @@ jQuery.easing = {
 
 jQuery.fx = Tween.prototype.init;
 
-// Back Compat <1.8 extension point
+// Back compat <1.8 extension point
 jQuery.fx.step = {};
 
 } );

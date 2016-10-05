@@ -5,6 +5,7 @@ define( [
 	"./var/rnumnonpx",
 	"./var/rmargin",
 	"./support",
+<<<<<<< HEAD
 	"../selector" // contains
 ], function( exports, jQuery, documentElement, rnumnonpx, rmargin, support ) {
 
@@ -103,6 +104,34 @@ if ( window.getComputedStyle ) {
 		// and we can't measure the parent instead because it
 		// might trigger a "stacking dolls" problem
 		if ( rnumnonpx.test( ret ) && !rposition.test( name ) ) {
+=======
+	"../selector" // Get jQuery.contains
+], function( jQuery, rnumnonpx, rmargin, getStyles, support ) {
+
+"use strict";
+
+function curCSS( elem, name, computed ) {
+	var width, minWidth, maxWidth, ret,
+		style = elem.style;
+
+	computed = computed || getStyles( elem );
+
+	// Support: IE <=9 only
+	// getPropertyValue is only needed for .css('filter') (#12537)
+	if ( computed ) {
+		ret = computed.getPropertyValue( name ) || computed[ name ];
+
+		if ( ret === "" && !jQuery.contains( elem.ownerDocument, elem ) ) {
+			ret = jQuery.style( elem, name );
+		}
+
+		// A tribute to the "awesome hack by Dean Edwards"
+		// Android Browser returns percentage for some values,
+		// but width seems to be reliably pixels.
+		// This is against the CSSOM draft spec:
+		// https://drafts.csswg.org/cssom/#resolved-values
+		if ( !support.pixelMarginRight() && rnumnonpx.test( ret ) && rmargin.test( name ) ) {
+>>>>>>> master
 
 			// Remember the original values
 			left = style.left;
@@ -123,7 +152,11 @@ if ( window.getComputedStyle ) {
 			}
 		}
 
+<<<<<<< HEAD
 		// Support: IE
+=======
+		// Support: IE <=9 - 11 only
+>>>>>>> master
 		// IE returns zIndex value as an integer.
 		return ret === undefined ?
 			ret :

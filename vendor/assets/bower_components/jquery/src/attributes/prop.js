@@ -5,7 +5,13 @@ define( [
 	"../selector"
 ], function( jQuery, access, support ) {
 
+<<<<<<< HEAD
 var rfocusable = /^(?:input|select|textarea|button|object)$/i,
+=======
+"use strict";
+
+var rfocusable = /^(?:input|select|textarea|button)$/i,
+>>>>>>> master
 	rclickable = /^(?:a|area)$/i;
 
 jQuery.fn.extend( {
@@ -63,18 +69,26 @@ jQuery.extend( {
 		tabIndex: {
 			get: function( elem ) {
 
+				// Support: IE <=9 - 11 only
 				// elem.tabIndex doesn't always return the
 				// correct value when it hasn't been explicitly set
-				// http://fluidproject.org/blog/2008/01/09/getting-setting-and-removing-tabindex-values-with-javascript/
+				// https://web.archive.org/web/20141116233347/http://fluidproject.org/blog/2008/01/09/getting-setting-and-removing-tabindex-values-with-javascript/
 				// Use proper attribute retrieval(#12072)
 				var tabindex = jQuery.find.attr( elem, "tabindex" );
 
-				return tabindex ?
-					parseInt( tabindex, 10 ) :
+				if ( tabindex ) {
+					return parseInt( tabindex, 10 );
+				}
+
+				if (
 					rfocusable.test( elem.nodeName ) ||
-						rclickable.test( elem.nodeName ) && elem.href ?
-							0 :
-							-1;
+					rclickable.test( elem.nodeName ) &&
+					elem.href
+				) {
+					return 0;
+				}
+
+				return -1;
 			}
 		}
 	},
@@ -85,6 +99,7 @@ jQuery.extend( {
 	}
 } );
 
+<<<<<<< HEAD
 // Some attributes require a special call on IE
 // http://msdn.microsoft.com/en-us/library/ms536429%28VS.85%29.aspx
 if ( !support.hrefNormalized ) {
@@ -100,14 +115,25 @@ if ( !support.hrefNormalized ) {
 }
 
 // Support: Safari, IE9+
+=======
+// Support: IE <=11 only
+>>>>>>> master
 // Accessing the selectedIndex property
 // forces the browser to respect setting selected
 // on the option
 // The getter ensures a default option is selected
 // when in an optgroup
+<<<<<<< HEAD
+=======
+// eslint rule "no-unused-expressions" is disabled for this code
+// since it considers such accessions noop
+>>>>>>> master
 if ( !support.optSelected ) {
 	jQuery.propHooks.selected = {
 		get: function( elem ) {
+
+			/* eslint no-unused-expressions: "off" */
+
 			var parent = elem.parentNode;
 
 			if ( parent ) {
@@ -121,6 +147,12 @@ if ( !support.optSelected ) {
 			return null;
 		},
 		set: function( elem ) {
+<<<<<<< HEAD
+=======
+
+			/* eslint no-unused-expressions: "off" */
+
+>>>>>>> master
 			var parent = elem.parentNode;
 			if ( parent ) {
 				parent.selectedIndex;

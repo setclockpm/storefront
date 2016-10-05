@@ -4,11 +4,14 @@ define( [
 	"../var/support"
 ], function( jQuery, document, support ) {
 
+"use strict";
+
 ( function() {
 	var div = document.createElement( "div" ),
 		fragment = document.createDocumentFragment(),
 		input = document.createElement( "input" );
 
+<<<<<<< HEAD
 	// Setup
 	div.innerHTML = "  <link/><table></table><a href='/a'>a</a><input type='checkbox'/>";
 
@@ -43,6 +46,10 @@ define( [
 	// #11217 - WebKit loses check when the name is after the checked attribute
 	fragment.appendChild( div );
 
+=======
+	// Support: Android 4.0 - 4.3 only
+	// Check state lost if the name is set (#11217)
+>>>>>>> master
 	// Support: Windows Web Apps (WWA)
 	// `name` and `type` must use .setAttribute for WWA (#14901)
 	input = document.createElement( "input" );
@@ -52,6 +59,7 @@ define( [
 
 	div.appendChild( input );
 
+<<<<<<< HEAD
 	// Support: Safari 5.1, iOS 5.1, Android 4.x, Android 2.3
 	// old WebKit doesn't clone checked state correctly in fragments
 	support.checkClone = div.cloneNode( true ).cloneNode( true ).lastChild.checked;
@@ -65,6 +73,16 @@ define( [
 	// cleanData must set properties to undefined rather than use removeAttribute
 	div[ jQuery.expando ] = 1;
 	support.attributes = !div.getAttribute( jQuery.expando );
+=======
+	// Support: Android <=4.1 only
+	// Older WebKit doesn't clone checked state correctly in fragments
+	support.checkClone = div.cloneNode( true ).cloneNode( true ).lastChild.checked;
+
+	// Support: IE <=11 only
+	// Make sure textarea (and checkbox) defaultValue is properly cloned
+	div.innerHTML = "<textarea>x</textarea>";
+	support.noCloneChecked = !!div.cloneNode( true ).lastChild.defaultValue;
+>>>>>>> master
 } )();
 
 return support;

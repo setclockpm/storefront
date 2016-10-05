@@ -25,6 +25,7 @@ function filterHidden( elem ) {
 	return false;
 }
 
+<<<<<<< HEAD
 jQuery.expr.filters.hidden = function( elem ) {
 
 	// Support: Opera <= 12.12
@@ -37,6 +38,15 @@ jQuery.expr.filters.hidden = function( elem ) {
 
 jQuery.expr.filters.visible = function( elem ) {
 	return !jQuery.expr.filters.hidden( elem );
+=======
+"use strict";
+
+jQuery.expr.pseudos.hidden = function( elem ) {
+	return !jQuery.expr.pseudos.visible( elem );
+};
+jQuery.expr.pseudos.visible = function( elem ) {
+	return !!( elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length );
+>>>>>>> master
 };
 
 } );

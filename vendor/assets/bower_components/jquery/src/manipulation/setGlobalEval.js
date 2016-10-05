@@ -2,6 +2,8 @@ define( [
 	"../core"
 ], function( jQuery ) {
 
+"use strict";
+
 // Mark scripts as having already been evaluated
 function setGlobalEval( elems, refElements ) {
 	var elem,

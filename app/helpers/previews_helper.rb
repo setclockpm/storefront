@@ -5,16 +5,10 @@ module PreviewsHelper
   end
   
   def preview_reference(image)
-    content_tag :figure do
-      preview_thumbnail(image)
-    end
+    collection_reference(image, preview: true)
   end
   
   
   private
-  
-    def preview_thumbnail(img)
-      image_tag "preview/#{img}", title: "furniture collection preview", class: "collection-preview-image"
-    end
   
 end

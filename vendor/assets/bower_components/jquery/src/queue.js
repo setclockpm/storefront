@@ -4,6 +4,8 @@ define( [
 	"./callbacks"
 ], function( jQuery ) {
 
+"use strict";
+
 jQuery.extend( {
 	queue: function( elem, type, data ) {
 		var queue;

@@ -3,6 +3,8 @@ define( [
 	"./traversing"
 ], function( jQuery ) {
 
+"use strict";
+
 jQuery.fn.extend( {
 
 	bind: function( types, data, fn ) {
@@ -24,11 +26,15 @@ jQuery.fn.extend( {
 	}
 } );
 
+<<<<<<< HEAD
 // The number of elements contained in the matched element set
 jQuery.fn.size = function() {
 	return this.length;
 };
 
 jQuery.fn.andSelf = jQuery.fn.addBack;
+=======
+jQuery.parseJSON = JSON.parse;
+>>>>>>> master
 
 } );

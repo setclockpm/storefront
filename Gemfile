@@ -16,6 +16,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem "jquery-slick-rails"
 gem 'jbuilder', '~> 2.0'
+gem 'magnific-popup-rails'
 gem "mini_magick"
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem "paperclip", github: "thoughtbot/paperclip", ref: "c38bb31"

@@ -5,6 +5,7 @@
 // the compiled file.
 //
 //= require jquery
+//= require magnific-popup
 //= require jquery_ujs
 //= require spree/frontend
 //= require jquery-ui/effect

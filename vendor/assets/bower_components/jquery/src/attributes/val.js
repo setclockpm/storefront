@@ -1,8 +1,11 @@
 define( [
 	"../core",
+	"../core/stripAndCollapse",
 	"./support",
 	"../core/init"
-], function( jQuery, support ) {
+], function( jQuery, stripAndCollapse, support ) {
+
+"use strict";
 
 var rreturn = /\r/g,
 	rspaces = /[\x20\t\r\n\f]+/g;
@@ -27,6 +30,7 @@ jQuery.fn.extend( {
 
 				ret = elem.value;
 
+<<<<<<< HEAD
 				return typeof ret === "string" ?
 
 					// handle most common string cases
@@ -34,6 +38,15 @@ jQuery.fn.extend( {
 
 					// handle cases where value is null/undef or number
 					ret == null ? "" : ret;
+=======
+				// Handle most common string cases
+				if ( typeof ret === "string" ) {
+					return ret.replace( rreturn, "" );
+				}
+
+				// Handle cases where value is null/undef or number
+				return ret == null ? "" : ret;
+>>>>>>> master
 			}
 
 			return;
@@ -79,33 +92,50 @@ jQuery.extend( {
 	valHooks: {
 		option: {
 			get: function( elem ) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 				var val = jQuery.find.attr( elem, "value" );
 				return val != null ?
 					val :
 
+<<<<<<< HEAD
 					// Support: IE10-11+
 					// option.text throws exceptions (#14686, #14858)
 					// Strip and collapse whitespace
 					// https://html.spec.whatwg.org/#strip-and-collapse-whitespace
 					jQuery.trim( jQuery.text( elem ) ).replace( rspaces, " " );
+=======
+					// Support: IE <=10 - 11 only
+					// option.text throws exceptions (#14686, #14858)
+					// Strip and collapse whitespace
+					// https://html.spec.whatwg.org/#strip-and-collapse-whitespace
+					stripAndCollapse( jQuery.text( elem ) );
+>>>>>>> master
 			}
 		},
 		select: {
 			get: function( elem ) {
-				var value, option,
+				var value, option, i,
 					options = elem.options,
 					index = elem.selectedIndex,
-					one = elem.type === "select-one" || index < 0,
+					one = elem.type === "select-one",
 					values = one ? null : [],
-					max = one ? index + 1 : options.length,
-					i = index < 0 ?
-						max :
-						one ? index : 0;
+					max = one ? index + 1 : options.length;
+
+				if ( index < 0 ) {
+					i = max;
+
+				} else {
+					i = one ? index : 0;
+				}
 
 				// Loop through all the selected options
 				for ( ; i < max; i++ ) {
 					option = options[ i ];
 
+<<<<<<< HEAD
 					// oldIE doesn't update selected after form reset (#2551)
 					if ( ( option.selected || i === index ) &&
 
@@ -113,6 +143,14 @@ jQuery.extend( {
 							( support.optDisabled ?
 								!option.disabled :
 								option.getAttribute( "disabled" ) === null ) &&
+=======
+					// Support: IE <=9 only
+					// IE8-9 doesn't update selected after form reset (#2551)
+					if ( ( option.selected || i === index ) &&
+
+							// Don't return options that are disabled or in a disabled optgroup
+							!option.disabled &&
+>>>>>>> master
 							( !option.parentNode.disabled ||
 								!jQuery.nodeName( option.parentNode, "optgroup" ) ) ) {
 
@@ -141,6 +179,7 @@ jQuery.extend( {
 				while ( i-- ) {
 					option = options[ i ];
 
+<<<<<<< HEAD
 					if ( jQuery.inArray( jQuery.valHooks.option.get( option ), values ) > -1 ) {
 
 						// Support: IE6
@@ -158,7 +197,17 @@ jQuery.extend( {
 
 					} else {
 						option.selected = false;
+=======
+					/* eslint-disable no-cond-assign */
+
+					if ( option.selected =
+						jQuery.inArray( jQuery.valHooks.option.get( option ), values ) > -1
+					) {
+						optionSet = true;
+>>>>>>> master
 					}
+
+					/* eslint-enable no-cond-assign */
 				}
 
 				// Force browsers to behave consistently when non-matching value is set

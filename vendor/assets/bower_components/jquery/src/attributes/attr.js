@@ -2,10 +2,16 @@ define( [
 	"../core",
 	"../core/access",
 	"./support",
+<<<<<<< HEAD
 	"../var/rnotwhite",
 	"./val",
+=======
+	"../var/rnothtmlwhite",
+>>>>>>> master
 	"../selector"
-], function( jQuery, access, support, rnotwhite ) {
+], function( jQuery, access, support, rnothtmlwhite ) {
+
+"use strict";
 
 var nodeHook, boolHook,
 	attrHandle = jQuery.expr.attrHandle,
@@ -40,12 +46,17 @@ jQuery.extend( {
 			return jQuery.prop( elem, name, value );
 		}
 
-		// All attributes are lowercase
+		// Attribute hooks are determined by the lowercase version
 		// Grab necessary hook if one is defined
 		if ( nType !== 1 || !jQuery.isXMLDoc( elem ) ) {
+<<<<<<< HEAD
 			name = name.toLowerCase();
 			hooks = jQuery.attrHooks[ name ] ||
 				( jQuery.expr.match.bool.test( name ) ? boolHook : nodeHook );
+=======
+			hooks = jQuery.attrHooks[ name.toLowerCase() ] ||
+				( jQuery.expr.match.bool.test( name ) ? boolHook : undefined );
+>>>>>>> master
 		}
 
 		if ( value !== undefined ) {
@@ -93,12 +104,16 @@ jQuery.extend( {
 	},
 
 	removeAttr: function( elem, value ) {
-		var name, propName,
+		var name,
 			i = 0,
-			attrNames = value && value.match( rnotwhite );
+
+			// Attribute names can contain non-HTML whitespace characters
+			// https://html.spec.whatwg.org/multipage/syntax.html#attributes-2
+			attrNames = value && value.match( rnothtmlwhite );
 
 		if ( attrNames && elem.nodeType === 1 ) {
 			while ( ( name = attrNames[ i++ ] ) ) {
+<<<<<<< HEAD
 				propName = jQuery.propFix[ name ] || name;
 
 				// Boolean attributes get special treatment (#10870)
@@ -121,6 +136,9 @@ jQuery.extend( {
 				}
 
 				elem.removeAttribute( getSetAttribute ? name : propName );
+=======
+				elem.removeAttribute( name );
+>>>>>>> master
 			}
 		}
 	}
@@ -151,6 +169,7 @@ boolHook = {
 jQuery.each( jQuery.expr.match.bool.source.match( /\w+/g ), function( i, name ) {
 	var getter = attrHandle[ name ] || jQuery.find.attr;
 
+<<<<<<< HEAD
 	if ( getSetInput && getSetAttribute || !ruseDefault.test( name ) ) {
 		attrHandle[ name ] = function( elem, name, isXML ) {
 			var ret, handle;
@@ -190,6 +209,21 @@ if ( !getSetInput || !getSetAttribute ) {
 				// Use nodeHook if defined (#1954); otherwise setAttribute is fine
 				return nodeHook && nodeHook.set( elem, value, name );
 			}
+=======
+	attrHandle[ name ] = function( elem, name, isXML ) {
+		var ret, handle,
+			lowercaseName = name.toLowerCase();
+
+		if ( !isXML ) {
+
+			// Avoid an infinite loop by temporarily removing this function from the getter
+			handle = attrHandle[ lowercaseName ];
+			attrHandle[ lowercaseName ] = ret;
+			ret = getter( elem, name, isXML ) != null ?
+				lowercaseName :
+				null;
+			attrHandle[ lowercaseName ] = handle;
+>>>>>>> master
 		}
 	};
 }
