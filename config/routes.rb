@@ -16,7 +16,7 @@ Porthos::Application.routes.draw do
   Spree::Core::Engine.routes.draw do
     namespace :admin do
       get "products/data_import" => "products#data", as: :data_import
-      get "promotions/showcase" => "promotions#showcase", as: :showcase
+      get "showcase_items" => "showcase_items#index", as: :showcase
       post "import/inventory" => "products#bulk_import", as: :import_inventory
       post "import/variant_photos" => "products#import_images", as: :generate_variant_photos
       # This adds a method to products called "add_to_cart" to the member (individual resource). If you run 

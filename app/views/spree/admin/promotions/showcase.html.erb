@@ -3,9 +3,9 @@
 <% end %>
 
 
-<%# unless @product.variant_images.any? %>
+<%# unless @showcase_items.any? %>
   <div class="alert alert-warning">
-    <%#= Spree.t(:no_resource_found, resource: plural_resource_name(Spree::Image)) %>.
+    <%#= Spree.t(:no_resource_found, resource: plural_resource_name(Spree::ShowcaseItem)) %>.
   </div>
 <%# else %>
   <table class="table sortable" data-hook="images_table" data-sortable-link="<%#= update_positions_admin_prcoduct_images_url(@product) %>">
@@ -27,7 +27,7 @@
     </thead>
 
     <tbody>
-      <%# (@product.variant_images).each do |image| %>
+      <% @showcase_items.each do |image| %>
         <tr id="<%= spree_dom_id image %>" data-hook="images_row">
           <td class="move-handle text-center">
             <%# if can? :edit, image %>
@@ -46,7 +46,7 @@
             <%#= link_to_delete(image, { url: spree.admin_product_image_url(@product, image), no_text: true }) if can? :destroy, image %>
           </td>
         </tr>
-      <%# end %>
+      <% end %>
     </tbody>
   </table>
 <%# end %>

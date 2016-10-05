@@ -1,5 +1,5 @@
 class ShowcaseItem < ActiveRecord::Base
-  has_many :images, -> { order(:position) }, as: :viewable, dependent: :destroy, class_name: "Spree::Image"
+  has_one :image, -> { order(:position) }, as: :viewable, dependent: :destroy, class_name: "Spree::Image"
   
   validate :storefront_gallery_within_capacity
   
@@ -11,7 +11,7 @@ class ShowcaseItem < ActiveRecord::Base
   
   private
     def storefront_gallery_within_capacity
-      ShowcaseItem.storefront_photos.size <= 3
+      ShowcaseItem.storefront_photos.size <= 6
     end
   
 end
