@@ -5,9 +5,6 @@ define( [
 	"../manipulation/buildFragment"
 ], function( jQuery, document, rsingleTag, buildFragment ) {
 
-<<<<<<< HEAD
-// data: string of html
-=======
 	// This is the only module that needs core/support
 	"./support"
 ], function( jQuery, document, rsingleTag, buildFragment, support ) {
@@ -15,7 +12,6 @@ define( [
 "use strict";
 
 // Argument "data" should be string of html
->>>>>>> master
 // context (optional): If specified, the fragment will be created in this context,
 // defaults to document
 // keepScripts (optional): If true, will include scripts passed in the html string
@@ -27,9 +23,6 @@ jQuery.parseHTML = function( data, context, keepScripts ) {
 		keepScripts = context;
 		context = false;
 	}
-<<<<<<< HEAD
-	context = context || document;
-=======
 
 	var base, parsed, scripts;
 
@@ -50,7 +43,6 @@ jQuery.parseHTML = function( data, context, keepScripts ) {
 			context = document;
 		}
 	}
->>>>>>> master
 
 	parsed = rsingleTag.exec( data );
 	scripts = !keepScripts && [];

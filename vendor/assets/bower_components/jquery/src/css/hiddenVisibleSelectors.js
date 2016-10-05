@@ -25,20 +25,6 @@ function filterHidden( elem ) {
 	return false;
 }
 
-<<<<<<< HEAD
-jQuery.expr.filters.hidden = function( elem ) {
-
-	// Support: Opera <= 12.12
-	// Opera reports offsetWidths and offsetHeights less than zero on some elements
-	return support.reliableHiddenOffsets() ?
-		( elem.offsetWidth <= 0 && elem.offsetHeight <= 0 &&
-			!elem.getClientRects().length ) :
-			filterHidden( elem );
-};
-
-jQuery.expr.filters.visible = function( elem ) {
-	return !jQuery.expr.filters.hidden( elem );
-=======
 "use strict";
 
 jQuery.expr.pseudos.hidden = function( elem ) {
@@ -46,7 +32,6 @@ jQuery.expr.pseudos.hidden = function( elem ) {
 };
 jQuery.expr.pseudos.visible = function( elem ) {
 	return !!( elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length );
->>>>>>> master
 };
 
 } );

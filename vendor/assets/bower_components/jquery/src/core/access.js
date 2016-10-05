@@ -62,14 +62,7 @@ var access = function( elems, fn, key, value, chainable, emptyGet, raw ) {
 		return fn.call( elems );
 	}
 
-<<<<<<< HEAD
-		// Gets
-		bulk ?
-			fn.call( elems ) :
-			length ? fn( elems[ 0 ], key ) : emptyGet;
-=======
 	return len ? fn( elems[ 0 ], key ) : emptyGet;
->>>>>>> master
 };
 
 return access;

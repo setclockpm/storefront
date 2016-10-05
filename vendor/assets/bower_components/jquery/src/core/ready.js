@@ -64,29 +64,9 @@ jQuery.extend( {
 	}
 } );
 
-<<<<<<< HEAD
-/**
- * Clean-up method for dom ready events
- */
-function detach() {
-	if ( document.addEventListener ) {
-		document.removeEventListener( "DOMContentLoaded", completed );
-		window.removeEventListener( "load", completed );
-
-	} else {
-		document.detachEvent( "onreadystatechange", completed );
-		window.detachEvent( "onload", completed );
-	}
-}
-
-/**
- * The ready event handler and self cleanup method
- */
-=======
 jQuery.ready.then = readyList.then;
 
 // The ready event handler and self cleanup method
->>>>>>> master
 function completed() {
 
 	// readyState === "complete" is good enough for us to call the dom ready in oldIE
@@ -106,82 +86,15 @@ function completed() {
 if ( document.readyState === "complete" ||
 	( document.readyState !== "loading" && !document.documentElement.doScroll ) ) {
 
-<<<<<<< HEAD
-		// Catch cases where $(document).ready() is called
-		// after the browser event has already occurred.
-		// Support: IE6-10
-		// Older IE sometimes signals "interactive" too soon
-		if ( document.readyState === "complete" ||
-			( document.readyState !== "loading" && !document.documentElement.doScroll ) ) {
-=======
 	// Handle it asynchronously to allow scripts the opportunity to delay ready
 	window.setTimeout( jQuery.ready );
->>>>>>> master
 
 } else {
-
-<<<<<<< HEAD
-		// Standards-based browsers support DOMContentLoaded
-		} else if ( document.addEventListener ) {
-
-			// Use the handy event callback
-			document.addEventListener( "DOMContentLoaded", completed );
-
-			// A fallback to window.onload, that will always work
-			window.addEventListener( "load", completed );
-
-		// If IE event model is used
-		} else {
-
-			// Ensure firing before onload, maybe late but safe also for iframes
-			document.attachEvent( "onreadystatechange", completed );
-
-			// A fallback to window.onload, that will always work
-			window.attachEvent( "onload", completed );
-
-			// If IE and not a frame
-			// continually check to see if the document is ready
-			var top = false;
-
-			try {
-				top = window.frameElement == null && document.documentElement;
-			} catch ( e ) {}
-
-			if ( top && top.doScroll ) {
-				( function doScrollCheck() {
-					if ( !jQuery.isReady ) {
-
-						try {
-
-							// Use the trick by Diego Perini
-							// http://javascript.nwbox.com/IEContentLoaded/
-							top.doScroll( "left" );
-						} catch ( e ) {
-							return window.setTimeout( doScrollCheck, 50 );
-						}
-
-						// detach all dom ready events
-						detach();
-
-						// and execute any waiting functions
-						jQuery.ready();
-					}
-				} )();
-			}
-		}
-	}
-	return readyList.promise( obj );
-};
-
-// Kick off the DOM ready check even if the user does not
-jQuery.ready.promise();
-=======
 	// Use the handy event callback
 	document.addEventListener( "DOMContentLoaded", completed );
 
 	// A fallback to window.onload, that will always work
 	window.addEventListener( "load", completed );
 }
->>>>>>> master
 
 } );

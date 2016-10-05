@@ -77,13 +77,8 @@ Jared Grippe <jared@deadlyicon.com>
 Sylvester Keil <sylvester@keil.or.at>
 Brandon Sterne <bsterne@mozilla.com>
 Mathias Bynens <mathias@qiwi.be>
-<<<<<<< HEAD
-Timmy Willison <timmywillisn@gmail.com>
-Corey Frang <gnarf@gnarf.net>
-=======
 Timmy Willison <4timmywil@gmail.com>
 Corey Frang <gnarf37@gmail.com>
->>>>>>> master
 Digitalxero <digitalxero>
 Anton Kovalyov <anton@kovalyov.net>
 David Murdoch <musicisair@yahoo.com>
@@ -264,11 +259,7 @@ Gary Ye <garysye@gmail.com>
 Christian Grete <webmaster@christiangrete.com>
 Liza Ramo <liza.h.ramo@gmail.com>
 Joelle Fleurantin <joasqueeniebee@gmail.com>
-<<<<<<< HEAD
-Julian Alexander Murillo <julian.alexander.murillo@gmail.com>
-=======
 Jae Sung Park <alberto.park@gmail.com>
->>>>>>> master
 Jun Sun <klsforever@gmail.com>
 Josh Soref <apache@soref.com>
 Henry Wong <henryw4k@gmail.com>

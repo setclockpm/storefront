@@ -13,11 +13,6 @@ define( [
 	"./var/class2type",
 	"./var/toString",
 	"./var/hasOwn",
-<<<<<<< HEAD
-	"./var/support"
-], function( deletedIds, document, slice, concat, push, indexOf,
-	class2type, toString, hasOwn, support ) {
-=======
 	"./var/fnToString",
 	"./var/ObjectFunctionString",
 	"./var/support",
@@ -27,7 +22,6 @@ define( [
 	support, DOMEval ) {
 
 "use strict";
->>>>>>> master
 
 var
 	version = "3.1.1",
@@ -40,11 +34,7 @@ var
 		return new jQuery.fn.init( selector, context );
 	},
 
-<<<<<<< HEAD
-	// Support: Android<4.1, IE<9
-=======
 	// Support: Android <=4.0 only
->>>>>>> master
 	// Make sure we trim BOM and NBSP
 	rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,
 
@@ -260,37 +250,6 @@ jQuery.extend( {
 	},
 
 	isPlainObject: function( obj ) {
-<<<<<<< HEAD
-		var key;
-
-		// Must be an Object.
-		// Because of IE, we also have to check the presence of the constructor property.
-		// Make sure that DOM nodes and window objects don't pass through, as well
-		if ( !obj || jQuery.type( obj ) !== "object" || obj.nodeType || jQuery.isWindow( obj ) ) {
-			return false;
-		}
-
-		try {
-
-			// Not own constructor property must be Object
-			if ( obj.constructor &&
-				!hasOwn.call( obj, "constructor" ) &&
-				!hasOwn.call( obj.constructor.prototype, "isPrototypeOf" ) ) {
-				return false;
-			}
-		} catch ( e ) {
-
-			// IE8,9 Will throw exceptions on certain host objects #9897
-			return false;
-		}
-
-		// Support: IE<9
-		// Handle iteration over inherited properties before own properties.
-		if ( !support.ownFirst ) {
-			for ( key in obj ) {
-				return hasOwn.call( obj, key );
-			}
-=======
 		var proto, Ctor;
 
 		// Detect obvious negatives
@@ -319,7 +278,6 @@ jQuery.extend( {
 
 		for ( name in obj ) {
 			return false;
->>>>>>> master
 		}
 
 		// Own properties are enumerated firstly, so to speed up,
@@ -333,33 +291,13 @@ jQuery.extend( {
 		if ( obj == null ) {
 			return obj + "";
 		}
-<<<<<<< HEAD
-=======
 
 		// Support: Android <=2.3 only (functionish RegExp)
->>>>>>> master
 		return typeof obj === "object" || typeof obj === "function" ?
 			class2type[ toString.call( obj ) ] || "object" :
 			typeof obj;
 	},
 
-<<<<<<< HEAD
-	// Workarounds based on findings by Jim Driscoll
-	// http://weblogs.java.net/blog/driscoll/archive/2009/09/08/eval-javascript-global-context
-	globalEval: function( data ) {
-		if ( data && jQuery.trim( data ) ) {
-
-			// We use execScript on Internet Explorer
-			// We use an anonymous function so that context is window
-			// rather than jQuery in Firefox
-			( window.execScript || function( data ) {
-				window[ "eval" ].call( window, data ); // jscs:ignore requireDotNotation
-			} )( data );
-		}
-	},
-
-	// Convert dashed to camelCase; used by the css and data modules
-=======
 	// Evaluates a script in a global context
 	globalEval: function( code ) {
 		DOMEval( code );
@@ -367,7 +305,6 @@ jQuery.extend( {
 
 	// Convert dashed to camelCase; used by the css and data modules
 	// Support: IE <=9 - 11, Edge 12 - 13
->>>>>>> master
 	// Microsoft forgot to hump their vendor prefix (#9572)
 	camelCase: function( string ) {
 		return string.replace( rmsPrefix, "ms-" ).replace( rdashAlpha, fcamelCase );
@@ -398,11 +335,7 @@ jQuery.extend( {
 		return obj;
 	},
 
-<<<<<<< HEAD
-	// Support: Android<4.1, IE<9
-=======
 	// Support: Android <=4.0 only
->>>>>>> master
 	trim: function( text ) {
 		return text == null ?
 			"" :

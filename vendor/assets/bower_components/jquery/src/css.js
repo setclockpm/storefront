@@ -7,11 +7,7 @@ define( [
 	"./var/rcssNum",
 	"./css/var/rnumnonpx",
 	"./css/var/cssExpand",
-<<<<<<< HEAD
-	"./css/var/isHidden",
-=======
 	"./css/var/getStyles",
->>>>>>> master
 	"./css/var/swap",
 	"./css/curCSS",
 	"./css/adjustCSS",
@@ -22,13 +18,9 @@ define( [
 	"./core/ready",
 	"./selector" // contains
 ], function( jQuery, pnum, access, rmargin, document, rcssNum, rnumnonpx, cssExpand,
-<<<<<<< HEAD
-	isHidden, swap, curCSS, adjustCSS, defaultDisplay, addGetHookIf, support ) {
-=======
 	getStyles, swap, curCSS, adjustCSS, addGetHookIf, support ) {
 
 "use strict";
->>>>>>> master
 
 var
 
@@ -42,11 +34,6 @@ var
 	// see here for display values:
 	// https://developer.mozilla.org/en-US/docs/CSS/display
 	rdisplayswap = /^(none|table(?!-c[ea]).+)/,
-<<<<<<< HEAD
-	rnumsplit = new RegExp( "^(" + pnum + ")(.*)$", "i" ),
-
-=======
->>>>>>> master
 	cssShow = { position: "absolute", visibility: "hidden", display: "block" },
 	cssNormalTransform = {
 		letterSpacing: "0",
@@ -197,10 +184,6 @@ function getWidthOrHeight( elem, name, extra ) {
 	var val,
 		valueIsBorderBox = true,
 		styles = getStyles( elem ),
-<<<<<<< HEAD
-		isBorderBox = support.boxSizing &&
-			jQuery.css( elem, "boxSizing", false, styles ) === "border-box";
-=======
 		isBorderBox = jQuery.css( elem, "boxSizing", false, styles ) === "border-box";
 
 	// Support: IE <=11 only
@@ -209,8 +192,6 @@ function getWidthOrHeight( elem, name, extra ) {
 	if ( elem.getClientRects().length ) {
 		val = elem.getBoundingClientRect()[ name ];
 	}
->>>>>>> master
-
 	// some non-html elements return undefined for offsetWidth, so check for null/undefined
 	// svg - https://bugzilla.mozilla.org/show_bug.cgi?id=649285
 	// MathML - https://bugzilla.mozilla.org/show_bug.cgi?id=491668
@@ -332,13 +313,7 @@ jQuery.extend( {
 				value += ret && ret[ 3 ] || ( jQuery.cssNumber[ origName ] ? "" : "px" );
 			}
 
-<<<<<<< HEAD
-			// Fixes #8908, it can be done more correctly by specifing setters in cssHooks,
-			// but it would mean to define eight
-			// (for every problematic property) identical functions
-=======
 			// background-* props affect original clone's values
->>>>>>> master
 			if ( !support.clearCloneStyle && value === "" && name.indexOf( "background" ) === 0 ) {
 				style[ name ] = "inherit";
 			}
@@ -501,31 +476,6 @@ jQuery.cssHooks.marginRight = addGetHookIf( support.reliableMarginRight,
 	}
 );
 
-<<<<<<< HEAD
-jQuery.cssHooks.marginLeft = addGetHookIf( support.reliableMarginLeft,
-	function( elem, computed ) {
-		if ( computed ) {
-			return (
-				parseFloat( curCSS( elem, "marginLeft" ) ) ||
-
-				// Support: IE<=11+
-				// Running getBoundingClientRect on a disconnected node in IE throws an error
-				// Support: IE8 only
-				// getClientRects() errors on disconnected elems
-				( jQuery.contains( elem.ownerDocument, elem ) ?
-					elem.getBoundingClientRect().left -
-						swap( elem, { marginLeft: 0 }, function() {
-							return elem.getBoundingClientRect().left;
-						} ) :
-					0
-				)
-			) + "px";
-		}
-	}
-);
-
-=======
->>>>>>> master
 // These hooks are used by animate to expand properties
 jQuery.each( {
 	margin: "",

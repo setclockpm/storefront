@@ -1,11 +1,5 @@
 define( [
 	"./core",
-<<<<<<< HEAD
-	"./var/deletedIds",
-	"./data/support",
-	"./data/var/acceptData"
-], function( jQuery, deletedIds, support, acceptData ) {
-=======
 	"./core/access",
 	"./data/var/dataPriv",
 	"./data/var/dataUser"
@@ -22,7 +16,6 @@ define( [
 //	4. _Never_ expose "private" data to user code (TODO: Drop _data, _removeData)
 //	5. Avoid exposing implementation details on user objects (eg. expando properties)
 //	6. Provide a clear path for implementation upgrade to WeakMap in 2014
->>>>>>> master
 
 var rbrace = /^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,
 	rmultiDash = /([A-Z])/g;
@@ -356,11 +349,6 @@ jQuery.fn.extend( {
 			} );
 		}
 
-<<<<<<< HEAD
-		return arguments.length > 1 ?
-
-			// Sets one value
-=======
 		return access( this, function( value ) {
 			var data;
 
@@ -390,21 +378,14 @@ jQuery.fn.extend( {
 			}
 
 			// Set the data...
->>>>>>> master
 			this.each( function() {
 				jQuery.data( this, key, value );
 			} ) :
 
-<<<<<<< HEAD
-			// Gets one value
-			// Try to fetch any internally stored data first
-			elem ? dataAttr( elem, key, jQuery.data( elem, key ) ) : undefined;
-=======
 				// We always store the camelCased key
 				dataUser.set( this, key, value );
 			} );
 		}, null, value, arguments.length > 1, null, true );
->>>>>>> master
 	},
 
 	removeData: function( key ) {

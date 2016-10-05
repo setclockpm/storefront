@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-define( [], function() {
-=======
 define( [
 	"../core",
 	"../data/var/dataPriv",
@@ -34,7 +31,6 @@ function getDefaultDisplay( elem ) {
 	return display;
 }
 
->>>>>>> master
 function showHide( elements, show ) {
 	var display, elem,
 		values = [],
@@ -51,10 +47,6 @@ function showHide( elements, show ) {
 		display = elem.style.display;
 		if ( show ) {
 
-<<<<<<< HEAD
-				// Restore a pre-hide() value if we have one
-				values[ index ] = jQuery._data( elem, "display" ) || "";
-=======
 			// Since we force visibility upon cascade-hidden elements, an immediate (and slow)
 			// check is required in this first loop unless we have a nonempty display value (either
 			// inline or about-to-be-restored)
@@ -66,19 +58,13 @@ function showHide( elements, show ) {
 			}
 			if ( elem.style.display === "" && isHiddenWithinTree( elem ) ) {
 				values[ index ] = getDefaultDisplay( elem );
->>>>>>> master
 			}
 		} else {
 			if ( display !== "none" ) {
 				values[ index ] = "none";
 
-<<<<<<< HEAD
-				// Remember the value we're replacing
-				jQuery._data( elem, "display", display );
-=======
 				// Remember what we're overwriting
 				dataPriv.set( elem, "display", display );
->>>>>>> master
 			}
 		}
 	}

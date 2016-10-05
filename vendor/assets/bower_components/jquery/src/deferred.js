@@ -356,48 +356,14 @@ jQuery.extend( {
 			// subordinate callback factory
 			updateFunc = function( i ) {
 				return function( value ) {
-<<<<<<< HEAD
-					contexts[ i ] = this;
-					values[ i ] = arguments.length > 1 ? slice.call( arguments ) : value;
-					if ( values === progressValues ) {
-						deferred.notifyWith( contexts, values );
-
-					} else if ( !( --remaining ) ) {
-						deferred.resolveWith( contexts, values );
-=======
 					resolveContexts[ i ] = this;
 					resolveValues[ i ] = arguments.length > 1 ? slice.call( arguments ) : value;
 					if ( !( --remaining ) ) {
 						master.resolveWith( resolveContexts, resolveValues );
->>>>>>> master
 					}
 				};
 			};
 
-<<<<<<< HEAD
-			progressValues, progressContexts, resolveContexts;
-
-		// add listeners to Deferred subordinates; treat others as resolved
-		if ( length > 1 ) {
-			progressValues = new Array( length );
-			progressContexts = new Array( length );
-			resolveContexts = new Array( length );
-			for ( ; i < length; i++ ) {
-				if ( resolveValues[ i ] && jQuery.isFunction( resolveValues[ i ].promise ) ) {
-					resolveValues[ i ].promise()
-						.progress( updateFunc( i, progressContexts, progressValues ) )
-						.done( updateFunc( i, resolveContexts, resolveValues ) )
-						.fail( deferred.reject );
-				} else {
-					--remaining;
-				}
-			}
-		}
-
-		// if we're not waiting on anything, resolve the master
-		if ( !remaining ) {
-			deferred.resolveWith( resolveContexts, resolveValues );
-=======
 		// Single- and empty arguments are adopted like Promise.resolve
 		if ( remaining <= 1 ) {
 			adoptValue( singleValue, master.done( updateFunc( i ) ).resolve, master.reject );
@@ -413,7 +379,6 @@ jQuery.extend( {
 		// Multiple arguments are aggregated like Promise.all array elements
 		while ( i-- ) {
 			adoptValue( resolveValues[ i ], updateFunc( i ), master.reject );
->>>>>>> master
 		}
 
 		return master.promise();
