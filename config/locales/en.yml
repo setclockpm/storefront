@@ -10,7 +10,7 @@ en:
      excel_file: "Spreadsheet File"
      process_images: "Generate Product Photos"
      shop_by_taxonomy: "%{taxonomy}"
-     new_collection_image: "New Lifestyle Image"
+     new_hero_image: "New Lifestyle Image"
   views:
      pagination:
        first: "First"

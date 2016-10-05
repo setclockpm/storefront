@@ -98,6 +98,38 @@ ALTER SEQUENCE friendly_id_slugs_id_seq OWNED BY friendly_id_slugs.id;
 
 
 --
+-- Name: hero_images; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE hero_images (
+    id integer NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL,
+    caption character varying,
+    caption_url character varying
+);
+
+
+--
+-- Name: hero_images_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE hero_images_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: hero_images_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE hero_images_id_seq OWNED BY hero_images.id;
+
+
+--
 -- Name: products; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -136,37 +168,6 @@ ALTER SEQUENCE products_id_seq OWNED BY products.id;
 CREATE TABLE schema_migrations (
     version character varying NOT NULL
 );
-
-
---
--- Name: showcase_items; Type: TABLE; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE TABLE showcase_items (
-    id integer NOT NULL,
-    front_page boolean,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
-);
-
-
---
--- Name: showcase_items_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE showcase_items_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: showcase_items_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE showcase_items_id_seq OWNED BY showcase_items.id;
 
 
 --
@@ -3214,14 +3215,14 @@ ALTER TABLE ONLY friendly_id_slugs ALTER COLUMN id SET DEFAULT nextval('friendly
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY products ALTER COLUMN id SET DEFAULT nextval('products_id_seq'::regclass);
+ALTER TABLE ONLY hero_images ALTER COLUMN id SET DEFAULT nextval('hero_images_id_seq'::regclass);
 
 
 --
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY showcase_items ALTER COLUMN id SET DEFAULT nextval('showcase_items_id_seq'::regclass);
+ALTER TABLE ONLY products ALTER COLUMN id SET DEFAULT nextval('products_id_seq'::regclass);
 
 
 --
@@ -3836,19 +3837,19 @@ ALTER TABLE ONLY friendly_id_slugs
 
 
 --
+-- Name: hero_images_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY hero_images
+    ADD CONSTRAINT hero_images_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: products_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY products
     ADD CONSTRAINT products_pkey PRIMARY KEY (id);
-
-
---
--- Name: showcase_items_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
---
-
-ALTER TABLE ONLY showcase_items
-    ADD CONSTRAINT showcase_items_pkey PRIMARY KEY (id);
 
 
 --
@@ -6514,4 +6515,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160520085978');
 INSERT INTO schema_migrations (version) VALUES ('20160830195015');
 
 INSERT INTO schema_migrations (version) VALUES ('20160916011142');
+
+INSERT INTO schema_migrations (version) VALUES ('20161005221011');
 

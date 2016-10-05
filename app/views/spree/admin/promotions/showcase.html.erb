@@ -1,11 +1,11 @@
 <% content_for :page_actions do %>
-  <%= link_to_new_showcase_item %>
+  <%= link_to_new_hero_image %>
 <% end %>
 
 
-<%# unless @showcase_items.any? %>
+<%# unless @hero_images.any? %>
   <div class="alert alert-warning">
-    <%#= Spree.t(:no_resource_found, resource: plural_resource_name(Spree::ShowcaseItem)) %>.
+    <%#= Spree.t(:no_resource_found, resource: plural_resource_name(Spree::HeroImage)) %>.
   </div>
 <%# else %>
   <table class="table sortable" data-hook="images_table" data-sortable-link="<%#= update_positions_admin_prcoduct_images_url(@product) %>">
@@ -27,7 +27,7 @@
     </thead>
 
     <tbody>
-      <% @showcase_items.each do |image| %>
+      <% @hero_images.each do |image| %>
         <tr id="<%= spree_dom_id image %>" data-hook="images_row">
           <td class="move-handle text-center">
             <%# if can? :edit, image %>
