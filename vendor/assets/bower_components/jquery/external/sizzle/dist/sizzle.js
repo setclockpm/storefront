@@ -1,21 +1,12 @@
 /*!
-<<<<<<< HEAD
- * Sizzle CSS Selector Engine v2.2.1
- * http://sizzlejs.com/
-=======
  * Sizzle CSS Selector Engine v2.3.3
  * https://sizzlejs.com/
->>>>>>> master
  *
  * Copyright jQuery Foundation and other contributors
  * Released under the MIT license
  * http://jquery.org/license
  *
-<<<<<<< HEAD
- * Date: 2015-10-17
-=======
  * Date: 2016-08-08
->>>>>>> master
  */
 (function( window ) {
 
@@ -56,12 +47,6 @@ var i,
 		return 0;
 	},
 
-<<<<<<< HEAD
-	// General-purpose constants
-	MAX_NEGATIVE = 1 << 31,
-
-=======
->>>>>>> master
 	// Instance methods
 	hasOwn = ({}).hasOwnProperty,
 	arr = [],
@@ -70,11 +55,7 @@ var i,
 	push = arr.push,
 	slice = arr.slice,
 	// Use a stripped-down indexOf as it's faster than native
-<<<<<<< HEAD
-	// http://jsperf.com/thor-indexof-vs-for/5
-=======
 	// https://jsperf.com/thor-indexof-vs-for/5
->>>>>>> master
 	indexOf = function( list, elem ) {
 		var i = 0,
 			len = list.length;
@@ -94,11 +75,7 @@ var i,
 	whitespace = "[\\x20\\t\\r\\n\\f]",
 
 	// http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier
-<<<<<<< HEAD
-	identifier = "(?:\\\\.|[\\w-]|[^\\x00-\\xa0])+",
-=======
 	identifier = "(?:\\\\.|[\\w-]|[^\0-\\xa0])+",
->>>>>>> master
 
 	// Attribute selectors: http://www.w3.org/TR/selectors/#attribute-selectors
 	attributes = "\\[" + whitespace + "*(" + identifier + ")(?:" + whitespace +
@@ -155,15 +132,9 @@ var i,
 	rquickExpr = /^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,
 
 	rsibling = /[+~]/,
-<<<<<<< HEAD
-	rescape = /'|\\/g,
-
-	// CSS escapes http://www.w3.org/TR/CSS21/syndata.html#escaped-characters
-=======
 
 	// CSS escapes
 	// http://www.w3.org/TR/CSS21/syndata.html#escaped-characters
->>>>>>> master
 	runescape = new RegExp( "\\\\([\\da-f]{1,6}" + whitespace + "?|(" + whitespace + ")|.)", "ig" ),
 	funescape = function( _, escaped, escapedWhitespace ) {
 		var high = "0x" + escaped - 0x10000;
@@ -179,8 +150,6 @@ var i,
 				String.fromCharCode( high >> 10 | 0xD800, high & 0x3FF | 0xDC00 );
 	},
 
-<<<<<<< HEAD
-=======
 	// CSS string/identifier serialization
 	// https://drafts.csswg.org/cssom/#common-serializing-idioms
 	rcssescape = /([\0-\x1f\x7f]|^-?\d)|^-$|[^\0-\x1f\x7f-\uFFFF\w-]/g,
@@ -200,16 +169,12 @@ var i,
 		return "\\" + ch;
 	},
 
->>>>>>> master
 	// Used for iframes
 	// See setDocument()
 	// Removing the function wrapper causes a "Permission Denied"
 	// error in IE
 	unloadHandler = function() {
 		setDocument();
-<<<<<<< HEAD
-	};
-=======
 	},
 
 	disabledAncestor = addCombinator(
@@ -218,7 +183,6 @@ var i,
 		},
 		{ dir: "parentNode", next: "legend" }
 	);
->>>>>>> master
 
 // Optimize for push.apply( _, NodeList )
 try {
@@ -250,11 +214,7 @@ try {
 }
 
 function Sizzle( selector, context, results, seed ) {
-<<<<<<< HEAD
-	var m, i, elem, nid, nidselect, match, groups, newSelector,
-=======
 	var m, i, elem, nid, match, groups, newSelector,
->>>>>>> master
 		newContext = context && context.ownerDocument,
 
 		// nodeType defaults to 9, since context defaults to document
@@ -347,11 +307,7 @@ function Sizzle( selector, context, results, seed ) {
 
 					// Capture the context ID, setting it first if necessary
 					if ( (nid = context.getAttribute( "id" )) ) {
-<<<<<<< HEAD
-						nid = nid.replace( rescape, "\\$&" );
-=======
 						nid = nid.replace( rcssescape, fcssescape );
->>>>>>> master
 					} else {
 						context.setAttribute( "id", (nid = expando) );
 					}
@@ -359,14 +315,8 @@ function Sizzle( selector, context, results, seed ) {
 					// Prefix every selector in the list
 					groups = tokenize( selector );
 					i = groups.length;
-<<<<<<< HEAD
-					nidselect = ridentifier.test( nid ) ? "#" + nid : "[id='" + nid + "']";
-					while ( i-- ) {
-						groups[i] = nidselect + " " + toSelector( groups[i] );
-=======
 					while ( i-- ) {
 						groups[i] = "#" + nid + " " + toSelector( groups[i] );
->>>>>>> master
 					}
 					newSelector = groups.join( "," );
 
@@ -427,15 +377,6 @@ function markFunction( fn ) {
 
 /**
  * Support testing using an element
-<<<<<<< HEAD
- * @param {Function} fn Passed the created div and expects a boolean result
- */
-function assert( fn ) {
-	var div = document.createElement("div");
-
-	try {
-		return !!fn( div );
-=======
  * @param {Function} fn Passed the created element and returns a boolean result
  */
 function assert( fn ) {
@@ -443,24 +384,15 @@ function assert( fn ) {
 
 	try {
 		return !!fn( el );
->>>>>>> master
 	} catch (e) {
 		return false;
 	} finally {
 		// Remove from its parent by default
-<<<<<<< HEAD
-		if ( div.parentNode ) {
-			div.parentNode.removeChild( div );
-		}
-		// release memory in IE
-		div = null;
-=======
 		if ( el.parentNode ) {
 			el.parentNode.removeChild( el );
 		}
 		// release memory in IE
 		el = null;
->>>>>>> master
 	}
 }
 
@@ -487,12 +419,7 @@ function addHandle( attrs, handler ) {
 function siblingCheck( a, b ) {
 	var cur = b && a,
 		diff = cur && a.nodeType === 1 && b.nodeType === 1 &&
-<<<<<<< HEAD
-			( ~b.sourceIndex || MAX_NEGATIVE ) -
-			( ~a.sourceIndex || MAX_NEGATIVE );
-=======
 			a.sourceIndex - b.sourceIndex;
->>>>>>> master
 
 	// Use IE sourceIndex if available on both nodes
 	if ( diff ) {
@@ -534,8 +461,6 @@ function createButtonPseudo( type ) {
 }
 
 /**
-<<<<<<< HEAD
-=======
  * Returns a function to use in pseudos for :enabled/:disabled
  * @param {Boolean} disabled true for :disabled; false for :enabled
  */
@@ -592,7 +517,6 @@ function createDisabledPseudo( disabled ) {
 }
 
 /**
->>>>>>> master
  * Returns a function to use in pseudos for positionals
  * @param {Function} fn
  */
@@ -644,11 +568,7 @@ isXML = Sizzle.isXML = function( elem ) {
  * @returns {Object} Returns the current document
  */
 setDocument = Sizzle.setDocument = function( node ) {
-<<<<<<< HEAD
-	var hasCompare, parent,
-=======
 	var hasCompare, subWindow,
->>>>>>> master
 		doc = node ? node.ownerDocument || node : preferredDoc;
 
 	// Return early if doc is invalid or already selected
@@ -663,16 +583,6 @@ setDocument = Sizzle.setDocument = function( node ) {
 
 	// Support: IE 9-11, Edge
 	// Accessing iframe documents after unload throws "permission denied" errors (jQuery #13936)
-<<<<<<< HEAD
-	if ( (parent = document.defaultView) && parent.top !== parent ) {
-		// Support: IE 11
-		if ( parent.addEventListener ) {
-			parent.addEventListener( "unload", unloadHandler, false );
-
-		// Support: IE 9 - 10 only
-		} else if ( parent.attachEvent ) {
-			parent.attachEvent( "onunload", unloadHandler );
-=======
 	if ( preferredDoc !== document &&
 		(subWindow = document.defaultView) && subWindow.top !== subWindow ) {
 
@@ -683,7 +593,6 @@ setDocument = Sizzle.setDocument = function( node ) {
 		// Support: IE 9 - 10 only
 		} else if ( subWindow.attachEvent ) {
 			subWindow.attachEvent( "onunload", unloadHandler );
->>>>>>> master
 		}
 	}
 
@@ -693,30 +602,18 @@ setDocument = Sizzle.setDocument = function( node ) {
 	// Support: IE<8
 	// Verify that getAttribute really returns attributes and not properties
 	// (excepting IE8 booleans)
-<<<<<<< HEAD
-	support.attributes = assert(function( div ) {
-		div.className = "i";
-		return !div.getAttribute("className");
-=======
 	support.attributes = assert(function( el ) {
 		el.className = "i";
 		return !el.getAttribute("className");
->>>>>>> master
 	});
 
 	/* getElement(s)By*
 	---------------------------------------------------------------------- */
 
 	// Check if getElementsByTagName("*") returns only elements
-<<<<<<< HEAD
-	support.getElementsByTagName = assert(function( div ) {
-		div.appendChild( document.createComment("") );
-		return !div.getElementsByTagName("*").length;
-=======
 	support.getElementsByTagName = assert(function( el ) {
 		el.appendChild( document.createComment("") );
 		return !el.getElementsByTagName("*").length;
->>>>>>> master
 	});
 
 	// Support: IE<9
@@ -724,23 +621,6 @@ setDocument = Sizzle.setDocument = function( node ) {
 
 	// Support: IE<10
 	// Check if getElementById returns elements by name
-<<<<<<< HEAD
-	// The broken getElementById methods don't pick up programatically-set names,
-	// so use a roundabout getElementsByName test
-	support.getById = assert(function( div ) {
-		docElem.appendChild( div ).id = expando;
-		return !document.getElementsByName || !document.getElementsByName( expando ).length;
-	});
-
-	// ID find and filter
-	if ( support.getById ) {
-		Expr.find["ID"] = function( id, context ) {
-			if ( typeof context.getElementById !== "undefined" && documentIsHTML ) {
-				var m = context.getElementById( id );
-				return m ? [ m ] : [];
-			}
-		};
-=======
 	// The broken getElementById methods don't pick up programmatically-set names,
 	// so use a roundabout getElementsByName test
 	support.getById = assert(function( el ) {
@@ -750,20 +630,12 @@ setDocument = Sizzle.setDocument = function( node ) {
 
 	// ID filter and find
 	if ( support.getById ) {
->>>>>>> master
 		Expr.filter["ID"] = function( id ) {
 			var attrId = id.replace( runescape, funescape );
 			return function( elem ) {
 				return elem.getAttribute("id") === attrId;
 			};
 		};
-<<<<<<< HEAD
-	} else {
-		// Support: IE6/7
-		// getElementById is not reliable as a find shortcut
-		delete Expr.find["ID"];
-
-=======
 		Expr.find["ID"] = function( id, context ) {
 			if ( typeof context.getElementById !== "undefined" && documentIsHTML ) {
 				var elem = context.getElementById( id );
@@ -771,7 +643,6 @@ setDocument = Sizzle.setDocument = function( node ) {
 			}
 		};
 	} else {
->>>>>>> master
 		Expr.filter["ID"] =  function( id ) {
 			var attrId = id.replace( runescape, funescape );
 			return function( elem ) {
@@ -780,8 +651,6 @@ setDocument = Sizzle.setDocument = function( node ) {
 				return node && node.value === attrId;
 			};
 		};
-<<<<<<< HEAD
-=======
 
 		// Support: IE 6 - 7 only
 		// getElementById is not reliable as a find shortcut
@@ -812,7 +681,6 @@ setDocument = Sizzle.setDocument = function( node ) {
 				return [];
 			}
 		};
->>>>>>> master
 	}
 
 	// Tag
@@ -866,124 +734,74 @@ setDocument = Sizzle.setDocument = function( node ) {
 	// We allow this because of a bug in IE8/9 that throws an error
 	// whenever `document.activeElement` is accessed on an iframe
 	// So, we allow :focus to pass through QSA all the time to avoid the IE error
-<<<<<<< HEAD
-	// See http://bugs.jquery.com/ticket/13378
-=======
 	// See https://bugs.jquery.com/ticket/13378
->>>>>>> master
 	rbuggyQSA = [];
 
 	if ( (support.qsa = rnative.test( document.querySelectorAll )) ) {
 		// Build QSA regex
 		// Regex strategy adopted from Diego Perini
-<<<<<<< HEAD
-		assert(function( div ) {
-=======
 		assert(function( el ) {
->>>>>>> master
 			// Select is set to empty string on purpose
 			// This is to test IE's treatment of not explicitly
 			// setting a boolean content attribute,
 			// since its presence should be enough
-<<<<<<< HEAD
-			// http://bugs.jquery.com/ticket/12359
-			docElem.appendChild( div ).innerHTML = "<a id='" + expando + "'></a>" +
-=======
 			// https://bugs.jquery.com/ticket/12359
 			docElem.appendChild( el ).innerHTML = "<a id='" + expando + "'></a>" +
->>>>>>> master
 				"<select id='" + expando + "-\r\\' msallowcapture=''>" +
 				"<option selected=''></option></select>";
 
 			// Support: IE8, Opera 11-12.16
 			// Nothing should be selected when empty strings follow ^= or $= or *=
 			// The test attribute must be unknown in Opera but "safe" for WinRT
-<<<<<<< HEAD
-			// http://msdn.microsoft.com/en-us/library/ie/hh465388.aspx#attribute_section
-			if ( div.querySelectorAll("[msallowcapture^='']").length ) {
-=======
 			// https://msdn.microsoft.com/en-us/library/ie/hh465388.aspx#attribute_section
 			if ( el.querySelectorAll("[msallowcapture^='']").length ) {
->>>>>>> master
 				rbuggyQSA.push( "[*^$]=" + whitespace + "*(?:''|\"\")" );
 			}
 
 			// Support: IE8
 			// Boolean attributes and "value" are not treated correctly
-<<<<<<< HEAD
-			if ( !div.querySelectorAll("[selected]").length ) {
-=======
 			if ( !el.querySelectorAll("[selected]").length ) {
->>>>>>> master
 				rbuggyQSA.push( "\\[" + whitespace + "*(?:value|" + booleans + ")" );
 			}
 
 			// Support: Chrome<29, Android<4.4, Safari<7.0+, iOS<7.0+, PhantomJS<1.9.8+
-<<<<<<< HEAD
-			if ( !div.querySelectorAll( "[id~=" + expando + "-]" ).length ) {
-=======
 			if ( !el.querySelectorAll( "[id~=" + expando + "-]" ).length ) {
->>>>>>> master
 				rbuggyQSA.push("~=");
 			}
 
 			// Webkit/Opera - :checked should return selected option elements
 			// http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
 			// IE8 throws error here and will not see later tests
-<<<<<<< HEAD
-			if ( !div.querySelectorAll(":checked").length ) {
-=======
 			if ( !el.querySelectorAll(":checked").length ) {
->>>>>>> master
 				rbuggyQSA.push(":checked");
 			}
 
 			// Support: Safari 8+, iOS 8+
 			// https://bugs.webkit.org/show_bug.cgi?id=136851
-<<<<<<< HEAD
-			// In-page `selector#id sibing-combinator selector` fails
-			if ( !div.querySelectorAll( "a#" + expando + "+*" ).length ) {
-=======
 			// In-page `selector#id sibling-combinator selector` fails
 			if ( !el.querySelectorAll( "a#" + expando + "+*" ).length ) {
->>>>>>> master
 				rbuggyQSA.push(".#.+[+~]");
 			}
 		});
 
-<<<<<<< HEAD
-		assert(function( div ) {
-=======
 		assert(function( el ) {
 			el.innerHTML = "<a href='' disabled='disabled'></a>" +
 				"<select disabled='disabled'><option/></select>";
 
->>>>>>> master
 			// Support: Windows 8 Native Apps
 			// The type and name attributes are restricted during .innerHTML assignment
 			var input = document.createElement("input");
 			input.setAttribute( "type", "hidden" );
-<<<<<<< HEAD
-			div.appendChild( input ).setAttribute( "name", "D" );
-
-			// Support: IE8
-			// Enforce case-sensitivity of name attribute
-			if ( div.querySelectorAll("[name=d]").length ) {
-=======
 			el.appendChild( input ).setAttribute( "name", "D" );
 
 			// Support: IE8
 			// Enforce case-sensitivity of name attribute
 			if ( el.querySelectorAll("[name=d]").length ) {
->>>>>>> master
 				rbuggyQSA.push( "name" + whitespace + "*[*^$|!~]?=" );
 			}
 
 			// FF 3.5 - :enabled/:disabled and hidden elements (hidden elements are still enabled)
 			// IE8 throws error here and will not see later tests
-<<<<<<< HEAD
-			if ( !div.querySelectorAll(":enabled").length ) {
-=======
 			if ( el.querySelectorAll(":enabled").length !== 2 ) {
 				rbuggyQSA.push( ":enabled", ":disabled" );
 			}
@@ -992,16 +810,11 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// IE's :disabled selector does not pick up the children of disabled fieldsets
 			docElem.appendChild( el ).disabled = true;
 			if ( el.querySelectorAll(":disabled").length !== 2 ) {
->>>>>>> master
 				rbuggyQSA.push( ":enabled", ":disabled" );
 			}
 
 			// Opera 10-11 does not throw on post-comma invalid pseudos
-<<<<<<< HEAD
-			div.querySelectorAll("*,:x");
-=======
 			el.querySelectorAll("*,:x");
->>>>>>> master
 			rbuggyQSA.push(",.*:");
 		});
 	}
@@ -1012,16 +825,6 @@ setDocument = Sizzle.setDocument = function( node ) {
 		docElem.oMatchesSelector ||
 		docElem.msMatchesSelector) )) ) {
 
-<<<<<<< HEAD
-		assert(function( div ) {
-			// Check to see if it's possible to do matchesSelector
-			// on a disconnected node (IE 9)
-			support.disconnectedMatch = matches.call( div, "div" );
-
-			// This should fail with an exception
-			// Gecko does not error, returns false instead
-			matches.call( div, "[s!='']:x" );
-=======
 		assert(function( el ) {
 			// Check to see if it's possible to do matchesSelector
 			// on a disconnected node (IE 9)
@@ -1030,7 +833,6 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// This should fail with an exception
 			// Gecko does not error, returns false instead
 			matches.call( el, "[s!='']:x" );
->>>>>>> master
 			rbuggyMatches.push( "!=", pseudos );
 		});
 	}
@@ -1232,13 +1034,10 @@ Sizzle.attr = function( elem, name ) {
 				null;
 };
 
-<<<<<<< HEAD
-=======
 Sizzle.escape = function( sel ) {
 	return (sel + "").replace( rcssescape, fcssescape );
 };
 
->>>>>>> master
 Sizzle.error = function( msg ) {
 	throw new Error( "Syntax error, unrecognized expression: " + msg );
 };
@@ -1706,18 +1505,8 @@ Expr = Sizzle.selectors = {
 		},
 
 		// Boolean properties
-<<<<<<< HEAD
-		"enabled": function( elem ) {
-			return elem.disabled === false;
-		},
-
-		"disabled": function( elem ) {
-			return elem.disabled === true;
-		},
-=======
 		"enabled": createDisabledPseudo( false ),
 		"disabled": createDisabledPseudo( true ),
->>>>>>> master
 
 		"checked": function( elem ) {
 			// In CSS3, :checked should return both checked and selected elements
@@ -1919,13 +1708,9 @@ function toSelector( tokens ) {
 
 function addCombinator( matcher, combinator, base ) {
 	var dir = combinator.dir,
-<<<<<<< HEAD
-		checkNonElements = base && dir === "parentNode",
-=======
 		skip = combinator.next,
 		key = skip || dir,
 		checkNonElements = base && key === "parentNode",
->>>>>>> master
 		doneName = done++;
 
 	return combinator.first ?
@@ -1936,10 +1721,7 @@ function addCombinator( matcher, combinator, base ) {
 					return matcher( elem, context, xml );
 				}
 			}
-<<<<<<< HEAD
-=======
 			return false;
->>>>>>> master
 		} :
 
 		// Check against all ancestor/preceding elements
@@ -1965,24 +1747,16 @@ function addCombinator( matcher, combinator, base ) {
 						// Defend against cloned attroperties (jQuery gh-1709)
 						uniqueCache = outerCache[ elem.uniqueID ] || (outerCache[ elem.uniqueID ] = {});
 
-<<<<<<< HEAD
-						if ( (oldCache = uniqueCache[ dir ]) &&
-=======
 						if ( skip && skip === elem.nodeName.toLowerCase() ) {
 							elem = elem[ dir ] || elem;
 						} else if ( (oldCache = uniqueCache[ key ]) &&
->>>>>>> master
 							oldCache[ 0 ] === dirruns && oldCache[ 1 ] === doneName ) {
 
 							// Assign to newCache so results back-propagate to previous elements
 							return (newCache[ 2 ] = oldCache[ 2 ]);
 						} else {
 							// Reuse newcache so results back-propagate to previous elements
-<<<<<<< HEAD
-							uniqueCache[ dir ] = newCache;
-=======
 							uniqueCache[ key ] = newCache;
->>>>>>> master
 
 							// A match means we're done; a fail means we have to keep checking
 							if ( (newCache[ 2 ] = matcher( elem, context, xml )) ) {
@@ -1992,10 +1766,7 @@ function addCombinator( matcher, combinator, base ) {
 					}
 				}
 			}
-<<<<<<< HEAD
-=======
 			return false;
->>>>>>> master
 		};
 }
 
@@ -2358,12 +2129,7 @@ select = Sizzle.select = function( selector, context, results, seed ) {
 		// Reduce context if the leading compound selector is an ID
 		tokens = match[0] = match[0].slice( 0 );
 		if ( tokens.length > 2 && (token = tokens[0]).type === "ID" &&
-<<<<<<< HEAD
-				support.getById && context.nodeType === 9 && documentIsHTML &&
-				Expr.relative[ tokens[1].type ] ) {
-=======
 				context.nodeType === 9 && documentIsHTML && Expr.relative[ tokens[1].type ] ) {
->>>>>>> master
 
 			context = ( Expr.find["ID"]( token.matches[0].replace(runescape, funescape), context ) || [] )[0];
 			if ( !context ) {
@@ -2433,30 +2199,17 @@ setDocument();
 
 // Support: Webkit<537.32 - Safari 6.0.3/Chrome 25 (fixed in Chrome 27)
 // Detached nodes confoundingly follow *each other*
-<<<<<<< HEAD
-support.sortDetached = assert(function( div1 ) {
-	// Should return 1, but returns 4 (following)
-	return div1.compareDocumentPosition( document.createElement("div") ) & 1;
-=======
 support.sortDetached = assert(function( el ) {
 	// Should return 1, but returns 4 (following)
 	return el.compareDocumentPosition( document.createElement("fieldset") ) & 1;
->>>>>>> master
 });
 
 // Support: IE<8
 // Prevent attribute/property "interpolation"
-<<<<<<< HEAD
-// http://msdn.microsoft.com/en-us/library/ms536429%28VS.85%29.aspx
-if ( !assert(function( div ) {
-	div.innerHTML = "<a href='#'></a>";
-	return div.firstChild.getAttribute("href") === "#" ;
-=======
 // https://msdn.microsoft.com/en-us/library/ms536429%28VS.85%29.aspx
 if ( !assert(function( el ) {
 	el.innerHTML = "<a href='#'></a>";
 	return el.firstChild.getAttribute("href") === "#" ;
->>>>>>> master
 }) ) {
 	addHandle( "type|href|height|width", function( elem, name, isXML ) {
 		if ( !isXML ) {
@@ -2467,17 +2220,10 @@ if ( !assert(function( el ) {
 
 // Support: IE<9
 // Use defaultValue in place of getAttribute("value")
-<<<<<<< HEAD
-if ( !support.attributes || !assert(function( div ) {
-	div.innerHTML = "<input/>";
-	div.firstChild.setAttribute( "value", "" );
-	return div.firstChild.getAttribute( "value" ) === "";
-=======
 if ( !support.attributes || !assert(function( el ) {
 	el.innerHTML = "<input/>";
 	el.firstChild.setAttribute( "value", "" );
 	return el.firstChild.getAttribute( "value" ) === "";
->>>>>>> master
 }) ) {
 	addHandle( "value", function( elem, name, isXML ) {
 		if ( !isXML && elem.nodeName.toLowerCase() === "input" ) {
@@ -2488,13 +2234,8 @@ if ( !support.attributes || !assert(function( el ) {
 
 // Support: IE<9
 // Use getAttributeNode to fetch booleans when getAttribute lies
-<<<<<<< HEAD
-if ( !assert(function( div ) {
-	return div.getAttribute("disabled") == null;
-=======
 if ( !assert(function( el ) {
 	return el.getAttribute("disabled") == null;
->>>>>>> master
 }) ) {
 	addHandle( booleans, function( elem, name, isXML ) {
 		var val;
@@ -2508,8 +2249,6 @@ if ( !assert(function( el ) {
 }
 
 // EXPOSE
-<<<<<<< HEAD
-=======
 var _sizzle = window.Sizzle;
 
 Sizzle.noConflict = function() {
@@ -2520,7 +2259,6 @@ Sizzle.noConflict = function() {
 	return Sizzle;
 };
 
->>>>>>> master
 if ( typeof define === "function" && define.amd ) {
 	define(function() { return Sizzle; });
 // Sizzle requires that there be a global window in Common-JS like environments
