@@ -8,30 +8,18 @@ define( [
 
 	"./core/init",
 	"./ajax/parseXML",
-<<<<<<< HEAD
-	"./deferred"
-], function( jQuery, document, rnotwhite, location, nonce, rquery ) {
-=======
 	"./event/trigger",
 	"./deferred",
 	"./serialize" // jQuery.param
 ], function( jQuery, document, rnothtmlwhite, location, nonce, rquery ) {
 
 "use strict";
->>>>>>> master
 
 var
 	r20 = /%20/g,
 	rhash = /#.*$/,
-<<<<<<< HEAD
-	rts = /([?&])_=[^&]*/,
-
-	// IE leaves an \r character at EOL
-	rheaders = /^(.*?):[ \t]*([^\r\n]*)\r?$/mg,
-=======
 	rantiCache = /([?&])_=[^&]*/,
 	rheaders = /^(.*?):[ \t]*([^\r\n]*)$/mg,
->>>>>>> master
 
 	// #7653, #8125, #8152: local protocol detection
 	rlocalProtocol = /^(?:about|app|app-storage|.+-extension|file|res|widget):$/,
@@ -425,15 +413,12 @@ jQuery.extend( {
 			// timeout handle
 			timeoutTimer,
 
-<<<<<<< HEAD
-=======
 			// Url cleanup var
 			urlAnchor,
 
 			// Request state (becomes false upon send and true upon completion)
 			completed,
 
->>>>>>> master
 			// To know if global events are to be dispatched
 			fireGlobals,
 
@@ -546,21 +531,11 @@ jQuery.extend( {
 		// Attach deferreds
 		deferred.promise( jqXHR );
 
-<<<<<<< HEAD
-		// Remove hash character (#7531: and string promotion)
-		// Add protocol if not provided (#5866: IE7 issue with protocol-less urls)
-		// Handle falsy url in the settings object (#10093: consistency with old signature)
-		// We also use the url parameter if available
-		s.url = ( ( url || s.url || ajaxLocation ) + "" )
-			.replace( rhash, "" )
-			.replace( rprotocol, ajaxLocParts[ 1 ] + "//" );
-=======
 		// Add protocol if not provided (prefilters might expect it)
 		// Handle falsy url in the settings object (#10093: consistency with old signature)
 		// We also use the url parameter if available
 		s.url = ( ( url || s.url || location.href ) + "" )
 			.replace( rprotocol, location.protocol + "//" );
->>>>>>> master
 
 		// Alias method option to type as per ticket #12004
 		s.type = options.method || options.type || s.method || s.type;
@@ -570,14 +545,6 @@ jQuery.extend( {
 
 		// A cross-domain request is in order when we have a protocol:host:port mismatch
 		if ( s.crossDomain == null ) {
-<<<<<<< HEAD
-			parts = rurl.exec( s.url.toLowerCase() );
-			s.crossDomain = !!( parts &&
-				( parts[ 1 ] !== ajaxLocParts[ 1 ] || parts[ 2 ] !== ajaxLocParts[ 2 ] ||
-					( parts[ 3 ] || ( parts[ 1 ] === "http:" ? "80" : "443" ) ) !==
-						( ajaxLocParts[ 3 ] || ( ajaxLocParts[ 1 ] === "http:" ? "80" : "443" ) ) )
-			);
-=======
 			urlAnchor = document.createElement( "a" );
 
 			// Support: IE <=8 - 11, Edge 12 - 13
@@ -597,7 +564,6 @@ jQuery.extend( {
 				// it can be rejected by the transport if it is invalid
 				s.crossDomain = true;
 			}
->>>>>>> master
 		}
 
 		// Convert data if not already a string

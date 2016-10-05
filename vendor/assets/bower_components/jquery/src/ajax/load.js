@@ -19,11 +19,7 @@ jQuery.fn.load = function( url, params, callback ) {
 		off = url.indexOf( " " );
 
 	if ( off > -1 ) {
-<<<<<<< HEAD
-		selector = jQuery.trim( url.slice( off, url.length ) );
-=======
 		selector = stripAndCollapse( url.slice( off ) );
->>>>>>> master
 		url = url.slice( 0, off );
 	}
 

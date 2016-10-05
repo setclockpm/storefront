@@ -10,12 +10,9 @@ jQuery.parseXML = function( data ) {
 	if ( !data || typeof data !== "string" ) {
 		return null;
 	}
-<<<<<<< HEAD
-=======
 
 	// Support: IE 9 - 11 only
 	// IE throws on parseFromString with invalid input.
->>>>>>> master
 	try {
 		if ( window.DOMParser ) { // Standard
 			tmp = new window.DOMParser();
