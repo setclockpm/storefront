@@ -4,11 +4,6 @@ class HeroImage < ActiveRecord::Base
   validate :storefront_gallery_within_capacity
   
   
-  def self.storefront_photos
-    where('front_page')
-  end
-  
-  
   private
     def storefront_gallery_within_capacity
       HeroImage.storefront_photos.size <= 6

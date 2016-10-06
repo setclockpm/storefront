@@ -1240,7 +1240,10 @@ CREATE TABLE spree_products (
     updated_at timestamp without time zone NOT NULL,
     promotionable boolean DEFAULT true,
     meta_title character varying,
-    discontinue_on timestamp without time zone
+    discontinue_on timestamp without time zone,
+    retail_vendor_url character varying,
+    retail_vendor character varying(24),
+    showcased boolean DEFAULT false
 );
 
 
@@ -6517,4 +6520,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160830195015');
 INSERT INTO schema_migrations (version) VALUES ('20160916011142');
 
 INSERT INTO schema_migrations (version) VALUES ('20161005221011');
+
+INSERT INTO schema_migrations (version) VALUES ('20161006185746');
 
