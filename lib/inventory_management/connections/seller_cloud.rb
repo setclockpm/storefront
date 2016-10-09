@@ -1,5 +1,5 @@
 require 'savon'
-require 'dotenv/tasks'
+#require 'dotenv/tasks'
 
 module InventoryManagement
   module Connections

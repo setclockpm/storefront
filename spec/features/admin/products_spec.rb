@@ -24,7 +24,6 @@ feature 'Product Details' do
       sleep 4
       click_button "Update"
       expect(page).to have_content("successfully updated!")
-      save_and_open_page
       expect(find_field('product_retail_vendor').value).to eq("Wayfair")
     end
   end
