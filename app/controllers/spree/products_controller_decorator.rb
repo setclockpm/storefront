@@ -35,7 +35,6 @@ Spree::Admin::ProductsController.class_eval do
   def index
     @custom_qs_placeholder = "Quick search (by SKU) .."
     session[:return_to] = request.url
-    puts "@collection: #{@collection.inspect}"
     respond_with(@collection)
   end
   
