@@ -5,17 +5,18 @@ require 'rails_helper'
 #  
 # 
 # ----------------------------------------------------------------
-feature '"Browsing Collection - ' do
+feature 'Collection Pages' do
   
   background do
     unless Spree::Store.exists?
       FactoryGirl.create(:store)
-      FactoryGirl.create(:product, available_on: 1.year.ago, name: "Pikachu Side Table", slug: "pikachu-side-table")
-      
     end
   end
   
-  
+  scenario "load correctly and without errors", js: true do
+    visit main_app.collection_path
+    expect(page.has_selector?('a.collection-img-link')).to be true
+  end
   
   
 end
