@@ -3,6 +3,24 @@
 during import, change line 308 in product_loader.rb in datashift_spree so that object is NEVER reloaded
 
 
+== Second Bug:
+[ 2016-10-10 02:40:14.9474 1041/7f51a8e3f700 age/Cor/App/Implementation.cpp:304 ]: Could not spawn process for application /var/www/porthos/production/current: An error occurred while starting up the preloader.
+  Error ID: 44ace072
+  Error details saved to: /tmp/passenger-error-yr9Fdi.html
+  Message from application: undefined method `option_values' for nil:NilClass (NoMethodError)
+  /var/www/porthos/production/releases/20161010092432/app/models/image_generator.rb:6:in `<class:ImageGenerator>'
+  /var/www/porthos/production/releases/20161010092432/app/models/image_generator.rb:5:in `<top (required)>'
+  
+  Caused by removing:
+  
+  gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: '3-1-stable'
+  gem 'spree_globalize', github: 'spree-contrib/spree_globalize', branch: 'master'  
+  
+  from Gemfile
+  
+  
+
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
