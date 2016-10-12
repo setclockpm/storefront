@@ -26,21 +26,36 @@
           <%= f.error_message_on :retail_vendor_url %>
         <% end %>
       </div>
-
-      <div data-hook="admin_product_form_retail_vendor">
-        <%= f.field_container :retail_vendor, class: ['form-group'] do %>
-          <%= f.label :retail_vendor, Spree.t(:retail_vendor) %>
-          <%= f.text_field :retail_vendor, class: 'form-control title' %>
-          <%= f.error_message_on :retail_vendor %>
-        <% end %>
-      </div>
-
+      
       <div data-hook="admin_product_form_description">
         <%= f.field_container :description, class: ['form-group'] do %>
           <%= f.label :description, Spree.t(:description) %>
-          <%= f.text_area :description, { rows: "#{unless @product.has_variants? then '20' else '13' end}", class: 'form-control' } %>
+          <%= f.text_area :description, { rows: "#{unless @product.has_variants? then '16' else '10' end}", class: 'form-control' } %>
           <%= f.error_message_on :description %>
         <% end %>
+      </div>
+      
+      <div data-hook="admin_product_form_meta">
+        <div data-hook="admin_product_form_meta_title">
+          <%= f.field_container :meta_title, class: ['form-group'] do %>
+            <%= f.label :meta_title, Spree.t(:meta_title) %>
+            <%= f.text_field :meta_title, class: 'form-control' %>
+          <% end %>
+        </div>
+
+        <div data-hook="admin_product_form_meta_keywords">
+          <%= f.field_container :meta_keywords, class: ['form-group'] do %>
+            <%= f.label :meta_keywords, Spree.t(:meta_keywords) %>
+            <%= f.text_field :meta_keywords, class: 'form-control' %>
+          <% end %>
+        </div>
+
+        <div data-hook="admin_product_form_meta_description">
+          <%= f.field_container :meta_description, class: ['form-group'] do %>
+            <%= f.label :meta_description, Spree.t(:meta_description) %>
+            <%= f.text_field :meta_description, class: 'form-control' %>
+          <% end %>
+        </div>
       </div>
     </div>
 
@@ -60,6 +75,24 @@
           <%= f.error_message_on :cost_price %>
         <% end %>
       </div>
+      <div data-hook="admin_product_form_retail_vendor" class="two columns">
+        <%= f.field_container :retail_vendor, class: ['form-group'] do %>
+          <%= f.label :retail_vendor, Spree.t(:retail_vendor) %>
+          <%= f.text_field :retail_vendor, class: 'form-control' %>
+          <%= f.error_message_on :retail_vendor %>
+        <% end %>
+      </div>
+      
+      <% if @product.master_images.any? %>
+        <div data-hook="admin_product_form_showcased">
+          <%= f.field_container :showcased, class: ['form-group'] do %>
+              <%= f.label :showcased, Spree.t(:showcased) %>
+              <%= f.error_message_on :showcased %>
+              <%= f.check_box :showcased, class: 'form-control' %>
+          <% end %>
+        </div>
+      <% end %>
+      
       <div data-hook="admin_product_form_cost_currency" class="omega two columns">
         <%= f.field_container :cost_currency, class: ['form-group'] do %>
           <%= f.label :cost_currency, Spree.t(:cost_currency) %>
@@ -169,9 +202,8 @@
         <% end %>
       </div>
     </div>
-
   </div>
-
+  
   <div data-hook="admin_product_form_taxons">
     <%= f.field_container :taxons, class: ['form-group'] do %>
       <%= f.label :taxon_ids, Spree.t(:taxons) %>
@@ -187,10 +219,9 @@
       <% else %>
         <div class="alert alert-info"><%= Spree.t(:no_resource_found, resource: :taxons) %></div>
       <% end %>
-
     <% end %>
   </div>
-
+  
   <div data-hook="admin_product_form_option_types">
     <%= f.field_container :option_types, class: ['form-group'] do %>
       <%= f.label :option_type_ids, Spree.t(:option_types) %>
@@ -206,34 +237,12 @@
       <% else %>
         <div class="alert alert-info"><%= Spree.t(:no_resource_found, resource: :option_types) %></div>
       <% end %>
-
     <% end %>
   </div>
-
-
-  <div data-hook="admin_product_form_meta">
-    <div data-hook="admin_product_form_meta_title">
-      <%= f.field_container :meta_title, class: ['form-group'] do %>
-        <%= f.label :meta_title, Spree.t(:meta_title) %>
-        <%= f.text_field :meta_title, class: 'form-control' %>
-      <% end %>
-    </div>
-
-    <div data-hook="admin_product_form_meta_keywords">
-      <%= f.field_container :meta_keywords, class: ['form-group'] do %>
-        <%= f.label :meta_keywords, Spree.t(:meta_keywords) %>
-        <%= f.text_field :meta_keywords, class: 'form-control' %>
-      <% end %>
-    </div>
-
-    <div data-hook="admin_product_form_meta_description">
-      <%= f.field_container :meta_description, class: ['form-group'] do %>
-        <%= f.label :meta_description, Spree.t(:meta_description) %>
-        <%= f.text_field :meta_description, class: 'form-control' %>
-      <% end %>
-    </div>
-
-    <div data-hook="admin_product_form_additional_fields"></div>
-
-  </div>
+  
+  
+  
+  
+  <div data-hook="admin_product_form_additional_fields"></div>
+  
 </div>

@@ -7,7 +7,10 @@ feature 'Product Details' do
 
   background do
     create(:store) unless Spree::Store.exists?
-    create(:product, name: 'Pikachu Chair', sku: 'A100', description: 'lorem ipsum', available_on: '2013-08-14 01:02:03', slug: 'garden-grove-talk')
+    product = create(:product, name: 'Pikachu Chair', sku: 'A100', description: 'lorem ipsum', available_on: '2013-08-14 01:02:03', slug: 'garden-grove-talk')
+    image   = File.open(File.expand_path('../../assets/burger-chi.jpg', __FILE__))
+    product.images.create!(attachment: image)
+    product.images.create!(attachment: image)
   end
 
 

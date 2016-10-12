@@ -1,7 +1,7 @@
 module CollectionHelper
   
   def collection_items
-    Spree::Variant.where(is_master: true).joins(:images).all
+    Spree::Variant.where(is_master: true).joins(:images).uniq
   end
   
   def collection_reference(image, options={})
@@ -11,17 +11,17 @@ module CollectionHelper
     end
   end
   
-  def collection_image_reference(variant, options={})
-    content_tag :figure do
-      link_to collection_image_thumbnail_tag(variant), variant.collection_image.attachment.url(:original), class: 'collection-img-link'
-    end
-    
-  end
-  
   def collection_thumbnail(img_path)
     image_tag img_path, title: "furniture collection pull-sku-from-record", class: "collection-image"
   end
   
+  
+  
+  def collection_image_reference(variant, options={})
+    content_tag :figure do
+      link_to collection_image_thumbnail_tag(variant), variant.collection_image.attachment.url(:original), class: 'collection-img-link'
+    end
+  end
   
   private
     def collection_image_thumbnail_tag(variant)
