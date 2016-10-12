@@ -2,10 +2,6 @@ module ApplicationHelper
   INTERNAL_IP = "108.209.219.227"
 
   
-  def collection_thumbnail(img_path)
-    image_tag img_path, title: "furniture collection pull-sku-from-record", class: "collection-image"
-  end
-  
   def color_options(v, options={})
     text = variant_options(v, options={})
   end

@@ -2,7 +2,6 @@ module CollectionHelper
   
   def collection_items
     Spree::Variant.where(is_master: true).joins(:images).all
-   #["0.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg", "11.jpg"]
   end
   
   def collection_reference(image, options={})
@@ -17,6 +16,10 @@ module CollectionHelper
       link_to collection_image_thumbnail_tag(variant), variant.collection_image.attachment.url(:original), class: 'collection-img-link'
     end
     
+  end
+  
+  def collection_thumbnail(img_path)
+    image_tag img_path, title: "furniture collection pull-sku-from-record", class: "collection-image"
   end
   
   
