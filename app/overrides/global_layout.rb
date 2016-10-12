@@ -49,12 +49,6 @@ Deface::Override.new(name:             'set-content-div-dom-class',
                      set_attributes:   'div#content',
                      attributes:       { class: 'col-xs-12' },
                      original:         nil)
-
-# Deface::Override.new(name:             'add-canvas-to-container',
-#                      virtual_path:     'spree/layouts/spree_application',
-#                      set_attributes:   'div.container',
-#                      attributes:       { class: 'container', canvas: 'container' },
-#                      original:         nil)
                      
 Deface::Override.new(name:             'include-slidebar-partial',
                      virtual_path:     'spree/layouts/spree_application',

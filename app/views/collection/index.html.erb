@@ -7,8 +7,8 @@
     </div>
     <div class="main-row">
       <div class="gallery-popup grid-uniform grid-home portfolio row">
-        <% collection_items.each do |image| %>
-          <%= render partial: "collection_item", locals: { image: image } %>
+        <% collection_items.each do |master_variant| %>
+          <%= render partial: "collection_item", locals: { variant: master_variant } %>
         <% end %>
       </div>
     </div>
