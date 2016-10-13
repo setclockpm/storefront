@@ -255,6 +255,14 @@ textarea::-webkit-input-placeholder {
     }
   }
 }
+.variant-retail-link {
+  a {
+    color: #da5544;
+    font-family: $forms-font;
+    font-size: 12px;
+    text-decoration: none;
+  }
+}
 /* End DOM class selectors */
 
 /////////////////////////////////
@@ -456,6 +464,10 @@ label {
 @media (max-width: 992px) {
   .promo {
     span { font-size: 2.5em; }
+  }
+  .collection-preview {
+    h1 { font-size: 2em; }
+    .variant-name { padding: 0.5em; }
   }
 }
 ///////////////////////////////////////////////////

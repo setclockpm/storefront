@@ -28,7 +28,6 @@
     background-size: cover;
     height: 100vh;
   }
-  .slick-list { margin-bottom: 1.5rem; }
   .slick-next, .slick-prev {
     top: 40%;
     top: 37vw;
@@ -49,7 +48,7 @@
   width: 18px;
 }
 .slick-dots {
-  bottom: 4.5em;
+  bottom: 2.5em;
   line-height: 3.5;
   list-style: none;
   margin: 0;
@@ -142,7 +141,6 @@
 @media (min-width: 768px) {
   
   .herro {
-    .slick-list { padding-bottom: 0.5rem; }
     .slick-prev, .slick-next {
       display: block;
       opacity: 1;
@@ -166,9 +164,6 @@
   /////////* Minimum width 1024px section *////
 /////////////////////////////////////////////////
 @media (min-width: 1024px) {
-  .herro {
-    .slick-list { padding-bottom: 2rem; }
-  }
   .slick-arrow::before { background-size: 34px auto; }
 }
 ///////////////////////////////////////////////////

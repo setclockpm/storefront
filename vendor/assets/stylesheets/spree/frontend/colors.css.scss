@@ -55,6 +55,10 @@
 .catalog { background-color: $bg-lite-gray; }
 .collection-preview {
   background-color: $collection-gray;
+  hr { border-top: 3px solid $bg-lite-gray; }
+  .retail-leads-row {
+    .grid-item { background-color: white; }
+  }
 }
 .featured { 
   background-color: $off-white;

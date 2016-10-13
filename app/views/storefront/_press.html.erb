@@ -5,7 +5,7 @@
 <div class="container">
   <div class="row standard-grid grid">
     <% featured_in_images.each do |image, uri| %>
-      <%= render partial: "layouts/grid_item", locals: { image: image, url: uri } %>
+      <%= render partial: "press_item", locals: { image: image, url: uri } %>
     <% end %>
   </div>
 </div>

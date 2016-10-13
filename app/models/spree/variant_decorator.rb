@@ -29,6 +29,11 @@ Spree::Variant.class_eval do
     end
   end
   
+  def dimensions
+    return unless height && width && depth
+    "#{height} x #{width} x #{depth}"
+  end
+  
   def master_images
     return unless is_master?
     return images if images.any?
