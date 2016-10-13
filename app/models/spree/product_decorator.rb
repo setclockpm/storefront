@@ -17,7 +17,9 @@ Spree::Product.class_eval do
   
   private
     def max_three_showcased
-      errors.add(:base, "Only up to 3 showcased products are allowed") if Spree::Product.showcased_items.size >= 3
+      if showcased
+        errors.add(:base, "Only up to 3 showcased products are allowed") if Spree::Product.showcased_items.size >= 3
+      end
     end
   
 end
