@@ -19,7 +19,7 @@ module CollectionHelper
   
   def collection_image_reference(variant, options={})
     content_tag :figure do
-      link_to collection_image_thumbnail_tag(variant), variant.collection_image.attachment.url(:original), class: 'collection-img-link'
+      link_to collection_image_thumbnail_tag(variant), variant.collection_image.attachment.url(:large), class: 'collection-img-link'
     end
   end
   
