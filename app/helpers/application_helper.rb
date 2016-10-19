@@ -23,19 +23,6 @@ module ApplicationHelper
     "navbar-#{current_page?(main_app.root_url) ? "fixed" : "static"}-top"
   end
   
-  def navbar_page
-    unless request
-      raise "View context has not provided a Request object! #navbar_page"
-    end
-    
-    if request.get?
-      puts "current_page?(main_app.root_url): #{current_page?(main_app.root_url)}\n"
-      current_page?(main_app.root_url) ? "transparent" : "opaque"
-    else
-      request.original_url.end_with?(main_app.root_url) ? "transparent" : "opaque"
-    end
-  end
-  
   def nav_tab(title, url, options={})
     current_tab = options.delete(:current)
     options[:class] = (current_tab == title) ? 'active nav-item' : 'inactive nav-item'

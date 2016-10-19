@@ -19,10 +19,13 @@
 
 
 #contact-card { background-color: $bright-orange; }
-#spree-header {
+#application-header {
   .nav {
     a { &:hover, &:focus { background: 0; } }
-  } 
+  }
+  .navbar-default {
+    border-bottom: 0;
+  }
 }
 
 

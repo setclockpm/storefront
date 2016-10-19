@@ -292,7 +292,7 @@ textarea::-webkit-input-placeholder {
     }
   }
 }
-#spree-header {
+#application-header {
   .nav {
     a {
       color: $near-black;
@@ -499,7 +499,7 @@ label {
   /* End DOM class selectors */
   
   /* Begin DOM ID selectors */
-  #spree-header {
+  #application-header {
     .navbar-collapse {
       color: #fff;
       

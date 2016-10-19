@@ -236,7 +236,7 @@ section {
   section {
     &.catalog { padding-bottom: 0em; }
   }
-  #contact-card { height: calc(100vh - 9rem); }
+  #contact-card { height: calc(100vh - 6rem); }
   #inquiries-card {
     padding-left: 10em;
     padding-right: 4em;
@@ -257,7 +257,7 @@ section {
 //////////////////////////////////////////////
 @media (min-width: 1170px) {
   
-  #contact-card { padding-bottom: 25%; }
+  #contact-card { padding-bottom: 50%; }
   
 }
 ////////////////////////////////////////////////

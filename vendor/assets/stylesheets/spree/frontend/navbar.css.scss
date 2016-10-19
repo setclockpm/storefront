@@ -44,9 +44,9 @@ header {
     min-height: 5.5em;
   }
   
-  .logo-wrapper { margin-top: .5em; }
+  .logo-wrapper { margin-top: 1.2em; }
 }
-#spree-header { margin-bottom: 0px; }
+#application-header { margin-bottom: 0px; }
 
 
 
@@ -73,7 +73,7 @@ header {
   .nav {
     li {
       &.active {
-        background: #fff;
+        text-decoration: underline;
         margin-bottom: -1px;
         a,
         a:link,
