@@ -21,6 +21,11 @@ Capybara.default_max_wait_time = 4
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'support/factory_girl'
+# Requires factories defined in spree_core
+require 'spree/testing_support/authorization_helpers'
+require 'spree/testing_support/url_helpers'
+require 'spree/testing_support/capybara_ext'
+
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -49,6 +54,8 @@ RSpec.configure do |config|
   
   config.include Devise::TestHelpers, type: :controller
   config.include Features::FormHelpers, type: :feature
+  config.include Spree::TestingSupport::AuthorizationHelpers::Request, type: :feature
+  
   
   #config.include Devise::Test::ControllerHelpers, type: :controller
   #config.include Spree::Core::ControllerHelpers::Auth
@@ -72,7 +79,6 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
-  
   
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false

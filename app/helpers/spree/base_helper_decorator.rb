@@ -20,6 +20,10 @@ Spree::BaseHelper.module_eval do
     link_to text.html_safe, spree.cart_path, class: "cart-info #{css_class}"
   end
   
+  def quick_search_placeholder
+    @custom_qs_placeholder || Spree.t(:quick_search)
+  end
+  
   def taxons_accordion(root_taxon, current_taxon, max_level=1)
     return '' if max_level < 1 || root_taxon.leaf?
     taxons = root_taxon.children.map do |taxon|

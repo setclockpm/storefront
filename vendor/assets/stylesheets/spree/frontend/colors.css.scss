@@ -19,10 +19,13 @@
 
 
 #contact-card { background-color: $bright-orange; }
-#spree-header {
+#application-header {
   .nav {
     a { &:hover, &:focus { background: 0; } }
-  } 
+  }
+  .navbar-default {
+    border-bottom: 0;
+  }
 }
 
 
@@ -49,12 +52,16 @@
   }
 }
 .btn-outline {
-  border: 2px dotted $near-black;
-  &:hover { border: 2px solid $near-black; }
+  border: 1px dotted $near-black;
+  &:hover { border: 1px solid $near-black; }
 }
 .catalog { background-color: $bg-lite-gray; }
 .collection-preview {
   background-color: $collection-gray;
+  hr { border-top: 3px solid $bg-lite-gray; }
+  .retail-leads-row {
+    .grid-item { background-color: white; }
+  }
 }
 .featured { 
   background-color: $off-white;
@@ -109,7 +116,7 @@
   .btn[disabled] { border-color: $gray-orange; }
   .btn-outline { border-color: $bright-orange; }
   .form-group {
-    input[type="submit"] { &:hover, &:focus { border: 2px solid $bright-orange; } }
+    input[type="submit"] { &:hover, &:focus { border: 1px solid $bright-orange; } }
   }
 }
 .toggle-mv-menu {

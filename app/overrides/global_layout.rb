@@ -33,13 +33,6 @@ Deface::Override.new(name:             'user-login-panel',
                      partial:          'spree/shared/login_bar',
                      original:         'eb3fa668cd98b6a1c75c36420ef1b238a1fc55ad', disabled: false)
 
-
-Deface::Override.new(name:             'add-web-font',
-                     virtual_path:     'spree/layouts/spree_application',
-                     insert_bottom:    'head',
-                     text:             '<link href="//fonts.googleapis.com/css?family=Federo" rel="stylesheet" type="text/css">',
-                     original:         '3238a36183f493276bda180ca7b3430fb0cde007')
-
 Deface::Override.new(name:              'surround-with-canvas-div-1',
                      virtual_path:      'spree/layouts/spree_application',
                      surround_contents: "body",
@@ -56,12 +49,6 @@ Deface::Override.new(name:             'set-content-div-dom-class',
                      set_attributes:   'div#content',
                      attributes:       { class: 'col-xs-12' },
                      original:         nil)
-
-# Deface::Override.new(name:             'add-canvas-to-container',
-#                      virtual_path:     'spree/layouts/spree_application',
-#                      set_attributes:   'div.container',
-#                      attributes:       { class: 'container', canvas: 'container' },
-#                      original:         nil)
                      
 Deface::Override.new(name:             'include-slidebar-partial',
                      virtual_path:     'spree/layouts/spree_application',
@@ -78,20 +65,15 @@ Deface::Override.new(name:             'remove-product-name-from-index',
                      remove:           'erb[loud]:contains(\'itemprop: "name"\')',
                      original:         '6b0e20b504a733691837a40ded21582a15b114ab')
                      
-                     
-# Deface::Override.new(name:             'remove-br-from-product-index',
-#                      virtual_path:     'spree/shared/_products',
-#                      remove:           'br',
-#                      original:         '01298c01639d867f841df8043cedc891cf11d8f0')
 #######################################################################################
 
 
 ## This is to make header like the one on the landing page
-Deface::Override.new(name:             'replace-header-with-nav',
-                     virtual_path:     'spree/shared/_header',
-                     replace_contents: 'div#spree-header',
-                     partial:          'layouts/shared/main_header_nav',
-                     original:         '49eaf0408714e76c02811a1895ac7ad379576a56')
+# Deface::Override.new(name:             'replace-header-with-nav',
+#                      virtual_path:     'spree/shared/_header',
+#                      replace_contents: 'div#spree-header',
+#                      partial:          'layouts/shared/main_header_nav',
+#                      original:         '49eaf0408714e76c02811a1895ac7ad379576a56')
 
 
 

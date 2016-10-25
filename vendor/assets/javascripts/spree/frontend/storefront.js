@@ -59,7 +59,7 @@ $(document).ready(function(){
         console.log(item); // Do whatever you want with "item" object
       }
     },
-    delegate: 'a', // child items selector, by clicking on it popup will open
+    delegate: 'a.collection-img-link', // child items selector, by clicking on it popup will open
     gallery: {
       enabled: true,
       navigateByImgClick: true,
@@ -80,7 +80,9 @@ $(document).ready(function(){
       // By defailt it looks for an image tag:
       opener: function(openerElement) {
         // openerElement is the element on which popup was initialized, in this case its <a> tag
-        // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+        // you don't need to add "opener" option if this code matches your needs, it's defailt one.'
+        console.log("openerElement", openerElement);
+        console.log("openerElement is img?", openerElement.is('img'));
         return openerElement.is('img') ? openerElement : openerElement.find('img');
       }
     }

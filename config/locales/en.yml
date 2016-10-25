@@ -9,7 +9,10 @@ en:
      import: "Import"
      excel_file: "Spreadsheet File"
      process_images: "Generate Product Photos"
+     quick_variant_search: "Quick search (by SKU).."
      shop_by_taxonomy: "%{taxonomy}"
+     showcased: "Showcase Lifestyle Image"
+     new_hero_image: "New Lifestyle Image"
   views:
      pagination:
        first: "First"

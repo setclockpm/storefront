@@ -1,3 +1,4 @@
 <div class="grid-item col-md-4">
-  <%= collection_reference(image) %>
+  <%= collection_image_reference(variant) %>
+  <%= render partial: 'collection/retail_footer', locals: { variant: variant } if preview %>
 </div>

@@ -31,4 +31,11 @@ Spree::Admin::ProductsController.class_eval do
       flash[:error] = "There was a problem importing your images."
     end
   end
+  
+  def index
+    @custom_qs_placeholder = "Quick search (by SKU) .."
+    session[:return_to] = request.url
+    respond_with(@collection)
+  end
+  
 end

@@ -249,10 +249,18 @@ textarea::-webkit-input-placeholder {
   .btn-outline { color: $bright-orange; }
   .form-group {
     input[type="submit"] {
-      font-size: 16px;
+      font-size: 14px;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
+  }
+}
+.variant-retail-link {
+  a {
+    color: #da5544;
+    font-family: $forms-font;
+    font-size: 12px;
+    text-decoration: none;
   }
 }
 /* End DOM class selectors */
@@ -284,7 +292,7 @@ textarea::-webkit-input-placeholder {
     }
   }
 }
-#spree-header {
+#application-header {
   .nav {
     a {
       color: $near-black;
@@ -457,6 +465,10 @@ label {
   .promo {
     span { font-size: 2.5em; }
   }
+  .collection-preview {
+    h1 { font-size: 2em; }
+    .variant-name { padding: 0.5em; }
+  }
 }
 ///////////////////////////////////////////////////
   ///////////////////////////////////////////////
@@ -487,7 +499,7 @@ label {
   /* End DOM class selectors */
   
   /* Begin DOM ID selectors */
-  #spree-header {
+  #application-header {
     .navbar-collapse {
       color: #fff;
       

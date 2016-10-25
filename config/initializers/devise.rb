@@ -1,4 +1,4 @@
-Devise.secret_key = "47ef632c291c9f885f1c07f20d466e2e24c0454f4c7d7bf78ca3f2c382139e4bebd4a2582883474dbe20c4421f1e60d62465"
+Devise.secret_key = '2a6e151b4f7b580487a302dd18092e3ae6104d191f6b29207f36af7c81ab3910e5f417059887cbd6331477d420907d0f569ed868f5cf48a24456a3b1908b8e36'
 
 Devise.setup do |config|
   # Required so users don't lose their carts when they need to confirm.

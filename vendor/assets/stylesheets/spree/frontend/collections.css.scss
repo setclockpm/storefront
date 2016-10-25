@@ -1,4 +1,8 @@
-
+section {
+  &.collection-preview {
+    padding-bottom: 6em;
+  }
+}
 .collection-preview {
   h1 { margin-top: 0; }
   
@@ -13,10 +17,7 @@
     padding-left: 0px;
     padding-right: 0px;
     
-    a {
-      background: transparent;
-      text-decoration: underline;
-    }
+    a { background: transparent; }
     figcaption {
       position: absolute;
       left: 0%;
@@ -54,8 +55,16 @@
       }
     }
   }
+  .heading-row {
+    .btn-outline {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
+  .variant-name {
+    padding: 1em;
+  }
 }
-
 .collection {
    h1 { text-align: center; }
    
@@ -111,8 +120,13 @@
 ////////* Maximum width 992px section */////////
 ////////////////////////////////////////////////
 @media (max-width: 992px) {
-  
-  
+  .collection-preview {
+    hr { display: none; }
+  }
+  .main-row { display: none; }
+  .retail-leads-row {
+    .grid-item { margin-top: 1.5em; }
+  }
 }
 ////////////////////////////////////////////////
   ////////////////////////////////////////////
@@ -134,13 +148,11 @@
       padding-left: 4em;
       padding-right: 4em;
     }
-    .heading-row {
-      text-align: center;
-    }
+    .heading-row { text-align: center; }
   }
-  .see-more {
-    display: none;
-  }
+  .see-more { display: none; }
+  .variant-name { text-align: center; }
+  .variant-specs { display: none; }
 }
 ////////////////////////////////////////////////
   ////////////////////////////////////////////
@@ -195,7 +207,28 @@
   /////////* Minimum width 767px section *//////
 ///////////////////////////////////////////////////
 @media (min-width: 768px) {
-
+  .collection-preview {
+    .heading-row {
+      padding-bottom: 2.5em;
+      padding-top: 1.5em;
+      .title { padding-left: 0px; }
+      .see-more { padding-right: 0px; }
+    }
+  }
+  .variant-specs {
+    div { display: inline-block; }
+    
+    .variant-dimensions { 
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+    .variant-retail-link {
+      float: right;
+      padding-left: 1em;
+      padding-right: 1em;
+      text-align: right;
+    }
+  }
 }
 ///////////////////////////////////////////////////
 
@@ -209,8 +242,10 @@
      ////////////////////////////////////////
   /////////* Minimum width 1024px section *////
 ///////////////////////////////////////////////////
-@media (min-width: 1024px) {
-
+@media (min-width: 992px) {
+  section {
+    &.collection-preview { min-height: 100vh; }
+  }
 }
 ///////////////////////////////////////////////////
                         ///
@@ -239,11 +274,11 @@
 ///////////////////////////////////////////////////
 @media (min-width: 1440px) {
   .grid-uniform, .main-row {
-    max-width: 1672px;
-    margin: 10px auto;
+    //max-width: 1672px;
+//    margin: 10px auto;
   }
   .heading-row {
-    max-width: 1702px;
+//    max-width: 1702px;
   }
 }
 ///////////////////////////////////////////////////

@@ -18,6 +18,12 @@ a {
     text-decoration: none;
   }
 }
+div {
+  &#inquiries-card {
+    .btn-lg { padding: 8px 16px; }
+  }
+}
+
 hr {
   padding: 0;
   text-align: center;
