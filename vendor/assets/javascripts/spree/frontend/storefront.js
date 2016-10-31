@@ -91,8 +91,11 @@ $(document).ready(function(){
   
   
   $('#fullpage').fullpage({
-    anchors: ['snap-home', 'snap-collection', 'snap-catalog', 'snap-featured', 'snap-inquiries'],
-    fitToSection: false // because the sections ren't yet all full scree sized.
+    anchors: ['hello', 'collection', 'catalog', 'shouts', 'can-we-help'],
+    // fitToSection: true,
+    fitToSectionDelay: 5000,
+    fixedElements: 'footer.below',
+    recordHistory: false
   });
   
   
