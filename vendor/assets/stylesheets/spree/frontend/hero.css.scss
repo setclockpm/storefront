@@ -32,7 +32,12 @@
     top: 40%;
     top: 37vw;
   }
-  .slick-slide { img { max-width: 100%; } }
+  .slick-slide {
+    img {
+      //max-width: 100%;
+      width: 30%;
+    }
+  }
 }
 .promo {
   margin: auto;
