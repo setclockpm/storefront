@@ -256,7 +256,10 @@ section {
 @media (min-width: 768px) {
     
   section {
-    &.spotlight-major { .container { min-height: 40vw; } }
+    &.featured {
+      min-height: 100vh;
+      .container { min-height: 40vw; }
+    }
   }
 }
 ///////////////////////////////////////////////////
