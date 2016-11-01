@@ -85,6 +85,9 @@ section {
 .featured-in {
   padding-left: 127px;
 }
+.musketeer {
+  display: none;
+}
 
 
 #press * { z-index: 2; }
@@ -340,6 +343,15 @@ section {
       figure {
         margin: -25px .9em;
         padding-bottom: 100%;
+      }
+    }
+    .musketeer {
+      display: block;
+      margin-top: 25px;
+      
+      img {
+        opacity: .8;
+        width: 100%;
       }
     }
   }
