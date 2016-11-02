@@ -348,10 +348,15 @@ section {
     .musketeer {
       display: block;
       margin-top: 25px;
-      
+
       img {
         opacity: .8;
-        width: 100%;
+        width: 25%;
+        left: 33vw;
+        position: relative;
+        top: 30vh;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
       }
     }
   }
