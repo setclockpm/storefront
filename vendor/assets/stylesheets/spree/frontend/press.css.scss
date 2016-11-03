@@ -21,6 +21,7 @@ hr {
 }
 section {
   &.featured {
+    background-image: url(featured_bg_bnw.jpg);
     padding: 3em 0;
     position: relative;
     
@@ -31,9 +32,8 @@ section {
     }
     .grid-item {
       overflow: hidden;
-  
-      &:hover { figcaption { opacity: 0.9; } }
-      &:hover { img { opacity: 1; } }
+
+      &:hover { figcaption { display: block; } }
 
       figure {
         margin: -10px 1em;
@@ -45,15 +45,15 @@ section {
           bottom: -9999px;
           left: -9999px;
           margin: auto;
-          opacity: 0.85;
           position: absolute;
           right: -9999px;
           top: -9999px;
         }
       }
       figcaption {
+        display: none;
         left: 0%;
-        opacity: 0;
+//        opacity: 0;
         position: absolute;
         text-align: center;
         top: 58%;
@@ -83,7 +83,7 @@ section {
 
 
 .featured-in {
-  padding-left: 127px;
+  padding-left: 112px;
 }
 .musketeer {
   display: none;
@@ -262,6 +262,10 @@ section {
     &.featured {
       min-height: 100vh;
       .container { min-height: 40vw; }
+      
+      .overlay {
+        margin: 0px 15px;
+      }
     }
   }
 }
