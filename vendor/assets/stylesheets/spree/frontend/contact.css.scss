@@ -180,8 +180,8 @@ section {
     div { text-align: center; }
   }
   #inquiries-card {
-    padding-left: 4em;
-    padding-right: 4em;
+    padding-left: 2em;
+    padding-right: 2em;
   }
 
 }
@@ -212,12 +212,10 @@ section {
 //////////////////////////////////////////////
 @media (min-width: 768px) {
   
+  footer { &.contact { min-height: 100vh; } }
+  hr { &.tiny { margin-left: 0%; } }
+  
   #contact-card { padding-bottom: 20%; }
-  hr {
-    &.tiny {
-      margin-left: 0%;
-    }
-  }
   
 }
 ////////////////////////////////////////////////
@@ -238,9 +236,9 @@ section {
   section {
     &.catalog { padding-bottom: 0em; }
   }
-  #contact-card { height: calc(100vh - 9rem); }
+  #contact-card { height: calc(100vh - 6rem); }
   #inquiries-card {
-    padding-left: 10em;
+    padding-left: 97px;
     padding-right: 4em;
   }
 }
@@ -259,7 +257,7 @@ section {
 //////////////////////////////////////////////
 @media (min-width: 1170px) {
   
-  #contact-card { padding-bottom: 25%; }
+  #contact-card { padding-bottom: 50%; }
   
 }
 ////////////////////////////////////////////////

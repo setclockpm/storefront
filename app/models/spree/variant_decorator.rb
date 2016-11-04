@@ -1,6 +1,6 @@
 Spree::Variant.class_eval do
   MAIN_LOCATION = "Main Location"
-  
+  attr_reader :collection_image
   
   class << self
     def find_by_master_sku(master_sku, sku)
@@ -10,12 +10,33 @@ Spree::Variant.class_eval do
       puts " /ALL|GRP/ pattern found, attempting to lookup variant by master sku: #{master_sku}."
       @variant = Spree::Variant.find_by(sku: master_sku) 
     end
+    
+    def find_those_having_master_images
+      swhere(is_master: true).joins(:images).all
+    end
+    
   end
   
   
   def build_image_from_path(path, image_alt=nil)
     self.images.build(attachment: File.open(path, 'rb'), alt: image_alt)
     # @image        = @variant.images.new(attachment: File.open(@path_to_raw_image, 'rb'), alt: image_alt)
+  end
+  
+  def collection_image
+    if master_images
+      @collection_image = master_images.first
+    end
+  end
+  
+  def dimensions
+    return unless height && width && depth
+    "#{height} x #{width} x #{depth}"
+  end
+  
+  def master_images
+    return unless is_master?
+    return images if images.any?
   end
   
   def options_text
@@ -28,7 +49,6 @@ Spree::Variant.class_eval do
     end
     puts "\nvalues before inspect: #{values.inspect}\n"
     values.to_sentence({ words_connector: ", ", two_words_connector: ", " })
-    #puts "\nvalues after to_sentence inspect: #{values.inspect}\n"
   end
   
   
@@ -53,6 +73,7 @@ Spree::Variant.class_eval do
     @location = Spree::StockLocation.find_by_admin_name(MAIN_LOCATION)
     update_main_location_stock_count(qty)
   end
+  
   
   
   

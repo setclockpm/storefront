@@ -75,8 +75,12 @@ footer {
   .footer-below {
     padding-top: 5px;
     
-    .cc { padding: 45px 0px 15px 0px; }
-    .nav { padding: 45px 0px; }
+    .cc { padding: 20px 0px 5px 0px; }
+    .nav { padding: 25px 0px; }
+  }
+  .inquiries-front {
+    position: relative;
+    top: 5vh;
   }
   
 }
@@ -94,7 +98,7 @@ footer {
 @media (min-width: 992px) {
   #spotlight-card {
     padding-left: 4em;
-    padding-right: 127px;
+    padding-right: 112px;
   }
 }
 ///////////////////////////////////////////////////
@@ -113,7 +117,6 @@ footer {
 //////////////////////////////////////////////
 @media (min-width: 1900px) {
   footer {
-    #inquiries-card { padding-top: 9%; }
     #spotlight-card { img { width: 90%; } }
   }
   

@@ -2,10 +2,6 @@ module ApplicationHelper
   INTERNAL_IP = "108.209.219.227"
 
   
-  def collection_thumbnail(img_path)
-    image_tag img_path, title: "furniture collection pull-sku-from-record", class: "collection-image"
-  end
-  
   def color_options(v, options={})
     text = variant_options(v, options={})
   end
@@ -25,19 +21,6 @@ module ApplicationHelper
   
   def navbar_behavior
     "navbar-#{current_page?(main_app.root_url) ? "fixed" : "static"}-top"
-  end
-  
-  def navbar_page
-    unless request
-      raise "View context has not provided a Request object! #navbar_page"
-    end
-    
-    if request.get?
-      puts "current_page?(main_app.root_url): #{current_page?(main_app.root_url)}\n"
-      current_page?(main_app.root_url) ? "transparent" : "opaque"
-    else
-      request.original_url.end_with?(main_app.root_url) ? "transparent" : "opaque"
-    end
   end
   
   def nav_tab(title, url, options={})
