@@ -4,9 +4,14 @@
 
 <div class="container">
   <div class="row standard-grid grid">
-    <% featured_in_images.each do |image, uri| %>
-      <%= render partial: "press_item", locals: { image: image, url: uri } %>
-    <% end %>
+    <div class="alpha60 overlay clearfix">
+      <% featured_in_images.each do |image, uri| %>
+        <%= render partial: "press_item", locals: { image: image, url: uri } %>
+      <% end %>
+    </div>
   </div>
-</div>
+  <div class="musketeer row">
+    <%= image_tag "musketeer.png", title: "musketeer silhouette", class: "spotlight" %>
+  </div>
+</div> 
  

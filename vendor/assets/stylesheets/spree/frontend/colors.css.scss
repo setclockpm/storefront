@@ -55,7 +55,7 @@
   border: 1px dotted $near-black;
   &:hover { border: 1px solid $near-black; }
 }
-.catalog { background-color: $bg-lite-gray; }
+.catalog { background-color: $off-white; }
 .collection-preview {
   background-color: $collection-gray;
   hr { border-top: 3px solid $bg-lite-gray; }
@@ -64,8 +64,9 @@
   }
 }
 .featured { 
-  background-color: $off-white;
+  background-color: $bg-lite-gray;
   border-top: 1px solid $bebe-gray;
+  border-bottom: 1px inset $bebe-gray;
 }
 .floating-label-form-group {
   border-bottom: 1px solid $trspt-mid-gray;
@@ -134,7 +135,7 @@
 button { &.purchase { background-color: $bright-orange; } }
 footer { 
   &.below { background-color: $bg-lite-gray; }
-  &.contact { border-top: 1px solid $bg-lite-gray; }
+  &.contact { background-color: $collection-gray; }
 }
 hr {
   &.tiny { border: 1px solid white; }
@@ -153,7 +154,7 @@ nav {
       background: rgba(113, 190, 190, 0.0);
       &:hover, &:focus { background: rgba(113, 190, 190, .05); }
     }
-    
+
     ul {
       &.navbar-nav {
         li {
@@ -189,7 +190,24 @@ textarea::-webkit-input-placeholder { opacity: 0.7; }
   /////////* Minimum width 767px section *//////
 ///////////////////////////////////////////////////
 @media (min-width: 767px) {
-  
+  section {
+    &.featured {
+      .overlay {
+        background-color: white;
+
+      }
+      .alpha60 {
+        /* Fallback for web browsers that doesn't support RGBa */
+        background: rgb(255, 255, 255);
+        /* RGBa with 0.6 opacity */
+        background: rgba(255, 255, 255, 0.6);
+        /* For IE 5.5 - 7*/
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+        /* For IE 8*/
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+      }
+    }
+  }
 }
 
 ///////////////////////////////////////////////////
