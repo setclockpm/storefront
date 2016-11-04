@@ -5,9 +5,9 @@
         <%= image_tag "feathers/original.png", class: 'logo-slidebar' %>
       </div>
     </li>
-    <li class="page-scroll dl-nav-item"><%= link_to 'Our Story', main_app.about_path %></li>
+    <li class="dl-nav-item"><%= link_to 'Our Story', main_app.about_path %></li>
     <li class="dl-nav-item"><%= link_to 'Collection', main_app.collection_path %></li>
-    <li class="page-scroll dl-nav-item"><%= link_to 'Contact', main_app.contact_path(subject: 'Other') %></li>
+    <li class="dl-nav-item"><%= link_to 'Contact', main_app.contact_path(subject: 'Other') %></li>
     <li class="dl-nav-item"><%= link_to 'Wholesale', main_app.contact_path(subject: 'Wholesale Inquiries') %></li>
     <%#= render partial: "layouts/shared/taxonomy_links", locals: { max_level: Spree::Config[:max_level_in_taxons_menu] || 1 } %>
     <% if spree_current_user %>

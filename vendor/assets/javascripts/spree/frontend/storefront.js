@@ -1,14 +1,4 @@
-// jQuery for page scrolling feature - requires jQuery Easing plugin
-$(function() {
-  $('body').on('click', '.page-scroll a', function(event) {
-    var $anchor = $(this);
-    $('html, body').stop().animate({
-        scrollTop: $($anchor.attr('href')).offset().top
-    }, 1500, 'easeInOutExpo');
-    event.preventDefault();
-  });
-});
-
+  
 // Floating label headings for the contact form
 $(function() {
   $("body").on("input propertychange", ".floating-label-form-group", function(e) {
@@ -20,8 +10,6 @@ $(function() {
   });
 });
 
-// Highlight the top nav as scrolling occurs
-$('body').scrollspy({ target: '.navbar-fixed-top' })
 
 // Closes the Responsive Menu on Menu Item Click
 $('.navbar-collapse ul li a:not(.dropdown-toggle)').click(function() {
@@ -85,11 +73,32 @@ $(document).ready(function(){
       }
     }
   });
-  
-  // This may have been part of the startbootstrap teemplate and may not be needed
-  // TODO: Check if this is even used.
-  $("a[data-toggle=\"tab\"]").click(function(e) {
-    e.preventDefault();
-    $(this).tab("show");
-  });
 });
+
+
+
+(function($) {
+    "use strict"; // Start of use strict
+
+    // Highlight the top nav as scrolling occurs
+    $('body').scrollspy({
+        target: '.navbar-fixed-top',
+        offset: 51
+    });
+    
+    $('nav').on('affix.bs.affix', function (){
+         $('body').css('margin-top', $('nav').height());
+    });
+
+    $('nav').on('affix-top.bs.affix', function (){
+         $('body').css('margin-top', 0);
+    });
+
+    // Offset for Main Navigation
+    $('#main-nav').affix({
+      offset: {
+        top: $('header').height()
+      }
+    })
+
+})(jQuery); // End of use strict
