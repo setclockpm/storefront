@@ -135,6 +135,13 @@ textarea::-webkit-input-placeholder {
 
 /////////////////////////////////
 /* Begin class selectors */
+
+.abouter {
+  p {
+    font-size: 22px;
+  }
+}
+
 .bootstrap-select {
   button { 
     color: $mid-gray;
