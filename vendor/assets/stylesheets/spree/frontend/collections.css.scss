@@ -61,18 +61,13 @@ section {
       padding-right: 32px;
     }
   }
-  .variant-name {
-    padding: 1em;
-  }
+  .variant-name  { padding: 1em 1em 0.5em 1em; }
+  .variant-specs { padding-bottom: 0.4em; }
 }
 .collection {
    h1 { text-align: center; }
    
-  .container {
-//    padding-left: 127px;
-//    padding-right: 127px;
-    width: 80%;
-  }
+  .container { width: 80%; }
   .grid-item {
     border: 4px solid #fbfbfb;
     float: left;
@@ -223,7 +218,6 @@ section {
       padding-right: 1em;
     }
     .variant-retail-link {
-      float: right;
       padding-left: 1em;
       padding-right: 1em;
       text-align: right;
