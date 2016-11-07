@@ -218,8 +218,8 @@ section {
       padding-right: 1em;
     }
     .variant-retail-link {
-      padding-left: 1em;
-      padding-right: 1em;
+      padding-left: .6em;
+      padding-right: .6em;
       text-align: right;
     }
   }
@@ -239,6 +239,13 @@ section {
 @media (min-width: 992px) {
   section {
     &.collection-preview { min-height: 100vh; }
+  }
+  
+  .variant-specs {
+    .variant-retail-link {
+      padding-left: 1em;
+      padding-right: 1em;
+    }
   }
 }
 ///////////////////////////////////////////////////
