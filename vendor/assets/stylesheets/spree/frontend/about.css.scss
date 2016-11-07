@@ -1,3 +1,11 @@
+div {
+  &#company-tagline {
+    left: 14em;
+    position: absolute;
+    top: 10em;
+  }
+}
+
 header {
   &.our-story {
     background-image: url(fremont.jpg);
@@ -12,9 +20,7 @@ header {
 }
 
 section {
-  &.our-story {
-    padding-top: 0em;
-  }
+//  &.our-story { padding-top: 0em; }
 }
 
 hr {
@@ -23,4 +29,13 @@ hr {
     margin: 20px auto 20px;
     max-width: 150px;
   }
+}
+
+
+
+.slogan {
+  text-align: center;
+}
+.slogan-container {
+  padding: 2em 0em;
 }

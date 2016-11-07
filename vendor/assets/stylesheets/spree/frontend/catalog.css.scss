@@ -1,4 +1,4 @@
-.abouter {
+.catalog-slogan {
   margin-top: 15px;
   
   a { margin-top: 15px; }
@@ -41,9 +41,6 @@
     h2 { margin-top: 5em; }
   }
   
-// .open-catalog {
-//   margin-right: 0em;
-//  }
 }
 ////////////////////////////////////////////////
   ////////////////////////////////////////////
@@ -115,7 +112,7 @@
   section {
     &.catalog { min-height: 100vh; }
   }
-  .abouter { padding-right: 2em; }
+  .catalog-slogan { padding-right: 2em; }
 }
 ///////////////////////////////////////////////////
                         ///
