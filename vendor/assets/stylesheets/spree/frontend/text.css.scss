@@ -202,6 +202,14 @@ textarea::-webkit-input-placeholder {
   &.floating-label-form-group-with-focus { label { color: rgba(113, 190, 190, 1.0); } }
   label { color: #333; }
 }
+.footer-below {
+  a {
+    &.utility { color: white; }
+  }
+  p {
+    &.copyright { color: white; }
+  }
+}
 .grid-item {
   figcaption {
     h2 {
