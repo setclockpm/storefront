@@ -269,8 +269,9 @@ textarea::-webkit-input-placeholder {
 .variant-retail-link {
   a {
     color: #da5544;
-    font-family: $forms-font;
-    font-size: 12px;
+    font-family: $forms-font-light;
+    font-size: 10px;
+    letter-spacing: 1px;
     text-decoration: none;
   }
 }
