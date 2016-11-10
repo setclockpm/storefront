@@ -1,8 +1,6 @@
 div {
   &#company-tagline {
-    left: 14em;
-    position: absolute;
-    top: 10em;
+    h1 { margin-bottom: 5px; }
   }
 }
 
@@ -13,14 +11,21 @@ header {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-bottom: 43%;
+    padding-top: 31%;
+    padding-bottom: 2%;
     position: relative;
     margin: 0 auto;
   }
 }
 
 section {
-//  &.our-story { padding-top: 0em; }
+  &.our-story {
+    padding-top: 2em;
+    
+    img {
+      &.accent { max-width: 3%; }
+    }
+  }
 }
 
 hr {
