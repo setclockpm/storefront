@@ -2,14 +2,10 @@
 <header class="our-story">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 text-center">
+      <div id="company-tagline" class="col-md-12 text-center">
         <h4><%= currently_at "Our Story" %></h4>
+        <h1 class="company-name"> Porthos Home </h1>
       </div>
-    </div>
-    <div id="company-tagline">
-      <h1 class="company-name">
-        Porthos Home
-      </h1>
     </div>
   </div>
 </header>
@@ -20,8 +16,13 @@
 
 <section id="about-us" class="our-story">
   <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <%= image_tag "feathers/original.png", title: "feather", class: "accent" %>
+      </div>
+    </div>
     
-    <div class="slogan-container">
+    <div class="row slogan-container">
       <h2 class="slogan">
         Right piece, right person, right price
       </h2>
