@@ -1,3 +1,9 @@
+div {
+  &#company-tagline {
+    h1 { margin-bottom: 5px; }
+  }
+}
+
 header {
   &.our-story {
     background-image: url(fremont.jpg);
@@ -5,7 +11,8 @@ header {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-bottom: 43%;
+    padding-top: 31%;
+    padding-bottom: 2%;
     position: relative;
     margin: 0 auto;
   }
@@ -13,7 +20,11 @@ header {
 
 section {
   &.our-story {
-    padding-top: 0em;
+    padding-top: 2em;
+    
+    img {
+      &.accent { max-width: 3%; }
+    }
   }
 }
 
@@ -24,3 +35,10 @@ hr {
     max-width: 150px;
   }
 }
+
+
+.slogan { text-align: center; }
+.slogan-container {
+  padding: 2em 0em;
+}
+

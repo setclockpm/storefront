@@ -135,6 +135,13 @@ textarea::-webkit-input-placeholder {
 
 /////////////////////////////////
 /* Begin class selectors */
+
+.abouter {
+  p {
+    font-size: 22px;
+  }
+}
+
 .bootstrap-select {
   button { 
     color: $mid-gray;
@@ -157,6 +164,10 @@ textarea::-webkit-input-placeholder {
     letter-spacing: 1px;
     text-transform: uppercase;
   }
+}
+.company-name {
+  color: white;
+  font-size: 5em;
 }
 .copyright {
   color: $near-black;
@@ -210,7 +221,7 @@ textarea::-webkit-input-placeholder {
 .help-block {
   font-family: $forms-font;
   font-size: 14px;
-  &.text-danger { color: #a94442; }
+  &.text-danger { color: #da5544; }
 }
 .promo {
   span { font-size: 4em; }
@@ -262,8 +273,9 @@ textarea::-webkit-input-placeholder {
 .variant-retail-link {
   a {
     color: #da5544;
-    font-family: $forms-font;
-    font-size: 12px;
+    font-family: $forms-font-light;
+    font-size: 10px;
+    letter-spacing: 1px;
     text-decoration: none;
   }
 }
