@@ -1,5 +1,6 @@
 define( [
-	"./core"
+	"./core",
+	"./traversing"
 ], function( jQuery ) {
 
 "use strict";

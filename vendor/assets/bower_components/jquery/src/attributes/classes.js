@@ -1,15 +1,21 @@
 define( [
 	"../core",
+<<<<<<< HEAD
+	"../var/rnotwhite",
+	"../core/init"
+], function( jQuery, rnotwhite ) {
+=======
 	"../core/stripAndCollapse",
 	"../var/rnothtmlwhite",
 	"../data/var/dataPriv",
 	"../core/init"
 ], function( jQuery, stripAndCollapse, rnothtmlwhite, dataPriv ) {
+>>>>>>> master
 
 "use strict";
 
 function getClass( elem ) {
-	return elem.getAttribute && elem.getAttribute( "class" ) || "";
+	return jQuery.attr( elem, "class" ) || "";
 }
 
 jQuery.fn.extend( {
@@ -38,10 +44,15 @@ jQuery.fn.extend( {
 						}
 					}
 
+<<<<<<< HEAD
+					// only assign if different to avoid unneeded rendering.
+					finalValue = jQuery.trim( cur );
+=======
 					// Only assign if different to avoid unneeded rendering.
 					finalValue = stripAndCollapse( cur );
+>>>>>>> master
 					if ( curValue !== finalValue ) {
-						elem.setAttribute( "class", finalValue );
+						jQuery.attr( elem, "class", finalValue );
 					}
 				}
 			}
@@ -86,7 +97,7 @@ jQuery.fn.extend( {
 					// Only assign if different to avoid unneeded rendering.
 					finalValue = stripAndCollapse( cur );
 					if ( curValue !== finalValue ) {
-						elem.setAttribute( "class", finalValue );
+						jQuery.attr( elem, "class", finalValue );
 					}
 				}
 			}
@@ -136,21 +147,19 @@ jQuery.fn.extend( {
 				className = getClass( this );
 				if ( className ) {
 
-					// Store className if set
-					dataPriv.set( this, "__className__", className );
+					// store className if set
+					jQuery._data( this, "__className__", className );
 				}
 
-				// If the element has a class name or if we're passed `false`,
+				// If the element has a class name or if we're passed "false",
 				// then remove the whole classname (if there was one, the above saved it).
 				// Otherwise bring back whatever was previously saved (if anything),
 				// falling back to the empty string if nothing was stored.
-				if ( this.setAttribute ) {
-					this.setAttribute( "class",
-						className || value === false ?
-						"" :
-						dataPriv.get( this, "__className__" ) || ""
-					);
-				}
+				jQuery.attr( this, "class",
+					className || value === false ?
+					"" :
+					jQuery._data( this, "__className__" ) || ""
+				);
 			}
 		} );
 	},

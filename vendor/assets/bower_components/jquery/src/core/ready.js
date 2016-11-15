@@ -68,9 +68,15 @@ jQuery.ready.then = readyList.then;
 
 // The ready event handler and self cleanup method
 function completed() {
-	document.removeEventListener( "DOMContentLoaded", completed );
-	window.removeEventListener( "load", completed );
-	jQuery.ready();
+
+	// readyState === "complete" is good enough for us to call the dom ready in oldIE
+	if ( document.addEventListener ||
+		window.event.type === "load" ||
+		document.readyState === "complete" ) {
+
+		detach();
+		jQuery.ready();
+	}
 }
 
 // Catch cases where $(document).ready() is called
@@ -84,7 +90,6 @@ if ( document.readyState === "complete" ||
 	window.setTimeout( jQuery.ready );
 
 } else {
-
 	// Use the handy event callback
 	document.addEventListener( "DOMContentLoaded", completed );
 

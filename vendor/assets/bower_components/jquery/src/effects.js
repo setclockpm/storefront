@@ -1,6 +1,6 @@
 define( [
 	"./core",
-	"./var/document",
+	"./effects/support",
 	"./var/rcssNum",
 	"./var/rnothtmlwhite",
 	"./css/var/cssExpand",
@@ -10,6 +10,7 @@ define( [
 	"./data/var/dataPriv",
 	"./css/showHide",
 
+	"./var/document",
 	"./core/init",
 	"./queue",
 	"./deferred",
@@ -45,11 +46,11 @@ function createFxNow() {
 // Generate parameters to create a standard animation
 function genFx( type, includeWidth ) {
 	var which,
-		i = 0,
-		attrs = { height: type };
+		attrs = { height: type },
+		i = 0;
 
-	// If we include width, step value is 1 to do all cssExpand values,
-	// otherwise step value is 2 to skip over Left and Right
+	// if we include width, step value is 1 to do all cssExpand values,
+	// if we don't include width, step value is 2 to skip over Left and Right
 	includeWidth = includeWidth ? 1 : 0;
 	for ( ; i < 4; i += 2 - includeWidth ) {
 		which = cssExpand[ i ];
@@ -71,7 +72,7 @@ function createTween( value, prop, animation ) {
 	for ( ; index < length; index++ ) {
 		if ( ( tween = collection[ index ].call( animation, prop, value ) ) ) {
 
-			// We're done with this property
+			// we're done with this property
 			return tween;
 		}
 	}
@@ -102,7 +103,8 @@ function defaultPrefilter( elem, props, opts ) {
 
 		anim.always( function() {
 
-			// Ensure the complete handler is called before this completes
+			// doing this makes sure that the complete handler will be called
+			// before this completes
 			anim.always( function() {
 				hooks.unqueued--;
 				if ( !jQuery.queue( elem, "fx" ).length ) {
@@ -188,11 +190,13 @@ function defaultPrefilter( elem, props, opts ) {
 
 	if ( opts.overflow ) {
 		style.overflow = "hidden";
-		anim.always( function() {
-			style.overflow = opts.overflow[ 0 ];
-			style.overflowX = opts.overflow[ 1 ];
-			style.overflowY = opts.overflow[ 2 ];
-		} );
+		if ( !support.shrinkWrapBlocks() ) {
+			anim.always( function() {
+				style.overflow = opts.overflow[ 0 ];
+				style.overflowX = opts.overflow[ 1 ];
+				style.overflowY = opts.overflow[ 2 ];
+			} );
+		}
 	}
 
 	// Implement show/hide animations
@@ -271,8 +275,8 @@ function propFilter( props, specialEasing ) {
 			value = hooks.expand( value );
 			delete props[ name ];
 
-			// Not quite $.extend, this won't overwrite existing keys.
-			// Reusing 'index' because we have the correct "name"
+			// not quite $.extend, this wont overwrite keys already present.
+			// also - reusing 'index' from above because we have the correct "name"
 			for ( index in value ) {
 				if ( !( index in props ) ) {
 					props[ index ] = value[ index ];
@@ -292,7 +296,7 @@ function Animation( elem, properties, options ) {
 		length = Animation.prefilters.length,
 		deferred = jQuery.Deferred().always( function() {
 
-			// Don't match elem in the :animated selector
+			// don't match elem in the :animated selector
 			delete tick.elem;
 		} ),
 		tick = function() {
@@ -343,7 +347,7 @@ function Animation( elem, properties, options ) {
 			stop: function( gotoEnd ) {
 				var index = 0,
 
-					// If we are going to the end, we want to run all the tweens
+					// if we are going to the end, we want to run all the tweens
 					// otherwise we skip this part
 					length = gotoEnd ? animation.tweens.length : 0;
 				if ( stopped ) {
@@ -354,7 +358,8 @@ function Animation( elem, properties, options ) {
 					animation.tweens[ index ].run( 1 );
 				}
 
-				// Resolve when we played the last frame; otherwise, reject
+				// resolve when we played the last frame
+				// otherwise, reject
 				if ( gotoEnd ) {
 					deferred.notifyWith( elem, [ animation, 1, 0 ] );
 					deferred.resolveWith( elem, [ animation, gotoEnd ] );
@@ -463,7 +468,7 @@ jQuery.speed = function( speed, easing, fn ) {
 		}
 	}
 
-	// Normalize opt.queue - true/undefined/null -> "fx"
+	// normalize opt.queue - true/undefined/null -> "fx"
 	if ( opt.queue == null || opt.queue === true ) {
 		opt.queue = "fx";
 	}
@@ -490,7 +495,7 @@ jQuery.fn.extend( {
 		// Show any hidden elements after setting opacity to 0
 		return this.filter( isHiddenWithinTree ).css( "opacity", 0 ).show()
 
-			// Animate to the value specified
+			// animate to the value specified
 			.end().animate( { opacity: to }, speed, easing, callback );
 	},
 	animate: function( prop, speed, easing, callback ) {
@@ -502,7 +507,7 @@ jQuery.fn.extend( {
 				var anim = Animation( this, jQuery.extend( {}, prop ), optall );
 
 				// Empty animations, or finishing resolves immediately
-				if ( empty || dataPriv.get( this, "finish" ) ) {
+				if ( empty || jQuery._data( this, "finish" ) ) {
 					anim.stop( true );
 				}
 			};
@@ -532,7 +537,7 @@ jQuery.fn.extend( {
 			var dequeue = true,
 				index = type != null && type + "queueHooks",
 				timers = jQuery.timers,
-				data = dataPriv.get( this );
+				data = jQuery._data( this );
 
 			if ( index ) {
 				if ( data[ index ] && data[ index ].stop ) {
@@ -556,9 +561,9 @@ jQuery.fn.extend( {
 				}
 			}
 
-			// Start the next in the queue if the last step wasn't forced.
-			// Timers currently will call their complete callbacks, which
-			// will dequeue but only if they were gotoEnd.
+			// start the next in the queue if the last step wasn't forced
+			// timers currently will call their complete callbacks, which will dequeue
+			// but only if they were gotoEnd
 			if ( dequeue || !gotoEnd ) {
 				jQuery.dequeue( this, type );
 			}
@@ -570,23 +575,23 @@ jQuery.fn.extend( {
 		}
 		return this.each( function() {
 			var index,
-				data = dataPriv.get( this ),
+				data = jQuery._data( this ),
 				queue = data[ type + "queue" ],
 				hooks = data[ type + "queueHooks" ],
 				timers = jQuery.timers,
 				length = queue ? queue.length : 0;
 
-			// Enable finishing flag on private data
+			// enable finishing flag on private data
 			data.finish = true;
 
-			// Empty the queue first
+			// empty the queue first
 			jQuery.queue( this, type, [] );
 
 			if ( hooks && hooks.stop ) {
 				hooks.stop.call( this, true );
 			}
 
-			// Look for any active animations, and finish them
+			// look for any active animations, and finish them
 			for ( index = timers.length; index--; ) {
 				if ( timers[ index ].elem === this && timers[ index ].queue === type ) {
 					timers[ index ].anim.stop( true );
@@ -594,14 +599,14 @@ jQuery.fn.extend( {
 				}
 			}
 
-			// Look for any animations in the old queue and finish them
+			// look for any animations in the old queue and finish them
 			for ( index = 0; index < length; index++ ) {
 				if ( queue[ index ] && queue[ index ].finish ) {
 					queue[ index ].finish.call( this );
 				}
 			}
 
-			// Turn off finishing flag
+			// turn off finishing flag
 			delete data.finish;
 		} );
 	}
@@ -633,8 +638,8 @@ jQuery.each( {
 jQuery.timers = [];
 jQuery.fx.tick = function() {
 	var timer,
-		i = 0,
-		timers = jQuery.timers;
+		timers = jQuery.timers,
+		i = 0;
 
 	fxNow = jQuery.now();
 
@@ -663,6 +668,7 @@ jQuery.fx.timer = function( timer ) {
 };
 
 jQuery.fx.interval = 13;
+
 jQuery.fx.start = function() {
 	if ( !timerId ) {
 		timerId = window.requestAnimationFrame ?

@@ -2,7 +2,8 @@ define( [
 	"../core",
 	"../var/document",
 	"./var/rsingleTag",
-	"../manipulation/buildFragment",
+	"../manipulation/buildFragment"
+], function( jQuery, document, rsingleTag, buildFragment ) {
 
 	// This is the only module that needs core/support
 	"./support"

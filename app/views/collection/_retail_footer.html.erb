@@ -3,9 +3,6 @@
     <%= link_to variant.name, variant.product.retail_vendor_url || "https://porthoshome.com", class: 'click-out' %>
   </div>
   <div class="variant-specs">
-    <div class="variant-dimensions">
-      <%= variant.dimensions %>
-    </div>
     <div class="variant-retail-link">
       <%= link_to "Purchase Item >".upcase, variant.product.retail_vendor_url || "https://porthoshome.com", class: 'click-out' %>
     </div>

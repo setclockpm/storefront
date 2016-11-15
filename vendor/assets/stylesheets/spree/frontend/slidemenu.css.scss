@@ -21,29 +21,6 @@
     max-width: 120px;
   }
 }
-.toggle-mv-menu {
-  background: none;
-  background-color: transparent;
-  background-image: none;
-  border-radius: 4px;
-  float: none;
-  margin: 8px auto;
-  padding: 9px 10px;
-  position: relative;
-  
-  
-  &:focus { outline: 0; }
-  
-  .icon-bar {
-    display: block;
-    width: 23px;
-    height: 2px;
-    border-radius: 2px;
-  }
-}
-.toggle-mv-menu .icon-bar + .icon-bar {
-  margin-top: 4px;
-}
 
 #porthos-header {
   .toggle-mv-menu {

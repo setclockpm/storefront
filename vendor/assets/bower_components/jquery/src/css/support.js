@@ -69,19 +69,42 @@ define( [
 			computeStyleTests();
 			return pixelPositionVal;
 		},
+
 		boxSizingReliable: function() {
 			computeStyleTests();
 			return boxSizingReliableVal;
 		},
+
 		pixelMarginRight: function() {
 			computeStyleTests();
 			return pixelMarginRightVal;
 		},
+
+		pixelPosition: function() {
+			if ( pixelPositionVal == null ) {
+				computeStyleTests();
+			}
+			return pixelPositionVal;
+		},
+
+		reliableMarginRight: function() {
+
+			// Support: Android 2.3
+			if ( pixelPositionVal == null ) {
+				computeStyleTests();
+			}
+			return reliableMarginRightVal;
+		},
+
 		reliableMarginLeft: function() {
 			computeStyleTests();
 			return reliableMarginLeftVal;
 		}
-	} );
+
+		// Teardown
+		documentElement.removeChild( container );
+	}
+
 } )();
 
 return support;

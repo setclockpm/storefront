@@ -1,8 +1,9 @@
 define( [
+	"exports",
 	"../core",
+	"../var/documentElement",
 	"./var/rnumnonpx",
 	"./var/rmargin",
-	"./var/getStyles",
 	"./support",
 	"../selector" // Get jQuery.contains
 ], function( jQuery, rnumnonpx, rmargin, getStyles, support ) {
@@ -30,30 +31,34 @@ function curCSS( elem, name, computed ) {
 		// This is against the CSSOM draft spec:
 		// https://drafts.csswg.org/cssom/#resolved-values
 		if ( !support.pixelMarginRight() && rnumnonpx.test( ret ) && rmargin.test( name ) ) {
-
 			// Remember the original values
-			width = style.width;
-			minWidth = style.minWidth;
-			maxWidth = style.maxWidth;
+			left = style.left;
+			rs = elem.runtimeStyle;
+			rsLeft = rs && rs.left;
 
 			// Put in the new values to get a computed value out
-			style.minWidth = style.maxWidth = style.width = ret;
-			ret = computed.width;
+			if ( rsLeft ) {
+				rs.left = elem.currentStyle.left;
+			}
+			style.left = name === "fontSize" ? "1em" : ret;
+			ret = style.pixelLeft + "px";
 
 			// Revert the changed values
-			style.width = width;
-			style.minWidth = minWidth;
-			style.maxWidth = maxWidth;
+			style.left = left;
+			if ( rsLeft ) {
+				rs.left = rsLeft;
+			}
 		}
-	}
-
-	return ret !== undefined ?
 
 		// Support: IE <=9 - 11 only
 		// IE returns zIndex value as an integer.
-		ret + "" :
-		ret;
+		return ret === undefined ?
+			ret :
+			ret + "" || "auto";
+	};
 }
 
-return curCSS;
+exports.getStyles = getStyles;
+exports.curCSS = curCSS;
+
 } );

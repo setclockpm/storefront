@@ -7,7 +7,8 @@ define( [
 
 "use strict";
 
-var rreturn = /\r/g;
+var rreturn = /\r/g,
+	rspaces = /[\x20\t\r\n\f]+/g;
 
 jQuery.fn.extend( {
 	val: function( value ) {
@@ -19,7 +20,8 @@ jQuery.fn.extend( {
 				hooks = jQuery.valHooks[ elem.type ] ||
 					jQuery.valHooks[ elem.nodeName.toLowerCase() ];
 
-				if ( hooks &&
+				if (
+					hooks &&
 					"get" in hooks &&
 					( ret = hooks.get( elem, "value" ) ) !== undefined
 				) {
@@ -58,10 +60,8 @@ jQuery.fn.extend( {
 			// Treat null/undefined as ""; convert numbers to string
 			if ( val == null ) {
 				val = "";
-
 			} else if ( typeof val === "number" ) {
 				val += "";
-
 			} else if ( jQuery.isArray( val ) ) {
 				val = jQuery.map( val, function( value ) {
 					return value == null ? "" : value + "";
@@ -163,7 +163,8 @@ jQuery.extend( {
 				if ( !optionSet ) {
 					elem.selectedIndex = -1;
 				}
-				return values;
+
+				return options;
 			}
 		}
 	}
