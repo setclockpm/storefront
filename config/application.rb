@@ -79,7 +79,18 @@ module Porthos
     end
     
     # Uncomment this if you decide to use Bower to manage javascript packages
-    config.assets.paths << Rails.root.join("vendor","assets","bower_components")
+    # config.assets.paths << Rails.root.join("vendor","assets","bower_components")
+    
+    # Method shown by official github page
+    # Bower asset paths
+    Rails.root.join('vendor', 'assets', 'bower_components').to_s.tap do |bower_path|
+      config.sass.load_paths << bower_path
+      config.assets.paths << bower_path
+    end
+    # Precompile Bootstrap fonts
+    config.assets.precompile << %r(bootstrap-sass/assets/fonts/bootstrap/[\w-]+\.(?:eot|svg|ttf|woff2?)$)
+    # Minimum Sass number precision required by bootstrap-sass
+    ::Sass::Script::Value::Number.precision = [8, ::Sass::Script::Value::Number.precision].max
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.3'

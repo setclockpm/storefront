@@ -12,3 +12,7 @@
  *= require_tree .
  *= require spree/frontend/spree_simple_sales
 */
+
+$icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
+@import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+@import "bootstrap-sass/assets/stylesheets/bootstrap";

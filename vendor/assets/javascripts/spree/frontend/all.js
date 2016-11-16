@@ -11,7 +11,7 @@
 //= require jquery-ui/effect
 //= require jquery.slick
 //= require slidebars/dist/slidebars
-
+//= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 //= require_tree .
 //= require spree/frontend/spree_simple_sales
 //= require spree/frontend/spree_i18n
