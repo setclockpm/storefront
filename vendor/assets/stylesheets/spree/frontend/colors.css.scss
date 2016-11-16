@@ -189,7 +189,7 @@ textarea::-webkit-input-placeholder { opacity: 0.7; }
      ////////////////////////////////////////
   /////////* Minimum width 767px section *//////
 ///////////////////////////////////////////////////
-@media (min-width: 767px) {
+@media (min-width: 768px) {
   section {
     &.featured {
       .overlay {
@@ -207,6 +207,10 @@ textarea::-webkit-input-placeholder { opacity: 0.7; }
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
       }
     }
+  }
+  
+  .navbar-custom.affix {
+    background-color: $near-black;
   }
 }
 

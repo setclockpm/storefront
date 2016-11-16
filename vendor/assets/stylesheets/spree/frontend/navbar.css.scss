@@ -127,13 +127,15 @@ header {
       }
     }
   }
+  .navbar-custom.affix {
+    padding: 10px 0;
+  }
   .navbar-header { float: none; }
   .navbar-fixed-top {
     padding: 15px 0;
     transition: padding 0.3s;
     
     .navbar-brand { transition: all 0.3s; }
-    &.navbar-shrink { padding: 10px 0; }
   }
   .navbar-static-top {
     padding: 15px 0; 

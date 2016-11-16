@@ -455,10 +455,12 @@ label {
 @media (min-width: 768px) {
   /////////////////////////////////
   /* Begin DOM class selectors */
+  .navbar-custom.affix {
+    .navbar-brand { font-size: 1.5em; }
+  }
   .navbar-form { .btn { letter-spacing: 1.5px; } }
   .navbar-fixed-top {
     .navbar-brand { font-size: 2em; }
-    &.navbar-shrink { .navbar-brand { font-size: 1.5em; } }
   }
   /* End DOM class selectors */
 }
