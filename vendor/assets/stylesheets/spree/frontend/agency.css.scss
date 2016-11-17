@@ -1,5 +1,8 @@
-@import "variables.scss";
-@import "mixins.scss";
+/* START:import */
+@import "variables";
+@import "mixins";
+/* END:import */
+
 
 // Global Components
 
@@ -154,48 +157,39 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-// Navbar Change on Scroll
-
-@media(min-width:768px) {
-    .navbar-custom.affix {
-        background-color: $gray-darker;
-        padding: 10px 0;
-        .navbar-brand {
-            font-size: 1.5em;
-        }
-    }
-}
 
 header {
-    background-image: url('../img/header-bg.jpg');
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: center center;
-    @include background-cover;
-    text-align: center;
-    color: white;
-    .intro-text {
-        padding-top: 100px;
-        padding-bottom: 50px;
-        .intro-lead-in {
-            @include serif-font;
-            font-style: italic;
-            font-size: 22px;
-            line-height: 22px;
-            margin-bottom: 25px;
-        }
-        .intro-heading {
-            @include heading-font;
-            font-weight: 700;
-            font-size: 50px;
-            line-height: 50px;
-            margin-bottom: 25px;
-        }
-    }
+  &#agency {
+      background-image: url(header-bg.jpg);
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-position: center center;
+      @include background-cover;
+      text-align: center;
+      color: white;
+      .intro-text {
+          padding-top: 100px;
+          padding-bottom: 50px;
+          .intro-lead-in {
+              @include serif-font;
+              font-style: italic;
+              font-size: 22px;
+              line-height: 22px;
+              margin-bottom: 25px;
+          }
+          .intro-heading {
+              @include heading-font;
+              font-weight: 700;
+              font-size: 50px;
+              line-height: 50px;
+              margin-bottom: 25px;
+          }
+      }
+  }
 }
 
 @media(min-width:768px) {
-    header {
+    header#agency {
         .intro-text {
             padding-top: 300px;
             padding-bottom: 200px;
