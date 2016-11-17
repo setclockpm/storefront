@@ -104,11 +104,12 @@ $(document).ready(function(){
     // Offset for Main Navigation
     $('#main-nav').affix({
         offset: {
-          top: 100
+            top: 100
         }
     })
 
 })(jQuery); // End of use strict
+
 
 
 
