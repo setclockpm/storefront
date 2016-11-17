@@ -3,16 +3,8 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *
- *= require spree/frontend
  *= require font-awesome
- *= require slick
- *= require slidebars/dist/slidebars
- *= require magnific-popup
  *= require_self
  *= require_tree .
  *= require spree/frontend/spree_simple_sales
 */
-
-$icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
-@import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
-@import "bootstrap-sass/assets/stylesheets/bootstrap";
