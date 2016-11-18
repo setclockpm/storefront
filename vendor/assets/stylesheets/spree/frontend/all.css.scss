@@ -4,6 +4,10 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *
  *= require font-awesome
+ *= require spree/frontend
+ *= require slick
+ *= require slidebars/dist/slidebars
+ *= require magnific-popup
  *= require_self
  *= require_tree .
  *= require spree/frontend/spree_simple_sales
