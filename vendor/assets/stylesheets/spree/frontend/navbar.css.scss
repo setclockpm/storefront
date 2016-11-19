@@ -12,21 +12,6 @@ header {
 }
 
 
-.affix {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 10;
-}
-
-.affix-top {
-  width: 100%;
-}
-
-.affix-bottom {
-  position: absolute;
-  width: 100%;  
-}
 .logo {
   img {
     display: inline-block;
@@ -41,28 +26,6 @@ header {
   a { &:focus, &:hover { background: 0 none; } }
 } 
 //.quantity-badge { position: absolute; }
-.toggle-mv-menu {
-  background: none;
-  background-color: transparent;
-  background-image: none;
-  border-radius: 4px;
-  float: none;
-  padding: 9px 10px;
-  position: relative;
-  
-  
-  &:focus { outline: 0; }
-  
-  .icon-bar {
-    display: block;
-    width: 23px;
-    height: 2px;
-    border-radius: 2px;
-  }
-}
-.toggle-mv-menu .icon-bar + .icon-bar {
-  margin-top: 4px;
-}
 .transparent {
   &:hover, &:focus {
     transition: all .3s ease-in-out;
@@ -81,11 +44,7 @@ header {
     min-height: 5.5em;
   }
   
-  .logo-wrapper { margin-top: 1.5em; }
-  .toggle-mv-menu {
-    border-color: white;
-    span { background-color: white; }
-  }
+  .logo-wrapper { margin-top: 1.2em; }
 }
 #application-header { margin-bottom: 0px; }
 
@@ -129,32 +88,28 @@ header {
       }
     }
   }
-  .navbar-custom.affix {
-    background-color: #222;
-    padding: 10px 0;
-  }
   .navbar-header { float: none; }
   .navbar-fixed-top {
     padding: 15px 0;
     transition: padding 0.3s;
     
     .navbar-brand { transition: all 0.3s; }
+    &.navbar-shrink { padding: 10px 0; }
   }
   .navbar-static-top {
     padding: 15px 0; 
     transition: padding 0.3s ease 0s;
   }
-  .toggle-mv-menu { margin: 0px auto; }
-  // primitive DOM objects //
+
+  // primitime DOM objects //
   div {
+    &#toggle-nav-button-wrapper { display: none; }
+    
     &.panel {
       background-color: #fff;
       border-radius: 43px;
       box-shadow: none;
     }
-  }
-  span {
-    &.menu { display: inline-block; }
   }
 }
 ///////////////////////////////////////////////////
@@ -174,31 +129,4 @@ header {
 }
 
 ///////////////////////////////////////////////////
-
-
-
-
-
-
-
-////////////////////////////////////////////////
-////////* Maximum width 767px section */////////
-////////////////////////////////////////////////
-@media (max-width: 767px) {
-  .toggle-mv-menu { margin: 8px auto; }
-  span { &.menu { display: none; } }
-}
-////////////////////////////////////////////////
-  ////////////////////////////////////////////
-    ///////////////////////////////////////
-      //////////////////////////////////
-         ////////////////////////////
-           ///////////////////////
-             //////////////////
-               //////////////
-                 //////////
-                   //////
-                     ///
-
-
 
