@@ -47,10 +47,6 @@ a.active {
     color: darken($theme-primary, 10%);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    @include heading-font;
-    font-weight: 700;
-}
 
 .img-centered {
     margin: 0 auto;
@@ -579,23 +575,6 @@ section#contact {
     }
 }
 
-// Footer
-
-footer {
-    padding: 25px 0;
-    text-align: center;
-    span.copyright {
-        line-height: 40px;
-        @include heading-font;
-        text-transform: none;
-    }
-    ul.quicklinks {
-        margin-bottom: 0;
-        line-height: 40px;
-        @include heading-font;
-        text-transform: none;
-    }
-}
 
 // Social Buttons
 

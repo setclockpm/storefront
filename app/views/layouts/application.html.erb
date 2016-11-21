@@ -13,25 +13,16 @@
     </title>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport">
+    <%= csrf_meta_tags %>
     <%== meta_data_tags %>
+    <%= canonical_tag(current_store.url) %>
     
+    <%= favicon_link_tag 'favicon.ico' %>
     
-    <!-- Custom Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <!-- Theme CSS -->
-    <%= stylesheet_link_tag 'spree/frontend/all', media: 'screen' %>
     <%= stylesheet_link_tag 'application', media: 'screen' %>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <%= stylesheet_link_tag 'spree/frontend/all', media: 'screen' %>
     
     <!-- jQuery -->
     <%= javascript_include_tag 'spree/frontend/all' %>
@@ -46,6 +37,14 @@
     <%= javascript_include_tag 'jqBootstrapValidation' %>
     <!-- Theme JavaScript -->
     <%= javascript_include_tag 'agency' %>
+    
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
 
   <body class="<%= body_class %>" id="<%= @body_id || 'page-top' %>" data-hook="body">
@@ -58,13 +57,13 @@
     </div>
     
     
-    <!-- <div canvas="container" style="margin:0;padding:0;"> -->
+    <div canvas="container" style="margin:0;padding:0;">
       <%= yield %>
       <%= render partial: "layouts/shared/footer_below" %>
       <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
       <div class="scroll-top hidden-sm hidden-xs hidden-lg hidden-md">
         <%= link_to fa_icon("chevron-up"), "#page-top", class: "btn btn-primary" %></div>
-    <!-- </div> -->
+    </div>
 
     <%= render partial: "layouts/shared/slidebar_menu" %>
   </body>
