@@ -51,13 +51,17 @@
     <%= render partial: 'spree/shared/google_analytics.js' %>
     
     
-    <!-- Navigation -->
+    <!-- This should be desktop Navigation -->
     <div id="application-header">
       <%= render partial: "layouts/shared/main_header_nav" %>
     </div>
     
     
     <div canvas="container" style="margin:0;padding:0;">
+      <!-- This should be desktop Navigation -->
+      <div id="application-header">
+        <%= render partial: "layouts/shared/mobile_header_nav" %>
+      </div>
       <%= yield %>
       <%= render partial: "layouts/shared/footer_below" %>
       <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
