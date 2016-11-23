@@ -10,5 +10,6 @@
 //= require jquery.slick
 //= require magnific-popup
 //= require slidebars/dist/slidebars
+//= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 
 

@@ -46,14 +46,33 @@ header {
   
   .logo-wrapper { margin-top: 1.2em; }
 }
-#application-header { margin-bottom: 0px; }
+.application-header { margin-bottom: 0px; }
 
 
 
 
  
 
-
+////////////////////////////////////////////////
+////////* Maximum width 767px section */////////
+////////////////////////////////////////////////
+@media (max-width: 767px) {
+  div {
+    #desktop-header { display: none; }
+    &#mobile-header { display: block; }
+  }
+}
+////////////////////////////////////////////////
+  ////////////////////////////////////////////
+    ///////////////////////////////////////
+      //////////////////////////////////
+         ////////////////////////////
+           ///////////////////////
+             //////////////////
+               //////////////
+                 //////////
+                   //////
+                     ///
 
 
 
@@ -103,6 +122,8 @@ header {
 
   // primitime DOM objects //
   div {
+    &#desktop-header { display: block; }
+    &#mobile-header { display: none; }
     &#toggle-nav-button-wrapper { display: none; }
     
     &.panel {

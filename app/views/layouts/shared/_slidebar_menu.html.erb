@@ -30,8 +30,16 @@
     var controller = new slidebars();
     controller.init();
     $( '.toggle-mv-menu' ).on( 'click', function (event) {
+      desktopHeader = $('#desktop-header');
+      
       event.stopPropagation();
       controller.toggle( 'mv-menu' );
-    } );
+      
+      if (desktopHeader.is(":visible"))
+        $('#desktop-header').hide();
+      // else
+//         $('#desktop-header').delay(900).show().promise();
+      
+    });
   });
 </script>

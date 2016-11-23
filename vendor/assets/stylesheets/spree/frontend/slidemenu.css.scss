@@ -68,6 +68,10 @@
 ////////////////////////////////////////////////
 @media (max-width: 767px) {
   
+  #desktop-header {
+    display: none;
+  }
+  
   .navbar .dl-menu.dl-menuopen {
     display: block;
     opacity: 1;

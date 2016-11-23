@@ -313,7 +313,7 @@ textarea::-webkit-input-placeholder {
     }
   }
 }
-#application-header {
+.application-header {
   .nav {
     a {
       color: $near-black;
@@ -522,7 +522,7 @@ label {
   /* End DOM class selectors */
   
   /* Begin DOM ID selectors */
-  #application-header {
+  .application-header {
     .navbar-collapse {
       color: #fff;
       
