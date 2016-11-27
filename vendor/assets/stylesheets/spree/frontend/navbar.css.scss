@@ -26,12 +26,6 @@ header {
   a { &:focus, &:hover { background: 0 none; } }
 } 
 //.quantity-badge { position: absolute; }
-.transparent {
-  &:hover, &:focus {
-    transition: all .3s ease-in-out;
-    transition-delay: 0s;
-  }
-}
 
 
 #porthos-header {
@@ -107,13 +101,20 @@ header {
       }
     }
   }
+  .navbar-custom {
+    -webkit-transition: padding 0.3s;
+    -moz-transition: padding 0.3s;
+    transition: padding 0.3s;
+        
+    &.affix { padding: 10px 0; }
+    &:hover, &:focus {
+      transition: all .3s ease-in-out;
+      transition-delay: 0s;
+    }
+  }
   .navbar-header { float: none; }
   .navbar-fixed-top {
     padding: 15px 0;
-    transition: padding 0.3s;
-    
-    .navbar-brand { transition: all 0.3s; }
-    &.navbar-shrink { padding: 10px 0; }
   }
   .navbar-static-top {
     padding: 15px 0; 

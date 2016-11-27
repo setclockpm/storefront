@@ -4,12 +4,15 @@
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // the compiled file.
 //
+
 //= require jquery
 //= require jquery-ui/effect
 //= require jquery_ujs
 //= require jquery.slick
+//= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 //= require magnific-popup
 //= require slidebars/dist/slidebars
-//= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
+//= require spree/frontend
+//= require_tree .
 
 

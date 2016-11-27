@@ -148,22 +148,7 @@ input:-moz-placeholder           { opacity: 0.7; } /* Firefox 18- */
 input::-moz-placeholder          { opacity: 0.7; } /* Firefox 19+ */
 input:-ms-input-placeholder      { opacity: 0.7; }
 input::-webkit-input-placeholder { opacity: 0.7; }
-nav {
-  &.navbar-default {
-    &.transparent { 
-      background: rgba(1244, 244, 244, 0.0);
-      &:hover, &:focus { background: rgba(244, 244, 244, .25); }
-    }
-
-    ul {
-      &.navbar-nav {
-        li {
-          &.active { a { background: rgba(34, 34, 34, 0.4) none repeat scroll 0 0; } }
-        }
-      }
-    }
-  }
-}
+nav {}
 section {
   &.success {
     background: white;
@@ -209,9 +194,14 @@ textarea::-webkit-input-placeholder { opacity: 0.7; }
     }
   }
   
-  .navbar-custom.affix {
-    background-color: $near-black;
-  }
+  .navbar-custom {
+    background: rgba(1244, 244, 244, 0.0);
+    &:hover, &:focus { background: rgba(244, 244, 244, .25); }
+    
+    &.affix {
+      background-color: $near-black;
+    }
+  } 
 }
 
 ///////////////////////////////////////////////////

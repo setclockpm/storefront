@@ -25,19 +25,7 @@ p {
 }
 
 p.large {
-    font-size: 16px;
-}
-
-a,
-a:hover,
-a:focus,
-a:active,
-a.active {
-    outline: none;
-}
-
-a {
-    color: $theme-primary;
+  font-size: 16px;
 }
 
 a:hover,
@@ -104,21 +92,6 @@ a.active {
         &:hover,
         &:focus {
             background-color: $theme-primary;
-        }
-    }
-    .nav {
-        li {
-            a {
-                @include heading-font;
-                font-weight: 400;
-                letter-spacing: 1px;
-                color: white;
-                &:hover,
-                &:focus {
-                    color: $theme-primary;
-                    outline: none;
-                }
-            }
         }
     }
     .navbar-nav>.active>a {
@@ -689,24 +662,15 @@ ul.social-buttons {
 
 // Highlight Color Customization
 
-::-moz-selection {
-    text-shadow: none;
-    background: $theme-primary;
-}
+//::-moz-selection {
+//  background: $theme-primary;
+//  text-shadow: none;
+//}
+//::selection {
+//  background: $theme-primary;
+//  text-shadow: none;
+//}
 
-::selection {
-    text-shadow: none;
-    background: $theme-primary;
-}
-
-img::selection {
-    background: transparent;
-}
-
-img::-moz-selection {
-    background: transparent;
-}
-
-body {
-    webkit-tap-highlight-color: $theme-primary;
-}
+img::selection { background: transparent; }
+img::-moz-selection { background: transparent; }
+body { webkit-tap-highlight-color: $theme-primary; }
