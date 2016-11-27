@@ -9,10 +9,12 @@
 //= require jquery-ui/effect
 //= require jquery_ujs
 //= require jquery.slick
+//= require spree/frontend
+
 //= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 //= require magnific-popup
 //= require slidebars/dist/slidebars
-//= require spree/frontend
 //= require_tree .
-
+//= require spree/frontend/spree_simple_sales
+//= require spree/frontend/spree_i18n
 
