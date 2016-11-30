@@ -51,66 +51,23 @@
     
     
     <!-- This should be desktop Navigation -->
-    <div id="desktop-header" class="application-header">
+    <div canvas="fixed-navigation" id="desktop-header" class="application-header">
       <%= render partial: "layouts/shared/main_header_nav" %>
     </div>
     
-    <div class="container">
-    	<div class="row">
-          		<div class="col-sm-12">
-                  	<h2>Content</h2>
-                    <img src="//placehold.it/300x300/EEEEEE/EEEEEE" class="img-circle pull-right">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
-                    dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores 
-                    eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
-                    sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
-                    Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
-              
-                  	<hr class="col-sm-12">
-              
-                  	<h2>Content</h2>
-                    More em aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
-                    dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores 
-                    eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
-                    sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
-                    Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-              
-                  	<hr class="col-sm-12">
-              
-                  	<h2>Content</h2>
-          			Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
-                    dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores 
-                    eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
-                    sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
-                    Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-              
-                  	<hr class="col-sm-12">
-              
-                  	<h2>Content</h2>
-          			Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
-                    dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores 
-                    eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
-                    sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
-                    Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-              
-                  	<h2>Content</h2>
-          			Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
-                    dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores 
-                    eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
-                    sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
-                    Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-              
-              
-                  	<hr>
-                  	<h4><a href="http://bootply.com/107973">Edit on Bootply</a></h4>
-                  	<hr>
-              	
     
-    
-    
-    
+    <div canvas="container">
+      <!-- This should be desktop Navigation -->
+      <div id="mobile-header" class="application-header">
+        <%= render partial: "layouts/shared/mobile_header_nav" %>
+      </div>
+      <%= yield %>
+      <%= render partial: "layouts/shared/footer_below" %>
+      <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+      <div class="scroll-top hidden-sm hidden-xs hidden-lg hidden-md">
+        <%= link_to fa_icon("chevron-up"), "#page-top", class: "btn btn-primary" %>
+      </div>
+    </div>
 
     <%= render partial: "layouts/shared/slidebar_menu" %>
   </body>
