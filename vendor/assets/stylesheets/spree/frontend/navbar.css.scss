@@ -16,7 +16,6 @@ header {
   img {
     display: inline-block;
     margin-bottom: 0px;
-    max-width: 140px;
     min-width: 125px;
   }
 }
@@ -51,10 +50,8 @@ header {
 ////////* Maximum width 767px section */////////
 ////////////////////////////////////////////////
 @media (max-width: 767px) {
-  div {
-    #desktop-header { display: none; }
-    &#mobile-header { display: block; }
-  }
+  div { &#mobile-header { display: block; } }
+  nav { &.application-header { display: none; } }
 }
 ////////////////////////////////////////////////
   ////////////////////////////////////////////
@@ -82,7 +79,7 @@ header {
 ///////////////////////////////////////////////////
 @media (min-width: 768px) {
   
-  .logo { img { width: 160px; } }
+  .logo { img { width: 140px; } }
   .nav {
     li {
       &.active {
@@ -106,7 +103,7 @@ header {
     -moz-transition: padding 0.3s;
     transition: padding 0.3s;
         
-    &.affix { padding: 10px 0; }
+    &.affix { padding: 15px 0; }
     &:hover, &:focus {
       transition: all .3s ease-in-out;
       transition-delay: 0s;
@@ -123,7 +120,6 @@ header {
 
   // primitime DOM objects //
   div {
-    &#desktop-header { display: block; }
     &#mobile-header { display: none; }
     &#toggle-nav-button-wrapper { display: none; }
     
@@ -132,6 +128,9 @@ header {
       border-radius: 43px;
       box-shadow: none;
     }
+  }
+  nav {
+    &.application-header { display: block; }
   }
 }
 ///////////////////////////////////////////////////

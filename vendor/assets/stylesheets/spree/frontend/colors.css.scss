@@ -19,14 +19,18 @@
 
 
 #contact-card { background-color: $bright-orange; }
-.application-header {
-  .nav {
-    a { &:hover, &:focus { background: 0; } }
-  }
-  .navbar-default {
+
+nav {
+  &.application-header {
     border-bottom: 0;
+    
+    .nav {
+      a { &:hover, &:focus { background: 0; } }
+    }
   }
 }
+
+
 
 
 
@@ -199,7 +203,7 @@ textarea::-webkit-input-placeholder { opacity: 0.7; }
     &:hover, &:focus { background: rgba(244, 244, 244, .25); }
     
     &.affix {
-      background-color: $near-black;
+      background: rgba(244, 244, 244, 0.98);
     }
   } 
 }

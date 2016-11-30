@@ -15,10 +15,6 @@ $(function() {
     offset: { top: 100 }
   });
   
-  $('#main-nav').on('affix.bs.affix', function () {
-    alert('Fired!');
-  });
-  
 });
 
 

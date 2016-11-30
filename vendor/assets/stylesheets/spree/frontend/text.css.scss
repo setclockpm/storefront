@@ -137,9 +137,7 @@ textarea::-webkit-input-placeholder {
 /* Begin class selectors */
 
 .abouter {
-  p {
-    font-size: 22px;
-  }
+  p { font-size: 22px; }
 }
 
 .bootstrap-select {
@@ -222,6 +220,11 @@ textarea::-webkit-input-placeholder {
   font-family: $forms-font;
   font-size: 14px;
   &.text-danger { color: #da5544; }
+}
+.navbar-custom {
+  &.affix {
+    .logo { img { width: 110px; } }
+  }
 }
 .promo {
   span { font-size: 4em; }
