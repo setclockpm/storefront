@@ -33,8 +33,9 @@
     <%= render partial: 'spree/shared/google_analytics.js' %>
     
     <div canvas="container" style="margin:0;padding:0;">
-      <div class="application-header">
-        <%= render partial: "layouts/shared/main_header_nav" %>
+      <!-- This should be desktop Navigation -->
+      <div id="mobile-header" class="application-header">
+        <%= render partial: "layouts/shared/mobile_header_nav" %>
       </div>
       <%= yield %>
       <%= render partial: "layouts/shared/footer_below" %>

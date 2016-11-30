@@ -1,6 +1,7 @@
   
 // Floating label headings for the contact form
 $(function() {
+  
   $("body").on("input propertychange", ".floating-label-form-group", function(e) {
     $(this).toggleClass("floating-label-form-group-with-value", !! $(e.target).val());
   }).on("focus", ".floating-label-form-group", function() {
@@ -8,14 +9,17 @@ $(function() {
   }).on("blur", ".floating-label-form-group", function() {
     $(this).removeClass("floating-label-form-group-with-focus");
   });
+  
+  // Offset for Main Navigation
+  $('#main-nav').affix({
+    offset: { top: 100 }
+  });
+  
+  $('#main-nav').on('affix.bs.affix', function () {
+    alert('Fired!');
+  });
+  
 });
-
-
-// Closes the Responsive Menu on Menu Item Click
-$('.navbar-collapse ul li a:not(.dropdown-toggle)').click(function() {
-  $('.navbar-toggle:visible').click();
-});
-
 
 
 $(document).ready(function(){
@@ -28,14 +32,22 @@ $(document).ready(function(){
     nextArrow: '<img title="next-arrow" src="/assets/next-arrow.png" class="slick-next next"/>',
     prevArrow: '<img title="prev-arrow" src="/assets/prev-arrow.png" class="slick-prev prev"/>',
     speed: 1000,
-    
-    responsive: 
+
+    responsive:
     [{
       breakpoint: 768,
       settings: { dots: true }
     }]
   });
   
+  // Highlight the top nav as scrolling occurs
+  $('body').scrollspy({
+    target: '.navbar-fixed-top',
+    offset: 51
+  });
+
+  
+
   $('.gallery-popup').magnificPopup({
     callbacks: {
       elementParse: function(item) {
