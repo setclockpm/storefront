@@ -301,12 +301,8 @@ textarea::-webkit-input-placeholder {
     &.required-legend:before { color: red; }
   }
 }
-#porthos-header {
-  div {
-    &#dl-nav-header {
-      color: white;
-    }
-  }
+.utility-header {
+  div { color: white; }
   nav {
     a {
       color: white;

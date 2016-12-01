@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav id="main-nav" class="affix-top navbar-default navbar-fixed-top opaque static" role="navigation">
+<nav class="utility-header navbar-default navbar-static-top" role="navigation">
   <div class="container topnav">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div id="dl-nav-header" class="navbar-header" data-target="page-top">
@@ -12,9 +12,11 @@
         </button>
         <span class="menu">MENU</span>
       </div>
-      <div class="col-xs-6 logo-wrapper">
+      <div class="col-xs-6 col-sm-3 logo-wrapper">
         <figure id="logo" class="logo"> <%= logo('logos/logo-w.png') %> </figure>
       </div>
+      
+      <%= yield :main_navigation %>
       <!-- /.navbar-cart -->
     </div>
     <!-- /.navbar-header -->

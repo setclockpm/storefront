@@ -27,17 +27,14 @@ header {
 //.quantity-badge { position: absolute; }
 
 
-#porthos-header {
-  nav {
+ nav {
+  &.utility-header {
     background: url(featured_bg_bnw.jpg) no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    min-height: 5.5em;
   }
-  
-  .logo-wrapper { margin-top: 1.2em; }
 }
 .application-header { margin-bottom: 0px; }
 

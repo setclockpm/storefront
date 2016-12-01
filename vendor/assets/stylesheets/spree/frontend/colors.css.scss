@@ -215,7 +215,7 @@ textarea::-webkit-input-placeholder { opacity: 0.7; }
 @media (max-width: 767px) {
   .navbar-collapse { background: rgba(34, 34, 34, 0.99) none repeat scroll 0 0; }
   
-  #porthos-header {
+  .utility-header {
     .toggle-mv-menu {
       border: 1px solid $off-white;
       .icon-bar { background-color: $off-white; }
