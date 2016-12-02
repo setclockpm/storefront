@@ -181,10 +181,7 @@ textarea::-webkit-input-placeholder { opacity: 0.7; }
 @media (min-width: 768px) {
   section {
     &.featured {
-      .overlay {
-        background-color: white;
-
-      }
+      .overlay { background-color: white; }
       .alpha60 {
         /* Fallback for web browsers that doesn't support RGBa */
         background: rgb(255, 255, 255);
@@ -202,9 +199,7 @@ textarea::-webkit-input-placeholder { opacity: 0.7; }
     background: rgba(1244, 244, 244, 0.0);
     &:hover, &:focus { background: rgba(244, 244, 244, .25); }
     
-    &.affix {
-      background: rgba(244, 244, 244, 0.98);
-    }
+    &.affix { background: rgba(244, 244, 244, 0.98); }
   } 
 }
 
