@@ -1,2 +1,3 @@
-asset 'slidebars'
+asset 'bootstrap-sass'
 asset 'photoswipe'
+asset 'slidebars'

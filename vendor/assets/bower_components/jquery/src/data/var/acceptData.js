@@ -1,15 +1,11 @@
-define( [
-	"../../core"
-], function( jQuery ) {
+define( function() {
 
 "use strict";
 
 /**
  * Determines whether an object can have data
  */
-return function( elem ) {
-	var noData = jQuery.noData[ ( elem.nodeName + " " ).toLowerCase() ],
-		nodeType = +elem.nodeType || 1;
+return function( owner ) {
 
 	// Accepts only:
 	//  - Node

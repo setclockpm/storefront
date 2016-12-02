@@ -137,9 +137,7 @@ textarea::-webkit-input-placeholder {
 /* Begin class selectors */
 
 .abouter {
-  p {
-    font-size: 22px;
-  }
+  p { font-size: 22px; }
 }
 
 .bootstrap-select {
@@ -231,6 +229,11 @@ textarea::-webkit-input-placeholder {
   font-size: 14px;
   &.text-danger { color: #da5544; }
 }
+.navbar-custom {
+  &.affix {
+    .logo { img { width: 110px; } }
+  }
+}
 .promo {
   span { font-size: 4em; }
   .fall-2016 { color: white; }
@@ -306,32 +309,19 @@ textarea::-webkit-input-placeholder {
     &.required-legend:before { color: red; }
   }
 }
-#porthos-header {
-  div {
-    &#dl-nav-header {
-      color: white;
-    }
-  }
-  nav {
-    a {
-      color: white;
-      font: normal bold .75em $forms-font;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
+.nav {
+  a {
+    color: $near-black;
+    font: normal bold .75em $forms-font;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    
+    &:focus, &:hover { text-decoration: underline; }
   }
 }
-#application-header {
-  .nav {
-    a {
-      color: $near-black;
-      font: normal bold .75em $forms-font;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      
-      &:focus, &:hover { text-decoration: underline; }
-    }
-  } 
+.utility-header {
+  div { color: white; }
+  .nav { a { color: white; } }
 }
 /* End DOM ID selectors */
 /////////////////////////////////// End active/in use DOM items //////////////////////////////////////////
@@ -463,10 +453,31 @@ label {
 @media (min-width: 768px) {
   /////////////////////////////////
   /* Begin DOM class selectors */
+  .nav {
+    li {
+      &.active {
+        text-decoration: underline;
+        a, 
+        a:link, 
+        a:visited { font-weight: bold; }
+      }
+    }
+  }
+  .navbar-custom {
+    &.affix { .navbar-brand { font-size: 1.5em; } }
+  }
   .navbar-form { .btn { letter-spacing: 1.5px; } }
-  .navbar-fixed-top {
-    .navbar-brand { font-size: 2em; }
-    &.navbar-shrink { .navbar-brand { font-size: 1.5em; } }
+  .navbar-fixed-top { .navbar-brand { font-size: 2em; } }
+  .utility-header {
+    .nav {
+      li {
+        &.active {
+          a, 
+          a:link, 
+          a:visited { color: white; }
+        }
+      }
+    }
   }
   /* End DOM class selectors */
 }
@@ -491,9 +502,7 @@ label {
 ////////* Maximum width 992px section *////////////
 ///////////////////////////////////////////////////
 @media (max-width: 992px) {
-  .promo {
-    span { font-size: 2.5em; }
-  }
+  .promo { span { font-size: 2.5em; } }
   .collection-preview {
     h1 { font-size: 2em; }
     .variant-name { padding: 0.5em; }
@@ -515,20 +524,16 @@ label {
 //////////////////////////////////////////////////
 /////////* Maximum width 767px section *//////////
 @media (max-width: 767px) {
-  /* Begin DOM class selectors */
   
+  /* Begin DOM class selectors */
   .copyright { font-size: 0.81em; }
   .featured h1 { font-size: 2em; }
-  .footer-below {
-    .copyright { color: $mid-gray; }
-  }
-  .promo {
-    span { font-size: 2em; }
-  }
+  .footer-below { .copyright { color: $mid-gray; } }
+  .promo { span { font-size: 2em; } }
   /* End DOM class selectors */
   
   /* Begin DOM ID selectors */
-  #application-header {
+  .application-header {
     .navbar-collapse {
       color: #fff;
       
