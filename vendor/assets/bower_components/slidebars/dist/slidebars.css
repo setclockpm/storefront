@@ -41,7 +41,7 @@ html, body {
   position: relative;
   background-color: white; /* Basic background color, overwrite this in your own css. */
   -webkit-overflow-scrolling: touch; /* Enables momentum scrolling on iOS devices, may be removed by setting to 'auto' in your own CSS. */
-//}
+}
 //
 [canvas=container]:before, [canvas=container]:after {
   clear: both;

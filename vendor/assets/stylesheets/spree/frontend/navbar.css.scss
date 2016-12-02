@@ -10,8 +10,18 @@ header {
     }
   }
 }
+ nav {
+  &.utility-header {
+    background: url(featured_bg_bnw.jpg) no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
 
 
+.application-header { margin-bottom: 0px; }
 .logo {
   img {
     display: inline-block;
@@ -24,19 +34,10 @@ header {
   white-space: nowrap;
   a { &:focus, &:hover { background: 0 none; } }
 } 
-//.quantity-badge { position: absolute; }
 
 
- nav {
-  &.utility-header {
-    background: url(featured_bg_bnw.jpg) no-repeat center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-}
-.application-header { margin-bottom: 0px; }
+
+
 
 
 
@@ -47,21 +48,23 @@ header {
 ////////* Maximum width 767px section */////////
 ////////////////////////////////////////////////
 @media (max-width: 767px) {
-  div { &#mobile-header { display: block; } }
+  
+  div { &#mobile-header     { display: block; } }
   nav { &.application-header { display: none; } }
+  
 }
 ////////////////////////////////////////////////
   ////////////////////////////////////////////
-    ///////////////////////////////////////
-      //////////////////////////////////
-         ////////////////////////////
-           ///////////////////////
-             //////////////////
-               //////////////
-                 //////////
-                   //////
-                     ///
-
+    ////////////////////////////////////////
+      ////////////////////////////////////
+         ///////////////////////////////
+           ///////////////////////////
+             ///////////////////////
+               ///////////////////
+                 ///////////////
+                   ///////////
+                     ///////
+                      /////
 
 
                         ///
@@ -98,13 +101,12 @@ header {
     }
   }
   .navbar-header { float: none; }
-  .navbar-fixed-top {
-    padding: 15px 0;
-  }
+  .navbar-fixed-top { padding: 15px 0; }
   .navbar-static-top {
     padding: 15px 0; 
     transition: padding 0.3s ease 0s;
   }
+
 
   // primitime DOM objects //
   div {
@@ -112,14 +114,11 @@ header {
     &#toggle-nav-button-wrapper { display: none; }
     
     &.panel {
-      background-color: #fff;
       border-radius: 43px;
       box-shadow: none;
     }
   }
-  nav {
-    &.application-header { display: block; }
-  }
+  nav { &.application-header { display: block; } }
 }
 ///////////////////////////////////////////////////
 

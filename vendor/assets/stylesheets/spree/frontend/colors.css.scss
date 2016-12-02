@@ -18,8 +18,24 @@
 
 
 
-#contact-card { background-color: $bright-orange; }
 
+
+button { &.purchase { background-color: $bright-orange; } }
+footer { 
+  &.below { background-color: $bg-lite-gray; }
+  &.contact { background-color: $collection-gray; }
+}
+hr {
+  &.tiny { border: 1px solid white; }
+  &.cheers {
+    border-color: white;
+    &:after { background-color: white; }
+  }
+}
+input:-moz-placeholder           { opacity: 0.7; } /* Firefox 18- */
+input::-moz-placeholder          { opacity: 0.7; } /* Firefox 19+ */
+input:-ms-input-placeholder      { opacity: 0.7; }
+input::-webkit-input-placeholder { opacity: 0.7; }
 nav {
   &.application-header {
     border-bottom: 0;
@@ -29,6 +45,25 @@ nav {
     }
   }
 }
+section {
+  &.success {
+    background: white;
+    a, a:hover, a:focus, a:active { outline: none; }
+  }
+}
+textarea:-moz-placeholder           { opacity: 0.7; } /* Firefox 18- */
+textarea::-moz-placeholder          { opacity: 0.7; } /* Firefox 19+ */
+textarea:-ms-input-placeholder      { opacity: 0.7; }
+textarea::-webkit-input-placeholder { opacity: 0.7; }
+
+
+
+
+
+
+#contact-card { background-color: $bright-orange; }
+
+
 
 
 
@@ -125,7 +160,10 @@ nav {
   }
 }
 .toggle-mv-menu {
+  background: none;
+  background-color: transparent;
   border: 1px solid $near-black;
+  
   .icon-bar { background-color: $near-black; }
 }
 .well {
@@ -133,36 +171,6 @@ nav {
   p { background-color: white; }
 }
 
-
-
-
-button { &.purchase { background-color: $bright-orange; } }
-footer { 
-  &.below { background-color: $bg-lite-gray; }
-  &.contact { background-color: $collection-gray; }
-}
-hr {
-  &.tiny { border: 1px solid white; }
-  &.cheers {
-    border-color: white;
-    &:after { background-color: white; }
-  }
-}
-input:-moz-placeholder           { opacity: 0.7; } /* Firefox 18- */
-input::-moz-placeholder          { opacity: 0.7; } /* Firefox 19+ */
-input:-ms-input-placeholder      { opacity: 0.7; }
-input::-webkit-input-placeholder { opacity: 0.7; }
-nav {}
-section {
-  &.success {
-    background: white;
-    a, a:hover, a:focus, a:active { outline: none; }
-  }
-}
-textarea:-moz-placeholder           { opacity: 0.7; } /* Firefox 18- */
-textarea::-moz-placeholder          { opacity: 0.7; } /* Firefox 19+ */
-textarea:-ms-input-placeholder      { opacity: 0.7; }
-textarea::-webkit-input-placeholder { opacity: 0.7; }
 
 
 
@@ -179,6 +187,9 @@ textarea::-webkit-input-placeholder { opacity: 0.7; }
   /////////* Minimum width 767px section *//////
 ///////////////////////////////////////////////////
 @media (min-width: 768px) {
+  
+  // primitime DOM objects //
+  div { &.panel { background-color: white; } }
   section {
     &.featured {
       .overlay { background-color: white; }
@@ -197,8 +208,8 @@ textarea::-webkit-input-placeholder { opacity: 0.7; }
   
   .navbar-custom {
     background: rgba(1244, 244, 244, 0.0);
-    &:hover, &:focus { background: rgba(244, 244, 244, .25); }
     
+    &:hover, &:focus { background: rgba(244, 244, 244, .25); }
     &.affix { background: rgba(244, 244, 244, 0.98); }
   } 
 }
