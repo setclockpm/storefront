@@ -449,24 +449,25 @@ label {
     li {
       &.active {
         text-decoration: underline;
-        
-        a, a:link, a:visited {
-          font-weight: bold;
-        }
+        a, 
+        a:link, 
+        a:visited { font-weight: bold; }
       }
     }
   }
-  .navbar-custom.affix {
-    .navbar-brand { font-size: 1.5em; }
+  .navbar-custom {
+    &.affix { .navbar-brand { font-size: 1.5em; } }
   }
   .navbar-form { .btn { letter-spacing: 1.5px; } }
-  .navbar-fixed-top {
-    .navbar-brand { font-size: 2em; }
-  }
+  .navbar-fixed-top { .navbar-brand { font-size: 2em; } }
   .utility-header {
     .nav {
       li {
-        &.active { a, a:link, a:visited { color: white; } }
+        &.active {
+          a, 
+          a:link, 
+          a:visited { color: white; }
+        }
       }
     }
   }
@@ -493,9 +494,7 @@ label {
 ////////* Maximum width 992px section *////////////
 ///////////////////////////////////////////////////
 @media (max-width: 992px) {
-  .promo {
-    span { font-size: 2.5em; }
-  }
+  .promo { span { font-size: 2.5em; } }
   .collection-preview {
     h1 { font-size: 2em; }
     .variant-name { padding: 0.5em; }
@@ -517,16 +516,12 @@ label {
 //////////////////////////////////////////////////
 /////////* Maximum width 767px section *//////////
 @media (max-width: 767px) {
-  /* Begin DOM class selectors */
   
+  /* Begin DOM class selectors */
   .copyright { font-size: 0.81em; }
   .featured h1 { font-size: 2em; }
-  .footer-below {
-    .copyright { color: $mid-gray; }
-  }
-  .promo {
-    span { font-size: 2em; }
-  }
+  .footer-below { .copyright { color: $mid-gray; } }
+  .promo { span { font-size: 2em; } }
   /* End DOM class selectors */
   
   /* Begin DOM ID selectors */
