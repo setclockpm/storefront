@@ -79,19 +79,10 @@ header {
   .logo { img { width: 140px; } }
   .nav {
     li {
-      &.active {
-        text-decoration: underline;
-        margin-bottom: -1px;
-        a,
-        a:link,
-        a:visited {
-          color: #555;
-          font-weight: bold;
-        }
-      }
+      &.active { margin-bottom: -1px; }
       &.nav-item {
         display: inline-block;
-        a { min-width: 8em;}
+        a { min-width: 8em; }
       }
     }
   }

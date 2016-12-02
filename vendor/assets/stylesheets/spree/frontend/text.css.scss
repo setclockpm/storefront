@@ -301,28 +301,19 @@ textarea::-webkit-input-placeholder {
     &.required-legend:before { color: red; }
   }
 }
-.utility-header {
-  div { color: white; }
-  nav {
-    a {
-      color: white;
-      font: normal bold .75em $forms-font;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
+.nav {
+  a {
+    color: $near-black;
+    font: normal bold .75em $forms-font;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    
+    &:focus, &:hover { text-decoration: underline; }
   }
 }
-.application-header {
-  .nav {
-    a {
-      color: $near-black;
-      font: normal bold .75em $forms-font;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      
-      &:focus, &:hover { text-decoration: underline; }
-    }
-  } 
+.utility-header {
+  div { color: white; }
+  .nav { a { color: white; } }
 }
 /* End DOM ID selectors */
 /////////////////////////////////// End active/in use DOM items //////////////////////////////////////////
@@ -454,12 +445,30 @@ label {
 @media (min-width: 768px) {
   /////////////////////////////////
   /* Begin DOM class selectors */
+  .nav {
+    li {
+      &.active {
+        text-decoration: underline;
+        
+        a, a:link, a:visited {
+          font-weight: bold;
+        }
+      }
+    }
+  }
   .navbar-custom.affix {
     .navbar-brand { font-size: 1.5em; }
   }
   .navbar-form { .btn { letter-spacing: 1.5px; } }
   .navbar-fixed-top {
     .navbar-brand { font-size: 2em; }
+  }
+  .utility-header {
+    .nav {
+      li {
+        &.active { a, a:link, a:visited { color: white; } }
+      }
+    }
   }
   /* End DOM class selectors */
 }
