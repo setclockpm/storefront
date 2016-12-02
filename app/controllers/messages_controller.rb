@@ -14,7 +14,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     
-    if @message.valid?
+    if verify_recaptcha(model: @message) && @message.valid?
       MessageMailer.new_message(@message).deliver_now
       redirect_to redirect_location, notice: "Your message has been sent."
       
