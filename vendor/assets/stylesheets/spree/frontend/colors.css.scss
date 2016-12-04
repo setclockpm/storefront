@@ -18,15 +18,54 @@
 
 
 
-#contact-card { background-color: $bright-orange; }
-#application-header {
-  .nav {
-    a { &:hover, &:focus { background: 0; } }
-  }
-  .navbar-default {
-    border-bottom: 0;
+
+
+button { &.purchase { background-color: $bright-orange; } }
+footer { 
+  &.below { background-color: $bright-orange; }
+  &.contact { background-color: $collection-gray; }
+}
+hr {
+  &.tiny { border: 1px solid white; }
+  &.cheers {
+    border-color: white;
+    &:after { background-color: white; }
   }
 }
+input:-moz-placeholder           { opacity: 0.7; } /* Firefox 18- */
+input::-moz-placeholder          { opacity: 0.7; } /* Firefox 19+ */
+input:-ms-input-placeholder      { opacity: 0.7; }
+input::-webkit-input-placeholder { opacity: 0.7; }
+nav {
+  &.application-header {
+    border-bottom: 0;
+    
+    .nav {
+      a { &:hover, &:focus { background: 0; } }
+    }
+  }
+}
+section {
+  &.success {
+    background: white;
+    a, a:hover, a:focus, a:active { outline: none; }
+  }
+}
+textarea:-moz-placeholder           { opacity: 0.7; } /* Firefox 18- */
+textarea::-moz-placeholder          { opacity: 0.7; } /* Firefox 19+ */
+textarea:-ms-input-placeholder      { opacity: 0.7; }
+textarea::-webkit-input-placeholder { opacity: 0.7; }
+
+
+
+
+
+
+#contact-card { background-color: $bright-orange; }
+
+
+
+
 
 
 
@@ -121,60 +160,16 @@
   }
 }
 .toggle-mv-menu {
+  background: none;
+  background-color: transparent;
   border: 1px solid $near-black;
+  
   .icon-bar { background-color: $near-black; }
 }
 .well {
   background-color: white;
   p { background-color: white; }
 }
-
-
-
-
-button { &.purchase { background-color: $bright-orange; } }
-footer { 
-  &.below { background-color: $bg-lite-gray; }
-  &.contact { background-color: $collection-gray; }
-}
-hr {
-  &.tiny { border: 1px solid white; }
-  &.cheers {
-    border-color: white;
-    &:after { background-color: white; }
-  }
-}
-input:-moz-placeholder           { opacity: 0.7; } /* Firefox 18- */
-input::-moz-placeholder          { opacity: 0.7; } /* Firefox 19+ */
-input:-ms-input-placeholder      { opacity: 0.7; }
-input::-webkit-input-placeholder { opacity: 0.7; }
-nav {
-  &.navbar-default {
-    &.transparent { 
-      background: rgba(113, 190, 190, 0.0);
-      &:hover, &:focus { background: rgba(113, 190, 190, .05); }
-    }
-
-    ul {
-      &.navbar-nav {
-        li {
-          &.active { a { background: rgba(34, 34, 34, 0.4) none repeat scroll 0 0; } }
-        }
-      }
-    }
-  }
-}
-section {
-  &.success {
-    background: white;
-    a, a:hover, a:focus, a:active { outline: none; }
-  }
-}
-textarea:-moz-placeholder           { opacity: 0.7; } /* Firefox 18- */
-textarea::-moz-placeholder          { opacity: 0.7; } /* Firefox 19+ */
-textarea:-ms-input-placeholder      { opacity: 0.7; }
-textarea::-webkit-input-placeholder { opacity: 0.7; }
-
 
 
 
@@ -189,13 +184,13 @@ textarea::-webkit-input-placeholder { opacity: 0.7; }
      ////////////////////////////////////////
   /////////* Minimum width 767px section *//////
 ///////////////////////////////////////////////////
-@media (min-width: 767px) {
+@media (min-width: 768px) {
+  
+  // primitime DOM objects //
+  div { &.panel { background-color: white; } }
   section {
     &.featured {
-      .overlay {
-        background-color: white;
-
-      }
+      .overlay { background-color: white; }
       .alpha60 {
         /* Fallback for web browsers that doesn't support RGBa */
         background: rgb(255, 255, 255);
@@ -208,6 +203,13 @@ textarea::-webkit-input-placeholder { opacity: 0.7; }
       }
     }
   }
+  
+  .navbar-custom {
+    background: rgba(1244, 244, 244, 0.0);
+    
+    &:hover, &:focus { background: rgba(244, 244, 244, .25); }
+    &.affix { background: rgba(244, 244, 244, 0.98); }
+  } 
 }
 
 ///////////////////////////////////////////////////
@@ -217,7 +219,7 @@ textarea::-webkit-input-placeholder { opacity: 0.7; }
 @media (max-width: 767px) {
   .navbar-collapse { background: rgba(34, 34, 34, 0.99) none repeat scroll 0 0; }
   
-  #porthos-header {
+  .utility-header {
     .toggle-mv-menu {
       border: 1px solid $off-white;
       .icon-bar { background-color: $off-white; }

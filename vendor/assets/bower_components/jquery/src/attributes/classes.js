@@ -1,21 +1,15 @@
 define( [
 	"../core",
-<<<<<<< HEAD
-	"../var/rnotwhite",
-	"../core/init"
-], function( jQuery, rnotwhite ) {
-=======
 	"../core/stripAndCollapse",
 	"../var/rnothtmlwhite",
 	"../data/var/dataPriv",
 	"../core/init"
 ], function( jQuery, stripAndCollapse, rnothtmlwhite, dataPriv ) {
->>>>>>> master
 
 "use strict";
 
 function getClass( elem ) {
-	return jQuery.attr( elem, "class" ) || "";
+	return elem.getAttribute && elem.getAttribute( "class" ) || "";
 }
 
 jQuery.fn.extend( {
@@ -44,15 +38,10 @@ jQuery.fn.extend( {
 						}
 					}
 
-<<<<<<< HEAD
-					// only assign if different to avoid unneeded rendering.
-					finalValue = jQuery.trim( cur );
-=======
 					// Only assign if different to avoid unneeded rendering.
 					finalValue = stripAndCollapse( cur );
->>>>>>> master
 					if ( curValue !== finalValue ) {
-						jQuery.attr( elem, "class", finalValue );
+						elem.setAttribute( "class", finalValue );
 					}
 				}
 			}
@@ -97,7 +86,7 @@ jQuery.fn.extend( {
 					// Only assign if different to avoid unneeded rendering.
 					finalValue = stripAndCollapse( cur );
 					if ( curValue !== finalValue ) {
-						jQuery.attr( elem, "class", finalValue );
+						elem.setAttribute( "class", finalValue );
 					}
 				}
 			}
@@ -147,19 +136,21 @@ jQuery.fn.extend( {
 				className = getClass( this );
 				if ( className ) {
 
-					// store className if set
-					jQuery._data( this, "__className__", className );
+					// Store className if set
+					dataPriv.set( this, "__className__", className );
 				}
 
-				// If the element has a class name or if we're passed "false",
+				// If the element has a class name or if we're passed `false`,
 				// then remove the whole classname (if there was one, the above saved it).
 				// Otherwise bring back whatever was previously saved (if anything),
 				// falling back to the empty string if nothing was stored.
-				jQuery.attr( this, "class",
-					className || value === false ?
-					"" :
-					jQuery._data( this, "__className__" ) || ""
-				);
+				if ( this.setAttribute ) {
+					this.setAttribute( "class",
+						className || value === false ?
+						"" :
+						dataPriv.get( this, "__className__" ) || ""
+					);
+				}
 			}
 		} );
 	},

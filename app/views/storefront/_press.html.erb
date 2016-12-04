@@ -6,7 +6,7 @@
   <div class="row standard-grid grid">
     <div class="alpha60 overlay clearfix">
       <% featured_in_images.each do |image, uri| %>
-        <%= render partial: "press_item", locals: { image: image, url: uri } %>
+        <%= render partial: "storefront/press_item", locals: { image: image, url: uri } %>
       <% end %>
     </div>
   </div>

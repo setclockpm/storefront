@@ -21,6 +21,7 @@ gem "mini_magick"
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem "paperclip", github: "thoughtbot/paperclip", ref: "c38bb31"
 gem 'pg', '~> 0.15'
+gem "recaptcha", require: "recaptcha/rails"
 gem 'rubyntlm', '~> 0.6.0'
 gem 'sass-rails', '~> 5.0'
 gem 'savon'

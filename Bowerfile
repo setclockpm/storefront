@@ -1,3 +1,7 @@
-asset 'slidebars'
+asset 'bootstrap-sass'
 asset 'photoswipe'
+<<<<<<< HEAD
 asset 'fullpage.js'
+=======
+asset 'slidebars'
+>>>>>>> working

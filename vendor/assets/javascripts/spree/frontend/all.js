@@ -4,15 +4,14 @@
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // the compiled file.
 //
+
 //= require jquery
-//= require magnific-popup
-//= require jquery_ujs
-//= require spree/frontend
 //= require jquery-ui/effect
-//= require jquery.slick
+//= require jquery_ujs
 //= require slidebars/dist/slidebars
 //= require fullpage.js/dist/jquery.fullpage
-
+//= require spree/frontend
 //= require_tree .
 //= require spree/frontend/spree_simple_sales
 //= require spree/frontend/spree_i18n
+

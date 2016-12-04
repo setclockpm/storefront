@@ -14,8 +14,8 @@ feature 'Contact us page interactions: ' do
       FactoryGirl.create(:store)
     end
   end
-  
-  
+
+
   feature "Initial page load / reload: " do
     # Only 2 ways possible: With an argument in query string intended for subject and the normal way.
     # The only query string parameter accepted is the subject.
@@ -24,16 +24,8 @@ feature 'Contact us page interactions: ' do
       expect(find('form#new_message')).to have_select('message[subject]')
       expect(find('select#subject').all('option').size).to eq(5)
     end
-  
-    scenario "Successful with subject parameter passed in query string.", js: true do
-      visit main_app.root_path
-      # expect(page.has_selector?('div#contact-card')).to be true
-      # expect(find('div#contact-card')).to have_link('Wholesale')
-      # find('ul.desktop-contact-links').click_link('Wholesale')
- #      expect(find('form select', visible: false).value).to eq('Wholesale Inquiries')
-    end
   end
-  
+
   feature "Form submission" do
     background do
       @field_entries = {}
@@ -43,14 +35,14 @@ feature 'Contact us page interactions: ' do
       background do
         @field_entries[:subject] = "Product Availability"
       end
-      
+
       scenario "Long form should submit successfully.", js: true do
         visit main_app.contact_path
         expect(page.has_selector?('form select', visible: false)).to be true
         fill_inquiries_form_with_valid_data(@field_entries)
         click_button 'send'
       end
-      
+
       scenario "Short form should submit successfully.", js: true do
         visit main_app.root_path
         expect(page.has_selector?('form select', visible: false)).to be false
@@ -85,7 +77,6 @@ feature 'Contact us page interactions: ' do
         expect(page).to have_content("Please enter a name.")
       end
     end
-    
   end
   
 end

@@ -5,7 +5,6 @@ footer {
   .container { width: 100%; }
   #inquiries-card { padding-bottom: 4%; }
   h3 { margin: 10px 0px 10px 0px; }
-  
 }
 
 
@@ -17,7 +16,7 @@ footer {
   width: 40px;
 }
 .btn:focus, .btn:active, .btn.active { outline: none; }
-.footer-below {  
+.footer-below {
   .copyright { margin: 2em 0 2.5em; }
   .footer-col { margin-bottom: 10px; }
   
@@ -25,11 +24,11 @@ footer {
 }
 
 .scroll-top {
+  bottom: 2%;
+  height: 50px;
   position: fixed;
   right: 2%;
-  bottom: 2%;
   width: 50px;
-  height: 50px;
   z-index: 1049;
   
   .btn {
