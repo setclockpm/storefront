@@ -1,10 +1,15 @@
-== Note: for this bug: ==
-#<NoMethodError: undefined method `variant_sku=' for #<Spree::Product:0x007fc98b1d3d08>
-during import, change line 308 in product_loader.rb in datashift_spree so that object is NEVER reloaded
+== First Bug:
+  
+  For:
+  
+   #<NoMethodError: undefined method `variant_sku=' for #<Spree::Product:0x007fc98b1d3d08> during import, change line 308 in product_loader.rb in datashift_spree so that object is NEVER reloaded
 
 
 == Second Bug:
-[ 2016-10-10 02:40:14.9474 1041/7f51a8e3f700 age/Cor/App/Implementation.cpp:304 ]: Could not spawn process for application /var/www/porthos/production/current: An error occurred while starting up the preloader.
+
+  [ 2016-10-10 02:40:14.9474 1041/7f51a8e3f700 age/Cor/App/Implementation.cpp:304 ]: Could not spawn process for application /var/www/porthos/production/current: An error occurred while starting up the preloader.
+  
+  
   Error ID: 44ace072
   Error details saved to: /tmp/passenger-error-yr9Fdi.html
   Message from application: undefined method `option_values' for nil:NilClass (NoMethodError)
@@ -34,5 +39,13 @@ during import, change line 308 in product_loader.rb in datashift_spree so that o
 
 
   Solution is here: https://github.com/spree-contrib/spree_i18n/issues/474
-  It a bug in the spree-contrib/spree_globalize gem where the link automtically assumes there's a store.id. It runs fine in every environment except test where I can't seem to get a Store instance to persist.
+  It's a bug in the spree-contrib/spree_globalize gem where the link automtically assumes there's a store.id. 
+  It runs fine in every environment except test where I can't seem to get a Store instance to persist.
 
+
+== Fourth Obstacle:
+  
+  Fullpage.js/Bootstrap Affix:
+  
+    http://stackoverflow.com/questions/27992060/dynamically-making-an-element-fixed-header-in-fullpage-js
+    This page helped point me in the right direction.
