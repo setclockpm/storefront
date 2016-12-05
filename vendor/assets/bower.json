@@ -2,7 +2,7 @@
   "name": "dsl-generated dependencies",
   "dependencies": {
     "bootstrap-sass": "latest",
-    "fullpage.js": "latest"
+    "fullpage.js": "latest",
     "photoswipe": "latest",
     "slidebars": "latest"
   }
