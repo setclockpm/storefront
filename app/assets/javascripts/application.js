@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require bootstrap-sass/assets/javascripts/bootstrap/scrollspy
 //= require bootstrap-sass/assets/javascripts/bootstrap/affix
+//= require fullpage.js/dist/jquery.fullpage
 //= require jquery.slick
 //= require magnific-popup
 //= require_tree .

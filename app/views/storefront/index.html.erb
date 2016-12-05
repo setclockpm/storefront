@@ -1,17 +1,17 @@
 <%= currently_at "Home" %>
 
 <!-- Header (Front Page) -->
-<header id="intro-splash" class="section" data-anchor="hero">
+<header id="intro-splash" class="section" data-anchor="fpjs-hero">
   <%= render partial: 'storefront/herro' %>
 </header>
 
 <!-- Collections Preview Section -->
-<section class="collection-preview fp-auto-height section" data-anchor="collection">
+<section class="collection-preview fp-auto-height section" data-anchor="fpjs-collection">
   <%= render partial: "storefront/collection_preview" %>
 </section>
 
 <!-- Catalog Section -->
-<section class="catalog fp-auto-height section" data-anchor="catalog">
+<section class="catalog fp-auto-height section" data-anchor="fpjs-catalog">
   <div class="container">
     <div class="row">
       <div class="catalog-outer col-lg-12">
@@ -38,11 +38,12 @@
 
 
 
-<section class="featured fp-auto-height section" data-anchor="press">
+<section class="featured fp-auto-height section" data-anchor="fpjs-press">
   <%= render partial: 'storefront/press' %>
 </section>
 <!-- Footer -->
-<footer class="contact section" data-anchor="contact">
+<section class="contact section" data-anchor="fpjs-contact">
   <%= render partial: 'layouts/shared/footer' %>
-</footer>
+  <%= render partial: "layouts/shared/footer_below" %>
+</section>
 

@@ -85,11 +85,23 @@ $(document).ready(function(){
 
 
   $('#fullpage').fullpage({
-    anchors: ['hello', 'collection', 'catalog', 'press', 'contact'],
+    anchors: ['fpjs-hero', 'fpjs-collection', 'fpjs-catalog', 'fpjs-press', 'fpjs-contact'],
     // fitToSection: true,
     fitToSectionDelay: 5000,
-    fixedElements: 'footer.below',
-    recordHistory: false
+    recordHistory: false,
+    onLeave: function(index, nextIndex, direction){
+      //leaving 1st section
+      if(index == 1){
+        $('nav.navbar-fixed-top').addClass('affix');
+      }
+      //back to the 1st section
+      if(nextIndex == 1){
+        $('nav.navbar-fixed-top').removeClass('affix');
+      }
+    },
+    afterResize: function(){
+      windowsHeight = $(window).height();
+    }
   });
 
 });

@@ -38,20 +38,17 @@
     <!-- This should be desktop Navigation -->
     <%= render partial: "layouts/shared/main_header_nav" %>
     
-    <div canvas="container">
+    <div id="fullpage" class="full-page-wrapper" canvas="container">
       <!-- This should be mobile Navigation -->
-      <div class="full-page-wrapper" id="fullpage">
-        <div id="mobile-header" class="application-header">
-          <%= render partial: "layouts/shared/mobile_header_nav" %>
-        </div>
+      <div id="mobile-header" class="application-header">
+        <%= render partial: "layouts/shared/mobile_header_nav" %>
+      </div>
       
-        <%= yield %>
-        <%= render partial: "layouts/shared/footer_below" %>
-        <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-        <div class="scroll-top hidden-sm hidden-xs hidden-lg hidden-md">
+      <%= yield %>
+      <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+      <div class="scroll-top hidden-sm hidden-xs hidden-lg hidden-md">
           <%= link_to fa_icon("chevron-up"), "#page-top", class: "btn btn-primary" %>
         </div>
-      </div>
     </div>
     
     <%= render partial: "layouts/shared/slidebar_menu" %>

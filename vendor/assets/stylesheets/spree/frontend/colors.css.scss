@@ -21,10 +21,7 @@
 
 
 button { &.purchase { background-color: $bright-orange; } }
-footer { 
-  &.below { background-color: $bright-orange; }
-  &.contact { background-color: $collection-gray; }
-}
+footer { &.below { background-color: $bright-orange; } }
 hr {
   &.tiny { border: 1px solid white; }
   &.cheers {
@@ -46,6 +43,7 @@ nav {
   }
 }
 section {
+  &.contact { background-color: $collection-gray; }
   &.success {
     background: white;
     a, a:hover, a:focus, a:active { outline: none; }

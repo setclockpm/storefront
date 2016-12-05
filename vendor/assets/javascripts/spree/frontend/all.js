@@ -9,7 +9,6 @@
 //= require jquery-ui/effect
 //= require jquery_ujs
 //= require slidebars/dist/slidebars
-//= require fullpage.js/dist/jquery.fullpage
 //= require spree/frontend
 //= require_tree .
 //= require spree/frontend/spree_simple_sales
