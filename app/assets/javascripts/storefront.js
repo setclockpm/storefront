@@ -85,7 +85,7 @@ $(document).ready(function(){
 
 
   $('#fullpage').fullpage({
-    anchors: ['hello', 'collection', 'catalog', 'shouts', 'can-we-help'],
+    anchors: ['hello', 'collection', 'catalog', 'press', 'contact'],
     // fitToSection: true,
     fitToSectionDelay: 5000,
     fixedElements: 'footer.below',

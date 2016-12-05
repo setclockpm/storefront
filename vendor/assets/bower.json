@@ -1,8 +1,6 @@
 {
   "name": "dsl-generated dependencies",
   "dependencies": {
-    "slidebars": "latest",
-    "photoswipe": "latest",
     "bootstrap-sass": "latest",
     "fullpage.js": "latest"
     "photoswipe": "latest",
