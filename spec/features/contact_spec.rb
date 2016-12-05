@@ -44,7 +44,7 @@ feature 'Contact us page interactions: ' do
       end
 
       scenario "Short form should submit successfully.", js: true do
-        visit main_app.root_path
+        visit "#{main_app.root_path}/#fpjs-contact"
         expect(page.has_selector?('form select', visible: false)).to be false
         find('input[type=email]').click
         fill_inquiries_form_with_valid_data
@@ -71,7 +71,7 @@ feature 'Contact us page interactions: ' do
         @field_entries[:email] = 'forgetfulfrank@example.com'
         @field_entries[:name]  = nil
         
-        visit main_app.root_path
+        visit "#{main_app.root_path}/#fpjs-contact"
         fill_text_fields(@field_entries)
         click_button 'send'
         expect(page).to have_content("Please enter a name.")
