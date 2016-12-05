@@ -36,19 +36,14 @@ $(document).ready(function(){
     }]
   });
   
-<<<<<<< HEAD:vendor/assets/javascripts/spree/frontend/storefront.js
   
-  // Magnific-Gallery initializer
-=======
   // Highlight the top nav as scrolling occurs
   $('body').scrollspy({
     target: '.navbar-fixed-top',
     offset: 51
   });
-
   
-
->>>>>>> working:app/assets/javascripts/storefront.js
+   // Magnific-Gallery initializer
   $('.gallery-popup').magnificPopup({
     callbacks: {
       elementParse: function(item) {
@@ -86,10 +81,9 @@ $(document).ready(function(){
       }
     }
   });
-<<<<<<< HEAD:vendor/assets/javascripts/spree/frontend/storefront.js
-  
-  
-  
+
+
+
   $('#fullpage').fullpage({
     anchors: ['hello', 'collection', 'catalog', 'shouts', 'can-we-help'],
     // fitToSection: true,
@@ -97,21 +91,5 @@ $(document).ready(function(){
     fixedElements: 'footer.below',
     recordHistory: false
   });
-  
-  
-  
-  
-  // This may have been part of the startbootstrap teemplate and may not be needed
-  // TODO: Check if this is even used.
-  $("a[data-toggle=\"tab\"]").click(function(e) {
-    e.preventDefault();
-    $(this).tab("show");
-  });
-=======
->>>>>>> working:app/assets/javascripts/storefront.js
+
 });
-
-
-
-
-
