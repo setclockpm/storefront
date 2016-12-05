@@ -6,6 +6,7 @@ en:
   search: "Search"
   spree:
      # variants: "Color / Size Options"
+     about_us_text: "About Us Text"
      import: "Import"
      excel_file: "Spreadsheet File"
      process_images: "Generate Product Photos"
@@ -13,6 +14,7 @@ en:
      shop_by_taxonomy: "%{taxonomy}"
      showcased: "Showcase Lifestyle Image"
      new_hero_image: "New Lifestyle Image"
+     website_content_settings: "Website Content Settings"
   views:
      pagination:
        first: "First"
