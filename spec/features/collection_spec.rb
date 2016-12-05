@@ -27,8 +27,10 @@ feature 'Collection Items' do
     showcased_product.images.create!(attachment: showcased_image)
     
     visit main_app.root_path
-    save_and_open_page
     sleep 4
+    save_and_open_page
+    wait_for_ajax
+    
     expect(page).to have_selector('a.collection-img-link', count: 4)
   end
   
