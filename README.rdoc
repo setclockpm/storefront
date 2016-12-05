@@ -2,7 +2,8 @@
   
   For:
   
-   #<NoMethodError: undefined method `variant_sku=' for #<Spree::Product:0x007fc98b1d3d08> during import, change line 308 in product_loader.rb in datashift_spree so that object is NEVER reloaded
+   #<NoMethodError: undefined method `variant_sku=' for #<Spree::Product:0x007fc98b1d3d08> during import, 
+   change line 308 in product_loader.rb in datashift_spree so that object is NEVER reloaded
 
 
 == Second Bug:
