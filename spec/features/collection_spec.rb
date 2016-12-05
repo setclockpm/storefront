@@ -28,8 +28,6 @@ feature 'Collection Items' do
     
     visit "#{main_app.root_path}/#fpjs-collection"
     sleep 4
-    save_and_open_page
-    
     wait_for_ajax
     expect(page).to have_selector('a.collection-img-link', count: 4)
   end
