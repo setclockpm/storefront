@@ -1,7 +1,5 @@
 section {
-  &.collection-preview {
-    padding-bottom: 6em;
-  }
+  &.collection-preview { padding-bottom: 6em; }
 }
 .collection-preview {
   h1 { 
@@ -211,8 +209,8 @@ section {
   
   .collection-preview {
     .heading-row {
-      padding-bottom: 0.5em;
-      padding-top: 1.5em;
+      padding-bottom: 0.2em;
+      padding-top: 0.2em;
       .title { padding-left: 0px; }
       .see-more { padding-right: 0px; }
     }

@@ -18,6 +18,7 @@ class StorefrontController < ApplicationController
   end
   
   def about
+    Rails.logger.debug "\n\n\n\nUser Agent: #{request.user_agent}\n\n\n\n"
     render layout: 'application'
   end
   
