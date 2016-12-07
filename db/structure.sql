@@ -2753,7 +2753,9 @@ CREATE TABLE spree_stores (
     code character varying,
     "default" boolean DEFAULT false NOT NULL,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    about_us_slogan character varying,
+    about_us_text text
 );
 
 
@@ -6522,4 +6524,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160916011142');
 INSERT INTO schema_migrations (version) VALUES ('20161005221011');
 
 INSERT INTO schema_migrations (version) VALUES ('20161006185746');
+
+INSERT INTO schema_migrations (version) VALUES ('20161206043543');
 

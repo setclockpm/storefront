@@ -8,7 +8,7 @@ class StorefrontController < ApplicationController
   
   def index
    @message = Message.new
-   render layout: 'application'
+   render layout: 'storefront'
   end
   
   def catalog
@@ -18,6 +18,7 @@ class StorefrontController < ApplicationController
   end
   
   def about
+    render layout: 'application'
   end
   
 end

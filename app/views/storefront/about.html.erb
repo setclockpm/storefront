@@ -24,7 +24,7 @@
     
     <div class="row slogan-container">
       <h2 class="slogan">
-        Right piece, right person, right price
+        <%= current_store.about_us_slogan %>
       </h2>
     </div>
     
@@ -32,20 +32,9 @@
     
     <div class="abouter row">
       <div class="col-md-8 col-md-offset-2">
-        <p>
-          At Porthos Home, we understand the apprehensions with buying furniture online, 
-          that's why we work closely with our designers to ensure each piece has the quality, craft, and staying power to complete your home.
-        </p>
+        <%= current_store.about_us_text.html_safe %>
       </div>
     </div>
-    <div class="abouter row">
-      <div class="col-md-8 col-md-offset-2">
-        <p>
-          We're dedicated to sourcing the very best pieces at the very best prices.
-        </p>
-      </div>
-    </div>
-    
   </div>
   <!-- <p class="address">47650 Kato Rd.<br>Fremont, CA 95483</p> -->
 </section>

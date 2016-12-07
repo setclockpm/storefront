@@ -55,27 +55,60 @@
             </div>
           </div>
         </div>
-      <% end %>
-
-      <div class="row">
-        <div class="col-md-6">
+        
+        <div class="row">
           <%#-------------------------------------------------%>
           <%# Website settings                               %>
           <%#-------------------------------------------------%>
-          <div class="panel panel-default bio">
-            <div class="panel-heading">
-              <h1 class="panel-title">
-                <%= Spree.t(:website_content_settings) %>
-              </h1>
-            </div>
-
-            <div class="panel-body">
-              <div class="form-group" data-hook="admin_website_setting_about_us_text">
-                <%= label_tag :about_us_text, Spree.t(:about_us_text) %>
-                <%= text_area_tag :about_us_text, "", class: 'form-control' %>
+          <div class="col-xs-6 col-md-6">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h1 class="panel-title"> <%= Spree.t(:website_content_settings) %> </h1>
+              </div>
+              
+              <div class="panel-body">
+                <div class="form-group" data-hook="admin_website_setting_about_us_text">
+                  <%= f.label :about_us_slogan, Spree.t(:about_us_slogan) %>
+                  <%= f.text_field :about_us_slogan, placeholder: "About Us Section Heading", class: 'form-control'%>
+                </div>
+                  
+                <div class="form-group" data-hook="admin_website_setting_about_us_text">
+                  <%= f.label :about_us_text, Spree.t(:about_us_text) %>
+                  <%= f.text_area :about_us_text, placeholder: "Content for 'About Us' section of the website", class: 'form-control', rows: 5 %>
+                </div>
               </div>
             </div>
+            
           </div>
+          
+          <div class="col-md-6">
+            <%#-------------------------------------------------%>
+            <%# Currency Settings                               %>
+            <%#-------------------------------------------------%>
+            <div class="panel panel-default currency">
+              <div class="panel-heading">
+                <h1 class="panel-title">
+                  <%= Spree.t(:currency_settings)%>
+                </h1>
+              </div>
+
+              <div class="panel-body">
+                <div class="form-group">
+                  <%= label_tag :currency, Spree.t(:choose_currency) %>
+                  <%= select_tag :currency, currency_options %>
+                </div>
+              </div>
+            </div><!--end class="panel panel-default currency -->
+          </div>
+          
+          
+          
+        </div>
+      <% end %>
+
+      <div class="row">
+       
+        <div class="col-md-6">
 
           <%#-------------------------------------------------%>
           <%# Clear cache                                     %>
@@ -96,26 +129,6 @@
           </div>
 
         </div>
-        <div class="col-md-6">
-
-          <%#-------------------------------------------------%>
-          <%# Currency Settings                               %>
-          <%#-------------------------------------------------%>
-          <div class="panel panel-default currency">
-            <div class="panel-heading">
-              <h1 class="panel-title">
-                <%= Spree.t(:currency_settings)%>
-              </h1>
-            </div>
-
-            <div class="panel-body">
-              <div class="form-group">
-                <%= label_tag :currency, Spree.t(:choose_currency) %>
-                <%= select_tag :currency, currency_options %>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
       <div class="form-actions" data-hook="buttons">
@@ -123,9 +136,7 @@
         <span class="or"><%= Spree.t(:or) %></span>
         <%= button_link_to Spree.t('actions.cancel'), edit_admin_general_settings_url, icon: 'delete' %>
       </div>
-
     </fieldset>
-
   </div>
 
 <% end %>
