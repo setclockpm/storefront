@@ -1,6 +1,6 @@
 .collection-preview {
   h1 { 
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     margin-top: 0;
   }
   
@@ -245,7 +245,25 @@
 @media (min-width: 992px) {
 
   section {
-    &.collection-preview { min-height: 100vh; }
+    &.collection-preview {
+      .large-borders {
+        border-left-width: 20px;
+        border-right-width: 20px;
+      }
+      .double-left-border {
+        border-left-width: 30px;
+        border-right-width: 10px;
+      }
+      .double-right-border {
+        border-left-width: 10px;
+        border-right-width: 30px;
+      }
+      .grid-uniform {
+        margin: auto;
+        .grid-item { border-top-width: 4px; }
+        .main-row { .grid-item { border-top-width: 8px; } }
+      }
+    }
   }
   
   .variant-specs {

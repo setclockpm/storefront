@@ -87,8 +87,8 @@ $(document).ready(function(){
     return;
   } else {
     $('#fullpage').fullpage({
-      // anchors: ['fpjs-hero', 'fpjs-collection', 'fpjs-catalog', 'fpjs-press', 'fpjs-contact', 'fpjs-footer'],
-      anchors: ['fpjs-hero', 'fpjs-catalog', 'fpjs-press', 'fpjs-contact', 'fpjs-footer'],
+      anchors: ['fpjs-hero', 'fpjs-collection', 'fpjs-catalog', 'fpjs-press', 'fpjs-contact', 'fpjs-footer'],
+      // anchors: ['fpjs-hero', 'fpjs-catalog', 'fpjs-press', 'fpjs-contact', 'fpjs-footer'],
       
       // fitToSection: true,
  //      fitToSectionDelay: 5000,

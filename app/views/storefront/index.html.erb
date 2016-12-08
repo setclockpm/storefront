@@ -6,12 +6,12 @@
 </header>
 
 <!-- Collections Preview Section -->
-<!-- <section class="collection-preview section" data-anchor="fpjs-collection"> -->
-  <%#= render partial: "storefront/collection_preview" %>
-<!-- </section> -->
+<section class="collection-preview section" data-anchor="fpjs-collection">
+  <%= render partial: "storefront/collection_preview" %>
+</section>
 
 <!-- Catalog Section -->
-<section class="catalog fp-auto-height section" data-anchor="fpjs-catalog">
+<section class="catalog fp-auto-height-o section" data-anchor="fpjs-catalog">
   <div class="container">
     <div class="row">
       <div class="catalog-outer col-lg-12">
@@ -35,16 +35,15 @@
   </div>
 </section>
 
-
-
-
+<!-- Featured / Press -->
 <section class="featured fp-auto-height section" data-anchor="fpjs-press">
   <%= render partial: 'storefront/press' %>
 </section>
-<!-- Footer -->
-<section class="contact fp-auto-height section" data-anchor="fpjs-contact">
+<!-- Inquiries -->
+<section class="contact fp-auto-height-o section" data-anchor="fpjs-contact">
   <%= render partial: 'layouts/shared/footer' %>
 </section>
+<!-- Footer -->
 <footer class="below fp-auto-height section text-center" data-anchor="fpjs-footer">
   <%= render partial: "layouts/shared/footer_below" %>
 </footer>
