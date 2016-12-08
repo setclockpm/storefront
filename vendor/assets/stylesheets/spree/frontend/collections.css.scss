@@ -1,6 +1,3 @@
-section {
-  &.collection-preview { padding-bottom: 6em; }
-}
 .collection-preview {
   h1 { 
     margin-bottom: 20px;
@@ -204,13 +201,17 @@ section {
 ///////////////////////////////////////////////////
 @media (min-width: 768px) {
   section {
-    &.collection-preview { max-height: 100vh; }
+    &.collection-preview {
+//      padding-bottom: 0em;
+//      padding-top: 0em;
+    }
   }
   
   .collection-preview {
     .heading-row {
       padding-bottom: 0.2em;
       padding-top: 0.2em;
+      
       .title { padding-left: 0px; }
       .see-more { padding-right: 0px; }
     }
@@ -280,13 +281,11 @@ section {
   /////////* Minimum width 1440px section *////
 ///////////////////////////////////////////////////
 @media (min-width: 1440px) {
-  .grid-uniform, .main-row {
-    //max-width: 1672px;
-//    margin: 10px auto;
+  section {
+    &.collection-preview {}
   }
-  .heading-row {
-//    max-width: 1702px;
-  }
+  .grid-uniform, .main-row {}
+  .heading-row {}
 }
 ///////////////////////////////////////////////////
                         ///

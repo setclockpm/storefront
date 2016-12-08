@@ -120,14 +120,14 @@ header {
     -o-transition: all 0.7s ease; 
     transition: all 0.7s ease; 
         
-    &.affix { padding: 15px 0; }
+    &.affix { padding: 10px 0; }
     &:hover, &:focus {
       transition: all .3s ease-in-out;
       transition-delay: 0s;
     }
   }
   .navbar-header { float: none; }
-  .navbar-fixed-top { padding: 15px 0; }
+  .navbar-fixed-top { padding: 10px 0; }
   .navbar-static-top {
     padding: 15px 0; 
     transition: padding 0.3s ease 0s;

@@ -16,7 +16,6 @@
           </div>
         <% end %>
       </div>
-      <hr>
       <div class="retail-leads-row row">
         <% collection_items(preview: true).each do |variant| %>
           <%= render partial: "collection/collection_item", locals: { variant: variant, preview: true } %>

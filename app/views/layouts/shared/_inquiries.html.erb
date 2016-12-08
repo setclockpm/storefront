@@ -82,11 +82,12 @@
       </div>
       <div><h6 class="required-legend"> Indicates required field</h6></div>
       <div class="row submit-group">
-        <div class="form-group col-xs-12">
+        <div class="form-group col-xs-4">
           <%= f.submit "send", id: 'button-submit', class: "btn-send btn btn-outline btn-lg", disabled: true %>
         </div>
+        <%= recaptcha_tags %>
       </div>
-      <%= recaptcha_tags %>
+      
     <% end %>
   </div>
 </div>
