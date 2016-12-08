@@ -222,7 +222,10 @@ section {
     position: relative;
     top: 5vh;
     
-    .card { padding: 3em; }
+    .card {
+      padding: 3em;
+      padding-bottom: 3.2em;
+    }
   }
 }
 ////////////////////////////////////////////////

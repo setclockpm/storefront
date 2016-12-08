@@ -87,8 +87,11 @@ $(document).ready(function(){
     return;
   } else {
     $('#fullpage').fullpage({
-      anchors: ['fpjs-hero', 'fpjs-collection', 'fpjs-catalog', 'fpjs-press', 'fpjs-contact'],
-      fitToSectionDelay: 5000,
+      // anchors: ['fpjs-hero', 'fpjs-collection', 'fpjs-catalog', 'fpjs-press', 'fpjs-contact', 'fpjs-footer'],
+      anchors: ['fpjs-hero', 'fpjs-catalog', 'fpjs-press', 'fpjs-contact', 'fpjs-footer'],
+      
+      // fitToSection: true,
+ //      fitToSectionDelay: 5000,
       recordHistory: false,
       onLeave: function(index, nextIndex, direction){
         //leaving 1st section
@@ -100,9 +103,9 @@ $(document).ready(function(){
           $('nav.navbar-fixed-top').removeClass('affix');
         }
       },
-      afterResize: function(){
-        windowsHeight = $(window).height();
-      }
+      // afterResize: function(){
+//         windowsHeight = $(window).height();
+//       }
     });
   }
   

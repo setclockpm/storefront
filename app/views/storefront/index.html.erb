@@ -6,9 +6,9 @@
 </header>
 
 <!-- Collections Preview Section -->
-<section class="collection-preview fp-auto-height section" data-anchor="fpjs-collection">
-  <%= render partial: "storefront/collection_preview" %>
-</section>
+<!-- <section class="collection-preview section" data-anchor="fpjs-collection"> -->
+  <%#= render partial: "storefront/collection_preview" %>
+<!-- </section> -->
 
 <!-- Catalog Section -->
 <section class="catalog fp-auto-height section" data-anchor="fpjs-catalog">
@@ -42,8 +42,10 @@
   <%= render partial: 'storefront/press' %>
 </section>
 <!-- Footer -->
-<section class="contact section" data-anchor="fpjs-contact">
+<section class="contact fp-auto-height section" data-anchor="fpjs-contact">
   <%= render partial: 'layouts/shared/footer' %>
-  <%= render partial: "layouts/shared/footer_below" %>
 </section>
+<footer class="below fp-auto-height section text-center" data-anchor="fpjs-footer">
+  <%= render partial: "layouts/shared/footer_below" %>
+</footer>
 
