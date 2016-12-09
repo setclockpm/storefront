@@ -28,7 +28,7 @@ section {
     .container {
       padding-left: 5em;
       padding-right: 5em;
-      width: 100%;
+      width: 92%;
     }
     .grid-item {
       overflow: hidden;
@@ -82,12 +82,8 @@ section {
 }
 
 
-.featured-in {
-  padding-left: 112px;
-}
-.musketeer {
-  display: none;
-}
+
+.musketeer { display: none; }
 
 
 #press * { z-index: 2; }
