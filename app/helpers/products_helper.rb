@@ -30,6 +30,13 @@ module ProductsHelper
     on_first_pg ? page_decoy("previous") : prev_page_link(is_remote, url)
   end
   
+  def showcased_check_box(f)
+    if disable_showcase_option?
+      f.check_box :showcased, class: 'form-control', disabled: 'true'
+    else
+      f.check_box :showcased, class: 'form-control'
+    end
+  end
   
   def specifications
     # Remove properties that are ambiguous 'Features' (to be used in another section)
@@ -49,7 +56,14 @@ module ProductsHelper
   
   
   private
-
+    def disable_showcase_option?
+      puts "Spree::Product.showcased_items.map(&:id): #{Spree::Product.showcased_items.map(&:id)} / @product.id: #{@product.id}"
+      return false if @product.new_record?
+      showcased_ids = Spree::Product.showcased_items.map(&:id)
+      return false if showcased_ids.size < 3 || showcased_ids.include?(@product.id)
+      true
+    end
+    
     def page_decoy(direction)
       text = raw(send(:t, "views.pagination.#{direction}"))
       content_tag :span, text, class: 'pg-button page-step disabled'
