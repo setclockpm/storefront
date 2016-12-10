@@ -2,9 +2,15 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  activerecord:
+    errors:
+      models:
+        spree/product:
+          attributes:
+            base:
+              too_many_showcased_items: "Only up to %{count} showcased products are allowed"
   all_departments: "All Departments"
-  errors:
-    too_many_showcased_items: "Only up to %{count} showcased products are allowed"
+  
   search: "Search"
   spree:
      # variants: "Color / Size Options"
