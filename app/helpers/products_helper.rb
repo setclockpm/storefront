@@ -8,6 +8,11 @@ module ProductsHelper
     
   end
   
+  def admin_showcased_products_label
+    dat_label = "#{Spree.t(:showcase)}?"
+    return dat_label if Spree::Product.showcased_items.size < Spree::Product::ALLOWED_SHOWCASE_ITEMS
+    "#{dat_label} (At Max)"
+  end
   
   # Displays swatch background iff no images exist for variant
   def default_thumbnail_bg(v)

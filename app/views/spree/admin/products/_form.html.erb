@@ -86,12 +86,9 @@
       <% if @product.master_images.any? %>
         <div data-hook="admin_product_form_showcased">
           <%= f.field_container :showcased, class: ['form-group'] do %>
-            <%= f.label :showcased, Spree::Product.showcased_items.size >= 3 ? 'Max Showcased Products Reached' : Spree.t(:showcased) %>
-            <% unless Spree::Product.showcased_items.size >= 3 %>
-              <%= f.error_message_on :showcased %>
-              <%= f.check_box :showcased, class: 'form-control' %>
-            <% end %>
-            
+            <%= f.label :showcased, admin_showcased_products_label %>
+            <%= f.error_message_on :showcased %>
+            <%= f.check_box :showcased, class: 'form-control' %>
           <% end %>
         </div>
       <% end %>

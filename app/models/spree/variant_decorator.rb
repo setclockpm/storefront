@@ -1,5 +1,5 @@
 Spree::Variant.class_eval do
-  MAIN_LOCATION = "Main Location"
+  MAIN_LOCATION = "Main Location" unless const_defined?(:MAIN_LOCATION)
   attr_reader :collection_image
   
   class << self
@@ -12,7 +12,7 @@ Spree::Variant.class_eval do
     end
     
     def find_those_having_master_images
-      swhere(is_master: true).joins(:images).all
+      where(is_master: true).joins(:images).all
     end
     
   end
@@ -47,7 +47,6 @@ Spree::Variant.class_eval do
     values.to_a.map! do |ov|
       "#{ov.presentation}"
     end
-    puts "\nvalues before inspect: #{values.inspect}\n"
     values.to_sentence({ words_connector: ", ", two_words_connector: ", " })
   end
   
