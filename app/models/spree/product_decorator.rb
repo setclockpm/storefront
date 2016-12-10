@@ -1,11 +1,16 @@
+
 Spree::Product.class_eval do
-  validate :max_three_showcased
+  ALLOWED_SHOWCASE_ITEMS = 3 unless const_defined?(:ALLOWED_SHOWCASE_ITEMS)
+
+  validate :max_showcased_items_count_not_exceeded
   
+  # Class methods
   def self.showcased_items
     where('showcased')
   end
   
   
+  # Instance methods
   def lifestyle_shot?
     master_images.any?
   end
@@ -15,11 +20,18 @@ Spree::Product.class_eval do
   end
   
   
+  
   private
-    def max_three_showcased
-      if showcased
-        errors.add(:base, "Only up to 3 showcased products are allowed") if Spree::Product.showcased_items.size >= 3
-      end
+    
+    def max_showcased_items_count_not_exceeded
+      current_showcased_items = self.class.showcased_items
+      return if current_showcased_items.size < ALLOWED_SHOWCASE_ITEMS
+      # We're at max
+      return if current_showcased_items.map(&:id).include?(id)
+      # We don't count if this record is one of the showcased. (Can never increase showcase count)
+      return unless attributes['showcased']
+      # We don't ccre unless another record trying to becime showcased
+      errors.add(:base, :too_many_showcased_items, count: ALLOWED_SHOWCASE_ITEMS)
     end
   
 end
