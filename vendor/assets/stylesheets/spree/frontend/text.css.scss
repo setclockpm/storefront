@@ -502,11 +502,13 @@ label {
 ////////* Maximum width 992px section *////////////
 ///////////////////////////////////////////////////
 @media (max-width: 992px) {
-  .promo { span { font-size: 2.5em; } }
+  /* Begin DOM class selectors */
   .collection-preview {
     h1 { font-size: 2em; }
     .variant-name { padding: 0.5em; }
   }
+  .promo { span { font-size: 2.5em; } }
+  /* End DOM class selectors */
 }
 ///////////////////////////////////////////////////
   ///////////////////////////////////////////////
@@ -527,6 +529,10 @@ label {
   
   /* Begin DOM class selectors */
   .copyright { font-size: 0.81em; }
+  .collection-preview {
+    h1 { font-size: 2em; }
+    .variant-name { padding: 0.4em; }
+  }
   .featured h1 { font-size: 2em; }
   .footer-below { .copyright { color: $mid-gray; } }
   .promo { span { font-size: 2em; } }
