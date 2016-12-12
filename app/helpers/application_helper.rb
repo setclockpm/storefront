@@ -1,5 +1,5 @@
 module ApplicationHelper
-  INTERNAL_IP = "108.209.219.227"
+  INTERNAL_IP = ENV["INTERNAL_IP"]
 
   
   def color_options(v, options={})
