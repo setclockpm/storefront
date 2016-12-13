@@ -8,4 +8,6 @@ Devise.setup do |config|
   config.router_name = :spree
 
   # Add any other devise configurations here, as they will override the defaults provided by spree_auth_devise.
+  config.secret_key = ENV['DEVISE_SECRET_KEY']
+
 end
