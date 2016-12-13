@@ -6,7 +6,7 @@ Porthos::Application.routes.draw do
   mount Spree::Core::Engine, at: '/store'
   
   # Disable this when app is finished. Admin route should be obfuscated from general public
-  get '/admin', to: 'spree/admin/orders#index', as: :admin
+  get '/admin', to: 'spree/admin/products#index', as: :admin
   get "/about_us", to: "storefront#about", as: :about
   get "/collection", to: "collection#index", as: :collection
   
