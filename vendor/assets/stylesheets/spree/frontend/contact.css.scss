@@ -11,10 +11,11 @@
   
   h1 {
     margin-bottom: 10px;
+    margin-top: 0px;
     text-align: left;
   }
   
-  .container { width: 100%; }
+  .container { width: 92%; }
 }
 .floating-label-form-group {
   position: relative;
@@ -107,10 +108,7 @@ hr {
   &.tiny { width: 2%; }
 }
 section {
-  &.contact {
-    /* INQUIRIES: */
-    padding-top: 0em;
-  }
+  &.contact { padding-top: 0em; }
 }
 
 
@@ -212,11 +210,23 @@ section {
 //////////////////////////////////////////////
 @media (min-width: 768px) {
   
-  footer { &.contact { min-height: 100vh; } }
+  section { &.contact { min-height: 100vh; } }
   hr { &.tiny { margin-left: 0%; } }
   
   #contact-card { padding-bottom: 20%; }
-  
+  .g-recaptcha {
+    float: right;
+    margin-top: 30px;
+  }
+  .inquiries-front {
+    position: relative;
+    top: -4vh;
+    
+    .card {
+      padding: 3em;
+      padding-bottom: 3.2em;
+    }
+  }
 }
 ////////////////////////////////////////////////
                      //
@@ -233,13 +243,16 @@ section {
 //////////////////////////////////////////////
 @media (min-width: 992px) {
   
-  section {
-    &.catalog { padding-bottom: 0em; }
-  }
   #contact-card { height: calc(100vh - 6rem); }
   #inquiries-card {
     padding-left: 97px;
     padding-right: 4em;
+  }
+  #spotlight-card {
+    padding-left: 4em;
+    padding-right: 112px;
+    
+    img { width: 100%; }
   }
 }
 ///////////////////////////////////////////////////
@@ -261,3 +274,17 @@ section {
   
 }
 ////////////////////////////////////////////////
+                        ///
+                      ///////
+                    ///////////
+                 ////////////////
+              //////////////////////
+           ////////////////////////////
+        //////////////////////////////////
+     ////////////////////////////////////////
+  /////////* Minimum width 1440px section *////
+///////////////////////////////////////////////////
+@media (min-width: 2340px) {
+  .contact { .container { width: 72%; } }
+}
+///////////////////////////////////////////////////

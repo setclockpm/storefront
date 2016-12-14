@@ -2,17 +2,26 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  activerecord:
+    errors:
+      models:
+        spree/product:
+          attributes:
+            base:
+              too_many_showcased_items: "Only up to %{count} showcased products are allowed"
   all_departments: "All Departments"
+  
   search: "Search"
   spree:
      # variants: "Color / Size Options"
+     about_us_text: "About Us Text"
      import: "Import"
      excel_file: "Spreadsheet File"
      process_images: "Generate Product Photos"
      quick_variant_search: "Quick search (by SKU).."
      shop_by_taxonomy: "%{taxonomy}"
-     showcased: "Showcase Lifestyle Image"
-     new_hero_image: "New Lifestyle Image"
+     showcase: "Showcase Product"
+     new_hero_image: "New Hero Image"
   views:
      pagination:
        first: "First"

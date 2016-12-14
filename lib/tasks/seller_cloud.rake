@@ -21,7 +21,7 @@ namespace :seller_cloud do
         # possibly discontinued. All SOAP related exceptions should be dealt with in SellerCloud class
         qty >= 0 ? variant.update_stock_count(qty) : add_variant_to_research_list(variant)
       end
-      
+      # Until store opens this notification isn't necessary
       #MessageMailer.inventory_sync_report(@skus_to_research).deliver_now
     end
   end
@@ -50,8 +50,9 @@ namespace :images do
   desc "Convert images to 500x500 and jpg using MiniMagick gem"
   task :convert => :environment do
     Dir.foreach(RAW_ASSET_DIRECTORY) do |item|
+      # Skipping local mac hidden files or dir commands
       next if item == '.' or item == '..' or item == '.DS_Store'
-      #convert images to 500x500 so loading time isnt hella slow
+      # Convert images to 500x500 so loading time isnt hella slow
       @path_to_raw_image = "#{RAW_ASSET_DIRECTORY}/#{item}"
       image = MiniMagick::Image.new(@path_to_raw_image) #=> "/var/folders/k7/6zx6dx6x7ys3rv3srh0nyfj00000gn/T/magick20140921-75881-1yho3zc.jpg"
       puts "On image: #{image.path}"

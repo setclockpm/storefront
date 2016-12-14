@@ -22,13 +22,14 @@ hr {
 section {
   &.featured {
     background-image: url(featured_bg_bnw.jpg);
+    background-size: cover;
     padding: 3em 0;
     position: relative;
     
     .container {
       padding-left: 5em;
       padding-right: 5em;
-      width: 100%;
+      width: 92%;
     }
     .grid-item {
       overflow: hidden;
@@ -53,7 +54,6 @@ section {
       figcaption {
         display: none;
         left: 0%;
-//        opacity: 0;
         position: absolute;
         text-align: center;
         top: 58%;
@@ -82,12 +82,8 @@ section {
 }
 
 
-.featured-in {
-  padding-left: 112px;
-}
-.musketeer {
-  display: none;
-}
+
+.musketeer { display: none; }
 
 
 #press * { z-index: 2; }
@@ -184,8 +180,6 @@ section {
   }
   
   section {
-    &#about-us { padding-top: 0px; }
-    
     &.featured {
       h1 { text-align: center; }
       .container {
@@ -261,11 +255,9 @@ section {
   section {
     &.featured {
       min-height: 100vh;
-      .container { min-height: 40vw; }
       
-      .overlay {
-        margin: 0px 15px;
-      }
+      .container { min-height: 40vw; }
+      .overlay { margin: 0px 15px; }
     }
   }
 }
@@ -365,5 +357,35 @@ section {
     }
   }
   
+}
+///////////////////////////////////////////////////
+                        ///
+                      ///////
+                    ///////////
+                 ////////////////
+              //////////////////////
+           ////////////////////////////
+        //////////////////////////////////
+     ////////////////////////////////////////
+  /////////* Minimum width 1440px section *////
+///////////////////////////////////////////////////
+@media (min-width: 2340px) {
+  section {
+    &.featured {
+      .container {
+        min-height: 30vw;
+        width: 72%;
+      }
+    }
+  }
+  .featured {
+    .musketeer {
+      img {
+        left: 25vw;
+        top: 20vh;
+        width: 20%;
+      }
+    }
+  }
 }
 ///////////////////////////////////////////////////

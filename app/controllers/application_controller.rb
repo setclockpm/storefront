@@ -16,8 +16,9 @@ class ApplicationController < ActionController::Base
     { currency: current_currency, guest_token: cookies.signed[:guest_token], store_id: Spree::Store.first, user_id: try_spree_current_user.try(:id) }
   end
   
-  
-  
+  def after_sign_out_path_for(resource_or_scope)
+    URI.parse(request.referer).path if request.referer
+  end
   
   private
     def load_taxonomies
@@ -25,3 +26,6 @@ class ApplicationController < ActionController::Base
     end
   
 end
+
+
+

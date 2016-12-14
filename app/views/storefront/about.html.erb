@@ -2,26 +2,35 @@
 <header class="our-story">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 text-center">
+      <div id="company-tagline" class="col-md-12 text-center">
         <h4><%= currently_at "Our Story" %></h4>
+        <h1 class="company-name"> Porthos Home </h1>
       </div>
     </div>
   </div>
 </header>
+
+
+
+
+
 <section id="about-us" class="our-story">
   <div class="container">
-    <div class="abouter row">
-      <div class="col-md-4 col-md-offset-2">
-        <p>
-          Donec ultricies erat eget porta tristique. In hac habitasse platea dictumst. Suspendisse massa nunc.
-          Curabitur ac sapien tempor, laoreet magna non, viverra enim! Praesent elementum commodo quam nullam.
-        </p>
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <%= image_tag "feathers/original.png", title: "feather", class: "accent" %>
       </div>
-      <div class="col-md-4">
-        <p>
-          Donec ligula purus, tempus at nisl nec, viverra vulputate ex. Mauris condimentum magna pulvinar sed.
-          In facilisis commodo molestie. Curabitur euismod magna fermentum, posuere sem ut; suscipit volutpat.
-        </p>
+    </div>
+    
+    <div class="row slogan-container">
+      <h2 class="slogan">
+        <%= current_store.about_us_slogan.html_safe %>
+      </h2>
+    </div>
+    
+    <div class="abouter row">
+      <div class="col-md-8 col-md-offset-2">
+        <%= current_store.about_us_text.html_safe %>
       </div>
     </div>
   </div>

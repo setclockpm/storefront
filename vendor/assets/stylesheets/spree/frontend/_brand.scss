@@ -23,6 +23,20 @@
     text-rendering: optimizeLegibility;
 }
 
+/* Webfont: Lato-Regular */
+@font-face {
+    font-family: 'LatoLight';
+    src: url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/lato/fonts/Lato-Light.eot'); /* IE9 Compat Modes */
+    src: url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/lato/fonts/Lato-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/lato/fonts/Lato-Light.woff2') format('woff2'), /* Modern Browsers */
+         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/lato/fonts/Lato-Light.woff') format('woff'), /* Modern Browsers */
+         url('https://s3-ap-southeast-1.amazonaws.com/porthos/public/typo/lato/fonts/Lato-Light.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+
 
 
 /* START:variables */
@@ -30,6 +44,7 @@
 // stacks
 $main-font: 'cocomat', 'Century Gothic', 'Apple Gothic', 'AppleGothic,', 'Avant Garde', sans-serif;
 $forms-font: 'LatoWeb', sans-serif;
+$forms-font-light: 'LatoLight', sans-serif;
 $icon-font: FontAwesome;
 //---------------
 // colors

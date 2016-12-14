@@ -26,7 +26,9 @@ feature 'Collection Items' do
     showcased_image   = File.open(File.expand_path('../../features/assets/rainbow.png', __FILE__))
     showcased_product.images.create!(attachment: showcased_image)
     
-    visit main_app.root_path
+    visit "#{main_app.root_path}/#fpjs-collection"
+    sleep 4
+    wait_for_ajax
     expect(page).to have_selector('a.collection-img-link', count: 4)
   end
   

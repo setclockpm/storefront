@@ -1,4 +1,4 @@
-<div class="grid-item col-md-4">
+<div class="<%= grid_item_dom_klass(i+1) %>">
   <%= collection_image_reference(variant) %>
   <%= render partial: 'collection/retail_footer', locals: { variant: variant } if preview %>
 </div>

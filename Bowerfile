@@ -1,2 +1,4 @@
-asset 'slidebars'
+asset 'bootstrap-sass'
+asset 'fullpage.js'
 asset 'photoswipe'
+asset 'slidebars'

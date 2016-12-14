@@ -8,6 +8,7 @@ class StorefrontController < ApplicationController
   
   def index
    @message = Message.new
+   render layout: 'storefront'
   end
   
   def catalog
@@ -17,6 +18,8 @@ class StorefrontController < ApplicationController
   end
   
   def about
+    Rails.logger.debug "\n\n\n\nUser Agent: #{request.user_agent}\n\n\n\n"
+    render layout: 'application'
   end
   
 end

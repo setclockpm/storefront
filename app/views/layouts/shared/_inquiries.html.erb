@@ -29,7 +29,7 @@
       },
     });
     
-    $("body").on("focus", ".floating-label-form-group", function() {
+    $("body").on("focus", ".floating-label-form-group, .recaptcha-checkbox, .g-recaptcha", function() {
       $("input.btn").removeAttr("disabled");
     });
   });
@@ -51,7 +51,7 @@
   </div>
     
   <div class="col-md-12">
-    <%= form_for @message, id: "contact-form", url: main_app.contact_path(@message) do |f| %>
+    <%= form_for @message, id: "contact-form", url: main_app.contact_path(@message, anchor: 'inquiries-card') do |f| %>
       <div class="control-group">
         <div class="form-group floating-label-form-group controls">
           <%= f.label :name, "Name", class: 'required' %>
@@ -82,10 +82,12 @@
       </div>
       <div><h6 class="required-legend"> Indicates required field</h6></div>
       <div class="row submit-group">
-        <div class="form-group col-xs-12">
+        <div class="form-group col-xs-3">
           <%= f.submit "send", id: 'button-submit', class: "btn-send btn btn-outline btn-lg", disabled: true %>
         </div>
+        <%= recaptcha_tags %>
       </div>
+      
     <% end %>
   </div>
 </div>

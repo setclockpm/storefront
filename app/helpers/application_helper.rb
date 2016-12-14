@@ -1,5 +1,5 @@
 module ApplicationHelper
-  INTERNAL_IP = "108.209.219.227"
+  INTERNAL_IP = ENV["INTERNAL_IP"]
 
   
   def color_options(v, options={})
@@ -19,10 +19,6 @@ module ApplicationHelper
     request.remote_ip == INTERNAL_IP
   end
   
-  def navbar_behavior
-    "navbar-#{current_page?(main_app.root_url) ? "fixed" : "static"}-top"
-  end
-  
   def nav_tab(title, url, options={})
     current_tab = options.delete(:current)
     options[:class] = (current_tab == title) ? 'active nav-item' : 'inactive nav-item'
@@ -30,7 +26,7 @@ module ApplicationHelper
   end
 
   def required_field
-    content_tag :span, '*', class: 'foo'
+    content_tag :span, '*', class: 'lil-splatty'
   end
   
   def search_icon_button_tag

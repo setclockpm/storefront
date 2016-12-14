@@ -10,13 +10,22 @@ header {
     }
   }
 }
+ nav {
+  &.utility-header {
+    background: url(featured_bg_bnw.jpg) no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
 
 
+.application-header { margin-bottom: 0px; }
 .logo {
   img {
     display: inline-block;
     margin-bottom: 0px;
-    max-width: 140px;
     min-width: 125px;
   }
 }
@@ -25,38 +34,61 @@ header {
   white-space: nowrap;
   a { &:focus, &:hover { background: 0 none; } }
 } 
-//.quantity-badge { position: absolute; }
-.transparent {
-  &:hover, &:focus {
-    transition: all .3s ease-in-out;
-    transition-delay: 0s;
-  }
-}
 
 
-#porthos-header {
-  nav {
-    background: url(featured_bg_bnw.jpg) no-repeat center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    min-height: 5.5em;
-  }
-  
-  .logo-wrapper { margin-top: 1.2em; }
-}
-#application-header { margin-bottom: 0px; }
+
+
 
 
 
 
  
 
+////////////////////////////////////////////////
+////////* Maximum width 767px section */////////
+////////////////////////////////////////////////
+@media (max-width: 767px) {
+  
+  div { &#mobile-header     { display: block; } }
+  nav { &.application-header { display: none; } }
+  
+}
+////////////////////////////////////////////////
+  ////////////////////////////////////////////
+    ////////////////////////////////////////
+      ////////////////////////////////////
+         ///////////////////////////////
+           ///////////////////////////
+             ///////////////////////
+               ///////////////////
+                 ///////////////
+                   ///////////
+                     ///////
+                      /////
 
-
-
-
+////////////////////////////////////////////////
+////////* Maximum width 767px section */////////
+////////////////////////////////////////////////
+@media (max-width: 496px) {
+  
+  .navbar-default {
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+  }
+  
+}
+////////////////////////////////////////////////
+  ////////////////////////////////////////////
+    ////////////////////////////////////////
+      ////////////////////////////////////
+         ///////////////////////////////
+           ///////////////////////////
+             ///////////////////////
+               ///////////////////
+                 ///////////////
+                   ///////////
+                     ///////
+                      /////
                         ///
                       ///////
                     ///////////
@@ -69,48 +101,50 @@ header {
 ///////////////////////////////////////////////////
 @media (min-width: 768px) {
   
-  .logo { img { width: 160px; } }
+  .logo { img { width: 140px; } }
   .nav {
     li {
-      &.active {
-        text-decoration: underline;
-        margin-bottom: -1px;
-        a,
-        a:link,
-        a:visited {
-          color: #555;
-          font-weight: bold;
-        }
-      }
+      &.active { margin-bottom: -1px; }
       &.nav-item {
         display: inline-block;
-        a { min-width: 8em;}
+        a { min-width: 8em; }
       }
     }
   }
-  .navbar-header { float: none; }
-  .navbar-fixed-top {
-    padding: 15px 0;
+  .navbar-custom {
+    -webkit-transition: padding 0.3s;
+    -moz-transition: padding 0.3s;
     transition: padding 0.3s;
-    
-    .navbar-brand { transition: all 0.3s; }
-    &.navbar-shrink { padding: 10px 0; }
+    -webkit-transition: all 0.7s ease;  
+    -moz-transition: all 0.7s ease;  
+    -o-transition: all 0.7s ease; 
+    transition: all 0.7s ease; 
+        
+    &.affix { padding: 10px 0; }
+    &:hover, &:focus {
+      transition: all .3s ease-in-out;
+      transition-delay: 0s;
+    }
   }
+  .navbar-header { float: none; }
+  .navbar-fixed-top { padding: 10px 0; }
   .navbar-static-top {
     padding: 15px 0; 
     transition: padding 0.3s ease 0s;
   }
 
+
   // primitime DOM objects //
   div {
+    &#mobile-header { display: none; }
     &#toggle-nav-button-wrapper { display: none; }
     
     &.panel {
-      background-color: #fff;
       border-radius: 43px;
       box-shadow: none;
     }
   }
+  nav { &.application-header { display: block; } }
 }
 ///////////////////////////////////////////////////
 

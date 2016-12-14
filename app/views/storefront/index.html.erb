@@ -1,17 +1,17 @@
 <%= currently_at "Home" %>
 
 <!-- Header (Front Page) -->
-<header id="intro-splash">
+<header id="intro-splash" class="section" data-anchor="fpjs-hero">
   <%= render partial: 'storefront/herro' %>
 </header>
-  
+
 <!-- Collections Preview Section -->
-<section class="collection-preview">
+<section class="collection-preview section" data-anchor="fpjs-collection">
   <%= render partial: "storefront/collection_preview" %>
 </section>
 
 <!-- Catalog Section -->
-<section class="catalog">
+<section class="catalog section" data-anchor="fpjs-catalog">
   <div class="container">
     <div class="row">
       <div class="catalog-outer col-lg-12">
@@ -20,12 +20,13 @@
         </div>
         <div class="col-md-5">
           <h2>Porthos</h2>
-          <div class="abouter">
+          <div class="catalog-slogan">
             <p>Envision products curated and culled regularly, demanding nothing but the sharpest designs, at the market's sharpest pricing.</p>
             <p>With an eye for modern styles, combined with an appreciation for intricacy and workmanship. </p>
             <p>Envision, Porthos Home. </p>
             <div class="dl-catalog submit-group">
               <%= link_to_catalog %>
+              <%= link_to "Browse Catalog Online".upcase,'#', class: "btn btn-lg btn-outline" %>
             </div>
           </div>
         </div>
@@ -34,18 +35,16 @@
   </div>
 </section>
 
-
-
-
-<section class="featured">
+<!-- Featured / Press -->
+<section class="featured fp-auto-height section" data-anchor="fpjs-press">
   <%= render partial: 'storefront/press' %>
 </section>
-<!-- Footer -->
-<footer class="contact">
+<!-- Inquiries / Footer -->
+<section class="contact section" data-anchor="fpjs-contact">
   <%= render partial: 'layouts/shared/footer' %>
+</section>
+<!-- Footer -->
+<footer class="below fp-auto-height section text-center" data-anchor="fpjs-footer">
+  <%= render partial: "layouts/shared/footer_below" %>
 </footer>
 
-
-<script type="text/javascript" charset="utf-8">
-  $('body').scrollspy({ target: '.navbar-fixed-top' })
-</script>

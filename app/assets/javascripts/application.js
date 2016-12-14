@@ -1,3 +1,4 @@
+// Application.js //////////////////////////////////////////////////////////////////////////////////
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -12,4 +13,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sass/assets/javascripts/bootstrap/scrollspy
+//= require bootstrap-sass/assets/javascripts/bootstrap/affix
+//= require fullpage.js/dist/jquery.fullpage
+//= require jquery.slick
+//= require magnific-popup
 //= require_tree .

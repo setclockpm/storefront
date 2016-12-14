@@ -91,6 +91,10 @@ nav {
     font-family: $main-font;
     font-weight: 700;
   }
+  
+  span {
+    &.menu { font-size: 0.9em; }
+  }
 }
 p { &.small { font-size: 16px; } }
 section {
@@ -131,6 +135,11 @@ textarea::-webkit-input-placeholder {
 
 /////////////////////////////////
 /* Begin class selectors */
+
+.abouter {
+  p { font-size: 22px; }
+}
+
 .bootstrap-select {
   button { 
     color: $mid-gray;
@@ -149,10 +158,14 @@ textarea::-webkit-input-placeholder {
 .contact {
   h1 {
     color: $near-black;
-    font-size: 3em;
+    font-size: 36px;
     letter-spacing: 1px;
     text-transform: uppercase;
   }
+}
+.company-name {
+  color: white;
+  font-size: 5em;
 }
 .copyright {
   color: $near-black;
@@ -187,6 +200,14 @@ textarea::-webkit-input-placeholder {
   &.floating-label-form-group-with-focus { label { color: rgba(113, 190, 190, 1.0); } }
   label { color: #333; }
 }
+.footer-below {
+  a {
+    &.utility { color: white; }
+  }
+  p {
+    &.copyright { color: white; }
+  }
+}
 .grid-item {
   figcaption {
     h2 {
@@ -206,7 +227,12 @@ textarea::-webkit-input-placeholder {
 .help-block {
   font-family: $forms-font;
   font-size: 14px;
-  &.text-danger { color: #a94442; }
+  &.text-danger { color: #da5544; }
+}
+.navbar-custom {
+  &.affix {
+    .logo { img { width: 110px; } }
+  }
 }
 .promo {
   span { font-size: 4em; }
@@ -258,8 +284,9 @@ textarea::-webkit-input-placeholder {
 .variant-retail-link {
   a {
     color: #da5544;
-    font-family: $forms-font;
-    font-size: 12px;
+    font-family: $forms-font-light;
+    font-size: 10px;
+    letter-spacing: 1px;
     text-decoration: none;
   }
 }
@@ -282,27 +309,19 @@ textarea::-webkit-input-placeholder {
     &.required-legend:before { color: red; }
   }
 }
-#porthos-header {
-  nav {
-    a {
-      color: white;
-      font: normal bold .75em $forms-font;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
+.nav {
+  a {
+    color: $near-black;
+    font: normal bold .75em $forms-font;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    
+    &:focus, &:hover { text-decoration: underline; }
   }
 }
-#application-header {
-  .nav {
-    a {
-      color: $near-black;
-      font: normal bold .75em $forms-font;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      
-      &:focus, &:hover { text-decoration: underline; }
-    }
-  } 
+.utility-header {
+  div { color: white; }
+  .nav { a { color: white; } }
 }
 /* End DOM ID selectors */
 /////////////////////////////////// End active/in use DOM items //////////////////////////////////////////
@@ -434,10 +453,31 @@ label {
 @media (min-width: 768px) {
   /////////////////////////////////
   /* Begin DOM class selectors */
+  .nav {
+    li {
+      &.active {
+        text-decoration: underline;
+        a, 
+        a:link, 
+        a:visited { font-weight: bold; }
+      }
+    }
+  }
+  .navbar-custom {
+    &.affix { .navbar-brand { font-size: 1.5em; } }
+  }
   .navbar-form { .btn { letter-spacing: 1.5px; } }
-  .navbar-fixed-top {
-    .navbar-brand { font-size: 2em; }
-    &.navbar-shrink { .navbar-brand { font-size: 1.5em; } }
+  .navbar-fixed-top { .navbar-brand { font-size: 2em; } }
+  .utility-header {
+    .nav {
+      li {
+        &.active {
+          a, 
+          a:link, 
+          a:visited { color: white; }
+        }
+      }
+    }
   }
   /* End DOM class selectors */
 }
@@ -462,13 +502,13 @@ label {
 ////////* Maximum width 992px section *////////////
 ///////////////////////////////////////////////////
 @media (max-width: 992px) {
-  .promo {
-    span { font-size: 2.5em; }
-  }
+  /* Begin DOM class selectors */
   .collection-preview {
     h1 { font-size: 2em; }
     .variant-name { padding: 0.5em; }
   }
+  .promo { span { font-size: 2.5em; } }
+  /* End DOM class selectors */
 }
 ///////////////////////////////////////////////////
   ///////////////////////////////////////////////
@@ -486,20 +526,20 @@ label {
 //////////////////////////////////////////////////
 /////////* Maximum width 767px section *//////////
 @media (max-width: 767px) {
-  /* Begin DOM class selectors */
   
+  /* Begin DOM class selectors */
   .copyright { font-size: 0.81em; }
+  .collection-preview {
+    h1 { font-size: 2em; }
+    .variant-name { padding: 0.4em; }
+  }
   .featured h1 { font-size: 2em; }
-  .footer-below {
-    .copyright { color: $mid-gray; }
-  }
-  .promo {
-    span { font-size: 2em; }
-  }
+  .footer-below { .copyright { color: $mid-gray; } }
+  .promo { span { font-size: 2em; } }
   /* End DOM class selectors */
   
   /* Begin DOM ID selectors */
-  #application-header {
+  .application-header {
     .navbar-collapse {
       color: #fff;
       
@@ -542,3 +582,14 @@ label {
   ////////////////////////////////////
   
 }
+////////////////////////////////////////////////
+  ////////////////////////////////////////////
+    ///////////////////////////////////////
+      //////////////////////////////////
+         ////////////////////////////
+           ///////////////////////
+             //////////////////
+               //////////////
+                 //////////
+                   //////
+                     ///

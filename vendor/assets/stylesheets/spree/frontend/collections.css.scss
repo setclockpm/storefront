@@ -1,15 +1,17 @@
-section {
-  &.collection-preview {
-    padding-bottom: 6em;
-  }
-}
 .collection-preview {
-  h1 { margin-top: 0; }
+  h1 { 
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+  hr {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
   
   .container {
     padding-left: 127px;
     padding-right: 127px;
-    width: 100%;
+    width: 92%;
   }
   .grid-item {
     border: 4px solid #fbfbfb;
@@ -61,18 +63,13 @@ section {
       padding-right: 32px;
     }
   }
-  .variant-name {
-    padding: 1em;
-  }
+  .variant-name  { padding: 1em 1em 0.5em 1em; }
+  .variant-specs { padding-bottom: 0.4em; }
 }
 .collection {
    h1 { text-align: center; }
    
-  .container {
-//    padding-left: 127px;
-//    padding-right: 127px;
-    width: 80%;
-  }
+  .container { width: 80%; }
   .grid-item {
     border: 4px solid #fbfbfb;
     float: left;
@@ -207,10 +204,18 @@ section {
   /////////* Minimum width 767px section *//////
 ///////////////////////////////////////////////////
 @media (min-width: 768px) {
+  section {
+    &.collection-preview {
+      padding-bottom: 0em;
+      padding-top: 0em;
+    }
+  }
+  
   .collection-preview {
     .heading-row {
-      padding-bottom: 2.5em;
-      padding-top: 1.5em;
+      padding-bottom: 0.2em;
+      padding-top: 0.2em;
+      
       .title { padding-left: 0px; }
       .see-more { padding-right: 0px; }
     }
@@ -223,9 +228,8 @@ section {
       padding-right: 1em;
     }
     .variant-retail-link {
-      float: right;
-      padding-left: 1em;
-      padding-right: 1em;
+      padding-left: .6em;
+      padding-right: .6em;
       text-align: right;
     }
   }
@@ -243,8 +247,42 @@ section {
   /////////* Minimum width 1024px section *////
 ///////////////////////////////////////////////////
 @media (min-width: 992px) {
+
   section {
-    &.collection-preview { min-height: 100vh; }
+    &.collection-preview {
+      .large-borders {
+        border-left-width: 4px;
+        border-right-width: 4px;
+      }
+      .double-left-border {
+        border-left-width: 6px;
+        border-right-width: 2px;
+      }
+      .double-right-border {
+        border-left-width: 2px;
+        border-right-width: 6px;
+      }
+//      .grid-uniform {
+//        margin: auto;
+//
+//        .main-row {
+//          .grid-item {
+//            border-bottom-width: 4px;
+//            border-top-width: 8px;
+//          }
+//        }
+//        .retail-leads-row {
+//          .grid-item { border-top-width: 4px; }
+//        }
+//      }
+    }
+  }
+  
+  .variant-specs {
+    .variant-retail-link {
+      padding-left: 1em;
+      padding-right: 1em;
+    }
   }
 }
 ///////////////////////////////////////////////////
@@ -270,16 +308,10 @@ section {
            ////////////////////////////
         //////////////////////////////////
      ////////////////////////////////////////
-  /////////* Minimum width 1440px section *////
+  /////////* Minimum width 1920px section *////
 ///////////////////////////////////////////////////
-@media (min-width: 1440px) {
-  .grid-uniform, .main-row {
-    //max-width: 1672px;
-//    margin: 10px auto;
-  }
-  .heading-row {
-//    max-width: 1702px;
-  }
+@media (min-width: 1920px) {
+  .collection-preview { .container { width: 84%; } }
 }
 ///////////////////////////////////////////////////
                         ///
@@ -290,9 +322,9 @@ section {
            ////////////////////////////
         //////////////////////////////////
      ////////////////////////////////////////
-  /////////* Minimum width 1700px section *////
+  /////////* Minimum width 2240px section *////
 ///////////////////////////////////////////////////
-@media (min-width: 1700px) {
-
+@media (min-width: 2140px) {
+  .collection-preview { .container { width: 70%; } }
 }
 ///////////////////////////////////////////////////
