@@ -29,7 +29,7 @@
     </thead>
 
     <tbody>
-      <% (@hero_images).each do |hero_image| %>
+      <% @hero_images.each do |hero_image| %>
         <tr id="<%= spree_dom_id image %>" data-hook="images_row">
           <td class="move-handle text-center">
             <% if can? :edit, hero_image %>

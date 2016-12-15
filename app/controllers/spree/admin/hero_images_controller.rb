@@ -1,4 +1,4 @@
-class Spree::Admin::HeroImagesController < ApplicationController
+class Spree::Admin::HeroImagesController < Spree::Admin::BaseController
   before_filter :find_hero_image, only: [:show, :edit, :update, :destroy]
 
   def index

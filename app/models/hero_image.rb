@@ -1,4 +1,4 @@
-class HeroImage < Spree::Asset
+class HeroImage < ActiveRecord::Base
   
   has_attached_file :attachment,
                     bucket:          'porthos',
