@@ -1,4 +1,5 @@
 <% content_for :page_title do %>
-  <%= Spree.t(:hero_images) %>
-  <%#= link_to Spree.t(:website_photos), admin_website_photos_path %>  <%#= Spree.t(:hero_images) %>
+  <!-- <%= Spree.t(:hero_images) %> -->
+  <%= link_to Spree.t(:website_photos), admin_website_photos_path %>
+  <%#= '/ ' if current && !current.blank? %> <%= current %>
 <% end %>

@@ -1,10 +1,6 @@
-<%= render partial: 'spree/admin/shared/website_photo_tabs', locals: { current: :hero_images } %>
+<%= render partial: 'spree/admin/shared/website_photo_tabs', locals: { current: Spree.t(:new_hero_image) } %>
 
 <%= render partial: 'spree/admin/shared/error_messages', locals: { target: @hero_image } %>
-
-<% content_for :page_title do %>
-  <%= Spree.t(:new_image) %>
-<% end %>
 
 <%= form_for [:admin, @hero_image], html: { multipart: true } do |f| %>
   <fieldset data-hook="new_hero_image">

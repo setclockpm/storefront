@@ -14,6 +14,10 @@
     </div>
   </div>
   <div data-hook="alt_text" class="col-md-6">
+    <div data-hook="caption_url" class="form-group">
+      <%= f.label :active, HeroImage.human_attribute_name(:active) %>
+      <%= f.check_box :active, { class: 'form-control' } %>
+    </div>
     <div class="form-group">
       <%= f.label :alt, Spree.t(:alt_text) %>
       <%= f.text_area :alt, rows: 4, class: 'form-control' %>
