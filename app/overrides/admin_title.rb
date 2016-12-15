@@ -17,16 +17,16 @@ Deface::Override.new(name:             'add-import-tab',
                      text:             '  <%= tab :data_import %>',
                      original:         '5c6807c2920b4280184cbdf867b7ba98e41b576f')
                      
-                     
-Deface::Override.new(name:             'add-import-tab',
+
+Deface::Override.new(name:             'prefill-alt-img-text',
                      virtual_path:     'spree/admin/images/_form',
                      replace_contents: "erb[loud]:contains('f.text_area')", 
                      text:             "f.text_area :alt, value: @product.name, rows: 4, class: 'form-control'",
-                     original:         '5c6807c2920b4280184cbdf867b7ba98e41b576f')
+                     original:         '034dd1aeb63ffb44b9f28f2c08708ac31f1fda06')
                      
                      
-# Deface::Override.new(name:             'add-showcase-tab',
-#                      virtual_path:     'spree/admin/shared/sub_menu/_promotion',
-#                      insert_bottom:     "[data-hook='admin_promotion_sub_tabs']",
-#                      text:             '  <%= tab :showcase %>',
-#                      original:         'c894f9343fc5d151fda365e502b1b53b4a4ebc3b')
+Deface::Override.new(name:             'add-showcase-tab',
+                     virtual_path:     'spree/admin/shared/sub_menu/_promotion',
+                     insert_bottom:     "[data-hook='admin_promotion_sub_tabs']",
+                     text:             '  <%= tab :website_photos %>',
+                     original:         'c894f9343fc5d151fda365e502b1b53b4a4ebc3b')

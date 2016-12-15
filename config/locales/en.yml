@@ -15,6 +15,7 @@ en:
   spree:
      # variants: "Color / Size Options"
      about_us_text: "About Us Text"
+     hero_images: "Hero Images"
      import: "Import"
      excel_file: "Spreadsheet File"
      process_images: "Generate Product Photos"
@@ -22,6 +23,7 @@ en:
      shop_by_taxonomy: "%{taxonomy}"
      showcase: "Showcase Product"
      new_hero_image: "New Hero Image"
+     website_photos: "Website Photos"
   views:
      pagination:
        first: "First"
