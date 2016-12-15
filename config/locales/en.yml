@@ -9,14 +9,19 @@ en:
           attributes:
             base:
               too_many_showcased_items: "Only up to %{count} showcased products are allowed"
+    models:
+      hero_image:
+        one: "Hero Image"
+        other: "Hero Images"
   all_departments: "All Departments"
   
   search: "Search"
   spree:
      # variants: "Color / Size Options"
      about_us_text: "About Us Text"
+     hero_image: "Hero Image"
      hero_images: "Hero Images"
-     import: "Import"
+     import: Import
      excel_file: "Spreadsheet File"
      process_images: "Generate Product Photos"
      quick_variant_search: "Quick search (by SKU).."
@@ -26,8 +31,8 @@ en:
      website_photos: "Website Photos"
   views:
      pagination:
-       first: "First"
-       last: "Last"
-       previous: "Previous"
-       next: "Next"
+       first: First
+       last: Last
+       previous: Previous
+       next: Next
        truncate: "&hellip;"

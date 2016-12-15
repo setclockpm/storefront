@@ -1,7 +1,6 @@
-class Spree::Admin::WebsitePhotosController < ApplicationController
+class Spree::Admin::WebsitePhotosController < Spree::Admin::BaseController
 
   def index
-    raise params.inspect
     @hero_images = HeroImage.all
   end
 

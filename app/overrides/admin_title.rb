@@ -25,7 +25,7 @@ Deface::Override.new(name:             'prefill-alt-img-text',
                      original:         '034dd1aeb63ffb44b9f28f2c08708ac31f1fda06')
                      
                      
-Deface::Override.new(name:             'add-showcase-tab',
+Deface::Override.new(name:             'add-website_photos-tab',
                      virtual_path:     'spree/admin/shared/sub_menu/_promotion',
                      insert_bottom:     "[data-hook='admin_promotion_sub_tabs']",
                      text:             '  <%= tab :website_photos %>',
