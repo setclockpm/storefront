@@ -3,6 +3,10 @@
 
 en:
   activerecord:
+    attributes:
+      hero_image:
+        caption: Caption
+        caption_url: "Caption URL"
     errors:
       models:
         spree/product:

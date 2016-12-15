@@ -106,7 +106,14 @@ CREATE TABLE hero_images (
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
     caption character varying,
-    caption_url character varying
+    caption_url character varying,
+    attachment_file_name character varying,
+    attachment_content_type character varying,
+    attachment_file_size integer,
+    attachment_updated_at timestamp without time zone,
+    alt text,
+    "position" integer,
+    active boolean
 );
 
 
@@ -6526,4 +6533,6 @@ INSERT INTO schema_migrations (version) VALUES ('20161005221011');
 INSERT INTO schema_migrations (version) VALUES ('20161006185746');
 
 INSERT INTO schema_migrations (version) VALUES ('20161206043543');
+
+INSERT INTO schema_migrations (version) VALUES ('20161215084229');
 
