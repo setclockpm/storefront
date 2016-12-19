@@ -153,9 +153,6 @@ section {
 ////////////////////////////////////////////////
 @media (max-width: 992px) {
   
-  .featured-in {
-    padding-left: 92px;
-  }
 }
 ////////////////////////////////////////////////
   ////////////////////////////////////////////
@@ -256,7 +253,11 @@ section {
     &.featured {
       min-height: 100vh;
       
-      .container { min-height: 40vw; }
+      .container {
+        min-height: 40vw;
+        padding-bottom: 2em;
+        padding-top: 2em;
+      }
       .overlay { margin: 0px 15px; }
     }
   }

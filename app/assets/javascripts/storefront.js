@@ -83,7 +83,7 @@ $(document).ready(function(){
   });
 
   
-  if(screen.width < 768) { 
+  if(screen.width < 992) { 
     return;
   } else {
     $('#fullpage').fullpage({

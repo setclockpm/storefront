@@ -175,7 +175,7 @@ textarea::-webkit-input-placeholder {
 }
 .dropdown-menu { span { font-family: $forms-font; } }
 .featured {
-  h1 { color: white; }
+  h1 { color: $near-black; }
 }
 .floating-label-form-group {
   input, textarea {

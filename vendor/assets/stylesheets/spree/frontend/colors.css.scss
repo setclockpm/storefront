@@ -188,7 +188,7 @@ textarea::-webkit-input-placeholder { opacity: 0.7; }
   div { &.panel { background-color: white; } }
   section {
     &.featured {
-      .overlay { background-color: white; }
+//      .overlay { background-color: white; }
       .alpha60 {
         /* Fallback for web browsers that doesn't support RGBa */
         background: rgb(255, 255, 255);

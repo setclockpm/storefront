@@ -1,15 +1,21 @@
-<div class="container">
-  <div class="featured-in">
-    <h1>FEATURED IN</h1>
-  </div>
-  
+<div class="alpha60 container">
   <div class="row standard-grid grid">
-    <div class="alpha60 overlay clearfix">
+    <div class="col-sm-12 featured-in">
+      <h1>FEATURED IN</h1>
+    </div>
+    
+    <div class="overlay clearfix">
       <% featured_in_images.each do |image, uri| %>
         <%= render partial: "storefront/press_item", locals: { image: image, url: uri } %>
       <% end %>
     </div>
   </div>
+  
+  
+  
+    
+  
+  
   <div class="musketeer row">
     <%= image_tag "musketeer.png", title: "musketeer silhouette", class: "spotlight" %>
   </div>

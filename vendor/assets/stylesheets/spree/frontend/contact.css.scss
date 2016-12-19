@@ -220,7 +220,6 @@ section {
   }
   .inquiries-front {
     position: relative;
-    top: -4vh;
     
     .card {
       padding: 3em;
@@ -253,6 +252,10 @@ section {
     padding-right: 112px;
     
     img { width: 100%; }
+  }
+  
+  .inquiries-front {
+    top: -4vh;
   }
 }
 ///////////////////////////////////////////////////

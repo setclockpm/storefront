@@ -204,18 +204,9 @@
   /////////* Minimum width 767px section *//////
 ///////////////////////////////////////////////////
 @media (min-width: 768px) {
-  section {
-    &.collection-preview {
-      padding-bottom: 0em;
-      padding-top: 0em;
-    }
-  }
   
   .collection-preview {
     .heading-row {
-      padding-bottom: 0.2em;
-      padding-top: 0.2em;
-      
       .title { padding-left: 0px; }
       .see-more { padding-right: 0px; }
     }
@@ -250,9 +241,12 @@
 
   section {
     &.collection-preview {
-      .large-borders {
-        border-left-width: 4px;
-        border-right-width: 4px;
+      padding-bottom: 0em;
+      padding-top: 0em;
+      
+      .heading-row {
+        padding-bottom: 0.2em;
+        padding-top: 0.2em;
       }
       .double-left-border {
         border-left-width: 6px;
@@ -262,19 +256,10 @@
         border-left-width: 2px;
         border-right-width: 6px;
       }
-//      .grid-uniform {
-//        margin: auto;
-//
-//        .main-row {
-//          .grid-item {
-//            border-bottom-width: 4px;
-//            border-top-width: 8px;
-//          }
-//        }
-//        .retail-leads-row {
-//          .grid-item { border-top-width: 4px; }
-//        }
-//      }
+      .large-borders {
+        border-left-width: 4px;
+        border-right-width: 4px;
+      }
     }
   }
   
