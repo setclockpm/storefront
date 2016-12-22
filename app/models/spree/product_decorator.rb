@@ -9,6 +9,10 @@ Spree::Product.class_eval do
     where('showcased')
   end
   
+  def self.allowed_showcase_items
+    ALLOWED_SHOWCASE_ITEMS
+  end
+  
   
   # Instance methods
   def lifestyle_shot?

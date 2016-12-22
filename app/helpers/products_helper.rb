@@ -10,7 +10,7 @@ module ProductsHelper
   
   def admin_showcased_products_label
     dat_label = "#{Spree.t(:showcase)}?"
-    return dat_label if Spree::Product.showcased_items.size < Spree::Product::ALLOWED_SHOWCASE_ITEMS
+    return dat_label if Spree::Product.showcased_items.size < Spree::Product.allowed_showcase_items
     "#{dat_label} (At Max)"
   end
   

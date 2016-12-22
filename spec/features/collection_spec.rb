@@ -21,14 +21,13 @@ feature 'Collection Items' do
     expect(page).to have_selector('a.collection-img-link', count: 1)
   end
   
-  scenario "on front page load correctly and without errors", js: true do
+  scenario "on front page load correctly and without errors" do
     showcased_product = create(:product, name: 'Gorilla Glue Stool', sku: 'GG123B', description: 'lorem ipsum', available_on: 2.months.ago, slug: 'gg-stool', showcased: true)
     showcased_image   = File.open(File.expand_path('../../features/assets/rainbow.png', __FILE__))
     showcased_product.images.create!(attachment: showcased_image)
     
     visit "#{main_app.root_path}/#fpjs-collection"
-    sleep 4
-    wait_for_ajax
+    expect(page).to have_selector('div.main-row')
     expect(page).to have_selector('a.collection-img-link', count: 4)
   end
   

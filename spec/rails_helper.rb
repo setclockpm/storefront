@@ -9,8 +9,36 @@ require 'capybara/rails'
 require 'capybara/rspec'
 
 
+
+driver = ENV['DRIVER'].try(:downcase).try(:to_sym)
+
+# if driver == :sauce
+#   configure_sauce
+#   Capybara.default_driver = :sauce
+#   Capybara.javascript_driver = :selenium
+# elsif driver == :poltergeist
+#   require 'capybara/poltergeist'
+#   Capybara.default_driver = :poltergeist
+#   Capybara.current_driver = :poltergeist
+#   Capybara.javascript_driver = :poltergeist
+# elsif driver.nil?
+#   require 'capybara/poltergeist'
+#   Capybara.default_driver = :rack_test
+#   Capybara.current_driver = :rack_test
+#   Capybara.javascript_driver = :poltergeist
+# else
+#   Capybara.register_driver :selenium_chrome do |app|
+#     Capybara::Selenium::Driver.new(app, browser: :chrome)
+#   end
+#   Capybara.default_driver = :selenium_chrome
+#   Capybara.javascript_driver = :selenium_chrome
+# end
+
+
+
 Capybara.register_driver :selenium_chrome do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome)
+# Capybara::Selenium::Driver.new(app, browser: :chrome, switches: [--keep-alive-for-test, --parent-window])
 end
 Capybara.javascript_driver = :selenium_chrome
 
