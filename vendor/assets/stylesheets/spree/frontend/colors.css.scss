@@ -188,16 +188,17 @@ textarea::-webkit-input-placeholder { opacity: 0.7; }
   div { &.panel { background-color: white; } }
   section {
     &.featured {
-//      .overlay { background-color: white; }
-      .alpha60 {
-        /* Fallback for web browsers that doesn't support RGBa */
-        background: rgb(255, 255, 255);
-        /* RGBa with 0.6 opacity */
-        background: rgba(255, 255, 255, 0.6);
-        /* For IE 5.5 - 7*/
-        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
-        /* For IE 8*/
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+      .container {
+        &.alpha60 {
+          /* Fallback for web browsers that doesn't support RGBa */
+          background: rgb(255, 255, 255);
+          /* RGBa with 0.6 opacity */
+          background: rgba(255, 255, 255, 0.6);
+          /* For IE 5.5 - 7*/
+          filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+          /* For IE 8*/
+          -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+        }
       }
     }
   }
@@ -211,12 +212,49 @@ textarea::-webkit-input-placeholder { opacity: 0.7; }
 }
 
 ///////////////////////////////////////////////////
+                        ///
+                      ///////
+                    ///////////
+                 ////////////////
+              //////////////////////
+           ////////////////////////////
+        //////////////////////////////////
+     ////////////////////////////////////////
+  /////////* Minimum width 1680px section *////
+///////////////////////////////////////////////////
+@media (min-width: 1680px) {
+  section {
+    &.featured {
+      h1 { color: white; }
+      
+      .brands {
+        &.alpha60 {
+          /* Fallback for web browsers that doesn't support RGBa */
+          background: rgb(255, 255, 255);
+          /* RGBa with 0.6 opacity */
+          background: rgba(255, 255, 255, 0.6);
+          /* For IE 5.5 - 7*/
+          filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+          /* For IE 8*/
+          -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+        }
+      }
+      .container { &.alpha60 { background: none; } }
+    }
+  }
+
+
+}
+///////////////////////////////////////////////////
 ///////////////////////////////////////////////////
 ////////* Maximum width 767px section *////////////
 ///////////////////////////////////////////////////
 @media (max-width: 767px) {
-  .navbar-collapse { background: rgba(34, 34, 34, 0.99) none repeat scroll 0 0; }
+  section {
+    &.featured { h1 { color: white; } }
+  }
   
+  .navbar-collapse { background: rgba(34, 34, 34, 0.99) none repeat scroll 0 0; }
   .utility-header {
     .toggle-mv-menu {
       border: 1px solid $off-white;

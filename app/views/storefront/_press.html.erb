@@ -4,17 +4,12 @@
       <h1>FEATURED IN</h1>
     </div>
     
-    <div class="alpha60 overlay clearfix">
+    <div class="alpha60 brands col-sm-12">
       <% featured_in_images.each do |image, uri| %>
         <%= render partial: "storefront/press_item", locals: { image: image, url: uri } %>
       <% end %>
     </div>
   </div>
-  
-  
-  
-    
-  
   
   <div class="musketeer row">
     <%= image_tag "musketeer.png", title: "musketeer silhouette", class: "spotlight" %>

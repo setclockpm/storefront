@@ -57,6 +57,7 @@
     top: 4px;
   }
 }
+.g-recaptcha { float: right; }
 .help-block {
   margin: 0;
   
@@ -214,10 +215,8 @@ section {
   hr { &.tiny { margin-left: 0%; } }
   
   #contact-card { padding-bottom: 20%; }
-  .g-recaptcha {
-    float: right;
-    margin-top: 30px;
-  }
+  
+  .g-recaptcha { margin-top: 30px; }
   .inquiries-front {
     position: relative;
     

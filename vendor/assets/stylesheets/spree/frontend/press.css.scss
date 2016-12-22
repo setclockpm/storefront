@@ -258,7 +258,6 @@ section {
         padding-bottom: 2em;
         padding-top: 2em;
       }
-      .overlay { margin: 0px 15px; }
     }
   }
 }
@@ -334,6 +333,10 @@ section {
 @media (min-width: 1680px) {
 
   .featured {
+    .brands {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
     .grid-item {
       width: 12.5%;
     
