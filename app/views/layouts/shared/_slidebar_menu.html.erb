@@ -26,14 +26,14 @@
 </div><!-- /mv-menu-wrapper -->
 
 <script>
-	$(function() {
+ $(function() {
     var controller = new slidebars();
     controller.init();
-    $( '.toggle-mv-menu' ).on( 'click', function (event) {
+    $('.toggle-mv-menu').on( 'click', function (event) {
       desktopHeader = $('#desktop-header');
       
       event.stopPropagation();
-      controller.toggle( 'mv-menu' );
+      controller.toggle('mv-menu');
       
       if (desktopHeader.is(":visible"))
         $('#desktop-header').hide();
