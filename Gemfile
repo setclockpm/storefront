@@ -19,7 +19,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'magnific-popup-rails'
 gem "mini_magick"
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem "paperclip", github: "thoughtbot/paperclip", ref: "c38bb31"
+gem "paperclip", git: "https://github.com/thoughtbot/paperclip.git", ref: "c38bb31"
 gem 'pg', '~> 0.15'
 gem "recaptcha", require: "recaptcha/rails"
 gem 'rubyntlm', '~> 0.6.0'
@@ -30,9 +30,9 @@ gem 'uglifier', '>= 1.3.0'
 
 
 # Add this if you're using rbenv
-gem 'capistrano-rbenv', github: "capistrano/rbenv"
-# Spree needs this version at the moment
-gem 'mail', '2.5.4'
+gem 'capistrano-rbenv', '~> 2.0'
+# Updated due to security alert
+gem 'mail', '~> 2.6.0'
 
 
 
@@ -68,6 +68,6 @@ gem 'datashift_spree'#, github: 'autotelik/datashift_spree', branch: 'master'
 gem 'spree', '~> 3.1.0'
 gem 'spree_auth_devise', '~> 3.1.0'
 gem 'spree_gateway', '~> 3.1.0'
-gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: '3-1-stable'
-gem 'spree_globalize', github: 'spree-contrib/spree_globalize', branch: 'master'
+gem 'spree_i18n', git: 'https://github.com/spree-contrib/spree_i18n.git', branch: '3-1-stable'
+gem 'spree_globalize', git: 'https://github.com/spree-contrib/spree_globalize.git/', branch: 'master'
 gem 'spree_simple_sales', path: '../../spree_simple_sales'

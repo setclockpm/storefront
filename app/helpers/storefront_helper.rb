@@ -8,8 +8,12 @@ module StorefrontHelper
     end
   end
   
-  def link_to_catalog(text="Download Catalog")
+  def link_to_catalog_download(text="Download Catalog")
     link_to text.upcase, "https://s3-ap-southeast-1.amazonaws.com/porthos/public/media/Catalog-2016.pdf", class: "btn btn-lg btn-outline"
+  end
+  
+  def link_to_view_catalog(text="Browse Catalog Online")
+    link_to text.upcase, '#', class: "btn btn-lg btn-outline", disabled: true
   end
   
 
