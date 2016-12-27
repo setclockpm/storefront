@@ -2,10 +2,12 @@ class HeroImage < ActiveRecord::Base
   
   has_attached_file :attachment,
                     convert_options: { all: '-strip -auto-orient -colorspace sRGB' },
-                    default_style:   :large,
-                    path:            ':rails_root/public/system/:class/:basename:position-:style.:extension',
-                    styles:          { small: '240x160>', product: '1024x768>', large: '2048x1536>', lightbox: '800x600>' },
-                    url:             '/public/assets/images/hero/:basename:position-:style.:extension'
+                    default_style:   :product,
+                    styles:          { small: '240x160>', product: '1024x768>', large: '2048x1536>', thumb: '120x80>' },
+                    path:            ":rails_root/public/system/:class/:attachment/:id/:style/:basename.:extension",
+                    # path:            ':rails_root/public/system/:class/:basename:position-:style.:extension',
+                    url:             "/system/:class/:attachment/:id/:style/:basename.:extension"
+                    # url:             '/public/assets/images/hero/:basename:position-:style.:extension'
                     
    validates_attachment :attachment, presence: true, content_type: { content_type: %w(image/jpeg image/jpg image/png image/gif) }
    validates :position, presence: true

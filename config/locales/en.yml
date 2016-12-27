@@ -6,7 +6,7 @@ en:
     attributes:
       hero_image:
         caption: Caption
-        caption_url: "Caption URL"
+        caption_url: Caption URL
     errors:
       models:
         spree/product:
@@ -15,9 +15,12 @@ en:
               too_many_showcased_items: "Only up to %{count} showcased products are allowed"
     models:
       hero_image:
-        one: "Hero Image"
-        other: "Hero Images"
-  all_departments: "All Departments"
+        one: Hero Image
+        other: Hero Images
+  all_departments: All Departments
+  notice_messages:
+    hero_image_deleted: Hero Image has been deleted
+    hero_image_not_deleted: Hero Image could not be deleted
   
   search: "Search"
   spree:

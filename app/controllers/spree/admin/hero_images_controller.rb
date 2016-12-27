@@ -46,8 +46,16 @@ class Spree::Admin::HeroImagesController < Spree::Admin::BaseController
   end
 
   def destroy
-    @hero_image.destroy
-    redirect_to(admin_website_photos_url)
+    if @hero_image.destroy
+      flash[:success] = Spree.t('notice_messages.hero_image_deleted')
+    else
+      flash[:error] = Spree.t('notice_messages.hero_image_not_deleted')
+    end
+    
+    respond_with(@hero_image) do |format|
+      format.html { redirect_to admin_website_photos_url }
+      format.js { render_js_for_destroy }
+    end
   end
 
   private
