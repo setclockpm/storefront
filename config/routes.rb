@@ -17,12 +17,18 @@ Porthos::Application.routes.draw do
     namespace :admin do
       get "products/data_import" => "products#data", as: :data_import
       get "website_photos" => "website_photos#index", as: :website_photos
+      get "catalog" => "catalog#index", as: :catalog
       post "import/inventory" => "products#bulk_import", as: :import_inventory
       post "import/variant_photos" => "products#import_images", as: :generate_variant_photos
       # This adds a method to products called "add_to_cart" to the member (individual resource). If you run 
       # rake routes in your console you'll see it requires an id #=> /products/:id/add_to_cart
-      #get 'variants/on_hand' => 'products#count_on_hand', as: :count_on_hand
+      # get 'variants/on_hand' => 'products#count_on_hand', as: :count_on_hand
       resources :hero_images do
+        collection do
+          post :update_positions
+        end
+      end
+      resources :catalog_images do
         collection do
           post :update_positions
         end

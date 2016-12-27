@@ -4,6 +4,14 @@
       <%= f.label :attachment, Spree.t(:filename) %>
       <%= f.file_field :attachment %>
     </div>
+  </div>
+  <div class="col-md-6">
+    <div data-hook="active" class="form-group">
+      <%= f.label :active, HeroImage.human_attribute_name(:active) %>
+      <%= f.check_box :active, { class: 'form-control' } %>
+    </div>
+  </div>
+  <div class="col-md-12">
     <div data-hook="caption" class="form-group">
       <%= f.label :caption, HeroImage.human_attribute_name(:caption) %>
       <%= f.text_field :caption, { class: 'form-control' } %>
@@ -13,11 +21,7 @@
       <%= f.text_field :caption_url, { class: 'form-control' } %>
     </div>
   </div>
-  <div data-hook="alt_text" class="col-md-6">
-    <div data-hook="caption_url" class="form-group">
-      <%= f.label :active, HeroImage.human_attribute_name(:active) %>
-      <%= f.check_box :active, { class: 'form-control' } %>
-    </div>
+  <div data-hook="alt_text" class="col-md-12">
     <div class="form-group">
       <%= f.label :alt, Spree.t(:alt_text) %>
       <%= f.text_area :alt, rows: 4, class: 'form-control' %>

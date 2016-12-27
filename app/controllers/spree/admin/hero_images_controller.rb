@@ -38,8 +38,8 @@ class Spree::Admin::HeroImagesController < Spree::Admin::BaseController
 
   def update
     if @hero_image.update_attributes(hero_image_params)
-      flash[:notice] = 'HeroImage was successfully updated.'
-      redirect_to(@hero_image)
+      flash[:notice] = 'Hero Image was successfully updated!'
+      redirect_to admin_website_photos_path
     else
       render :edit
     end

@@ -1,5 +1,15 @@
 <% content_for :page_title do %>
-  <!-- <%= Spree.t(:hero_images) %> -->
-  <%= link_to Spree.t(:website_photos), admin_website_photos_path %>
-  <%#= '/ ' if current && !current.blank? %> <%= current %>
+  <%= title %>
+<% end %>
+
+
+<% content_for :sidebar do %>
+  <ul class="nav nav-pills nav-stacked" data-hook="admin_product_tabs">
+    <%= content_tag :li, class: ('active' if current == :hero_images) do %>
+      <%= link_to_with_icon 'picture', Spree.t(:hero_images), spree.admin_website_photos_url %>
+    <% end if can?(:admin, Spree::Image) %>
+    <%= content_tag :li, class: ('active' if current == :catalog) do %>
+      <%= link_to_with_icon 'book', Spree.t(:catalog), spree.admin_catalog_url %>
+    <% end if can?(:admin, Spree::Image) %>
+  </ul>
 <% end %>

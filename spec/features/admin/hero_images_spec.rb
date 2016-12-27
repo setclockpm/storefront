@@ -23,7 +23,7 @@ describe "Hero Images", type: :feature, js: true do
       expect(page).to have_content("successfully created!")
 
       click_icon(:edit)
-      fill_in "image_alt", with: "palom & porom"
+      fill_in "hero_image_alt", with: "palom & porom"
       click_button "Update"
       expect(page).to have_content("successfully updated!")
       expect(page).to have_content("palom & porom")
@@ -34,6 +34,7 @@ describe "Hero Images", type: :feature, js: true do
       expect(page).not_to have_content("palom & porom")
     end
   end
+
 
   # Regression test for #2228
   # it "should see variant images", js: false do

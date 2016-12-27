@@ -69,7 +69,7 @@ class ImageGenerator
       
       Dir.foreach(RAW_ASSET_DIRECTORY) do |item|
         # We're in a local *nix file system for 
-        next if item == '.' or item == '..' or item == '.DS_Store'        
+        next if item == '.' or item == '..' or item == '.DS_Store'
         @composite          = item.split("\s").compact
         @path_to_raw_image  = "#{RAW_ASSET_DIRECTORY}/#{item}"
         @master_sku_bucket  = @composite[0]

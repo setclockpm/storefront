@@ -1,5 +1,4 @@
-<%= render partial: 'spree/admin/shared/website_photo_tabs', locals: { current: Spree.t(:new_hero_image) } %>
-
+<%= render partial: 'spree/admin/shared/website_photo_tabs', locals: { current: :hero_images, title: Spree.t(:new_hero_image) } %>
 <%= render partial: 'spree/admin/shared/error_messages', locals: { target: @hero_image } %>
 
 <%= form_for [:admin, @hero_image], html: { multipart: true } do |f| %>
@@ -9,7 +8,7 @@
     <div class="form-actions" data-hook="buttons">
       <%= button Spree.t('actions.create'), 'save' %>
       <span class="or"><%= Spree.t(:or) %></span>
-      <%= button_link_to Spree.t('actions.cancel'), spree.admin_hero_images_url, icon: 'delete', id: 'cancel_link' %>
+      <%= button_link_to Spree.t('actions.cancel'), spree.admin_website_photos_path, icon: 'delete', id: 'cancel_link' %>
     </div>
   </fieldset>
 <% end %>
