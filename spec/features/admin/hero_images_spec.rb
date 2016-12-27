@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "Hero Images", type: :feature, js: true do
   stub_authorization!
 
-  let(:file_path) { Rails.root + "/spec/support/palom-porom.jpg" }
+  let(:file_path) { Rails.root + "spec/support/palom-porom.jpg" }
 
   before do
     # Ensure attachment style keys are symbolized before running all tests
