@@ -19,45 +19,51 @@ describe "Hero Images", type: :feature, js: true do
       visit spree.admin_website_photos_path
       click_link "new_hero_image_link"
       attach_file('hero_image_attachment', file_path)
+      page.check 'Active'
       click_button "Create"
       expect(page).to have_content("successfully created!")
 
       click_icon(:edit)
       fill_in "hero_image_alt", with: "palom & porom"
+      fill_in "hero_image_caption", with: "Twin Power"
+      fill_in "hero_image_caption_url", with: 'https://www.reddit.com/r/FinalFantasy/'
+      page.check 'Active' #hero_image_active
       click_button "Update"
       expect(page).to have_content("successfully updated!")
       expect(page).to have_content("palom & porom")
-
+      expect(page).to have_content("Twin Power")
       accept_alert do
         click_icon :delete
       end
       expect(page).not_to have_content("palom & porom")
     end
+    
+    it "should display <caption_url> iff it is filled out and <caption> is not. Otherwise caption should be displayed" do
+      HeroImage.attachment_definitions[:attachment].delete :storage
+      hero_image = HeroImage.create(attachment: File.open(file_path), caption_url: 'https://www.reddit.com/r/FinalFantasy/', active: true, position: (HeroImage.all_active.size + 1))
+      visit spree.admin_website_photos_path
+      
+      # Ensure hero image(s) display
+      expect(page).not_to have_content("No Hero Images Found.")
+
+      within("table.table") do
+        expect(page).to have_content(hero_image.caption_url)
+        # Ensure no duplicate images are displayed
+        expect(page).to have_css("tbody tr", count: 1)
+        expect(page).to have_content("https://www.reddit.com/r/FinalFantasy/")
+      end
+      
+      click_icon(:edit)
+      fill_in "hero_image_caption", with: "Final Fantasy IV"
+      click_button "Update"
+
+      # Ensure caption is now displayed
+      within("tbody") do
+        expect(page.body).to have_content("Final Fantasy IV")
+      end
+      
+    end
   end
 
-
-  # Regression test for #2228
-  # it "should see variant images", js: false do
-#     hero_image.create!(attachment: File.open(file_path))
-#     visit admin_website_photos_path
-#
-#     expect(page).not_to have_content("No Hero Images Found.")
-#     within("table.table") do
-#       expect(page).to have_content(variant.options_text)
-#
-#       #ensure no duplicate images are displayed
-#       expect(page).to have_css("tbody tr", count: 1)
-#
-#       #ensure variant header is displayed
-#       within("thead") do
-#         expect(page.body).to have_content("Variant")
-#       end
-#
-#       #ensure variant header is displayed
-#       within("tbody") do
-#         expect(page).to have_content("Size: S")
-#       end
-#     end
-#   end
 
 end

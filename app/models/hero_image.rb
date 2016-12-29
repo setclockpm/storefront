@@ -9,9 +9,8 @@ class HeroImage < ActiveRecord::Base
                     url:             "/system/:class/:attachment/:id/:style/:basename.:extension"
                     # url:             '/public/assets/images/hero/:basename:position-:style.:extension'
                     
-   validates_attachment :attachment, presence: true, content_type: { content_type: %w(image/jpeg image/jpg image/png image/gif) }
-   validates :position, presence: true
-  
+  validates_attachment :attachment, presence: true, content_type: { content_type: %w(image/jpeg image/jpg image/png image/gif) }
+  validates :position, presence: true
   
   
   [:position].each do |path_facet|
@@ -21,15 +20,21 @@ class HeroImage < ActiveRecord::Base
   end
   
   
-  def self.all_active
-    where('active')
-  end
   
-  def self.next_available_position
-    return all_active.select(:position).max + 1 if all_active.any?
-    1
+  class << self
+    def all_active
+      where('active')
+    end
+  
+    def next_available_position
+      return 1 unless all_active.any?
+      all_active.select(:position).max + 1
+    end
   end
-   
+
+
+
+
   def find_dimensions
     temporary = attachment.queued_for_write[:original]
     filename = temporary.path unless temporary.nil?
@@ -44,8 +49,8 @@ class HeroImage < ActiveRecord::Base
     attachment.url(:mini, false)
   end
   
-  def slide_position
-    position
+  def status
+    active? ? 'active' : 'inactive'
   end
   
   
