@@ -9,6 +9,10 @@ en:
         caption_url: Caption URL
     errors:
       models:
+        hero_image:
+          attributes:
+            base:
+              too_many_hero_images: "Only up to %{count} hero images are allowed"
         spree/product:
           attributes:
             base:
