@@ -1,4 +1,4 @@
-<%= render partial: 'spree/admin/shared/website_photo_tabs', locals: { current: "" } %>
+<%= render partial: 'spree/admin/shared/website_photo_tabs', locals: { current: :hero_images, title: Spree.t(:hero_images) } %>
 
 <% content_for :page_actions do %>
   <%= button_link_to(Spree.t(:new_hero_image), spree.new_admin_hero_image_url, { class: "btn-success", icon: 'add', id: 'new_hero_image_link' }) if can? :create, HeroImage %>
