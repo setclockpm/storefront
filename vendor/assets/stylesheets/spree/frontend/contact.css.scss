@@ -15,7 +15,10 @@
     text-align: left;
   }
   
-  .container { width: 92%; }
+  // contact page width
+  .container { width: 100%; }
+  // front page contact section width
+  .fp-tableCell { .container { width: 92%; } }
 }
 .floating-label-form-group {
   position: relative;
