@@ -81,7 +81,7 @@ class Spree::Admin::HeroImagesController < Spree::Admin::BaseController
 
     private
       def hero_image_params
-        params.require(:hero_image).permit(:alt, :active, :attachment, :caption, :caption_url, :position)
+        params.require(:hero_image).permit(:alt, :active, :attachment, :caption, :caption_url, :include_link_to_collection, :position)
       end
       
       def find_hero_image

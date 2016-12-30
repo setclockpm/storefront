@@ -48,10 +48,6 @@ class HeroImage < ActiveRecord::Base
     attachment.url(:mini, false)
   end
   
-  def requires_view_collection_link?
-    true
-  end
-  
   def status
     active? ? 'active' : 'inactive'
   end

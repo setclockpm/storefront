@@ -41,11 +41,11 @@
   position: relative;
   width: 55%;
   text-align: right;
-  top: 72%;
 }
+.promo-lower { top: 72%; }
+.promo-upper { top: 32%; }
 .slick-arrow {
   height: 56px;
-//  opacity: 0;
   transition: opacity .14s;
   width: 56px;
 }

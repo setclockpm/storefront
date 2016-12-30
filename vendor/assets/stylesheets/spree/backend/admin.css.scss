@@ -17,6 +17,10 @@ div {
   }
 }
 
+input[type=checkbox] {
+  &.hicb { width: inherit; }
+}
+
 span {
   &.fyi {
     font-size: 12px;

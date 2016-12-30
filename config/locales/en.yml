@@ -5,8 +5,9 @@ en:
   activerecord:
     attributes:
       hero_image:
-        caption: Caption
-        caption_url: Caption URL
+        caption: Promo Blurb
+        caption_url: Promo URL
+        include_link_to_collection: Include Collection Link
     errors:
       models:
         hero_image:
@@ -34,6 +35,7 @@ en:
      hero_image: Hero Image
      hero_images: Hero Images
      import: Import
+     include_link_to_collection_abbrev: Incl. Collection Link
      excel_file: "Spreadsheet File"
      process_images: "Generate Product Photos"
      quick_variant_search: "Quick search (by SKU).."

@@ -8,9 +8,12 @@ module StorefrontHelper
   
   def hero_image_promotion_content(hero_image)
     return if hero_image.caption.blank?
-    promo_blurb = content_tag(:span, hero_image_caption_content(hero_image), class: 'hero-image-caption-text').concat(tag :br)
-    return promo_blurb.concat(jumbotron_link_to_view_collection) if hero_image.requires_view_collection_link?
-    promo_blurb
+    content_tag(:span, hero_image_caption_content(hero_image), class: 'hero-image-caption-text').concat(tag :br)
+  end
+  
+  def jumbotron_link_to_view_collection(hero_image)
+    return unless hero_image.include_link_to_collection?
+    link_to("view collection".upcase, main_app.collection_path, class: "btn btn-lg btn-outline hero-image-caption-text")
   end
   
   def link_to_catalog_download(text="Download Catalog")
@@ -33,10 +36,6 @@ module StorefrontHelper
   private
     def icon_bar
       content_tag(:span, '', class: 'icon-bar')
-    end
-    
-    def jumbotron_link_to_view_collection
-      link_to("view collection".upcase, main_app.collection_path, class: "btn btn-lg btn-outline hero-image-caption-text")
     end
     
     def three_icon_bars

@@ -6,9 +6,13 @@
     </div>
   </div>
   <div class="col-md-6">
-    <div data-hook="active" class="form-group">
+    <div data-hook="active" class="form-group hicb">
       <%= f.label :active, HeroImage.human_attribute_name(:active) %>
       <%= f.check_box :active, { class: 'form-control' } %>
+    </div>
+    <div data-hook="include_link_to_collection" class="form-group hicb">
+      <%= f.label :include_link_to_collection, HeroImage.human_attribute_name(:include_link_to_collection) %>
+      <%= f.check_box :include_link_to_collection, { class: 'form-control' } %>
     </div>
   </div>
   <div class="col-md-12">
