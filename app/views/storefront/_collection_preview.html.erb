@@ -8,20 +8,18 @@
     </div>
   </div>
   <div class="gallery gallery-popup">
-    <div class="grid-uniform grid-home">
-      <div class="main-row row">
-        <% ["preview0.jpg", "preview1.jpg", "preview2.jpg"].each_with_index do |image, i| %>
-          <div class="<%= grid_item_dom_klass(i+1) %>">
-            <%= preview_reference(image) %>
-          </div>
-        <% end %>
-      </div>
-      <hr>
-      <div class="retail-leads-row row">
-        <% collection_items(preview: true).each_with_index do |variant, i| %>
-          <%= render partial: "collection/collection_item", locals: { variant: variant, preview: true, i: i } %>
-        <% end %>
-      </div>
+    <div class="main-row row">
+      <% ["preview0.jpg", "preview1.jpg", "preview2.jpg"].each_with_index do |image, i| %>
+        <div class="<%= grid_item_dom_klass(i+1) %>">
+          <%= preview_reference(image) %>
+        </div>
+      <% end %>
+    </div>
+    <hr>
+    <div class="retail-leads-row row">
+      <% collection_items(preview: true).each_with_index do |variant, i| %>
+        <%= render partial: "collection/collection_item", locals: { variant: variant, preview: true, i: i } %>
+      <% end %>
     </div>
   </div>
 </div>
