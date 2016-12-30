@@ -17,7 +17,7 @@ module CollectionHelper
   end
   
   def grid_item_dom_klass(index)
-    dom_class = "grid-item col-md-4"
+    dom_class = "grid-item col-md-4 col-sm-6"
     return "#{dom_class} double-right-border" if index % 3 == 0
     return "#{dom_class} double-left-border" if (index - 1) % 3 == 0
     "#{dom_class} large-borders"

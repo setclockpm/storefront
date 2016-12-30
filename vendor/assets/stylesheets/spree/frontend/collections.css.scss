@@ -119,8 +119,10 @@
 @media (max-width: 992px) {
   .collection-preview {
     hr { display: none; }
+    
+    .main-row { display: none; }
   }
-  .main-row { display: none; }
+  
   .retail-leads-row {
     .grid-item { margin-top: 1.5em; }
   }

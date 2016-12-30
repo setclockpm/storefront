@@ -5,12 +5,10 @@
         <h1 id="collection"><%= currently_at 'Collection' %></h1>
       </div>
     </div>
-    <div class="main-row">
-      <div class="gallery-popup grid-uniform grid-home portfolio row">
+    <div class="gallery-popup grid-uniform grid-home main-row portfolio row">
         <% collection_items.each_with_index do |master_variant, i| %>
           <%= render partial: "collection_item", locals: { variant: master_variant, preview: false, i: i } %>
         <% end %>
-      </div>
     </div>
   </div>
 </section>
