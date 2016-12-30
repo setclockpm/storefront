@@ -2,14 +2,14 @@ module PressHelper
   
   def featured_in_images
     {
-      "bhg.png" => 'http://www.bhg.com/', 
-      "nbc.png" => 'http://www.nbc.com/shows/current', 
-      "wayfair.png" => 'http://www.wayfair.com/Porthos-Home-B40284.html',
-      "overstock.png" => 'http://www.overstock.com/Porthos-Home,/brand,/results.html', 
-      "houzz.png" => 'http://www.houzz.com/', 
-      "redbook.png" => 'http://www.redbookmag.com/', 
-      "hgtv.png" => 'http://www.hgtv.com/', 
-      "desert-trip.png" => 'http://deserttrip.com/'
+      "logos/external/bhg.png" => 'http://www.bhg.com/', 
+      "logos/external/nbc.png" => 'http://www.nbc.com/shows/current', 
+      "logos/external/wayfair.png" => 'http://www.wayfair.com/Porthos-Home-B40284.html',
+      "logos/external/overstock.png" => 'http://www.overstock.com/Porthos-Home,/brand,/results.html', 
+      "logos/external/houzz.png" => 'http://www.houzz.com/', 
+      "logos/external/redbook.png" => 'http://www.redbookmag.com/', 
+      "logos/external/hgtv.png" => 'http://www.hgtv.com/', 
+      "logos/external/desert-trip.png" => 'http://deserttrip.com/'
     }
   end
   
