@@ -2,7 +2,7 @@ module StorefrontHelper
   
   def display_logo_on_shadowized_background
     content_tag :div, class: 'intro' do
-      image_tag("logo_white_l.png", title: "design-with-confidence", class: "brand").concat(content_tag :div, '', class: 'hero-shadow')
+      image_tag("logos/logo_white_l.png", title: "design-with-confidence", class: "brand").concat(content_tag :div, '', class: 'hero-shadow')
     end
   end
   
