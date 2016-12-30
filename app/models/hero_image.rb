@@ -10,6 +10,7 @@ class HeroImage < ActiveRecord::Base
                     url:             "/system/:class/:attachment/:id/:style/:basename.:extension"
                     
   validate :max_allowed_hero_images_not_exceeded
+  validates :caption, length: { maximum: 50 }, allow_blank: true
   validates_attachment :attachment, presence: true, content_type: { content_type: %w(image/jpeg image/jpg image/png image/gif) }
   
   

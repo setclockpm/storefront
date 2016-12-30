@@ -105,7 +105,7 @@ CREATE TABLE hero_images (
     id integer NOT NULL,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
-    caption character varying(25),
+    caption character varying(50),
     caption_url character varying,
     attachment_file_name character varying,
     attachment_content_type character varying,
@@ -114,7 +114,8 @@ CREATE TABLE hero_images (
     alt text,
     "position" integer,
     active boolean,
-    include_link_to_collection boolean
+    include_link_to_collection boolean,
+    promo_blurb_location character varying(7)
 );
 
 
@@ -6538,4 +6539,6 @@ INSERT INTO schema_migrations (version) VALUES ('20161206043543');
 INSERT INTO schema_migrations (version) VALUES ('20161215084229');
 
 INSERT INTO schema_migrations (version) VALUES ('20161230044136');
+
+INSERT INTO schema_migrations (version) VALUES ('20161230101541');
 
