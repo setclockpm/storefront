@@ -15,6 +15,7 @@ class HeroImage < ActiveRecord::Base
   
   
   class << self
+    
     def all_active
       where('active').order(:position)
     end
@@ -27,6 +28,7 @@ class HeroImage < ActiveRecord::Base
       return 1 unless all_active.any?
       all_active.select(:position).max.position + 1
     end
+    
   end
 
 
