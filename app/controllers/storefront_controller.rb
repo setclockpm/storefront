@@ -1,4 +1,5 @@
 class StorefrontController < ApplicationController
+  before_action :load_hero_images, only: [:index]
   helper 'spree/products'
   respond_to :html
   
@@ -7,8 +8,8 @@ class StorefrontController < ApplicationController
   
   
   def index
-   @message = Message.new
-   render layout: 'storefront'
+    @message = Message.new
+    render layout: 'storefront'
   end
   
   def catalog
@@ -18,8 +19,15 @@ class StorefrontController < ApplicationController
   end
   
   def about
-    Rails.logger.debug "\n\n\n\nUser Agent: #{request.user_agent}\n\n\n\n"
+    Rails.logger.debug "\n == User Agent: #{request.user_agent} == \n"
     render layout: 'application'
   end
+  
+  
+  private
+  
+    def load_hero_images
+      @hero_images = HeroImage.all_active.order(:position)
+    end
   
 end

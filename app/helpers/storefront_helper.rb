@@ -1,11 +1,16 @@
 module StorefrontHelper
   
-  def toggle_mv_menu_button_tag(html_options={})
-    options = { type: 'button', class: 'toggle-mv-menu' }
-    options.merge!(html_options) if !html_options.blank?
-    button_tag(options) do
-      content_tag(:span, 'Toggle navigation', class: 'sr-only').concat(three_icon_bars)
+  def display_logo_on_shadowized_background
+    content_tag :div, class: 'intro' do
+      image_tag("logo_white_l.png", title: "design-with-confidence", class: "brand").concat(content_tag :div, '', class: 'hero-shadow')
     end
+  end
+  
+  def hero_image_promotion_content(hero_image)
+    return if hero_image.caption.blank?
+    promo_blurb = content_tag(:span, hero_image_caption_content(hero_image), class: 'hero-image-caption-text').concat(tag :br)
+    return promo_blurb.concat(jumbotron_link_to_view_collection) if hero_image.requires_view_collection_link?
+    promo_blurb
   end
   
   def link_to_catalog_download(text="Download Catalog")
@@ -16,14 +21,26 @@ module StorefrontHelper
     link_to text.upcase, '#', class: "btn btn-lg btn-outline", disabled: true
   end
   
+  def toggle_mv_menu_button_tag(html_options={})
+    options = { type: 'button', class: 'toggle-mv-menu' }
+    options.merge!(html_options) if !html_options.blank?
+    button_tag(options) do
+      content_tag(:span, 'Toggle navigation', class: 'sr-only').concat(three_icon_bars)
+    end
+  end
+  
 
   private
+    def icon_bar
+      content_tag(:span, '', class: 'icon-bar')
+    end
+    
+    def jumbotron_link_to_view_collection
+      link_to("view collection".upcase, main_app.collection_path, class: "btn btn-lg btn-outline hero-image-caption-text")
+    end
+    
     def three_icon_bars
       icon_bar.concat(icon_bar.concat(icon_bar))
     end
     
-    def icon_bar
-      content_tag(:span, '', class: 'icon-bar')
-    end
-  
 end

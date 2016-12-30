@@ -1,0 +1,11 @@
+
+<div class="image lazyloaded" style="background-image:url('<%= hero_image.attachment.url %>');">
+  <picture style="display:none;">
+    <source srcset="<%= hero_image.attachment.url %>" type="image/jpeg">
+    <%= image_tag nil, class: 'lazyloaded slick' %>
+  </picture>
+  <%= display_logo_on_shadowized_background if index == 0 %>
+  <div class="promo">
+    <%= hero_image_promotion_content(hero_image) %>
+  </div>
+</div>

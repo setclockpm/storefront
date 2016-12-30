@@ -1,6 +1,7 @@
 class HeroImage < ActiveRecord::Base
   MAX_HERO_IMAGES_ALLOWED = 5 unless const_defined?(:MAX_HERO_IMAGES_ALLOWED)
   
+  acts_as_list
   has_attached_file :attachment,
                     convert_options: { all: '-strip -auto-orient -colorspace sRGB' },
                     default_style:   :product,
@@ -9,14 +10,13 @@ class HeroImage < ActiveRecord::Base
                     url:             "/system/:class/:attachment/:id/:style/:basename.:extension"
                     
   validate :max_allowed_hero_images_not_exceeded
-  validates :position, presence: true
   validates_attachment :attachment, presence: true, content_type: { content_type: %w(image/jpeg image/jpg image/png image/gif) }
   
   
   
   class << self
     def all_active
-      where('active')
+      where('active').order(:position)
     end
 
     def max_allowed
@@ -25,7 +25,7 @@ class HeroImage < ActiveRecord::Base
 
     def next_available_position
       return 1 unless all_active.any?
-      all_active.select(:position).max + 1
+      all_active.select(:position).max.position + 1
     end
   end
 
@@ -46,6 +46,10 @@ class HeroImage < ActiveRecord::Base
     attachment.url(:mini, false)
   end
   
+  def requires_view_collection_link?
+    true
+  end
+  
   def status
     active? ? 'active' : 'inactive'
   end
@@ -62,7 +66,7 @@ class HeroImage < ActiveRecord::Base
       # ##############################################################################################
       # Now we check if dealing with one of the hero_image records that's included
       # within the current active ones. In other words, if it's one of the <MAX_HERO_IMAGES_ALLOWED>.
-      return if current_showcased_items.map(&:id).include?(id)
+      return if current_hero_images.map(&:id).include?(id)
       # If it was, then this passed validation since we were either:
       #   Updating another attribuite for this record (current_hero_images qty doesn't change)
       #   Updating this attribuite (since we can only deactivate, current_hero_images qty decreases)

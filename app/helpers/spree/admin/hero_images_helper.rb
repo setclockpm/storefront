@@ -8,7 +8,7 @@ module Spree
       end
       
       def hero_image_caption_content(hero_image)
-        hero_image.caption_url ? link_to_hero_image_caption(hero_image) : hero_image.caption
+        hero_image.caption_url.present? ? link_to_hero_image_caption(hero_image) : hero_image.caption
       end
       
       def link_to_hero_image_caption(hero_image)
@@ -18,7 +18,7 @@ module Spree
       
       private
         def caption_link_content(hero_img)
-          hero_img.caption || hero_img.caption_url
+          hero_img.caption.present? ? hero_img.caption : hero_img.caption_url
         end
       
     end

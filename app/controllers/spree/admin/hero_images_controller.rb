@@ -3,7 +3,7 @@ class Spree::Admin::HeroImagesController < Spree::Admin::BaseController
   include Spree::Backend::Callbacks
 
   def index
-    @hero_images = HeroImage.all
+    @hero_images = HeroImage.order(:position)
   end
 
   def show
@@ -18,7 +18,6 @@ class Spree::Admin::HeroImagesController < Spree::Admin::BaseController
   end
 
   def create
-    params[:hero_image][:position] = HeroImage.next_available_position
     @hero_image = HeroImage.new(hero_image_params)
     
     if @hero_image.save
@@ -44,6 +43,18 @@ class Spree::Admin::HeroImagesController < Spree::Admin::BaseController
       render :edit
     end
   end
+  
+  def update_positions
+    ActiveRecord::Base.transaction do
+      params[:positions].each do |id, index|
+        HeroImage.find(id).set_list_position(index)
+      end
+    end
+
+    respond_to do |format|
+      format.js { render text: 'Ok' }
+    end
+  end
 
   def destroy
     if @hero_image.destroy
@@ -57,14 +68,24 @@ class Spree::Admin::HeroImagesController < Spree::Admin::BaseController
       format.js { render_js_for_destroy }
     end
   end
+  
+  
 
-  private
-    def hero_image_params
-      params.require(:hero_image).permit(:attachment, :caption, :caption_url, :alt, :position)
+  protected
+    # This is required for the update_positions action to work properly.
+    # Acts as list possibly?
+    def model_class
+      HeroImage
     end
-    
-    def find_hero_image
-      @hero_image = HeroImage.find(params[:id])
-    end
+
+
+    private
+      def hero_image_params
+        params.require(:hero_image).permit(:alt, :active, :attachment, :caption, :caption_url, :position)
+      end
+      
+      def find_hero_image
+        @hero_image = HeroImage.find(params[:id])
+      end
 
 end

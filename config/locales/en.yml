@@ -12,7 +12,7 @@ en:
         hero_image:
           attributes:
             base:
-              too_many_hero_images: "Only up to %{count} hero images are allowed"
+              too_many_hero_images: "Only up to %{count} active hero images are allowed"
         spree/product:
           attributes:
             base:
