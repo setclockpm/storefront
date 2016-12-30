@@ -6,9 +6,9 @@
       </div>
     </div>
     <div class="gallery-popup main-row portfolio row">
-        <% collection_items.each_with_index do |master_variant, i| %>
-          <%= render partial: "collection_item", locals: { variant: master_variant, preview: false, i: i } %>
-        <% end %>
+      <% collection_items.each_with_index do |master_variant, i| %>
+        <%= render partial: "collection_item", locals: { variant: master_variant, preview: false, i: i } %>
+      <% end %>
     </div>
   </div>
 </section>
