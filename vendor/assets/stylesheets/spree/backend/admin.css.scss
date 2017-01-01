@@ -20,6 +20,10 @@ input[type=checkbox] {
   &.hicb { width: inherit; }
 }
 form {
+  .image-fields, .image-thumbnail {
+    float: left;
+    width: 100%;
+  }
   .image-thumbnail {
     padding-bottom: 2em;
     label { width: 100%; }
@@ -181,10 +185,13 @@ span {
            ////////////////////////////
         //////////////////////////////////
      ////////////////////////////////////////
-  /////////* Minimum width 1024px section *////
+  /////////* Minimum width 992px section *////
 ///////////////////////////////////////////////////
-@media (min-width: 1024px) {
-
+@media (min-width: 992px) {
+  form {
+    .image-fields { width: 50%; }
+    .image-thumbnail { width: 50%; }
+  }
 }
 ///////////////////////////////////////////////////
                         ///
@@ -198,7 +205,10 @@ span {
   /////////* Minimum width 1200px section *////
 ///////////////////////////////////////////////////
 @media (min-width: 1200px) {
-  
+  form {
+    .image-fields { width: 58.33333333%; }
+    .image-thumbnail { width: 41.66666667%; }
+  }
 }
 ///////////////////////////////////////////////////
                         ///
