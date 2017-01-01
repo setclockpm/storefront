@@ -21,7 +21,7 @@ Spree::Image.class_eval do
   
   
   def s3_slug
-    viewable.s3_slug
+    viewable.s3_slug if viewable
   end
   
   def master_sku
