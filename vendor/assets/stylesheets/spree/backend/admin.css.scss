@@ -16,11 +16,15 @@ div {
     padding-bottom: 0px;
   }
 }
-
 input[type=checkbox] {
   &.hicb { width: inherit; }
 }
-
+form {
+  .image-thumbnail {
+    padding-bottom: 2em;
+    label { width: 100%; }
+  }
+}
 span {
   &.fyi {
     font-size: 12px;
@@ -47,7 +51,11 @@ span {
 
 .index-filter-button {
   button { &.standalone { border-right: 1px solid; } }
-} 
+}
+.image-form-actions {
+  display: block;
+  margin: 0 auto;
+}
 .table > thead > tr > td.active,
 .table > thead > tr > th.active, .table > thead > tr.active > td, .table > thead > tr.active > th,
 .table > tbody > tr > td.active,

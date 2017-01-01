@@ -6,7 +6,7 @@ Spree::Image.class_eval do
                     default_style:   :product,
                     path:            'public/inventory/:master_sku/:style-:s3_slug-:id.:image_file_extension',
                     storage:         :s3,
-                    styles:          { mini: '48x48>', small: '240x160>', preview: '480x360>', product: '1600x1600', large: '1920x1440>', lightbox: '800x800>' },
+                    styles:          { mini: '48x48>', small: '240x160>', preview: '480x360!', product: '1600x1600', large: '1920x1440>', lightbox: '800x800>' },
                     s3_credentials:  { access_key_id: Rails.application.secrets.aws_access_key_id, secret_access_key: Rails.application.secrets.aws_secret_access_key },
                     s3_protocol:     "https",
                     s3_region:       'ap-southeast-1',
