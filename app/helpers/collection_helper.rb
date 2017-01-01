@@ -12,7 +12,7 @@ module CollectionHelper
   
   def collection_image_reference(variant, options={})
     content_tag :figure do
-      link_to collection_image_thumbnail_tag(variant), variant.collection_image.attachment.url(:preview), class: 'collection-img-link'
+      link_to collection_image_thumbnail_tag(variant), variant.collection_image.attachment.url(:large), class: 'collection-img-link'
     end
   end
   
@@ -32,7 +32,7 @@ module CollectionHelper
   
   private
     def collection_image_thumbnail_tag(variant)
-      image_tag variant.collection_image.attachment.url(:large), alt: "#{variant.name.gsub(/\s+/, "").underscore.dasherize}", class: "collection-image"
+      image_tag variant.collection_image.attachment.url(:preview), alt: "#{variant.name.gsub(/\s+/, "").underscore.dasherize}", class: "collection-image"
     end
   
 end

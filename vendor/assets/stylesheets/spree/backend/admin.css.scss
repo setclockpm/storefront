@@ -20,10 +20,6 @@ input[type=checkbox] {
   &.hicb { width: inherit; }
 }
 form {
-  .image-fields, .image-thumbnail {
-    float: left;
-    width: 100%;
-  }
   .image-thumbnail {
     padding-bottom: 2em;
     label { width: 100%; }
