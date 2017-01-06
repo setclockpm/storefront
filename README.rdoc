@@ -1,7 +1,7 @@
 ![alt text](https://s3-ap-southeast-1.amazonaws.com/porthos/public/assets/logo/favicon.ico "Logo") Porthos Home Furniture Website Documentation
 ======
 
-The website can be found at [https://porthoshome.com](https://porthoshome.com/).
+The website can be found [here](https://porthoshome.com/)
 
 
 
