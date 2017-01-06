@@ -1,52 +1,13 @@
-== First Bug:
-  
-  For:
-  
-   #<NoMethodError: undefined method `variant_sku=' for #<Spree::Product:0x007fc98b1d3d08> during import, 
-   change line 308 in product_loader.rb in datashift_spree so that object is NEVER reloaded
+![alt text](https://s3-ap-southeast-1.amazonaws.com/porthos/public/assets/logo/favicon.ico "Logo") Porthos Home Furniture Website Documentation
+======
+
+The website can be found at [https://porthoshome.com](https://porthoshome.com/).
 
 
-== Second Bug:
 
-  [ 2016-10-10 02:40:14.9474 1041/7f51a8e3f700 age/Cor/App/Implementation.cpp:304 ]: Could not spawn process for application /var/www/porthos/production/current: An error occurred while starting up the preloader.
-  
-  
-  Error ID: 44ace072
-  Error details saved to: /tmp/passenger-error-yr9Fdi.html
-  Message from application: undefined method `option_values' for nil:NilClass (NoMethodError)
-  /var/www/porthos/production/releases/20161010092432/app/models/image_generator.rb:6:in `<class:ImageGenerator>'
-  /var/www/porthos/production/releases/20161010092432/app/models/image_generator.rb:5:in `<top (required)>'
-  
-  Caused by removing:
-  
-  gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: '3-1-stable'
-  gem 'spree_globalize', github: 'spree-contrib/spree_globalize', branch: 'master'  
-  
-  from Gemfile
-  
-  
-== Third Bug:
+## This documents the `master` branch of this project
 
-  Failure/Error: respond_with(@collection)
-
-    ActionView::Template::Error:
-    No route matches {:action=>"index", :controller=>"spree/admin/translations", :resource=>"stores", :resource_id=>nil} missing required keys: [:resource_id]
-       /Users/pmedrano/.rvm/gems/ruby-2.3.1@czm/gems/routing-filter-0.5.1/lib/routing_filter/adapters/rails.rb:30:in `block in generate_with_filtering'
-       /Users/pmedrano/.rvm/gems/ruby-2.3.1@czm/gems/routing-filter-0.5.1/lib/routing_filter/filters/locale.rb:70:in `around_generate'
-       /Users/pmedrano/.rvm/gems/ruby-2.3.1@czm/gems/routing-filter-0.5.1/lib/routing_filter/filter.rb:11:in `run'
-       /Users/pmedrano/.rvm/gems/ruby-2.3.1@czm/gems/routing-filter-0.5.1/lib/routing_filter/chain.rb:15:in `run'
-       /Users/pmedrano/.rvm/gems/ruby-2.3.1@czm/gems/routing-filter-0.5.1/lib/routing_filter/adapters/rails.rb:29:in `generate_with_filtering'
-       /Users/pmedrano/.rvm/gems/ruby-2.3.1@czm/gems/spree_backend-3.1.1/app/views/spree/admin/shared/sub_menu/_configuration.html.erb:24:in `_7f9b11e1c0acfff2694bd76fd6ae1d76'
+[- Architecture / Setup / Configuation](https://github.com/porthoshome/storefront#setup)
+[- Gems](https://github.com/porthoshome/storefront#gems)
 
 
-  Solution is here: https://github.com/spree-contrib/spree_i18n/issues/474
-  It's a bug in the spree-contrib/spree_globalize gem where the link automtically assumes there's a store.id. 
-  It runs fine in every environment except test where I can't seem to get a Store instance to persist.
-
-
-== Fourth Obstacle:
-  
-  Fullpage.js/Bootstrap Affix:
-  
-    http://stackoverflow.com/questions/27992060/dynamically-making-an-element-fixed-header-in-fullpage-js
-    This page helped point me in the right direction.
