@@ -30,6 +30,39 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: catalog_pages; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE catalog_pages (
+    id integer NOT NULL,
+    image_file_name character varying,
+    image_content_type character varying,
+    image_file_size integer,
+    image_updated_at timestamp without time zone,
+    "position" integer
+);
+
+
+--
+-- Name: catalog_pages_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE catalog_pages_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: catalog_pages_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE catalog_pages_id_seq OWNED BY catalog_pages.id;
+
+
+--
 -- Name: customers; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -3215,6 +3248,13 @@ ALTER SEQUENCE spree_zones_id_seq OWNED BY spree_zones.id;
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY catalog_pages ALTER COLUMN id SET DEFAULT nextval('catalog_pages_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY customers ALTER COLUMN id SET DEFAULT nextval('customers_id_seq'::regclass);
 
 
@@ -3832,6 +3872,14 @@ ALTER TABLE ONLY spree_zone_members ALTER COLUMN id SET DEFAULT nextval('spree_z
 --
 
 ALTER TABLE ONLY spree_zones ALTER COLUMN id SET DEFAULT nextval('spree_zones_id_seq'::regclass);
+
+
+--
+-- Name: catalog_pages_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY catalog_pages
+    ADD CONSTRAINT catalog_pages_pkey PRIMARY KEY (id);
 
 
 --
@@ -6541,4 +6589,6 @@ INSERT INTO schema_migrations (version) VALUES ('20161215084229');
 INSERT INTO schema_migrations (version) VALUES ('20161230044136');
 
 INSERT INTO schema_migrations (version) VALUES ('20161230101541');
+
+INSERT INTO schema_migrations (version) VALUES ('20170106080155');
 
