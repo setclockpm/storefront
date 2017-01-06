@@ -1,4 +1,5 @@
 Porthos::Application.routes.draw do
+  resources :catalog_pages
   get 'contact', to: 'messages#new', as: 'contact'
   post 'contact', to: 'messages#create'
   
@@ -14,6 +15,7 @@ Porthos::Application.routes.draw do
   # first created -> highest priority.
   
   Spree::Core::Engine.routes.draw do
+  resources :catalog_pages
     namespace :admin do
       get "products/data_import" => "products#data", as: :data_import
       get "website_photos" => "website_photos#index", as: :website_photos

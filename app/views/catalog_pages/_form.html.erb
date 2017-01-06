@@ -1,0 +1,25 @@
+<%= form_for(@catalog_page) do |f| %>
+  <% if @catalog_page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@catalog_page.errors.count, "error") %> prohibited this catalog_page from being saved:</h2>
+
+      <ul>
+      <% @catalog_page.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.text_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :position %><br>
+    <%= f.number_field :position %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

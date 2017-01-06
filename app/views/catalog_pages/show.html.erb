@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @catalog_page.image %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @catalog_page.position %>
+</p>
+
+<%= link_to 'Edit', edit_catalog_page_path(@catalog_page) %> |
+<%= link_to 'Back', catalog_pages_path %>
