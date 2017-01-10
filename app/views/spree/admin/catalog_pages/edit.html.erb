@@ -1,0 +1,29 @@
+<%= render partial: 'spree/admin/shared/website_photo_tabs', locals: { current: :catalog, title: Spree.t(:edit_catalog_page) } %>
+<%= render partial: 'spree/admin/shared/error_messages', locals: { target: @catalog_page } %>
+
+<%= form_for [:admin, @catalog_page], html: { multipart: true } do |f| %>
+  <div data-hook="edit_catalog_page" class="panel panel-default">
+    <div class="panel-heading">
+      <h1 class="panel-title">
+        <%= @catalog_page.image_file_name %>
+      </h1>
+    </div>
+    <div class="panel-body">
+      <div class="form-group">
+        <div data-hook="thumbnail" class="col-md-5 text-center">
+          <%= f.label Spree.t(:thumbnail) %>
+          <%= link_to image_tag(@catalog_page.image.url(:small)), @catalog_page.image.url(:large) %>
+        </div>
+        <div class="col-md-7">
+          <%= render partial: 'form', locals: { f: f } %>
+        </div>
+
+        <div class="form-actions" data-hook="buttons">
+          <%= button Spree.t('actions.update'), 'save' %>
+          <span class="or"><%= Spree.t(:or) %></span>
+          <%= button_link_to Spree.t('actions.cancel'), spree.admin_catalog_path, id: 'cancel_link', icon: 'delete' %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

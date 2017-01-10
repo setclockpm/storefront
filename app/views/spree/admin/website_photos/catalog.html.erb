@@ -1,0 +1,40 @@
+<%= render partial: 'spree/admin/shared/website_photo_tabs', locals: { current: :catalog, title: Spree.t(:catalog_pages) } %>
+
+<% content_for :page_actions do %>
+  <%= button_link_to(Spree.t(:new_catalog_page), spree.new_admin_catalog_page_url, { class: "btn-success", icon: 'add', id: 'new_catalog_page_link' }) if can? :create, CatalogPage %>
+<% end %>
+
+
+<% unless @catalog_pages.any? %>
+  <div class="alert alert-warning">
+    <%= Spree.t(:no_resource_found, resource: plural_resource_name(CatalogPage)) %>.
+  </div>
+<% else %>
+  <table class="table sortable" data-hook="catalog_pages_table" data-sortable-link="<%= update_positions_admin_catalog_pages_url %>">
+    <thead>
+      <tr data-hook="catalog_pages_header">
+        <th colspan="2"><%= Spree.t(:thumbnail) %></th>
+        <th class="actions"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @catalog_pages.each do |catalog_page| %>
+        <tr id="<%= spree_dom_id catalog_page %>" class="catalog_page" data-hook="catalog_pages_row">
+          <td class="move-handle text-center">
+            <% if can? :edit, catalog_page %>
+              <span class="icon icon-move handle"></span>
+            <% end %>
+          </td>
+          <td class="image">
+            <%= link_to image_tag(catalog_page.image.url(:thumb)), catalog_page.image.url %>
+          </td>
+          <td class="actions actions-2 text-right">
+            <%= link_to_with_icon('edit', Spree.t(:edit), spree.edit_admin_catalog_page_url(catalog_page), class: 'btn btn-primary btn-sm', no_text: true, data: { action: 'edit' }) if can? :edit, catalog_page %>
+            <%= link_to_delete(catalog_page, { url: spree.admin_catalog_page_url(catalog_page), no_text: true }) if can? :destroy, catalog_page %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

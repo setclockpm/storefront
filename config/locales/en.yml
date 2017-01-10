@@ -22,10 +22,15 @@ en:
       hero_image:
         one: Hero Image
         other: Hero Images
+      catalog_page:
+        one: Catalog Page
+        other: Catalog Pages
   all_departments: All Departments
   notice_messages:
     hero_image_deleted: Hero Image has been deleted
     hero_image_not_deleted: Hero Image could not be deleted
+    catalog_page_deleted: Catalog Page has been deleted
+    catalog_page_not_deleted: Catalog Page could not be deleted
   
   search: Search
   spree:

@@ -1,5 +1,4 @@
 Porthos::Application.routes.draw do
-  resources :catalog_pages
   get 'contact', to: 'messages#new', as: 'contact'
   post 'contact', to: 'messages#create'
   
@@ -15,11 +14,10 @@ Porthos::Application.routes.draw do
   # first created -> highest priority.
   
   Spree::Core::Engine.routes.draw do
-  resources :catalog_pages
     namespace :admin do
       get "products/data_import" => "products#data", as: :data_import
       get "website_photos" => "website_photos#index", as: :website_photos
-      get "catalog" => "catalog#index", as: :catalog
+      get "catalog" => "website_photos#catalog", as: :catalog
       post "import/inventory" => "products#bulk_import", as: :import_inventory
       post "import/variant_photos" => "products#import_images", as: :generate_variant_photos
       # This adds a method to products called "add_to_cart" to the member (individual resource). If you run 
@@ -30,7 +28,7 @@ Porthos::Application.routes.draw do
           post :update_positions
         end
       end
-      resources :catalog_images do
+      resources :catalog_pages do
         collection do
           post :update_positions
         end
