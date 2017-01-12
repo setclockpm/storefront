@@ -480,6 +480,37 @@ ALTER SEQUENCE spree_customer_returns_id_seq OWNED BY spree_customer_returns.id;
 
 
 --
+-- Name: spree_footers; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE spree_footers (
+    id integer NOT NULL,
+    location character varying,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: spree_footers_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE spree_footers_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: spree_footers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE spree_footers_id_seq OWNED BY spree_footers.id;
+
+
+--
 -- Name: spree_gateways; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -3332,6 +3363,13 @@ ALTER TABLE ONLY spree_customer_returns ALTER COLUMN id SET DEFAULT nextval('spr
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY spree_footers ALTER COLUMN id SET DEFAULT nextval('spree_footers_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY spree_gateways ALTER COLUMN id SET DEFAULT nextval('spree_gateways_id_seq'::regclass);
 
 
@@ -3968,6 +4006,14 @@ ALTER TABLE ONLY spree_credit_cards
 
 ALTER TABLE ONLY spree_customer_returns
     ADD CONSTRAINT spree_customer_returns_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: spree_footers_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY spree_footers
+    ADD CONSTRAINT spree_footers_pkey PRIMARY KEY (id);
 
 
 --
@@ -6591,4 +6637,6 @@ INSERT INTO schema_migrations (version) VALUES ('20161230044136');
 INSERT INTO schema_migrations (version) VALUES ('20161230101541');
 
 INSERT INTO schema_migrations (version) VALUES ('20170106080155');
+
+INSERT INTO schema_migrations (version) VALUES ('20170110082851');
 
