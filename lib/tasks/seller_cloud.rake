@@ -21,6 +21,7 @@ namespace :seller_cloud do
         # possibly discontinued. All SOAP related exceptions should be dealt with in SellerCloud class
         qty >= 0 ? variant.update_stock_count(qty) : add_variant_to_research_list(variant)
       end
+      
       # Until store opens this notification isn't necessary
       #MessageMailer.inventory_sync_report(@skus_to_research).deliver_now
     end
