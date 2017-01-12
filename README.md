@@ -21,6 +21,7 @@ Test coverage is limited to the features not already tested as part of the [Spre
 
 Other import parts of the architecture are:
 
+- Project Tracking: https://tree.taiga.io/project/setclockpm-porthos-home/
 - Hosting: **DigitalOcean**
 - **Nginx** on **Ubuntu 14.04**
 - Asset(s): **Amazon AWS / S3**
